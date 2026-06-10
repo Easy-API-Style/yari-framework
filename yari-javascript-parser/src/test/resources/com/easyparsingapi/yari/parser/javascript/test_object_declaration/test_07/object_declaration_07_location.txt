@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [JavascriptNodeUnit]
+{ baz: 'bar', set [expr](v) { this.baz = v; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [ObjectDeclaration]
+{ baz: 'bar', set [expr](v) { this.baz = v; }}
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 14] [FieldDeclaration]
+baz: 'bar'
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 7] [Identifier]
+baz
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 14] [Literal]
+'bar'
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 48] [Setter]
+set [expr](v) { this.baz = v; }
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 27] [ComputedValue]
+[expr]
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 26] [Identifier]
+expr
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 48] [Procedure]
+{ this.baz = v; }
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 45] [Assignment]
+this.baz = v
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 41] [QualifiedExpression]
+this.baz
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 38] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 37] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 38] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 41] [Identifier]
+baz
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 43] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 45] [Identifier]
+v
+---------------------------

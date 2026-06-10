@@ -1,0 +1,153 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [Javascript]
+`{${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}}`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [LiteralTemplate]
+`{${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}}`
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Constant]
+{
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 77] [Variable]
+${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 76] [QualifiedExpression]
+Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 11] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 20] [Qualifier]
+keys(a).
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 19] [FunctionCall]
+keys(a)
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 16] [Identifier]
+keys
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 19] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 67] [Qualifier]
+map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 66] [FunctionCall]
+map(b=>{const c=_.yw(a[b]);return`${b}:${c}`})
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 23] [Identifier]
+map
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 66] [Signature]
+(b=>{const c=_.yw(a[b]);return`${b}:${c}`})
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 65] [ArrowFunction]
+b=>{const c=_.yw(a[b]);return`${b}:${c}`}
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Signature]
+b
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 65] [Procedure]
+{const c=_.yw(a[b]);return`${b}:${c}`}
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 46] [VariableDeclaration]
+const c=_.yw(a[b])
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 46] [Variable]
+c=_.yw(a[b])
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 35] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 36] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 46] [QualifiedExpression]
+_.yw(a[b])
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 38] [Qualifier]
+_.
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Identifier]
+_
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 38] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 46] [FunctionCall]
+yw(a[b])
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 40] [Identifier]
+yw
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 46] [Signature]
+(a[b])
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 45] [MapExpression]
+a[b]
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 42] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 45] [Bracket]
+[b]
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 44] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 64] [Return]
+return`${b}:${c}`
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 64] [LiteralTemplate]
+`${b}:${c}`
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 58] [Variable]
+${b}
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 57] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 59] [Constant]
+:
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 63] [Variable]
+${c}
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 62] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 66, end=line 1 column 67] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 76] [FunctionCall]
+join(",")
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 71] [Identifier]
+join
+---------------------------
+SourceLocation [start=line 1 column 71, end=line 1 column 76] [Signature]
+(",")
+---------------------------
+SourceLocation [start=line 1 column 72, end=line 1 column 75] [Literal]
+","
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 78] [Constant]
+}
+---------------------------

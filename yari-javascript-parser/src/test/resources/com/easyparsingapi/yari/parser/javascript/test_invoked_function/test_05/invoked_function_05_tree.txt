@@ -1,0 +1,129 @@
+[0, Javascript] (function(w,d,s,l,i) { w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);}) (window, document, 'script', 'dataLayer', 'GTM-KJHB49');
+ [1, InvokedFunction] (function(w,d,s,l,i) { w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);}) (window, document, 'script', 'dataLayer', 'GTM-KJHB49')
+  [2, Definition] (function(w,d,s,l,i) { w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);})
+   [3, FunctionDeclaration] function(w,d,s,l,i) { w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);}
+    [4, Signature] (w,d,s,l,i)
+     [5, Identifier] w
+     [5, Identifier] d
+     [5, Identifier] s
+     [5, Identifier] l
+     [5, Identifier] i
+    [4, Procedure] { w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);}
+     [5, Assignment] w[l]=w[l]||[]
+      [6, MapExpression] w[l]
+       [7, Identifier] w
+       [7, Bracket] [l]
+        [8, Identifier] l
+      [6, Operator] =
+      [6, Infix] w[l]||[]
+       [7, MapExpression] w[l]
+        [8, Identifier] w
+        [8, Bracket] [l]
+         [9, Identifier] l
+       [7, Operator] ||
+       [7, ArrayDeclaration] []
+     [5, QualifiedExpression] w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+      [6, Qualifier] w[l].
+       [7, MapExpression] w[l]
+        [8, Identifier] w
+        [8, Bracket] [l]
+         [9, Identifier] l
+       [7, Operator] .
+      [6, FunctionCall] push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+       [7, Identifier] push
+       [7, Signature] ({'gtm.start': new Date().getTime(),event:'gtm.js'})
+        [8, ObjectDeclaration] {'gtm.start': new Date().getTime(),event:'gtm.js'}
+         [9, FieldDeclaration] 'gtm.start': new Date().getTime()
+          [10, Literal] 'gtm.start'
+          [10, QualifiedExpression] new Date().getTime()
+           [11, Qualifier] new Date().
+            [12, New] new Date()
+             [13, Identifier] Date
+             [13, Signature] ()
+            [12, Operator] .
+           [11, FunctionCall] getTime()
+            [12, Identifier] getTime
+            [12, Signature] ()
+         [9, FieldDeclaration] event:'gtm.js'
+          [10, Identifier] event
+          [10, Literal] 'gtm.js'
+     [5, VariableDeclaration] var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''
+      [6, Type] var
+      [6, Variable] f=d.getElementsByTagName(s)[0]
+       [7, Identifier] f
+       [7, Operator] =
+       [7, QualifiedExpression] d.getElementsByTagName(s)[0]
+        [8, Qualifier] d.
+         [9, Identifier] d
+         [9, Operator] .
+        [8, MapExpression] getElementsByTagName(s)[0]
+         [9, FunctionCall] getElementsByTagName(s)
+          [10, Identifier] getElementsByTagName
+          [10, Signature] (s)
+           [11, Identifier] s
+         [9, Bracket] [0]
+          [10, Literal] 0
+      [6, Variable] j=d.createElement(s)
+       [7, Identifier] j
+       [7, Operator] =
+       [7, QualifiedExpression] d.createElement(s)
+        [8, Qualifier] d.
+         [9, Identifier] d
+         [9, Operator] .
+        [8, FunctionCall] createElement(s)
+         [9, Identifier] createElement
+         [9, Signature] (s)
+          [10, Identifier] s
+      [6, Variable] dl=l!='dataLayer'?'&l='+l:''
+       [7, Identifier] dl
+       [7, Operator] =
+       [7, Ternary] l!='dataLayer'?'&l='+l:''
+        [8, Infix] l!='dataLayer'
+         [9, Identifier] l
+         [9, Operator] !=
+         [9, Literal] 'dataLayer'
+        [8, Infix] '&l='+l
+         [9, Literal] '&l='
+         [9, Operator] +
+         [9, Identifier] l
+        [8, Literal] ''
+     [5, Assignment] j.async=true
+      [6, QualifiedExpression] j.async
+       [7, Qualifier] j.
+        [8, Identifier] j
+        [8, Operator] .
+       [7, Identifier] async
+      [6, Operator] =
+      [6, Literal] true
+     [5, Assignment] j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl
+      [6, QualifiedExpression] j.src
+       [7, Qualifier] j.
+        [8, Identifier] j
+        [8, Operator] .
+       [7, Identifier] src
+      [6, Operator] =
+      [6, Infix] 'https://www.googletagmanager.com/gtm.js?id='+i+dl
+       [7, Infix] 'https://www.googletagmanager.com/gtm.js?id='+i
+        [8, Literal] 'https://www.googletagmanager.com/gtm.js?id='
+        [8, Operator] +
+        [8, Identifier] i
+       [7, Operator] +
+       [7, Identifier] dl
+     [5, QualifiedExpression] f.parentNode.insertBefore(j,f)
+      [6, Qualifier] f.
+       [7, Identifier] f
+       [7, Operator] .
+      [6, Qualifier] parentNode.
+       [7, Identifier] parentNode
+       [7, Operator] .
+      [6, FunctionCall] insertBefore(j,f)
+       [7, Identifier] insertBefore
+       [7, Signature] (j,f)
+        [8, Identifier] j
+        [8, Identifier] f
+  [2, Signature] (window, document, 'script', 'dataLayer', 'GTM-KJHB49')
+   [3, Identifier] window
+   [3, Identifier] document
+   [3, Literal] 'script'
+   [3, Literal] 'dataLayer'
+   [3, Literal] 'GTM-KJHB49'

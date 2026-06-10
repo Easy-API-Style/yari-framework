@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 4, end=line 5 column 11] [Xml]
+<test>\\n <div>\\n blabla\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 5 column 11] [Tag]
+<test>\\n <div>\\n blabla\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 10] [TagHead]
+<test>
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [TagName]
+test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Name]
+test
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 4 column 12] [TagBody]
+<div>\\n blabla\\n </div>
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 4 column 12] [Tag]
+<div>\\n blabla\\n </div>
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 11] [TagHead]
+<div>
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 10] [TagName]
+div
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 10] [Name]
+div
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 15] [TagBody]
+blabla
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 15] [Text]
+blabla
+---------------------------
+SourceLocation [start=line 4 column 6, end=line 4 column 12] [TagFoot]
+</div>
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 11] [TagName]
+div
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 11] [Name]
+div
+---------------------------
+SourceLocation [start=line 5 column 4, end=line 5 column 11] [TagFoot]
+</test>
+---------------------------
+SourceLocation [start=line 5 column 6, end=line 5 column 10] [TagName]
+test
+---------------------------
+SourceLocation [start=line 5 column 6, end=line 5 column 10] [Name]
+test
+---------------------------

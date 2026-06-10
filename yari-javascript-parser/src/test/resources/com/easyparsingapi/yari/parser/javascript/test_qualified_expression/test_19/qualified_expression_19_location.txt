@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 31] [JavascriptNodeUnit]
+obj?.['prop' + 'Name'].last.ok
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 31] [QualifiedExpression]
+obj?.['prop' + 'Name'].last.ok
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Qualifier]
+obj?.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Identifier]
+obj
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 6] [Operator]
+?.
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 24] [Qualifier]
+['prop' + 'Name'].
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 23] [MapExpression]
+['prop' + 'Name']
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 6] [Empty]
+
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 23] [Bracket]
+['prop' + 'Name']
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 22] [Infix]
+'prop' + 'Name'
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 13] [Literal]
+'prop'
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 22] [Literal]
+'Name'
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 29] [Qualifier]
+last.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 28] [Identifier]
+last
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 31] [Identifier]
+ok
+---------------------------

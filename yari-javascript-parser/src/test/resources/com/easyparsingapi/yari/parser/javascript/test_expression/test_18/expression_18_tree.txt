@@ -1,0 +1,18 @@
+[0, JavascriptNodeUnit] (function(x) { })(10).toto().titi
+ [1, QualifiedExpression] (function(x) { })(10).toto().titi
+  [2, Qualifier] (function(x) { })(10).
+   [3, InvokedFunction] (function(x) { })(10)
+    [4, Definition] (function(x) { })
+     [5, FunctionDeclaration] function(x) { }
+      [6, Signature] (x)
+       [7, Identifier] x
+      [6, Procedure] { }
+    [4, Signature] (10)
+     [5, Literal] 10
+   [3, Operator] .
+  [2, Qualifier] toto().
+   [3, FunctionCall] toto()
+    [4, Identifier] toto
+    [4, Signature] ()
+   [3, Operator] .
+  [2, Identifier] titi

@@ -1,0 +1,69 @@
+SourceLocation [start=line 2 column 24, end=line 2 column 33] [Javascript]
+// rename
+---------------------------
+SourceLocation [start=line 5 column 28, end=line 5 column 37] [Javascript]
+// rename
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 8 column 14] [Javascript]
+let {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata;
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 8 column 13] [VariableDeclaration]
+let {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 8 column 13] [Variable]
+{\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 8 column 2] [DestructuringObject]
+{\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 22] [Field]
+title: englishTitle
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 8] [Identifier]
+title
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 22] [Identifier]
+: englishTitle
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 7 column 4] [Field]
+translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 15] [Identifier]
+translations
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 7 column 4] [DestructuringArray]
+: [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 6 column 6] [Value]
+{\\n title: localeTitle, // rename\\n }
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 6 column 6] [DestructuringObject]
+{\\n title: localeTitle, // rename\\n }
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 26] [Field]
+title: localeTitle
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 13] [Identifier]
+title
+---------------------------
+SourceLocation [start=line 5 column 13, end=line 5 column 26] [Identifier]
+: localeTitle
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 5] [Empty]
+
+---------------------------
+SourceLocation [start=line 7 column 3, end=line 7 column 3] [Empty]
+
+---------------------------
+SourceLocation [start=line 8 column 1, end=line 8 column 1] [Empty]
+
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 4] [Operator]
+=
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 13] [Identifier]
+metadata
+---------------------------

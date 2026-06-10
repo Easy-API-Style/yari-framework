@@ -1,0 +1,18 @@
+[0, Javascript] const {a: aa = 10, b: bb = 5} = {a: 3}
+ [1, VariableDeclaration] const {a: aa = 10, b: bb = 5} = {a: 3}
+  [2, Type] const
+  [2, Variable] {a: aa = 10, b: bb = 5} = {a: 3}
+   [3, DestructuringObject] {a: aa = 10, b: bb = 5}
+    [4, Field] a: aa = 10
+     [5, Identifier] a
+     [5, Identifier] : aa
+     [5, Literal] = 10
+    [4, Field] b: bb = 5
+     [5, Identifier] b
+     [5, Identifier] : bb
+     [5, Literal] = 5
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 3}
+    [4, FieldDeclaration] a: 3
+     [5, Identifier] a
+     [5, Literal] 3

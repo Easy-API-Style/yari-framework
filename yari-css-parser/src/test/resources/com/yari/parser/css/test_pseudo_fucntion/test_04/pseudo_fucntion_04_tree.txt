@@ -1,0 +1,25 @@
+[0, Css] :host(h1) {\\n color: red;\\n }\\n\\n :host(#shadow-dom-host) {\\n border: 2px dashed blue;\\n }
+ [1, RuleSet] :host(h1) {\\n color: red;\\n }
+  [2, PseudoFunctionSelector] :host(h1)
+   [3, PseudoClassSelector] :host
+    [4, Identifier] host
+   [3, Signature] (h1)
+    [4, ElementSelector] h1
+  [2, Block] {\\n color: red;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red
+ [1, RuleSet] :host(#shadow-dom-host) {\\n border: 2px dashed blue;\\n }
+  [2, PseudoFunctionSelector] :host(#shadow-dom-host)
+   [3, PseudoClassSelector] :host
+    [4, Identifier] host
+   [3, Signature] (#shadow-dom-host)
+    [4, IdSelector] #shadow-dom-host
+     [5, Identifier] shadow-dom-host
+  [2, Block] {\\n border: 2px dashed blue;\\n }
+   [3, Property] border: 2px dashed blue
+    [4, Identifier] border
+    [4, ListValue] 2px dashed blue
+     [5, Identifier] 2px
+     [5, Identifier] dashed
+     [5, Identifier] blue

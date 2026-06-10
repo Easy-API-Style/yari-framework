@@ -1,0 +1,33 @@
+[0, Css] .xfBIrd:not(+ .SKI7Bc.YoItGe::before) {\\n background:#062e6f;\\n background:var(--gm3-sys-color-on-primary,#062e6f)\\n }
+ [1, RuleSet] .xfBIrd:not(+ .SKI7Bc.YoItGe::before) {\\n background:#062e6f;\\n background:var(--gm3-sys-color-on-primary,#062e6f)\\n }
+  [2, CombinatorSelector] .xfBIrd:not(+ .SKI7Bc.YoItGe::before)
+   [3, ClassSelector] .xfBIrd
+    [4, Identifier] xfBIrd
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :not(+ .SKI7Bc.YoItGe::before)
+    [4, PseudoClassSelector] :not
+     [5, Identifier] not
+    [4, Signature] (+ .SKI7Bc.YoItGe::before)
+     [5, CombinatorSelector] + .SKI7Bc.YoItGe::before
+      [6, CombinatorSelector] + .SKI7Bc.YoItGe
+       [7, PrefixSelector] + .SKI7Bc
+        [8, Operator] +
+        [8, ClassSelector] .SKI7Bc
+         [9, Identifier] SKI7Bc
+       [7, Operator] 
+       [7, ClassSelector] .YoItGe
+        [8, Identifier] YoItGe
+      [6, Operator] 
+      [6, PseudoElementSelector] ::before
+       [7, Identifier] before
+  [2, Block] {\\n background:#062e6f;\\n background:var(--gm3-sys-color-on-primary,#062e6f)\\n }
+   [3, Property] background:#062e6f
+    [4, Identifier] background
+    [4, Literal] #062e6f
+   [3, Property] background:var(--gm3-sys-color-on-primary,#062e6f)
+    [4, Identifier] background
+    [4, Function] var(--gm3-sys-color-on-primary,#062e6f)
+     [5, Identifier] var
+     [5, Signature] (--gm3-sys-color-on-primary,#062e6f)
+      [6, Identifier] --gm3-sys-color-on-primary
+      [6, Literal] #062e6f

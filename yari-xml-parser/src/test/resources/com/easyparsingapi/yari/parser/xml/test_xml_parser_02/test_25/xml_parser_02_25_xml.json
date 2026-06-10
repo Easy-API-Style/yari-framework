@@ -1,0 +1,291 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.xml.ast.Xml",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Tag",
+    "head" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagHead",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "div",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 5
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 8
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 8
+          }
+        },
+        "value" : "div"
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 9
+        }
+      }
+    },
+    "body" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagBody",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.Tag",
+        "head" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagHeadError",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+            "name" : {
+              "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+              "value" : "div",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 7
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 10
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 7
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 10
+              }
+            },
+            "value" : "div"
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 10
+            }
+          },
+          "tokens" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.xml.parser.XmlToken",
+            "text" : "<div",
+            "tag" : "BEGIN_TAG",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 6
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 10
+              }
+            }
+          } ],
+          "message" : "tag head not ending error",
+          "encountered" : "<div",
+          "failureMessage" : "tag head not ending error"
+        },
+        "body" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagBody",
+          "nodes" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.TokenError",
+            "tokens" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.xml.parser.XmlToken",
+              "text" : "<",
+              "tag" : "ERROR",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 10
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 11
+                }
+              }
+            } ],
+            "message" : "token error",
+            "encountered" : "<",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 10
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 11
+              }
+            },
+            "failureMessage" : "token error"
+          }, {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.Text",
+            "text" : "blabla",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 3,
+                "column" : 8
+              },
+              "end" : {
+                "line" : 3,
+                "column" : 14
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 10
+            },
+            "end" : {
+              "line" : 3,
+              "column" : 14
+            }
+          }
+        },
+        "foot" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagFoot",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+            "name" : {
+              "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+              "value" : "div",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 4,
+                  "column" : 8
+                },
+                "end" : {
+                  "line" : 4,
+                  "column" : 11
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 4,
+                "column" : 8
+              },
+              "end" : {
+                "line" : 4,
+                "column" : 11
+              }
+            },
+            "value" : "div"
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 4,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 4,
+              "column" : 12
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 4,
+            "column" : 12
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 6
+        },
+        "end" : {
+          "line" : 4,
+          "column" : 12
+        }
+      }
+    },
+    "foot" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagFoot",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "div",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 5,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 5,
+              "column" : 9
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 5,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 5,
+            "column" : 9
+          }
+        },
+        "value" : "div"
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 5,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 5,
+          "column" : 10
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 5,
+        "column" : 10
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 4
+    },
+    "end" : {
+      "line" : 5,
+      "column" : 10
+    }
+  }
+}

@@ -1,0 +1,97 @@
+[0, Javascript] if(Y==E)return P;if(Y==K)Y=67;else if(Y==67)Y=(D-7|12)<D&&(D+8^22)>=D?32:80;else if(Y==32)P=g,Y=80;else if(Y==80)Y=(D^7)>>4?E:4;
+ [1, If] if(Y==E)return P;
+  [2, IfBlock] if(Y==E)return P;
+   [3, Condition] (Y==E)
+    [4, Infix] Y==E
+     [5, Identifier] Y
+     [5, Operator] ==
+     [5, Identifier] E
+   [3, Procedure] return P;
+    [4, Return] return P
+     [5, Identifier] P
+ [1, If] if(Y==K)Y=67;else if(Y==67)Y=(D-7|12)<D&&(D+8^22)>=D?32:80;else if(Y==32)P=g,Y=80;else if(Y==80)Y=(D^7)>>4?E:4;
+  [2, IfBlock] if(Y==K)Y=67;
+   [3, Condition] (Y==K)
+    [4, Infix] Y==K
+     [5, Identifier] Y
+     [5, Operator] ==
+     [5, Identifier] K
+   [3, Procedure] Y=67;
+    [4, Assignment] Y=67
+     [5, Identifier] Y
+     [5, Operator] =
+     [5, Literal] 67
+  [2, ElseIfBlock] else if(Y==67)Y=(D-7|12)<D&&(D+8^22)>=D?32:80;
+   [3, Condition] (Y==67)
+    [4, Infix] Y==67
+     [5, Identifier] Y
+     [5, Operator] ==
+     [5, Literal] 67
+   [3, Procedure] Y=(D-7|12)<D&&(D+8^22)>=D?32:80;
+    [4, Assignment] Y=(D-7|12)<D&&(D+8^22)>=D?32:80
+     [5, Identifier] Y
+     [5, Operator] =
+     [5, Ternary] (D-7|12)<D&&(D+8^22)>=D?32:80
+      [6, Infix] (D-7|12)<D&&(D+8^22)>=D
+       [7, Infix] (D-7|12)<D
+        [8, Parenthesis] (D-7|12)
+         [9, Infix] D-7|12
+          [10, Identifier] D
+          [10, Operator] -
+          [10, Infix] 7|12
+           [11, Literal] 7
+           [11, Operator] |
+           [11, Literal] 12
+        [8, Operator] <
+        [8, Identifier] D
+       [7, Operator] &&
+       [7, Infix] (D+8^22)>=D
+        [8, Parenthesis] (D+8^22)
+         [9, Infix] D+8^22
+          [10, Identifier] D
+          [10, Operator] +
+          [10, Infix] 8^22
+           [11, Literal] 8
+           [11, Operator] ^
+           [11, Literal] 22
+        [8, Operator] >=
+        [8, Identifier] D
+      [6, Literal] 32
+      [6, Literal] 80
+  [2, ElseIfBlock] else if(Y==32)P=g,Y=80;
+   [3, Condition] (Y==32)
+    [4, Infix] Y==32
+     [5, Identifier] Y
+     [5, Operator] ==
+     [5, Literal] 32
+   [3, Procedure] P=g,Y=80;
+    [4, Sequence] P=g,Y=80
+     [5, Assignment] P=g
+      [6, Identifier] P
+      [6, Operator] =
+      [6, Identifier] g
+     [5, Assignment] Y=80
+      [6, Identifier] Y
+      [6, Operator] =
+      [6, Literal] 80
+  [2, ElseIfBlock] else if(Y==80)Y=(D^7)>>4?E:4;
+   [3, Condition] (Y==80)
+    [4, Infix] Y==80
+     [5, Identifier] Y
+     [5, Operator] ==
+     [5, Literal] 80
+   [3, Procedure] Y=(D^7)>>4?E:4;
+    [4, Assignment] Y=(D^7)>>4?E:4
+     [5, Identifier] Y
+     [5, Operator] =
+     [5, Ternary] (D^7)>>4?E:4
+      [6, Infix] (D^7)>>4
+       [7, Parenthesis] (D^7)
+        [8, Infix] D^7
+         [9, Identifier] D
+         [9, Operator] ^
+         [9, Literal] 7
+       [7, Operator] >>
+       [7, Literal] 4
+      [6, Identifier] E
+      [6, Literal] 4

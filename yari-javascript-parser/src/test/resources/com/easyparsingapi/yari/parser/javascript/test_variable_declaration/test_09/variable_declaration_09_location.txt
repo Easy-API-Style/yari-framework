@@ -1,0 +1,126 @@
+SourceLocation [start=line 1 column 1, end=line 5 column 46] [Javascript]
+var uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '');
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 5 column 45] [VariableDeclaration]
+var uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 45] [Variable]
+uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 21] [Identifier]
+uniqueIdentifier
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Operator]
+=
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 5 column 45] [Infix]
+source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 4 column 5] [Infix]
+source.uniqueId +\\n source.name +\\n '_'
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 3 column 13] [Infix]
+source.uniqueId +\\n source.name
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 17] [QualifiedExpression]
+source.uniqueId
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 9] [Qualifier]
+source.
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 8] [Identifier]
+source
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 17] [Identifier]
+uniqueId
+---------------------------
+SourceLocation [start=line 2 column 18, end=line 2 column 19] [Operator]
++
+---------------------------
+SourceLocation [start=line 3 column 2, end=line 3 column 13] [QualifiedExpression]
+source.name
+---------------------------
+SourceLocation [start=line 3 column 2, end=line 3 column 9] [Qualifier]
+source.
+---------------------------
+SourceLocation [start=line 3 column 2, end=line 3 column 8] [Identifier]
+source
+---------------------------
+SourceLocation [start=line 3 column 8, end=line 3 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 13] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 15] [Operator]
++
+---------------------------
+SourceLocation [start=line 4 column 2, end=line 4 column 5] [Literal]
+'_'
+---------------------------
+SourceLocation [start=line 4 column 6, end=line 4 column 7] [Operator]
++
+---------------------------
+SourceLocation [start=line 5 column 2, end=line 5 column 45] [Parenthesis]
+(Array.isArray(args) ? args.join('_') : '')
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 44] [Ternary]
+Array.isArray(args) ? args.join('_') : ''
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 22] [QualifiedExpression]
+Array.isArray(args)
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 9] [Qualifier]
+Array.
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 8] [Identifier]
+Array
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 22] [FunctionCall]
+isArray(args)
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 16] [Identifier]
+isArray
+---------------------------
+SourceLocation [start=line 5 column 16, end=line 5 column 22] [Signature]
+(args)
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 21] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 39] [QualifiedExpression]
+args.join('_')
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 30] [Qualifier]
+args.
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 29] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 5 column 29, end=line 5 column 30] [Operator]
+.
+---------------------------
+SourceLocation [start=line 5 column 30, end=line 5 column 39] [FunctionCall]
+join('_')
+---------------------------
+SourceLocation [start=line 5 column 30, end=line 5 column 34] [Identifier]
+join
+---------------------------
+SourceLocation [start=line 5 column 34, end=line 5 column 39] [Signature]
+('_')
+---------------------------
+SourceLocation [start=line 5 column 35, end=line 5 column 38] [Literal]
+'_'
+---------------------------
+SourceLocation [start=line 5 column 42, end=line 5 column 44] [Literal]
+''
+---------------------------

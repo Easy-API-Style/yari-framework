@@ -1,0 +1,24 @@
+[0, Javascript] class A { static fieldA = 'A.fieldA'; static fieldB = 'A.fieldB';}class B extends A { static { let x = super.fieldA; }}
+ [1, ClassDeclaration] class A { static fieldA = 'A.fieldA'; static fieldB = 'A.fieldB';}
+  [2, Identifier] A
+  [2, ClassFieldDeclaration] static fieldA = 'A.fieldA'
+   [3, Identifier] fieldA
+   [3, Literal] = 'A.fieldA'
+  [2, ClassFieldDeclaration] static fieldB = 'A.fieldB'
+   [3, Identifier] fieldB
+   [3, Literal] = 'A.fieldB'
+ [1, ClassDeclaration] class B extends A { static { let x = super.fieldA; }}
+  [2, Identifier] B
+  [2, Identifier] extends A
+  [2, StaticProcedure] static { let x = super.fieldA; }
+   [3, Procedure] { let x = super.fieldA; }
+    [4, VariableDeclaration] let x = super.fieldA
+     [5, Type] let
+     [5, Variable] x = super.fieldA
+      [6, Identifier] x
+      [6, Operator] =
+      [6, QualifiedExpression] super.fieldA
+       [7, Qualifier] super.
+        [8, Identifier] super
+        [8, Operator] .
+       [7, Identifier] fieldA

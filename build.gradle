@@ -1,0 +1,254 @@
+plugins {
+    id 'com.diffplug.spotless' version '7.0.2' apply false
+}
+
+def projectInfo = newProjectInfo()
+
+apply plugin: 'java'
+
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+subprojects {
+    // ############ GRADLE PLUGINS ############
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'signing'
+    apply plugin: 'eclipse'
+    apply plugin: 'com.diffplug.spotless'
+    // ############ LICENSE HEADERS ############
+    // ./gradlew spotlessApply  → write/refresh license headers in every source file
+    // ./gradlew spotlessCheck  → fail the build if any header is missing/outdated (CI)
+    spotless {
+        java {
+            target 'src/main/**/*.java', 'src/test/**/*.java'
+            licenseHeaderFile rootProject.file('config/license-header.txt')
+        }
+        format 'jsAndCss', {
+            target 'src/main/**/*.js', 'src/main/**/*.css'
+            // Delimiter matches either:
+            //  - /\*\* : a JSDoc block (/** ... */) which uses double-star, distinct
+            //            from the license /* which uses a single star — so JSDoc is
+            //            treated as content, not as part of the license header zone.
+            //  - [^/\s*] : any line whose first char is not '/', whitespace or '*'
+            //              i.e. the first real code line (export, const, class, …).
+            // Together this lets Spotless converge without swallowing JSDoc comments.
+            licenseHeaderFile rootProject.file('config/license-header.txt'),
+                                                '(/\\*\\*|[^/\\s*])'
+        }
+        format 'htmlAndXml', {
+            target 'src/main/**/*.html', 'src/main/**/*.xml'
+            // Match the first '<' that is NOT followed by '?', '!' or '-' — i.e. the
+            // first real opening tag, skipping <?xml, <!DOCTYPE and <!-- (our own
+            // license comment). Without this lookahead the regex would re-match the
+            // header itself and spotless would loop forever.
+            licenseHeaderFile rootProject.file('config/license-header-html.txt'),
+                                                '<(?![?!-])'
+        }
+    }
+    // ############ JAVA ############
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+        withSourcesJar()
+        withJavadocJar()
+    }
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = "UTF-8"
+    // ############ MAVEN ############
+    project.group = projectInfo.getGroup()
+    project.version = projectInfo.getVersion()
+    jar {
+        manifest {
+            attributes('Implementation-Title': project.getName(),
+                       'Implementation-Version': project.getVersion())
+        }
+    }
+    // ############ DEPENDENCY ############
+    configurations {
+      sandboxOnly
+    }
+    dependencies {
+        implementation 'com.google.guava:guava:33.5.0-jre'
+
+        implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.1'
+        implementation 'com.fasterxml.jackson.core:jackson-annotations:2.21'
+       
+        implementation 'ch.qos.logback:logback-classic:1.5.32'
+        implementation 'org.slf4j:slf4j-api:2.0.17'
+       
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:6.0.3'
+        testImplementation 'org.junit.jupiter:junit-jupiter-engine:6.0.3'
+        testImplementation 'org.junit.vintage:junit-vintage-engine:6.0.3'
+        testImplementation 'org.junit.platform:junit-platform-launcher:6.0.3'
+    }
+    // ################## TEST ##################
+    test {
+        useJUnitPlatform()
+    }
+    // ################## ECIPSE ##################
+    eclipse {
+        classpath {
+            downloadSources = true
+            downloadJavadoc = true
+        }
+    }
+    // ################## TASK ##################
+    // Capture project coordinates at configuration time so doLast closures stay
+    // configuration-cache-safe (no Task.project access at execution time, which
+    // is forbidden in Gradle 10).
+    def projectGav = "${project.group}:${project.name}:${project.version}"
+    def buildDirProvider = project.layout.buildDirectory
+    tasks.register('version') {
+        doLast {
+            println projectGav
+        }
+    }
+    tasks.register('versionInfo') {
+        doLast {
+            def dir = buildDirProvider.get().asFile
+            if (!dir.exists()) dir.mkdirs()
+
+            def file = new java.io.File(dir, "versionInfo.txt")
+            file.text = projectGav
+        }
+    }
+    // ############ MAVEN CENTRAL ############
+    def mavenLocalRepoPath = "${System.getProperty('user.home')}/.m2/repository/${project.group.toString().replace('.', '/')}/${project.name}/${project.version}"
+    def gavRelPath = "${project.group.toString().replace('.', '/')}/${project.name}/${project.version}"
+    tasks.register('createMavenCentralBundle', Zip) {
+        from(mavenLocalRepoPath) {
+            into gavRelPath
+        }
+        archiveFileName = "${projectGav}.zip"
+        destinationDirectory = layout.buildDirectory
+        doFirst {
+            new File(mavenLocalRepoPath).listFiles()
+                ?.findAll { it.name.endsWith('.pom') || it.name.endsWith('.module') || it.name.endsWith('.jar') }
+                ?.each { f ->
+                    ant.checksum algorithm: 'MD5',   fileext: '.md5',  file: f
+                    ant.checksum algorithm: 'SHA-1', fileext: '.sha1', file: f
+                }
+        }
+    }
+    publishToMavenLocal.finalizedBy 'createMavenCentralBundle'
+    // ############ PUBLISHING ############
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                groupId = project.group.toString()
+                artifactId = project.name
+                version = project.version.toString()
+                from components.java
+                
+                pom {
+                    name = project.name
+                    description = 'Yari framework: ${project.name}'
+                    url = 'https://easyparsingapi.com/'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'easyapi'
+                            name = 'easy api'
+                            email = 'easy.api.contact@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:https://github.com/Easy-API-Style/yari-framework.git'
+                        developerConnection = 'scm:git:ssh://github.com/Easy-API-Style/yari-framework.git'
+                        url = 'https://github.com/Easy-API-Style/yari-framework'
+                    }
+                }
+            }
+        }
+    }
+    signing {
+        // Skip signing on GitHub Actions: the signing key is not present on the runner,
+        // and reading it at configuration time would break `./gradlew test` in CI.
+        if (!System.getenv('GITHUB_ACTIONS')) {
+            def signingPassword = findProperty("signing.password")
+            def signingKey = file("${gradle.gradleUserHomeDir}/signingKey").getText('UTF-8')
+            useInMemoryPgpKeys(signingKey, signingPassword)
+            sign publishing.publications.mavenJava
+        }
+    }
+}
+
+// ***************
+// * ProjectInfo *
+// ***************
+def newProjectInfo() {
+    // Run a git command silently: capture stdout, swallow stderr, return '' on
+    // non-zero exit. Without this, `git describe` on a tag-less checkout dumps
+    // "fatal: No names found..." on every build.
+    def execute = { command ->
+        def proc = command.execute(null, project.rootDir)
+        def out = new StringBuffer()
+        def err = new StringBuffer()
+        proc.consumeProcessOutput(out, err)
+        proc.waitFor()
+        return proc.exitValue() == 0 ? out.toString().trim() : ''
+    }
+    def tag = execute("git describe --tags")
+    def hashCommit = execute("git describe --always")
+    def lastTag = execute("git describe --abbrev=0 --tags")
+    if (!lastTag) {
+        lastTag = "0.0.0"
+    }
+    def status = !tag || tag.contains(hashCommit) ? "dev" : "releases"
+    // def version = !tag || tag.contains(hashCommit) ? lastTag + "-dev." + hashCommit : tag
+    def version = !tag || tag.contains(hashCommit) ? lastTag + "-SNAPSHOT" : tag
+    println("Build tag: ${tag}")
+    println("Build status: ${status}")
+    println("Build version: ${version}")
+    println("Build hashCommit: ${hashCommit}")
+    println("Build lastTag: ${lastTag}")
+    return new ProjectInfo(tag, "com.easyparsingapi", version, status)
+}
+
+class ProjectInfo {
+
+     private String tag;
+     private String group;
+     private String version;
+     private String status;
+     
+     public ProjectInfo(String tag, 
+                        String group, 
+                        String version, 
+                        String status) {
+         super();
+         this.tag = tag;
+         this.group = group;
+         this.version = version;
+         this.status = status;
+     } 
+        
+     String getTag() {
+         return this.tag;
+     }
+        
+     String getGroup() {
+         return this.group;
+     }
+     
+     String getVersion() {
+         return this.version;
+     }
+     
+     String getStatus() {
+         return this.status;
+     }
+     
+}

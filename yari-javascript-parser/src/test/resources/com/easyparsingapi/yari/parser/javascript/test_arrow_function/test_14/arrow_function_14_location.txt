@@ -1,0 +1,42 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [Javascript]
+const func = () => ({ foo: 1 });
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [VariableDeclaration]
+const func = () => ({ foo: 1 });
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 33] [Variable]
+func = () => ({ foo: 1 });
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 11] [Identifier]
+func
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 33] [ArrowFunction]
+() => ({ foo: 1 });
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 16] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 33] [Procedure]
+({ foo: 1 });
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 32] [Parenthesis]
+({ foo: 1 })
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 31] [ObjectDeclaration]
+{ foo: 1 }
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 29] [FieldDeclaration]
+foo: 1
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Literal]
+1
+---------------------------

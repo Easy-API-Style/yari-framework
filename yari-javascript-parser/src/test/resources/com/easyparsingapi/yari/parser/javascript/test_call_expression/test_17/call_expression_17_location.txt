@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Javascript]
+myTag`That ${person} is a ${age}.`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [TagFunctionCall]
+myTag`That ${person} is a ${age}.`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Identifier]
+myTag
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 35] [LiteralTemplate]
+`That ${person} is a ${age}.`
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 12] [Constant]
+That 
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 21] [Variable]
+${person}
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 20] [Identifier]
+person
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 27] [Constant]
+ is a 
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 33] [Variable]
+${age}
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 32] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 34] [Constant]
+.
+---------------------------

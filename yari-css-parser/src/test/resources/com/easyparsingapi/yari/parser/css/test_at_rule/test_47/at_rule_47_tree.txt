@@ -1,0 +1,35 @@
+[0, Css] @supports (x: attr(x type(*))) {\\n /* Browser has modern attr() support */\\n }\\n\\n @supports not (x: attr(x type(*))) {\\n /* Browser does not have modern attr() support */\\n }
+ [1, AtRule] @supports (x: attr(x type(*))) {\\n /* Browser has modern attr() support */\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (x: attr(x type(*)))
+   [3, Property] x: attr(x type(*))
+    [4, Identifier] x
+    [4, Function] attr(x type(*))
+     [5, Identifier] attr
+     [5, Signature] (x type(*))
+      [6, ListValue] x type(*)
+       [7, Identifier] x
+       [7, Function] type(*)
+        [8, Identifier] type
+        [8, Signature] (*)
+         [9, Universal] *
+  [2, Block] {\\n /* Browser has modern attr() support */\\n }
+ [1, AtRule] @supports not (x: attr(x type(*))) {\\n /* Browser does not have modern attr() support */\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Prefix] not (x: attr(x type(*)))
+   [3, Operator] not
+   [3, Parenthesis] (x: attr(x type(*)))
+    [4, Property] x: attr(x type(*))
+     [5, Identifier] x
+     [5, Function] attr(x type(*))
+      [6, Identifier] attr
+      [6, Signature] (x type(*))
+       [7, ListValue] x type(*)
+        [8, Identifier] x
+        [8, Function] type(*)
+         [9, Identifier] type
+         [9, Signature] (*)
+          [10, Universal] *
+  [2, Block] {\\n /* Browser does not have modern attr() support */\\n }

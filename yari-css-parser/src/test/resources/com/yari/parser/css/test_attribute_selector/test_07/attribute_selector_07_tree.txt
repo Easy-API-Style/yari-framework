@@ -1,0 +1,15 @@
+[0, Css] a[href*="cAsE" s] {\\n color: pink;\\n }
+ [1, RuleSet] a[href*="cAsE" s] {\\n color: pink;\\n }
+  [2, CombinatorSelector] a[href*="cAsE" s]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [href*="cAsE" s]
+    [4, Expression] href*="cAsE" s
+     [5, Identifier] href
+     [5, Operator] *=
+     [5, Literal] "cAsE"
+     [5, Identifier] s
+  [2, Block] {\\n color: pink;\\n }
+   [3, Property] color: pink
+    [4, Identifier] color
+    [4, Identifier] pink

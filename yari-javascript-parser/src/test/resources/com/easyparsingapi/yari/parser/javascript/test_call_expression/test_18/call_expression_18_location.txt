@@ -1,0 +1,48 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 30] [Javascript]
+console.log.bind(1, 2)`Hello`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 30] [QualifiedExpression]
+console.log.bind(1, 2)`Hello`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 13] [Qualifier]
+log.
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 30] [TagFunctionCall]
+bind(1, 2)`Hello`
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 23] [FunctionCall]
+bind(1, 2)
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 17] [Identifier]
+bind
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 23] [Signature]
+(1, 2)
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Literal]
+2
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 30] [LiteralTemplate]
+`Hello`
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 29] [Constant]
+Hello
+---------------------------

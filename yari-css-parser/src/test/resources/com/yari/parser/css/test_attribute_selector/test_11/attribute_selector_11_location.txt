@@ -1,0 +1,63 @@
+SourceLocation [start=line 1 column 3, end=line 4 column 4] [Css]
+ol[type="a"]:first-child {\\n list-style-type: lower-alpha;\\n background: red;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 4 column 4] [RuleSet]
+ol[type="a"]:first-child {\\n list-style-type: lower-alpha;\\n background: red;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 27] [CombinatorSelector]
+ol[type="a"]:first-child
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 15] [CombinatorSelector]
+ol[type="a"]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 5] [ElementSelector]
+ol
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 5] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [AttributeSelector]
+[type="a"]
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 14] [Expression]
+type="a"
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 10] [Identifier]
+type
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 14] [Literal]
+"a"
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 15] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 27] [PseudoClassSelector]
+:first-child
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 27] [Identifier]
+first-child
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 4 column 4] [Block]
+{\\n list-style-type: lower-alpha;\\n background: red;\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 33] [Property]
+list-style-type: lower-alpha
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 20] [Identifier]
+list-style-type
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 33] [Identifier]
+lower-alpha
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 20] [Property]
+background: red
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 15] [Identifier]
+background
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 20] [Identifier]
+red
+---------------------------

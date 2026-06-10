@@ -1,0 +1,14 @@
+[0, Javascript] void 2 == "2"; // renvoie false\\nvoid (2 === "2");
+ [1, Infix] void 2 == "2"
+  [2, Prefix] void 2
+   [3, Operator] void
+   [3, Literal] 2
+  [2, Operator] ==
+  [2, Literal] "2"
+ [1, Prefix] void (2 === "2")
+  [2, Operator] void
+  [2, Parenthesis] (2 === "2")
+   [3, Infix] 2 === "2"
+    [4, Literal] 2
+    [4, Operator] ===
+    [4, Literal] "2"

@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [Javascript]
+throw a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [Throw]
+throw a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 49] [Sequence]
+a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 41] [Assignment]
+a=new U("AUTH_INVALID",{dbName:a})
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 41] [New]
+new U("AUTH_INVALID",{dbName:a})
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Identifier]
+U
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 41] [Signature]
+("AUTH_INVALID",{dbName:a})
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 29] [Literal]
+"AUTH_INVALID"
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 40] [ObjectDeclaration]
+{dbName:a}
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 39] [FieldDeclaration]
+dbName:a
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 37] [Identifier]
+dbName
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 39] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 47] [FunctionCall]
+Bg(a)
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 44] [Identifier]
+Bg
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 47] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 46] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 49] [Identifier]
+a
+---------------------------

@@ -1,0 +1,12 @@
+[0, Css] ::slotted(.content) {\\n background-color: aqua;\\n }
+ [1, RuleSet] ::slotted(.content) {\\n background-color: aqua;\\n }
+  [2, PseudoFunctionSelector] ::slotted(.content)
+   [3, PseudoElementSelector] ::slotted
+    [4, Identifier] slotted
+   [3, Signature] (.content)
+    [4, ClassSelector] .content
+     [5, Identifier] content
+  [2, Block] {\\n background-color: aqua;\\n }
+   [3, Property] background-color: aqua
+    [4, Identifier] background-color
+    [4, Identifier] aqua

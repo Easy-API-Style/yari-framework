@@ -1,0 +1,11 @@
+[0, Javascript] export { variable1 as name1, variable2 as name2, nameN }
+ [1, Export] export { variable1 as name1, variable2 as name2, nameN }
+  [2, ExportBlock] { variable1 as name1, variable2 as name2, nameN }
+   [3, ExportReference] variable1 as name1
+    [4, Identifier] variable1
+    [4, Identifier] as name1
+   [3, ExportReference] variable2 as name2
+    [4, Identifier] variable2
+    [4, Identifier] as name2
+   [3, ExportReference] nameN
+    [4, Identifier] nameN

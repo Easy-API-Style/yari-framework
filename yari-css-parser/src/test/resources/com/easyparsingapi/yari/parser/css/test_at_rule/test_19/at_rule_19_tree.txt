@@ -1,0 +1,47 @@
+[0, Css] @font-face {\\n font-family: "Trickster";\\n src:\\n local("Trickster"),\\n url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),\\n url("trickster-outline.otf") format("opentype"),\\n url("trickster-outline.woff") format("woff");\\n }
+ [1, AtRule] @font-face {\\n font-family: "Trickster";\\n src:\\n local("Trickster"),\\n url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),\\n url("trickster-outline.otf") format("opentype"),\\n url("trickster-outline.woff") format("woff");\\n }
+  [2, AtRuleName] @font-face
+   [3, Identifier] font-face
+  [2, ListParameter] {
+  [2, Block] {\\n font-family: "Trickster";\\n src:\\n local("Trickster"),\\n url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),\\n url("trickster-outline.otf") format("opentype"),\\n url("trickster-outline.woff") format("woff");\\n }
+   [3, Property] font-family: "Trickster"
+    [4, Identifier] font-family
+    [4, Literal] "Trickster"
+   [3, Property] src:\\n local("Trickster"),\\n url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),\\n url("trickster-outline.otf") format("opentype"),\\n url("trickster-outline.woff") format("woff")
+    [4, Identifier] src
+    [4, ListValue] local("Trickster"),\\n url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),\\n url("trickster-outline.otf") format("opentype"),\\n url("trickster-outline.woff") format("woff")
+     [5, Function] local("Trickster")
+      [6, Identifier] local
+      [6, Signature] ("Trickster")
+       [7, Literal] "Trickster"
+     [5, ListValue] url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1)
+      [6, Function] url("trickster-COLRv1.otf")
+       [7, Identifier] url
+       [7, Signature] ("trickster-COLRv1.otf")
+        [8, Literal] "trickster-COLRv1.otf"
+      [6, Function] format("opentype")
+       [7, Identifier] format
+       [7, Signature] ("opentype")
+        [8, Literal] "opentype"
+      [6, Function] tech(color-COLRv1)
+       [7, Identifier] tech
+       [7, Signature] (color-COLRv1)
+        [8, Identifier] color-COLRv1
+     [5, ListValue] url("trickster-outline.otf") format("opentype")
+      [6, Function] url("trickster-outline.otf")
+       [7, Identifier] url
+       [7, Signature] ("trickster-outline.otf")
+        [8, Literal] "trickster-outline.otf"
+      [6, Function] format("opentype")
+       [7, Identifier] format
+       [7, Signature] ("opentype")
+        [8, Literal] "opentype"
+     [5, ListValue] url("trickster-outline.woff") format("woff")
+      [6, Function] url("trickster-outline.woff")
+       [7, Identifier] url
+       [7, Signature] ("trickster-outline.woff")
+        [8, Literal] "trickster-outline.woff"
+      [6, Function] format("woff")
+       [7, Identifier] format
+       [7, Signature] ("woff")
+        [8, Literal] "woff"

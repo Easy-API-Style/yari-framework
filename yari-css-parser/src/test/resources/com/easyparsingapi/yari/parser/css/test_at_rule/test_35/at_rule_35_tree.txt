@@ -1,0 +1,18 @@
+[0, Css] @media (400px <= width <= 700px) {\\n body {\\n line-height: 1.4;\\n }\\n }
+ [1, AtRule] @media (400px <= width <= 700px) {\\n body {\\n line-height: 1.4;\\n }\\n }
+  [2, AtRuleName] @media
+   [3, Identifier] media
+  [2, Parenthesis] (400px <= width <= 700px)
+   [3, Range] 400px <= width <= 700px
+    [4, Identifier] 400px
+    [4, Operator] <=
+    [4, Identifier] width
+    [4, Operator] <=
+    [4, Identifier] 700px
+  [2, Block] {\\n body {\\n line-height: 1.4;\\n }\\n }
+   [3, RuleSet] body {\\n line-height: 1.4;\\n }
+    [4, ElementSelector] body
+    [4, Block] {\\n line-height: 1.4;\\n }
+     [5, Property] line-height: 1.4
+      [6, Identifier] line-height
+      [6, Identifier] 1.4

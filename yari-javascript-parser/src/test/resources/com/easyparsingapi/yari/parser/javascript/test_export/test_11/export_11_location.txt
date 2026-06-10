@@ -1,0 +1,24 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Javascript]
+export { name1 as default, name2 }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Export]
+export { name1 as default, name2 }
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 35] [ExportBlock]
+{ name1 as default, name2 }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 26] [ExportReference]
+name1 as default
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 15] [Identifier]
+name1
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 26] [Identifier]
+as default
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [ExportReference]
+name2
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Identifier]
+name2
+---------------------------

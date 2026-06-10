@@ -1,0 +1,165 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 167] [Javascript]
+(async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).then(v => { console.log(v);})
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 167] [QualifiedExpression]
+(async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).then(v => { console.log(v);})
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 137] [Qualifier]
+(async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 136] [InvokedFunction]
+(async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 132] [Definition]
+(async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 131] [FunctionDeclaration]
+async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;}
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 19] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 131] [Procedure]
+{ let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;}
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 57] [VariableDeclaration]
+let p_a = resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 57] [Variable]
+p_a = resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Identifier]
+p_a
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 57] [FunctionCall]
+resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 53] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 57] [Signature]
+(20)
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 56] [Literal]
+20
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 94] [VariableDeclaration]
+let p_b = resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 63] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 94] [Variable]
+p_b = resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 67] [Identifier]
+p_b
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 69] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 94] [FunctionCall]
+resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 90] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 1 column 90, end=line 1 column 94] [Signature]
+(30)
+---------------------------
+SourceLocation [start=line 1 column 91, end=line 1 column 93] [Literal]
+30
+---------------------------
+SourceLocation [start=line 1 column 97, end=line 1 column 129] [Return]
+return x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 129] [Infix]
+x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 105] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 106, end=line 1 column 107] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 108, end=line 1 column 129] [Await]
+await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 114, end=line 1 column 129] [Infix]
+p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 114, end=line 1 column 117] [Identifier]
+p_a
+---------------------------
+SourceLocation [start=line 1 column 118, end=line 1 column 119] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 120, end=line 1 column 129] [Await]
+await p_b
+---------------------------
+SourceLocation [start=line 1 column 126, end=line 1 column 129] [Identifier]
+p_b
+---------------------------
+SourceLocation [start=line 1 column 132, end=line 1 column 136] [Signature]
+(10)
+---------------------------
+SourceLocation [start=line 1 column 133, end=line 1 column 135] [Literal]
+10
+---------------------------
+SourceLocation [start=line 1 column 136, end=line 1 column 137] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 137, end=line 1 column 167] [FunctionCall]
+then(v => { console.log(v);})
+---------------------------
+SourceLocation [start=line 1 column 137, end=line 1 column 141] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 1 column 141, end=line 1 column 167] [Signature]
+(v => { console.log(v);})
+---------------------------
+SourceLocation [start=line 1 column 142, end=line 1 column 166] [ArrowFunction]
+v => { console.log(v);}
+---------------------------
+SourceLocation [start=line 1 column 142, end=line 1 column 143] [Signature]
+v
+---------------------------
+SourceLocation [start=line 1 column 142, end=line 1 column 143] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 1 column 147, end=line 1 column 166] [Procedure]
+{ console.log(v);}
+---------------------------
+SourceLocation [start=line 1 column 150, end=line 1 column 164] [QualifiedExpression]
+console.log(v)
+---------------------------
+SourceLocation [start=line 1 column 150, end=line 1 column 158] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 150, end=line 1 column 157] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 157, end=line 1 column 158] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 158, end=line 1 column 164] [FunctionCall]
+log(v)
+---------------------------
+SourceLocation [start=line 1 column 158, end=line 1 column 161] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 161, end=line 1 column 164] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 1 column 162, end=line 1 column 163] [Identifier]
+v
+---------------------------

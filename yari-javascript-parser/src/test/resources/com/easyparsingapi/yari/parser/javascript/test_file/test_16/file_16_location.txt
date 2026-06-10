@@ -1,0 +1,615 @@
+SourceLocation [start=line 12 column 31, end=line 12 column 78] [Javascript]
+// Use Object.freeze() to make object immutable
+---------------------------
+SourceLocation [start=line 14 column 21, end=line 14 column 29] [Javascript]
+// ["A"]
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 36 column 19] [Javascript]
+const MY_FAV = 7;\\nMY_FAV = 20;\\nvar MY_FAV = 20;\\nlet MY_FAV = 20;\\n\\nif (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}\\nconst MY_OBJECT = {'key': 'value'};\\nMY_OBJECT = {'OTHER_KEY': 'value'};\\nMY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable\\nconst MY_ARRAY = [];\\nMY_ARRAY.push('A'); // ["A"]\\nMY_ARRAY = ['B'];\\n\\nlet i = 0\\nlet a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}\\n\\nconst items = ["A","B","C"];\\nconst obj = {\\n[items]: "Hello"\\n}\\n\\nlet param = 'size'\\nlet config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}\\n\\nconst object = {};\\nobject.$1 = 'foo';
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [VariableDeclaration]
+const MY_FAV = 7
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 17] [Variable]
+MY_FAV = 7
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 13] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Literal]
+7
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 12] [Assignment]
+MY_FAV = 20
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 7] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 12] [Literal]
+20
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 3 column 16] [VariableDeclaration]
+var MY_FAV = 20
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 3 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 16] [Variable]
+MY_FAV = 20
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 11] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 3 column 12, end=line 3 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 16] [Literal]
+20
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 16] [VariableDeclaration]
+let MY_FAV = 20
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 16] [Variable]
+MY_FAV = 20
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 11] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 4 column 12, end=line 4 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 16] [Literal]
+20
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 9 column 2] [If]
+if (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 9 column 2] [IfBlock]
+if (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+---------------------------
+SourceLocation [start=line 6 column 4, end=line 6 column 18] [Condition]
+(MY_FAV === 7)
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 17] [Infix]
+MY_FAV === 7
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 11] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 15] [Operator]
+===
+---------------------------
+SourceLocation [start=line 6 column 16, end=line 6 column 17] [Literal]
+7
+---------------------------
+SourceLocation [start=line 6 column 19, end=line 9 column 2] [Procedure]
+{\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+---------------------------
+SourceLocation [start=line 7 column 3, end=line 7 column 18] [VariableDeclaration]
+let MY_FAV = 20
+---------------------------
+SourceLocation [start=line 7 column 3, end=line 7 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 7 column 7, end=line 7 column 18] [Variable]
+MY_FAV = 20
+---------------------------
+SourceLocation [start=line 7 column 7, end=line 7 column 13] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 7 column 14, end=line 7 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 7 column 16, end=line 7 column 18] [Literal]
+20
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 18] [VariableDeclaration]
+var MY_FAV = 20
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 18] [Variable]
+MY_FAV = 20
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 13] [Identifier]
+MY_FAV
+---------------------------
+SourceLocation [start=line 8 column 14, end=line 8 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 8 column 16, end=line 8 column 18] [Literal]
+20
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 35] [VariableDeclaration]
+const MY_OBJECT = {'key': 'value'}
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 35] [Variable]
+MY_OBJECT = {'key': 'value'}
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 16] [Identifier]
+MY_OBJECT
+---------------------------
+SourceLocation [start=line 10 column 17, end=line 10 column 18] [Operator]
+=
+---------------------------
+SourceLocation [start=line 10 column 19, end=line 10 column 35] [ObjectDeclaration]
+{'key': 'value'}
+---------------------------
+SourceLocation [start=line 10 column 20, end=line 10 column 34] [FieldDeclaration]
+'key': 'value'
+---------------------------
+SourceLocation [start=line 10 column 20, end=line 10 column 25] [Literal]
+'key'
+---------------------------
+SourceLocation [start=line 10 column 27, end=line 10 column 34] [Literal]
+'value'
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 35] [Assignment]
+MY_OBJECT = {'OTHER_KEY': 'value'}
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 10] [Identifier]
+MY_OBJECT
+---------------------------
+SourceLocation [start=line 11 column 11, end=line 11 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 13, end=line 11 column 35] [ObjectDeclaration]
+{'OTHER_KEY': 'value'}
+---------------------------
+SourceLocation [start=line 11 column 14, end=line 11 column 34] [FieldDeclaration]
+'OTHER_KEY': 'value'
+---------------------------
+SourceLocation [start=line 11 column 14, end=line 11 column 25] [Literal]
+'OTHER_KEY'
+---------------------------
+SourceLocation [start=line 11 column 27, end=line 11 column 34] [Literal]
+'value'
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 29] [Assignment]
+MY_OBJECT.key = 'otherValue'
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 14] [QualifiedExpression]
+MY_OBJECT.key
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 11] [Qualifier]
+MY_OBJECT.
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 10] [Identifier]
+MY_OBJECT
+---------------------------
+SourceLocation [start=line 12 column 10, end=line 12 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 12 column 11, end=line 12 column 14] [Identifier]
+key
+---------------------------
+SourceLocation [start=line 12 column 15, end=line 12 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 29] [Literal]
+'otherValue'
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 13 column 20] [VariableDeclaration]
+const MY_ARRAY = []
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 13 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 20] [Variable]
+MY_ARRAY = []
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 15] [Identifier]
+MY_ARRAY
+---------------------------
+SourceLocation [start=line 13 column 16, end=line 13 column 17] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 18, end=line 13 column 20] [ArrayDeclaration]
+[]
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 19] [QualifiedExpression]
+MY_ARRAY.push('A')
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 10] [Qualifier]
+MY_ARRAY.
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 9] [Identifier]
+MY_ARRAY
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 10] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 10, end=line 14 column 19] [FunctionCall]
+push('A')
+---------------------------
+SourceLocation [start=line 14 column 10, end=line 14 column 14] [Identifier]
+push
+---------------------------
+SourceLocation [start=line 14 column 14, end=line 14 column 19] [Signature]
+('A')
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 18] [Literal]
+'A'
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 17] [Assignment]
+MY_ARRAY = ['B']
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 9] [Identifier]
+MY_ARRAY
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 15 column 12, end=line 15 column 17] [ArrayDeclaration]
+['B']
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 16] [Literal]
+'B'
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 10] [VariableDeclaration]
+let i = 0
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 17 column 5, end=line 17 column 10] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 17 column 5, end=line 17 column 6] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 17 column 7, end=line 17 column 8] [Operator]
+=
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 10] [Literal]
+0
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 22 column 2] [VariableDeclaration]
+let a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 18 column 5, end=line 22 column 2] [Variable]
+a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+---------------------------
+SourceLocation [start=line 18 column 5, end=line 18 column 6] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 18 column 7, end=line 18 column 8] [Operator]
+=
+---------------------------
+SourceLocation [start=line 18 column 9, end=line 22 column 2] [ObjectDeclaration]
+{\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+---------------------------
+SourceLocation [start=line 19 column 3, end=line 19 column 19] [FieldDeclaration]
+['foo' + ++i]: i
+---------------------------
+SourceLocation [start=line 19 column 3, end=line 19 column 16] [ComputedValue]
+['foo' + ++i]
+---------------------------
+SourceLocation [start=line 19 column 4, end=line 19 column 15] [Infix]
+'foo' + ++i
+---------------------------
+SourceLocation [start=line 19 column 4, end=line 19 column 13] [Increment]
+'foo' + +
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 13] [Operator]
++ +
+---------------------------
+SourceLocation [start=line 19 column 4, end=line 19 column 9] [Literal]
+'foo'
+---------------------------
+SourceLocation [start=line 19 column 13, end=line 19 column 14] [Operator]
++
+---------------------------
+SourceLocation [start=line 19 column 14, end=line 19 column 15] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 19 column 18, end=line 19 column 19] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 20 column 19] [FieldDeclaration]
+['foo' + ++i]: i
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 20 column 16] [ComputedValue]
+['foo' + ++i]
+---------------------------
+SourceLocation [start=line 20 column 4, end=line 20 column 15] [Infix]
+'foo' + ++i
+---------------------------
+SourceLocation [start=line 20 column 4, end=line 20 column 13] [Increment]
+'foo' + +
+---------------------------
+SourceLocation [start=line 20 column 10, end=line 20 column 13] [Operator]
++ +
+---------------------------
+SourceLocation [start=line 20 column 4, end=line 20 column 9] [Literal]
+'foo'
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 14] [Operator]
++
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 15] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 20 column 18, end=line 20 column 19] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 21 column 3, end=line 21 column 19] [FieldDeclaration]
+['foo' + ++i]: i
+---------------------------
+SourceLocation [start=line 21 column 3, end=line 21 column 16] [ComputedValue]
+['foo' + ++i]
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 15] [Infix]
+'foo' + ++i
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 13] [Increment]
+'foo' + +
+---------------------------
+SourceLocation [start=line 21 column 10, end=line 21 column 13] [Operator]
++ +
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 9] [Literal]
+'foo'
+---------------------------
+SourceLocation [start=line 21 column 13, end=line 21 column 14] [Operator]
++
+---------------------------
+SourceLocation [start=line 21 column 14, end=line 21 column 15] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 21 column 18, end=line 21 column 19] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 24 column 1, end=line 24 column 28] [VariableDeclaration]
+const items = ["A","B","C"]
+---------------------------
+SourceLocation [start=line 24 column 1, end=line 24 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 24 column 7, end=line 24 column 28] [Variable]
+items = ["A","B","C"]
+---------------------------
+SourceLocation [start=line 24 column 7, end=line 24 column 12] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 24 column 13, end=line 24 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 24 column 15, end=line 24 column 28] [ArrayDeclaration]
+["A","B","C"]
+---------------------------
+SourceLocation [start=line 24 column 16, end=line 24 column 19] [Literal]
+"A"
+---------------------------
+SourceLocation [start=line 24 column 20, end=line 24 column 23] [Literal]
+"B"
+---------------------------
+SourceLocation [start=line 24 column 24, end=line 24 column 27] [Literal]
+"C"
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 27 column 2] [VariableDeclaration]
+const obj = {\\n[items]: "Hello"\\n}
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 27 column 2] [Variable]
+obj = {\\n[items]: "Hello"\\n}
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 10] [Identifier]
+obj
+---------------------------
+SourceLocation [start=line 25 column 11, end=line 25 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 25 column 13, end=line 27 column 2] [ObjectDeclaration]
+{\\n[items]: "Hello"\\n}
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 17] [FieldDeclaration]
+[items]: "Hello"
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 8] [ComputedValue]
+[items]
+---------------------------
+SourceLocation [start=line 26 column 2, end=line 26 column 7] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 26 column 10, end=line 26 column 17] [Literal]
+"Hello"
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 19] [VariableDeclaration]
+let param = 'size'
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 29 column 5, end=line 29 column 19] [Variable]
+param = 'size'
+---------------------------
+SourceLocation [start=line 29 column 5, end=line 29 column 10] [Identifier]
+param
+---------------------------
+SourceLocation [start=line 29 column 11, end=line 29 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 29 column 13, end=line 29 column 19] [Literal]
+'size'
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 33 column 2] [VariableDeclaration]
+let config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 30 column 5, end=line 33 column 2] [Variable]
+config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+---------------------------
+SourceLocation [start=line 30 column 5, end=line 30 column 11] [Identifier]
+config
+---------------------------
+SourceLocation [start=line 30 column 12, end=line 30 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 30 column 14, end=line 33 column 2] [ObjectDeclaration]
+{\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+---------------------------
+SourceLocation [start=line 31 column 3, end=line 31 column 14] [FieldDeclaration]
+[param]: 12
+---------------------------
+SourceLocation [start=line 31 column 3, end=line 31 column 10] [ComputedValue]
+[param]
+---------------------------
+SourceLocation [start=line 31 column 4, end=line 31 column 9] [Identifier]
+param
+---------------------------
+SourceLocation [start=line 31 column 12, end=line 31 column 14] [Literal]
+12
+---------------------------
+SourceLocation [start=line 32 column 3, end=line 32 column 65] [FieldDeclaration]
+['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+---------------------------
+SourceLocation [start=line 32 column 3, end=line 32 column 62] [ComputedValue]
+['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]
+---------------------------
+SourceLocation [start=line 32 column 4, end=line 32 column 61] [Infix]
+'mobile' + param.charAt(0).toUpperCase() + param.slice(1)
+---------------------------
+SourceLocation [start=line 32 column 4, end=line 32 column 44] [Infix]
+'mobile' + param.charAt(0).toUpperCase()
+---------------------------
+SourceLocation [start=line 32 column 4, end=line 32 column 12] [Literal]
+'mobile'
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 14] [Operator]
++
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 44] [QualifiedExpression]
+param.charAt(0).toUpperCase()
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 21] [Qualifier]
+param.
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 20] [Identifier]
+param
+---------------------------
+SourceLocation [start=line 32 column 20, end=line 32 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 32 column 21, end=line 32 column 31] [Qualifier]
+charAt(0).
+---------------------------
+SourceLocation [start=line 32 column 21, end=line 32 column 30] [FunctionCall]
+charAt(0)
+---------------------------
+SourceLocation [start=line 32 column 21, end=line 32 column 27] [Identifier]
+charAt
+---------------------------
+SourceLocation [start=line 32 column 27, end=line 32 column 30] [Signature]
+(0)
+---------------------------
+SourceLocation [start=line 32 column 28, end=line 32 column 29] [Literal]
+0
+---------------------------
+SourceLocation [start=line 32 column 30, end=line 32 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 32 column 31, end=line 32 column 44] [FunctionCall]
+toUpperCase()
+---------------------------
+SourceLocation [start=line 32 column 31, end=line 32 column 42] [Identifier]
+toUpperCase
+---------------------------
+SourceLocation [start=line 32 column 42, end=line 32 column 44] [Signature]
+()
+---------------------------
+SourceLocation [start=line 32 column 45, end=line 32 column 46] [Operator]
++
+---------------------------
+SourceLocation [start=line 32 column 47, end=line 32 column 61] [QualifiedExpression]
+param.slice(1)
+---------------------------
+SourceLocation [start=line 32 column 47, end=line 32 column 53] [Qualifier]
+param.
+---------------------------
+SourceLocation [start=line 32 column 47, end=line 32 column 52] [Identifier]
+param
+---------------------------
+SourceLocation [start=line 32 column 52, end=line 32 column 53] [Operator]
+.
+---------------------------
+SourceLocation [start=line 32 column 53, end=line 32 column 61] [FunctionCall]
+slice(1)
+---------------------------
+SourceLocation [start=line 32 column 53, end=line 32 column 58] [Identifier]
+slice
+---------------------------
+SourceLocation [start=line 32 column 58, end=line 32 column 61] [Signature]
+(1)
+---------------------------
+SourceLocation [start=line 32 column 59, end=line 32 column 60] [Literal]
+1
+---------------------------
+SourceLocation [start=line 32 column 64, end=line 32 column 65] [Literal]
+4
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 18] [VariableDeclaration]
+const object = {}
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 35 column 7, end=line 35 column 18] [Variable]
+object = {}
+---------------------------
+SourceLocation [start=line 35 column 7, end=line 35 column 13] [Identifier]
+object
+---------------------------
+SourceLocation [start=line 35 column 14, end=line 35 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 35 column 16, end=line 35 column 18] [ObjectDeclaration]
+{}
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 18] [Assignment]
+object.$1 = 'foo'
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 10] [QualifiedExpression]
+object.$1
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 8] [Qualifier]
+object.
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 7] [Identifier]
+object
+---------------------------
+SourceLocation [start=line 36 column 7, end=line 36 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 36 column 8, end=line 36 column 10] [Identifier]
+$1
+---------------------------
+SourceLocation [start=line 36 column 11, end=line 36 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 36 column 13, end=line 36 column 18] [Literal]
+'foo'
+---------------------------

@@ -1,0 +1,13 @@
+[0, Css] * [lang^="en"] {\\n color: green;\\n }
+ [1, RuleSet] * [lang^="en"] {\\n color: green;\\n }
+  [2, QualifiedSelector] * [lang^="en"]
+   [3, Universal] *
+   [3, AttributeSelector] [lang^="en"]
+    [4, Expression] lang^="en"
+     [5, Identifier] lang
+     [5, Operator] ^=
+     [5, Literal] "en"
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green

@@ -1,0 +1,27 @@
+[0, Html] <test>\\n <style>\\n < bbbb\\n > tttt\\n </style>\\n <div>\\n aaaa\\n </div>\\n </test>
+ [1, Tag] <test>\\n <style>\\n < bbbb\\n > tttt\\n </style>\\n <div>\\n aaaa\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <style>\\n < bbbb\\n > tttt\\n </style>\\n <div>\\n aaaa\\n </div>
+   [3, StyleTag] <style>\\n < bbbb\\n > tttt\\n </style>
+    [4, TagHead] <style>
+     [5, TagName] style
+      [6, Name] style
+    [4, Style] < bbbb\\n > tttt
+     [5, CssError] < bbbb\\n > tttt
+    [4, TagFoot] </style>
+     [5, TagName] style
+      [6, Name] style
+   [3, Tag] <div>\\n aaaa\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] aaaa
+     [5, Text] aaaa
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

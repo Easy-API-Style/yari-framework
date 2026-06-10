@@ -1,0 +1,17 @@
+[0, Css] selector {\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+ [1, RuleSet] selector {\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+  [2, ElementSelector] selector
+  [2, Block] {\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+   [3, Property] property: value
+    [4, Identifier] property
+    [4, Identifier] value
+   [3, Property] property: value !important
+    [4, Identifier] property
+    [4, ListValue] value !important
+     [5, Identifier] value
+     [5, Important] !important
+   [3, Property] property: value ! important
+    [4, Identifier] property
+    [4, ListValue] value ! important
+     [5, Identifier] value
+     [5, Important] ! important

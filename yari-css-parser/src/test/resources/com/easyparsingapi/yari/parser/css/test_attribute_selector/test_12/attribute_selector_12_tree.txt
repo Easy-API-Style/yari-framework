@@ -1,0 +1,21 @@
+[0, Css] a[href^="https://"][href$=".org"]\\n {\\n color: green;\\n }
+ [1, RuleSet] a[href^="https://"][href$=".org"]\\n {\\n color: green;\\n }
+  [2, CombinatorSelector] a[href^="https://"][href$=".org"]
+   [3, CombinatorSelector] a[href^="https://"]
+    [4, ElementSelector] a
+    [4, Operator] 
+    [4, AttributeSelector] [href^="https://"]
+     [5, Expression] href^="https://"
+      [6, Identifier] href
+      [6, Operator] ^=
+      [6, Literal] "https://"
+   [3, Operator] 
+   [3, AttributeSelector] [href$=".org"]
+    [4, Expression] href$=".org"
+     [5, Identifier] href
+     [5, Operator] $=
+     [5, Literal] ".org"
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green

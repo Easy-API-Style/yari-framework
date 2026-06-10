@@ -1,0 +1,66 @@
+[0, Css] abbr {\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }\\n\\n @media (hover: hover) {\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }\\n\\n @media not all and (hover: hover) {\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+ [1, RuleSet] abbr {\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }
+  [2, ElementSelector] abbr
+  [2, Block] {\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }
+   [3, Property] color: #860304
+    [4, Identifier] color
+    [4, Literal] #860304
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold
+   [3, Property] transition: color 0.5s ease
+    [4, Identifier] transition
+    [4, ListValue] color 0.5s ease
+     [5, Identifier] color
+     [5, Identifier] 0.5s
+     [5, Identifier] ease
+ [1, AtRule] @media (hover: hover) {\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }
+  [2, AtRuleName] @media
+   [3, Identifier] media
+  [2, Parenthesis] (hover: hover)
+   [3, Property] hover: hover
+    [4, Identifier] hover
+    [4, Identifier] hover
+  [2, Block] {\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }
+   [3, RuleSet] abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }
+    [4, CombinatorSelector] abbr:hover
+     [5, ElementSelector] abbr
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }
+     [5, Property] color: #001ca8
+      [6, Identifier] color
+      [6, Literal] #001ca8
+     [5, Property] transition-duration: 0.5s
+      [6, Identifier] transition-duration
+      [6, Identifier] 0.5s
+ [1, AtRule] @media not all and (hover: hover) {\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+  [2, AtRuleName] @media
+   [3, Identifier] media
+  [2, Infix] not all and (hover: hover)
+   [3, Prefix] not all
+    [4, Operator] not
+    [4, Identifier] all
+   [3, Operator] and
+   [3, Parenthesis] (hover: hover)
+    [4, Property] hover: hover
+     [5, Identifier] hover
+     [5, Identifier] hover
+  [2, Block] {\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+   [3, RuleSet] abbr::after {\\n content: " (" attr(title) ")";\\n }
+    [4, CombinatorSelector] abbr::after
+     [5, ElementSelector] abbr
+     [5, Operator] 
+     [5, PseudoElementSelector] ::after
+      [6, Identifier] after
+    [4, Block] {\\n content: " (" attr(title) ")";\\n }
+     [5, Property] content: " (" attr(title) ")"
+      [6, Identifier] content
+      [6, ListValue] " (" attr(title) ")"
+       [7, Literal] " ("
+       [7, Function] attr(title)
+        [8, Identifier] attr
+        [8, Signature] (title)
+         [9, Identifier] title
+       [7, Literal] ")"

@@ -1,0 +1,15 @@
+[0, Javascript] class ClassWithFancyMethods { *generatorMethod() { } async asyncMethod() { } async *asyncGeneratorMethod() { }}
+ [1, ClassDeclaration] class ClassWithFancyMethods { *generatorMethod() { } async asyncMethod() { } async *asyncGeneratorMethod() { }}
+  [2, Identifier] ClassWithFancyMethods
+  [2, ClassMethodDeclaration] *generatorMethod() { }
+   [3, Identifier] generatorMethod
+   [3, Signature] ()
+   [3, Procedure] { }
+  [2, ClassMethodDeclaration] async asyncMethod() { }
+   [3, Identifier] asyncMethod
+   [3, Signature] ()
+   [3, Procedure] { }
+  [2, ClassMethodDeclaration] async *asyncGeneratorMethod() { }
+   [3, Identifier] asyncGeneratorMethod
+   [3, Signature] ()
+   [3, Procedure] { }

@@ -1,0 +1,11 @@
+[0, Css] #demo {\\n border: red 2px solid;\\n }
+ [1, RuleSet] #demo {\\n border: red 2px solid;\\n }
+  [2, IdSelector] #demo
+   [3, Identifier] demo
+  [2, Block] {\\n border: red 2px solid;\\n }
+   [3, Property] border: red 2px solid
+    [4, Identifier] border
+    [4, ListValue] red 2px solid
+     [5, Identifier] red
+     [5, Identifier] 2px
+     [5, Identifier] solid

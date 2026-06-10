@@ -1,0 +1,30 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 26] [Javascript]
+x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 26] [Infix]
+x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 26] [Await]
+await p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 26] [Infix]
+p_a + await p_b
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 14] [Identifier]
+p_a
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 26] [Await]
+await p_b
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Identifier]
+p_b
+---------------------------

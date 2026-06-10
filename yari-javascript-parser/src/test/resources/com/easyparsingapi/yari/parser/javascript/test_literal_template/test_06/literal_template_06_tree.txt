@@ -1,0 +1,51 @@
+[0, Javascript] `{${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}}`
+ [1, LiteralTemplate] `{${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}}`
+  [2, Constant] {
+  [2, Variable] ${Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")}
+   [3, QualifiedExpression] Object.keys(a).map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).join(",")
+    [4, Qualifier] Object.
+     [5, Identifier] Object
+     [5, Operator] .
+    [4, Qualifier] keys(a).
+     [5, FunctionCall] keys(a)
+      [6, Identifier] keys
+      [6, Signature] (a)
+       [7, Identifier] a
+     [5, Operator] .
+    [4, Qualifier] map(b=>{const c=_.yw(a[b]);return`${b}:${c}`}).
+     [5, FunctionCall] map(b=>{const c=_.yw(a[b]);return`${b}:${c}`})
+      [6, Identifier] map
+      [6, Signature] (b=>{const c=_.yw(a[b]);return`${b}:${c}`})
+       [7, ArrowFunction] b=>{const c=_.yw(a[b]);return`${b}:${c}`}
+        [8, Signature] b
+         [9, Identifier] b
+        [8, Procedure] {const c=_.yw(a[b]);return`${b}:${c}`}
+         [9, VariableDeclaration] const c=_.yw(a[b])
+          [10, Type] const
+          [10, Variable] c=_.yw(a[b])
+           [11, Identifier] c
+           [11, Operator] =
+           [11, QualifiedExpression] _.yw(a[b])
+            [12, Qualifier] _.
+             [13, Identifier] _
+             [13, Operator] .
+            [12, FunctionCall] yw(a[b])
+             [13, Identifier] yw
+             [13, Signature] (a[b])
+              [14, MapExpression] a[b]
+               [15, Identifier] a
+               [15, Bracket] [b]
+                [16, Identifier] b
+         [9, Return] return`${b}:${c}`
+          [10, LiteralTemplate] `${b}:${c}`
+           [11, Variable] ${b}
+            [12, Identifier] b
+           [11, Constant] :
+           [11, Variable] ${c}
+            [12, Identifier] c
+     [5, Operator] .
+    [4, FunctionCall] join(",")
+     [5, Identifier] join
+     [5, Signature] (",")
+      [6, Literal] ","
+  [2, Constant] }

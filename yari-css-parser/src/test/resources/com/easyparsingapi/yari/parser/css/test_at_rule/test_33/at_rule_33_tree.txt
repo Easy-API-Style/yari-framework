@@ -1,0 +1,43 @@
+[0, Css] @layer base, special;\\n\\n @layer special {\\n .item {\\n color: rebeccapurple;\\n }\\n }\\n\\n @layer base {\\n .item {\\n color: green;\\n border: 5px solid green;\\n font-size: 1.3em;\\n padding: 0.5em;\\n }\\n }
+ [1, AtRule] @layer base, special
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, ListParameter] base, special
+   [3, Identifier] base
+   [3, Identifier] special
+ [1, AtRule] @layer special {\\n .item {\\n color: rebeccapurple;\\n }\\n }
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, Identifier] special
+  [2, Block] {\\n .item {\\n color: rebeccapurple;\\n }\\n }
+   [3, RuleSet] .item {\\n color: rebeccapurple;\\n }
+    [4, ClassSelector] .item
+     [5, Identifier] item
+    [4, Block] {\\n color: rebeccapurple;\\n }
+     [5, Property] color: rebeccapurple
+      [6, Identifier] color
+      [6, Identifier] rebeccapurple
+ [1, AtRule] @layer base {\\n .item {\\n color: green;\\n border: 5px solid green;\\n font-size: 1.3em;\\n padding: 0.5em;\\n }\\n }
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, Identifier] base
+  [2, Block] {\\n .item {\\n color: green;\\n border: 5px solid green;\\n font-size: 1.3em;\\n padding: 0.5em;\\n }\\n }
+   [3, RuleSet] .item {\\n color: green;\\n border: 5px solid green;\\n font-size: 1.3em;\\n padding: 0.5em;\\n }
+    [4, ClassSelector] .item
+     [5, Identifier] item
+    [4, Block] {\\n color: green;\\n border: 5px solid green;\\n font-size: 1.3em;\\n padding: 0.5em;\\n }
+     [5, Property] color: green
+      [6, Identifier] color
+      [6, Identifier] green
+     [5, Property] border: 5px solid green
+      [6, Identifier] border
+      [6, ListValue] 5px solid green
+       [7, Identifier] 5px
+       [7, Identifier] solid
+       [7, Identifier] green
+     [5, Property] font-size: 1.3em
+      [6, Identifier] font-size
+      [6, Identifier] 1.3em
+     [5, Property] padding: 0.5em
+      [6, Identifier] padding
+      [6, Identifier] 0.5em

@@ -1,0 +1,14 @@
+[0, Css] a[href$=".org"] {\\n font-style: italic;\\n }
+ [1, RuleSet] a[href$=".org"] {\\n font-style: italic;\\n }
+  [2, CombinatorSelector] a[href$=".org"]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [href$=".org"]
+    [4, Expression] href$=".org"
+     [5, Identifier] href
+     [5, Operator] $=
+     [5, Literal] ".org"
+  [2, Block] {\\n font-style: italic;\\n }
+   [3, Property] font-style: italic
+    [4, Identifier] font-style
+    [4, Identifier] italic

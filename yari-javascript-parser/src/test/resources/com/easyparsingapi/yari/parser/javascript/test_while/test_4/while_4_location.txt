@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [Javascript]
+while (bibi !== 'roro') { var v_1 if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [While]
+while (bibi !== 'roro') { var v_1 if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 24] [Condition]
+(bibi !== 'roro')
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 23] [Infix]
+bibi !== 'roro'
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [Identifier]
+bibi
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 16] [Operator]
+!==
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 23] [Literal]
+'roro'
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 56] [Procedure]
+{ var v_1 if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 34] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 34] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 34] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 55] [If]
+if (toto) { break }
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 55] [IfBlock]
+if (toto) { break }
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 44] [Condition]
+(toto)
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 43] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 55] [Procedure]
+{ break }
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 53] [Break]
+break
+---------------------------

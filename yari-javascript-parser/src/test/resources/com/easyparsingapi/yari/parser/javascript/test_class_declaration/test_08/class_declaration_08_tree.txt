@@ -1,0 +1,33 @@
+[0, Javascript] class ClassWithGetSet { #msg = 'hello world'; get msg() { return this.#msg } set msg(x) { this.#msg = `hello ${x}` }}
+ [1, ClassDeclaration] class ClassWithGetSet { #msg = 'hello world'; get msg() { return this.#msg } set msg(x) { this.#msg = `hello ${x}` }}
+  [2, Identifier] ClassWithGetSet
+  [2, ClassFieldDeclaration] #msg = 'hello world'
+   [3, Identifier] msg
+   [3, Literal] = 'hello world'
+  [2, Getter] get msg() { return this.#msg }
+   [3, Identifier] msg
+   [3, Procedure] { return this.#msg }
+    [4, Return] return this.#msg
+     [5, QualifiedExpression] this.#msg
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #msg
+       [7, Identifier] msg
+  [2, Setter] set msg(x) { this.#msg = `hello ${x}` }
+   [3, Identifier] msg
+   [3, Signature] (x)
+    [4, Identifier] x
+   [3, Procedure] { this.#msg = `hello ${x}` }
+    [4, Assignment] this.#msg = `hello ${x}`
+     [5, QualifiedExpression] this.#msg
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #msg
+       [7, Identifier] msg
+     [5, Operator] =
+     [5, LiteralTemplate] `hello ${x}`
+      [6, Constant] hello 
+      [6, Variable] ${x}
+       [7, Identifier] x

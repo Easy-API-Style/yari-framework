@@ -1,0 +1,441 @@
+SourceLocation [start=line 1 column 1, end=line 36 column 6] [Javascript]
+const LIMIT = 3;\\n\\nconst asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n};\\n\\n(async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})();\\n\\nconst myAsyncIterable = new Object();\\nmyAsyncIterable[Symbol.asyncIterator] = async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n};\\n\\n(async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})();
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 16] [VariableDeclaration]
+const LIMIT = 3
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 16] [Variable]
+LIMIT = 3
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 12] [Identifier]
+LIMIT
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Literal]
+3
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 17 column 2] [VariableDeclaration]
+const asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 3 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 17 column 2] [Variable]
+asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 20] [Identifier]
+asyncIterable
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 22] [Operator]
+=
+---------------------------
+SourceLocation [start=line 3 column 23, end=line 17 column 2] [ObjectDeclaration]
+{\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 16 column 4] [MethodDeclaration]
+[Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 25] [ComputedValue]
+[Symbol.asyncIterator]
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 24] [QualifiedExpression]
+Symbol.asyncIterator
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 11] [Qualifier]
+Symbol.
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 10] [Identifier]
+Symbol
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 24] [Identifier]
+asyncIterator
+---------------------------
+SourceLocation [start=line 4 column 25, end=line 4 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 4 column 28, end=line 16 column 4] [Procedure]
+{\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 14] [VariableDeclaration]
+let i = 0
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 8] [Type]
+let
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 14] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 10] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 5 column 11, end=line 5 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 5 column 13, end=line 5 column 14] [Literal]
+0
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 15 column 6] [Return]
+return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n }
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 15 column 6] [ObjectDeclaration]
+{\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n }
+---------------------------
+SourceLocation [start=line 7 column 7, end=line 11 column 8] [MethodDeclaration]
+next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n }
+---------------------------
+SourceLocation [start=line 7 column 7, end=line 7 column 11] [Identifier]
+next
+---------------------------
+SourceLocation [start=line 7 column 11, end=line 7 column 13] [Signature]
+()
+---------------------------
+SourceLocation [start=line 7 column 14, end=line 11 column 8] [Procedure]
+{\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n }
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 33] [VariableDeclaration]
+const done = i === LIMIT
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 14] [Type]
+const
+---------------------------
+SourceLocation [start=line 8 column 15, end=line 8 column 33] [Variable]
+done = i === LIMIT
+---------------------------
+SourceLocation [start=line 8 column 15, end=line 8 column 19] [Identifier]
+done
+---------------------------
+SourceLocation [start=line 8 column 20, end=line 8 column 21] [Operator]
+=
+---------------------------
+SourceLocation [start=line 8 column 22, end=line 8 column 33] [Infix]
+i === LIMIT
+---------------------------
+SourceLocation [start=line 8 column 22, end=line 8 column 23] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 8 column 24, end=line 8 column 27] [Operator]
+===
+---------------------------
+SourceLocation [start=line 8 column 28, end=line 8 column 33] [Identifier]
+LIMIT
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 45] [VariableDeclaration]
+const value = done ? undefined : i++
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 14] [Type]
+const
+---------------------------
+SourceLocation [start=line 9 column 15, end=line 9 column 45] [Variable]
+value = done ? undefined : i++
+---------------------------
+SourceLocation [start=line 9 column 15, end=line 9 column 20] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 22] [Operator]
+=
+---------------------------
+SourceLocation [start=line 9 column 23, end=line 9 column 45] [Ternary]
+done ? undefined : i++
+---------------------------
+SourceLocation [start=line 9 column 23, end=line 9 column 27] [Identifier]
+done
+---------------------------
+SourceLocation [start=line 9 column 30, end=line 9 column 39] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 9 column 42, end=line 9 column 45] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 9 column 43, end=line 9 column 45] [Operator]
+++
+---------------------------
+SourceLocation [start=line 9 column 42, end=line 9 column 43] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 48] [Return]
+return Promise.resolve({ value, done })
+---------------------------
+SourceLocation [start=line 10 column 16, end=line 10 column 48] [QualifiedExpression]
+Promise.resolve({ value, done })
+---------------------------
+SourceLocation [start=line 10 column 16, end=line 10 column 24] [Qualifier]
+Promise.
+---------------------------
+SourceLocation [start=line 10 column 16, end=line 10 column 23] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 10 column 23, end=line 10 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 10 column 24, end=line 10 column 48] [FunctionCall]
+resolve({ value, done })
+---------------------------
+SourceLocation [start=line 10 column 24, end=line 10 column 31] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 10 column 31, end=line 10 column 48] [Signature]
+({ value, done })
+---------------------------
+SourceLocation [start=line 10 column 32, end=line 10 column 47] [ObjectDeclaration]
+{ value, done }
+---------------------------
+SourceLocation [start=line 10 column 34, end=line 10 column 39] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 10 column 41, end=line 10 column 45] [Identifier]
+done
+---------------------------
+SourceLocation [start=line 12 column 7, end=line 14 column 8] [MethodDeclaration]
+return() {\\n return { done: true };\\n }
+---------------------------
+SourceLocation [start=line 12 column 7, end=line 12 column 13] [Identifier]
+return
+---------------------------
+SourceLocation [start=line 12 column 13, end=line 12 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 12 column 16, end=line 14 column 8] [Procedure]
+{\\n return { done: true };\\n }
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 30] [Return]
+return { done: true }
+---------------------------
+SourceLocation [start=line 13 column 16, end=line 13 column 30] [ObjectDeclaration]
+{ done: true }
+---------------------------
+SourceLocation [start=line 13 column 18, end=line 13 column 28] [FieldDeclaration]
+done: true
+---------------------------
+SourceLocation [start=line 13 column 18, end=line 13 column 22] [Identifier]
+done
+---------------------------
+SourceLocation [start=line 13 column 24, end=line 13 column 28] [Literal]
+true
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 23 column 5] [InvokedFunction]
+(async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})()
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 23 column 3] [Definition]
+(async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})
+---------------------------
+SourceLocation [start=line 19 column 2, end=line 23 column 2] [ArrowFunction]
+async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n}
+---------------------------
+SourceLocation [start=line 19 column 8, end=line 19 column 10] [Signature]
+()
+---------------------------
+SourceLocation [start=line 19 column 14, end=line 23 column 2] [Procedure]
+{\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n}
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 22 column 4] [For]
+for await (const num of asyncIterable) {\\n console.log(num);\\n }
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 40] [ListIteration]
+const num of asyncIterable
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 23] [VariableDeclaration]
+const num
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 19] [Type]
+const
+---------------------------
+SourceLocation [start=line 20 column 20, end=line 20 column 23] [Variable]
+num
+---------------------------
+SourceLocation [start=line 20 column 20, end=line 20 column 23] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 20 column 24, end=line 20 column 26] [Operator]
+of
+---------------------------
+SourceLocation [start=line 20 column 27, end=line 20 column 40] [Identifier]
+asyncIterable
+---------------------------
+SourceLocation [start=line 20 column 42, end=line 22 column 4] [Procedure]
+{\\n console.log(num);\\n }
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 21 column 21] [QualifiedExpression]
+console.log(num)
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 21 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 21 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 21 column 12, end=line 21 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 21 column 13, end=line 21 column 21] [FunctionCall]
+log(num)
+---------------------------
+SourceLocation [start=line 21 column 13, end=line 21 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 21 column 16, end=line 21 column 21] [Signature]
+(num)
+---------------------------
+SourceLocation [start=line 21 column 17, end=line 21 column 20] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 23 column 3, end=line 23 column 5] [Signature]
+()
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 37] [VariableDeclaration]
+const myAsyncIterable = new Object()
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 37] [Variable]
+myAsyncIterable = new Object()
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 22] [Identifier]
+myAsyncIterable
+---------------------------
+SourceLocation [start=line 25 column 23, end=line 25 column 24] [Operator]
+=
+---------------------------
+SourceLocation [start=line 25 column 25, end=line 25 column 37] [New]
+new Object()
+---------------------------
+SourceLocation [start=line 25 column 29, end=line 25 column 35] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 25 column 35, end=line 25 column 37] [Signature]
+()
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 30 column 2] [Assignment]
+myAsyncIterable[Symbol.asyncIterator] = async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 38] [MapExpression]
+myAsyncIterable[Symbol.asyncIterator]
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 16] [Identifier]
+myAsyncIterable
+---------------------------
+SourceLocation [start=line 26 column 16, end=line 26 column 38] [Bracket]
+[Symbol.asyncIterator]
+---------------------------
+SourceLocation [start=line 26 column 17, end=line 26 column 37] [QualifiedExpression]
+Symbol.asyncIterator
+---------------------------
+SourceLocation [start=line 26 column 17, end=line 26 column 24] [Qualifier]
+Symbol.
+---------------------------
+SourceLocation [start=line 26 column 17, end=line 26 column 23] [Identifier]
+Symbol
+---------------------------
+SourceLocation [start=line 26 column 23, end=line 26 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 26 column 24, end=line 26 column 37] [Identifier]
+asyncIterator
+---------------------------
+SourceLocation [start=line 26 column 39, end=line 26 column 40] [Operator]
+=
+---------------------------
+SourceLocation [start=line 26 column 41, end=line 30 column 2] [FunctionDeclaration]
+async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+---------------------------
+SourceLocation [start=line 26 column 56, end=line 26 column 58] [Signature]
+()
+---------------------------
+SourceLocation [start=line 26 column 59, end=line 30 column 2] [Procedure]
+{\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+---------------------------
+SourceLocation [start=line 27 column 5, end=line 27 column 19] [Yield]
+yield "coucou"
+---------------------------
+SourceLocation [start=line 27 column 11, end=line 27 column 19] [Literal]
+"coucou"
+---------------------------
+SourceLocation [start=line 28 column 5, end=line 28 column 24] [Yield]
+yield "l'itération"
+---------------------------
+SourceLocation [start=line 28 column 11, end=line 28 column 24] [Literal]
+"l'itération"
+---------------------------
+SourceLocation [start=line 29 column 5, end=line 29 column 25] [Yield]
+yield "asynchrone !"
+---------------------------
+SourceLocation [start=line 29 column 11, end=line 29 column 25] [Literal]
+"asynchrone !"
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 36 column 5] [InvokedFunction]
+(async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})()
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 36 column 3] [Definition]
+(async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})
+---------------------------
+SourceLocation [start=line 32 column 2, end=line 36 column 2] [ArrowFunction]
+async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n}
+---------------------------
+SourceLocation [start=line 32 column 8, end=line 32 column 10] [Signature]
+()
+---------------------------
+SourceLocation [start=line 32 column 14, end=line 36 column 2] [Procedure]
+{\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n}
+---------------------------
+SourceLocation [start=line 33 column 5, end=line 35 column 6] [For]
+for await (const x of myAsyncIterable) {\\n console.log(x);\\n }
+---------------------------
+SourceLocation [start=line 33 column 16, end=line 33 column 42] [ListIteration]
+const x of myAsyncIterable
+---------------------------
+SourceLocation [start=line 33 column 16, end=line 33 column 23] [VariableDeclaration]
+const x
+---------------------------
+SourceLocation [start=line 33 column 16, end=line 33 column 21] [Type]
+const
+---------------------------
+SourceLocation [start=line 33 column 22, end=line 33 column 23] [Variable]
+x
+---------------------------
+SourceLocation [start=line 33 column 22, end=line 33 column 23] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 33 column 24, end=line 33 column 26] [Operator]
+of
+---------------------------
+SourceLocation [start=line 33 column 27, end=line 33 column 42] [Identifier]
+myAsyncIterable
+---------------------------
+SourceLocation [start=line 33 column 44, end=line 35 column 6] [Procedure]
+{\\n console.log(x);\\n }
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 23] [QualifiedExpression]
+console.log(x)
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 17] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 16] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 34 column 16, end=line 34 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 34 column 17, end=line 34 column 23] [FunctionCall]
+log(x)
+---------------------------
+SourceLocation [start=line 34 column 17, end=line 34 column 20] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 34 column 20, end=line 34 column 23] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 34 column 21, end=line 34 column 22] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 36 column 3, end=line 36 column 5] [Signature]
+()
+---------------------------

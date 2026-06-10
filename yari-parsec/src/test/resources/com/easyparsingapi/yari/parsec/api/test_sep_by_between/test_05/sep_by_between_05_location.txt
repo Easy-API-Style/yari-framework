@@ -1,0 +1,15 @@
+Block [elements=[Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 4]], Error [message=null, tokens=[,, 11, ,, ;], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 11]], Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 13]], Error [message=null, tokens=[,, 22], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 17]]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 18]]
+(aa, 11, ;cc, 22)
+---------------------------
+Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 4]]
+aa
+---------------------------
+Error [message=null, tokens=[,, 11, ,, ;], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 11]]
+, 11, ;
+---------------------------
+Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 13]]
+cc
+---------------------------
+Error [message=null, tokens=[,, 22], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 17]]
+, 22
+---------------------------

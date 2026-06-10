@@ -1,0 +1,16 @@
+[0, Javascript] look[10][value + 30 * 6.6]()
+ [1, FunctionCall] look[10][value + 30 * 6.6]()
+  [2, MapExpression] look[10][value + 30 * 6.6]
+   [3, MapExpression] look[10]
+    [4, Identifier] look
+    [4, Bracket] [10]
+     [5, Literal] 10
+   [3, Bracket] [value + 30 * 6.6]
+    [4, Infix] value + 30 * 6.6
+     [5, Identifier] value
+     [5, Operator] +
+     [5, Infix] 30 * 6.6
+      [6, Literal] 30
+      [6, Operator] *
+      [6, Literal] 6.6
+  [2, Signature] ()

@@ -1,0 +1,13 @@
+[0, JavascriptNodeUnit] Promise.resolve({ value, done })
+ [1, QualifiedExpression] Promise.resolve({ value, done })
+  [2, Qualifier] Promise.
+   [3, Identifier] Promise
+   [3, Operator] .
+  [2, FunctionCall] resolve({ value, done })
+   [3, Identifier] resolve
+   [3, Signature] ({ value, done })
+    [4, DestructuringObject] { value, done }
+     [5, Field] value
+      [6, Identifier] value
+     [5, Field] done
+      [6, Identifier] done

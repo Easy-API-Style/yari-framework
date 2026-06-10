@@ -1,0 +1,94 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+    "leftOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "x",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 2
+        }
+      }
+    },
+    "operator" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+      "symbol" : "=",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 3
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "rightOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment$Chaining",
+      "values" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "y",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 6
+          }
+        }
+      }, {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "z",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 10
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 10
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 10
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 10
+    }
+  }
+}

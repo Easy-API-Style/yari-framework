@@ -1,0 +1,23 @@
+[0, Css] li:has(+ li:last-of-type) {\\n color: red;\\n font-weight: bold;\\n }
+ [1, RuleSet] li:has(+ li:last-of-type) {\\n color: red;\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] li:has(+ li:last-of-type)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :has(+ li:last-of-type)
+    [4, PseudoClassSelector] :has
+     [5, Identifier] has
+    [4, Signature] (+ li:last-of-type)
+     [5, CombinatorSelector] + li:last-of-type
+      [6, PrefixSelector] + li
+       [7, Operator] +
+       [7, ElementSelector] li
+      [6, Operator] 
+      [6, PseudoClassSelector] :last-of-type
+       [7, Identifier] last-of-type
+  [2, Block] {\\n color: red;\\n font-weight: bold;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold

@@ -1,0 +1,13 @@
+[0, Javascript] export const { name1, name2: bar } = o
+ [1, Export] export const { name1, name2: bar } = o
+  [2, VariableDeclaration] const { name1, name2: bar } = o
+   [3, Type] const
+   [3, Variable] { name1, name2: bar } = o
+    [4, DestructuringObject] { name1, name2: bar }
+     [5, Field] name1
+      [6, Identifier] name1
+     [5, Field] name2: bar
+      [6, Identifier] name2
+      [6, Identifier] : bar
+    [4, Operator] =
+    [4, Identifier] o

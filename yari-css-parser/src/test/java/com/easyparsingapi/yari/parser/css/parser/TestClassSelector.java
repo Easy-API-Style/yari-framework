@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2025 Easy API
+ * Website : https://easyparsingapi.com/
+ * GitHub  : https://github.com/Easy-API-Style/yari-framework
+ * Contact : easy.api.contact@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.easyparsingapi.yari.parser.css.parser;
+
+import static com.easyparsingapi.yari.parser.css.parser.AssertUtil.assertAst;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
+
+public class TestClassSelector {
+
+    @Test
+    public void test_01(TestInfo testInfo) {
+        String code =  """
+           .spacious {
+              margin: 2em;
+           }
+        """;
+        assertAst(testInfo, code);
+    }
+
+    @Test
+    public void test_02(TestInfo testInfo) {
+        String code =  """
+           li.spacious {
+             margin: 2em;
+           }
+        """;
+        assertAst(testInfo, code);
+    }
+
+    @Test
+    public void test_03(TestInfo testInfo) {
+        String code =  """
+           li.spacious.elegant {
+              margin: 2em;
+           }
+        """;
+        assertAst(testInfo, code);
+    }
+
+    @Test
+    public void test_04(TestInfo testInfo) {
+        String code =  """
+           .class_name {
+              margin: 2em;
+           }
+        """;
+        assertAst(testInfo, code);
+    }
+
+    @Test
+    public void test_05(TestInfo testInfo) {
+        String code =  """
+           .item\\?one {
+              background-color: pink;
+            }
+        """;
+        assertAst(testInfo, code);
+    }
+    
+    @Test
+    public void test_06(TestInfo testInfo) {
+        String code =  """
+           .\\00003123item {
+              background-color: #4b0b16;
+           }
+        """;
+        assertAst(testInfo, code);
+    }
+    
+}

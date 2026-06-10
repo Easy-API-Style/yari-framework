@@ -1,0 +1,59 @@
+[0, Css] ol {\\n list-style-type: upper-alpha;\\n color: darkblue;\\n }\\n\\n :is(ol, ul, menu:unsupported) :is(ol, ul) {\\n color: green;\\n }\\n\\n :is(ol, ul) :is(ol, ul) ol {\\n list-style-type: lower-greek;\\n color: chocolate;\\n }
+ [1, RuleSet] ol {\\n list-style-type: upper-alpha;\\n color: darkblue;\\n }
+  [2, ElementSelector] ol
+  [2, Block] {\\n list-style-type: upper-alpha;\\n color: darkblue;\\n }
+   [3, Property] list-style-type: upper-alpha
+    [4, Identifier] list-style-type
+    [4, Identifier] upper-alpha
+   [3, Property] color: darkblue
+    [4, Identifier] color
+    [4, Identifier] darkblue
+ [1, RuleSet] :is(ol, ul, menu:unsupported) :is(ol, ul) {\\n color: green;\\n }
+  [2, QualifiedSelector] :is(ol, ul, menu:unsupported) :is(ol, ul)
+   [3, PseudoFunctionSelector] :is(ol, ul, menu:unsupported)
+    [4, PseudoClassSelector] :is
+     [5, Identifier] is
+    [4, Signature] (ol, ul, menu:unsupported)
+     [5, ListSelector] ol, ul, menu:unsupported
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+      [6, CombinatorSelector] menu:unsupported
+       [7, ElementSelector] menu
+       [7, Operator] 
+       [7, PseudoClassSelector] :unsupported
+        [8, Identifier] unsupported
+   [3, PseudoFunctionSelector] :is(ol, ul)
+    [4, PseudoClassSelector] :is
+     [5, Identifier] is
+    [4, Signature] (ol, ul)
+     [5, ListSelector] ol, ul
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green
+ [1, RuleSet] :is(ol, ul) :is(ol, ul) ol {\\n list-style-type: lower-greek;\\n color: chocolate;\\n }
+  [2, QualifiedSelector] :is(ol, ul) :is(ol, ul) ol
+   [3, PseudoFunctionSelector] :is(ol, ul)
+    [4, PseudoClassSelector] :is
+     [5, Identifier] is
+    [4, Signature] (ol, ul)
+     [5, ListSelector] ol, ul
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+   [3, PseudoFunctionSelector] :is(ol, ul)
+    [4, PseudoClassSelector] :is
+     [5, Identifier] is
+    [4, Signature] (ol, ul)
+     [5, ListSelector] ol, ul
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+   [3, ElementSelector] ol
+  [2, Block] {\\n list-style-type: lower-greek;\\n color: chocolate;\\n }
+   [3, Property] list-style-type: lower-greek
+    [4, Identifier] list-style-type
+    [4, Identifier] lower-greek
+   [3, Property] color: chocolate
+    [4, Identifier] color
+    [4, Identifier] chocolate

@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 43] [Javascript]
+({ a: a1 = aDefault, b = bDefault } = obj)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 43] [Parenthesis]
+({ a: a1 = aDefault, b = bDefault } = obj)
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 42] [Assignment]
+{ a: a1 = aDefault, b = bDefault } = obj
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 36] [DestructuringObject]
+{ a: a1 = aDefault, b = bDefault }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 20] [Field]
+a: a1 = aDefault
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+: a1
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 20] [Identifier]
+= aDefault
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 34] [Field]
+b = bDefault
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 34] [Identifier]
+= bDefault
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 38] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 42] [Identifier]
+obj
+---------------------------

@@ -1,0 +1,28 @@
+[0, Javascript] Object.defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }});
+ [1, QualifiedExpression] Object.defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }})
+  [2, Qualifier] Object.
+   [3, Identifier] Object
+   [3, Operator] .
+  [2, FunctionCall] defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }})
+   [3, Identifier] defineProperty
+   [3, Signature] (o, 'b', { set: function(x) { this.a = x / 2; }})
+    [4, Identifier] o
+    [4, Literal] 'b'
+    [4, ObjectDeclaration] { set: function(x) { this.a = x / 2; }}
+     [5, FieldDeclaration] set: function(x) { this.a = x / 2; }
+      [6, Identifier] set
+      [6, FunctionDeclaration] function(x) { this.a = x / 2; }
+       [7, Signature] (x)
+        [8, Identifier] x
+       [7, Procedure] { this.a = x / 2; }
+        [8, Assignment] this.a = x / 2
+         [9, QualifiedExpression] this.a
+          [10, Qualifier] this.
+           [11, This] this
+           [11, Operator] .
+          [10, Identifier] a
+         [9, Operator] =
+         [9, Infix] x / 2
+          [10, Identifier] x
+          [10, Operator] /
+          [10, Literal] 2

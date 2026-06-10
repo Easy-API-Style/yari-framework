@@ -1,0 +1,214 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+    "qualifiers" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+      "expression" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "console",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 1
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 8
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : ".",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 8
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 9
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 9
+        }
+      }
+    } ],
+    "expression" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "log",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 12
+          }
+        }
+      },
+      "signature" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+        "parameters" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate",
+          "elements" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Constant",
+            "value" : "string text line 1 \n             string text line 2",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 14
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 32
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 13
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 33
+            }
+          }
+        } ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 12
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 34
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 9
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 34
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 34
+      }
+    },
+    "expressions" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "console",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 8
+        }
+      }
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "log",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 12
+          }
+        }
+      },
+      "signature" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+        "parameters" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate",
+          "elements" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Constant",
+            "value" : "string text line 1 \n             string text line 2",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 14
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 32
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 13
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 33
+            }
+          }
+        } ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 12
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 34
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 9
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 34
+        }
+      }
+    } ]
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 2,
+      "column" : 35
+    }
+  }
+}

@@ -1,0 +1,39 @@
+[0, Css] tabbed-custom-element::part(tab):hover {\\n background-color: black;\\n color: white;\\n }\\n\\n tabbed-custom-element::part(tab active) {\\n border-color: blue !important;\\n }
+ [1, RuleSet] tabbed-custom-element::part(tab):hover {\\n background-color: black;\\n color: white;\\n }
+  [2, CombinatorSelector] tabbed-custom-element::part(tab):hover
+   [3, CombinatorSelector] tabbed-custom-element::part(tab)
+    [4, ElementSelector] tabbed-custom-element
+    [4, Operator] 
+    [4, PseudoFunctionSelector] ::part(tab)
+     [5, PseudoElementSelector] ::part
+      [6, Identifier] part
+     [5, Signature] (tab)
+      [6, ListValue] tab
+       [7, Identifier] tab
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n background-color: black;\\n color: white;\\n }
+   [3, Property] background-color: black
+    [4, Identifier] background-color
+    [4, Identifier] black
+   [3, Property] color: white
+    [4, Identifier] color
+    [4, Identifier] white
+ [1, RuleSet] tabbed-custom-element::part(tab active) {\\n border-color: blue !important;\\n }
+  [2, CombinatorSelector] tabbed-custom-element::part(tab active)
+   [3, ElementSelector] tabbed-custom-element
+   [3, Operator] 
+   [3, PseudoFunctionSelector] ::part(tab active)
+    [4, PseudoElementSelector] ::part
+     [5, Identifier] part
+    [4, Signature] (tab active)
+     [5, ListValue] tab active
+      [6, Identifier] tab
+      [6, Identifier] active
+  [2, Block] {\\n border-color: blue !important;\\n }
+   [3, Property] border-color: blue !important
+    [4, Identifier] border-color
+    [4, ListValue] blue !important
+     [5, Identifier] blue
+     [5, Important] !important

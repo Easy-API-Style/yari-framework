@@ -1,0 +1,24 @@
+Infix [left=Identifier [value=a, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 2]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 3]], right=Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=c, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 8]]
+a+(b*c)
+---------------------------
+Identifier [value=a, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 2]]
+a
+---------------------------
+Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 3]]
++
+---------------------------
+Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=c, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]]
+(b*c)
+---------------------------
+Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=c, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]]
+b*c
+---------------------------
+Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]]
+b
+---------------------------
+Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]]
+*
+---------------------------
+Identifier [value=c, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]]
+c
+---------------------------

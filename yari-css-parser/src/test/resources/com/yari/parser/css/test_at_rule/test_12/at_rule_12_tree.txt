@@ -1,0 +1,13 @@
+[0, Css] @container not scroll-state(scrollable: none) {\\n /* … */\\n }
+ [1, AtRule] @container not scroll-state(scrollable: none) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Prefix] not scroll-state(scrollable: none)
+   [3, Operator] not
+   [3, Function] scroll-state(scrollable: none)
+    [4, Identifier] scroll-state
+    [4, Signature] (scrollable: none)
+     [5, Property] scrollable: none
+      [6, Identifier] scrollable
+      [6, Identifier] none
+  [2, Block] {\\n /* … */\\n }

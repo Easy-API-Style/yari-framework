@@ -1,0 +1,19 @@
+[0, Css] :host(:state(checked))::before {\\n content: "[x]";\\n }
+ [1, RuleSet] :host(:state(checked))::before {\\n content: "[x]";\\n }
+  [2, CombinatorSelector] :host(:state(checked))::before
+   [3, PseudoFunctionSelector] :host(:state(checked))
+    [4, PseudoClassSelector] :host
+     [5, Identifier] host
+    [4, Signature] (:state(checked))
+     [5, PseudoFunctionSelector] :state(checked)
+      [6, PseudoClassSelector] :state
+       [7, Identifier] state
+      [6, Signature] (checked)
+       [7, Identifier] checked
+   [3, Operator] 
+   [3, PseudoElementSelector] ::before
+    [4, Identifier] before
+  [2, Block] {\\n content: "[x]";\\n }
+   [3, Property] content: "[x]"
+    [4, Identifier] content
+    [4, Literal] "[x]"

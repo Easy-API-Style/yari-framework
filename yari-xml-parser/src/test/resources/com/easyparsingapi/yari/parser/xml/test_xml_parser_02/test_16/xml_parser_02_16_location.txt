@@ -1,0 +1,438 @@
+SourceLocation [start=line 1 column 1, end=line 28 column 17] [Xml]
+<?xml version="1.0" encoding="UTF-8"?>\\n<?xml-stylesheet href="transformation.xsl" type="text/xsl"?>\\n<?mode ecran?>\\n<?instruction pour le traitement?>\\n<!-- Commentaire -->\\n<ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>\\n <élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>\\n</ex:collection>
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 39] [Prolog]
+<?xml version="1.0" encoding="UTF-8"?>
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 61] [Prolog]
+<?xml-stylesheet href="transformation.xsl" type="text/xsl"?>
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 3 column 15] [Prolog]
+<?mode ecran?>
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 35] [Prolog]
+<?instruction pour le traitement?>
+---------------------------
+SourceLocation [start=line 5 column 1, end=line 5 column 21] [XmlComment]
+<!-- Commentaire -->
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 28 column 17] [Tag]
+<ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>\\n <élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>\\n</ex:collection>
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 11 column 2] [TagHead]
+<ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>
+---------------------------
+SourceLocation [start=line 6 column 2, end=line 6 column 15] [TagName]
+ex:collection
+---------------------------
+SourceLocation [start=line 6 column 2, end=line 6 column 4] [Namespace]
+ex
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 15] [Name]
+collection
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 18] [TagAttribute]
+xml:lang="fr"
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 13] [Name]
+xml:lang
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 8] [Namespace]
+xml
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 13] [Name]
+lang
+---------------------------
+SourceLocation [start=line 7 column 14, end=line 7 column 18] [Value]
+"fr"
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 48] [TagAttribute]
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 13] [Name]
+xmlns:dc
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 10] [Namespace]
+xmlns
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 13] [Name]
+dc
+---------------------------
+SourceLocation [start=line 8 column 14, end=line 8 column 48] [Value]
+"http://purl.org/dc/elements/1.1/"
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 41] [TagAttribute]
+xmlns="http://www.w3.org/1999/xhtml"
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 10] [Name]
+xmlns
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 10] [Name]
+xmlns
+---------------------------
+SourceLocation [start=line 9 column 11, end=line 9 column 41] [Value]
+"http://www.w3.org/1999/xhtml"
+---------------------------
+SourceLocation [start=line 10 column 5, end=line 10 column 34] [TagAttribute]
+xmlns:ex="http://exemple.org"
+---------------------------
+SourceLocation [start=line 10 column 5, end=line 10 column 13] [Name]
+xmlns:ex
+---------------------------
+SourceLocation [start=line 10 column 5, end=line 10 column 10] [Namespace]
+xmlns
+---------------------------
+SourceLocation [start=line 10 column 11, end=line 10 column 13] [Name]
+ex
+---------------------------
+SourceLocation [start=line 10 column 14, end=line 10 column 34] [Value]
+"http://exemple.org"
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 27 column 16] [TagBody]
+<élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 12 column 29] [Tag]
+<élément>Texte</élément>
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 12 column 14] [TagHead]
+<élément>
+---------------------------
+SourceLocation [start=line 12 column 6, end=line 12 column 13] [TagName]
+élément
+---------------------------
+SourceLocation [start=line 12 column 6, end=line 12 column 13] [Name]
+élément
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 19] [TagBody]
+Texte
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 19] [Text]
+Texte
+---------------------------
+SourceLocation [start=line 12 column 19, end=line 12 column 29] [TagFoot]
+</élément>
+---------------------------
+SourceLocation [start=line 12 column 21, end=line 12 column 28] [TagName]
+élément
+---------------------------
+SourceLocation [start=line 12 column 21, end=line 12 column 28] [Name]
+élément
+---------------------------
+SourceLocation [start=line 13 column 5, end=line 13 column 44] [Tag]
+<dc:title>Astérix le Gaulois</dc:title>
+---------------------------
+SourceLocation [start=line 13 column 5, end=line 13 column 15] [TagHead]
+<dc:title>
+---------------------------
+SourceLocation [start=line 13 column 6, end=line 13 column 14] [TagName]
+dc:title
+---------------------------
+SourceLocation [start=line 13 column 6, end=line 13 column 8] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 14] [Name]
+title
+---------------------------
+SourceLocation [start=line 13 column 15, end=line 13 column 33] [TagBody]
+Astérix le Gaulois
+---------------------------
+SourceLocation [start=line 13 column 15, end=line 13 column 33] [Text]
+Astérix le Gaulois
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 44] [TagFoot]
+</dc:title>
+---------------------------
+SourceLocation [start=line 13 column 35, end=line 13 column 43] [TagName]
+dc:title
+---------------------------
+SourceLocation [start=line 13 column 35, end=line 13 column 37] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 13 column 38, end=line 13 column 43] [Name]
+title
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 27 column 16] [Tag]
+<ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 14 column 43] [TagHead]
+<ex:livre attribut="valeur" type="BD">
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 14] [TagName]
+ex:livre
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 8] [Namespace]
+ex
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 14] [Name]
+livre
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 32] [TagAttribute]
+attribut="valeur"
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 23] [Name]
+attribut
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 23] [Name]
+attribut
+---------------------------
+SourceLocation [start=line 14 column 24, end=line 14 column 32] [Value]
+"valeur"
+---------------------------
+SourceLocation [start=line 14 column 33, end=line 14 column 42] [TagAttribute]
+type="BD"
+---------------------------
+SourceLocation [start=line 14 column 33, end=line 14 column 37] [Name]
+type
+---------------------------
+SourceLocation [start=line 14 column 33, end=line 14 column 37] [Name]
+type
+---------------------------
+SourceLocation [start=line 14 column 38, end=line 14 column 42] [Value]
+"BD"
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 26 column 26] [TagBody]
+<dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 53] [Tag]
+<dc:title>Astérix chez les Belges</dc:title>
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 19] [TagHead]
+<dc:title>
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 18] [TagName]
+dc:title
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 12] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 18] [Name]
+title
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 42] [TagBody]
+Astérix chez les Belges
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 42] [Text]
+Astérix chez les Belges
+---------------------------
+SourceLocation [start=line 15 column 42, end=line 15 column 53] [TagFoot]
+</dc:title>
+---------------------------
+SourceLocation [start=line 15 column 44, end=line 15 column 52] [TagName]
+dc:title
+---------------------------
+SourceLocation [start=line 15 column 44, end=line 15 column 46] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 15 column 47, end=line 15 column 52] [Name]
+title
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 32] [XmlComment]
+<!-- élément répété -->
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 47] [Tag]
+<dc:creator>René Goscinny</dc:creator>
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 21] [TagHead]
+<dc:creator>
+---------------------------
+SourceLocation [start=line 17 column 10, end=line 17 column 20] [TagName]
+dc:creator
+---------------------------
+SourceLocation [start=line 17 column 10, end=line 17 column 12] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 20] [Name]
+creator
+---------------------------
+SourceLocation [start=line 17 column 21, end=line 17 column 34] [TagBody]
+René Goscinny
+---------------------------
+SourceLocation [start=line 17 column 21, end=line 17 column 34] [Text]
+René Goscinny
+---------------------------
+SourceLocation [start=line 17 column 34, end=line 17 column 47] [TagFoot]
+</dc:creator>
+---------------------------
+SourceLocation [start=line 17 column 36, end=line 17 column 46] [TagName]
+dc:creator
+---------------------------
+SourceLocation [start=line 17 column 36, end=line 17 column 38] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 17 column 39, end=line 17 column 46] [Name]
+creator
+---------------------------
+SourceLocation [start=line 18 column 9, end=line 18 column 47] [Tag]
+<dc:creator>Albert Uderzo</dc:creator>
+---------------------------
+SourceLocation [start=line 18 column 9, end=line 18 column 21] [TagHead]
+<dc:creator>
+---------------------------
+SourceLocation [start=line 18 column 10, end=line 18 column 20] [TagName]
+dc:creator
+---------------------------
+SourceLocation [start=line 18 column 10, end=line 18 column 12] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 18 column 13, end=line 18 column 20] [Name]
+creator
+---------------------------
+SourceLocation [start=line 18 column 21, end=line 18 column 34] [TagBody]
+Albert Uderzo
+---------------------------
+SourceLocation [start=line 18 column 21, end=line 18 column 34] [Text]
+Albert Uderzo
+---------------------------
+SourceLocation [start=line 18 column 34, end=line 18 column 47] [TagFoot]
+</dc:creator>
+---------------------------
+SourceLocation [start=line 18 column 36, end=line 18 column 46] [TagName]
+dc:creator
+---------------------------
+SourceLocation [start=line 18 column 36, end=line 18 column 38] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 18 column 39, end=line 18 column 46] [Name]
+creator
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 26 column 26] [Tag]
+<dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 25] [TagHead]
+<dc:description>
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 24] [TagName]
+dc:description
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 12] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 19 column 13, end=line 19 column 24] [Name]
+description
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 25 column 10] [TagBody]
+<b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 43] [Tag]
+<b>Astérix chez les Belges</b>
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 16] [TagHead]
+<b>
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 15] [TagName]
+b
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 15] [Name]
+b
+---------------------------
+SourceLocation [start=line 20 column 16, end=line 20 column 39] [TagBody]
+Astérix chez les Belges
+---------------------------
+SourceLocation [start=line 20 column 16, end=line 20 column 39] [Text]
+Astérix chez les Belges
+---------------------------
+SourceLocation [start=line 20 column 39, end=line 20 column 43] [TagFoot]
+</b>
+---------------------------
+SourceLocation [start=line 20 column 41, end=line 20 column 42] [TagName]
+b
+---------------------------
+SourceLocation [start=line 20 column 41, end=line 20 column 42] [Name]
+b
+---------------------------
+SourceLocation [start=line 20 column 44, end=line 20 column 59] [Text]
+est un album de
+---------------------------
+SourceLocation [start=line 21 column 1, end=line 21 column 73] [Tag]
+<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a>
+---------------------------
+SourceLocation [start=line 21 column 1, end=line 21 column 55] [TagHead]
+<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">
+---------------------------
+SourceLocation [start=line 21 column 2, end=line 21 column 3] [TagName]
+a
+---------------------------
+SourceLocation [start=line 21 column 2, end=line 21 column 3] [Name]
+a
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 54] [TagAttribute]
+href="http://fr.wikipedia.org/wiki/Bande_dessinée"
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 8] [Name]
+href
+---------------------------
+SourceLocation [start=line 21 column 4, end=line 21 column 8] [Name]
+href
+---------------------------
+SourceLocation [start=line 21 column 9, end=line 21 column 54] [Value]
+"http://fr.wikipedia.org/wiki/Bande_dessinée"
+---------------------------
+SourceLocation [start=line 21 column 55, end=line 21 column 69] [TagBody]
+bande dessinée
+---------------------------
+SourceLocation [start=line 21 column 55, end=line 21 column 69] [Text]
+bande dessinée
+---------------------------
+SourceLocation [start=line 21 column 69, end=line 21 column 73] [TagFoot]
+</a>
+---------------------------
+SourceLocation [start=line 21 column 71, end=line 21 column 72] [TagName]
+a
+---------------------------
+SourceLocation [start=line 21 column 71, end=line 21 column 72] [Name]
+a
+---------------------------
+SourceLocation [start=line 21 column 74, end=line 22 column 67] [Text]
+de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.
+---------------------------
+SourceLocation [start=line 23 column 1, end=line 23 column 7] [TagEmpty]
+<br />
+---------------------------
+SourceLocation [start=line 23 column 2, end=line 23 column 4] [TagName]
+br
+---------------------------
+SourceLocation [start=line 23 column 2, end=line 23 column 4] [Name]
+br
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 28] [XmlComment]
+<!-- élément vide -->
+---------------------------
+SourceLocation [start=line 24 column 13, end=line 25 column 10] [Text]
+Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.
+---------------------------
+SourceLocation [start=line 26 column 9, end=line 26 column 26] [TagFoot]
+</dc:description>
+---------------------------
+SourceLocation [start=line 26 column 11, end=line 26 column 25] [TagName]
+dc:description
+---------------------------
+SourceLocation [start=line 26 column 11, end=line 26 column 13] [Namespace]
+dc
+---------------------------
+SourceLocation [start=line 26 column 14, end=line 26 column 25] [Name]
+description
+---------------------------
+SourceLocation [start=line 27 column 5, end=line 27 column 16] [TagFoot]
+</ex:livre>
+---------------------------
+SourceLocation [start=line 27 column 7, end=line 27 column 15] [TagName]
+ex:livre
+---------------------------
+SourceLocation [start=line 27 column 7, end=line 27 column 9] [Namespace]
+ex
+---------------------------
+SourceLocation [start=line 27 column 10, end=line 27 column 15] [Name]
+livre
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 17] [TagFoot]
+</ex:collection>
+---------------------------
+SourceLocation [start=line 28 column 3, end=line 28 column 16] [TagName]
+ex:collection
+---------------------------
+SourceLocation [start=line 28 column 3, end=line 28 column 5] [Namespace]
+ex
+---------------------------
+SourceLocation [start=line 28 column 6, end=line 28 column 16] [Name]
+collection
+---------------------------

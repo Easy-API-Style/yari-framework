@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 4 column 2] [Javascript]
+function* generator(i) {\\n yield i;\\n yield i + 10;\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 4 column 2] [FunctionDeclaration]
+function* generator(i) {\\n yield i;\\n yield i + 10;\\n}
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 20] [Identifier]
+generator
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 23] [Signature]
+(i)
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 4 column 2] [Procedure]
+{\\n yield i;\\n yield i + 10;\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 10] [Yield]
+yield i
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 10] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 15] [Yield]
+yield i + 10
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 15] [Infix]
+i + 10
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 10] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 12] [Operator]
++
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 15] [Literal]
+10
+---------------------------

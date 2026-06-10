@@ -1,0 +1,184 @@
+/*
+ * Copyright (c) 2025 Easy API
+ * Website : https://easyparsingapi.com/
+ * GitHub  : https://github.com/Easy-API-Style/yari-framework
+ * Contact : easy.api.contact@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.easyparsingapi.yari.parser.javascript.ast;
+
+import java.util.List;
+import java.util.Objects;
+
+import com.easyparsingapi.yari.core.ast.AstNode;
+import com.easyparsingapi.yari.parsec.location.SourceLocation;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+/**
+ * Represents a tagged template literal call in the AST (e.g. {@code html`Hello ${name}`}).
+ * Associates a tag function expression ({@link #getName()}) with the template literal
+ * used as its argument ({@link #getSignature()}).
+ */
+@JsonPropertyOrder({"name", "signature", "sourceLocation"})
+public class TagFunctionCall implements JavascriptNode {
+
+    private static final long serialVersionUID = 1L; 
+    
+    /** The name. */
+    @JsonProperty("name") 
+    private final JavascriptNode name;
+    /** The signature. */
+    @JsonProperty("signature") 
+    private final LiteralTemplate signature;
+    /** The parent. */
+    @JsonIgnore
+    private AstNode parent;
+    /** The sourceLocation. */
+    @JsonProperty("sourceLocation") 
+    private SourceLocation sourceLocation;
+
+    /**
+     * Constructs a {@code TagFunctionCall} without source-location information.
+     *
+     * @param name      the tag function expression
+     * @param signature the template literal used as the argument
+     */
+    public TagFunctionCall(final JavascriptNode name,
+                           final LiteralTemplate signature) {
+        this(name, signature, null);
+    }
+
+    /**
+     * Constructs a {@code TagFunctionCall} with full source-location information.
+     *
+     * @param name           the tag function expression
+     * @param signature      the template literal used as the argument
+     * @param sourceLocation the source location of this node, or {@code null}
+     */
+    @JsonCreator
+    public TagFunctionCall(@JsonProperty("name") final JavascriptNode name,
+                           @JsonProperty("signature") final LiteralTemplate signature,
+                           @JsonProperty("sourceLocation") final SourceLocation sourceLocation) {
+        super();
+        this.name = name;
+        this.signature = signature;
+        this.sourceLocation = sourceLocation;
+        JavascriptUtil.setAstParent(this);
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public List<AstNode> astChildren() {
+        return AstNode.childrenAttributes(name, signature);
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public AstNode astParent() {
+        return parent;
+    }
+    
+    /**
+     * Sets the parent AST node of this tagged template call.
+     *
+     * @param parent the parent {@link AstNode}
+     */
+    protected void astParent(final AstNode parent) {
+        this.parent = parent;
+    }
+
+    /**
+     * Returns the tag function expression.
+     *
+     * @return the name/expression {@link JavascriptNode}
+     */
+    public JavascriptNode getName() {
+        return name;
+    }
+
+    /**
+     * Returns the template literal used as the argument to the tag function.
+     *
+     * @return the {@link LiteralTemplate}
+     */
+    public LiteralTemplate getSignature() {
+        return signature;
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public SourceLocation getSourceLocation() {
+        return sourceLocation;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setSourceLocation(final SourceLocation sourceLocation) {
+        this.sourceLocation = sourceLocation;
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, signature, sourceLocation);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public boolean equals(final Object object) {
+        if (object instanceof AstNode node) {
+            return equalsNode(node) 
+                      && Objects.equals(sourceLocation, node.getSourceLocation());
+        }
+        return false;
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public boolean equalsNode(final AstNode obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TagFunctionCall other = (TagFunctionCall) obj;
+        return Objects.equals(name, other.name) 
+                && Objects.equals(signature, other.signature);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString() {
+        final StringBuilder result = new StringBuilder();
+        result.append(TagFunctionCall.class.getSimpleName());
+        result.append(" [name=");
+        result.append(name);
+        result.append(", signature=");
+        result.append(signature);
+        if (sourceLocation != null) {
+            result.append(", sourceLocation=");
+            result.append(sourceLocation);
+        }
+        result.append("]");
+        return result.toString();
+    }
+    
+}

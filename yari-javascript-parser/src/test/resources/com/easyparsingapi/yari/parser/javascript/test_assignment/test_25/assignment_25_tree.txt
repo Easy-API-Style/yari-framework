@@ -1,0 +1,12 @@
+[0, Javascript] ({ a, b, ...rest } = obj)
+ [1, Parenthesis] ({ a, b, ...rest } = obj)
+  [2, Assignment] { a, b, ...rest } = obj
+   [3, DestructuringObject] { a, b, ...rest }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj

@@ -1,0 +1,60 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [Javascript]
+for await (const num of generatorWithRejectedPromises()) { console.log(num);}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [For]
+for await (const num of generatorWithRejectedPromises()) { console.log(num);}
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 56] [ListIteration]
+const num of generatorWithRejectedPromises()
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 21] [VariableDeclaration]
+const num
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 17] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 21] [Variable]
+num
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 21] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 24] [Operator]
+of
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 56] [FunctionCall]
+generatorWithRejectedPromises()
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 54] [Identifier]
+generatorWithRejectedPromises
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 56] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 79] [Procedure]
+{ console.log(num);}
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 77] [QualifiedExpression]
+console.log(num)
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 69] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 68] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 69] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 77] [FunctionCall]
+log(num)
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 72] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 72, end=line 1 column 77] [Signature]
+(num)
+---------------------------
+SourceLocation [start=line 1 column 73, end=line 1 column 76] [Identifier]
+num
+---------------------------

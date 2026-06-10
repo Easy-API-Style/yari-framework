@@ -1,0 +1,87 @@
+[0, Javascript] function(e,o,t){ var n=new Date,i=t; n.setTime(n.getTime()+24*i*60*60*1e3), document.cookie=e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())}
+ [1, FunctionDeclaration] function(e,o,t){ var n=new Date,i=t; n.setTime(n.getTime()+24*i*60*60*1e3), document.cookie=e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())}
+  [2, Signature] (e,o,t)
+   [3, Identifier] e
+   [3, Identifier] o
+   [3, Identifier] t
+  [2, Procedure] { var n=new Date,i=t; n.setTime(n.getTime()+24*i*60*60*1e3), document.cookie=e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())}
+   [3, VariableDeclaration] var n=new Date,i=t
+    [4, Type] var
+    [4, Variable] n=new Date
+     [5, Identifier] n
+     [5, Operator] =
+     [5, New] new Date
+      [6, Identifier] Date
+    [4, Variable] i=t
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Identifier] t
+   [3, Sequence] n.setTime(n.getTime()+24*i*60*60*1e3), document.cookie=e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())
+    [4, QualifiedExpression] n.setTime(n.getTime()+24*i*60*60*1e3)
+     [5, Qualifier] n.
+      [6, Identifier] n
+      [6, Operator] .
+     [5, FunctionCall] setTime(n.getTime()+24*i*60*60*1e3)
+      [6, Identifier] setTime
+      [6, Signature] (n.getTime()+24*i*60*60*1e3)
+       [7, Infix] n.getTime()+24*i*60*60*1e3
+        [8, QualifiedExpression] n.getTime()
+         [9, Qualifier] n.
+          [10, Identifier] n
+          [10, Operator] .
+         [9, FunctionCall] getTime()
+          [10, Identifier] getTime
+          [10, Signature] ()
+        [8, Operator] +
+        [8, Infix] 24*i*60*60*1e3
+         [9, Infix] 24*i*60*60
+          [10, Infix] 24*i*60
+           [11, Infix] 24*i
+            [12, Literal] 24
+            [12, Operator] *
+            [12, Identifier] i
+           [11, Operator] *
+           [11, Literal] 60
+          [10, Operator] *
+          [10, Literal] 60
+         [9, Operator] *
+         [9, Literal] 1e3
+    [4, Assignment] document.cookie=e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())
+     [5, QualifiedExpression] document.cookie
+      [6, Qualifier] document.
+       [7, Identifier] document
+       [7, Operator] .
+      [6, Identifier] cookie
+     [5, Operator] =
+     [5, Infix] e+"="+escape(o)+"; path=/"+(null===n?"":"; expires="+n.toGMTString())
+      [6, Infix] e+"="+escape(o)+"; path=/"
+       [7, Infix] e+"="+escape(o)
+        [8, Infix] e+"="
+         [9, Identifier] e
+         [9, Operator] +
+         [9, Literal] "="
+        [8, Operator] +
+        [8, FunctionCall] escape(o)
+         [9, Identifier] escape
+         [9, Signature] (o)
+          [10, Identifier] o
+       [7, Operator] +
+       [7, Literal] "; path=/"
+      [6, Operator] +
+      [6, Parenthesis] (null===n?"":"; expires="+n.toGMTString())
+       [7, Ternary] null===n?"":"; expires="+n.toGMTString()
+        [8, Infix] null===n
+         [9, Null] null
+         [9, Operator] ===
+         [9, Identifier] n
+        [8, Literal] ""
+        [8, Infix] "; expires="+n.toGMTString()
+         [9, Literal] "; expires="
+         [9, Operator] +
+         [9, QualifiedExpression] n.toGMTString()
+          [10, Qualifier] n.
+           [11, Identifier] n
+           [11, Operator] .
+          [10, FunctionCall] toGMTString()
+           [11, Identifier] toGMTString
+           [11, Signature] ()

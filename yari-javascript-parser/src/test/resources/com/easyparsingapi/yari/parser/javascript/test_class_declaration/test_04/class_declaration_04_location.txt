@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 74] [Javascript]
+class A { static field = 'Inner y'; static { var y = this.field; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 74] [ClassDeclaration]
+class A { static field = 'Inner y'; static { var y = this.field; }}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Identifier]
+A
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 36] [ClassFieldDeclaration]
+static field = 'Inner y'
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 24] [Identifier]
+field
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 36] [Literal]
+= 'Inner y'
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 73] [StaticProcedure]
+static { var y = this.field; }
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 73] [Procedure]
+{ var y = this.field; }
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 69] [VariableDeclaration]
+var y = this.field
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 54] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 69] [Variable]
+y = this.field
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 56] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 58] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 69] [QualifiedExpression]
+this.field
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 64] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 63] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 64] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 69] [Identifier]
+field
+---------------------------

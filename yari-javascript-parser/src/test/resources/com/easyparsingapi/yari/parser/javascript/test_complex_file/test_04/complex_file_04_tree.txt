@@ -1,0 +1,525 @@
+[0, Javascript] 'use strict';/*\\n\\n Copyright (c) 2016 The Polymer Project Authors. All rights reserved.\\n This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\\n The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\\n The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\\n Code distributed by Google as part of the polymer project is also\\n subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt\\n*/\\n(()=>{})();\\nObject.defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})\\n//# sourceMappingURL=blaze-out/k8-opt/bin/third_party/javascript/custom_elements/fast-shim.js.sourcemap\\nif(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+ [1, UseStrict] 
+ [1, InvokedFunction] (()=>{})()
+  [2, Definition] (()=>{})
+   [3, ArrowFunction] ()=>{}
+    [4, Signature] ()
+    [4, Procedure] {}
+  [2, Signature] ()
+ [1, QualifiedExpression] Object.defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+  [2, Qualifier] Object.
+   [3, Identifier] Object
+   [3, Operator] .
+  [2, FunctionCall] defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+   [3, Identifier] defineProperty
+   [3, Signature] (window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+    [4, QualifiedExpression] window.customElements
+     [5, Qualifier] window.
+      [6, Identifier] window
+      [6, Operator] .
+     [5, Identifier] customElements
+    [4, Literal] "get"
+    [4, ObjectDeclaration] {value:a=>l.get(a),configurable:!0,writable:!0}
+     [5, FieldDeclaration] value:a=>l.get(a)
+      [6, Identifier] value
+      [6, ArrowFunction] a=>l.get(a)
+       [7, Signature] a
+        [8, Identifier] a
+       [7, Procedure] l.get(a)
+        [8, QualifiedExpression] l.get(a)
+         [9, Qualifier] l.
+          [10, Identifier] l
+          [10, Operator] .
+         [9, FunctionCall] get(a)
+          [10, Identifier] get
+          [10, Signature] (a)
+           [11, Identifier] a
+     [5, FieldDeclaration] configurable:!0
+      [6, Identifier] configurable
+      [6, Prefix] !0
+       [7, Operator] !
+       [7, Literal] 0
+     [5, FieldDeclaration] writable:!0
+      [6, Identifier] writable
+      [6, Prefix] !0
+       [7, Operator] !
+       [7, Literal] 0
+ [1, If] if(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+  [2, IfBlock] if(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+   [3, Condition] (window.customElements)
+    [4, QualifiedExpression] window.customElements
+     [5, Qualifier] window.
+      [6, Identifier] window
+      [6, Operator] .
+     [5, Identifier] customElements
+   [3, Procedure] {var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+    [4, VariableDeclaration] var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1
+     [5, Type] var
+     [5, Variable] h=window.HTMLElement
+      [6, Identifier] h
+      [6, Operator] =
+      [6, QualifiedExpression] window.HTMLElement
+       [7, Qualifier] window.
+        [8, Identifier] window
+        [8, Operator] .
+       [7, Identifier] HTMLElement
+     [5, Variable] m=window.customElements.define
+      [6, Identifier] m
+      [6, Operator] =
+      [6, QualifiedExpression] window.customElements.define
+       [7, Qualifier] window.
+        [8, Identifier] window
+        [8, Operator] .
+       [7, Qualifier] customElements.
+        [8, Identifier] customElements
+        [8, Operator] .
+       [7, Identifier] define
+     [5, Variable] n=window.customElements.get
+      [6, Identifier] n
+      [6, Operator] =
+      [6, QualifiedExpression] window.customElements.get
+       [7, Qualifier] window.
+        [8, Identifier] window
+        [8, Operator] .
+       [7, Qualifier] customElements.
+        [8, Identifier] customElements
+        [8, Operator] .
+       [7, Identifier] get
+     [5, Variable] k=new Map
+      [6, Identifier] k
+      [6, Operator] =
+      [6, New] new Map
+       [7, Identifier] Map
+     [5, Variable] l=new Map
+      [6, Identifier] l
+      [6, Operator] =
+      [6, New] new Map
+       [7, Identifier] Map
+     [5, Variable] e=!1
+      [6, Identifier] e
+      [6, Operator] =
+      [6, Prefix] !1
+       [7, Operator] !
+       [7, Literal] 1
+     [5, Variable] f=!1
+      [6, Identifier] f
+      [6, Operator] =
+      [6, Prefix] !1
+       [7, Operator] !
+       [7, Literal] 1
+    [4, Assignment] window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+     [5, QualifiedExpression] window.HTMLElement
+      [6, Qualifier] window.
+       [7, Identifier] window
+       [7, Operator] .
+      [6, Identifier] HTMLElement
+     [5, Operator] =
+     [5, FunctionDeclaration] function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+      [6, Signature] ()
+      [6, Procedure] {if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+       [7, If] if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+        [8, IfBlock] if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+         [9, Condition] (!e)
+          [10, Prefix] !e
+           [11, Operator] !
+           [11, Identifier] e
+         [9, Procedure] {var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+          [10, VariableDeclaration] var a=k.get(this.constructor)
+           [11, Type] var
+           [11, Variable] a=k.get(this.constructor)
+            [12, Identifier] a
+            [12, Operator] =
+            [12, QualifiedExpression] k.get(this.constructor)
+             [13, Qualifier] k.
+              [14, Identifier] k
+              [14, Operator] .
+             [13, FunctionCall] get(this.constructor)
+              [14, Identifier] get
+              [14, Signature] (this.constructor)
+               [15, QualifiedExpression] this.constructor
+                [16, Qualifier] this.
+                 [17, This] this
+                 [17, Operator] .
+                [16, Identifier] constructor
+          [10, Assignment] a=n.call(window.customElements,a)
+           [11, Identifier] a
+           [11, Operator] =
+           [11, QualifiedExpression] n.call(window.customElements,a)
+            [12, Qualifier] n.
+             [13, Identifier] n
+             [13, Operator] .
+            [12, FunctionCall] call(window.customElements,a)
+             [13, Identifier] call
+             [13, Signature] (window.customElements,a)
+              [14, QualifiedExpression] window.customElements
+               [15, Qualifier] window.
+                [16, Identifier] window
+                [16, Operator] .
+               [15, Identifier] customElements
+              [14, Identifier] a
+          [10, Assignment] f=!0
+           [11, Identifier] f
+           [11, Operator] =
+           [11, Prefix] !0
+            [12, Operator] !
+            [12, Literal] 0
+          [10, Return] return new a
+           [11, New] new a
+            [12, Identifier] a
+       [7, Assignment] e=!1
+        [8, Identifier] e
+        [8, Operator] =
+        [8, Prefix] !1
+         [9, Operator] !
+         [9, Literal] 1
+    [4, Assignment] window.HTMLElement.prototype=h.prototype
+     [5, QualifiedExpression] window.HTMLElement.prototype
+      [6, Qualifier] window.
+       [7, Identifier] window
+       [7, Operator] .
+      [6, Qualifier] HTMLElement.
+       [7, Identifier] HTMLElement
+       [7, Operator] .
+      [6, Identifier] prototype
+     [5, Operator] =
+     [5, QualifiedExpression] h.prototype
+      [6, Qualifier] h.
+       [7, Identifier] h
+       [7, Operator] .
+      [6, Identifier] prototype
+    [4, Assignment] window.HTMLElement.es5Shimmed=!0
+     [5, QualifiedExpression] window.HTMLElement.es5Shimmed
+      [6, Qualifier] window.
+       [7, Identifier] window
+       [7, Operator] .
+      [6, Qualifier] HTMLElement.
+       [7, Identifier] HTMLElement
+       [7, Operator] .
+      [6, Identifier] es5Shimmed
+     [5, Operator] =
+     [5, Prefix] !0
+      [6, Operator] !
+      [6, Literal] 0
+    [4, QualifiedExpression] Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+     [5, Qualifier] Object.
+      [6, Identifier] Object
+      [6, Operator] .
+     [5, FunctionCall] defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+      [6, Identifier] defineProperty
+      [6, Signature] (window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+       [7, Identifier] window
+       [7, Literal] "customElements"
+       [7, ObjectDeclaration] {value:window.customElements,configurable:!0,writable:!0}
+        [8, FieldDeclaration] value:window.customElements
+         [9, Identifier] value
+         [9, QualifiedExpression] window.customElements
+          [10, Qualifier] window.
+           [11, Identifier] window
+           [11, Operator] .
+          [10, Identifier] customElements
+        [8, FieldDeclaration] configurable:!0
+         [9, Identifier] configurable
+         [9, Prefix] !0
+          [10, Operator] !
+          [10, Literal] 0
+        [8, FieldDeclaration] writable:!0
+         [9, Identifier] writable
+         [9, Prefix] !0
+          [10, Operator] !
+          [10, Literal] 0
+    [4, QualifiedExpression] Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+     [5, Qualifier] Object.
+      [6, Identifier] Object
+      [6, Operator] .
+     [5, FunctionCall] defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+      [6, Identifier] defineProperty
+      [6, Signature] (window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+       [7, QualifiedExpression] window.customElements
+        [8, Qualifier] window.
+         [9, Identifier] window
+         [9, Operator] .
+        [8, Identifier] customElements
+       [7, Literal] "define"
+       [7, ObjectDeclaration] {value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0}
+        [8, FieldDeclaration] value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+         [9, Identifier] value
+         [9, ArrowFunction] (a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+          [10, Signature] (a,b)
+           [11, Identifier] a
+           [11, Identifier] b
+          [10, Procedure] {const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+           [11, VariableDeclaration] const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype
+            [12, Type] const
+            [12, Variable] c=b.prototype
+             [13, Identifier] c
+             [13, Operator] =
+             [13, QualifiedExpression] b.prototype
+              [14, Qualifier] b.
+               [15, Identifier] b
+               [15, Operator] .
+              [14, Identifier] prototype
+            [12, Variable] g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}}
+             [13, Identifier] g
+             [13, Operator] =
+             [13, ClassDeclaration] class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}}
+              [14, Identifier] extends h
+              [14, ClassMethodDeclaration] constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}
+               [15, Identifier] constructor
+               [15, Signature] ()
+               [15, Procedure] {super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}
+                [16, FunctionCall] super()
+                 [17, Identifier] super
+                 [17, Signature] ()
+                [16, QualifiedExpression] Object.setPrototypeOf(this,c)
+                 [17, Qualifier] Object.
+                  [18, Identifier] Object
+                  [18, Operator] .
+                 [17, FunctionCall] setPrototypeOf(this,c)
+                  [18, Identifier] setPrototypeOf
+                  [18, Signature] (this,c)
+                   [19, This] this
+                   [19, Identifier] c
+                [16, If] if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+                 [17, IfBlock] if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+                  [18, Condition] (!f)
+                   [19, Prefix] !f
+                    [20, Operator] !
+                    [20, Identifier] f
+                  [18, Procedure] {e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+                   [19, Assignment] e=!0
+                    [20, Identifier] e
+                    [20, Operator] =
+                    [20, Prefix] !0
+                     [21, Operator] !
+                     [21, Literal] 0
+                   [19, Try] try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}
+                    [20, Procedure] {b.call(this)}
+                     [21, QualifiedExpression] b.call(this)
+                      [22, Qualifier] b.
+                       [23, Identifier] b
+                       [23, Operator] .
+                      [22, FunctionCall] call(this)
+                       [23, Identifier] call
+                       [23, Signature] (this)
+                        [24, This] this
+                    [20, Catch] catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}
+                     [21, Signature] (p)
+                      [22, Identifier] p
+                     [21, Procedure] {throw Error("Constructing ".concat(a,": ").concat(p));}
+                      [22, Throw] throw Error("Constructing ".concat(a,": ").concat(p))
+                       [23, FunctionCall] Error("Constructing ".concat(a,": ").concat(p))
+                        [24, Identifier] Error
+                        [24, Signature] ("Constructing ".concat(a,": ").concat(p))
+                         [25, QualifiedExpression] "Constructing ".concat(a,": ").concat(p)
+                          [26, Qualifier] "Constructing ".
+                           [27, Literal] "Constructing "
+                           [27, Operator] .
+                          [26, Qualifier] concat(a,": ").
+                           [27, FunctionCall] concat(a,": ")
+                            [28, Identifier] concat
+                            [28, Signature] (a,": ")
+                             [29, Identifier] a
+                             [29, Literal] ": "
+                           [27, Operator] .
+                          [26, FunctionCall] concat(p)
+                           [27, Identifier] concat
+                           [27, Signature] (p)
+                            [28, Identifier] p
+                [16, Assignment] f=!1
+                 [17, Identifier] f
+                 [17, Operator] =
+                 [17, Prefix] !1
+                  [18, Operator] !
+                  [18, Literal] 1
+            [12, Variable] d=g.prototype
+             [13, Identifier] d
+             [13, Operator] =
+             [13, QualifiedExpression] g.prototype
+              [14, Qualifier] g.
+               [15, Identifier] g
+               [15, Operator] .
+              [14, Identifier] prototype
+           [11, Assignment] g.observedAttributes=b.observedAttributes
+            [12, QualifiedExpression] g.observedAttributes
+             [13, Qualifier] g.
+              [14, Identifier] g
+              [14, Operator] .
+             [13, Identifier] observedAttributes
+            [12, Operator] =
+            [12, QualifiedExpression] b.observedAttributes
+             [13, Qualifier] b.
+              [14, Identifier] b
+              [14, Operator] .
+             [13, Identifier] observedAttributes
+           [11, Assignment] d.connectedCallback=c.connectedCallback
+            [12, QualifiedExpression] d.connectedCallback
+             [13, Qualifier] d.
+              [14, Identifier] d
+              [14, Operator] .
+             [13, Identifier] connectedCallback
+            [12, Operator] =
+            [12, QualifiedExpression] c.connectedCallback
+             [13, Qualifier] c.
+              [14, Identifier] c
+              [14, Operator] .
+             [13, Identifier] connectedCallback
+           [11, Assignment] d.disconnectedCallback=c.disconnectedCallback
+            [12, QualifiedExpression] d.disconnectedCallback
+             [13, Qualifier] d.
+              [14, Identifier] d
+              [14, Operator] .
+             [13, Identifier] disconnectedCallback
+            [12, Operator] =
+            [12, QualifiedExpression] c.disconnectedCallback
+             [13, Qualifier] c.
+              [14, Identifier] c
+              [14, Operator] .
+             [13, Identifier] disconnectedCallback
+           [11, Assignment] d.attributeChangedCallback=c.attributeChangedCallback
+            [12, QualifiedExpression] d.attributeChangedCallback
+             [13, Qualifier] d.
+              [14, Identifier] d
+              [14, Operator] .
+             [13, Identifier] attributeChangedCallback
+            [12, Operator] =
+            [12, QualifiedExpression] c.attributeChangedCallback
+             [13, Qualifier] c.
+              [14, Identifier] c
+              [14, Operator] .
+             [13, Identifier] attributeChangedCallback
+           [11, Assignment] d.adoptedCallback=c.adoptedCallback
+            [12, QualifiedExpression] d.adoptedCallback
+             [13, Qualifier] d.
+              [14, Identifier] d
+              [14, Operator] .
+             [13, Identifier] adoptedCallback
+            [12, Operator] =
+            [12, QualifiedExpression] c.adoptedCallback
+             [13, Qualifier] c.
+              [14, Identifier] c
+              [14, Operator] .
+             [13, Identifier] adoptedCallback
+           [11, QualifiedExpression] k.set(b,a)
+            [12, Qualifier] k.
+             [13, Identifier] k
+             [13, Operator] .
+            [12, FunctionCall] set(b,a)
+             [13, Identifier] set
+             [13, Signature] (b,a)
+              [14, Identifier] b
+              [14, Identifier] a
+           [11, QualifiedExpression] l.set(a,b)
+            [12, Qualifier] l.
+             [13, Identifier] l
+             [13, Operator] .
+            [12, FunctionCall] set(a,b)
+             [13, Identifier] set
+             [13, Signature] (a,b)
+              [14, Identifier] a
+              [14, Identifier] b
+           [11, QualifiedExpression] m.call(window.customElements,a,g)
+            [12, Qualifier] m.
+             [13, Identifier] m
+             [13, Operator] .
+            [12, FunctionCall] call(window.customElements,a,g)
+             [13, Identifier] call
+             [13, Signature] (window.customElements,a,g)
+              [14, QualifiedExpression] window.customElements
+               [15, Qualifier] window.
+                [16, Identifier] window
+                [16, Operator] .
+               [15, Identifier] customElements
+              [14, Identifier] a
+              [14, Identifier] g
+        [8, FieldDeclaration] configurable:!0
+         [9, Identifier] configurable
+         [9, Prefix] !0
+          [10, Operator] !
+          [10, Literal] 0
+        [8, FieldDeclaration] writable:!0
+         [9, Identifier] writable
+         [9, Prefix] !0
+          [10, Operator] !
+          [10, Literal] 0
+    [4, EmptyStatement] 
+    [4, If] if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+     [5, IfBlock] if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+      [6, Condition] (navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/))
+       [7, QualifiedExpression] navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)
+        [8, Qualifier] navigator.
+         [9, Identifier] navigator
+         [9, Operator] .
+        [8, Qualifier] userAgent.
+         [9, Identifier] userAgent
+         [9, Operator] .
+        [8, FunctionCall] match(/Version\/(10\..*|11\.0\..*)Safari/)
+         [9, Identifier] match
+         [9, Signature] (/Version\/(10\..*|11\.0\..*)Safari/)
+          [10, Literal] /Version\/(10\..*|11\.0\..*)Safari/
+      [6, Procedure] {const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+       [7, VariableDeclaration] const a=HTMLElement.prototype.constructor
+        [8, Type] const
+        [8, Variable] a=HTMLElement.prototype.constructor
+         [9, Identifier] a
+         [9, Operator] =
+         [9, QualifiedExpression] HTMLElement.prototype.constructor
+          [10, Qualifier] HTMLElement.
+           [11, Identifier] HTMLElement
+           [11, Operator] .
+          [10, Qualifier] prototype.
+           [11, Identifier] prototype
+           [11, Operator] .
+          [10, Identifier] constructor
+       [7, QualifiedExpression] Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+        [8, Qualifier] Object.
+         [9, Identifier] Object
+         [9, Operator] .
+        [8, FunctionCall] defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+         [9, Identifier] defineProperty
+         [9, Signature] (HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+          [10, QualifiedExpression] HTMLElement.prototype
+           [11, Qualifier] HTMLElement.
+            [12, Identifier] HTMLElement
+            [12, Operator] .
+           [11, Identifier] prototype
+          [10, Literal] "constructor"
+          [10, ObjectDeclaration] {configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}}
+           [11, FieldDeclaration] configurable:!0
+            [12, Identifier] configurable
+            [12, Prefix] !0
+             [13, Operator] !
+             [13, Literal] 0
+           [11, MethodDeclaration] get(){return a}
+            [12, Identifier] get
+            [12, Signature] ()
+            [12, Procedure] {return a}
+             [13, Return] return a
+              [14, Identifier] a
+           [11, MethodDeclaration] set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}
+            [12, Identifier] set
+            [12, Signature] (b)
+             [13, Identifier] b
+            [12, Procedure] {Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}
+             [13, QualifiedExpression] Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})
+              [14, Qualifier] Object.
+               [15, Identifier] Object
+               [15, Operator] .
+              [14, FunctionCall] defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})
+               [15, Identifier] defineProperty
+               [15, Signature] (this,"constructor",{value:b,configurable:!0,writable:!0})
+                [16, This] this
+                [16, Literal] "constructor"
+                [16, ObjectDeclaration] {value:b,configurable:!0,writable:!0}
+                 [17, FieldDeclaration] value:b
+                  [18, Identifier] value
+                  [18, Identifier] b
+                 [17, FieldDeclaration] configurable:!0
+                  [18, Identifier] configurable
+                  [18, Prefix] !0
+                   [19, Operator] !
+                   [19, Literal] 0
+                 [17, FieldDeclaration] writable:!0
+                  [18, Identifier] writable
+                  [18, Prefix] !0
+                   [19, Operator] !
+                   [19, Literal] 0

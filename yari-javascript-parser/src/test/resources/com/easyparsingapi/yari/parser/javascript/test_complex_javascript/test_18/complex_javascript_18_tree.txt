@@ -1,0 +1,17 @@
+[0, Javascript] function(){return this.IsUSA()===!1}
+ [1, FunctionDeclaration] function(){return this.IsUSA()===!1}
+  [2, Signature] ()
+  [2, Procedure] {return this.IsUSA()===!1}
+   [3, Return] return this.IsUSA()===!1
+    [4, Infix] this.IsUSA()===!1
+     [5, QualifiedExpression] this.IsUSA()
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, FunctionCall] IsUSA()
+       [7, Identifier] IsUSA
+       [7, Signature] ()
+     [5, Operator] ===
+     [5, Prefix] !1
+      [6, Operator] !
+      [6, Literal] 1

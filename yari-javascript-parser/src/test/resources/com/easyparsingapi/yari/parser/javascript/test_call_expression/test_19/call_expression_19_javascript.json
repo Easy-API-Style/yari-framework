@@ -1,0 +1,108 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.TagFunctionCall",
+    "name" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.New",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "Function",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 13
+          }
+        }
+      },
+      "signature" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.New$Signature",
+        "parameters" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+          "type" : "doubleQuoteString",
+          "value" : "console.log(arguments)",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 14
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 38
+            }
+          }
+        } ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 13
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 39
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 39
+        }
+      }
+    },
+    "signature" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate",
+      "elements" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Constant",
+        "value" : "Hello",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 40
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 45
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 39
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 46
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 46
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 46
+    }
+  }
+}

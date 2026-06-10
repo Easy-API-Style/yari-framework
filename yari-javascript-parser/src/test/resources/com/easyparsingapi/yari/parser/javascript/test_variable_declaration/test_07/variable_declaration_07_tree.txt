@@ -1,0 +1,14 @@
+[0, Javascript] const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url);
+ [1, VariableDeclaration] const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+  [2, Type] const
+  [2, Variable] parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+   [3, Identifier] parsedURL
+   [3, Operator] =
+   [3, QualifiedExpression] /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+    [4, Qualifier] /^(\w+):\/\/([^\/]+)\/(.*)$/.
+     [5, Literal] /^(\w+):\/\/([^\/]+)\/(.*)$/
+     [5, Operator] .
+    [4, FunctionCall] exec(url)
+     [5, Identifier] exec
+     [5, Signature] (url)
+      [6, Identifier] url

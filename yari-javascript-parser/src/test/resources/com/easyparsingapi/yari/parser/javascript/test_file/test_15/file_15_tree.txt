@@ -1,0 +1,276 @@
+[0, Javascript] try {\\n throw 'myException'; // generates an exception\\n} catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}\\n\\ntry {\\n myroutine(); // may throw three types of exceptions\\n} catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}\\n\\ntry {\\n myRoutine();\\n} catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}\\n\\nfunction isValidJSON(text) {\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}\\n\\nopenMyFile();\\ntry {\\n // tie up a resource\\n writeMyFile(theData);\\n} finally {\\n closeMyFile(); // always close the resource\\n}\\n\\ntry {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}\\n// Output:\\n// "inner" "oops"\\n// "finally"\\n\\ntry {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}\\n\\n(function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})();
+ [1, Try] try {\\n throw 'myException'; // generates an exception\\n} catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}
+  [2, Procedure] {\\n throw 'myException'; // generates an exception\\n}
+   [3, Throw] throw 'myException'
+    [4, Literal] 'myException'
+  [2, Catch] catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}
+   [3, Signature] (e)
+    [4, Identifier] e
+   [3, Procedure] {\\n logMyErrors(e); // pass exception object to error handler\\n}
+    [4, FunctionCall] logMyErrors(e)
+     [5, Identifier] logMyErrors
+     [5, Signature] (e)
+      [6, Identifier] e
+ [1, Try] try {\\n myroutine(); // may throw three types of exceptions\\n} catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+  [2, Procedure] {\\n myroutine(); // may throw three types of exceptions\\n}
+   [3, FunctionCall] myroutine()
+    [4, Identifier] myroutine
+    [4, Signature] ()
+  [2, Catch] catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+   [3, Signature] (e)
+    [4, Identifier] e
+   [3, Procedure] {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+    [4, If] if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+     [5, IfBlock] if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n }
+      [6, Condition] (e instanceof TypeError)
+       [7, Infix] e instanceof TypeError
+        [8, Identifier] e
+        [8, Operator] instanceof
+        [8, Identifier] TypeError
+      [6, Procedure] {\\n // statements to handle TypeError exceptions\\n }
+     [5, ElseIfBlock] else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n }
+      [6, Condition] (e instanceof RangeError)
+       [7, Infix] e instanceof RangeError
+        [8, Identifier] e
+        [8, Operator] instanceof
+        [8, Identifier] RangeError
+      [6, Procedure] {\\n // statements to handle RangeError exceptions\\n }
+     [5, ElseIfBlock] else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n }
+      [6, Condition] (e instanceof EvalError)
+       [7, Infix] e instanceof EvalError
+        [8, Identifier] e
+        [8, Operator] instanceof
+        [8, Identifier] EvalError
+      [6, Procedure] {\\n // statements to handle EvalError exceptions\\n }
+     [5, ElseBlock] else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+      [6, Procedure] {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+       [7, FunctionCall] logMyErrors(e)
+        [8, Identifier] logMyErrors
+        [8, Signature] (e)
+         [9, Identifier] e
+ [1, Try] try {\\n myRoutine();\\n} catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+  [2, Procedure] {\\n myRoutine();\\n}
+   [3, FunctionCall] myRoutine()
+    [4, Identifier] myRoutine
+    [4, Signature] ()
+  [2, Catch] catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+   [3, Signature] (e)
+    [4, Identifier] e
+   [3, Procedure] {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+    [4, If] if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }
+     [5, IfBlock] if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n }
+      [6, Condition] (e instanceof RangeError)
+       [7, Infix] e instanceof RangeError
+        [8, Identifier] e
+        [8, Operator] instanceof
+        [8, Identifier] RangeError
+      [6, Procedure] {\\n // statements to handle this very common expected error\\n }
+     [5, ElseBlock] else {\\n throw e; // re-throw the error unchanged\\n }
+      [6, Procedure] {\\n throw e; // re-throw the error unchanged\\n }
+       [7, Throw] throw e
+        [8, Identifier] e
+ [1, FunctionDeclaration] function isValidJSON(text) {\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}
+  [2, Identifier] isValidJSON
+  [2, Signature] (text)
+   [3, Identifier] text
+  [2, Procedure] {\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}
+   [3, Try] try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }
+    [4, Procedure] {\\n JSON.parse(text);\\n return true;\\n }
+     [5, QualifiedExpression] JSON.parse(text)
+      [6, Qualifier] JSON.
+       [7, Identifier] JSON
+       [7, Operator] .
+      [6, FunctionCall] parse(text)
+       [7, Identifier] parse
+       [7, Signature] (text)
+        [8, Identifier] text
+     [5, Return] return true
+      [6, Literal] true
+    [4, Catch] catch {\\n return false;\\n }
+     [5, Procedure] {\\n return false;\\n }
+      [6, Return] return false
+       [7, Literal] false
+ [1, FunctionCall] openMyFile()
+  [2, Identifier] openMyFile
+  [2, Signature] ()
+ [1, Try] try {\\n // tie up a resource\\n writeMyFile(theData);\\n} finally {\\n closeMyFile(); // always close the resource\\n}
+  [2, Procedure] {\\n // tie up a resource\\n writeMyFile(theData);\\n}
+   [3, FunctionCall] writeMyFile(theData)
+    [4, Identifier] writeMyFile
+    [4, Signature] (theData)
+     [5, Identifier] theData
+  [2, Finally] finally {\\n closeMyFile(); // always close the resource\\n}
+   [3, Procedure] {\\n closeMyFile(); // always close the resource\\n}
+    [4, FunctionCall] closeMyFile()
+     [5, Identifier] closeMyFile
+     [5, Signature] ()
+ [1, Try] try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}
+  [2, Procedure] {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n}
+   [3, Try] try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }
+    [4, Procedure] {\\n throw new Error('oops');\\n }
+     [5, Throw] throw new Error('oops')
+      [6, New] new Error('oops')
+       [7, Identifier] Error
+       [7, Signature] ('oops')
+        [8, Literal] 'oops'
+    [4, Catch] catch (ex) {\\n console.error('inner', ex.message);\\n }
+     [5, Signature] (ex)
+      [6, Identifier] ex
+     [5, Procedure] {\\n console.error('inner', ex.message);\\n }
+      [6, QualifiedExpression] console.error('inner', ex.message)
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] error('inner', ex.message)
+        [8, Identifier] error
+        [8, Signature] ('inner', ex.message)
+         [9, Literal] 'inner'
+         [9, QualifiedExpression] ex.message
+          [10, Qualifier] ex.
+           [11, Identifier] ex
+           [11, Operator] .
+          [10, Identifier] message
+    [4, Finally] finally {\\n console.log('finally');\\n }
+     [5, Procedure] {\\n console.log('finally');\\n }
+      [6, QualifiedExpression] console.log('finally')
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log('finally')
+        [8, Identifier] log
+        [8, Signature] ('finally')
+         [9, Literal] 'finally'
+  [2, Catch] catch (ex) {\\n console.error('outer', ex.message);\\n}
+   [3, Signature] (ex)
+    [4, Identifier] ex
+   [3, Procedure] {\\n console.error('outer', ex.message);\\n}
+    [4, QualifiedExpression] console.error('outer', ex.message)
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] error('outer', ex.message)
+      [6, Identifier] error
+      [6, Signature] ('outer', ex.message)
+       [7, Literal] 'outer'
+       [7, QualifiedExpression] ex.message
+        [8, Qualifier] ex.
+         [9, Identifier] ex
+         [9, Operator] .
+        [8, Identifier] message
+ [1, Try] try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}
+  [2, Procedure] {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n}
+   [3, Try] try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }
+    [4, Procedure] {\\n throw new Error('oops');\\n }
+     [5, Throw] throw new Error('oops')
+      [6, New] new Error('oops')
+       [7, Identifier] Error
+       [7, Signature] ('oops')
+        [8, Literal] 'oops'
+    [4, Catch] catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+     [5, Signature] (ex)
+      [6, Identifier] ex
+     [5, Procedure] {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+      [6, QualifiedExpression] console.error('inner', ex.message)
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] error('inner', ex.message)
+        [8, Identifier] error
+        [8, Signature] ('inner', ex.message)
+         [9, Literal] 'inner'
+         [9, QualifiedExpression] ex.message
+          [10, Qualifier] ex.
+           [11, Identifier] ex
+           [11, Operator] .
+          [10, Identifier] message
+      [6, Throw] throw ex
+       [7, Identifier] ex
+    [4, Finally] finally {\\n console.log('finally');\\n }
+     [5, Procedure] {\\n console.log('finally');\\n }
+      [6, QualifiedExpression] console.log('finally')
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log('finally')
+        [8, Identifier] log
+        [8, Signature] ('finally')
+         [9, Literal] 'finally'
+  [2, Catch] catch (ex) {\\n console.error('outer', ex.message);\\n}
+   [3, Signature] (ex)
+    [4, Identifier] ex
+   [3, Procedure] {\\n console.error('outer', ex.message);\\n}
+    [4, QualifiedExpression] console.error('outer', ex.message)
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] error('outer', ex.message)
+      [6, Identifier] error
+      [6, Signature] ('outer', ex.message)
+       [7, Literal] 'outer'
+       [7, QualifiedExpression] ex.message
+        [8, Qualifier] ex.
+         [9, Identifier] ex
+         [9, Operator] .
+        [8, Identifier] message
+ [1, InvokedFunction] (function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})()
+  [2, Definition] (function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})
+   [3, FunctionDeclaration] function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n}
+     [5, Try] try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }
+      [6, Procedure] {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n }
+       [7, Try] try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }
+        [8, Procedure] {\\n throw new Error('oops');\\n }
+         [9, Throw] throw new Error('oops')
+          [10, New] new Error('oops')
+           [11, Identifier] Error
+           [11, Signature] ('oops')
+            [12, Literal] 'oops'
+        [8, Catch] catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+         [9, Signature] (ex)
+          [10, Identifier] ex
+         [9, Procedure] {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+          [10, QualifiedExpression] console.error('inner', ex.message)
+           [11, Qualifier] console.
+            [12, Identifier] console
+            [12, Operator] .
+           [11, FunctionCall] error('inner', ex.message)
+            [12, Identifier] error
+            [12, Signature] ('inner', ex.message)
+             [13, Literal] 'inner'
+             [13, QualifiedExpression] ex.message
+              [14, Qualifier] ex.
+               [15, Identifier] ex
+               [15, Operator] .
+              [14, Identifier] message
+          [10, Throw] throw ex
+           [11, Identifier] ex
+        [8, Finally] finally {\\n console.log('finally');\\n return;\\n }
+         [9, Procedure] {\\n console.log('finally');\\n return;\\n }
+          [10, QualifiedExpression] console.log('finally')
+           [11, Qualifier] console.
+            [12, Identifier] console
+            [12, Operator] .
+           [11, FunctionCall] log('finally')
+            [12, Identifier] log
+            [12, Signature] ('finally')
+             [13, Literal] 'finally'
+          [10, Return] return
+      [6, Catch] catch (ex) {\\n console.error('outer', ex.message);\\n }
+       [7, Signature] (ex)
+        [8, Identifier] ex
+       [7, Procedure] {\\n console.error('outer', ex.message);\\n }
+        [8, QualifiedExpression] console.error('outer', ex.message)
+         [9, Qualifier] console.
+          [10, Identifier] console
+          [10, Operator] .
+         [9, FunctionCall] error('outer', ex.message)
+          [10, Identifier] error
+          [10, Signature] ('outer', ex.message)
+           [11, Literal] 'outer'
+           [11, QualifiedExpression] ex.message
+            [12, Qualifier] ex.
+             [13, Identifier] ex
+             [13, Operator] .
+            [12, Identifier] message
+  [2, Signature] ()

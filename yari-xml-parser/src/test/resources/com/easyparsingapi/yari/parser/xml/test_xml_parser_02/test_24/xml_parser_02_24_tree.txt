@@ -1,0 +1,21 @@
+[0, Xml] <pc:test attr_1 attr_2 = 'fff' <>\\n blabla\\n </pc:test>
+ [1, Tag] <pc:test attr_1 attr_2 = 'fff' <>\\n blabla\\n </pc:test>
+  [2, TagHeadError] <pc:test attr_1 attr_2 = 'fff'
+   [3, TagName] pc:test
+    [4, Namespace] pc
+    [4, Name] test
+   [3, TagAttribute] attr_1
+    [4, Name] attr_1
+     [5, Name] attr_1
+   [3, TagAttribute] attr_2 = 'fff'
+    [4, Name] attr_2
+     [5, Name] attr_2
+    [4, Value] 'fff'
+  [2, TagBody] <>\\n blabla
+   [3, TokenError] <
+   [3, TokenError] >
+   [3, Text] blabla
+  [2, TagFoot] </pc:test>
+   [3, TagName] pc:test
+    [4, Namespace] pc
+    [4, Name] test

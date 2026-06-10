@@ -1,0 +1,189 @@
+SourceLocation [start=line 1 column 5, end=line 18 column 6] [Css]
+table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;\\n\\n table.browserref tr.fixzebra {\\n background-color: #E7E9EB;\\n }\\n\\n table.browserref th {\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 2 column 35] [CssError]
+table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 6 column 6] [RuleSet]
+table.browserref tr.fixzebra {\\n background-color: #E7E9EB;\\n }
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 33] [CombinatorSelector]
+table.browserref tr.fixzebra
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 24] [CombinatorSelector]
+table.browserref tr
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 10] [ElementSelector]
+table
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 10] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 24] [QualifiedSelector]
+.browserref tr
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 21] [ClassSelector]
+.browserref
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 21] [Identifier]
+browserref
+---------------------------
+SourceLocation [start=line 4 column 22, end=line 4 column 24] [ElementSelector]
+tr
+---------------------------
+SourceLocation [start=line 4 column 24, end=line 4 column 24] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 24, end=line 4 column 33] [ClassSelector]
+.fixzebra
+---------------------------
+SourceLocation [start=line 4 column 25, end=line 4 column 33] [Identifier]
+fixzebra
+---------------------------
+SourceLocation [start=line 4 column 34, end=line 6 column 6] [Block]
+{\\n background-color: #E7E9EB;\\n }
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 34] [Property]
+background-color: #E7E9EB
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 25] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 5 column 27, end=line 5 column 34] [Literal]
+#E7E9EB
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 18 column 6] [RuleSet]
+table.browserref th {\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 24] [CombinatorSelector]
+table.browserref th
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 10] [ElementSelector]
+table
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 10] [Operator]
+
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 24] [QualifiedSelector]
+.browserref th
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 21] [ClassSelector]
+.browserref
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 21] [Identifier]
+browserref
+---------------------------
+SourceLocation [start=line 8 column 22, end=line 8 column 24] [ElementSelector]
+th
+---------------------------
+SourceLocation [start=line 8 column 25, end=line 18 column 6] [Block]
+{\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 21] [Property]
+height: 44px
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 15] [Identifier]
+height
+---------------------------
+SourceLocation [start=line 9 column 17, end=line 9 column 21] [Identifier]
+44px
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 37] [Property]
+background-repeat: no-repeat
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 26] [Identifier]
+background-repeat
+---------------------------
+SourceLocation [start=line 10 column 28, end=line 10 column 37] [Identifier]
+no-repeat
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 43] [Property]
+background-position: center center
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 28] [Identifier]
+background-position
+---------------------------
+SourceLocation [start=line 11 column 30, end=line 11 column 43] [ListValue]
+center center
+---------------------------
+SourceLocation [start=line 11 column 30, end=line 11 column 36] [Identifier]
+center
+---------------------------
+SourceLocation [start=line 11 column 37, end=line 11 column 43] [Identifier]
+center
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 34] [Property]
+border: 1px solid #d4d4d4
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 15] [Identifier]
+border
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 34] [ListValue]
+1px solid #d4d4d4
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 20] [Identifier]
+1px
+---------------------------
+SourceLocation [start=line 12 column 21, end=line 12 column 26] [Identifier]
+solid
+---------------------------
+SourceLocation [start=line 12 column 27, end=line 12 column 34] [Literal]
+#d4d4d4
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 34] [Property]
+background-color: #ffffff
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 25] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 13 column 27, end=line 13 column 34] [Literal]
+#ffffff
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 28] [Property]
+font-weight: normal
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 20] [Identifier]
+font-weight
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 28] [Identifier]
+normal
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 23] [Property]
+color: #555555
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 15 column 16, end=line 15 column 23] [Literal]
+#555555
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 35] [Property]
+padding: 11px 5px 11px 5px
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 16] [Identifier]
+padding
+---------------------------
+SourceLocation [start=line 16 column 18, end=line 16 column 35] [ListValue]
+11px 5px 11px 5px
+---------------------------
+SourceLocation [start=line 16 column 18, end=line 16 column 22] [Identifier]
+11px
+---------------------------
+SourceLocation [start=line 16 column 23, end=line 16 column 26] [Identifier]
+5px
+---------------------------
+SourceLocation [start=line 16 column 27, end=line 16 column 31] [Identifier]
+11px
+---------------------------
+SourceLocation [start=line 16 column 32, end=line 16 column 35] [Identifier]
+5px
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 31] [Property]
+vertical-align: middle
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 23] [Identifier]
+vertical-align
+---------------------------
+SourceLocation [start=line 17 column 25, end=line 17 column 31] [Identifier]
+middle
+---------------------------

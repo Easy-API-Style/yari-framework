@@ -1,0 +1,96 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 81] [Javascript]
+for (var i = 0; i < values.length; i++) { var v_1 continue if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 81] [For]
+for (var i = 0; i < values.length; i++) { var v_1 continue if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 39] [Iteration]
+var i = 0; i < values.length; i++
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 15] [VariableDeclaration]
+var i = 0
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 9] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 15] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 34] [Infix]
+i < values.length
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Operator]
+<
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 34] [QualifiedExpression]
+values.length
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 28] [Qualifier]
+values.
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 27] [Identifier]
+values
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 34] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 39] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 39] [Operator]
+++
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 81] [Procedure]
+{ var v_1 continue if (toto) { break }}
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 50] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 46] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 50] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 50] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 59] [Continue]
+continue
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 80] [If]
+if (toto) { break }
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 80] [IfBlock]
+if (toto) { break }
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 69] [Condition]
+(toto)
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 68] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 80] [Procedure]
+{ break }
+---------------------------
+SourceLocation [start=line 1 column 73, end=line 1 column 78] [Break]
+break
+---------------------------

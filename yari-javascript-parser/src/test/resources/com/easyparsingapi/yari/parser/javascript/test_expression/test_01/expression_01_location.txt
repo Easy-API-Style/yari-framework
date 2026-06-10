@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 20] [JavascriptNodeUnit]
+toto+(3+(4.9*bibi))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 20] [Infix]
+toto+(3+(4.9*bibi))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 20] [Parenthesis]
+(3+(4.9*bibi))
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 19] [Infix]
+3+(4.9*bibi)
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Literal]
+3
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 19] [Parenthesis]
+(4.9*bibi)
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 18] [Infix]
+4.9*bibi
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 13] [Literal]
+4.9
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+*
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 18] [Identifier]
+bibi
+---------------------------

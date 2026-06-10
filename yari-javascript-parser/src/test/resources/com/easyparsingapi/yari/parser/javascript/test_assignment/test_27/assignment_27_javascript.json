@@ -1,0 +1,69 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+    "leftOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "ha",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 3
+        }
+      }
+    },
+    "operator" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+      "symbol" : "=",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 3
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "rightOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+      "type" : "regExpString",
+      "value" : "/\\[native code\\]/",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 21
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 21
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 21
+    }
+  }
+}

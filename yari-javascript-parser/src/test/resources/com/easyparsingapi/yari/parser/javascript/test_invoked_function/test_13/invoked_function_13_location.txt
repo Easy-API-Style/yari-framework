@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [Javascript]
+var maVariable = true && function (p) { t[r] = p }(100)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [VariableDeclaration]
+var maVariable = true && function (p) { t[r] = p }(100)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 56] [Variable]
+maVariable = true && function (p) { t[r] = p }(100)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [Identifier]
+maVariable
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 56] [Infix]
+true && function (p) { t[r] = p }(100)
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 22] [Literal]
+true
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 25] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 56] [InvokedFunction]
+function (p) { t[r] = p }(100)
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 51] [Definition]
+function (p) { t[r] = p }
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 51] [FunctionDeclaration]
+function (p) { t[r] = p }
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 38] [Signature]
+(p)
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Identifier]
+p
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 51] [Procedure]
+{ t[r] = p }
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 49] [Assignment]
+t[r] = p
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 45] [MapExpression]
+t[r]
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 42] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 45] [Bracket]
+[r]
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 44] [Identifier]
+r
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 47] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 49] [Identifier]
+p
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 56] [Signature]
+(100)
+---------------------------
+SourceLocation [start=line 1 column 52, end=line 1 column 55] [Literal]
+100
+---------------------------

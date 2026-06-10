@@ -1,0 +1,42 @@
+SourceLocation [start=line 1 column 4, end=line 4 column 5] [Css]
+a[href="https://example.org"]\\n {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 4 column 5] [RuleSet]
+a[href="https://example.org"]\\n {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 33] [CombinatorSelector]
+a[href="https://example.org"]
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [ElementSelector]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 5] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 33] [AttributeSelector]
+[href="https://example.org"]
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 32] [Expression]
+href="https://example.org"
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 10] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 32] [Literal]
+"https://example.org"
+---------------------------
+SourceLocation [start=line 2 column 4, end=line 4 column 5] [Block]
+{\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 21] [Property]
+color: green
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 21] [Identifier]
+green
+---------------------------

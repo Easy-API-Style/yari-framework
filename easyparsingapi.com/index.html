@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yari Framework — Fast, resilient parsers · a powerful parser-combinator engine written in Java</title>
+  <meta name="description" content="Yari is a Java framework: a set of fast, resilient (fault-tolerant) parsers — JavaScript, HTML, CSS, XML — built on a shared parser-combinator engine and producing a unified, fully-located AST.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="index.html" class="is-active">Home</a>
+    <a href="quick-start.html">Quick start</a>
+    <a href="modules/index.html">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Fast, resilient parsers: JavaScript · HTML · CSS · XML<br>And<br>A powerful parser-combinator engine written in Java</h1>
+  <p class="prose" style="margin-bottom: 2rem; font-size: 1.25rem; color: var(--fg-muted); line-height: 1.5;">
+    <strong>Four distinct, fast and fault-tolerant parsers</strong> — one each for
+    JavaScript, HTML, CSS and XML — built on a shared <strong>parser-combinator engine</strong>
+    and producing a <strong>unified, fully-located AST</strong>.
+    Parse a full HTML page — with its embedded JavaScript and CSS — and walk the entire tree
+    in one pass. Every node carries exact source locations. Comments are first-class.
+    <strong>Engineered for throughput, they parse large files and minified bundles quickly</strong>,
+    in a single linear pass.
+    And the core is open: <strong>use the same <code>yari-parsec</code> engine to build your own
+    fast, resilient parser</strong> for any language or DSL.
+  </p>
+  <div class="hero__buttons">
+    <a class="btn btn--primary" href="quick-start.html">Quick start →</a>
+    <a class="btn btn--secondary" href="modules/index.html">Browse modules</a>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Built for AI-driven code understanding</h2>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    AI coding assistants and static-analysis tools are most useful when they can reason about
+    source code at a structural level — not as raw text, but as a typed, located tree.
+    Yari is designed to be that building block: parse any web source in one line,
+    walk the result with a typed API, query nodes by type, and read exact locations.
+    <strong>A clean, typed, fully-located AST gives an LLM a much stronger signal than raw text,
+    improving analyses, refactoring suggestions, and overall code comprehension.</strong>
+  </p>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    Each AST node is fully serializable to JSON out of the box via Jackson — persist a parsed
+    tree, send it over the wire, or reload it without re-parsing.
+    The unified tree model means one analysis pipeline covers HTML structure, embedded scripts,
+    stylesheets, and standalone JS/CSS/XML files — all in the same shape.
+  </p>
+</section>
+
+<section class="section">
+  <h2>A philosophy of resilience</h2>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    Real-world web code is messy. HTML pages in the wild have unclosed tags, broken nesting,
+    and mixed casing. JavaScript in the wild has syntax errors and unusual patterns.
+    Yari was built around one constraint: <strong>never throw, never stop</strong>.
+    When the parser encounters an unrecognisable combination, it emits an <strong>error node</strong>
+    into the AST and resumes parsing — so you still get the maximum number of recognisable
+    nodes from a broken or partially-malformed source.
+  </p>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    This degraded-parse behaviour is not an afterthought bolted onto each parser.
+    It is a first-class primitive of <code>yari-parsec</code>, the combinator engine underneath,
+    which makes it composable across every language in the framework.
+    Perfect for linting, static analysis, or any pipeline that must keep going on imperfect inputs.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Build your own parser</h2>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    Yari is more than four language parsers. At its core is <code>yari-parsec</code>, a general
+    <strong>parser-combinator engine</strong>: compose small, well-typed <code>Parser&lt;T&gt;</code>
+    values to tokenize, build expression grammars with operator precedence, track source locations,
+    and recover from errors. It is the exact machinery the JavaScript, HTML, CSS and XML parsers
+    are themselves built on.
+  </p>
+  <p class="prose" style="margin-bottom: 1rem; color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75;">
+    Use it to implement your own <strong>fast, resilient</strong> parser for any language or DSL —
+    one linear pass, error nodes instead of exceptions, and an <code>OperatorTable</code> for
+    precedence and associativity. The <a href="quick-start.html">Quick start</a> walks through a
+    complete mini-language built entirely on the engine.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Why Yari</h2>
+  <p class="section__lead">
+    A small set of focused, fast and resilient parsers that compose into a unified AST
+    without any external dependencies beyond the JVM.
+  </p>
+  <div class="grid">
+    <article class="card">
+      <h3>One AST, all sub-languages</h3>
+      <p>
+        The HTML parser also parses the CSS and JavaScript embedded inside the HTML
+        (<code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>onclick</code>, <code>style</code> attributes…)
+        and exposes everything as a single unified AST.
+        Stream over the nodes of a full web page — HTML, CSS and JS — in one pass.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Degraded parsing — never throw</h3>
+      <p>
+        When the parser encounters an unrecognisable combination it emits an error node
+        and resumes — you always get the maximum number of recognisable nodes.
+        Ideal for linting, static analysis, or any pipeline that must handle imperfect inputs.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Exact source locations</h3>
+      <p>
+        Every AST node carries its precise location in the source: offsets, lines, and columns.
+        Critical for diagnostics, refactoring tools, code-intel features, and any downstream
+        consumer that needs to point back at the original text.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Comments are first-class</h3>
+      <p>
+        Comments are parsed in every supported language and kept with their own source locations.
+        A dedicated API lets you look them up relative to any AST node (leading, trailing, inside…),
+        so you never lose the connection between code and its documentation.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Simple one-liner API</h3>
+      <p>
+        Parsing a source is a single method call. The resulting AST is a plain typed tree
+        you can walk, query, or stream over.
+        Easy to plug into existing JVM tooling — no configuration, no setup.
+      </p>
+    </article>
+    <article class="card">
+      <h3>JSON serialization</h3>
+      <p>
+        Every AST node is fully serializable and deserializable to JSON out of the box
+        (via Jackson). Persist a parsed tree, send it over the wire, or reload it later
+        without re-parsing the original source.
+      </p>
+    </article>
+    <article class="card">
+      <h3>AI-friendly</h3>
+      <p>
+        A clean, typed, located AST gives an LLM a much stronger signal than raw source text.
+        Yari is designed to be a building block for AI-driven code understanding —
+        improving analyses, refactoring suggestions, and code comprehension.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Parser-combinator engine</h3>
+      <p>
+        The framework ships its own parser-combinator library (<code>yari-parsec</code>),
+        which makes degraded-parse behaviour composable across every language.
+        Error recovery is a first-class primitive of the combinators, not an afterthought.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Heavily tested</h3>
+      <p>
+        Each module ships with an extensive test suite covering as many edge cases as possible —
+        and it keeps growing as new patterns surface.
+        Contributions of untested real-world inputs are welcome.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>The modules</h2>
+  <p class="section__lead">
+    Pick the modules you need. Each one is documented page-by-page with its full API.
+  </p>
+  <div class="grid">
+    <a class="card card--link" href="modules/parsec.html">
+      <span class="card__tag">yari-parsec</span>
+      <h3>Parsec</h3>
+      <p>Parser-combinator engine. Compose typed <code>Parser&lt;T&gt;</code> values, track source locations, and recover from errors. The foundation of every module.</p>
+    </a>
+    <a class="card card--link" href="modules/core.html">
+      <span class="card__tag">yari-core</span>
+      <h3>Core</h3>
+      <p>Common interfaces shared by every parser: the AST contract, source location system, comment model, and base utilities.</p>
+    </a>
+    <a class="card card--link" href="modules/xml-parser.html">
+      <span class="card__tag">yari-xml-parser</span>
+      <h3>XML Parser</h3>
+      <p>Fault-tolerant XML parser. Supports tags, self-closing tags, comments, CDATA, DOCTYPE, prolog, and namespaces.</p>
+    </a>
+    <a class="card card--link" href="modules/css-parser.html">
+      <span class="card__tag">yari-css-parser</span>
+      <h3>CSS Parser</h3>
+      <p>Fault-tolerant CSS parser. Supports at-rules, complex selectors (pseudo-classes, pseudo-elements, combinators, nth-patterns…) and property values.</p>
+    </a>
+    <a class="card card--link" href="modules/javascript-parser.html">
+      <span class="card__tag">yari-javascript-parser</span>
+      <h3>JavaScript Parser</h3>
+      <p>Fault-tolerant JavaScript parser. Supports ES6 modules, classes, async/await, destructuring, template literals, generators, and more.</p>
+    </a>
+    <a class="card card--link" href="modules/html-parser.html">
+      <span class="card__tag">yari-html-parser</span>
+      <h3>HTML Parser</h3>
+      <p>Extends the XML parser and additionally processes embedded JavaScript and CSS. Produces a unified AST where each sub-language is parsed into its own tree.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why choose Yari</h2>
+  <p class="section__lead">What the framework brings, compared to conventional approaches.</p>
+  <div class="summary-table-wrap">
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Conventional approach</th>
+          <th>With Yari</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Broken input</td>
+          <td>Exception thrown, parsing aborts</td>
+          <td>Error node inserted, parsing continues — maximum AST recovered</td>
+        </tr>
+        <tr>
+          <td>Multi-language page</td>
+          <td>Three separate parsers, three separate trees to juggle</td>
+          <td>One unified AST — HTML, embedded CSS and JS in one pass</td>
+        </tr>
+        <tr>
+          <td>Source locations</td>
+          <td>Often absent or limited to line numbers</td>
+          <td>Every node carries exact start/end offsets, lines and columns</td>
+        </tr>
+        <tr>
+          <td>Comments</td>
+          <td>Discarded during lexing</td>
+          <td>Preserved with location, queryable relative to any AST node</td>
+        </tr>
+        <tr>
+          <td>Serialization</td>
+          <td>Manual mapping or custom serializer</td>
+          <td>Full Jackson JSON serialization/deserialization out of the box</td>
+        </tr>
+        <tr>
+          <td>Error recovery</td>
+          <td>Ad-hoc per parser, hard to extend</td>
+          <td>First-class combinator primitive — composable across all parsers</td>
+        </tr>
+        <tr>
+          <td>AI compatibility</td>
+          <td>Raw text or opaque tokens</td>
+          <td>Typed, located AST — strong structural signal for LLMs and agents</td>
+        </tr>
+        <tr>
+          <td>Dependencies</td>
+          <td>Multiple external parser libraries, version conflicts</td>
+          <td>One framework, one shared engine — only Jackson and SLF4J</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

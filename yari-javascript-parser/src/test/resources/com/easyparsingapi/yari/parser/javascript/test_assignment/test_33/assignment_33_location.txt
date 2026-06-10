@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 37] [Javascript]
+d=d.replace(/(["' :.[\],=])/g,"\$1")
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 37] [Assignment]
+d=d.replace(/(["' :.[\],=])/g,"\$1")
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 37] [QualifiedExpression]
+d.replace(/(["' :.[\],=])/g,"\$1")
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 5] [Qualifier]
+d.
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 37] [FunctionCall]
+replace(/(["' :.[\],=])/g,"\$1")
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [Identifier]
+replace
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 37] [Signature]
+(/(["' :.[\],=])/g,"\$1")
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 30] [Literal]
+/(["' :.[\],=])/g
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 36] [Literal]
+"\$1"
+---------------------------

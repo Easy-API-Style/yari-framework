@@ -1,0 +1,31 @@
+[0, Css] .parent-rule.\123toto.bibi\{roro:hover, ttt111 {\\n column-01:.25rem;\\n column-02:0.25rem;\\n column-03: .25rem;\\n column-04: 0.25rem;\\n }
+ [1, RuleSet] .parent-rule.\123toto.bibi\{roro:hover, ttt111 {\\n column-01:.25rem;\\n column-02:0.25rem;\\n column-03: .25rem;\\n column-04: 0.25rem;\\n }
+  [2, ListSelector] .parent-rule.\123toto.bibi\{roro:hover, ttt111
+   [3, CombinatorSelector] .parent-rule.\123toto.bibi\{roro:hover
+    [4, CombinatorSelector] .parent-rule.\123toto.bibi\{roro
+     [5, CombinatorSelector] .parent-rule.\123toto
+      [6, ClassSelector] .parent-rule
+       [7, Identifier] parent-rule
+      [6, Operator] 
+      [6, ClassSelector] .\123toto
+       [7, Identifier] \123toto
+     [5, Operator] 
+     [5, ClassSelector] .bibi\{roro
+      [6, Identifier] bibi\{roro
+    [4, Operator] 
+    [4, PseudoClassSelector] :hover
+     [5, Identifier] hover
+   [3, ElementSelector] ttt111
+  [2, Block] {\\n column-01:.25rem;\\n column-02:0.25rem;\\n column-03: .25rem;\\n column-04: 0.25rem;\\n }
+   [3, Property] column-01:.25rem
+    [4, Identifier] column-01
+    [4, Identifier] .25rem
+   [3, Property] column-02:0.25rem
+    [4, Identifier] column-02
+    [4, Identifier] 0.25rem
+   [3, Property] column-03: .25rem
+    [4, Identifier] column-03
+    [4, Identifier] .25rem
+   [3, Property] column-04: 0.25rem
+    [4, Identifier] column-04
+    [4, Identifier] 0.25rem

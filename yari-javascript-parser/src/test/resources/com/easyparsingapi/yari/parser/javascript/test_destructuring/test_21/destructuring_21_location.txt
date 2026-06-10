@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [Javascript]
+[a, b, ...{ pop, push }] = array
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [Assignment]
+[a, b, ...{ pop, push }] = array
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 25] [DestructuringArray]
+[a, b, ...{ pop, push }]
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Value]
+a
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Value]
+b
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 24] [Spread]
+...{ pop, push }
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 24] [DestructuringObject]
+{ pop, push }
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 16] [Field]
+pop
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 16] [Identifier]
+pop
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 22] [Field]
+push
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 22] [Identifier]
+push
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 27] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Identifier]
+array
+---------------------------

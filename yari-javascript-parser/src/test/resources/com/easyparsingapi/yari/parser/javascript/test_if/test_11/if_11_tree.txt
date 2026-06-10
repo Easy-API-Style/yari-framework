@@ -1,0 +1,14 @@
+[0, Javascript] if (a=toto, b != 3) { }
+ [1, If] if (a=toto, b != 3) { }
+  [2, IfBlock] if (a=toto, b != 3) { }
+   [3, Condition] (a=toto, b != 3)
+    [4, Sequence] a=toto, b != 3
+     [5, Assignment] a=toto
+      [6, Identifier] a
+      [6, Operator] =
+      [6, Identifier] toto
+     [5, Infix] b != 3
+      [6, Identifier] b
+      [6, Operator] !=
+      [6, Literal] 3
+   [3, Procedure] { }

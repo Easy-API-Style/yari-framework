@@ -1,0 +1,10 @@
+[0, Javascript] x + await p_a + await p_b
+ [1, Infix] x + await p_a + await p_b
+  [2, Identifier] x
+  [2, Operator] +
+  [2, Await] await p_a + await p_b
+   [3, Infix] p_a + await p_b
+    [4, Identifier] p_a
+    [4, Operator] +
+    [4, Await] await p_b
+     [5, Identifier] p_b

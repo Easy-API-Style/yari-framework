@@ -1,0 +1,25 @@
+[0, Javascript] class ClassWithPrivateStaticField { static #PRIVATE_STATIC_FIELD; static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }}
+ [1, ClassDeclaration] class ClassWithPrivateStaticField { static #PRIVATE_STATIC_FIELD; static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }}
+  [2, Identifier] ClassWithPrivateStaticField
+  [2, ClassFieldDeclaration] static #PRIVATE_STATIC_FIELD
+   [3, Identifier] PRIVATE_STATIC_FIELD
+  [2, ClassMethodDeclaration] static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }
+   [3, Identifier] publicStaticMethod
+   [3, Signature] ()
+   [3, Procedure] { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }
+    [4, Assignment] ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42
+     [5, QualifiedExpression] ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+      [6, Qualifier] ClassWithPrivateStaticField.
+       [7, Identifier] ClassWithPrivateStaticField
+       [7, Operator] .
+      [6, PrivateExpression] #PRIVATE_STATIC_FIELD
+       [7, Identifier] PRIVATE_STATIC_FIELD
+     [5, Operator] =
+     [5, Literal] 42
+    [4, Return] return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+     [5, QualifiedExpression] ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+      [6, Qualifier] ClassWithPrivateStaticField.
+       [7, Identifier] ClassWithPrivateStaticField
+       [7, Operator] .
+      [6, PrivateExpression] #PRIVATE_STATIC_FIELD
+       [7, Identifier] PRIVATE_STATIC_FIELD

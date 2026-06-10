@@ -1,0 +1,13 @@
+[0, Javascript] s=e?f:d, func[pp]
+ [1, Sequence] s=e?f:d, func[pp]
+  [2, Assignment] s=e?f:d
+   [3, Identifier] s
+   [3, Operator] =
+   [3, Ternary] e?f:d
+    [4, Identifier] e
+    [4, Identifier] f
+    [4, Identifier] d
+  [2, MapExpression] func[pp]
+   [3, Identifier] func
+   [3, Bracket] [pp]
+    [4, Identifier] pp

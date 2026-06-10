@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 3, end=line 3 column 4] [Css]
+a[href*="cAsE" s] {\\n color: pink;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 3 column 4] [RuleSet]
+a[href*="cAsE" s] {\\n color: pink;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 20] [CombinatorSelector]
+a[href*="cAsE" s]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [ElementSelector]
+a
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 4] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 20] [AttributeSelector]
+[href*="cAsE" s]
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 19] [Expression]
+href*="cAsE" s
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Operator]
+*=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 17] [Literal]
+"cAsE"
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Identifier]
+s
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 3 column 4] [Block]
+{\\n color: pink;\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 16] [Property]
+color: pink
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 10] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 16] [Identifier]
+pink
+---------------------------

@@ -1,0 +1,48 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 27] [Javascript]
+throw Error("Ae`"+_.Ae(a))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 27] [Throw]
+throw Error("Ae`"+_.Ae(a))
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 27] [FunctionCall]
+Error("Ae`"+_.Ae(a))
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 12] [Identifier]
+Error
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 27] [Signature]
+("Ae`"+_.Ae(a))
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 26] [Infix]
+"Ae`"+_.Ae(a)
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 18] [Literal]
+"Ae`"
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 26] [QualifiedExpression]
+_.Ae(a)
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 21] [Qualifier]
+_.
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Identifier]
+_
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 26] [FunctionCall]
+Ae(a)
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 23] [Identifier]
+Ae
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Identifier]
+a
+---------------------------

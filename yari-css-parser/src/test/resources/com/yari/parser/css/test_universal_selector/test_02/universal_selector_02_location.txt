@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [Css]
+* [lang^="en"] {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [RuleSet]
+* [lang^="en"] {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 18] [QualifiedSelector]
+* [lang^="en"]
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [Universal]
+*
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 18] [AttributeSelector]
+[lang^="en"]
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 17] [Expression]
+lang^="en"
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 11] [Identifier]
+lang
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 13] [Operator]
+^=
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 17] [Literal]
+"en"
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 3 column 5] [Block]
+{\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 19] [Property]
+color: green
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 19] [Identifier]
+green
+---------------------------

@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [JavascriptNodeUnit]
+this.info((4+5))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [QualifiedExpression]
+this.info((4+5))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 17] [FunctionCall]
+info((4+5))
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 10] [Identifier]
+info
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 17] [Signature]
+((4+5))
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 16] [Parenthesis]
+(4+5)
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Infix]
+4+5
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Literal]
+4
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Literal]
+5
+---------------------------

@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [JavascriptNodeUnit]
+condition.v(e) ? value1 : value2
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [Ternary]
+condition.v(e) ? value1 : value2
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 15] [QualifiedExpression]
+condition.v(e)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 11] [Qualifier]
+condition.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 10] [Identifier]
+condition
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 15] [FunctionCall]
+v(e)
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 24] [Identifier]
+value1
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 33] [Identifier]
+value2
+---------------------------

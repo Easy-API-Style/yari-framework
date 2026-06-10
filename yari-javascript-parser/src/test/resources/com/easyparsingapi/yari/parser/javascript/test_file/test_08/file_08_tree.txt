@@ -1,0 +1,465 @@
+[0, Javascript] class Foo {\\n *generator () {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}\\n\\nconst someObj = {\\n *generator () {\\n yield 'a';\\n yield 'b';\\n }\\n}\\n\\nfunction* yieldAndReturn() {\\n yield "Y";\\n return "R";\\n yield "unreachable";\\n}\\n\\nfunction* logGenerator() {\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}\\n\\nfunction* anotherGenerator(i) {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}\\n\\nfunction* generator(i) {\\n yield i;\\n yield* anotherGenerator(i);\\n yield i + 10;\\n}\\n\\nfunction* idMaker() {\\n var index = 0;\\n while (true)\\n yield index++;\\n}\\n\\nfunction* powers(n){\\n for(let current =n;; current *= n){\\n yield current;\\n }\\n}\\n\\nfor(let power of powers(2)){\\n if(power > 32) break;\\n console.log(power)\\n}\\nconst foo = function* () {\\n yield 10;\\n yield 20;\\n};\\n\\nconst obj2 = {\\n g: function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n};\\n\\nconst obj2 = {\\n * g() {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n};\\n\\nconst obj3 = {\\n f: async function () {\\n await some_promise\\n }\\n}\\n\\nconst obj3 = {\\n async f() {\\n await some_promise\\n }\\n}\\nconst obj4 = {\\n f: async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }\\n};\\n\\nconst obj4 = {\\n async* f() {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}\\nconst obj = {\\n a: 'foo',\\n b() { return this.a }\\n};\\n\\nconst bar = {\\n foo0: function() { return 0 },\\n foo1() { return 1 },\\n ['foo' + 2]() { return 2 }\\n}\\n\\nfunction foo() {\\n return 1\\n}\\nlet name = 'foo'\\n\\nconst monObj = {\\n *generator() {\\n yield "a";\\n yield "b";\\n },\\n};\\n\\nfunction* autreGenerateur(i) {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}\\nfunction* generateur(i) {\\n yield i;\\n yield* autreGenerateur(i);\\n yield i + 10;\\n}\\n\\nfunction* creerID() {\\n var index = 0;\\n while (true) {\\n yield index++;\\n }\\n}\\n\\nclass Toto {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}\\n\\nconst monObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n};
+ [1, ClassDeclaration] class Foo {\\n *generator () {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}
+  [2, Identifier] Foo
+  [2, ClassMethodDeclaration] *generator () {\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+   [3, Identifier] generator
+   [3, Signature] ()
+   [3, Procedure] {\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+    [4, Yield] yield 1
+     [5, Literal] 1
+    [4, Yield] yield 2
+     [5, Literal] 2
+    [4, Yield] yield 3
+     [5, Literal] 3
+ [1, VariableDeclaration] const someObj = {\\n *generator () {\\n yield 'a';\\n yield 'b';\\n }\\n}
+  [2, Type] const
+  [2, Variable] someObj = {\\n *generator () {\\n yield 'a';\\n yield 'b';\\n }\\n}
+   [3, Identifier] someObj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *generator () {\\n yield 'a';\\n yield 'b';\\n }\\n}
+    [4, MethodDeclaration] *generator () {\\n yield 'a';\\n yield 'b';\\n }
+     [5, Identifier] generator
+     [5, Signature] ()
+     [5, Procedure] {\\n yield 'a';\\n yield 'b';\\n }
+      [6, Yield] yield 'a'
+       [7, Literal] 'a'
+      [6, Yield] yield 'b'
+       [7, Literal] 'b'
+ [1, FunctionDeclaration] function* yieldAndReturn() {\\n yield "Y";\\n return "R";\\n yield "unreachable";\\n}
+  [2, Identifier] yieldAndReturn
+  [2, Signature] ()
+  [2, Procedure] {\\n yield "Y";\\n return "R";\\n yield "unreachable";\\n}
+   [3, Yield] yield "Y"
+    [4, Literal] "Y"
+   [3, Return] return "R"
+    [4, Literal] "R"
+   [3, Yield] yield "unreachable"
+    [4, Literal] "unreachable"
+ [1, FunctionDeclaration] function* logGenerator() {\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}
+  [2, Identifier] logGenerator
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}
+   [3, QualifiedExpression] console.log(0)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(0)
+     [5, Identifier] log
+     [5, Signature] (0)
+      [6, Literal] 0
+   [3, QualifiedExpression] console.log(1, yield)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(1, yield)
+     [5, Identifier] log
+     [5, Signature] (1, yield)
+      [6, Literal] 1
+      [6, Yield] yield
+   [3, QualifiedExpression] console.log(2, yield)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(2, yield)
+     [5, Identifier] log
+     [5, Signature] (2, yield)
+      [6, Literal] 2
+      [6, Yield] yield
+   [3, QualifiedExpression] console.log(3, yield)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(3, yield)
+     [5, Identifier] log
+     [5, Signature] (3, yield)
+      [6, Literal] 3
+      [6, Yield] yield
+ [1, FunctionDeclaration] function* anotherGenerator(i) {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}
+  [2, Identifier] anotherGenerator
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}
+   [3, Yield] yield i + 1
+    [4, Infix] i + 1
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 1
+   [3, Yield] yield i + 2
+    [4, Infix] i + 2
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 2
+   [3, Yield] yield i + 3
+    [4, Infix] i + 3
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 3
+ [1, FunctionDeclaration] function* generator(i) {\\n yield i;\\n yield* anotherGenerator(i);\\n yield i + 10;\\n}
+  [2, Identifier] generator
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] {\\n yield i;\\n yield* anotherGenerator(i);\\n yield i + 10;\\n}
+   [3, Yield] yield i
+    [4, Identifier] i
+   [3, Yield] yield* anotherGenerator(i)
+    [4, FunctionCall] anotherGenerator(i)
+     [5, Identifier] anotherGenerator
+     [5, Signature] (i)
+      [6, Identifier] i
+   [3, Yield] yield i + 10
+    [4, Infix] i + 10
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 10
+ [1, FunctionDeclaration] function* idMaker() {\\n var index = 0;\\n while (true)\\n yield index++;\\n}
+  [2, Identifier] idMaker
+  [2, Signature] ()
+  [2, Procedure] {\\n var index = 0;\\n while (true)\\n yield index++;\\n}
+   [3, VariableDeclaration] var index = 0
+    [4, Type] var
+    [4, Variable] index = 0
+     [5, Identifier] index
+     [5, Operator] =
+     [5, Literal] 0
+   [3, While] while (true)\\n yield index++;
+    [4, Condition] (true)
+     [5, Literal] true
+    [4, Procedure] yield index++;
+     [5, Yield] yield index++
+      [6, Increment] index++
+       [7, Operator] ++
+       [7, Identifier] index
+ [1, FunctionDeclaration] function* powers(n){\\n for(let current =n;; current *= n){\\n yield current;\\n }\\n}
+  [2, Identifier] powers
+  [2, Signature] (n)
+   [3, Identifier] n
+  [2, Procedure] {\\n for(let current =n;; current *= n){\\n yield current;\\n }\\n}
+   [3, For] for(let current =n;; current *= n){\\n yield current;\\n }
+    [4, Iteration] let current =n;; current *= n
+     [5, VariableDeclaration] let current =n
+      [6, Type] let
+      [6, Variable] current =n
+       [7, Identifier] current
+       [7, Operator] =
+       [7, Identifier] n
+     [5, Empty] 
+     [5, Assignment] current *= n
+      [6, Identifier] current
+      [6, Operator] *=
+      [6, Identifier] n
+    [4, Procedure] {\\n yield current;\\n }
+     [5, Yield] yield current
+      [6, Identifier] current
+ [1, For] for(let power of powers(2)){\\n if(power > 32) break;\\n console.log(power)\\n}
+  [2, ListIteration] let power of powers(2)
+   [3, VariableDeclaration] let power
+    [4, Type] let
+    [4, Variable] power
+     [5, Identifier] power
+   [3, Operator] of
+   [3, FunctionCall] powers(2)
+    [4, Identifier] powers
+    [4, Signature] (2)
+     [5, Literal] 2
+  [2, Procedure] {\\n if(power > 32) break;\\n console.log(power)\\n}
+   [3, If] if(power > 32) break;
+    [4, IfBlock] if(power > 32) break;
+     [5, Condition] (power > 32)
+      [6, Infix] power > 32
+       [7, Identifier] power
+       [7, Operator] >
+       [7, Literal] 32
+     [5, Procedure] break;
+      [6, Break] break
+   [3, QualifiedExpression] console.log(power)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(power)
+     [5, Identifier] log
+     [5, Signature] (power)
+      [6, Identifier] power
+ [1, VariableDeclaration] const foo = function* () {\\n yield 10;\\n yield 20;\\n}
+  [2, Type] const
+  [2, Variable] foo = function* () {\\n yield 10;\\n yield 20;\\n}
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, FunctionDeclaration] function* () {\\n yield 10;\\n yield 20;\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n yield 10;\\n yield 20;\\n}
+     [5, Yield] yield 10
+      [6, Literal] 10
+     [5, Yield] yield 20
+      [6, Literal] 20
+ [1, VariableDeclaration] const obj2 = {\\n g: function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj2 = {\\n g: function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+   [3, Identifier] obj2
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n g: function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+    [4, FieldDeclaration] g: function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }
+     [5, Identifier] g
+     [5, FunctionDeclaration] function* () {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }
+      [6, Signature] ()
+      [6, Procedure] {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }
+       [7, VariableDeclaration] let index = 0
+        [8, Type] let
+        [8, Variable] index = 0
+         [9, Identifier] index
+         [9, Operator] =
+         [9, Literal] 0
+       [7, While] while (true) {\\n yield index++\\n }
+        [8, Condition] (true)
+         [9, Literal] true
+        [8, Procedure] {\\n yield index++\\n }
+         [9, Yield] yield index++
+          [10, Increment] index++
+           [11, Operator] ++
+           [11, Identifier] index
+ [1, VariableDeclaration] const obj2 = {\\n * g() {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj2 = {\\n * g() {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+   [3, Identifier] obj2
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n * g() {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }\\n}
+    [4, MethodDeclaration] * g() {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }
+     [5, Identifier] g
+     [5, Signature] ()
+     [5, Procedure] {\\n let index = 0\\n while (true) {\\n yield index++\\n }\\n }
+      [6, VariableDeclaration] let index = 0
+       [7, Type] let
+       [7, Variable] index = 0
+        [8, Identifier] index
+        [8, Operator] =
+        [8, Literal] 0
+      [6, While] while (true) {\\n yield index++\\n }
+       [7, Condition] (true)
+        [8, Literal] true
+       [7, Procedure] {\\n yield index++\\n }
+        [8, Yield] yield index++
+         [9, Increment] index++
+          [10, Operator] ++
+          [10, Identifier] index
+ [1, VariableDeclaration] const obj3 = {\\n f: async function () {\\n await some_promise\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj3 = {\\n f: async function () {\\n await some_promise\\n }\\n}
+   [3, Identifier] obj3
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n f: async function () {\\n await some_promise\\n }\\n}
+    [4, FieldDeclaration] f: async function () {\\n await some_promise\\n }
+     [5, Identifier] f
+     [5, FunctionDeclaration] async function () {\\n await some_promise\\n }
+      [6, Signature] ()
+      [6, Procedure] {\\n await some_promise\\n }
+       [7, Await] await some_promise
+        [8, Identifier] some_promise
+ [1, VariableDeclaration] const obj3 = {\\n async f() {\\n await some_promise\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj3 = {\\n async f() {\\n await some_promise\\n }\\n}
+   [3, Identifier] obj3
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n async f() {\\n await some_promise\\n }\\n}
+    [4, MethodDeclaration] async f() {\\n await some_promise\\n }
+     [5, Identifier] f
+     [5, Signature] ()
+     [5, Procedure] {\\n await some_promise\\n }
+      [6, Await] await some_promise
+       [7, Identifier] some_promise
+ [1, VariableDeclaration] const obj4 = {\\n f: async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj4 = {\\n f: async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+   [3, Identifier] obj4
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n f: async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+    [4, FieldDeclaration] f: async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }
+     [5, Identifier] f
+     [5, FunctionDeclaration] async function* () {\\n yield 1\\n yield 2\\n yield 3\\n }
+      [6, Signature] ()
+      [6, Procedure] {\\n yield 1\\n yield 2\\n yield 3\\n }
+       [7, Yield] yield 1
+        [8, Literal] 1
+       [7, Yield] yield 2
+        [8, Literal] 2
+       [7, Yield] yield 3
+        [8, Literal] 3
+ [1, VariableDeclaration] const obj4 = {\\n async* f() {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+  [2, Type] const
+  [2, Variable] obj4 = {\\n async* f() {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+   [3, Identifier] obj4
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n async* f() {\\n yield 1\\n yield 2\\n yield 3\\n }\\n}
+    [4, MethodDeclaration] async* f() {\\n yield 1\\n yield 2\\n yield 3\\n }
+     [5, Identifier] f
+     [5, Signature] ()
+     [5, Procedure] {\\n yield 1\\n yield 2\\n yield 3\\n }
+      [6, Yield] yield 1
+       [7, Literal] 1
+      [6, Yield] yield 2
+       [7, Literal] 2
+      [6, Yield] yield 3
+       [7, Literal] 3
+ [1, VariableDeclaration] const obj = {\\n a: 'foo',\\n b() { return this.a }\\n}
+  [2, Type] const
+  [2, Variable] obj = {\\n a: 'foo',\\n b() { return this.a }\\n}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n a: 'foo',\\n b() { return this.a }\\n}
+    [4, FieldDeclaration] a: 'foo'
+     [5, Identifier] a
+     [5, Literal] 'foo'
+    [4, MethodDeclaration] b() { return this.a }
+     [5, Identifier] b
+     [5, Signature] ()
+     [5, Procedure] { return this.a }
+      [6, Return] return this.a
+       [7, QualifiedExpression] this.a
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] a
+ [1, VariableDeclaration] const bar = {\\n foo0: function() { return 0 },\\n foo1() { return 1 },\\n ['foo' + 2]() { return 2 }\\n}
+  [2, Type] const
+  [2, Variable] bar = {\\n foo0: function() { return 0 },\\n foo1() { return 1 },\\n ['foo' + 2]() { return 2 }\\n}
+   [3, Identifier] bar
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n foo0: function() { return 0 },\\n foo1() { return 1 },\\n ['foo' + 2]() { return 2 }\\n}
+    [4, FieldDeclaration] foo0: function() { return 0 }
+     [5, Identifier] foo0
+     [5, FunctionDeclaration] function() { return 0 }
+      [6, Signature] ()
+      [6, Procedure] { return 0 }
+       [7, Return] return 0
+        [8, Literal] 0
+    [4, MethodDeclaration] foo1() { return 1 }
+     [5, Identifier] foo1
+     [5, Signature] ()
+     [5, Procedure] { return 1 }
+      [6, Return] return 1
+       [7, Literal] 1
+    [4, MethodDeclaration] ['foo' + 2]() { return 2 }
+     [5, ComputedValue] ['foo' + 2]
+      [6, Infix] 'foo' + 2
+       [7, Literal] 'foo'
+       [7, Operator] +
+       [7, Literal] 2
+     [5, Signature] ()
+     [5, Procedure] { return 2 }
+      [6, Return] return 2
+       [7, Literal] 2
+ [1, FunctionDeclaration] function foo() {\\n return 1\\n}
+  [2, Identifier] foo
+  [2, Signature] ()
+  [2, Procedure] {\\n return 1\\n}
+   [3, Return] return 1
+    [4, Literal] 1
+ [1, VariableDeclaration] let name = 'foo'
+  [2, Type] let
+  [2, Variable] name = 'foo'
+   [3, Identifier] name
+   [3, Operator] =
+   [3, Literal] 'foo'
+ [1, VariableDeclaration] const monObj = {\\n *generator() {\\n yield "a";\\n yield "b";\\n },\\n}
+  [2, Type] const
+  [2, Variable] monObj = {\\n *generator() {\\n yield "a";\\n yield "b";\\n },\\n}
+   [3, Identifier] monObj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *generator() {\\n yield "a";\\n yield "b";\\n },\\n}
+    [4, MethodDeclaration] *generator() {\\n yield "a";\\n yield "b";\\n }
+     [5, Identifier] generator
+     [5, Signature] ()
+     [5, Procedure] {\\n yield "a";\\n yield "b";\\n }
+      [6, Yield] yield "a"
+       [7, Literal] "a"
+      [6, Yield] yield "b"
+       [7, Literal] "b"
+    [4, Empty] 
+ [1, FunctionDeclaration] function* autreGenerateur(i) {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}
+  [2, Identifier] autreGenerateur
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] {\\n yield i + 1;\\n yield i + 2;\\n yield i + 3;\\n}
+   [3, Yield] yield i + 1
+    [4, Infix] i + 1
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 1
+   [3, Yield] yield i + 2
+    [4, Infix] i + 2
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 2
+   [3, Yield] yield i + 3
+    [4, Infix] i + 3
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 3
+ [1, FunctionDeclaration] function* generateur(i) {\\n yield i;\\n yield* autreGenerateur(i);\\n yield i + 10;\\n}
+  [2, Identifier] generateur
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] {\\n yield i;\\n yield* autreGenerateur(i);\\n yield i + 10;\\n}
+   [3, Yield] yield i
+    [4, Identifier] i
+   [3, Yield] yield* autreGenerateur(i)
+    [4, FunctionCall] autreGenerateur(i)
+     [5, Identifier] autreGenerateur
+     [5, Signature] (i)
+      [6, Identifier] i
+   [3, Yield] yield i + 10
+    [4, Infix] i + 10
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 10
+ [1, FunctionDeclaration] function* creerID() {\\n var index = 0;\\n while (true) {\\n yield index++;\\n }\\n}
+  [2, Identifier] creerID
+  [2, Signature] ()
+  [2, Procedure] {\\n var index = 0;\\n while (true) {\\n yield index++;\\n }\\n}
+   [3, VariableDeclaration] var index = 0
+    [4, Type] var
+    [4, Variable] index = 0
+     [5, Identifier] index
+     [5, Operator] =
+     [5, Literal] 0
+   [3, While] while (true) {\\n yield index++;\\n }
+    [4, Condition] (true)
+     [5, Literal] true
+    [4, Procedure] {\\n yield index++;\\n }
+     [5, Yield] yield index++
+      [6, Increment] index++
+       [7, Operator] ++
+       [7, Identifier] index
+ [1, ClassDeclaration] class Toto {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}
+  [2, Identifier] Toto
+  [2, ClassMethodDeclaration] *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }
+   [3, ComputedValue] [Symbol.iterator]
+    [4, QualifiedExpression] Symbol.iterator
+     [5, Qualifier] Symbol.
+      [6, Identifier] Symbol
+      [6, Operator] .
+     [5, Identifier] iterator
+   [3, Signature] ()
+   [3, Procedure] {\\n yield 1;\\n yield 2;\\n }
+    [4, Yield] yield 1
+     [5, Literal] 1
+    [4, Yield] yield 2
+     [5, Literal] 2
+ [1, VariableDeclaration] const monObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+  [2, Type] const
+  [2, Variable] monObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+   [3, Identifier] monObj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+    [4, MethodDeclaration] *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n }
+     [5, ComputedValue] [Symbol.iterator]
+      [6, QualifiedExpression] Symbol.iterator
+       [7, Qualifier] Symbol.
+        [8, Identifier] Symbol
+        [8, Operator] .
+       [7, Identifier] iterator
+     [5, Signature] ()
+     [5, Procedure] {\\n yield "a";\\n yield "b";\\n }
+      [6, Yield] yield "a"
+       [7, Literal] "a"
+      [6, Yield] yield "b"
+       [7, Literal] "b"
+    [4, Empty] 

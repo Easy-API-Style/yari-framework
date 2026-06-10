@@ -1,0 +1,141 @@
+SourceLocation [start=line 5 column 7, end=line 5 column 25] [Css]
+/* <stylesheet> */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 6 column 6] [Css]
+@container style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple) {\\n /* <stylesheet> */\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 6 column 6] [AtRule]
+@container style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple) {\\n /* <stylesheet> */\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [AtRuleName]
+@container
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 15] [Identifier]
+container
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 4 column 65] [ListParameter]
+style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple)
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 40] [Function]
+style(--themeBackground)
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 21] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 40] [Signature]
+(--themeBackground)
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 39] [Identifier]
+--themeBackground
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 41] [Prefix]
+not style(background-color: red)
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 12] [Operator]
+not
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 41] [Function]
+style(background-color: red)
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 18] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 2 column 18, end=line 2 column 41] [Signature]
+(background-color: red)
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 40] [Property]
+background-color: red
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 35] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 2 column 37, end=line 2 column 40] [Identifier]
+red
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 69] [Infix]
+style(color: green) and style(background-color: transparent)
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 28] [Function]
+style(color: green)
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 14] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 28] [Signature]
+(color: green)
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 27] [Property]
+color: green
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 20] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 3 column 22, end=line 3 column 27] [Identifier]
+green
+---------------------------
+SourceLocation [start=line 3 column 29, end=line 3 column 32] [Operator]
+and
+---------------------------
+SourceLocation [start=line 3 column 33, end=line 3 column 69] [Function]
+style(background-color: transparent)
+---------------------------
+SourceLocation [start=line 3 column 33, end=line 3 column 38] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 3 column 38, end=line 3 column 69] [Signature]
+(background-color: transparent)
+---------------------------
+SourceLocation [start=line 3 column 39, end=line 3 column 68] [Property]
+background-color: transparent
+---------------------------
+SourceLocation [start=line 3 column 39, end=line 3 column 55] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 3 column 57, end=line 3 column 68] [Identifier]
+transparent
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 65] [Infix]
+style(--themeColor: blue) or style(--themeColor: purple)
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 34] [Function]
+style(--themeColor: blue)
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 14] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 34] [Signature]
+(--themeColor: blue)
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 33] [Property]
+--themeColor: blue
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 27] [Identifier]
+--themeColor
+---------------------------
+SourceLocation [start=line 4 column 29, end=line 4 column 33] [Identifier]
+blue
+---------------------------
+SourceLocation [start=line 4 column 35, end=line 4 column 37] [Operator]
+or
+---------------------------
+SourceLocation [start=line 4 column 38, end=line 4 column 65] [Function]
+style(--themeColor: purple)
+---------------------------
+SourceLocation [start=line 4 column 38, end=line 4 column 43] [Identifier]
+style
+---------------------------
+SourceLocation [start=line 4 column 43, end=line 4 column 65] [Signature]
+(--themeColor: purple)
+---------------------------
+SourceLocation [start=line 4 column 44, end=line 4 column 64] [Property]
+--themeColor: purple
+---------------------------
+SourceLocation [start=line 4 column 44, end=line 4 column 56] [Identifier]
+--themeColor
+---------------------------
+SourceLocation [start=line 4 column 58, end=line 4 column 64] [Identifier]
+purple
+---------------------------
+SourceLocation [start=line 4 column 66, end=line 6 column 6] [Block]
+{\\n /* <stylesheet> */\\n }
+---------------------------

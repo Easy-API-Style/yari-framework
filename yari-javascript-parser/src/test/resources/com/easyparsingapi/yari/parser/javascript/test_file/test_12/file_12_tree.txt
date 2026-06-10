@@ -1,0 +1,107 @@
+[0, Javascript] new RegExp("ab+c", "i"); // constructeur\\nnew RegExp(/ab+c/, "i"); // notation littérale dans un constructeur\\n\\nvar re = /\w+/;\\nvar re = new RegExp("\\w+");\\n\\nlet re = /(\w+)\s(\w+)/; \\n\\nlet lignes = texte.split(/\r\n|\r|\n/);\\n\\ns.match(/voici.*ligne/);\\ns.match(/voici[^]*ligne/);\\n\\nlet regex = /toto/y;\\n\\nlet regex = /toto/yug;\\n\\nre = /\d/y;\\n\\nlet regex = /[\u0400-\u04FF]+/g;\\n\\nconsole.log(/[^.]+/.exec(url)[0].substr(7));
+ [1, New] new RegExp("ab+c", "i")
+  [2, Identifier] RegExp
+  [2, Signature] ("ab+c", "i")
+   [3, Literal] "ab+c"
+   [3, Literal] "i"
+ [1, New] new RegExp(/ab+c/, "i")
+  [2, Identifier] RegExp
+  [2, Signature] (/ab+c/, "i")
+   [3, Literal] /ab+c/
+   [3, Literal] "i"
+ [1, VariableDeclaration] var re = /\w+/
+  [2, Type] var
+  [2, Variable] re = /\w+/
+   [3, Identifier] re
+   [3, Operator] =
+   [3, Literal] /\w+/
+ [1, VariableDeclaration] var re = new RegExp("\\w+")
+  [2, Type] var
+  [2, Variable] re = new RegExp("\\w+")
+   [3, Identifier] re
+   [3, Operator] =
+   [3, New] new RegExp("\\w+")
+    [4, Identifier] RegExp
+    [4, Signature] ("\\w+")
+     [5, Literal] "\\w+"
+ [1, VariableDeclaration] let re = /(\w+)\s(\w+)/
+  [2, Type] let
+  [2, Variable] re = /(\w+)\s(\w+)/
+   [3, Identifier] re
+   [3, Operator] =
+   [3, Literal] /(\w+)\s(\w+)/
+ [1, VariableDeclaration] let lignes = texte.split(/\r\n|\r|\n/)
+  [2, Type] let
+  [2, Variable] lignes = texte.split(/\r\n|\r|\n/)
+   [3, Identifier] lignes
+   [3, Operator] =
+   [3, QualifiedExpression] texte.split(/\r\n|\r|\n/)
+    [4, Qualifier] texte.
+     [5, Identifier] texte
+     [5, Operator] .
+    [4, FunctionCall] split(/\r\n|\r|\n/)
+     [5, Identifier] split
+     [5, Signature] (/\r\n|\r|\n/)
+      [6, Literal] /\r\n|\r|\n/
+ [1, QualifiedExpression] s.match(/voici.*ligne/)
+  [2, Qualifier] s.
+   [3, Identifier] s
+   [3, Operator] .
+  [2, FunctionCall] match(/voici.*ligne/)
+   [3, Identifier] match
+   [3, Signature] (/voici.*ligne/)
+    [4, Literal] /voici.*ligne/
+ [1, QualifiedExpression] s.match(/voici[^]*ligne/)
+  [2, Qualifier] s.
+   [3, Identifier] s
+   [3, Operator] .
+  [2, FunctionCall] match(/voici[^]*ligne/)
+   [3, Identifier] match
+   [3, Signature] (/voici[^]*ligne/)
+    [4, Literal] /voici[^]*ligne/
+ [1, VariableDeclaration] let regex = /toto/y
+  [2, Type] let
+  [2, Variable] regex = /toto/y
+   [3, Identifier] regex
+   [3, Operator] =
+   [3, Literal] /toto/y
+ [1, VariableDeclaration] let regex = /toto/yug
+  [2, Type] let
+  [2, Variable] regex = /toto/yug
+   [3, Identifier] regex
+   [3, Operator] =
+   [3, Literal] /toto/yug
+ [1, Assignment] re = /\d/y
+  [2, Identifier] re
+  [2, Operator] =
+  [2, Literal] /\d/y
+ [1, VariableDeclaration] let regex = /[\u0400-\u04FF]+/g
+  [2, Type] let
+  [2, Variable] regex = /[\u0400-\u04FF]+/g
+   [3, Identifier] regex
+   [3, Operator] =
+   [3, Literal] /[\u0400-\u04FF]+/g
+ [1, QualifiedExpression] console.log(/[^.]+/.exec(url)[0].substr(7))
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(/[^.]+/.exec(url)[0].substr(7))
+   [3, Identifier] log
+   [3, Signature] (/[^.]+/.exec(url)[0].substr(7))
+    [4, QualifiedExpression] /[^.]+/.exec(url)[0].substr(7)
+     [5, Qualifier] /[^.]+/.
+      [6, Literal] /[^.]+/
+      [6, Operator] .
+     [5, Qualifier] exec(url)[0].
+      [6, MapExpression] exec(url)[0]
+       [7, FunctionCall] exec(url)
+        [8, Identifier] exec
+        [8, Signature] (url)
+         [9, Identifier] url
+       [7, Bracket] [0]
+        [8, Literal] 0
+      [6, Operator] .
+     [5, FunctionCall] substr(7)
+      [6, Identifier] substr
+      [6, Signature] (7)
+       [7, Literal] 7

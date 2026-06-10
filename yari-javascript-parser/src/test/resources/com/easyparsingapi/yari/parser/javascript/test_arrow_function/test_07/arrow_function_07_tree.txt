@@ -1,0 +1,18 @@
+[0, Javascript] (a = 400, b=20, c) => a + b + 100
+ [1, ArrowFunction] (a = 400, b=20, c) => a + b + 100
+  [2, Signature] (a = 400, b=20, c)
+   [3, ParameterWithValue] a = 400
+    [4, Identifier] a
+    [4, Literal] 400
+   [3, ParameterWithValue] b=20
+    [4, Identifier] b
+    [4, Literal] 20
+   [3, Identifier] c
+  [2, Procedure] a + b + 100
+   [3, Infix] a + b + 100
+    [4, Infix] a + b
+     [5, Identifier] a
+     [5, Operator] +
+     [5, Identifier] b
+    [4, Operator] +
+    [4, Literal] 100

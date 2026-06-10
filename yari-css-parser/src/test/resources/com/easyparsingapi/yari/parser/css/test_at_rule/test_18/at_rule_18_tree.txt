@@ -1,0 +1,35 @@
+[0, Css] @document url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*") {\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+ [1, AtRule] @document url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*") {\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+  [2, AtRuleName] @document
+   [3, Identifier] document
+  [2, ListParameter] url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*")
+   [3, Function] url("http://www.w3.org/")
+    [4, Identifier] url
+    [4, Signature] ("http://www.w3.org/")
+     [5, Literal] "http://www.w3.org/"
+   [3, Function] url-prefix("http://www.w3.org/Style/")
+    [4, Identifier] url-prefix
+    [4, Signature] ("http://www.w3.org/Style/")
+     [5, Literal] "http://www.w3.org/Style/"
+   [3, Function] domain("mozilla.org")
+    [4, Identifier] domain
+    [4, Signature] ("mozilla.org")
+     [5, Literal] "mozilla.org"
+   [3, Function] media-document("video")
+    [4, Identifier] media-document
+    [4, Signature] ("video")
+     [5, Literal] "video"
+   [3, Function] regexp("https:.*")
+    [4, Identifier] regexp
+    [4, Signature] ("https:.*")
+     [5, Literal] "https:.*"
+  [2, Block] {\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+   [3, RuleSet] body {\\n color: purple;\\n background: yellow;\\n }
+    [4, ElementSelector] body
+    [4, Block] {\\n color: purple;\\n background: yellow;\\n }
+     [5, Property] color: purple
+      [6, Identifier] color
+      [6, Identifier] purple
+     [5, Property] background: yellow
+      [6, Identifier] background
+      [6, Identifier] yellow

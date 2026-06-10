@@ -1,0 +1,36 @@
+[0, Css] :lang("nl", "de") {\\n color: green;\\n }\\n\\n /* Omitting quotes & case-insensitive matching */\\n :lang(EN, FR) {\\n color: blue;\\n }\\n\\n /* Wildcard matching a language range */\\n :lang("*-Latn") {\\n color: red;\\n }
+ [1, RuleSet] :lang("nl", "de") {\\n color: green;\\n }
+  [2, PseudoFunctionSelector] :lang("nl", "de")
+   [3, PseudoClassSelector] :lang
+    [4, Identifier] lang
+   [3, Signature] ("nl", "de")
+    [4, ListValue] "nl", "de"
+     [5, Literal] "nl"
+     [5, Literal] "de"
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green
+ [1, RuleSet] :lang(EN, FR) {\\n color: blue;\\n }
+  [2, PseudoFunctionSelector] :lang(EN, FR)
+   [3, PseudoClassSelector] :lang
+    [4, Identifier] lang
+   [3, Signature] (EN, FR)
+    [4, ListValue] EN, FR
+     [5, Identifier] EN
+     [5, Identifier] FR
+  [2, Block] {\\n color: blue;\\n }
+   [3, Property] color: blue
+    [4, Identifier] color
+    [4, Identifier] blue
+ [1, RuleSet] :lang("*-Latn") {\\n color: red;\\n }
+  [2, PseudoFunctionSelector] :lang("*-Latn")
+   [3, PseudoClassSelector] :lang
+    [4, Identifier] lang
+   [3, Signature] ("*-Latn")
+    [4, ListValue] "*-Latn"
+     [5, Literal] "*-Latn"
+  [2, Block] {\\n color: red;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red

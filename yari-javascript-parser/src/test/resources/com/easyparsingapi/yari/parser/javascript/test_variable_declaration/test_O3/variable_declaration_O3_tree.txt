@@ -1,0 +1,17 @@
+[0, Javascript] let normalArray = [].slice.call(arguments)
+ [1, VariableDeclaration] let normalArray = [].slice.call(arguments)
+  [2, Type] let
+  [2, Variable] normalArray = [].slice.call(arguments)
+   [3, Identifier] normalArray
+   [3, Operator] =
+   [3, QualifiedExpression] [].slice.call(arguments)
+    [4, Qualifier] [].
+     [5, ArrayDeclaration] []
+     [5, Operator] .
+    [4, Qualifier] slice.
+     [5, Identifier] slice
+     [5, Operator] .
+    [4, FunctionCall] call(arguments)
+     [5, Identifier] call
+     [5, Signature] (arguments)
+      [6, Identifier] arguments

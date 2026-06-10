@@ -1,0 +1,54 @@
+[0, Javascript] void (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})();
+ [1, Prefix] void (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})()
+  [2, Operator] void
+  [2, InvokedFunction] (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})()
+   [3, Definition] (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})
+    [4, FunctionDeclaration] function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n}
+     [5, Identifier] iife
+     [5, Signature] ()
+     [5, Procedure] {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n}
+      [6, VariableDeclaration] var toto = function () {}
+       [7, Type] var
+       [7, Variable] toto = function () {}
+        [8, Identifier] toto
+        [8, Operator] =
+        [8, FunctionDeclaration] function () {}
+         [9, Signature] ()
+         [9, Procedure] {}
+      [6, VariableDeclaration] var machin = function () {}
+       [7, Type] var
+       [7, Variable] machin = function () {}
+        [8, Identifier] machin
+        [8, Operator] =
+        [8, FunctionDeclaration] function () {}
+         [9, Signature] ()
+         [9, Procedure] {}
+      [6, VariableDeclaration] var truc = function () {\\n toto();\\n machin();\\n }
+       [7, Type] var
+       [7, Variable] truc = function () {\\n toto();\\n machin();\\n }
+        [8, Identifier] truc
+        [8, Operator] =
+        [8, FunctionDeclaration] function () {\\n toto();\\n machin();\\n }
+         [9, Signature] ()
+         [9, Procedure] {\\n toto();\\n machin();\\n }
+          [10, FunctionCall] toto()
+           [11, Identifier] toto
+           [11, Signature] ()
+          [10, FunctionCall] machin()
+           [11, Identifier] machin
+           [11, Signature] ()
+      [6, VariableDeclaration] var bidule = function () {}
+       [7, Type] var
+       [7, Variable] bidule = function () {}
+        [8, Identifier] bidule
+        [8, Operator] =
+        [8, FunctionDeclaration] function () {}
+         [9, Signature] ()
+         [9, Procedure] {}
+      [6, FunctionCall] truc()
+       [7, Identifier] truc
+       [7, Signature] ()
+      [6, FunctionCall] bidule()
+       [7, Identifier] bidule
+       [7, Signature] ()
+   [3, Signature] ()

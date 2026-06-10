@@ -1,0 +1,17 @@
+[0, Javascript] for ( let b = 4; ; current = n) { yield current;}
+ [1, For] for ( let b = 4; ; current = n) { yield current;}
+  [2, Iteration] let b = 4; ; current = n
+   [3, VariableDeclaration] let b = 4
+    [4, Type] let
+    [4, Variable] b = 4
+     [5, Identifier] b
+     [5, Operator] =
+     [5, Literal] 4
+   [3, Empty] 
+   [3, Assignment] current = n
+    [4, Identifier] current
+    [4, Operator] =
+    [4, Identifier] n
+  [2, Procedure] { yield current;}
+   [3, Yield] yield current
+    [4, Identifier] current

@@ -1,0 +1,18 @@
+[0, Javascript] if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+ [1, If] if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+  [2, IfBlock] if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+   [3, Condition] (p_1 > p_2)
+    [4, Infix] p_1 > p_2
+     [5, Identifier] p_1
+     [5, Operator] >
+     [5, Identifier] p_2
+   [3, Procedure] {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+    [4, BlockProcedure] { var v_1; v_1 = 'yiyi'; }
+     [5, VariableDeclaration] var v_1
+      [6, Type] var
+      [6, Variable] v_1
+       [7, Identifier] v_1
+     [5, Assignment] v_1 = 'yiyi'
+      [6, Identifier] v_1
+      [6, Operator] =
+      [6, Literal] 'yiyi'

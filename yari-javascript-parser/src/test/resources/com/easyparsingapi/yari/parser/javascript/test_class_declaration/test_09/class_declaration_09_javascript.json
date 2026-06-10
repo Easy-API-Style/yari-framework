@@ -1,0 +1,549 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ClassDeclaration",
+    "className" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "ClassWithPrivateStaticField",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 7
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 34
+        }
+      }
+    },
+    "properties" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ClassFieldDeclaration",
+      "staticField" : true,
+      "privateField" : true,
+      "key" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "PRIVATE_STATIC_FIELD",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 46
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 66
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 38
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 66
+        }
+      },
+      "static" : true,
+      "initialized" : false,
+      "pirvate" : true
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ClassMethodDeclaration",
+      "staticMethod" : true,
+      "generator" : false,
+      "asynchronous" : false,
+      "privateMethod" : false,
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "publicStaticMethod",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 76
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 94
+          }
+        }
+      },
+      "signature" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ClassMethodDeclaration$Signature",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 94
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 96
+          }
+        }
+      },
+      "procedure" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ClassMethodDeclaration$Procedure",
+        "nodes" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+          "leftOperand" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+            "qualifiers" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "ClassWithPrivateStaticField",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 102
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 129
+                  }
+                }
+              },
+              "operator" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                "symbol" : ".",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 129
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 130
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 102
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 130
+                }
+              }
+            } ],
+            "expression" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 131
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 151
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 130
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 151
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 102
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 151
+              }
+            },
+            "expressions" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+              "value" : "ClassWithPrivateStaticField",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 102
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 129
+                }
+              }
+            }, {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 131
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 151
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 130
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 151
+                }
+              }
+            } ]
+          },
+          "operator" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+            "symbol" : "=",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 152
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 153
+              }
+            }
+          },
+          "rightOperand" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+            "type" : "integer",
+            "value" : "42",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 154
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 156
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 102
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 156
+            }
+          }
+        }, {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Return",
+          "returnedValue" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+            "qualifiers" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "ClassWithPrivateStaticField",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 168
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 195
+                  }
+                }
+              },
+              "operator" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                "symbol" : ".",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 195
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 196
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 168
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 196
+                }
+              }
+            } ],
+            "expression" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 197
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 217
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 196
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 217
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 168
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 217
+              }
+            },
+            "expressions" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+              "value" : "ClassWithPrivateStaticField",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 168
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 195
+                }
+              }
+            }, {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 197
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 217
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 196
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 217
+                }
+              }
+            } ]
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 161
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 217
+            }
+          },
+          "returnValue" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+            "qualifiers" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "ClassWithPrivateStaticField",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 168
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 195
+                  }
+                }
+              },
+              "operator" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                "symbol" : ".",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 195
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 196
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 168
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 196
+                }
+              }
+            } ],
+            "expression" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 197
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 217
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 196
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 217
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 168
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 217
+              }
+            },
+            "expressions" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+              "value" : "ClassWithPrivateStaticField",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 168
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 195
+                }
+              }
+            }, {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$PrivateExpression",
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "PRIVATE_STATIC_FIELD",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 1,
+                    "column" : 197
+                  },
+                  "end" : {
+                    "line" : 1,
+                    "column" : 217
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 1,
+                  "column" : 196
+                },
+                "end" : {
+                  "line" : 1,
+                  "column" : 217
+                }
+              }
+            } ]
+          }
+        } ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 97
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 221
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 69
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 221
+        }
+      },
+      "static" : true,
+      "pirvate" : false
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 222
+      }
+    },
+    "anonymous" : false,
+    "extended" : false
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 222
+    }
+  }
+}

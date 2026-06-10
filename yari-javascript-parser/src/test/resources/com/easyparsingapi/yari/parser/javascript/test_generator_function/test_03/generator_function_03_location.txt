@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 7 column 2] [Javascript]
+class Foo {\\n *generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 7 column 2] [ClassDeclaration]
+class Foo {\\n *generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 10] [Identifier]
+Foo
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 6 column 4] [ClassMethodDeclaration]
+*generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+---------------------------
+SourceLocation [start=line 2 column 4, end=line 2 column 13] [Identifier]
+generator
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 6 column 4] [Procedure]
+{\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 12] [Yield]
+yield 1
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 12] [Literal]
+1
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 12] [Yield]
+yield 2
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 12] [Literal]
+2
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 12] [Yield]
+yield 3
+---------------------------
+SourceLocation [start=line 5 column 11, end=line 5 column 12] [Literal]
+3
+---------------------------

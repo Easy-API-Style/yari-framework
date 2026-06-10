@@ -1,0 +1,111 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+    "leftOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "a",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 2
+        }
+      }
+    },
+    "operator" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+      "symbol" : "=",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 3
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "rightOperand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Infix",
+      "leftOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "trueOrFalse",
+        "value" : "true",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 9
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "&#38;&#38;",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 10
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 20
+          }
+        }
+      },
+      "rightOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "trueOrFalse",
+        "value" : "false",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 21
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 26
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 26
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 26
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 26
+    }
+  }
+}

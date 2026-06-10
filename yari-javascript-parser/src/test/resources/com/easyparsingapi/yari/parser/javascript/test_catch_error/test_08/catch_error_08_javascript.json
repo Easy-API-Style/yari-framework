@@ -1,0 +1,295 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "rrrrrr",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 7
+        }
+      }
+    } ],
+    "encountered" : "rrrrrr",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 7
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "sssssssss",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 8
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 17
+        }
+      }
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : ";",
+      "tag" : "KEYWORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 17
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 18
+        }
+      }
+    } ],
+    "encountered" : "sssssssss",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 8
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 18
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Sequence",
+    "nodes" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+      "leftOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "vv",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 20
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 22
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 23
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 24
+          }
+        }
+      },
+      "rightOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "integer",
+        "value" : "33",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 25
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 27
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 20
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 27
+        }
+      }
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "kk",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 28
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 30
+        }
+      }
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 20
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 30
+      }
+    },
+    "first" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+      "leftOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "vv",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 20
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 22
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 23
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 24
+          }
+        }
+      },
+      "rightOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "integer",
+        "value" : "33",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 25
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 27
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 20
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 27
+        }
+      }
+    },
+    "last" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "kk",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 28
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 30
+        }
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "eeeeee",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 2
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 8
+        }
+      }
+    } ],
+    "encountered" : "eeeeee",
+    "expected" : [ "fragment[RETURN_CARRIAGE]", "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 2
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 8
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "bbbb",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 9
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 13
+        }
+      }
+    } ],
+    "encountered" : "bbbb",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 9
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 13
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 2,
+      "column" : 13
+    }
+  }
+}

@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [Css]
+#demo {\\n border: red 2px solid;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [RuleSet]
+#demo {\\n border: red 2px solid;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 9] [IdSelector]
+#demo
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+demo
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 3 column 5] [Block]
+{\\n border: red 2px solid;\\n }
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 27] [Property]
+border: red 2px solid
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 12] [Identifier]
+border
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 27] [ListValue]
+red 2px solid
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 17] [Identifier]
+red
+---------------------------
+SourceLocation [start=line 2 column 18, end=line 2 column 21] [Identifier]
+2px
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 27] [Identifier]
+solid
+---------------------------

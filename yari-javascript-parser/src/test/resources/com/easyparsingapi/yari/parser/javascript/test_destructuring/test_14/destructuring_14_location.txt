@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 39] [Javascript]
+const {a: aa = 10, b: bb = 5} = {a: 3}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 39] [VariableDeclaration]
+const {a: aa = 10, b: bb = 5} = {a: 3}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 39] [Variable]
+{a: aa = 10, b: bb = 5} = {a: 3}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 30] [DestructuringObject]
+{a: aa = 10, b: bb = 5}
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 18] [Field]
+a: aa = 10
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 13] [Identifier]
+: aa
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 18] [Literal]
+= 10
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 29] [Field]
+b: bb = 5
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 25] [Identifier]
+: bb
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 29] [Literal]
+= 5
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 39] [ObjectDeclaration]
+{a: 3}
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 38] [FieldDeclaration]
+a: 3
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 35] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 38] [Literal]
+3
+---------------------------

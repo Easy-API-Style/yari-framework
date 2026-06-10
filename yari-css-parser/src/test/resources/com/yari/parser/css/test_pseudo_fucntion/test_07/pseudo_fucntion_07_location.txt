@@ -1,0 +1,156 @@
+SourceLocation [start=line 1 column 7, end=line 12 column 8] [Css]
+p:not(.irrelevant) {\\n font-weight: bold;\\n }\\n\\n p > strong,\\n p > b.important {\\n color: crimson;\\n }\\n\\n p > :not(strong, b.important) {\\n color: darkmagenta;\\n }
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 3 column 8] [RuleSet]
+p:not(.irrelevant) {\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 25] [CombinatorSelector]
+p:not(.irrelevant)
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 8] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 25] [PseudoFunctionSelector]
+:not(.irrelevant)
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [PseudoClassSelector]
+:not
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 12] [Identifier]
+not
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 25] [Signature]
+(.irrelevant)
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 24] [ClassSelector]
+.irrelevant
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 24] [Identifier]
+irrelevant
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 3 column 8] [Block]
+{\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 26] [Property]
+font-weight: bold
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 20] [Identifier]
+font-weight
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 26] [Identifier]
+bold
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 8 column 8] [RuleSet]
+p > strong,\\n p > b.important {\\n color: crimson;\\n }
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 6 column 22] [ListSelector]
+p > strong,\\n p > b.important
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 17] [CombinatorSelector]
+p > strong
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 8] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 10] [Operator]
+>
+---------------------------
+SourceLocation [start=line 5 column 11, end=line 5 column 17] [ElementSelector]
+strong
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 22] [CombinatorSelector]
+p > b.important
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 12] [CombinatorSelector]
+p > b
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 8] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 10] [Operator]
+>
+---------------------------
+SourceLocation [start=line 6 column 11, end=line 6 column 12] [ElementSelector]
+b
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 12] [Operator]
+
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 22] [ClassSelector]
+.important
+---------------------------
+SourceLocation [start=line 6 column 13, end=line 6 column 22] [Identifier]
+important
+---------------------------
+SourceLocation [start=line 6 column 23, end=line 8 column 8] [Block]
+{\\n color: crimson;\\n }
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 23] [Property]
+color: crimson
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 7 column 16, end=line 7 column 23] [Identifier]
+crimson
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 12 column 8] [RuleSet]
+p > :not(strong, b.important) {\\n color: darkmagenta;\\n }
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 36] [CombinatorSelector]
+p > :not(strong, b.important)
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 8] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 10] [Operator]
+>
+---------------------------
+SourceLocation [start=line 10 column 11, end=line 10 column 36] [PseudoFunctionSelector]
+:not(strong, b.important)
+---------------------------
+SourceLocation [start=line 10 column 11, end=line 10 column 15] [PseudoClassSelector]
+:not
+---------------------------
+SourceLocation [start=line 10 column 12, end=line 10 column 15] [Identifier]
+not
+---------------------------
+SourceLocation [start=line 10 column 15, end=line 10 column 36] [Signature]
+(strong, b.important)
+---------------------------
+SourceLocation [start=line 10 column 16, end=line 10 column 35] [ListSelector]
+strong, b.important
+---------------------------
+SourceLocation [start=line 10 column 16, end=line 10 column 22] [ElementSelector]
+strong
+---------------------------
+SourceLocation [start=line 10 column 24, end=line 10 column 35] [CombinatorSelector]
+b.important
+---------------------------
+SourceLocation [start=line 10 column 24, end=line 10 column 25] [ElementSelector]
+b
+---------------------------
+SourceLocation [start=line 10 column 25, end=line 10 column 25] [Operator]
+
+---------------------------
+SourceLocation [start=line 10 column 25, end=line 10 column 35] [ClassSelector]
+.important
+---------------------------
+SourceLocation [start=line 10 column 26, end=line 10 column 35] [Identifier]
+important
+---------------------------
+SourceLocation [start=line 10 column 37, end=line 12 column 8] [Block]
+{\\n color: darkmagenta;\\n }
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 27] [Property]
+color: darkmagenta
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 11 column 16, end=line 11 column 27] [Identifier]
+darkmagenta
+---------------------------

@@ -1,0 +1,24 @@
+[0, Css] h2:has(+ p, + ul.red) {\\n font-style: italic;\\n }
+ [1, RuleSet] h2:has(+ p, + ul.red) {\\n font-style: italic;\\n }
+  [2, CombinatorSelector] h2:has(+ p, + ul.red)
+   [3, ElementSelector] h2
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :has(+ p, + ul.red)
+    [4, PseudoClassSelector] :has
+     [5, Identifier] has
+    [4, Signature] (+ p, + ul.red)
+     [5, ListSelector] + p, + ul.red
+      [6, PrefixSelector] + p
+       [7, Operator] +
+       [7, ElementSelector] p
+      [6, CombinatorSelector] + ul.red
+       [7, PrefixSelector] + ul
+        [8, Operator] +
+        [8, ElementSelector] ul
+       [7, Operator] 
+       [7, ClassSelector] .red
+        [8, Identifier] red
+  [2, Block] {\\n font-style: italic;\\n }
+   [3, Property] font-style: italic
+    [4, Identifier] font-style
+    [4, Identifier] italic

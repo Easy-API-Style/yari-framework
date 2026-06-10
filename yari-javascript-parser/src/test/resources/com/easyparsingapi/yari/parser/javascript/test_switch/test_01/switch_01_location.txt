@@ -1,0 +1,165 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 273] [Javascript]
+switch (expr) { case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 273] [Switch]
+switch (expr) { case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');}
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 14] [SwitchExpression]
+(expr)
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 13] [Identifier]
+expr
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 272] [SwitchProcedure]
+case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 89] [SwitchCase]
+case 'Oranges': console.log('Oranges are $0.59 a pound.'); break;
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 32] [Literal]
+'Oranges'
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 89] [CaseProcedure]
+console.log('Oranges are $0.59 a pound.'); break;
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 78] [QualifiedExpression]
+console.log('Oranges are $0.59 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 45] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 44] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 45] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 78] [FunctionCall]
+log('Oranges are $0.59 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 48] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 78] [Signature]
+('Oranges are $0.59 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 77] [Literal]
+'Oranges are $0.59 a pound.'
+---------------------------
+SourceLocation [start=line 1 column 83, end=line 1 column 88] [Break]
+break
+---------------------------
+SourceLocation [start=line 1 column 91, end=line 1 column 154] [SwitchCase]
+case 'Cherries': console.log('Cherries are $3.00 a pound.');
+---------------------------
+SourceLocation [start=line 1 column 96, end=line 1 column 106] [Literal]
+'Cherries'
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 154] [CaseProcedure]
+console.log('Cherries are $3.00 a pound.');
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 153] [QualifiedExpression]
+console.log('Cherries are $3.00 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 119] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 118] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 118, end=line 1 column 119] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 119, end=line 1 column 153] [FunctionCall]
+log('Cherries are $3.00 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 119, end=line 1 column 122] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 122, end=line 1 column 153] [Signature]
+('Cherries are $3.00 a pound.')
+---------------------------
+SourceLocation [start=line 1 column 123, end=line 1 column 152] [Literal]
+'Cherries are $3.00 a pound.'
+---------------------------
+SourceLocation [start=line 1 column 156, end=line 1 column 171] [SwitchCase]
+case 'Mangoes':
+---------------------------
+SourceLocation [start=line 1 column 161, end=line 1 column 170] [Literal]
+'Mangoes'
+---------------------------
+SourceLocation [start=line 1 column 173, end=line 1 column 177] [CaseProcedure]
+case
+---------------------------
+SourceLocation [start=line 1 column 173, end=line 1 column 208] [SwitchCase]
+case 'Papayas': c + 5; break;
+---------------------------
+SourceLocation [start=line 1 column 178, end=line 1 column 187] [Literal]
+'Papayas'
+---------------------------
+SourceLocation [start=line 1 column 192, end=line 1 column 208] [CaseProcedure]
+c + 5; break;
+---------------------------
+SourceLocation [start=line 1 column 192, end=line 1 column 197] [Infix]
+c + 5
+---------------------------
+SourceLocation [start=line 1 column 192, end=line 1 column 193] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 194, end=line 1 column 195] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 196, end=line 1 column 197] [Literal]
+5
+---------------------------
+SourceLocation [start=line 1 column 202, end=line 1 column 207] [Break]
+break
+---------------------------
+SourceLocation [start=line 1 column 210, end=line 1 column 272] [DefaultCase]
+default: console.log('Sorry, we are out of ' + expr + '.');
+---------------------------
+SourceLocation [start=line 1 column 222, end=line 1 column 272] [CaseProcedure]
+console.log('Sorry, we are out of ' + expr + '.');
+---------------------------
+SourceLocation [start=line 1 column 222, end=line 1 column 271] [QualifiedExpression]
+console.log('Sorry, we are out of ' + expr + '.')
+---------------------------
+SourceLocation [start=line 1 column 222, end=line 1 column 230] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 222, end=line 1 column 229] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 229, end=line 1 column 230] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 230, end=line 1 column 271] [FunctionCall]
+log('Sorry, we are out of ' + expr + '.')
+---------------------------
+SourceLocation [start=line 1 column 230, end=line 1 column 233] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 233, end=line 1 column 271] [Signature]
+('Sorry, we are out of ' + expr + '.')
+---------------------------
+SourceLocation [start=line 1 column 234, end=line 1 column 270] [Infix]
+'Sorry, we are out of ' + expr + '.'
+---------------------------
+SourceLocation [start=line 1 column 234, end=line 1 column 264] [Infix]
+'Sorry, we are out of ' + expr
+---------------------------
+SourceLocation [start=line 1 column 234, end=line 1 column 257] [Literal]
+'Sorry, we are out of '
+---------------------------
+SourceLocation [start=line 1 column 258, end=line 1 column 259] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 260, end=line 1 column 264] [Identifier]
+expr
+---------------------------
+SourceLocation [start=line 1 column 265, end=line 1 column 266] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 267, end=line 1 column 270] [Literal]
+'.'
+---------------------------

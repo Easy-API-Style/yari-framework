@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [Javascript]
+export { variable1 as name1, variable2 as name2, nameN }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [Export]
+export { variable1 as name1, variable2 as name2, nameN }
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 57] [ExportBlock]
+{ variable1 as name1, variable2 as name2, nameN }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 28] [ExportReference]
+variable1 as name1
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 19] [Identifier]
+variable1
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 28] [Identifier]
+as name1
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 48] [ExportReference]
+variable2 as name2
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 39] [Identifier]
+variable2
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 48] [Identifier]
+as name2
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 55] [ExportReference]
+nameN
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 55] [Identifier]
+nameN
+---------------------------

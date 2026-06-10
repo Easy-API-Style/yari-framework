@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 43] [Javascript]
+while (fct_1(), fct_2(), fct_3()) var v_1
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 43] [While]
+while (fct_1(), fct_2(), fct_3()) var v_1
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 34] [Condition]
+(fct_1(), fct_2(), fct_3())
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 33] [Sequence]
+fct_1(), fct_2(), fct_3()
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 15] [FunctionCall]
+fct_1()
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 13] [Identifier]
+fct_1
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 24] [FunctionCall]
+fct_2()
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 22] [Identifier]
+fct_2
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 24] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 33] [FunctionCall]
+fct_3()
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 31] [Identifier]
+fct_3
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 33] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 43] [Procedure]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 43] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 39] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 43] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 43] [Identifier]
+v_1
+---------------------------

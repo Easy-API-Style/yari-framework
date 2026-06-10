@@ -1,0 +1,44 @@
+[0, Css] @container (width > 400px) and (height > 400px) {\\n /* <stylesheet> */\\n }\\n\\n @container (width > 400px) or (height > 400px) {\\n /* <stylesheet> */\\n }\\n\\n @container not (width < 400px) {\\n /* <stylesheet> */\\n }
+ [1, AtRule] @container (width > 400px) and (height > 400px) {\\n /* <stylesheet> */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] (width > 400px) and (height > 400px)
+   [3, Parenthesis] (width > 400px)
+    [4, Infix] width > 400px
+     [5, Identifier] width
+     [5, Operator] >
+     [5, Identifier] 400px
+   [3, Operator] and
+   [3, Parenthesis] (height > 400px)
+    [4, Infix] height > 400px
+     [5, Identifier] height
+     [5, Operator] >
+     [5, Identifier] 400px
+  [2, Block] {\\n /* <stylesheet> */\\n }
+ [1, AtRule] @container (width > 400px) or (height > 400px) {\\n /* <stylesheet> */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] (width > 400px) or (height > 400px)
+   [3, Parenthesis] (width > 400px)
+    [4, Infix] width > 400px
+     [5, Identifier] width
+     [5, Operator] >
+     [5, Identifier] 400px
+   [3, Operator] or
+   [3, Parenthesis] (height > 400px)
+    [4, Infix] height > 400px
+     [5, Identifier] height
+     [5, Operator] >
+     [5, Identifier] 400px
+  [2, Block] {\\n /* <stylesheet> */\\n }
+ [1, AtRule] @container not (width < 400px) {\\n /* <stylesheet> */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Prefix] not (width < 400px)
+   [3, Operator] not
+   [3, Parenthesis] (width < 400px)
+    [4, Infix] width < 400px
+     [5, Identifier] width
+     [5, Operator] <
+     [5, Identifier] 400px
+  [2, Block] {\\n /* <stylesheet> */\\n }

@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-javascript-parser — Yari Framework</title>
+  <meta name="description" content="Fault-tolerant JavaScript parser for Java. Supports ES2022+: functions, classes, ES6 modules, async/await, destructuring, template literals, generators, optional chaining, and more. Never throws on malformed input.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html" class="is-active">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#jsparser">JavascriptParser</a></li>
+      <li><a href="#javascript">Javascript (AST)</a></li>
+      <li><a href="#declarations">Declarations</a></li>
+      <li><a href="#expressions">Expressions</a></li>
+      <li><a href="#statements">Statements</a></li>
+      <li><a href="#comments">Comments &amp; locations</a></li>
+      <li><a href="#recovery">Error recovery</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">›</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">›</span>
+        <span>yari-javascript-parser</span>
+      </nav>
+
+      <h1>yari-javascript-parser</h1>
+      <p class="lead">Fault-tolerant JavaScript parser producing a typed, fully-located AST. Supports the full ES2022+ language: functions, classes, ES6 modules (<code>import</code>/<code>export</code>), async/await, destructuring, template literals, generators, optional chaining, nullish coalescing, and more. Never throws on malformed input. <strong>Built for speed — it stays fast even on very large scripts, which it was designed to handle.</strong></p>
+
+      <div class="tip">
+        <p><strong>Performance.</strong> The parser was engineered for throughput: it parses large, real-world bundles and minified files quickly, with linear scaling and low allocation overhead, so big scripts stay fast.</p>
+      </div>
+
+      <!-- Installation -->
+      <h2 id="install">Installation</h2>
+      <p>Add the dependency to your build file. Replace <code>VERSION</code> with the desired release.</p>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-javascript-parser:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-javascript-parser<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+
+      <!-- JavascriptParser -->
+      <h2 id="jsparser">JavascriptParser — Entry Points</h2>
+      <p>All methods are static. <code>JavascriptParser</code> is not instantiable.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>JavascriptParser</strong> <span>com.easyparsingapi.yari.parser.javascript.parser</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>parse(String)</td>
+                <td>→ Javascript</td>
+                <td>Parse a complete JavaScript program</td>
+              </tr>
+              <tr>
+                <td>parse(List&lt;Token&gt;)</td>
+                <td>→ Javascript</td>
+                <td>Parse a pre-tokenised program</td>
+              </tr>
+              <tr>
+                <td>parseUnit(String)</td>
+                <td>→ AstResult&lt;Javascript&gt;</td>
+                <td>Parse and return node + token list</td>
+              </tr>
+              <tr>
+                <td>parseUnit(List&lt;Token&gt;)</td>
+                <td>→ AstResult&lt;Javascript&gt;</td>
+                <td>Parse pre-tokenised, return with token list</td>
+              </tr>
+              <tr>
+                <td>parseExpression(String)</td>
+                <td>→ AstResult&lt;Javascript&gt;</td>
+                <td>Parse a single expression</td>
+              </tr>
+              <tr>
+                <td>parseExpression(List&lt;Token&gt;)</td>
+                <td>→ AstResult&lt;Javascript&gt;</td>
+                <td>Parse an expression from tokens</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Javascript root node -->
+      <h2 id="javascript">Javascript — Root AST Node</h2>
+      <p>Root of a parsed JavaScript program. Implements <code>AstUnit</code> and <code>JavascriptProcedure</code>.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Javascript</strong> <span>com.easyparsingapi.yari.parser.javascript.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>getNodes()</td>
+                <td>→ List&lt;JavascriptNode&gt;</td>
+                <td>Top-level statements</td>
+              </tr>
+              <tr>
+                <td>astComments()</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>All comments in the parsed program</td>
+              </tr>
+              <tr>
+                <td>astCommentsOf(AstNode, Position…)</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>Comments associated with a given node at the specified position</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Declarations -->
+      <h2 id="declarations">Declarations</h2>
+      <p>Declaration nodes represent named definitions — variables, functions, classes, and ES6 module imports and exports.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Declaration nodes</strong> <span>com.easyparsingapi.yari.parser.javascript.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>VariableDeclaration</td>
+                <td></td>
+                <td><code>var</code>/<code>let</code>/<code>const</code> declaration. <code>getType() → Type</code> (<code>'var'</code>, <code>'let'</code>, <code>'const'</code>), <code>getVariableDeclarations() → List&lt;Variable&gt;</code></td>
+              </tr>
+              <tr>
+                <td>FunctionDeclaration</td>
+                <td></td>
+                <td>Function declaration. <code>getName() → Identifier</code>, <code>getSignature() → Signature</code>, <code>getProcedure() → Procedure</code>, <code>isGenerator() → boolean</code>, <code>isAsynchronous() → boolean</code></td>
+              </tr>
+              <tr>
+                <td>ClassDeclaration</td>
+                <td></td>
+                <td>Class declaration with optional <code>extends</code>. <code>getClassName() → Identifier</code>, <code>isExtended() → boolean</code>, <code>getExtendedName() → JavascriptNode</code>, <code>getProperties() → List&lt;JavascriptNode&gt;</code></td>
+              </tr>
+              <tr>
+                <td>ArrowFunction</td>
+                <td></td>
+                <td>Arrow function expression. <code>getSignature() → JavascriptSignature</code>, <code>getProcedure() → JavascriptProcedure</code>, <code>isAsynchronous() → boolean</code></td>
+              </tr>
+              <tr>
+                <td>Import</td>
+                <td></td>
+                <td><code>import … from '…'</code> statement. <code>getModuleName() → Literal</code>, <code>getDefaultName() → Identifier</code>, <code>getImportBlock() → ImportBlock</code></td>
+              </tr>
+              <tr>
+                <td>Export</td>
+                <td></td>
+                <td><code>export</code> declaration. <code>isDefault() → boolean</code>, <code>getDefinition() → JavascriptNode</code></td>
+              </tr>
+              <tr>
+                <td>MethodDeclaration / ClassMethodDeclaration / Getter / Setter</td>
+                <td></td>
+                <td>Class member declarations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Expressions -->
+      <h2 id="expressions">Expressions</h2>
+      <p>Expression nodes represent values, operators, and compound constructs that can appear wherever a value is expected.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Expression nodes</strong> <span>com.easyparsingapi.yari.parser.javascript.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>Identifier</td>
+                <td></td>
+                <td>A name. <code>getValue() → String</code></td>
+              </tr>
+              <tr>
+                <td>Literal</td>
+                <td></td>
+                <td>A literal value (number, string, boolean, regexp…). <code>getType() → Literal.Type</code>, <code>getValue() → String</code></td>
+              </tr>
+              <tr>
+                <td>LiteralTemplate</td>
+                <td></td>
+                <td>A template literal. <code>getElements() → List&lt;JavascriptNode&gt;</code></td>
+              </tr>
+              <tr>
+                <td>Infix</td>
+                <td></td>
+                <td>Binary expression. <code>getLeftOperand()</code>, <code>getOperator()</code>, <code>getRightOperand()</code></td>
+              </tr>
+              <tr>
+                <td>Prefix / Decrement / Increment</td>
+                <td></td>
+                <td>Prefix/postfix unary operators</td>
+              </tr>
+              <tr>
+                <td>Ternary</td>
+                <td></td>
+                <td>Conditional expression. <code>getCondition()</code>, <code>getIfPart()</code>, <code>getElsePart()</code></td>
+              </tr>
+              <tr>
+                <td>Assignment</td>
+                <td></td>
+                <td>Assignment expression, with optional chaining via <code>Assignment.Chaining</code></td>
+              </tr>
+              <tr>
+                <td>FunctionCall</td>
+                <td></td>
+                <td>Function invocation. <code>getName() → JavascriptNode</code>, <code>getSignature() → Signature</code></td>
+              </tr>
+              <tr>
+                <td>QualifiedExpression</td>
+                <td></td>
+                <td>Member access chain (<code>a.b.c</code>, <code>a?.b</code>). <code>getQualifiers()</code>, <code>walk(Consumer&lt;Handler&gt;)</code></td>
+              </tr>
+              <tr>
+                <td>NewClass / New</td>
+                <td></td>
+                <td><code>new</code> expressions</td>
+              </tr>
+              <tr>
+                <td>ObjectDeclaration</td>
+                <td></td>
+                <td>Object literal <code>{…}</code></td>
+              </tr>
+              <tr>
+                <td>ArrayDeclaration</td>
+                <td></td>
+                <td>Array literal <code>[…]</code></td>
+              </tr>
+              <tr>
+                <td>Spread</td>
+                <td></td>
+                <td>Spread expression <code>…expr</code></td>
+              </tr>
+              <tr>
+                <td>Await / Yield</td>
+                <td></td>
+                <td>async/generator primitives</td>
+              </tr>
+              <tr>
+                <td>Sequence / Parenthesis</td>
+                <td></td>
+                <td>Comma sequence and parenthesised expressions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Statements -->
+      <h2 id="statements">Statements</h2>
+      <p>Statement nodes represent control-flow and structural constructs that appear in a procedure body or at the top level of a program.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Statement nodes</strong> <span>com.easyparsingapi.yari.parser.javascript.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>If</td>
+                <td></td>
+                <td>If/else statement. <code>getIfBlock() → IfBlock</code>, <code>getElseIfBlocks() → List&lt;ElseIfBlock&gt;</code>, <code>getElseBlock() → ElseBlock</code></td>
+              </tr>
+              <tr>
+                <td>For</td>
+                <td></td>
+                <td>For, for-in, and for-of loops</td>
+              </tr>
+              <tr>
+                <td>While</td>
+                <td></td>
+                <td>While loop</td>
+              </tr>
+              <tr>
+                <td>DoWhile</td>
+                <td></td>
+                <td>Do-while loop</td>
+              </tr>
+              <tr>
+                <td>Switch</td>
+                <td></td>
+                <td>Switch statement. <code>getSwitchExpression() → SwitchExpression</code>, <code>getSwitchProcedure() → SwitchProcedure</code> (holds <code>SwitchCase</code> and <code>DefaultCase</code> clauses)</td>
+              </tr>
+              <tr>
+                <td>Try / Catch / Finally</td>
+                <td></td>
+                <td>Try-catch-finally block</td>
+              </tr>
+              <tr>
+                <td>Return</td>
+                <td></td>
+                <td>Return statement. <code>getReturnValue() → JavascriptNode</code></td>
+              </tr>
+              <tr>
+                <td>Throw</td>
+                <td></td>
+                <td>Throw statement. <code>getThrownValue() → JavascriptNode</code></td>
+              </tr>
+              <tr>
+                <td>Break</td>
+                <td></td>
+                <td>Break statement, with optional label</td>
+              </tr>
+              <tr>
+                <td>Continue</td>
+                <td></td>
+                <td>Continue statement, with optional label</td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td></td>
+                <td>Labelled statement</td>
+              </tr>
+              <tr>
+                <td>Debugger</td>
+                <td></td>
+                <td>Debugger statement</td>
+              </tr>
+              <tr>
+                <td>UseStrict</td>
+                <td></td>
+                <td>The <code>'use strict'</code> directive</td>
+              </tr>
+              <tr>
+                <td>EmptyStatement</td>
+                <td></td>
+                <td>A lone semicolon</td>
+              </tr>
+              <tr>
+                <td>BlockProcedure</td>
+                <td></td>
+                <td>A bare block statement <code>{…}</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Comments & Source Locations -->
+      <h2 id="comments">Comments &amp; Source Locations</h2>
+      <p>
+        Every AST node carries an exact <code>SourceLocation</code> with start/end offsets, lines, and columns.
+        Comments are preserved as first-class <code>AstComment</code> nodes and can be queried relative to any
+        AST node.
+      </p>
+<pre><code>AstResult&lt;Javascript&gt; result = JavascriptParser.parseUnit(source);
+Javascript js = result.unit();
+
+<span class="c">// All comments</span>
+List&lt;AstComment&gt; all = js.astComments();
+
+<span class="c">// Comments before each top-level node</span>
+js.getNodes().forEach(node ->
+    js.astCommentsOf(node, AstUnit.Position.before)
+      .forEach(c -> System.out.println(((JavascriptComment) c).getComment())));
+
+<span class="c">// Source substring for a node</span>
+js.astStream()
+  .filter(n -> n <span class="k">instanceof</span> FunctionDeclaration)
+  .forEach(n -> System.out.println(
+      result.substring(n.getSourceLocation())));</code></pre>
+
+      <!-- Error Recovery -->
+      <h2 id="recovery">Error Recovery</h2>
+      <p>
+        The parser emits a <code>JavascriptError</code> node and resumes whenever it encounters unrecognisable
+        input. The enclosing procedure body is still parsed to completion, so you always get the maximum number
+        of recognisable nodes from a broken or partially-malformed source.
+      </p>
+
+      <div class="note">
+        <p>For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and Javadoc under <code>yari-javascript-parser/src/main/java/</code>.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

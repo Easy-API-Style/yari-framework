@@ -1,0 +1,75 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 222] [Javascript]
+class ClassWithPrivateStaticField { static #PRIVATE_STATIC_FIELD; static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 222] [ClassDeclaration]
+class ClassWithPrivateStaticField { static #PRIVATE_STATIC_FIELD; static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 34] [Identifier]
+ClassWithPrivateStaticField
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 66] [ClassFieldDeclaration]
+static #PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 66] [Identifier]
+PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 221] [ClassMethodDeclaration]
+static publicStaticMethod() { ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 94] [Identifier]
+publicStaticMethod
+---------------------------
+SourceLocation [start=line 1 column 94, end=line 1 column 96] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 97, end=line 1 column 221] [Procedure]
+{ ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42; return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD; }
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 156] [Assignment]
+ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD = 42
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 151] [QualifiedExpression]
+ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 130] [Qualifier]
+ClassWithPrivateStaticField.
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 129] [Identifier]
+ClassWithPrivateStaticField
+---------------------------
+SourceLocation [start=line 1 column 129, end=line 1 column 130] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 130, end=line 1 column 151] [PrivateExpression]
+#PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 131, end=line 1 column 151] [Identifier]
+PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 152, end=line 1 column 153] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 154, end=line 1 column 156] [Literal]
+42
+---------------------------
+SourceLocation [start=line 1 column 161, end=line 1 column 217] [Return]
+return ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 168, end=line 1 column 217] [QualifiedExpression]
+ClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 168, end=line 1 column 196] [Qualifier]
+ClassWithPrivateStaticField.
+---------------------------
+SourceLocation [start=line 1 column 168, end=line 1 column 195] [Identifier]
+ClassWithPrivateStaticField
+---------------------------
+SourceLocation [start=line 1 column 195, end=line 1 column 196] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 196, end=line 1 column 217] [PrivateExpression]
+#PRIVATE_STATIC_FIELD
+---------------------------
+SourceLocation [start=line 1 column 197, end=line 1 column 217] [Identifier]
+PRIVATE_STATIC_FIELD
+---------------------------

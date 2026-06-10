@@ -1,0 +1,1581 @@
+SourceLocation [start=line 1 column 14, end=line 9 column 3] [Javascript]
+/*\\n\\n Copyright (c) 2016 The Polymer Project Authors. All rights reserved.\\n This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\\n The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\\n The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\\n Code distributed by Google as part of the polymer project is also\\n subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt\\n*/
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 104] [Javascript]
+//# sourceMappingURL=blaze-out/k8-opt/bin/third_party/javascript/custom_elements/fast-shim.js.sourcemap
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 15 column 307] [Javascript]
+'use strict';/*\\n\\n Copyright (c) 2016 The Polymer Project Authors. All rights reserved.\\n This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\\n The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\\n The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\\n Code distributed by Google as part of the polymer project is also\\n subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt\\n*/\\n(()=>{})();\\nObject.defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})\\n//# sourceMappingURL=blaze-out/k8-opt/bin/third_party/javascript/custom_elements/fast-shim.js.sourcemap\\nif(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 13] [UseStrict]
+
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 11] [InvokedFunction]
+(()=>{})()
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 9] [Definition]
+(()=>{})
+---------------------------
+SourceLocation [start=line 10 column 2, end=line 10 column 8] [ArrowFunction]
+()=>{}
+---------------------------
+SourceLocation [start=line 10 column 2, end=line 10 column 4] [Signature]
+()
+---------------------------
+SourceLocation [start=line 10 column 6, end=line 10 column 8] [Procedure]
+{}
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 11] [Signature]
+()
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 99] [QualifiedExpression]
+Object.defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 8] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 7] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 99] [FunctionCall]
+defineProperty(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 22] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 11 column 22, end=line 11 column 99] [Signature]
+(window.customElements,"get",{value:a=>l.get(a),configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 11 column 23, end=line 11 column 44] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 11 column 23, end=line 11 column 30] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 11 column 23, end=line 11 column 29] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 11 column 29, end=line 11 column 30] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 30, end=line 11 column 44] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 11 column 45, end=line 11 column 50] [Literal]
+"get"
+---------------------------
+SourceLocation [start=line 11 column 51, end=line 11 column 98] [ObjectDeclaration]
+{value:a=>l.get(a),configurable:!0,writable:!0}
+---------------------------
+SourceLocation [start=line 11 column 52, end=line 11 column 69] [FieldDeclaration]
+value:a=>l.get(a)
+---------------------------
+SourceLocation [start=line 11 column 52, end=line 11 column 57] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 11 column 58, end=line 11 column 69] [ArrowFunction]
+a=>l.get(a)
+---------------------------
+SourceLocation [start=line 11 column 58, end=line 11 column 59] [Signature]
+a
+---------------------------
+SourceLocation [start=line 11 column 58, end=line 11 column 59] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 11 column 61, end=line 11 column 69] [Procedure]
+l.get(a)
+---------------------------
+SourceLocation [start=line 11 column 61, end=line 11 column 69] [QualifiedExpression]
+l.get(a)
+---------------------------
+SourceLocation [start=line 11 column 61, end=line 11 column 63] [Qualifier]
+l.
+---------------------------
+SourceLocation [start=line 11 column 61, end=line 11 column 62] [Identifier]
+l
+---------------------------
+SourceLocation [start=line 11 column 62, end=line 11 column 63] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 63, end=line 11 column 69] [FunctionCall]
+get(a)
+---------------------------
+SourceLocation [start=line 11 column 63, end=line 11 column 66] [Identifier]
+get
+---------------------------
+SourceLocation [start=line 11 column 66, end=line 11 column 69] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 11 column 67, end=line 11 column 68] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 11 column 70, end=line 11 column 85] [FieldDeclaration]
+configurable:!0
+---------------------------
+SourceLocation [start=line 11 column 70, end=line 11 column 82] [Identifier]
+configurable
+---------------------------
+SourceLocation [start=line 11 column 83, end=line 11 column 85] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 11 column 83, end=line 11 column 84] [Operator]
+!
+---------------------------
+SourceLocation [start=line 11 column 84, end=line 11 column 85] [Literal]
+0
+---------------------------
+SourceLocation [start=line 11 column 86, end=line 11 column 97] [FieldDeclaration]
+writable:!0
+---------------------------
+SourceLocation [start=line 11 column 86, end=line 11 column 94] [Identifier]
+writable
+---------------------------
+SourceLocation [start=line 11 column 95, end=line 11 column 97] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 11 column 95, end=line 11 column 96] [Operator]
+!
+---------------------------
+SourceLocation [start=line 11 column 96, end=line 11 column 97] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 15 column 307] [If]
+if(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 15 column 307] [IfBlock]
+if(window.customElements){var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+---------------------------
+SourceLocation [start=line 13 column 3, end=line 13 column 26] [Condition]
+(window.customElements)
+---------------------------
+SourceLocation [start=line 13 column 4, end=line 13 column 25] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 13 column 4, end=line 13 column 11] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 4, end=line 13 column 10] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 10, end=line 13 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 11, end=line 13 column 25] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 26, end=line 15 column 307] [Procedure]
+{var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1;window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1};window.HTMLElement.prototype=h.prototype;window.HTMLElement.es5Shimmed=!0;Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0});Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0});;if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}}
+---------------------------
+SourceLocation [start=line 13 column 27, end=line 13 column 140] [VariableDeclaration]
+var h=window.HTMLElement,m=window.customElements.define,n=window.customElements.get,k=new Map,l=new Map,e=!1,f=!1
+---------------------------
+SourceLocation [start=line 13 column 27, end=line 13 column 30] [Type]
+var
+---------------------------
+SourceLocation [start=line 13 column 31, end=line 13 column 51] [Variable]
+h=window.HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 31, end=line 13 column 32] [Identifier]
+h
+---------------------------
+SourceLocation [start=line 13 column 32, end=line 13 column 33] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 51] [QualifiedExpression]
+window.HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 40] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 39] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 39, end=line 13 column 40] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 40, end=line 13 column 51] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 52, end=line 13 column 82] [Variable]
+m=window.customElements.define
+---------------------------
+SourceLocation [start=line 13 column 52, end=line 13 column 53] [Identifier]
+m
+---------------------------
+SourceLocation [start=line 13 column 53, end=line 13 column 54] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 54, end=line 13 column 82] [QualifiedExpression]
+window.customElements.define
+---------------------------
+SourceLocation [start=line 13 column 54, end=line 13 column 61] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 54, end=line 13 column 60] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 60, end=line 13 column 61] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 61, end=line 13 column 76] [Qualifier]
+customElements.
+---------------------------
+SourceLocation [start=line 13 column 61, end=line 13 column 75] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 75, end=line 13 column 76] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 76, end=line 13 column 82] [Identifier]
+define
+---------------------------
+SourceLocation [start=line 13 column 83, end=line 13 column 110] [Variable]
+n=window.customElements.get
+---------------------------
+SourceLocation [start=line 13 column 83, end=line 13 column 84] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 13 column 84, end=line 13 column 85] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 85, end=line 13 column 110] [QualifiedExpression]
+window.customElements.get
+---------------------------
+SourceLocation [start=line 13 column 85, end=line 13 column 92] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 85, end=line 13 column 91] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 91, end=line 13 column 92] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 92, end=line 13 column 107] [Qualifier]
+customElements.
+---------------------------
+SourceLocation [start=line 13 column 92, end=line 13 column 106] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 106, end=line 13 column 107] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 107, end=line 13 column 110] [Identifier]
+get
+---------------------------
+SourceLocation [start=line 13 column 111, end=line 13 column 120] [Variable]
+k=new Map
+---------------------------
+SourceLocation [start=line 13 column 111, end=line 13 column 112] [Identifier]
+k
+---------------------------
+SourceLocation [start=line 13 column 112, end=line 13 column 113] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 113, end=line 13 column 120] [New]
+new Map
+---------------------------
+SourceLocation [start=line 13 column 117, end=line 13 column 120] [Identifier]
+Map
+---------------------------
+SourceLocation [start=line 13 column 121, end=line 13 column 130] [Variable]
+l=new Map
+---------------------------
+SourceLocation [start=line 13 column 121, end=line 13 column 122] [Identifier]
+l
+---------------------------
+SourceLocation [start=line 13 column 122, end=line 13 column 123] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 123, end=line 13 column 130] [New]
+new Map
+---------------------------
+SourceLocation [start=line 13 column 127, end=line 13 column 130] [Identifier]
+Map
+---------------------------
+SourceLocation [start=line 13 column 131, end=line 13 column 135] [Variable]
+e=!1
+---------------------------
+SourceLocation [start=line 13 column 131, end=line 13 column 132] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 13 column 132, end=line 13 column 133] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 133, end=line 13 column 135] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 13 column 133, end=line 13 column 134] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 134, end=line 13 column 135] [Literal]
+1
+---------------------------
+SourceLocation [start=line 13 column 136, end=line 13 column 140] [Variable]
+f=!1
+---------------------------
+SourceLocation [start=line 13 column 136, end=line 13 column 137] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 13 column 137, end=line 13 column 138] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 138, end=line 13 column 140] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 13 column 138, end=line 13 column 139] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 139, end=line 13 column 140] [Literal]
+1
+---------------------------
+SourceLocation [start=line 13 column 141, end=line 13 column 265] [Assignment]
+window.HTMLElement=function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+---------------------------
+SourceLocation [start=line 13 column 141, end=line 13 column 159] [QualifiedExpression]
+window.HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 141, end=line 13 column 148] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 141, end=line 13 column 147] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 147, end=line 13 column 148] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 148, end=line 13 column 159] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 159, end=line 13 column 160] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 160, end=line 13 column 265] [FunctionDeclaration]
+function(){if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+---------------------------
+SourceLocation [start=line 13 column 168, end=line 13 column 170] [Signature]
+()
+---------------------------
+SourceLocation [start=line 13 column 170, end=line 13 column 265] [Procedure]
+{if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}e=!1}
+---------------------------
+SourceLocation [start=line 13 column 171, end=line 13 column 260] [If]
+if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+---------------------------
+SourceLocation [start=line 13 column 171, end=line 13 column 260] [IfBlock]
+if(!e){var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+---------------------------
+SourceLocation [start=line 13 column 173, end=line 13 column 177] [Condition]
+(!e)
+---------------------------
+SourceLocation [start=line 13 column 174, end=line 13 column 176] [Prefix]
+!e
+---------------------------
+SourceLocation [start=line 13 column 174, end=line 13 column 175] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 175, end=line 13 column 176] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 13 column 177, end=line 13 column 260] [Procedure]
+{var a=k.get(this.constructor);a=n.call(window.customElements,a);f=!0;return new a}
+---------------------------
+SourceLocation [start=line 13 column 178, end=line 13 column 207] [VariableDeclaration]
+var a=k.get(this.constructor)
+---------------------------
+SourceLocation [start=line 13 column 178, end=line 13 column 181] [Type]
+var
+---------------------------
+SourceLocation [start=line 13 column 182, end=line 13 column 207] [Variable]
+a=k.get(this.constructor)
+---------------------------
+SourceLocation [start=line 13 column 182, end=line 13 column 183] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 13 column 183, end=line 13 column 184] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 184, end=line 13 column 207] [QualifiedExpression]
+k.get(this.constructor)
+---------------------------
+SourceLocation [start=line 13 column 184, end=line 13 column 186] [Qualifier]
+k.
+---------------------------
+SourceLocation [start=line 13 column 184, end=line 13 column 185] [Identifier]
+k
+---------------------------
+SourceLocation [start=line 13 column 185, end=line 13 column 186] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 186, end=line 13 column 207] [FunctionCall]
+get(this.constructor)
+---------------------------
+SourceLocation [start=line 13 column 186, end=line 13 column 189] [Identifier]
+get
+---------------------------
+SourceLocation [start=line 13 column 189, end=line 13 column 207] [Signature]
+(this.constructor)
+---------------------------
+SourceLocation [start=line 13 column 190, end=line 13 column 206] [QualifiedExpression]
+this.constructor
+---------------------------
+SourceLocation [start=line 13 column 190, end=line 13 column 195] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 13 column 190, end=line 13 column 194] [This]
+this
+---------------------------
+SourceLocation [start=line 13 column 194, end=line 13 column 195] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 195, end=line 13 column 206] [Identifier]
+constructor
+---------------------------
+SourceLocation [start=line 13 column 208, end=line 13 column 241] [Assignment]
+a=n.call(window.customElements,a)
+---------------------------
+SourceLocation [start=line 13 column 208, end=line 13 column 209] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 13 column 209, end=line 13 column 210] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 210, end=line 13 column 241] [QualifiedExpression]
+n.call(window.customElements,a)
+---------------------------
+SourceLocation [start=line 13 column 210, end=line 13 column 212] [Qualifier]
+n.
+---------------------------
+SourceLocation [start=line 13 column 210, end=line 13 column 211] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 13 column 211, end=line 13 column 212] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 212, end=line 13 column 241] [FunctionCall]
+call(window.customElements,a)
+---------------------------
+SourceLocation [start=line 13 column 212, end=line 13 column 216] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 13 column 216, end=line 13 column 241] [Signature]
+(window.customElements,a)
+---------------------------
+SourceLocation [start=line 13 column 217, end=line 13 column 238] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 13 column 217, end=line 13 column 224] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 217, end=line 13 column 223] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 223, end=line 13 column 224] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 224, end=line 13 column 238] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 239, end=line 13 column 240] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 13 column 242, end=line 13 column 246] [Assignment]
+f=!0
+---------------------------
+SourceLocation [start=line 13 column 242, end=line 13 column 243] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 13 column 243, end=line 13 column 244] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 244, end=line 13 column 246] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 13 column 244, end=line 13 column 245] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 245, end=line 13 column 246] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 247, end=line 13 column 259] [Return]
+return new a
+---------------------------
+SourceLocation [start=line 13 column 254, end=line 13 column 259] [New]
+new a
+---------------------------
+SourceLocation [start=line 13 column 258, end=line 13 column 259] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 13 column 260, end=line 13 column 264] [Assignment]
+e=!1
+---------------------------
+SourceLocation [start=line 13 column 260, end=line 13 column 261] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 13 column 261, end=line 13 column 262] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 262, end=line 13 column 264] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 13 column 262, end=line 13 column 263] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 263, end=line 13 column 264] [Literal]
+1
+---------------------------
+SourceLocation [start=line 13 column 266, end=line 13 column 306] [Assignment]
+window.HTMLElement.prototype=h.prototype
+---------------------------
+SourceLocation [start=line 13 column 266, end=line 13 column 294] [QualifiedExpression]
+window.HTMLElement.prototype
+---------------------------
+SourceLocation [start=line 13 column 266, end=line 13 column 273] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 266, end=line 13 column 272] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 272, end=line 13 column 273] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 273, end=line 13 column 285] [Qualifier]
+HTMLElement.
+---------------------------
+SourceLocation [start=line 13 column 273, end=line 13 column 284] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 284, end=line 13 column 285] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 285, end=line 13 column 294] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 13 column 294, end=line 13 column 295] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 295, end=line 13 column 306] [QualifiedExpression]
+h.prototype
+---------------------------
+SourceLocation [start=line 13 column 295, end=line 13 column 297] [Qualifier]
+h.
+---------------------------
+SourceLocation [start=line 13 column 295, end=line 13 column 296] [Identifier]
+h
+---------------------------
+SourceLocation [start=line 13 column 296, end=line 13 column 297] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 297, end=line 13 column 306] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 13 column 307, end=line 13 column 339] [Assignment]
+window.HTMLElement.es5Shimmed=!0
+---------------------------
+SourceLocation [start=line 13 column 307, end=line 13 column 336] [QualifiedExpression]
+window.HTMLElement.es5Shimmed
+---------------------------
+SourceLocation [start=line 13 column 307, end=line 13 column 314] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 307, end=line 13 column 313] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 313, end=line 13 column 314] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 314, end=line 13 column 326] [Qualifier]
+HTMLElement.
+---------------------------
+SourceLocation [start=line 13 column 314, end=line 13 column 325] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 13 column 325, end=line 13 column 326] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 326, end=line 13 column 336] [Identifier]
+es5Shimmed
+---------------------------
+SourceLocation [start=line 13 column 336, end=line 13 column 337] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 337, end=line 13 column 339] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 13 column 337, end=line 13 column 338] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 338, end=line 13 column 339] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 340, end=line 13 column 444] [QualifiedExpression]
+Object.defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 13 column 340, end=line 13 column 347] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 13 column 340, end=line 13 column 346] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 13 column 346, end=line 13 column 347] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 347, end=line 13 column 444] [FunctionCall]
+defineProperty(window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 13 column 347, end=line 13 column 361] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 13 column 361, end=line 13 column 444] [Signature]
+(window,"customElements",{value:window.customElements,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 13 column 362, end=line 13 column 368] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 369, end=line 13 column 385] [Literal]
+"customElements"
+---------------------------
+SourceLocation [start=line 13 column 386, end=line 13 column 443] [ObjectDeclaration]
+{value:window.customElements,configurable:!0,writable:!0}
+---------------------------
+SourceLocation [start=line 13 column 387, end=line 13 column 414] [FieldDeclaration]
+value:window.customElements
+---------------------------
+SourceLocation [start=line 13 column 387, end=line 13 column 392] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 13 column 393, end=line 13 column 414] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 13 column 393, end=line 13 column 400] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 393, end=line 13 column 399] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 399, end=line 13 column 400] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 400, end=line 13 column 414] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 415, end=line 13 column 430] [FieldDeclaration]
+configurable:!0
+---------------------------
+SourceLocation [start=line 13 column 415, end=line 13 column 427] [Identifier]
+configurable
+---------------------------
+SourceLocation [start=line 13 column 428, end=line 13 column 430] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 13 column 428, end=line 13 column 429] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 429, end=line 13 column 430] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 431, end=line 13 column 442] [FieldDeclaration]
+writable:!0
+---------------------------
+SourceLocation [start=line 13 column 431, end=line 13 column 439] [Identifier]
+writable
+---------------------------
+SourceLocation [start=line 13 column 440, end=line 13 column 442] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 13 column 440, end=line 13 column 441] [Operator]
+!
+---------------------------
+SourceLocation [start=line 13 column 441, end=line 13 column 442] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 445, end=line 15 column 14] [QualifiedExpression]
+Object.defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+---------------------------
+SourceLocation [start=line 13 column 445, end=line 13 column 452] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 13 column 445, end=line 13 column 451] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 13 column 451, end=line 13 column 452] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 452, end=line 15 column 14] [FunctionCall]
+defineProperty(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+---------------------------
+SourceLocation [start=line 13 column 452, end=line 13 column 466] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 13 column 466, end=line 15 column 14] [Signature]
+(window.customElements,"define",\\n{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0})
+---------------------------
+SourceLocation [start=line 13 column 467, end=line 13 column 488] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 13 column 467, end=line 13 column 474] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 13 column 467, end=line 13 column 473] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 13 column 473, end=line 13 column 474] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 474, end=line 13 column 488] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 13 column 489, end=line 13 column 497] [Literal]
+"define"
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 15 column 13] [ObjectDeclaration]
+{value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)},configurable:!0,\\nwritable:!0}
+---------------------------
+SourceLocation [start=line 14 column 2, end=line 14 column 495] [FieldDeclaration]
+value:(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+---------------------------
+SourceLocation [start=line 14 column 2, end=line 14 column 7] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 14 column 8, end=line 14 column 495] [ArrowFunction]
+(a,b)=>{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+---------------------------
+SourceLocation [start=line 14 column 8, end=line 14 column 13] [Signature]
+(a,b)
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 10] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 11, end=line 14 column 12] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 495] [Procedure]
+{const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype;g.observedAttributes=b.observedAttributes;d.connectedCallback=c.connectedCallback;d.disconnectedCallback=c.disconnectedCallback;d.attributeChangedCallback=c.attributeChangedCallback;d.adoptedCallback=c.adoptedCallback;k.set(b,a);l.set(a,b);m.call(window.customElements,a,g)}
+---------------------------
+SourceLocation [start=line 14 column 16, end=line 14 column 220] [VariableDeclaration]
+const c=b.prototype,g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}},d=g.prototype
+---------------------------
+SourceLocation [start=line 14 column 16, end=line 14 column 21] [Type]
+const
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 35] [Variable]
+c=b.prototype
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 23] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 23, end=line 14 column 24] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 24, end=line 14 column 35] [QualifiedExpression]
+b.prototype
+---------------------------
+SourceLocation [start=line 14 column 24, end=line 14 column 26] [Qualifier]
+b.
+---------------------------
+SourceLocation [start=line 14 column 24, end=line 14 column 25] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 25, end=line 14 column 26] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 26, end=line 14 column 35] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 14 column 36, end=line 14 column 206] [Variable]
+g=class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}}
+---------------------------
+SourceLocation [start=line 14 column 36, end=line 14 column 37] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 14 column 37, end=line 14 column 38] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 38, end=line 14 column 206] [ClassDeclaration]
+class extends h{constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}}
+---------------------------
+SourceLocation [start=line 14 column 44, end=line 14 column 53] [Identifier]
+extends h
+---------------------------
+SourceLocation [start=line 14 column 54, end=line 14 column 205] [ClassMethodDeclaration]
+constructor(){super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}
+---------------------------
+SourceLocation [start=line 14 column 54, end=line 14 column 65] [Identifier]
+constructor
+---------------------------
+SourceLocation [start=line 14 column 65, end=line 14 column 67] [Signature]
+()
+---------------------------
+SourceLocation [start=line 14 column 67, end=line 14 column 205] [Procedure]
+{super();Object.setPrototypeOf(this,c);if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}f=!1}
+---------------------------
+SourceLocation [start=line 14 column 68, end=line 14 column 75] [FunctionCall]
+super()
+---------------------------
+SourceLocation [start=line 14 column 68, end=line 14 column 73] [Identifier]
+super
+---------------------------
+SourceLocation [start=line 14 column 73, end=line 14 column 75] [Signature]
+()
+---------------------------
+SourceLocation [start=line 14 column 76, end=line 14 column 105] [QualifiedExpression]
+Object.setPrototypeOf(this,c)
+---------------------------
+SourceLocation [start=line 14 column 76, end=line 14 column 83] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 14 column 76, end=line 14 column 82] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 14 column 82, end=line 14 column 83] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 83, end=line 14 column 105] [FunctionCall]
+setPrototypeOf(this,c)
+---------------------------
+SourceLocation [start=line 14 column 83, end=line 14 column 97] [Identifier]
+setPrototypeOf
+---------------------------
+SourceLocation [start=line 14 column 97, end=line 14 column 105] [Signature]
+(this,c)
+---------------------------
+SourceLocation [start=line 14 column 98, end=line 14 column 102] [This]
+this
+---------------------------
+SourceLocation [start=line 14 column 103, end=line 14 column 104] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 106, end=line 14 column 200] [If]
+if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+---------------------------
+SourceLocation [start=line 14 column 106, end=line 14 column 200] [IfBlock]
+if(!f){e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+---------------------------
+SourceLocation [start=line 14 column 108, end=line 14 column 112] [Condition]
+(!f)
+---------------------------
+SourceLocation [start=line 14 column 109, end=line 14 column 111] [Prefix]
+!f
+---------------------------
+SourceLocation [start=line 14 column 109, end=line 14 column 110] [Operator]
+!
+---------------------------
+SourceLocation [start=line 14 column 110, end=line 14 column 111] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 14 column 112, end=line 14 column 200] [Procedure]
+{e=!0;try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}}
+---------------------------
+SourceLocation [start=line 14 column 113, end=line 14 column 117] [Assignment]
+e=!0
+---------------------------
+SourceLocation [start=line 14 column 113, end=line 14 column 114] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 14 column 114, end=line 14 column 115] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 115, end=line 14 column 117] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 14 column 115, end=line 14 column 116] [Operator]
+!
+---------------------------
+SourceLocation [start=line 14 column 116, end=line 14 column 117] [Literal]
+0
+---------------------------
+SourceLocation [start=line 14 column 118, end=line 14 column 199] [Try]
+try{b.call(this)}catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}
+---------------------------
+SourceLocation [start=line 14 column 121, end=line 14 column 135] [Procedure]
+{b.call(this)}
+---------------------------
+SourceLocation [start=line 14 column 122, end=line 14 column 134] [QualifiedExpression]
+b.call(this)
+---------------------------
+SourceLocation [start=line 14 column 122, end=line 14 column 124] [Qualifier]
+b.
+---------------------------
+SourceLocation [start=line 14 column 122, end=line 14 column 123] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 123, end=line 14 column 124] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 124, end=line 14 column 134] [FunctionCall]
+call(this)
+---------------------------
+SourceLocation [start=line 14 column 124, end=line 14 column 128] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 14 column 128, end=line 14 column 134] [Signature]
+(this)
+---------------------------
+SourceLocation [start=line 14 column 129, end=line 14 column 133] [This]
+this
+---------------------------
+SourceLocation [start=line 14 column 135, end=line 14 column 199] [Catch]
+catch(p){throw Error("Constructing ".concat(a,": ").concat(p));}
+---------------------------
+SourceLocation [start=line 14 column 140, end=line 14 column 143] [Signature]
+(p)
+---------------------------
+SourceLocation [start=line 14 column 141, end=line 14 column 142] [Identifier]
+p
+---------------------------
+SourceLocation [start=line 14 column 143, end=line 14 column 199] [Procedure]
+{throw Error("Constructing ".concat(a,": ").concat(p));}
+---------------------------
+SourceLocation [start=line 14 column 144, end=line 14 column 197] [Throw]
+throw Error("Constructing ".concat(a,": ").concat(p))
+---------------------------
+SourceLocation [start=line 14 column 150, end=line 14 column 197] [FunctionCall]
+Error("Constructing ".concat(a,": ").concat(p))
+---------------------------
+SourceLocation [start=line 14 column 150, end=line 14 column 155] [Identifier]
+Error
+---------------------------
+SourceLocation [start=line 14 column 155, end=line 14 column 197] [Signature]
+("Constructing ".concat(a,": ").concat(p))
+---------------------------
+SourceLocation [start=line 14 column 156, end=line 14 column 196] [QualifiedExpression]
+"Constructing ".concat(a,": ").concat(p)
+---------------------------
+SourceLocation [start=line 14 column 156, end=line 14 column 172] [Qualifier]
+"Constructing ".
+---------------------------
+SourceLocation [start=line 14 column 156, end=line 14 column 171] [Literal]
+"Constructing "
+---------------------------
+SourceLocation [start=line 14 column 171, end=line 14 column 172] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 172, end=line 14 column 187] [Qualifier]
+concat(a,": ").
+---------------------------
+SourceLocation [start=line 14 column 172, end=line 14 column 186] [FunctionCall]
+concat(a,": ")
+---------------------------
+SourceLocation [start=line 14 column 172, end=line 14 column 178] [Identifier]
+concat
+---------------------------
+SourceLocation [start=line 14 column 178, end=line 14 column 186] [Signature]
+(a,": ")
+---------------------------
+SourceLocation [start=line 14 column 179, end=line 14 column 180] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 181, end=line 14 column 185] [Literal]
+": "
+---------------------------
+SourceLocation [start=line 14 column 186, end=line 14 column 187] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 187, end=line 14 column 196] [FunctionCall]
+concat(p)
+---------------------------
+SourceLocation [start=line 14 column 187, end=line 14 column 193] [Identifier]
+concat
+---------------------------
+SourceLocation [start=line 14 column 193, end=line 14 column 196] [Signature]
+(p)
+---------------------------
+SourceLocation [start=line 14 column 194, end=line 14 column 195] [Identifier]
+p
+---------------------------
+SourceLocation [start=line 14 column 200, end=line 14 column 204] [Assignment]
+f=!1
+---------------------------
+SourceLocation [start=line 14 column 200, end=line 14 column 201] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 14 column 201, end=line 14 column 202] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 202, end=line 14 column 204] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 14 column 202, end=line 14 column 203] [Operator]
+!
+---------------------------
+SourceLocation [start=line 14 column 203, end=line 14 column 204] [Literal]
+1
+---------------------------
+SourceLocation [start=line 14 column 207, end=line 14 column 220] [Variable]
+d=g.prototype
+---------------------------
+SourceLocation [start=line 14 column 207, end=line 14 column 208] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 14 column 208, end=line 14 column 209] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 209, end=line 14 column 220] [QualifiedExpression]
+g.prototype
+---------------------------
+SourceLocation [start=line 14 column 209, end=line 14 column 211] [Qualifier]
+g.
+---------------------------
+SourceLocation [start=line 14 column 209, end=line 14 column 210] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 14 column 210, end=line 14 column 211] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 211, end=line 14 column 220] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 14 column 221, end=line 14 column 262] [Assignment]
+g.observedAttributes=b.observedAttributes
+---------------------------
+SourceLocation [start=line 14 column 221, end=line 14 column 241] [QualifiedExpression]
+g.observedAttributes
+---------------------------
+SourceLocation [start=line 14 column 221, end=line 14 column 223] [Qualifier]
+g.
+---------------------------
+SourceLocation [start=line 14 column 221, end=line 14 column 222] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 14 column 222, end=line 14 column 223] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 223, end=line 14 column 241] [Identifier]
+observedAttributes
+---------------------------
+SourceLocation [start=line 14 column 241, end=line 14 column 242] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 242, end=line 14 column 262] [QualifiedExpression]
+b.observedAttributes
+---------------------------
+SourceLocation [start=line 14 column 242, end=line 14 column 244] [Qualifier]
+b.
+---------------------------
+SourceLocation [start=line 14 column 242, end=line 14 column 243] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 243, end=line 14 column 244] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 244, end=line 14 column 262] [Identifier]
+observedAttributes
+---------------------------
+SourceLocation [start=line 14 column 263, end=line 14 column 302] [Assignment]
+d.connectedCallback=c.connectedCallback
+---------------------------
+SourceLocation [start=line 14 column 263, end=line 14 column 282] [QualifiedExpression]
+d.connectedCallback
+---------------------------
+SourceLocation [start=line 14 column 263, end=line 14 column 265] [Qualifier]
+d.
+---------------------------
+SourceLocation [start=line 14 column 263, end=line 14 column 264] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 14 column 264, end=line 14 column 265] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 265, end=line 14 column 282] [Identifier]
+connectedCallback
+---------------------------
+SourceLocation [start=line 14 column 282, end=line 14 column 283] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 283, end=line 14 column 302] [QualifiedExpression]
+c.connectedCallback
+---------------------------
+SourceLocation [start=line 14 column 283, end=line 14 column 285] [Qualifier]
+c.
+---------------------------
+SourceLocation [start=line 14 column 283, end=line 14 column 284] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 284, end=line 14 column 285] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 285, end=line 14 column 302] [Identifier]
+connectedCallback
+---------------------------
+SourceLocation [start=line 14 column 303, end=line 14 column 348] [Assignment]
+d.disconnectedCallback=c.disconnectedCallback
+---------------------------
+SourceLocation [start=line 14 column 303, end=line 14 column 325] [QualifiedExpression]
+d.disconnectedCallback
+---------------------------
+SourceLocation [start=line 14 column 303, end=line 14 column 305] [Qualifier]
+d.
+---------------------------
+SourceLocation [start=line 14 column 303, end=line 14 column 304] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 14 column 304, end=line 14 column 305] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 305, end=line 14 column 325] [Identifier]
+disconnectedCallback
+---------------------------
+SourceLocation [start=line 14 column 325, end=line 14 column 326] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 326, end=line 14 column 348] [QualifiedExpression]
+c.disconnectedCallback
+---------------------------
+SourceLocation [start=line 14 column 326, end=line 14 column 328] [Qualifier]
+c.
+---------------------------
+SourceLocation [start=line 14 column 326, end=line 14 column 327] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 327, end=line 14 column 328] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 328, end=line 14 column 348] [Identifier]
+disconnectedCallback
+---------------------------
+SourceLocation [start=line 14 column 349, end=line 14 column 402] [Assignment]
+d.attributeChangedCallback=c.attributeChangedCallback
+---------------------------
+SourceLocation [start=line 14 column 349, end=line 14 column 375] [QualifiedExpression]
+d.attributeChangedCallback
+---------------------------
+SourceLocation [start=line 14 column 349, end=line 14 column 351] [Qualifier]
+d.
+---------------------------
+SourceLocation [start=line 14 column 349, end=line 14 column 350] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 14 column 350, end=line 14 column 351] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 351, end=line 14 column 375] [Identifier]
+attributeChangedCallback
+---------------------------
+SourceLocation [start=line 14 column 375, end=line 14 column 376] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 376, end=line 14 column 402] [QualifiedExpression]
+c.attributeChangedCallback
+---------------------------
+SourceLocation [start=line 14 column 376, end=line 14 column 378] [Qualifier]
+c.
+---------------------------
+SourceLocation [start=line 14 column 376, end=line 14 column 377] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 377, end=line 14 column 378] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 378, end=line 14 column 402] [Identifier]
+attributeChangedCallback
+---------------------------
+SourceLocation [start=line 14 column 403, end=line 14 column 438] [Assignment]
+d.adoptedCallback=c.adoptedCallback
+---------------------------
+SourceLocation [start=line 14 column 403, end=line 14 column 420] [QualifiedExpression]
+d.adoptedCallback
+---------------------------
+SourceLocation [start=line 14 column 403, end=line 14 column 405] [Qualifier]
+d.
+---------------------------
+SourceLocation [start=line 14 column 403, end=line 14 column 404] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 14 column 404, end=line 14 column 405] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 405, end=line 14 column 420] [Identifier]
+adoptedCallback
+---------------------------
+SourceLocation [start=line 14 column 420, end=line 14 column 421] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 421, end=line 14 column 438] [QualifiedExpression]
+c.adoptedCallback
+---------------------------
+SourceLocation [start=line 14 column 421, end=line 14 column 423] [Qualifier]
+c.
+---------------------------
+SourceLocation [start=line 14 column 421, end=line 14 column 422] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 14 column 422, end=line 14 column 423] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 423, end=line 14 column 438] [Identifier]
+adoptedCallback
+---------------------------
+SourceLocation [start=line 14 column 439, end=line 14 column 449] [QualifiedExpression]
+k.set(b,a)
+---------------------------
+SourceLocation [start=line 14 column 439, end=line 14 column 441] [Qualifier]
+k.
+---------------------------
+SourceLocation [start=line 14 column 439, end=line 14 column 440] [Identifier]
+k
+---------------------------
+SourceLocation [start=line 14 column 440, end=line 14 column 441] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 441, end=line 14 column 449] [FunctionCall]
+set(b,a)
+---------------------------
+SourceLocation [start=line 14 column 441, end=line 14 column 444] [Identifier]
+set
+---------------------------
+SourceLocation [start=line 14 column 444, end=line 14 column 449] [Signature]
+(b,a)
+---------------------------
+SourceLocation [start=line 14 column 445, end=line 14 column 446] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 447, end=line 14 column 448] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 450, end=line 14 column 460] [QualifiedExpression]
+l.set(a,b)
+---------------------------
+SourceLocation [start=line 14 column 450, end=line 14 column 452] [Qualifier]
+l.
+---------------------------
+SourceLocation [start=line 14 column 450, end=line 14 column 451] [Identifier]
+l
+---------------------------
+SourceLocation [start=line 14 column 451, end=line 14 column 452] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 452, end=line 14 column 460] [FunctionCall]
+set(a,b)
+---------------------------
+SourceLocation [start=line 14 column 452, end=line 14 column 455] [Identifier]
+set
+---------------------------
+SourceLocation [start=line 14 column 455, end=line 14 column 460] [Signature]
+(a,b)
+---------------------------
+SourceLocation [start=line 14 column 456, end=line 14 column 457] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 458, end=line 14 column 459] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 461, end=line 14 column 494] [QualifiedExpression]
+m.call(window.customElements,a,g)
+---------------------------
+SourceLocation [start=line 14 column 461, end=line 14 column 463] [Qualifier]
+m.
+---------------------------
+SourceLocation [start=line 14 column 461, end=line 14 column 462] [Identifier]
+m
+---------------------------
+SourceLocation [start=line 14 column 462, end=line 14 column 463] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 463, end=line 14 column 494] [FunctionCall]
+call(window.customElements,a,g)
+---------------------------
+SourceLocation [start=line 14 column 463, end=line 14 column 467] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 14 column 467, end=line 14 column 494] [Signature]
+(window.customElements,a,g)
+---------------------------
+SourceLocation [start=line 14 column 468, end=line 14 column 489] [QualifiedExpression]
+window.customElements
+---------------------------
+SourceLocation [start=line 14 column 468, end=line 14 column 475] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 14 column 468, end=line 14 column 474] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 14 column 474, end=line 14 column 475] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 475, end=line 14 column 489] [Identifier]
+customElements
+---------------------------
+SourceLocation [start=line 14 column 490, end=line 14 column 491] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 492, end=line 14 column 493] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 14 column 496, end=line 14 column 511] [FieldDeclaration]
+configurable:!0
+---------------------------
+SourceLocation [start=line 14 column 496, end=line 14 column 508] [Identifier]
+configurable
+---------------------------
+SourceLocation [start=line 14 column 509, end=line 14 column 511] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 14 column 509, end=line 14 column 510] [Operator]
+!
+---------------------------
+SourceLocation [start=line 14 column 510, end=line 14 column 511] [Literal]
+0
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 12] [FieldDeclaration]
+writable:!0
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 9] [Identifier]
+writable
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 12] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 11] [Operator]
+!
+---------------------------
+SourceLocation [start=line 15 column 11, end=line 15 column 12] [Literal]
+0
+---------------------------
+SourceLocation [start=line 15 column 16, end=line 15 column 16] [EmptyStatement]
+
+---------------------------
+SourceLocation [start=line 15 column 16, end=line 15 column 306] [If]
+if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+---------------------------
+SourceLocation [start=line 15 column 16, end=line 15 column 306] [IfBlock]
+if(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)){const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+---------------------------
+SourceLocation [start=line 15 column 18, end=line 15 column 82] [Condition]
+(navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/))
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 81] [QualifiedExpression]
+navigator.userAgent.match(/Version\/(10\..*|11\.0\..*)Safari/)
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 29] [Qualifier]
+navigator.
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 28] [Identifier]
+navigator
+---------------------------
+SourceLocation [start=line 15 column 28, end=line 15 column 29] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 29, end=line 15 column 39] [Qualifier]
+userAgent.
+---------------------------
+SourceLocation [start=line 15 column 29, end=line 15 column 38] [Identifier]
+userAgent
+---------------------------
+SourceLocation [start=line 15 column 38, end=line 15 column 39] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 39, end=line 15 column 81] [FunctionCall]
+match(/Version\/(10\..*|11\.0\..*)Safari/)
+---------------------------
+SourceLocation [start=line 15 column 39, end=line 15 column 44] [Identifier]
+match
+---------------------------
+SourceLocation [start=line 15 column 44, end=line 15 column 81] [Signature]
+(/Version\/(10\..*|11\.0\..*)Safari/)
+---------------------------
+SourceLocation [start=line 15 column 45, end=line 15 column 80] [Literal]
+/Version\/(10\..*|11\.0\..*)Safari/
+---------------------------
+SourceLocation [start=line 15 column 82, end=line 15 column 306] [Procedure]
+{const a=HTMLElement.prototype.constructor;Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})}
+---------------------------
+SourceLocation [start=line 15 column 83, end=line 15 column 124] [VariableDeclaration]
+const a=HTMLElement.prototype.constructor
+---------------------------
+SourceLocation [start=line 15 column 83, end=line 15 column 88] [Type]
+const
+---------------------------
+SourceLocation [start=line 15 column 89, end=line 15 column 124] [Variable]
+a=HTMLElement.prototype.constructor
+---------------------------
+SourceLocation [start=line 15 column 89, end=line 15 column 90] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 15 column 90, end=line 15 column 91] [Operator]
+=
+---------------------------
+SourceLocation [start=line 15 column 91, end=line 15 column 124] [QualifiedExpression]
+HTMLElement.prototype.constructor
+---------------------------
+SourceLocation [start=line 15 column 91, end=line 15 column 103] [Qualifier]
+HTMLElement.
+---------------------------
+SourceLocation [start=line 15 column 91, end=line 15 column 102] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 15 column 102, end=line 15 column 103] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 103, end=line 15 column 113] [Qualifier]
+prototype.
+---------------------------
+SourceLocation [start=line 15 column 103, end=line 15 column 112] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 15 column 112, end=line 15 column 113] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 113, end=line 15 column 124] [Identifier]
+constructor
+---------------------------
+SourceLocation [start=line 15 column 125, end=line 15 column 305] [QualifiedExpression]
+Object.defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+---------------------------
+SourceLocation [start=line 15 column 125, end=line 15 column 132] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 15 column 125, end=line 15 column 131] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 15 column 131, end=line 15 column 132] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 132, end=line 15 column 305] [FunctionCall]
+defineProperty(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+---------------------------
+SourceLocation [start=line 15 column 132, end=line 15 column 146] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 15 column 146, end=line 15 column 305] [Signature]
+(HTMLElement.prototype,"constructor",{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}})
+---------------------------
+SourceLocation [start=line 15 column 147, end=line 15 column 168] [QualifiedExpression]
+HTMLElement.prototype
+---------------------------
+SourceLocation [start=line 15 column 147, end=line 15 column 159] [Qualifier]
+HTMLElement.
+---------------------------
+SourceLocation [start=line 15 column 147, end=line 15 column 158] [Identifier]
+HTMLElement
+---------------------------
+SourceLocation [start=line 15 column 158, end=line 15 column 159] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 159, end=line 15 column 168] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 15 column 169, end=line 15 column 182] [Literal]
+"constructor"
+---------------------------
+SourceLocation [start=line 15 column 183, end=line 15 column 304] [ObjectDeclaration]
+{configurable:!0,get(){return a},set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}}
+---------------------------
+SourceLocation [start=line 15 column 184, end=line 15 column 199] [FieldDeclaration]
+configurable:!0
+---------------------------
+SourceLocation [start=line 15 column 184, end=line 15 column 196] [Identifier]
+configurable
+---------------------------
+SourceLocation [start=line 15 column 197, end=line 15 column 199] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 15 column 197, end=line 15 column 198] [Operator]
+!
+---------------------------
+SourceLocation [start=line 15 column 198, end=line 15 column 199] [Literal]
+0
+---------------------------
+SourceLocation [start=line 15 column 200, end=line 15 column 215] [MethodDeclaration]
+get(){return a}
+---------------------------
+SourceLocation [start=line 15 column 200, end=line 15 column 203] [Identifier]
+get
+---------------------------
+SourceLocation [start=line 15 column 203, end=line 15 column 205] [Signature]
+()
+---------------------------
+SourceLocation [start=line 15 column 205, end=line 15 column 215] [Procedure]
+{return a}
+---------------------------
+SourceLocation [start=line 15 column 206, end=line 15 column 214] [Return]
+return a
+---------------------------
+SourceLocation [start=line 15 column 213, end=line 15 column 214] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 15 column 216, end=line 15 column 303] [MethodDeclaration]
+set(b){Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}
+---------------------------
+SourceLocation [start=line 15 column 216, end=line 15 column 219] [Identifier]
+set
+---------------------------
+SourceLocation [start=line 15 column 219, end=line 15 column 222] [Signature]
+(b)
+---------------------------
+SourceLocation [start=line 15 column 220, end=line 15 column 221] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 15 column 222, end=line 15 column 303] [Procedure]
+{Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})}
+---------------------------
+SourceLocation [start=line 15 column 223, end=line 15 column 302] [QualifiedExpression]
+Object.defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 15 column 223, end=line 15 column 230] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 15 column 223, end=line 15 column 229] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 15 column 229, end=line 15 column 230] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 230, end=line 15 column 302] [FunctionCall]
+defineProperty(this,"constructor",{value:b,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 15 column 230, end=line 15 column 244] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 15 column 244, end=line 15 column 302] [Signature]
+(this,"constructor",{value:b,configurable:!0,writable:!0})
+---------------------------
+SourceLocation [start=line 15 column 245, end=line 15 column 249] [This]
+this
+---------------------------
+SourceLocation [start=line 15 column 250, end=line 15 column 263] [Literal]
+"constructor"
+---------------------------
+SourceLocation [start=line 15 column 264, end=line 15 column 301] [ObjectDeclaration]
+{value:b,configurable:!0,writable:!0}
+---------------------------
+SourceLocation [start=line 15 column 265, end=line 15 column 272] [FieldDeclaration]
+value:b
+---------------------------
+SourceLocation [start=line 15 column 265, end=line 15 column 270] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 15 column 271, end=line 15 column 272] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 15 column 273, end=line 15 column 288] [FieldDeclaration]
+configurable:!0
+---------------------------
+SourceLocation [start=line 15 column 273, end=line 15 column 285] [Identifier]
+configurable
+---------------------------
+SourceLocation [start=line 15 column 286, end=line 15 column 288] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 15 column 286, end=line 15 column 287] [Operator]
+!
+---------------------------
+SourceLocation [start=line 15 column 287, end=line 15 column 288] [Literal]
+0
+---------------------------
+SourceLocation [start=line 15 column 289, end=line 15 column 300] [FieldDeclaration]
+writable:!0
+---------------------------
+SourceLocation [start=line 15 column 289, end=line 15 column 297] [Identifier]
+writable
+---------------------------
+SourceLocation [start=line 15 column 298, end=line 15 column 300] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 15 column 298, end=line 15 column 299] [Operator]
+!
+---------------------------
+SourceLocation [start=line 15 column 299, end=line 15 column 300] [Literal]
+0
+---------------------------

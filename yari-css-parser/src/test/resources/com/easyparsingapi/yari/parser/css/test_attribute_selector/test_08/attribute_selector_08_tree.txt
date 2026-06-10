@@ -1,0 +1,14 @@
+[0, Css] div[data-lang="zh-TW"] {\\n color: purple;\\n }
+ [1, RuleSet] div[data-lang="zh-TW"] {\\n color: purple;\\n }
+  [2, CombinatorSelector] div[data-lang="zh-TW"]
+   [3, ElementSelector] div
+   [3, Operator] 
+   [3, AttributeSelector] [data-lang="zh-TW"]
+    [4, Expression] data-lang="zh-TW"
+     [5, Identifier] data-lang
+     [5, Operator] =
+     [5, Literal] "zh-TW"
+  [2, Block] {\\n color: purple;\\n }
+   [3, Property] color: purple
+    [4, Identifier] color
+    [4, Identifier] purple

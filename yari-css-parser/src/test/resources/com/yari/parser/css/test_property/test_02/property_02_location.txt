@@ -1,0 +1,60 @@
+SourceLocation [start=line 2 column 24, end=line 2 column 48] [Css]
+/* normal declaration */
+---------------------------
+SourceLocation [start=line 3 column 35, end=line 3 column 74] [Css]
+/* important declaration (preferred) */
+---------------------------
+SourceLocation [start=line 4 column 36, end=line 4 column 79] [Css]
+/* important declaration (not preferred) */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [Css]
+selector {\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [RuleSet]
+selector {\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 13] [ElementSelector]
+selector
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 5 column 6] [Block]
+{\\n property: value; /* normal declaration */\\n property: value !important; /* important declaration (preferred) */\\n property: value ! important; /* important declaration (not preferred) */\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 22] [Property]
+property: value
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 15] [Identifier]
+property
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 22] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 33] [Property]
+property: value !important
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 15] [Identifier]
+property
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 33] [ListValue]
+value !important
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 22] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 3 column 23, end=line 3 column 33] [Important]
+!important
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 34] [Property]
+property: value ! important
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 15] [Identifier]
+property
+---------------------------
+SourceLocation [start=line 4 column 17, end=line 4 column 34] [ListValue]
+value ! important
+---------------------------
+SourceLocation [start=line 4 column 17, end=line 4 column 22] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 34] [Important]
+! important
+---------------------------

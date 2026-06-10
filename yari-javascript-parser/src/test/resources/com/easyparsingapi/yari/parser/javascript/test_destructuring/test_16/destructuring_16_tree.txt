@@ -1,0 +1,23 @@
+[0, Javascript] [arr[2], arr[1]] = [arr[1], arr[2]]
+ [1, Assignment] [arr[2], arr[1]] = [arr[1], arr[2]]
+  [2, DestructuringArray] [arr[2], arr[1]]
+   [3, Value] arr[2]
+    [4, MapExpression] arr[2]
+     [5, Identifier] arr
+     [5, Bracket] [2]
+      [6, Literal] 2
+   [3, Value] arr[1]
+    [4, MapExpression] arr[1]
+     [5, Identifier] arr
+     [5, Bracket] [1]
+      [6, Literal] 1
+  [2, Operator] =
+  [2, ArrayDeclaration] [arr[1], arr[2]]
+   [3, MapExpression] arr[1]
+    [4, Identifier] arr
+    [4, Bracket] [1]
+     [5, Literal] 1
+   [3, MapExpression] arr[2]
+    [4, Identifier] arr
+    [4, Bracket] [2]
+     [5, Literal] 2

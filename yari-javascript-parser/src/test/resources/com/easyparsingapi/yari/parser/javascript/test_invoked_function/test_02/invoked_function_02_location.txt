@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 65] [Javascript]
+((a, b, c)=>console.log(await resolveAfter2Seconds()))(a, b, 20)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 65] [InvokedFunction]
+((a, b, c)=>console.log(await resolveAfter2Seconds()))(a, b, 20)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 55] [Definition]
+((a, b, c)=>console.log(await resolveAfter2Seconds()))
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 54] [ArrowFunction]
+(a, b, c)=>console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 11] [Signature]
+(a, b, c)
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 54] [Procedure]
+console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 54] [QualifiedExpression]
+console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 21] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 20] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 54] [FunctionCall]
+log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 24] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 54] [Signature]
+(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 53] [Await]
+await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 53] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 51] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 53] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 65] [Signature]
+(a, b, 20)
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 57] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 60] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 64] [Literal]
+20
+---------------------------

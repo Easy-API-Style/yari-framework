@@ -1,0 +1,153 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "var",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "fsB",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 8
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 8
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 9
+          }
+        }
+      },
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "regExpString",
+        "value" : "/(url\\()([^)]*)(\\))/g",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 30
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 30
+        }
+      },
+      "initialized" : true
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "uST",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 31
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 34
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 34
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 35
+          }
+        }
+      },
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "regExpString",
+        "value" : "/(^\\/[^\\/])|(^#)|(^[\\w-\\d]*:)/",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 35
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 65
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 31
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 65
+        }
+      },
+      "initialized" : true
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 65
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 65
+    }
+  }
+}

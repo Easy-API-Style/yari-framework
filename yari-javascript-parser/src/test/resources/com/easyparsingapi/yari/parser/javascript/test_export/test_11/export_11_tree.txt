@@ -1,0 +1,8 @@
+[0, Javascript] export { name1 as default, name2 }
+ [1, Export] export { name1 as default, name2 }
+  [2, ExportBlock] { name1 as default, name2 }
+   [3, ExportReference] name1 as default
+    [4, Identifier] name1
+    [4, Identifier] as default
+   [3, ExportReference] name2
+    [4, Identifier] name2

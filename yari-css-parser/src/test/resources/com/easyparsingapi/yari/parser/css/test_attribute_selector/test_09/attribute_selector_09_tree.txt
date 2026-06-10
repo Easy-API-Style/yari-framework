@@ -1,0 +1,18 @@
+[0, Css] ol[type="a" s] {\\n list-style-type: lower-alpha;\\n background: lime;\\n }
+ [1, RuleSet] ol[type="a" s] {\\n list-style-type: lower-alpha;\\n background: lime;\\n }
+  [2, CombinatorSelector] ol[type="a" s]
+   [3, ElementSelector] ol
+   [3, Operator] 
+   [3, AttributeSelector] [type="a" s]
+    [4, Expression] type="a" s
+     [5, Identifier] type
+     [5, Operator] =
+     [5, Literal] "a"
+     [5, Identifier] s
+  [2, Block] {\\n list-style-type: lower-alpha;\\n background: lime;\\n }
+   [3, Property] list-style-type: lower-alpha
+    [4, Identifier] list-style-type
+    [4, Identifier] lower-alpha
+   [3, Property] background: lime
+    [4, Identifier] background
+    [4, Identifier] lime

@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 53] [Javascript]
+let module = await import('/modules/mon-module.js');
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 52] [VariableDeclaration]
+let module = await import('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 52] [Variable]
+module = await import('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 11] [Identifier]
+module
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 52] [Await]
+await import('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 52] [FunctionCall]
+import('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 26] [Identifier]
+import
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 52] [Signature]
+('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 51] [Literal]
+'/modules/mon-module.js'
+---------------------------

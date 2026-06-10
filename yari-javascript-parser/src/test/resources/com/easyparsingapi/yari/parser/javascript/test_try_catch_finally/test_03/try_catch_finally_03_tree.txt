@@ -1,0 +1,49 @@
+[0, Javascript] try{const {pvc:l}=_.z(await _.z(this.wa));l==null||l()}finally{_.z()}
+ [1, Try] try{const {pvc:l}=_.z(await _.z(this.wa));l==null||l()}finally{_.z()}
+  [2, Procedure] {const {pvc:l}=_.z(await _.z(this.wa));l==null||l()}
+   [3, VariableDeclaration] const {pvc:l}=_.z(await _.z(this.wa))
+    [4, Type] const
+    [4, Variable] {pvc:l}=_.z(await _.z(this.wa))
+     [5, DestructuringObject] {pvc:l}
+      [6, Field] pvc:l
+       [7, Identifier] pvc
+       [7, Identifier] :l
+     [5, Operator] =
+     [5, QualifiedExpression] _.z(await _.z(this.wa))
+      [6, Qualifier] _.
+       [7, Identifier] _
+       [7, Operator] .
+      [6, FunctionCall] z(await _.z(this.wa))
+       [7, Identifier] z
+       [7, Signature] (await _.z(this.wa))
+        [8, Await] await _.z(this.wa)
+         [9, QualifiedExpression] _.z(this.wa)
+          [10, Qualifier] _.
+           [11, Identifier] _
+           [11, Operator] .
+          [10, FunctionCall] z(this.wa)
+           [11, Identifier] z
+           [11, Signature] (this.wa)
+            [12, QualifiedExpression] this.wa
+             [13, Qualifier] this.
+              [14, This] this
+              [14, Operator] .
+             [13, Identifier] wa
+   [3, Infix] l==null||l()
+    [4, Infix] l==null
+     [5, Identifier] l
+     [5, Operator] ==
+     [5, Null] null
+    [4, Operator] ||
+    [4, FunctionCall] l()
+     [5, Identifier] l
+     [5, Signature] ()
+  [2, Finally] finally{_.z()}
+   [3, Procedure] {_.z()}
+    [4, QualifiedExpression] _.z()
+     [5, Qualifier] _.
+      [6, Identifier] _
+      [6, Operator] .
+     [5, FunctionCall] z()
+      [6, Identifier] z
+      [6, Signature] ()

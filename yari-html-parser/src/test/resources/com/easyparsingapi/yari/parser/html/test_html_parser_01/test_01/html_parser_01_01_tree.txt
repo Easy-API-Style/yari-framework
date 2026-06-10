@@ -1,0 +1,139 @@
+[0, Html] <!doctype html>\\n<html>\\n<head>\\n<!--coment -->\\n<title>onclick event example</title>\\n<script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>\\n<style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>\\n</head>\\n<body onload="initElement();">\\n<span id="foo">Span click</span>\\n<p>Click on it.</p>\\n<br/>\\n<div>\\n</div>\\n</body>\\n</html>
+ [1, DocType] <!doctype html>
+ [1, Tag] <html>\\n<head>\\n<!--coment -->\\n<title>onclick event example</title>\\n<script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>\\n<style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>\\n</head>\\n<body onload="initElement();">\\n<span id="foo">Span click</span>\\n<p>Click on it.</p>\\n<br/>\\n<div>\\n</div>\\n</body>\\n</html>
+  [2, TagHead] <html>
+   [3, TagName] html
+    [4, Name] html
+  [2, TagBody] <head>\\n<!--coment -->\\n<title>onclick event example</title>\\n<script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>\\n<style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>\\n</head>\\n<body onload="initElement();">\\n<span id="foo">Span click</span>\\n<p>Click on it.</p>\\n<br/>\\n<div>\\n</div>\\n</body>
+   [3, Tag] <head>\\n<!--coment -->\\n<title>onclick event example</title>\\n<script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>\\n<style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>\\n</head>
+    [4, TagHead] <head>
+     [5, TagName] head
+      [6, Name] head
+    [4, TagBody] <!--coment -->\\n<title>onclick event example</title>\\n<script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>\\n<style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>
+     [5, XmlComment] <!--coment -->
+     [5, Tag] <title>onclick event example</title>
+      [6, TagHead] <title>
+       [7, TagName] title
+        [8, Name] title
+      [6, TagBody] onclick event example
+       [7, Text] onclick event example
+      [6, TagFoot] </title>
+       [7, TagName] title
+        [8, Name] title
+     [5, ScriptTag] <script type="text/javascript">\\n// function\\nfunction initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}\\n</script>
+      [6, TagHead] <script type="text/javascript">
+       [7, TagName] script
+        [8, Name] script
+       [7, TagAttribute] type="text/javascript"
+        [8, Name] type
+         [9, Name] type
+        [8, Value] "text/javascript"
+      [6, Script] function initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}
+       [7, FunctionDeclaration] function initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n}
+        [8, Identifier] initElement
+        [8, Signature] ()
+        [8, Procedure] {\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n}
+         [9, VariableDeclaration] var p = document.getElementById("foo")
+          [10, Type] var
+          [10, Variable] p = document.getElementById("foo")
+           [11, Identifier] p
+           [11, Operator] =
+           [11, QualifiedExpression] document.getElementById("foo")
+            [12, Qualifier] document.
+             [13, Identifier] document
+             [13, Operator] .
+            [12, FunctionCall] getElementById("foo")
+             [13, Identifier] getElementById
+             [13, Signature] ("foo")
+              [14, Literal] "foo"
+         [9, Assignment] p.onclick = showAlert
+          [10, QualifiedExpression] p.onclick
+           [11, Qualifier] p.
+            [12, Identifier] p
+            [12, Operator] .
+           [11, Identifier] onclick
+          [10, Operator] =
+          [10, Identifier] showAlert
+       [7, FunctionDeclaration] function showAlert()\\n{\\n alert("event click");\\n}
+        [8, Identifier] showAlert
+        [8, Signature] ()
+        [8, Procedure] {\\n alert("event click");\\n}
+         [9, FunctionCall] alert("event click")
+          [10, Identifier] alert
+          [10, Signature] ("event click")
+           [11, Literal] "event click"
+      [6, TagFoot] </script>
+       [7, TagName] script
+        [8, Name] script
+     [5, StyleTag] <style type="text/css">\\n#foo {\\nborder: solid blue 2px;\\n}\\n</style>
+      [6, TagHead] <style type="text/css">
+       [7, TagName] style
+        [8, Name] style
+       [7, TagAttribute] type="text/css"
+        [8, Name] type
+         [9, Name] type
+        [8, Value] "text/css"
+      [6, Style] #foo {\\nborder: solid blue 2px;\\n}
+       [7, RuleSet] #foo {\\nborder: solid blue 2px;\\n}
+        [8, IdSelector] #foo
+         [9, Identifier] foo
+        [8, Block] {\\nborder: solid blue 2px;\\n}
+         [9, Property] border: solid blue 2px
+          [10, Identifier] border
+          [10, ListValue] solid blue 2px
+           [11, Identifier] solid
+           [11, Identifier] blue
+           [11, Identifier] 2px
+      [6, TagFoot] </style>
+       [7, TagName] style
+        [8, Name] style
+    [4, TagFoot] </head>
+     [5, TagName] head
+      [6, Name] head
+   [3, Tag] <body onload="initElement();">\\n<span id="foo">Span click</span>\\n<p>Click on it.</p>\\n<br/>\\n<div>\\n</div>\\n</body>
+    [4, TagHead] <body onload="initElement();">
+     [5, TagName] body
+      [6, Name] body
+     [5, TagAttribute] onload="initElement();"
+      [6, Name] onload
+       [7, Name] onload
+      [6, Value] "initElement();"
+    [4, TagBody] <span id="foo">Span click</span>\\n<p>Click on it.</p>\\n<br/>\\n<div>\\n</div>
+     [5, Tag] <span id="foo">Span click</span>
+      [6, TagHead] <span id="foo">
+       [7, TagName] span
+        [8, Name] span
+       [7, TagAttribute] id="foo"
+        [8, Name] id
+         [9, Name] id
+        [8, Value] "foo"
+      [6, TagBody] Span click
+       [7, Text] Span click
+      [6, TagFoot] </span>
+       [7, TagName] span
+        [8, Name] span
+     [5, Tag] <p>Click on it.</p>
+      [6, TagHead] <p>
+       [7, TagName] p
+        [8, Name] p
+      [6, TagBody] Click on it.
+       [7, Text] Click on it.
+      [6, TagFoot] </p>
+       [7, TagName] p
+        [8, Name] p
+     [5, TagEmpty] <br/>
+      [6, TagName] br
+       [7, Name] br
+     [5, Tag] <div>\\n</div>
+      [6, TagHead] <div>
+       [7, TagName] div
+        [8, Name] div
+      [6, TagFoot] </div>
+       [7, TagName] div
+        [8, Name] div
+    [4, TagFoot] </body>
+     [5, TagName] body
+      [6, Name] body
+  [2, TagFoot] </html>
+   [3, TagName] html
+    [4, Name] html

@@ -1,0 +1,19 @@
+[0, Javascript] (function (p_1, p_2) { console.log('ok') } )(v_1, v_2)
+ [1, InvokedFunction] (function (p_1, p_2) { console.log('ok') } )(v_1, v_2)
+  [2, Definition] (function (p_1, p_2) { console.log('ok') } )
+   [3, FunctionDeclaration] function (p_1, p_2) { console.log('ok') }
+    [4, Signature] (p_1, p_2)
+     [5, Identifier] p_1
+     [5, Identifier] p_2
+    [4, Procedure] { console.log('ok') }
+     [5, QualifiedExpression] console.log('ok')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('ok')
+       [7, Identifier] log
+       [7, Signature] ('ok')
+        [8, Literal] 'ok'
+  [2, Signature] (v_1, v_2)
+   [3, Identifier] v_1
+   [3, Identifier] v_2

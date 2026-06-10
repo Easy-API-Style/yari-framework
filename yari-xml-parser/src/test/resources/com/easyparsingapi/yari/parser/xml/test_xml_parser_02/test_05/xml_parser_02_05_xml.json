@@ -1,0 +1,246 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.xml.ast.Xml",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Tag",
+    "head" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagHead",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "test",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 5
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 9
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 9
+          }
+        },
+        "value" : "test"
+      },
+      "attributes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Name",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+            "value" : "att_1",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 10
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 15
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 10
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 15
+            }
+          },
+          "value" : "att_1"
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Value",
+          "value" : "11",
+          "type" : "doubleQuote",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 16
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 20
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 10
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 20
+          }
+        }
+      }, {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Name",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+            "value" : "att_2",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 21
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 26
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 21
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 26
+            }
+          },
+          "value" : "att_2"
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Value",
+          "value" : "22",
+          "type" : "singleQuote",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 27
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 31
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 21
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 31
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 32
+        }
+      }
+    },
+    "body" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagBody",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.Text",
+        "text" : "blabla",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 12
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 6
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 12
+        }
+      }
+    },
+    "foot" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagFoot",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "test",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 3,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 3,
+              "column" : 10
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 3,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 3,
+            "column" : 10
+          }
+        },
+        "value" : "test"
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 3,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 3,
+          "column" : 11
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 3,
+        "column" : 11
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 4
+    },
+    "end" : {
+      "line" : 3,
+      "column" : 11
+    }
+  }
+}

@@ -1,0 +1,41 @@
+[0, Html] <!DOCTYPE html>\\n<html>\\n <head>\\n <title>HTML Entities</titl>\\n </head>\\n <body> <\\n &lt;div id = &quot;character&quot;&gt;\\n \\n >\\n > <><\\n </\\n </body>\\n</html>
+ [1, DocType] <!DOCTYPE html>
+ [1, Tag] <html>\\n <head>\\n <title>HTML Entities</titl>\\n </head>\\n <body> <\\n &lt;div id = &quot;character&quot;&gt;\\n \\n >\\n > <><\\n </\\n </body>\\n</html>
+  [2, TagHead] <html>
+   [3, TagName] html
+    [4, Name] html
+  [2, TagBody] <head>\\n <title>HTML Entities</titl>\\n </head>\\n <body> <\\n &lt;div id = &quot;character&quot;&gt;\\n \\n >\\n > <><\\n </\\n </body>
+   [3, Tag] <head>\\n <title>HTML Entities</titl>\\n </head>
+    [4, TagHead] <head>
+     [5, TagName] head
+      [6, Name] head
+    [4, TagBody] <title>HTML Entities</titl>
+     [5, TagEmpty] <title>
+      [6, TagName] title
+       [7, Name] title
+     [5, Text] HTML Entities
+     [5, SingleTagFoot] </titl>
+      [6, TagName] titl
+       [7, Name] titl
+    [4, TagFoot] </head>
+     [5, TagName] head
+      [6, Name] head
+   [3, Tag] <body> <\\n &lt;div id = &quot;character&quot;&gt;\\n \\n >\\n > <><\\n </\\n </body>
+    [4, TagHead] <body>
+     [5, TagName] body
+      [6, Name] body
+    [4, TagBody] <\\n &lt;div id = &quot;character&quot;&gt;\\n \\n >\\n > <><\\n </
+     [5, TokenError] <
+     [5, Text] &lt;div id = &quot;character&quot;&gt;
+     [5, TokenError] >
+     [5, TokenError] >
+     [5, TokenError] <
+     [5, TokenError] >
+     [5, TokenError] <
+     [5, TokenError] </
+    [4, TagFoot] </body>
+     [5, TagName] body
+      [6, Name] body
+  [2, TagFoot] </html>
+   [3, TagName] html
+    [4, Name] html

@@ -1,0 +1,123 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ArrowFunction",
+    "asynchronous" : false,
+    "signature" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ArrowFunction$Signature",
+      "parameters" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "a",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 2
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 3
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "procedure" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.ArrowFunction$Procedure",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Infix",
+        "leftOperand" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+          "value" : "a",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 8
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 9
+            }
+          }
+        },
+        "operator" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+          "symbol" : "+",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 10
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 11
+            }
+          }
+        },
+        "rightOperand" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+          "type" : "integer",
+          "value" : "100",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 12
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 15
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 8
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 15
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 8
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 16
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 16
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 16
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[0, Javascript] let module = await import('/modules/mon-module.js');
+ [1, VariableDeclaration] let module = await import('/modules/mon-module.js')
+  [2, Type] let
+  [2, Variable] module = await import('/modules/mon-module.js')
+   [3, Identifier] module
+   [3, Operator] =
+   [3, Await] await import('/modules/mon-module.js')
+    [4, FunctionCall] import('/modules/mon-module.js')
+     [5, Identifier] import
+     [5, Signature] ('/modules/mon-module.js')
+      [6, Literal] '/modules/mon-module.js'

@@ -1,0 +1,99 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 122] [Javascript]
+outer_block: { inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 122] [Label]
+outer_block: { inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 12] [Identifier]
+outer_block
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 122] [BlockProcedure]
+{ inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 102] [Label]
+inner_block: { console.log('1'); break outer_block; console.log(':-('); }
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 28] [Identifier]
+inner_block
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 102] [BlockProcedure]
+{ console.log('1'); break outer_block; console.log(':-('); }
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 51] [QualifiedExpression]
+console.log('1')
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 43] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 42] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 43] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 51] [FunctionCall]
+log('1')
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 46] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 51] [Signature]
+('1')
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 50] [Literal]
+'1'
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 73] [Break]
+break outer_block
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 73] [Identifier]
+outer_block
+---------------------------
+SourceLocation [start=line 1 column 79, end=line 1 column 97] [QualifiedExpression]
+console.log(':-(')
+---------------------------
+SourceLocation [start=line 1 column 79, end=line 1 column 87] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 79, end=line 1 column 86] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 86, end=line 1 column 87] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 87, end=line 1 column 97] [FunctionCall]
+log(':-(')
+---------------------------
+SourceLocation [start=line 1 column 87, end=line 1 column 90] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 90, end=line 1 column 97] [Signature]
+(':-(')
+---------------------------
+SourceLocation [start=line 1 column 91, end=line 1 column 96] [Literal]
+':-('
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 120] [QualifiedExpression]
+console.log('2')
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 112] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 111] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 112] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 112, end=line 1 column 120] [FunctionCall]
+log('2')
+---------------------------
+SourceLocation [start=line 1 column 112, end=line 1 column 115] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 115, end=line 1 column 120] [Signature]
+('2')
+---------------------------
+SourceLocation [start=line 1 column 116, end=line 1 column 119] [Literal]
+'2'
+---------------------------

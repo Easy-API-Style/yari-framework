@@ -1,0 +1,16 @@
+[0, Javascript] [a, b, ...rest] = [10, 20, 30, 40, 50]
+ [1, Assignment] [a, b, ...rest] = [10, 20, 30, 40, 50]
+  [2, DestructuringArray] [a, b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, ArrayDeclaration] [10, 20, 30, 40, 50]
+   [3, Literal] 10
+   [3, Literal] 20
+   [3, Literal] 30
+   [3, Literal] 40
+   [3, Literal] 50

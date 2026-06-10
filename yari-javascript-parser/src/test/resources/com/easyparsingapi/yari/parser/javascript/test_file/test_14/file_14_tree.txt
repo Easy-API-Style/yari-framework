@@ -1,0 +1,147 @@
+[0, Javascript] const LIMIT = 3;\\n\\nconst asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n};\\n\\n(async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})();\\n\\nconst myAsyncIterable = new Object();\\nmyAsyncIterable[Symbol.asyncIterator] = async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n};\\n\\n(async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})();
+ [1, VariableDeclaration] const LIMIT = 3
+  [2, Type] const
+  [2, Variable] LIMIT = 3
+   [3, Identifier] LIMIT
+   [3, Operator] =
+   [3, Literal] 3
+ [1, VariableDeclaration] const asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+  [2, Type] const
+  [2, Variable] asyncIterable = {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+   [3, Identifier] asyncIterable
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }\\n}
+    [4, MethodDeclaration] [Symbol.asyncIterator]() {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }
+     [5, ComputedValue] [Symbol.asyncIterator]
+      [6, QualifiedExpression] Symbol.asyncIterator
+       [7, Qualifier] Symbol.
+        [8, Identifier] Symbol
+        [8, Operator] .
+       [7, Identifier] asyncIterator
+     [5, Signature] ()
+     [5, Procedure] {\\n let i = 0;\\n return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n };\\n }
+      [6, VariableDeclaration] let i = 0
+       [7, Type] let
+       [7, Variable] i = 0
+        [8, Identifier] i
+        [8, Operator] =
+        [8, Literal] 0
+      [6, Return] return {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n }
+       [7, ObjectDeclaration] {\\n next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n },\\n return() {\\n return { done: true };\\n }\\n }
+        [8, MethodDeclaration] next() {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n }
+         [9, Identifier] next
+         [9, Signature] ()
+         [9, Procedure] {\\n const done = i === LIMIT;\\n const value = done ? undefined : i++;\\n return Promise.resolve({ value, done });\\n }
+          [10, VariableDeclaration] const done = i === LIMIT
+           [11, Type] const
+           [11, Variable] done = i === LIMIT
+            [12, Identifier] done
+            [12, Operator] =
+            [12, Infix] i === LIMIT
+             [13, Identifier] i
+             [13, Operator] ===
+             [13, Identifier] LIMIT
+          [10, VariableDeclaration] const value = done ? undefined : i++
+           [11, Type] const
+           [11, Variable] value = done ? undefined : i++
+            [12, Identifier] value
+            [12, Operator] =
+            [12, Ternary] done ? undefined : i++
+             [13, Identifier] done
+             [13, Undefined] undefined
+             [13, Increment] i++
+              [14, Operator] ++
+              [14, Identifier] i
+          [10, Return] return Promise.resolve({ value, done })
+           [11, QualifiedExpression] Promise.resolve({ value, done })
+            [12, Qualifier] Promise.
+             [13, Identifier] Promise
+             [13, Operator] .
+            [12, FunctionCall] resolve({ value, done })
+             [13, Identifier] resolve
+             [13, Signature] ({ value, done })
+              [14, ObjectDeclaration] { value, done }
+               [15, Identifier] value
+               [15, Identifier] done
+        [8, MethodDeclaration] return() {\\n return { done: true };\\n }
+         [9, Identifier] return
+         [9, Signature] ()
+         [9, Procedure] {\\n return { done: true };\\n }
+          [10, Return] return { done: true }
+           [11, ObjectDeclaration] { done: true }
+            [12, FieldDeclaration] done: true
+             [13, Identifier] done
+             [13, Literal] true
+ [1, InvokedFunction] (async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})()
+  [2, Definition] (async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n})
+   [3, ArrowFunction] async () => {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n for await (const num of asyncIterable) {\\n console.log(num);\\n }\\n}
+     [5, For] for await (const num of asyncIterable) {\\n console.log(num);\\n }
+      [6, ListIteration] const num of asyncIterable
+       [7, VariableDeclaration] const num
+        [8, Type] const
+        [8, Variable] num
+         [9, Identifier] num
+       [7, Operator] of
+       [7, Identifier] asyncIterable
+      [6, Procedure] {\\n console.log(num);\\n }
+       [7, QualifiedExpression] console.log(num)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(num)
+         [9, Identifier] log
+         [9, Signature] (num)
+          [10, Identifier] num
+  [2, Signature] ()
+ [1, VariableDeclaration] const myAsyncIterable = new Object()
+  [2, Type] const
+  [2, Variable] myAsyncIterable = new Object()
+   [3, Identifier] myAsyncIterable
+   [3, Operator] =
+   [3, New] new Object()
+    [4, Identifier] Object
+    [4, Signature] ()
+ [1, Assignment] myAsyncIterable[Symbol.asyncIterator] = async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+  [2, MapExpression] myAsyncIterable[Symbol.asyncIterator]
+   [3, Identifier] myAsyncIterable
+   [3, Bracket] [Symbol.asyncIterator]
+    [4, QualifiedExpression] Symbol.asyncIterator
+     [5, Qualifier] Symbol.
+      [6, Identifier] Symbol
+      [6, Operator] .
+     [5, Identifier] asyncIterator
+  [2, Operator] =
+  [2, FunctionDeclaration] async function*() {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+   [3, Signature] ()
+   [3, Procedure] {\\n yield "coucou";\\n yield "l'itération";\\n yield "asynchrone !";\\n}
+    [4, Yield] yield "coucou"
+     [5, Literal] "coucou"
+    [4, Yield] yield "l'itération"
+     [5, Literal] "l'itération"
+    [4, Yield] yield "asynchrone !"
+     [5, Literal] "asynchrone !"
+ [1, InvokedFunction] (async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})()
+  [2, Definition] (async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n})
+   [3, ArrowFunction] async () => {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n for await (const x of myAsyncIterable) {\\n console.log(x);\\n }\\n}
+     [5, For] for await (const x of myAsyncIterable) {\\n console.log(x);\\n }
+      [6, ListIteration] const x of myAsyncIterable
+       [7, VariableDeclaration] const x
+        [8, Type] const
+        [8, Variable] x
+         [9, Identifier] x
+       [7, Operator] of
+       [7, Identifier] myAsyncIterable
+      [6, Procedure] {\\n console.log(x);\\n }
+       [7, QualifiedExpression] console.log(x)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(x)
+         [9, Identifier] log
+         [9, Signature] (x)
+          [10, Identifier] x
+  [2, Signature] ()

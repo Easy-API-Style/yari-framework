@@ -1,0 +1,55 @@
+[0, Javascript] if (t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){}
+ [1, If] if (t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){}
+  [2, IfBlock] if (t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){}
+   [3, Condition] (t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e))
+    [4, Sequence] t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+     [5, Assignment] t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+      [6, Identifier] t
+      [6, Operator] =
+      [6, Ternary] /.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+       [7, QualifiedExpression] /.*pcmag\.com$/.test(location.hostname)
+        [8, Qualifier] /.*pcmag\.com$/.
+         [9, Literal] /.*pcmag\.com$/
+         [9, Operator] .
+        [8, FunctionCall] test(location.hostname)
+         [9, Identifier] test
+         [9, Signature] (location.hostname)
+          [10, QualifiedExpression] location.hostname
+           [11, Qualifier] location.
+            [12, Identifier] location
+            [12, Operator] .
+           [11, Identifier] hostname
+       [7, Literal] "//geo.pcmag.com/loc/country.php"
+       [7, Literal] "//geo.ziffdavis.com/loc/country.php"
+     [5, QualifiedExpression] this.SetCookie(this.CookieKey,o,1)
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, FunctionCall] SetCookie(this.CookieKey,o,1)
+       [7, Identifier] SetCookie
+       [7, Signature] (this.CookieKey,o,1)
+        [8, QualifiedExpression] this.CookieKey
+         [9, Qualifier] this.
+          [10, This] this
+          [10, Operator] .
+         [9, Identifier] CookieKey
+        [8, Identifier] o
+        [8, Literal] 1
+     [5, Infix] window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+      [6, QualifiedExpression] window.XMLHttpRequest
+       [7, Qualifier] window.
+        [8, Identifier] window
+        [8, Operator] .
+       [7, Identifier] XMLHttpRequest
+      [6, Operator] &&
+      [6, Sequence] (e=new XMLHttpRequest,"withCredentials"in e)
+       [7, Assignment] e=new XMLHttpRequest
+        [8, Identifier] e
+        [8, Operator] =
+        [8, New] new XMLHttpRequest
+         [9, Identifier] XMLHttpRequest
+       [7, Infix] "withCredentials"in e
+        [8, Literal] "withCredentials"
+        [8, Operator] in
+        [8, Identifier] e
+   [3, Procedure] {}

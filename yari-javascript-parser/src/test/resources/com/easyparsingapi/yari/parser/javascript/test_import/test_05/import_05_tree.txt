@@ -1,0 +1,8 @@
+[0, Javascript] import { export1 , export2 } from "module-name"
+ [1, Import] import { export1 , export2 } from "module-name"
+  [2, Literal] "module-name"
+  [2, ImportBlock] { export1 , export2 }
+   [3, ImportReference] export1
+    [4, Identifier] export1
+   [3, ImportReference] export2
+    [4, Identifier] export2

@@ -1,0 +1,96 @@
+0;38;PROLOG;<?xml version="1.0" encoding="UTF-8"?>
+38;1;RETURN_CARRIAGE;\\n
+39;60;PROLOG;<?xml-stylesheet href="transformation.xsl" type="text/xsl"?>
+99;1;RETURN_CARRIAGE;\\n
+100;14;PROLOG;<?mode ecran?>
+114;1;RETURN_CARRIAGE;\\n
+115;34;PROLOG;<?instruction pour le traitement?>
+149;1;RETURN_CARRIAGE;\\n
+150;20;COMMENT;<!-- Commentaire -->
+170;1;RETURN_CARRIAGE;\\n
+171;14;BEGIN_TAG;<ex:collection
+185;1;RETURN_CARRIAGE;\\n
+190;8;ATTRIBUE_NAME;xml:lang
+198;1;EQUAL;=
+199;4;ATTRIBUE_VALUE;"fr"
+203;1;RETURN_CARRIAGE;\\n
+208;8;ATTRIBUE_NAME;xmlns:dc
+216;1;EQUAL;=
+217;34;ATTRIBUE_VALUE;"http://purl.org/dc/elements/1.1/"
+251;1;RETURN_CARRIAGE;\\n
+256;5;ATTRIBUE_NAME;xmlns
+261;1;EQUAL;=
+262;30;ATTRIBUE_VALUE;"http://www.w3.org/1999/xhtml"
+292;1;RETURN_CARRIAGE;\\n
+297;8;ATTRIBUE_NAME;xmlns:ex
+305;1;EQUAL;=
+306;20;ATTRIBUE_VALUE;"http://exemple.org"
+326;1;RETURN_CARRIAGE;\\n
+327;1;END_TAG;>
+328;1;RETURN_CARRIAGE;\\n
+333;8;BEGIN_TAG;<élément
+341;1;END_TAG;>
+342;5;TEXT;Texte
+347;10;CLOSED_TAG;</élément>
+357;1;RETURN_CARRIAGE;\\n
+362;9;BEGIN_TAG;<dc:title
+371;1;END_TAG;>
+372;18;TEXT;Astérix le Gaulois
+390;11;CLOSED_TAG;</dc:title>
+401;1;RETURN_CARRIAGE;\\n
+406;9;BEGIN_TAG;<ex:livre
+416;8;ATTRIBUE_NAME;attribut
+424;1;EQUAL;=
+425;8;ATTRIBUE_VALUE;"valeur"
+434;4;ATTRIBUE_NAME;type
+438;1;EQUAL;=
+439;4;ATTRIBUE_VALUE;"BD"
+443;1;END_TAG;>
+444;1;RETURN_CARRIAGE;\\n
+453;9;BEGIN_TAG;<dc:title
+462;1;END_TAG;>
+463;23;TEXT;Astérix chez les Belges
+486;11;CLOSED_TAG;</dc:title>
+497;1;RETURN_CARRIAGE;\\n
+506;23;COMMENT;<!-- élément répété -->
+529;1;RETURN_CARRIAGE;\\n
+538;11;BEGIN_TAG;<dc:creator
+549;1;END_TAG;>
+550;13;TEXT;René Goscinny
+563;13;CLOSED_TAG;</dc:creator>
+576;1;RETURN_CARRIAGE;\\n
+585;11;BEGIN_TAG;<dc:creator
+596;1;END_TAG;>
+597;13;TEXT;Albert Uderzo
+610;13;CLOSED_TAG;</dc:creator>
+623;1;RETURN_CARRIAGE;\\n
+632;15;BEGIN_TAG;<dc:description
+647;1;END_TAG;>
+648;1;RETURN_CARRIAGE;\\n
+661;2;BEGIN_TAG;<b
+663;1;END_TAG;>
+664;23;TEXT;Astérix chez les Belges
+687;4;CLOSED_TAG;</b>
+692;15;TEXT;est un album de
+707;1;RETURN_CARRIAGE;\\n
+708;2;BEGIN_TAG;<a
+711;4;ATTRIBUE_NAME;href
+715;1;EQUAL;=
+716;45;ATTRIBUE_VALUE;"http://fr.wikipedia.org/wiki/Bande_dessinée"
+761;1;END_TAG;>
+762;14;TEXT;bande dessinée
+776;4;CLOSED_TAG;</a>
+781;72;TEXT;de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.
+853;1;RETURN_CARRIAGE;\\n
+854;3;BEGIN_TAG;<br
+858;2;CLOSED_END_TAG;/>
+860;21;COMMENT;<!-- élément vide -->
+881;1;RETURN_CARRIAGE;\\n
+894;77;TEXT;Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.
+971;1;RETURN_CARRIAGE;\\n
+980;17;CLOSED_TAG;</dc:description>
+997;1;RETURN_CARRIAGE;\\n
+1002;11;CLOSED_TAG;</ex:livre>
+1013;1;RETURN_CARRIAGE;\\n
+1014;16;CLOSED_TAG;</ex:collection>
+1030;1;RETURN_CARRIAGE;\\n

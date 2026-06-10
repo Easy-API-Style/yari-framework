@@ -1,0 +1,189 @@
+SourceLocation [start=line 1 column 5, end=line 6 column 6] [Css]
+.premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n) {\\n background-color: tomato;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 6 column 6] [RuleSet]
+.premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n) {\\n background-color: tomato;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 4 column 36] [ListSelector]
+.premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 31] [CombinatorSelector]
+.premier span:nth-child(1)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 18] [QualifiedSelector]
+.premier span
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 13] [ClassSelector]
+.premier
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 13] [Identifier]
+premier
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 18] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 18] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 31] [PseudoFunctionSelector]
+:nth-child(1)
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 28] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 28] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 31] [Signature]
+(1)
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 30] [NthPattern]
+1
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 30] [Literal]
+1
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 35] [CombinatorSelector]
+.deuxieme span:nth-child(-n+3)
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 19] [QualifiedSelector]
+.deuxieme span
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 14] [ClassSelector]
+.deuxieme
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 14] [Identifier]
+deuxieme
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 19] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 19] [Operator]
+
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 35] [PseudoFunctionSelector]
+:nth-child(-n+3)
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 29] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 29] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 2 column 29, end=line 2 column 35] [Signature]
+(-n+3)
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 34] [NthPattern]
+-n+3
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 34] [Infix]
+-n+3
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 32] [Identifier]
+-n
+---------------------------
+SourceLocation [start=line 2 column 32, end=line 2 column 33] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 33, end=line 2 column 34] [Literal]
+3
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 4 column 36] [CombinatorSelector]
+.troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n)
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 4 column 20] [CombinatorSelector]
+.troisieme span:nth-of-type(2n+1)\\n .quatrieme span
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 38] [CombinatorSelector]
+.troisieme span:nth-of-type(2n+1)
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 20] [QualifiedSelector]
+.troisieme span
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 15] [ClassSelector]
+.troisieme
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 15] [Identifier]
+troisieme
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 20] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 20] [Operator]
+
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 38] [PseudoFunctionSelector]
+:nth-of-type(2n+1)
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 32] [PseudoClassSelector]
+:nth-of-type
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 32] [Identifier]
+nth-of-type
+---------------------------
+SourceLocation [start=line 3 column 32, end=line 3 column 38] [Signature]
+(2n+1)
+---------------------------
+SourceLocation [start=line 3 column 33, end=line 3 column 37] [NthPattern]
+2n+1
+---------------------------
+SourceLocation [start=line 3 column 33, end=line 3 column 37] [Infix]
+2n+1
+---------------------------
+SourceLocation [start=line 3 column 33, end=line 3 column 35] [Literal]
+2n
+---------------------------
+SourceLocation [start=line 3 column 35, end=line 3 column 36] [Operator]
++
+---------------------------
+SourceLocation [start=line 3 column 36, end=line 3 column 37] [Literal]
+1
+---------------------------
+SourceLocation [start=line 3 column 38, end=line 3 column 38] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 20] [QualifiedSelector]
+.quatrieme span
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 15] [ClassSelector]
+.quatrieme
+---------------------------
+SourceLocation [start=line 4 column 6, end=line 4 column 15] [Identifier]
+quatrieme
+---------------------------
+SourceLocation [start=line 4 column 16, end=line 4 column 20] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 4 column 20, end=line 4 column 20] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 20, end=line 4 column 36] [PseudoFunctionSelector]
+:nth-of-type(4n)
+---------------------------
+SourceLocation [start=line 4 column 20, end=line 4 column 32] [PseudoClassSelector]
+:nth-of-type
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 32] [Identifier]
+nth-of-type
+---------------------------
+SourceLocation [start=line 4 column 32, end=line 4 column 36] [Signature]
+(4n)
+---------------------------
+SourceLocation [start=line 4 column 33, end=line 4 column 35] [NthPattern]
+4n
+---------------------------
+SourceLocation [start=line 4 column 33, end=line 4 column 35] [Literal]
+4n
+---------------------------
+SourceLocation [start=line 4 column 37, end=line 6 column 6] [Block]
+{\\n background-color: tomato;\\n }
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 31] [Property]
+background-color: tomato
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 23] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 31] [Identifier]
+tomato
+---------------------------

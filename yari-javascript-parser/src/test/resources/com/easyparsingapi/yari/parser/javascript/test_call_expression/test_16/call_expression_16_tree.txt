@@ -1,0 +1,10 @@
+[0, Javascript] console.log(`string text line 1 \\n string text line 2`);
+ [1, QualifiedExpression] console.log(`string text line 1 \\n string text line 2`)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(`string text line 1 \\n string text line 2`)
+   [3, Identifier] log
+   [3, Signature] (`string text line 1 \\n string text line 2`)
+    [4, LiteralTemplate] `string text line 1 \\n string text line 2`
+     [5, Constant] string text line 1 \\n string text line 2

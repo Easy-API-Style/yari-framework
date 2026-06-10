@@ -1,0 +1,1542 @@
+SourceLocation [start=line 4 column 17, end=line 4 column 22] [Javascript]
+// 10
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 25] [Javascript]
+// NaN !
+---------------------------
+SourceLocation [start=line 11 column 17, end=line 11 column 22] [Javascript]
+// 10
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 21] [Javascript]
+// 5
+---------------------------
+SourceLocation [start=line 17 column 25, end=line 17 column 30] [Javascript]
+// 10
+---------------------------
+SourceLocation [start=line 18 column 25, end=line 18 column 29] [Javascript]
+// 5
+---------------------------
+SourceLocation [start=line 19 column 25, end=line 19 column 29] [Javascript]
+// 5
+---------------------------
+SourceLocation [start=line 24 column 18, end=line 24 column 47] [Javascript]
+// 'number' (num is set to 1)
+---------------------------
+SourceLocation [start=line 25 column 18, end=line 25 column 51] [Javascript]
+// 'number' (num is set to 1 too)
+---------------------------
+SourceLocation [start=line 27 column 1, end=line 27 column 33] [Javascript]
+// test with other falsy values:
+---------------------------
+SourceLocation [start=line 28 column 18, end=line 28 column 48] [Javascript]
+// 'string' (num is set to '')
+---------------------------
+SourceLocation [start=line 29 column 18, end=line 29 column 50] [Javascript]
+// 'object' (num is set to null)
+---------------------------
+SourceLocation [start=line 35 column 12, end=line 35 column 18] [Javascript]
+// [1]
+---------------------------
+SourceLocation [start=line 36 column 12, end=line 36 column 30] [Javascript]
+// [2], not [1, 2]
+---------------------------
+SourceLocation [start=line 46 column 18, end=line 46 column 22] [Javascript]
+// 1
+---------------------------
+SourceLocation [start=line 47 column 18, end=line 47 column 22] [Javascript]
+// 2
+---------------------------
+SourceLocation [start=line 53 column 42, end=line 53 column 72] [Javascript]
+// ["David", "Hi", "Hi David"]
+---------------------------
+SourceLocation [start=line 54 column 42, end=line 54 column 79] [Javascript]
+// ["David", "Hi", "Happy Birthday!"]
+---------------------------
+SourceLocation [start=line 89 column 7, end=line 89 column 24] [Javascript]
+// [1, undefined]
+---------------------------
+SourceLocation [start=line 90 column 7, end=line 90 column 24] [Javascript]
+// [2, undefined]
+---------------------------
+SourceLocation [start=line 95 column 25, end=line 95 column 29] [Javascript]
+// 3
+---------------------------
+SourceLocation [start=line 96 column 25, end=line 96 column 29] [Javascript]
+// 3
+---------------------------
+SourceLocation [start=line 97 column 25, end=line 97 column 29] [Javascript]
+// 4
+---------------------------
+SourceLocation [start=line 98 column 25, end=line 98 column 29] [Javascript]
+// 5
+---------------------------
+SourceLocation [start=line 100 column 1, end=line 100 column 31] [Javascript]
+// Works the same for objects:
+---------------------------
+SourceLocation [start=line 104 column 29, end=line 104 column 33] [Javascript]
+// 3
+---------------------------
+SourceLocation [start=line 105 column 29, end=line 105 column 33] [Javascript]
+// 3
+---------------------------
+SourceLocation [start=line 106 column 29, end=line 106 column 33] [Javascript]
+// 2
+---------------------------
+SourceLocation [start=line 113 column 28, end=line 113 column 59] [Javascript]
+// { duration: 125, speed: 25 }
+---------------------------
+SourceLocation [start=line 114 column 13, end=line 114 column 44] [Javascript]
+// { duration: 100, speed: 25 }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 118 column 26] [Javascript]
+function multiply(a, b) {\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // NaN !\\n\\nfunction multiply(a, b) {\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // 5\\n\\nfunction multiply(a, b = 1) {\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // 5\\nmultiply(5, undefined) // 5\\n\\nfunction test(num = 1) {\\n console.log(typeof num)\\n}\\ntest() // 'number' (num is set to 1)\\ntest(undefined) // 'number' (num is set to 1 too)\\n\\n// test with other falsy values:\\ntest('') // 'string' (num is set to '')\\ntest(null) // 'object' (num is set to null)\\n\\nfunction append(value, array = []) {\\n array.push(value)\\n return array\\n}\\nappend(1) // [1]\\nappend(2) // [2], not [1, 2]\\n\\nfunction callSomething(thing = something()) {\\n return thing\\n}\\nlet numberOfTimesCalled = 0\\nfunction something() {\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}\\ncallSomething() // 1\\ncallSomething() // 2\\n\\n\\nfunction greet(name, greeting, message = greeting + ' ' + name) {\\n return [name, greeting, message]\\n}\\ngreet('David', 'Hi') // ["David", "Hi", "Hi David"]\\ngreet('David', 'Hi', 'Happy Birthday!') // ["David", "Hi", "Happy Birthday!"]\\n\\nfunction go() {\\n return ':P'\\n}\\nfunction withDefaults(a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value) {\\n return [a, b, c, d, e, f, g]\\n}\\nfunction withoutDefaults(a, b, c, d, e, f, g) {\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}\\nwithDefaults.call({value: '=^_^='});\\nwithoutDefaults.call({value: '=^_^='});\\n\\nfunction f(x = 1, y) {\\n return [x, y]\\n}\\nf() // [1, undefined]\\nf(2) // [2, undefined]\\n\\nfunction preFilledArray([x = 1, y = 2] = []) {\\n return x + y;\\n}\\npreFilledArray(); // 3\\npreFilledArray([]); // 3\\npreFilledArray([2]); // 4\\npreFilledArray([2, 3]); // 5\\n\\n// Works the same for objects:\\nfunction preFilledObject({z = 3} = {}) {\\n return z;\\n}\\npreFilledObject(); // 3\\npreFilledObject({}); // 3\\npreFilledObject({ z: 2 }); // 2\\n\\nfunction config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}\\nconfig({ duration: 125 }); // { duration: 125, speed: 25 }\\nconfig({}); // { duration: 100, speed: 25 }\\n\\nmap(cube, [0, 1, 2, 5, 10]);\\n\\nrésultat = externe()(20);
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 3 column 2] [FunctionDeclaration]
+function multiply(a, b) {\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 18] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 24] [Signature]
+(a, b)
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 3 column 2] [Procedure]
+{\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 15] [Return]
+return a * b
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 15] [Infix]
+a * b
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 11] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 15] [FunctionCall]
+multiply(5, 2)
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 15] [Signature]
+(5, 2)
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 4 column 13, end=line 4 column 14] [Literal]
+2
+---------------------------
+SourceLocation [start=line 5 column 1, end=line 5 column 12] [FunctionCall]
+multiply(5)
+---------------------------
+SourceLocation [start=line 5 column 1, end=line 5 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 12] [Signature]
+(5)
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 10 column 2] [FunctionDeclaration]
+function multiply(a, b) {\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 7 column 10, end=line 7 column 18] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 7 column 18, end=line 7 column 24] [Signature]
+(a, b)
+---------------------------
+SourceLocation [start=line 7 column 19, end=line 7 column 20] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 7 column 22, end=line 7 column 23] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 7 column 25, end=line 10 column 2] [Procedure]
+{\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 42] [Assignment]
+b = (typeof b !== 'undefined') ? b : 1
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 4] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 6] [Operator]
+=
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 42] [Ternary]
+(typeof b !== 'undefined') ? b : 1
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 33] [Parenthesis]
+(typeof b !== 'undefined')
+---------------------------
+SourceLocation [start=line 8 column 8, end=line 8 column 32] [Infix]
+typeof b !== 'undefined'
+---------------------------
+SourceLocation [start=line 8 column 8, end=line 8 column 16] [Prefix]
+typeof b
+---------------------------
+SourceLocation [start=line 8 column 8, end=line 8 column 14] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 8 column 15, end=line 8 column 16] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 8 column 17, end=line 8 column 20] [Operator]
+!==
+---------------------------
+SourceLocation [start=line 8 column 21, end=line 8 column 32] [Literal]
+'undefined'
+---------------------------
+SourceLocation [start=line 8 column 37, end=line 8 column 38] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 8 column 41, end=line 8 column 42] [Literal]
+1
+---------------------------
+SourceLocation [start=line 9 column 3, end=line 9 column 15] [Return]
+return a * b
+---------------------------
+SourceLocation [start=line 9 column 10, end=line 9 column 15] [Infix]
+a * b
+---------------------------
+SourceLocation [start=line 9 column 10, end=line 9 column 11] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 9 column 12, end=line 9 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 9 column 14, end=line 9 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 15] [FunctionCall]
+multiply(5, 2)
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 15] [Signature]
+(5, 2)
+---------------------------
+SourceLocation [start=line 11 column 10, end=line 11 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 11 column 13, end=line 11 column 14] [Literal]
+2
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 12] [FunctionCall]
+multiply(5)
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 12] [Signature]
+(5)
+---------------------------
+SourceLocation [start=line 12 column 10, end=line 12 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 16 column 2] [FunctionDeclaration]
+function multiply(a, b = 1) {\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 14 column 10, end=line 14 column 18] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 14 column 18, end=line 14 column 28] [Signature]
+(a, b = 1)
+---------------------------
+SourceLocation [start=line 14 column 19, end=line 14 column 20] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 27] [ParameterWithValue]
+b = 1
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 23] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 14 column 26, end=line 14 column 27] [Literal]
+1
+---------------------------
+SourceLocation [start=line 14 column 29, end=line 16 column 2] [Procedure]
+{\\n return a * b\\n}
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 15] [Return]
+return a * b
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 15] [Infix]
+a * b
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 11] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 15 column 12, end=line 15 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 15 column 14, end=line 15 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 15] [FunctionCall]
+multiply(5, 2)
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 15] [Signature]
+(5, 2)
+---------------------------
+SourceLocation [start=line 17 column 10, end=line 17 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 14] [Literal]
+2
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 12] [FunctionCall]
+multiply(5)
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 18 column 9, end=line 18 column 12] [Signature]
+(5)
+---------------------------
+SourceLocation [start=line 18 column 10, end=line 18 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 19 column 23] [FunctionCall]
+multiply(5, undefined)
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 19 column 9] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 23] [Signature]
+(5, undefined)
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 19 column 13, end=line 19 column 22] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 21 column 1, end=line 23 column 2] [FunctionDeclaration]
+function test(num = 1) {\\n console.log(typeof num)\\n}
+---------------------------
+SourceLocation [start=line 21 column 10, end=line 21 column 14] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 21 column 14, end=line 21 column 23] [Signature]
+(num = 1)
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 21 column 22] [ParameterWithValue]
+num = 1
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 21 column 18] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 21 column 21, end=line 21 column 22] [Literal]
+1
+---------------------------
+SourceLocation [start=line 21 column 24, end=line 23 column 2] [Procedure]
+{\\n console.log(typeof num)\\n}
+---------------------------
+SourceLocation [start=line 22 column 3, end=line 22 column 26] [QualifiedExpression]
+console.log(typeof num)
+---------------------------
+SourceLocation [start=line 22 column 3, end=line 22 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 22 column 3, end=line 22 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 22 column 10, end=line 22 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 22 column 11, end=line 22 column 26] [FunctionCall]
+log(typeof num)
+---------------------------
+SourceLocation [start=line 22 column 11, end=line 22 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 22 column 14, end=line 22 column 26] [Signature]
+(typeof num)
+---------------------------
+SourceLocation [start=line 22 column 15, end=line 22 column 25] [Prefix]
+typeof num
+---------------------------
+SourceLocation [start=line 22 column 15, end=line 22 column 21] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 22 column 22, end=line 22 column 25] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 24 column 1, end=line 24 column 7] [FunctionCall]
+test()
+---------------------------
+SourceLocation [start=line 24 column 1, end=line 24 column 5] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 24 column 5, end=line 24 column 7] [Signature]
+()
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 16] [FunctionCall]
+test(undefined)
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 5] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 25 column 5, end=line 25 column 16] [Signature]
+(undefined)
+---------------------------
+SourceLocation [start=line 25 column 6, end=line 25 column 15] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 9] [FunctionCall]
+test('')
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 5] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 28 column 5, end=line 28 column 9] [Signature]
+('')
+---------------------------
+SourceLocation [start=line 28 column 6, end=line 28 column 8] [Literal]
+''
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 11] [FunctionCall]
+test(null)
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 5] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 29 column 5, end=line 29 column 11] [Signature]
+(null)
+---------------------------
+SourceLocation [start=line 29 column 6, end=line 29 column 10] [Null]
+null
+---------------------------
+SourceLocation [start=line 31 column 1, end=line 34 column 2] [FunctionDeclaration]
+function append(value, array = []) {\\n array.push(value)\\n return array\\n}
+---------------------------
+SourceLocation [start=line 31 column 10, end=line 31 column 16] [Identifier]
+append
+---------------------------
+SourceLocation [start=line 31 column 16, end=line 31 column 35] [Signature]
+(value, array = [])
+---------------------------
+SourceLocation [start=line 31 column 17, end=line 31 column 22] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 31 column 24, end=line 31 column 34] [ParameterWithValue]
+array = []
+---------------------------
+SourceLocation [start=line 31 column 24, end=line 31 column 29] [Identifier]
+array
+---------------------------
+SourceLocation [start=line 31 column 32, end=line 31 column 34] [ArrayDeclaration]
+[]
+---------------------------
+SourceLocation [start=line 31 column 36, end=line 34 column 2] [Procedure]
+{\\n array.push(value)\\n return array\\n}
+---------------------------
+SourceLocation [start=line 32 column 3, end=line 32 column 20] [QualifiedExpression]
+array.push(value)
+---------------------------
+SourceLocation [start=line 32 column 3, end=line 32 column 9] [Qualifier]
+array.
+---------------------------
+SourceLocation [start=line 32 column 3, end=line 32 column 8] [Identifier]
+array
+---------------------------
+SourceLocation [start=line 32 column 8, end=line 32 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 32 column 20] [FunctionCall]
+push(value)
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 32 column 13] [Identifier]
+push
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 20] [Signature]
+(value)
+---------------------------
+SourceLocation [start=line 32 column 14, end=line 32 column 19] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 33 column 3, end=line 33 column 15] [Return]
+return array
+---------------------------
+SourceLocation [start=line 33 column 10, end=line 33 column 15] [Identifier]
+array
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 10] [FunctionCall]
+append(1)
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 7] [Identifier]
+append
+---------------------------
+SourceLocation [start=line 35 column 7, end=line 35 column 10] [Signature]
+(1)
+---------------------------
+SourceLocation [start=line 35 column 8, end=line 35 column 9] [Literal]
+1
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 10] [FunctionCall]
+append(2)
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 7] [Identifier]
+append
+---------------------------
+SourceLocation [start=line 36 column 7, end=line 36 column 10] [Signature]
+(2)
+---------------------------
+SourceLocation [start=line 36 column 8, end=line 36 column 9] [Literal]
+2
+---------------------------
+SourceLocation [start=line 38 column 1, end=line 40 column 2] [FunctionDeclaration]
+function callSomething(thing = something()) {\\n return thing\\n}
+---------------------------
+SourceLocation [start=line 38 column 10, end=line 38 column 23] [Identifier]
+callSomething
+---------------------------
+SourceLocation [start=line 38 column 23, end=line 38 column 44] [Signature]
+(thing = something())
+---------------------------
+SourceLocation [start=line 38 column 24, end=line 38 column 43] [ParameterWithValue]
+thing = something()
+---------------------------
+SourceLocation [start=line 38 column 24, end=line 38 column 29] [Identifier]
+thing
+---------------------------
+SourceLocation [start=line 38 column 32, end=line 38 column 43] [FunctionCall]
+something()
+---------------------------
+SourceLocation [start=line 38 column 32, end=line 38 column 41] [Identifier]
+something
+---------------------------
+SourceLocation [start=line 38 column 41, end=line 38 column 43] [Signature]
+()
+---------------------------
+SourceLocation [start=line 38 column 45, end=line 40 column 2] [Procedure]
+{\\n return thing\\n}
+---------------------------
+SourceLocation [start=line 39 column 3, end=line 39 column 15] [Return]
+return thing
+---------------------------
+SourceLocation [start=line 39 column 10, end=line 39 column 15] [Identifier]
+thing
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 28] [VariableDeclaration]
+let numberOfTimesCalled = 0
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 41 column 28] [Variable]
+numberOfTimesCalled = 0
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 41 column 24] [Identifier]
+numberOfTimesCalled
+---------------------------
+SourceLocation [start=line 41 column 25, end=line 41 column 26] [Operator]
+=
+---------------------------
+SourceLocation [start=line 41 column 27, end=line 41 column 28] [Literal]
+0
+---------------------------
+SourceLocation [start=line 42 column 1, end=line 45 column 2] [FunctionDeclaration]
+function something() {\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}
+---------------------------
+SourceLocation [start=line 42 column 10, end=line 42 column 19] [Identifier]
+something
+---------------------------
+SourceLocation [start=line 42 column 19, end=line 42 column 21] [Signature]
+()
+---------------------------
+SourceLocation [start=line 42 column 22, end=line 45 column 2] [Procedure]
+{\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 27] [Assignment]
+numberOfTimesCalled += 1
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 22] [Identifier]
+numberOfTimesCalled
+---------------------------
+SourceLocation [start=line 43 column 23, end=line 43 column 25] [Operator]
++=
+---------------------------
+SourceLocation [start=line 43 column 26, end=line 43 column 27] [Literal]
+1
+---------------------------
+SourceLocation [start=line 44 column 3, end=line 44 column 29] [Return]
+return numberOfTimesCalled
+---------------------------
+SourceLocation [start=line 44 column 10, end=line 44 column 29] [Identifier]
+numberOfTimesCalled
+---------------------------
+SourceLocation [start=line 46 column 1, end=line 46 column 16] [FunctionCall]
+callSomething()
+---------------------------
+SourceLocation [start=line 46 column 1, end=line 46 column 14] [Identifier]
+callSomething
+---------------------------
+SourceLocation [start=line 46 column 14, end=line 46 column 16] [Signature]
+()
+---------------------------
+SourceLocation [start=line 47 column 1, end=line 47 column 16] [FunctionCall]
+callSomething()
+---------------------------
+SourceLocation [start=line 47 column 1, end=line 47 column 14] [Identifier]
+callSomething
+---------------------------
+SourceLocation [start=line 47 column 14, end=line 47 column 16] [Signature]
+()
+---------------------------
+SourceLocation [start=line 50 column 1, end=line 52 column 2] [FunctionDeclaration]
+function greet(name, greeting, message = greeting + ' ' + name) {\\n return [name, greeting, message]\\n}
+---------------------------
+SourceLocation [start=line 50 column 10, end=line 50 column 15] [Identifier]
+greet
+---------------------------
+SourceLocation [start=line 50 column 15, end=line 50 column 64] [Signature]
+(name, greeting, message = greeting + ' ' + name)
+---------------------------
+SourceLocation [start=line 50 column 16, end=line 50 column 20] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 50 column 22, end=line 50 column 30] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 50 column 32, end=line 50 column 63] [ParameterWithValue]
+message = greeting + ' ' + name
+---------------------------
+SourceLocation [start=line 50 column 32, end=line 50 column 39] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 50 column 42, end=line 50 column 63] [Infix]
+greeting + ' ' + name
+---------------------------
+SourceLocation [start=line 50 column 42, end=line 50 column 56] [Infix]
+greeting + ' '
+---------------------------
+SourceLocation [start=line 50 column 42, end=line 50 column 50] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 50 column 51, end=line 50 column 52] [Operator]
++
+---------------------------
+SourceLocation [start=line 50 column 53, end=line 50 column 56] [Literal]
+' '
+---------------------------
+SourceLocation [start=line 50 column 57, end=line 50 column 58] [Operator]
++
+---------------------------
+SourceLocation [start=line 50 column 59, end=line 50 column 63] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 50 column 65, end=line 52 column 2] [Procedure]
+{\\n return [name, greeting, message]\\n}
+---------------------------
+SourceLocation [start=line 51 column 3, end=line 51 column 35] [Return]
+return [name, greeting, message]
+---------------------------
+SourceLocation [start=line 51 column 10, end=line 51 column 35] [ArrayDeclaration]
+[name, greeting, message]
+---------------------------
+SourceLocation [start=line 51 column 11, end=line 51 column 15] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 51 column 17, end=line 51 column 25] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 51 column 27, end=line 51 column 34] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 53 column 1, end=line 53 column 21] [FunctionCall]
+greet('David', 'Hi')
+---------------------------
+SourceLocation [start=line 53 column 1, end=line 53 column 6] [Identifier]
+greet
+---------------------------
+SourceLocation [start=line 53 column 6, end=line 53 column 21] [Signature]
+('David', 'Hi')
+---------------------------
+SourceLocation [start=line 53 column 7, end=line 53 column 14] [Literal]
+'David'
+---------------------------
+SourceLocation [start=line 53 column 16, end=line 53 column 20] [Literal]
+'Hi'
+---------------------------
+SourceLocation [start=line 54 column 1, end=line 54 column 40] [FunctionCall]
+greet('David', 'Hi', 'Happy Birthday!')
+---------------------------
+SourceLocation [start=line 54 column 1, end=line 54 column 6] [Identifier]
+greet
+---------------------------
+SourceLocation [start=line 54 column 6, end=line 54 column 40] [Signature]
+('David', 'Hi', 'Happy Birthday!')
+---------------------------
+SourceLocation [start=line 54 column 7, end=line 54 column 14] [Literal]
+'David'
+---------------------------
+SourceLocation [start=line 54 column 16, end=line 54 column 20] [Literal]
+'Hi'
+---------------------------
+SourceLocation [start=line 54 column 22, end=line 54 column 39] [Literal]
+'Happy Birthday!'
+---------------------------
+SourceLocation [start=line 56 column 1, end=line 58 column 2] [FunctionDeclaration]
+function go() {\\n return ':P'\\n}
+---------------------------
+SourceLocation [start=line 56 column 10, end=line 56 column 12] [Identifier]
+go
+---------------------------
+SourceLocation [start=line 56 column 12, end=line 56 column 14] [Signature]
+()
+---------------------------
+SourceLocation [start=line 56 column 15, end=line 58 column 2] [Procedure]
+{\\n return ':P'\\n}
+---------------------------
+SourceLocation [start=line 57 column 3, end=line 57 column 14] [Return]
+return ':P'
+---------------------------
+SourceLocation [start=line 57 column 10, end=line 57 column 14] [Literal]
+':P'
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 62 column 2] [FunctionDeclaration]
+function withDefaults(a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value) {\\n return [a, b, c, d, e, f, g]\\n}
+---------------------------
+SourceLocation [start=line 59 column 10, end=line 59 column 22] [Identifier]
+withDefaults
+---------------------------
+SourceLocation [start=line 59 column 22, end=line 60 column 53] [Signature]
+(a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value)
+---------------------------
+SourceLocation [start=line 59 column 23, end=line 59 column 24] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 59 column 26, end=line 59 column 31] [ParameterWithValue]
+b = 5
+---------------------------
+SourceLocation [start=line 59 column 26, end=line 59 column 27] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 59 column 30, end=line 59 column 31] [Literal]
+5
+---------------------------
+SourceLocation [start=line 59 column 33, end=line 59 column 38] [ParameterWithValue]
+c = b
+---------------------------
+SourceLocation [start=line 59 column 33, end=line 59 column 34] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 59 column 37, end=line 59 column 38] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 59 column 40, end=line 59 column 48] [ParameterWithValue]
+d = go()
+---------------------------
+SourceLocation [start=line 59 column 40, end=line 59 column 41] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 59 column 44, end=line 59 column 48] [FunctionCall]
+go()
+---------------------------
+SourceLocation [start=line 59 column 44, end=line 59 column 46] [Identifier]
+go
+---------------------------
+SourceLocation [start=line 59 column 46, end=line 59 column 48] [Signature]
+()
+---------------------------
+SourceLocation [start=line 59 column 50, end=line 59 column 58] [ParameterWithValue]
+e = this
+---------------------------
+SourceLocation [start=line 59 column 50, end=line 59 column 51] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 59 column 54, end=line 59 column 58] [This]
+this
+---------------------------
+SourceLocation [start=line 60 column 23, end=line 60 column 36] [ParameterWithValue]
+f = arguments
+---------------------------
+SourceLocation [start=line 60 column 23, end=line 60 column 24] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 60 column 27, end=line 60 column 36] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 60 column 38, end=line 60 column 52] [ParameterWithValue]
+g = this.value
+---------------------------
+SourceLocation [start=line 60 column 38, end=line 60 column 39] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 60 column 42, end=line 60 column 52] [QualifiedExpression]
+this.value
+---------------------------
+SourceLocation [start=line 60 column 42, end=line 60 column 47] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 60 column 42, end=line 60 column 46] [This]
+this
+---------------------------
+SourceLocation [start=line 60 column 46, end=line 60 column 47] [Operator]
+.
+---------------------------
+SourceLocation [start=line 60 column 47, end=line 60 column 52] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 60 column 54, end=line 62 column 2] [Procedure]
+{\\n return [a, b, c, d, e, f, g]\\n}
+---------------------------
+SourceLocation [start=line 61 column 3, end=line 61 column 31] [Return]
+return [a, b, c, d, e, f, g]
+---------------------------
+SourceLocation [start=line 61 column 10, end=line 61 column 31] [ArrayDeclaration]
+[a, b, c, d, e, f, g]
+---------------------------
+SourceLocation [start=line 61 column 11, end=line 61 column 12] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 61 column 14, end=line 61 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 61 column 17, end=line 61 column 18] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 61 column 20, end=line 61 column 21] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 24] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 61 column 26, end=line 61 column 27] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 61 column 29, end=line 61 column 30] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 63 column 1, end=line 82 column 2] [FunctionDeclaration]
+function withoutDefaults(a, b, c, d, e, f, g) {\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}
+---------------------------
+SourceLocation [start=line 63 column 10, end=line 63 column 25] [Identifier]
+withoutDefaults
+---------------------------
+SourceLocation [start=line 63 column 25, end=line 63 column 46] [Signature]
+(a, b, c, d, e, f, g)
+---------------------------
+SourceLocation [start=line 63 column 26, end=line 63 column 27] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 63 column 29, end=line 63 column 30] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 63 column 32, end=line 63 column 33] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 63 column 35, end=line 63 column 36] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 63 column 38, end=line 63 column 39] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 63 column 41, end=line 63 column 42] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 63 column 44, end=line 63 column 45] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 63 column 47, end=line 82 column 2] [Procedure]
+{\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}
+---------------------------
+SourceLocation [start=line 64 column 3, end=line 80 column 4] [Switch]
+switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }
+---------------------------
+SourceLocation [start=line 64 column 10, end=line 64 column 28] [SwitchExpression]
+(arguments.length)
+---------------------------
+SourceLocation [start=line 64 column 11, end=line 64 column 27] [QualifiedExpression]
+arguments.length
+---------------------------
+SourceLocation [start=line 64 column 11, end=line 64 column 21] [Qualifier]
+arguments.
+---------------------------
+SourceLocation [start=line 64 column 11, end=line 64 column 20] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 64 column 20, end=line 64 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 64 column 21, end=line 64 column 27] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 65 column 5, end=line 79 column 13] [SwitchProcedure]
+case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:
+---------------------------
+SourceLocation [start=line 65 column 5, end=line 65 column 12] [SwitchCase]
+case 0:
+---------------------------
+SourceLocation [start=line 65 column 10, end=line 65 column 11] [Literal]
+0
+---------------------------
+SourceLocation [start=line 67 column 5, end=line 67 column 9] [CaseProcedure]
+case
+---------------------------
+SourceLocation [start=line 67 column 5, end=line 68 column 13] [SwitchCase]
+case 1:\\n b = 5;
+---------------------------
+SourceLocation [start=line 67 column 10, end=line 67 column 11] [Literal]
+1
+---------------------------
+SourceLocation [start=line 68 column 7, end=line 68 column 13] [CaseProcedure]
+b = 5;
+---------------------------
+SourceLocation [start=line 68 column 7, end=line 68 column 12] [Assignment]
+b = 5
+---------------------------
+SourceLocation [start=line 68 column 7, end=line 68 column 8] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 68 column 9, end=line 68 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 68 column 11, end=line 68 column 12] [Literal]
+5
+---------------------------
+SourceLocation [start=line 69 column 5, end=line 70 column 13] [SwitchCase]
+case 2:\\n c = b;
+---------------------------
+SourceLocation [start=line 69 column 10, end=line 69 column 11] [Literal]
+2
+---------------------------
+SourceLocation [start=line 70 column 7, end=line 70 column 13] [CaseProcedure]
+c = b;
+---------------------------
+SourceLocation [start=line 70 column 7, end=line 70 column 12] [Assignment]
+c = b
+---------------------------
+SourceLocation [start=line 70 column 7, end=line 70 column 8] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 70 column 9, end=line 70 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 70 column 11, end=line 70 column 12] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 71 column 5, end=line 72 column 16] [SwitchCase]
+case 3:\\n d = go();
+---------------------------
+SourceLocation [start=line 71 column 10, end=line 71 column 11] [Literal]
+3
+---------------------------
+SourceLocation [start=line 72 column 7, end=line 72 column 16] [CaseProcedure]
+d = go();
+---------------------------
+SourceLocation [start=line 72 column 7, end=line 72 column 15] [Assignment]
+d = go()
+---------------------------
+SourceLocation [start=line 72 column 7, end=line 72 column 8] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 72 column 9, end=line 72 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 72 column 11, end=line 72 column 15] [FunctionCall]
+go()
+---------------------------
+SourceLocation [start=line 72 column 11, end=line 72 column 13] [Identifier]
+go
+---------------------------
+SourceLocation [start=line 72 column 13, end=line 72 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 73 column 5, end=line 74 column 16] [SwitchCase]
+case 4:\\n e = this;
+---------------------------
+SourceLocation [start=line 73 column 10, end=line 73 column 11] [Literal]
+4
+---------------------------
+SourceLocation [start=line 74 column 7, end=line 74 column 16] [CaseProcedure]
+e = this;
+---------------------------
+SourceLocation [start=line 74 column 7, end=line 74 column 15] [Assignment]
+e = this
+---------------------------
+SourceLocation [start=line 74 column 7, end=line 74 column 8] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 74 column 9, end=line 74 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 74 column 11, end=line 74 column 15] [This]
+this
+---------------------------
+SourceLocation [start=line 75 column 5, end=line 76 column 21] [SwitchCase]
+case 5:\\n f = arguments;
+---------------------------
+SourceLocation [start=line 75 column 10, end=line 75 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 76 column 7, end=line 76 column 21] [CaseProcedure]
+f = arguments;
+---------------------------
+SourceLocation [start=line 76 column 7, end=line 76 column 20] [Assignment]
+f = arguments
+---------------------------
+SourceLocation [start=line 76 column 7, end=line 76 column 8] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 76 column 9, end=line 76 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 76 column 11, end=line 76 column 20] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 77 column 5, end=line 78 column 22] [SwitchCase]
+case 6:\\n g = this.value;
+---------------------------
+SourceLocation [start=line 77 column 10, end=line 77 column 11] [Literal]
+6
+---------------------------
+SourceLocation [start=line 78 column 7, end=line 78 column 22] [CaseProcedure]
+g = this.value;
+---------------------------
+SourceLocation [start=line 78 column 7, end=line 78 column 21] [Assignment]
+g = this.value
+---------------------------
+SourceLocation [start=line 78 column 7, end=line 78 column 8] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 78 column 9, end=line 78 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 78 column 11, end=line 78 column 21] [QualifiedExpression]
+this.value
+---------------------------
+SourceLocation [start=line 78 column 11, end=line 78 column 16] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 78 column 11, end=line 78 column 15] [This]
+this
+---------------------------
+SourceLocation [start=line 78 column 15, end=line 78 column 16] [Operator]
+.
+---------------------------
+SourceLocation [start=line 78 column 16, end=line 78 column 21] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 79 column 5, end=line 79 column 13] [DefaultCase]
+default:
+---------------------------
+SourceLocation [start=line 80 column 3, end=line 80 column 4] [CaseProcedure]
+}
+---------------------------
+SourceLocation [start=line 81 column 3, end=line 81 column 31] [Return]
+return [a, b, c, d, e, f, g]
+---------------------------
+SourceLocation [start=line 81 column 10, end=line 81 column 31] [ArrayDeclaration]
+[a, b, c, d, e, f, g]
+---------------------------
+SourceLocation [start=line 81 column 11, end=line 81 column 12] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 81 column 14, end=line 81 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 81 column 17, end=line 81 column 18] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 81 column 20, end=line 81 column 21] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 81 column 23, end=line 81 column 24] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 81 column 26, end=line 81 column 27] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 81 column 29, end=line 81 column 30] [Identifier]
+g
+---------------------------
+SourceLocation [start=line 83 column 1, end=line 83 column 36] [QualifiedExpression]
+withDefaults.call({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 83 column 1, end=line 83 column 14] [Qualifier]
+withDefaults.
+---------------------------
+SourceLocation [start=line 83 column 1, end=line 83 column 13] [Identifier]
+withDefaults
+---------------------------
+SourceLocation [start=line 83 column 13, end=line 83 column 14] [Operator]
+.
+---------------------------
+SourceLocation [start=line 83 column 14, end=line 83 column 36] [FunctionCall]
+call({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 83 column 14, end=line 83 column 18] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 83 column 18, end=line 83 column 36] [Signature]
+({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 83 column 19, end=line 83 column 35] [ObjectDeclaration]
+{value: '=^_^='}
+---------------------------
+SourceLocation [start=line 83 column 20, end=line 83 column 34] [FieldDeclaration]
+value: '=^_^='
+---------------------------
+SourceLocation [start=line 83 column 20, end=line 83 column 25] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 83 column 27, end=line 83 column 34] [Literal]
+'=^_^='
+---------------------------
+SourceLocation [start=line 84 column 1, end=line 84 column 39] [QualifiedExpression]
+withoutDefaults.call({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 84 column 1, end=line 84 column 17] [Qualifier]
+withoutDefaults.
+---------------------------
+SourceLocation [start=line 84 column 1, end=line 84 column 16] [Identifier]
+withoutDefaults
+---------------------------
+SourceLocation [start=line 84 column 16, end=line 84 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 84 column 17, end=line 84 column 39] [FunctionCall]
+call({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 84 column 17, end=line 84 column 21] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 84 column 21, end=line 84 column 39] [Signature]
+({value: '=^_^='})
+---------------------------
+SourceLocation [start=line 84 column 22, end=line 84 column 38] [ObjectDeclaration]
+{value: '=^_^='}
+---------------------------
+SourceLocation [start=line 84 column 23, end=line 84 column 37] [FieldDeclaration]
+value: '=^_^='
+---------------------------
+SourceLocation [start=line 84 column 23, end=line 84 column 28] [Identifier]
+value
+---------------------------
+SourceLocation [start=line 84 column 30, end=line 84 column 37] [Literal]
+'=^_^='
+---------------------------
+SourceLocation [start=line 86 column 1, end=line 88 column 2] [FunctionDeclaration]
+function f(x = 1, y) {\\n return [x, y]\\n}
+---------------------------
+SourceLocation [start=line 86 column 10, end=line 86 column 11] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 86 column 11, end=line 86 column 21] [Signature]
+(x = 1, y)
+---------------------------
+SourceLocation [start=line 86 column 12, end=line 86 column 17] [ParameterWithValue]
+x = 1
+---------------------------
+SourceLocation [start=line 86 column 12, end=line 86 column 13] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 86 column 16, end=line 86 column 17] [Literal]
+1
+---------------------------
+SourceLocation [start=line 86 column 19, end=line 86 column 20] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 86 column 22, end=line 88 column 2] [Procedure]
+{\\n return [x, y]\\n}
+---------------------------
+SourceLocation [start=line 87 column 3, end=line 87 column 16] [Return]
+return [x, y]
+---------------------------
+SourceLocation [start=line 87 column 10, end=line 87 column 16] [ArrayDeclaration]
+[x, y]
+---------------------------
+SourceLocation [start=line 87 column 11, end=line 87 column 12] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 87 column 14, end=line 87 column 15] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 89 column 1, end=line 89 column 4] [FunctionCall]
+f()
+---------------------------
+SourceLocation [start=line 89 column 1, end=line 89 column 2] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 89 column 2, end=line 89 column 4] [Signature]
+()
+---------------------------
+SourceLocation [start=line 90 column 1, end=line 90 column 5] [FunctionCall]
+f(2)
+---------------------------
+SourceLocation [start=line 90 column 1, end=line 90 column 2] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 90 column 2, end=line 90 column 5] [Signature]
+(2)
+---------------------------
+SourceLocation [start=line 90 column 3, end=line 90 column 4] [Literal]
+2
+---------------------------
+SourceLocation [start=line 92 column 1, end=line 94 column 2] [FunctionDeclaration]
+function preFilledArray([x = 1, y = 2] = []) {\\n return x + y;\\n}
+---------------------------
+SourceLocation [start=line 92 column 10, end=line 92 column 24] [Identifier]
+preFilledArray
+---------------------------
+SourceLocation [start=line 92 column 24, end=line 92 column 45] [Signature]
+([x = 1, y = 2] = [])
+---------------------------
+SourceLocation [start=line 92 column 25, end=line 92 column 44] [ParameterWithValue]
+[x = 1, y = 2] = []
+---------------------------
+SourceLocation [start=line 92 column 25, end=line 92 column 39] [DestructuringArray]
+[x = 1, y = 2]
+---------------------------
+SourceLocation [start=line 92 column 26, end=line 92 column 31] [Value]
+x = 1
+---------------------------
+SourceLocation [start=line 92 column 26, end=line 92 column 27] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 92 column 28, end=line 92 column 31] [Literal]
+= 1
+---------------------------
+SourceLocation [start=line 92 column 33, end=line 92 column 38] [Value]
+y = 2
+---------------------------
+SourceLocation [start=line 92 column 33, end=line 92 column 34] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 92 column 35, end=line 92 column 38] [Literal]
+= 2
+---------------------------
+SourceLocation [start=line 92 column 42, end=line 92 column 44] [ArrayDeclaration]
+[]
+---------------------------
+SourceLocation [start=line 92 column 46, end=line 94 column 2] [Procedure]
+{\\n return x + y;\\n}
+---------------------------
+SourceLocation [start=line 93 column 3, end=line 93 column 15] [Return]
+return x + y
+---------------------------
+SourceLocation [start=line 93 column 10, end=line 93 column 15] [Infix]
+x + y
+---------------------------
+SourceLocation [start=line 93 column 10, end=line 93 column 11] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 93 column 12, end=line 93 column 13] [Operator]
++
+---------------------------
+SourceLocation [start=line 93 column 14, end=line 93 column 15] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 95 column 1, end=line 95 column 17] [FunctionCall]
+preFilledArray()
+---------------------------
+SourceLocation [start=line 95 column 1, end=line 95 column 15] [Identifier]
+preFilledArray
+---------------------------
+SourceLocation [start=line 95 column 15, end=line 95 column 17] [Signature]
+()
+---------------------------
+SourceLocation [start=line 96 column 1, end=line 96 column 19] [FunctionCall]
+preFilledArray([])
+---------------------------
+SourceLocation [start=line 96 column 1, end=line 96 column 15] [Identifier]
+preFilledArray
+---------------------------
+SourceLocation [start=line 96 column 15, end=line 96 column 19] [Signature]
+([])
+---------------------------
+SourceLocation [start=line 96 column 16, end=line 96 column 18] [ArrayDeclaration]
+[]
+---------------------------
+SourceLocation [start=line 97 column 1, end=line 97 column 20] [FunctionCall]
+preFilledArray([2])
+---------------------------
+SourceLocation [start=line 97 column 1, end=line 97 column 15] [Identifier]
+preFilledArray
+---------------------------
+SourceLocation [start=line 97 column 15, end=line 97 column 20] [Signature]
+([2])
+---------------------------
+SourceLocation [start=line 97 column 16, end=line 97 column 19] [ArrayDeclaration]
+[2]
+---------------------------
+SourceLocation [start=line 97 column 17, end=line 97 column 18] [Literal]
+2
+---------------------------
+SourceLocation [start=line 98 column 1, end=line 98 column 23] [FunctionCall]
+preFilledArray([2, 3])
+---------------------------
+SourceLocation [start=line 98 column 1, end=line 98 column 15] [Identifier]
+preFilledArray
+---------------------------
+SourceLocation [start=line 98 column 15, end=line 98 column 23] [Signature]
+([2, 3])
+---------------------------
+SourceLocation [start=line 98 column 16, end=line 98 column 22] [ArrayDeclaration]
+[2, 3]
+---------------------------
+SourceLocation [start=line 98 column 17, end=line 98 column 18] [Literal]
+2
+---------------------------
+SourceLocation [start=line 98 column 20, end=line 98 column 21] [Literal]
+3
+---------------------------
+SourceLocation [start=line 101 column 1, end=line 103 column 2] [FunctionDeclaration]
+function preFilledObject({z = 3} = {}) {\\n return z;\\n}
+---------------------------
+SourceLocation [start=line 101 column 10, end=line 101 column 25] [Identifier]
+preFilledObject
+---------------------------
+SourceLocation [start=line 101 column 25, end=line 101 column 39] [Signature]
+({z = 3} = {})
+---------------------------
+SourceLocation [start=line 101 column 26, end=line 101 column 38] [ParameterWithValue]
+{z = 3} = {}
+---------------------------
+SourceLocation [start=line 101 column 26, end=line 101 column 33] [DestructuringObject]
+{z = 3}
+---------------------------
+SourceLocation [start=line 101 column 27, end=line 101 column 32] [Field]
+z = 3
+---------------------------
+SourceLocation [start=line 101 column 27, end=line 101 column 28] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 101 column 29, end=line 101 column 32] [Literal]
+= 3
+---------------------------
+SourceLocation [start=line 101 column 36, end=line 101 column 38] [ObjectDeclaration]
+{}
+---------------------------
+SourceLocation [start=line 101 column 40, end=line 103 column 2] [Procedure]
+{\\n return z;\\n}
+---------------------------
+SourceLocation [start=line 102 column 3, end=line 102 column 11] [Return]
+return z
+---------------------------
+SourceLocation [start=line 102 column 10, end=line 102 column 11] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 104 column 1, end=line 104 column 18] [FunctionCall]
+preFilledObject()
+---------------------------
+SourceLocation [start=line 104 column 1, end=line 104 column 16] [Identifier]
+preFilledObject
+---------------------------
+SourceLocation [start=line 104 column 16, end=line 104 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 105 column 1, end=line 105 column 20] [FunctionCall]
+preFilledObject({})
+---------------------------
+SourceLocation [start=line 105 column 1, end=line 105 column 16] [Identifier]
+preFilledObject
+---------------------------
+SourceLocation [start=line 105 column 16, end=line 105 column 20] [Signature]
+({})
+---------------------------
+SourceLocation [start=line 105 column 17, end=line 105 column 19] [ObjectDeclaration]
+{}
+---------------------------
+SourceLocation [start=line 106 column 1, end=line 106 column 26] [FunctionCall]
+preFilledObject({ z: 2 })
+---------------------------
+SourceLocation [start=line 106 column 1, end=line 106 column 16] [Identifier]
+preFilledObject
+---------------------------
+SourceLocation [start=line 106 column 16, end=line 106 column 26] [Signature]
+({ z: 2 })
+---------------------------
+SourceLocation [start=line 106 column 17, end=line 106 column 25] [ObjectDeclaration]
+{ z: 2 }
+---------------------------
+SourceLocation [start=line 106 column 19, end=line 106 column 23] [FieldDeclaration]
+z: 2
+---------------------------
+SourceLocation [start=line 106 column 19, end=line 106 column 20] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 106 column 22, end=line 106 column 23] [Literal]
+2
+---------------------------
+SourceLocation [start=line 108 column 1, end=line 112 column 2] [FunctionDeclaration]
+function config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+---------------------------
+SourceLocation [start=line 108 column 10, end=line 108 column 16] [Identifier]
+config
+---------------------------
+SourceLocation [start=line 108 column 16, end=line 108 column 25] [Signature]
+(options)
+---------------------------
+SourceLocation [start=line 108 column 17, end=line 108 column 24] [Identifier]
+options
+---------------------------
+SourceLocation [start=line 108 column 26, end=line 112 column 2] [Procedure]
+{\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 109 column 27] [Assignment]
+options.duration ??= 100
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 109 column 19] [QualifiedExpression]
+options.duration
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 109 column 11] [Qualifier]
+options.
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 109 column 10] [Identifier]
+options
+---------------------------
+SourceLocation [start=line 109 column 10, end=line 109 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 109 column 11, end=line 109 column 19] [Identifier]
+duration
+---------------------------
+SourceLocation [start=line 109 column 20, end=line 109 column 23] [Operator]
+??=
+---------------------------
+SourceLocation [start=line 109 column 24, end=line 109 column 27] [Literal]
+100
+---------------------------
+SourceLocation [start=line 110 column 3, end=line 110 column 23] [Assignment]
+options.speed ??= 25
+---------------------------
+SourceLocation [start=line 110 column 3, end=line 110 column 16] [QualifiedExpression]
+options.speed
+---------------------------
+SourceLocation [start=line 110 column 3, end=line 110 column 11] [Qualifier]
+options.
+---------------------------
+SourceLocation [start=line 110 column 3, end=line 110 column 10] [Identifier]
+options
+---------------------------
+SourceLocation [start=line 110 column 10, end=line 110 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 110 column 11, end=line 110 column 16] [Identifier]
+speed
+---------------------------
+SourceLocation [start=line 110 column 17, end=line 110 column 20] [Operator]
+??=
+---------------------------
+SourceLocation [start=line 110 column 21, end=line 110 column 23] [Literal]
+25
+---------------------------
+SourceLocation [start=line 111 column 3, end=line 111 column 17] [Return]
+return options
+---------------------------
+SourceLocation [start=line 111 column 10, end=line 111 column 17] [Identifier]
+options
+---------------------------
+SourceLocation [start=line 113 column 1, end=line 113 column 26] [FunctionCall]
+config({ duration: 125 })
+---------------------------
+SourceLocation [start=line 113 column 1, end=line 113 column 7] [Identifier]
+config
+---------------------------
+SourceLocation [start=line 113 column 7, end=line 113 column 26] [Signature]
+({ duration: 125 })
+---------------------------
+SourceLocation [start=line 113 column 8, end=line 113 column 25] [ObjectDeclaration]
+{ duration: 125 }
+---------------------------
+SourceLocation [start=line 113 column 10, end=line 113 column 23] [FieldDeclaration]
+duration: 125
+---------------------------
+SourceLocation [start=line 113 column 10, end=line 113 column 18] [Identifier]
+duration
+---------------------------
+SourceLocation [start=line 113 column 20, end=line 113 column 23] [Literal]
+125
+---------------------------
+SourceLocation [start=line 114 column 1, end=line 114 column 11] [FunctionCall]
+config({})
+---------------------------
+SourceLocation [start=line 114 column 1, end=line 114 column 7] [Identifier]
+config
+---------------------------
+SourceLocation [start=line 114 column 7, end=line 114 column 11] [Signature]
+({})
+---------------------------
+SourceLocation [start=line 114 column 8, end=line 114 column 10] [ObjectDeclaration]
+{}
+---------------------------
+SourceLocation [start=line 116 column 1, end=line 116 column 28] [FunctionCall]
+map(cube, [0, 1, 2, 5, 10])
+---------------------------
+SourceLocation [start=line 116 column 1, end=line 116 column 4] [Identifier]
+map
+---------------------------
+SourceLocation [start=line 116 column 4, end=line 116 column 28] [Signature]
+(cube, [0, 1, 2, 5, 10])
+---------------------------
+SourceLocation [start=line 116 column 5, end=line 116 column 9] [Identifier]
+cube
+---------------------------
+SourceLocation [start=line 116 column 11, end=line 116 column 27] [ArrayDeclaration]
+[0, 1, 2, 5, 10]
+---------------------------
+SourceLocation [start=line 116 column 12, end=line 116 column 13] [Literal]
+0
+---------------------------
+SourceLocation [start=line 116 column 15, end=line 116 column 16] [Literal]
+1
+---------------------------
+SourceLocation [start=line 116 column 18, end=line 116 column 19] [Literal]
+2
+---------------------------
+SourceLocation [start=line 116 column 21, end=line 116 column 22] [Literal]
+5
+---------------------------
+SourceLocation [start=line 116 column 24, end=line 116 column 26] [Literal]
+10
+---------------------------
+SourceLocation [start=line 118 column 1, end=line 118 column 25] [Assignment]
+résultat = externe()(20)
+---------------------------
+SourceLocation [start=line 118 column 1, end=line 118 column 9] [Identifier]
+résultat
+---------------------------
+SourceLocation [start=line 118 column 10, end=line 118 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 118 column 12, end=line 118 column 25] [FunctionCall]
+externe()(20)
+---------------------------
+SourceLocation [start=line 118 column 12, end=line 118 column 21] [FunctionCall]
+externe()
+---------------------------
+SourceLocation [start=line 118 column 12, end=line 118 column 19] [Identifier]
+externe
+---------------------------
+SourceLocation [start=line 118 column 19, end=line 118 column 21] [Signature]
+()
+---------------------------
+SourceLocation [start=line 118 column 21, end=line 118 column 25] [Signature]
+(20)
+---------------------------
+SourceLocation [start=line 118 column 22, end=line 118 column 24] [Literal]
+20
+---------------------------

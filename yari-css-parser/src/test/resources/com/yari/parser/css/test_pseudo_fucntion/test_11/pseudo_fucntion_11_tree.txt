@@ -1,0 +1,14 @@
+[0, Css] labeled-checkbox:state(checked) {\\n border: solid;\\n }
+ [1, RuleSet] labeled-checkbox:state(checked) {\\n border: solid;\\n }
+  [2, CombinatorSelector] labeled-checkbox:state(checked)
+   [3, ElementSelector] labeled-checkbox
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :state(checked)
+    [4, PseudoClassSelector] :state
+     [5, Identifier] state
+    [4, Signature] (checked)
+     [5, Identifier] checked
+  [2, Block] {\\n border: solid;\\n }
+   [3, Property] border: solid
+    [4, Identifier] border
+    [4, Identifier] solid

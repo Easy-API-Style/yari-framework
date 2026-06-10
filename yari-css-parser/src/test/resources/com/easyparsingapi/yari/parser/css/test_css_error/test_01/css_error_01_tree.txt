@@ -1,0 +1,17 @@
+[0, Css] li:has(+ li:last-of-type > + div) {\\n color: red;\\n font-weight: bold;\\n }
+ [1, RuleSet] li:has(+ li:last-of-type > + div) {\\n color: red;\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] li:has(+ li:last-of-type > + div)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :has(+ li:last-of-type > + div)
+    [4, PseudoClassSelector] :has
+     [5, Identifier] has
+    [4, Signature] (+ li:last-of-type > + div)
+     [5, CssError] + li:last-of-type > + div
+  [2, Block] {\\n color: red;\\n font-weight: bold;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold

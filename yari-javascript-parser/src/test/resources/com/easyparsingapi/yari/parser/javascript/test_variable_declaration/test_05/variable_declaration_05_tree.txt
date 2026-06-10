@@ -1,0 +1,11 @@
+[0, Javascript] const obj = { [items]: "Hello"}
+ [1, VariableDeclaration] const obj = { [items]: "Hello"}
+  [2, Type] const
+  [2, Variable] obj = { [items]: "Hello"}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { [items]: "Hello"}
+    [4, FieldDeclaration] [items]: "Hello"
+     [5, ComputedValue] [items]
+      [6, Identifier] items
+     [5, Literal] "Hello"

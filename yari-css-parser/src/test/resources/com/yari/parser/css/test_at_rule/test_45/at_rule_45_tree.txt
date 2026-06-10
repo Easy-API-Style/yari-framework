@@ -1,0 +1,51 @@
+[0, Css] @supports (transform-origin: 5% 5%) {\\n }\\n @supports font-tech(color-COLRv1) {\\n }\\n @supports (display: flex) {\\n .flex-container > * {\\n text-shadow: 0 0 2px blue;\\n float: none;\\n }\\n\\n .flex-container {\\n display: flex;\\n }\\n }
+ [1, AtRule] @supports (transform-origin: 5% 5%) {\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (transform-origin: 5% 5%)
+   [3, Property] transform-origin: 5% 5%
+    [4, Identifier] transform-origin
+    [4, ListValue] 5% 5%
+     [5, Identifier] 5%
+     [5, Identifier] 5%
+  [2, Block] {\\n }
+ [1, AtRule] @supports font-tech(color-COLRv1) {\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Function] font-tech(color-COLRv1)
+   [3, Identifier] font-tech
+   [3, Signature] (color-COLRv1)
+    [4, Identifier] color-COLRv1
+  [2, Block] {\\n }
+ [1, AtRule] @supports (display: flex) {\\n .flex-container > * {\\n text-shadow: 0 0 2px blue;\\n float: none;\\n }\\n\\n .flex-container {\\n display: flex;\\n }\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (display: flex)
+   [3, Property] display: flex
+    [4, Identifier] display
+    [4, Identifier] flex
+  [2, Block] {\\n .flex-container > * {\\n text-shadow: 0 0 2px blue;\\n float: none;\\n }\\n\\n .flex-container {\\n display: flex;\\n }\\n }
+   [3, RuleSet] .flex-container > * {\\n text-shadow: 0 0 2px blue;\\n float: none;\\n }
+    [4, CombinatorSelector] .flex-container > *
+     [5, ClassSelector] .flex-container
+      [6, Identifier] flex-container
+     [5, Operator] >
+     [5, Universal] *
+    [4, Block] {\\n text-shadow: 0 0 2px blue;\\n float: none;\\n }
+     [5, Property] text-shadow: 0 0 2px blue
+      [6, Identifier] text-shadow
+      [6, ListValue] 0 0 2px blue
+       [7, Identifier] 0
+       [7, Identifier] 0
+       [7, Identifier] 2px
+       [7, Identifier] blue
+     [5, Property] float: none
+      [6, Identifier] float
+      [6, Identifier] none
+   [3, RuleSet] .flex-container {\\n display: flex;\\n }
+    [4, ClassSelector] .flex-container
+     [5, Identifier] flex-container
+    [4, Block] {\\n display: flex;\\n }
+     [5, Property] display: flex
+      [6, Identifier] display
+      [6, Identifier] flex

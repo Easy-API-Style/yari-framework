@@ -1,0 +1,13 @@
+[0, Javascript] class Foo {\\n *generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}
+ [1, ClassDeclaration] class Foo {\\n *generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }\\n}
+  [2, Identifier] Foo
+  [2, ClassMethodDeclaration] *generator() {\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+   [3, Identifier] generator
+   [3, Signature] ()
+   [3, Procedure] {\\n yield 1;\\n yield 2;\\n yield 3;\\n }
+    [4, Yield] yield 1
+     [5, Literal] 1
+    [4, Yield] yield 2
+     [5, Literal] 2
+    [4, Yield] yield 3
+     [5, Literal] 3

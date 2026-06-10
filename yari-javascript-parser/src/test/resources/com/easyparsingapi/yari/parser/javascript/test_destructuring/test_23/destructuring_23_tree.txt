@@ -1,0 +1,15 @@
+[0, Javascript] [a, b, ...[c, d]] = array
+ [1, Assignment] [a, b, ...[c, d]] = array
+  [2, DestructuringArray] [a, b, ...[c, d]]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...[c, d]
+    [4, DestructuringArray] [c, d]
+     [5, Value] c
+      [6, Identifier] c
+     [5, Value] d
+      [6, Identifier] d
+  [2, Operator] =
+  [2, Identifier] array

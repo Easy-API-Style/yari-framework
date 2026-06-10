@@ -1,0 +1,147 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 207] [Javascript]
+try { fct_1();} catch (e if e instanceof TypeError) { fct_2(); } catch (e if e instanceof RangeError) { fct_3(); } catch (e if e instanceof EvalError) { fct_4(); } catch (e) { fct_5();}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 207] [Try]
+try { fct_1();} catch (e if e instanceof TypeError) { fct_2(); } catch (e if e instanceof RangeError) { fct_3(); } catch (e if e instanceof EvalError) { fct_4(); } catch (e) { fct_5();}
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 20] [Procedure]
+{ fct_1();}
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 18] [FunctionCall]
+fct_1()
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 16] [Identifier]
+fct_1
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 73] [Catch]
+catch (e if e instanceof TypeError) { fct_2(); }
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 56] [Signature]
+(e if e instanceof TypeError)
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 55] [CatchInstance]
+e if e instanceof TypeError
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 55] [Infix]
+if e instanceof TypeError
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 34] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 45] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 55] [Identifier]
+TypeError
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 73] [Procedure]
+{ fct_2(); }
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 70] [FunctionCall]
+fct_2()
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 68] [Identifier]
+fct_2
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 70] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 74, end=line 1 column 127] [Catch]
+catch (e if e instanceof RangeError) { fct_3(); }
+---------------------------
+SourceLocation [start=line 1 column 80, end=line 1 column 110] [Signature]
+(e if e instanceof RangeError)
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 109] [CatchInstance]
+e if e instanceof RangeError
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 82] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 83, end=line 1 column 109] [Infix]
+if e instanceof RangeError
+---------------------------
+SourceLocation [start=line 1 column 86, end=line 1 column 87] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 88, end=line 1 column 98] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 1 column 99, end=line 1 column 109] [Identifier]
+RangeError
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 127] [Procedure]
+{ fct_3(); }
+---------------------------
+SourceLocation [start=line 1 column 117, end=line 1 column 124] [FunctionCall]
+fct_3()
+---------------------------
+SourceLocation [start=line 1 column 117, end=line 1 column 122] [Identifier]
+fct_3
+---------------------------
+SourceLocation [start=line 1 column 122, end=line 1 column 124] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 128, end=line 1 column 181] [Catch]
+catch (e if e instanceof EvalError) { fct_4(); }
+---------------------------
+SourceLocation [start=line 1 column 134, end=line 1 column 163] [Signature]
+(e if e instanceof EvalError)
+---------------------------
+SourceLocation [start=line 1 column 135, end=line 1 column 162] [CatchInstance]
+e if e instanceof EvalError
+---------------------------
+SourceLocation [start=line 1 column 135, end=line 1 column 136] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 137, end=line 1 column 162] [Infix]
+if e instanceof EvalError
+---------------------------
+SourceLocation [start=line 1 column 140, end=line 1 column 141] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 142, end=line 1 column 152] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 1 column 153, end=line 1 column 162] [Identifier]
+EvalError
+---------------------------
+SourceLocation [start=line 1 column 164, end=line 1 column 181] [Procedure]
+{ fct_4(); }
+---------------------------
+SourceLocation [start=line 1 column 170, end=line 1 column 177] [FunctionCall]
+fct_4()
+---------------------------
+SourceLocation [start=line 1 column 170, end=line 1 column 175] [Identifier]
+fct_4
+---------------------------
+SourceLocation [start=line 1 column 175, end=line 1 column 177] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 182, end=line 1 column 207] [Catch]
+catch (e) { fct_5();}
+---------------------------
+SourceLocation [start=line 1 column 188, end=line 1 column 191] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 1 column 189, end=line 1 column 190] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 192, end=line 1 column 207] [Procedure]
+{ fct_5();}
+---------------------------
+SourceLocation [start=line 1 column 198, end=line 1 column 205] [FunctionCall]
+fct_5()
+---------------------------
+SourceLocation [start=line 1 column 198, end=line 1 column 203] [Identifier]
+fct_5
+---------------------------
+SourceLocation [start=line 1 column 203, end=line 1 column 205] [Signature]
+()
+---------------------------

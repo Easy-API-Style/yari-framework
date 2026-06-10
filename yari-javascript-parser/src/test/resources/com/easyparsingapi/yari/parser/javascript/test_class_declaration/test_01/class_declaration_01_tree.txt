@@ -1,0 +1,33 @@
+[0, Javascript] class Rectangle { constructor(height, width) { this.name = 'Rectangle'; this.height = height; this.width = width; } }
+ [1, ClassDeclaration] class Rectangle { constructor(height, width) { this.name = 'Rectangle'; this.height = height; this.width = width; } }
+  [2, Identifier] Rectangle
+  [2, ClassMethodDeclaration] constructor(height, width) { this.name = 'Rectangle'; this.height = height; this.width = width; }
+   [3, Identifier] constructor
+   [3, Signature] (height, width)
+    [4, Identifier] height
+    [4, Identifier] width
+   [3, Procedure] { this.name = 'Rectangle'; this.height = height; this.width = width; }
+    [4, Assignment] this.name = 'Rectangle'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'Rectangle'
+    [4, Assignment] this.height = height
+     [5, QualifiedExpression] this.height
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] height
+     [5, Operator] =
+     [5, Identifier] height
+    [4, Assignment] this.width = width
+     [5, QualifiedExpression] this.width
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] width
+     [5, Operator] =
+     [5, Identifier] width

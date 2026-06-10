@@ -1,0 +1,42 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 14] [Xml]
+<pc:test<>\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 14] [Tag]
+<pc:test<>\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 12] [TagHeadError]
+<pc:test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 7] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [Name]
+test
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 2 column 12] [TagBody]
+<>\\n blabla
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [TokenError]
+<
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [TokenError]
+>
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 12] [Text]
+blabla
+---------------------------
+SourceLocation [start=line 3 column 4, end=line 3 column 14] [TagFoot]
+</pc:test>
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 13] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 8] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 13] [Name]
+test
+---------------------------

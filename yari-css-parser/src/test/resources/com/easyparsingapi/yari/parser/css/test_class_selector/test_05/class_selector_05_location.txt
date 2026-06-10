@@ -1,0 +1,24 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 6] [Css]
+.item\?one {\\n background-color: pink;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 6] [RuleSet]
+.item\?one {\\n background-color: pink;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 14] [ClassSelector]
+.item\?one
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 14] [Identifier]
+item\?one
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 3 column 6] [Block]
+{\\n background-color: pink;\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 29] [Property]
+background-color: pink
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 23] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 2 column 25, end=line 2 column 29] [Identifier]
+pink
+---------------------------

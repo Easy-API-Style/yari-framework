@@ -1,0 +1,204 @@
+SourceLocation [start=line 1 column 5, end=line 1 column 32] [Css]
+/* Targets all the pages */
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 42] [Css]
+/* Targets all even-numbered pages */
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 12 column 41] [Css]
+/* Targets all odd-numbered pages */
+---------------------------
+SourceLocation [start=line 18 column 5, end=line 18 column 55] [Css]
+/* Targets all selectors with `page: wide;` set */
+---------------------------
+SourceLocation [start=line 24 column 7, end=line 24 column 56] [Css]
+/* margin box at top right showing page number */
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 28 column 6] [Css]
+@page {\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }\\n\\n /* Targets all even-numbered pages */\\n @page :left {\\n margin-top: 4in;\\n }\\n\\n /* Targets all odd-numbered pages */\\n @page :right {\\n size: 11in;\\n margin-top: 4in;\\n }\\n\\n /* Targets all selectors with `page: wide;` set */\\n @page wide {\\n size: a4 landscape;\\n }\\n\\n @page {\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 5 column 6] [AtRule]
+@page {\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 10] [AtRuleName]
+@page
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 10] [Identifier]
+page
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 12] [ListParameter]
+{
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 5 column 6] [Block]
+{\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 22] [Property]
+size: 8.5in 9in
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 11] [Identifier]
+size
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 22] [ListValue]
+8.5in 9in
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 18] [Identifier]
+8.5in
+---------------------------
+SourceLocation [start=line 3 column 19, end=line 3 column 22] [Identifier]
+9in
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 22] [Property]
+margin-top: 4in
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 17] [Identifier]
+margin-top
+---------------------------
+SourceLocation [start=line 4 column 19, end=line 4 column 22] [Identifier]
+4in
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 10 column 6] [AtRule]
+@page :left {\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 10] [AtRuleName]
+@page
+---------------------------
+SourceLocation [start=line 8 column 6, end=line 8 column 10] [Identifier]
+page
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 16] [PseudoClassSelector]
+:left
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 16] [Identifier]
+left
+---------------------------
+SourceLocation [start=line 8 column 17, end=line 10 column 6] [Block]
+{\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 22] [Property]
+margin-top: 4in
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 17] [Identifier]
+margin-top
+---------------------------
+SourceLocation [start=line 9 column 19, end=line 9 column 22] [Identifier]
+4in
+---------------------------
+SourceLocation [start=line 13 column 5, end=line 16 column 6] [AtRule]
+@page :right {\\n size: 11in;\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 13 column 5, end=line 13 column 10] [AtRuleName]
+@page
+---------------------------
+SourceLocation [start=line 13 column 6, end=line 13 column 10] [Identifier]
+page
+---------------------------
+SourceLocation [start=line 13 column 11, end=line 13 column 17] [PseudoClassSelector]
+:right
+---------------------------
+SourceLocation [start=line 13 column 12, end=line 13 column 17] [Identifier]
+right
+---------------------------
+SourceLocation [start=line 13 column 18, end=line 16 column 6] [Block]
+{\\n size: 11in;\\n margin-top: 4in;\\n }
+---------------------------
+SourceLocation [start=line 14 column 7, end=line 14 column 17] [Property]
+size: 11in
+---------------------------
+SourceLocation [start=line 14 column 7, end=line 14 column 11] [Identifier]
+size
+---------------------------
+SourceLocation [start=line 14 column 13, end=line 14 column 17] [Identifier]
+11in
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 22] [Property]
+margin-top: 4in
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 17] [Identifier]
+margin-top
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 22] [Identifier]
+4in
+---------------------------
+SourceLocation [start=line 19 column 5, end=line 21 column 6] [AtRule]
+@page wide {\\n size: a4 landscape;\\n }
+---------------------------
+SourceLocation [start=line 19 column 5, end=line 19 column 10] [AtRuleName]
+@page
+---------------------------
+SourceLocation [start=line 19 column 6, end=line 19 column 10] [Identifier]
+page
+---------------------------
+SourceLocation [start=line 19 column 11, end=line 19 column 15] [Identifier]
+wide
+---------------------------
+SourceLocation [start=line 19 column 16, end=line 21 column 6] [Block]
+{\\n size: a4 landscape;\\n }
+---------------------------
+SourceLocation [start=line 20 column 7, end=line 20 column 25] [Property]
+size: a4 landscape
+---------------------------
+SourceLocation [start=line 20 column 7, end=line 20 column 11] [Identifier]
+size
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 25] [ListValue]
+a4 landscape
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 15] [Identifier]
+a4
+---------------------------
+SourceLocation [start=line 20 column 16, end=line 20 column 25] [Identifier]
+landscape
+---------------------------
+SourceLocation [start=line 23 column 5, end=line 28 column 6] [AtRule]
+@page {\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+---------------------------
+SourceLocation [start=line 23 column 5, end=line 23 column 10] [AtRuleName]
+@page
+---------------------------
+SourceLocation [start=line 23 column 6, end=line 23 column 10] [Identifier]
+page
+---------------------------
+SourceLocation [start=line 23 column 11, end=line 23 column 12] [ListParameter]
+{
+---------------------------
+SourceLocation [start=line 23 column 11, end=line 28 column 6] [Block]
+{\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 27 column 8] [AtRule]
+@top-right {\\n content: "Page " counter(pageNumber);\\n }
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 17] [AtRuleName]
+@top-right
+---------------------------
+SourceLocation [start=line 25 column 8, end=line 25 column 17] [Identifier]
+top-right
+---------------------------
+SourceLocation [start=line 25 column 18, end=line 25 column 19] [ListParameter]
+{
+---------------------------
+SourceLocation [start=line 25 column 18, end=line 27 column 8] [Block]
+{\\n content: "Page " counter(pageNumber);\\n }
+---------------------------
+SourceLocation [start=line 26 column 9, end=line 26 column 45] [Property]
+content: "Page " counter(pageNumber)
+---------------------------
+SourceLocation [start=line 26 column 9, end=line 26 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 26 column 18, end=line 26 column 45] [ListValue]
+"Page " counter(pageNumber)
+---------------------------
+SourceLocation [start=line 26 column 18, end=line 26 column 25] [Literal]
+"Page "
+---------------------------
+SourceLocation [start=line 26 column 26, end=line 26 column 45] [Function]
+counter(pageNumber)
+---------------------------
+SourceLocation [start=line 26 column 26, end=line 26 column 33] [Identifier]
+counter
+---------------------------
+SourceLocation [start=line 26 column 33, end=line 26 column 45] [Signature]
+(pageNumber)
+---------------------------
+SourceLocation [start=line 26 column 34, end=line 26 column 44] [Identifier]
+pageNumber
+---------------------------

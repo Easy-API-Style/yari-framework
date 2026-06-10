@@ -1,0 +1,20 @@
+[0, Javascript] `header ${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}`
+ [1, LiteralTemplate] `header ${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}`
+  [2, Constant] header 
+  [2, Variable] ${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}
+   [3, Ternary] isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`
+    [4, FunctionCall] isLargeScreen()
+     [5, Identifier] isLargeScreen
+     [5, Signature] ()
+    [4, Literal] ""
+    [4, LiteralTemplate] `icon-${item.isCollapsed ? "expander" : "collapser"}`
+     [5, Constant] icon-
+     [5, Variable] ${item.isCollapsed ? "expander" : "collapser"}
+      [6, Ternary] item.isCollapsed ? "expander" : "collapser"
+       [7, QualifiedExpression] item.isCollapsed
+        [8, Qualifier] item.
+         [9, Identifier] item
+         [9, Operator] .
+        [8, Identifier] isCollapsed
+       [7, Literal] "expander"
+       [7, Literal] "collapser"

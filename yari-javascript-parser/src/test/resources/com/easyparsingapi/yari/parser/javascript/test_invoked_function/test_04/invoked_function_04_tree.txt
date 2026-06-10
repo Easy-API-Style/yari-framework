@@ -1,0 +1,24 @@
+[0, Javascript] (() => { for await (const num of asyncIterable) { console.log(num); }})()
+ [1, InvokedFunction] (() => { for await (const num of asyncIterable) { console.log(num); }})()
+  [2, Definition] (() => { for await (const num of asyncIterable) { console.log(num); }})
+   [3, ArrowFunction] () => { for await (const num of asyncIterable) { console.log(num); }}
+    [4, Signature] ()
+    [4, Procedure] { for await (const num of asyncIterable) { console.log(num); }}
+     [5, For] for await (const num of asyncIterable) { console.log(num); }
+      [6, ListIteration] const num of asyncIterable
+       [7, VariableDeclaration] const num
+        [8, Type] const
+        [8, Variable] num
+         [9, Identifier] num
+       [7, Operator] of
+       [7, Identifier] asyncIterable
+      [6, Procedure] { console.log(num); }
+       [7, QualifiedExpression] console.log(num)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(num)
+         [9, Identifier] log
+         [9, Signature] (num)
+          [10, Identifier] num
+  [2, Signature] ()

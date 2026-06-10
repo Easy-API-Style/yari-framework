@@ -1,0 +1,99 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 127] [Javascript]
+class ClassWithGetSet { #msg = 'hello world'; get msg() { return this.#msg } set msg(x) { this.#msg = `hello ${x}` }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 127] [ClassDeclaration]
+class ClassWithGetSet { #msg = 'hello world'; get msg() { return this.#msg } set msg(x) { this.#msg = `hello ${x}` }}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 22] [Identifier]
+ClassWithGetSet
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 46] [ClassFieldDeclaration]
+#msg = 'hello world'
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Identifier]
+msg
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 46] [Literal]
+= 'hello world'
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 82] [Getter]
+get msg() { return this.#msg }
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 56] [Identifier]
+msg
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 82] [Procedure]
+{ return this.#msg }
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 79] [Return]
+return this.#msg
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 79] [QualifiedExpression]
+this.#msg
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 75] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 74] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 74, end=line 1 column 75] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 75, end=line 1 column 79] [PrivateExpression]
+#msg
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 79] [Identifier]
+msg
+---------------------------
+SourceLocation [start=line 1 column 84, end=line 1 column 126] [Setter]
+set msg(x) { this.#msg = `hello ${x}` }
+---------------------------
+SourceLocation [start=line 1 column 88, end=line 1 column 91] [Identifier]
+msg
+---------------------------
+SourceLocation [start=line 1 column 91, end=line 1 column 94] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 1 column 92, end=line 1 column 93] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 95, end=line 1 column 126] [Procedure]
+{ this.#msg = `hello ${x}` }
+---------------------------
+SourceLocation [start=line 1 column 100, end=line 1 column 124] [Assignment]
+this.#msg = `hello ${x}`
+---------------------------
+SourceLocation [start=line 1 column 100, end=line 1 column 109] [QualifiedExpression]
+this.#msg
+---------------------------
+SourceLocation [start=line 1 column 100, end=line 1 column 105] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 100, end=line 1 column 104] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 104, end=line 1 column 105] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 105, end=line 1 column 109] [PrivateExpression]
+#msg
+---------------------------
+SourceLocation [start=line 1 column 106, end=line 1 column 109] [Identifier]
+msg
+---------------------------
+SourceLocation [start=line 1 column 110, end=line 1 column 111] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 112, end=line 1 column 124] [LiteralTemplate]
+`hello ${x}`
+---------------------------
+SourceLocation [start=line 1 column 113, end=line 1 column 119] [Constant]
+hello 
+---------------------------
+SourceLocation [start=line 1 column 119, end=line 1 column 123] [Variable]
+${x}
+---------------------------
+SourceLocation [start=line 1 column 121, end=line 1 column 122] [Identifier]
+x
+---------------------------

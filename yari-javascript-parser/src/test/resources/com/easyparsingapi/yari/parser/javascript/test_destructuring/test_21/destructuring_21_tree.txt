@@ -1,0 +1,15 @@
+[0, Javascript] [a, b, ...{ pop, push }] = array
+ [1, Assignment] [a, b, ...{ pop, push }] = array
+  [2, DestructuringArray] [a, b, ...{ pop, push }]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...{ pop, push }
+    [4, DestructuringObject] { pop, push }
+     [5, Field] pop
+      [6, Identifier] pop
+     [5, Field] push
+      [6, Identifier] push
+  [2, Operator] =
+  [2, Identifier] array

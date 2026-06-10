@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-html-parser — Yari Framework</title>
+  <meta name="description" content="HTML parser that builds on the XML parser and additionally processes embedded JavaScript and CSS. Produces a single unified AST where each sub-language is parsed into its own typed tree. Never throws on malformed input.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html" class="is-active">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#htmlparser">HtmlParser</a></li>
+      <li><a href="#htmlconfig">HtmlConfig</a></li>
+      <li><a href="#html">Html (AST)</a></li>
+      <li><a href="#unified">Unified tree</a></li>
+      <li><a href="#embedded">Embedded CSS &amp; JS</a></li>
+      <li><a href="#comments">Comments &amp; locations</a></li>
+      <li><a href="#recovery">Error recovery</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">/</span>
+        <span>yari-html-parser</span>
+      </nav>
+
+      <h1>yari-html-parser</h1>
+      <p class="lead">HTML parser that builds on the <a href="xml-parser.html">XML parser</a> and additionally processes embedded JavaScript and CSS found in <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>onclick</code>, <code>style</code> attributes, and more. Produces a single unified AST where each sub-language is parsed into its own typed tree. Never throws on malformed input.</p>
+
+      <!-- ── Installation ──────────────────────────────────────────── -->
+      <h2 id="install">Installation</h2>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-html-parser:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-html-parser<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+      <div class="note">
+        <p>Pulls in <code>yari-xml-parser</code>, <code>yari-css-parser</code>, and <code>yari-javascript-parser</code> transitively.</p>
+      </div>
+
+      <!-- ── HtmlParser ────────────────────────────────────────────── -->
+      <h2 id="htmlparser">HtmlParser — Entry Points</h2>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>HtmlParser</strong>
+          <span>— not instantiable, all methods are static</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Signature</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>parseUnit(String html, HtmlConfig htmlConfig)</code></td>
+                <td>→ AstResult&lt;Html&gt;</td>
+                <td>
+                  The single public entry point. Parses the HTML string, then identifies
+                  JavaScript and CSS tags/attributes according to <code>htmlConfig</code> and
+                  re-parses their content with the dedicated parsers. Returns the
+                  <code>Html</code> AST paired with the consolidated full token list.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <pre><code>AstResult&lt;Html&gt; result = HtmlParser.parseUnit(source, HtmlConfig.defaulConfig());
+Html html = result.unit();</code></pre>
+
+      <!-- ── HtmlConfig ────────────────────────────────────────────── -->
+      <h2 id="htmlconfig">HtmlConfig — Parser Configuration</h2>
+      <p>
+        The static factory <code>defaulConfig()</code> returns a pre-built instance that covers
+        standard HTML out of the box — use it unless you need custom tag/attribute recognition.
+      </p>
+
+      <h3>defaulConfig() — default values</h3>
+      <p>The default configuration is pre-built with the following settings:</p>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>HtmlConfig.defaulConfig()</strong>
+          <span>— pre-built instance</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Builder call</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>javascriptTag(…)</code></td>
+                <td><code>&lt;script&gt;</code> with no <code>type</code>, or <code>type="text/javascript"</code> / <code>type="module"</code></td>
+              </tr>
+              <tr>
+                <td><code>cssTag(String)</code></td>
+                <td><code>"style"</code></td>
+              </tr>
+              <tr>
+                <td><code>cssAttribute(String)</code></td>
+                <td><code>"style"</code></td>
+              </tr>
+              <tr>
+                <td><code>acceptUnclosedTag(boolean)</code></td>
+                <td><code>true</code></td>
+              </tr>
+              <tr>
+                <td><code>tagAsPlainText(String)</code></td>
+                <td><code>"script"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Builder methods</h3>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>HtmlConfig.Builder</strong>
+          <span>— obtained via <code>HtmlConfig.builder()</code></span>
+        </div>
+
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Signature</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>javascriptTag(String name)</code></td><td>Builder</td><td>Mark the tag with the given local name as a JavaScript block</td></tr>
+              <tr><td><code>javascriptTag(String namespace, String name)</code></td><td>Builder</td><td>Same with an explicit namespace</td></tr>
+              <tr><td><code>javascriptTag(Function&lt;TagEntity, Boolean&gt;)</code></td><td>Builder</td><td>Custom predicate — return <code>true</code> to mark a tag as JavaScript</td></tr>
+              <tr><td><code>javascriptAttribute(String name)</code></td><td>Builder</td><td>Mark the attribute with the given name as containing JavaScript (e.g. <code>onclick</code>)</td></tr>
+              <tr><td><code>javascriptAttribute(Function&lt;Attribute, Boolean&gt;)</code></td><td>Builder</td><td>Custom predicate for JavaScript attributes</td></tr>
+              <tr><td><code>cssTag(String name)</code></td><td>Builder</td><td>Mark the tag with the given local name as a CSS block (e.g. <code>style</code>)</td></tr>
+              <tr><td><code>cssTag(String namespace, String name)</code></td><td>Builder</td><td>Same with an explicit namespace</td></tr>
+              <tr><td><code>cssTag(Function&lt;TagEntity, Boolean&gt;)</code></td><td>Builder</td><td>Custom predicate for CSS tags</td></tr>
+              <tr><td><code>cssAttribute(String name)</code></td><td>Builder</td><td>Mark the attribute with the given name as containing CSS (e.g. <code>style</code>)</td></tr>
+              <tr><td><code>cssAttribute(Function&lt;Attribute, Boolean&gt;)</code></td><td>Builder</td><td>Custom predicate for CSS attributes</td></tr>
+              <tr><td><code>tagAsPlainText(String name)</code></td><td>Builder</td><td>Force the content of the named tag to be tokenised as raw text, not XML markup</td></tr>
+              <tr><td><code>tagAsPlainText(Function&lt;TagEntity, Boolean&gt;)</code></td><td>Builder</td><td>Custom predicate for plain-text tags</td></tr>
+              <tr><td><code>acceptUnclosedTag(boolean)</code></td><td>Builder</td><td>Default: <code>true</code> in <code>defaulConfig()</code>. When <code>true</code>, void tags without <code>/&gt;</code> are accepted; when <code>false</code>, they produce an error node</td></tr>
+              <tr><td><code>build()</code></td><td>HtmlConfig</td><td>Materialise the configuration</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Predicate types</h3>
+      <p>
+        The <code>Function&lt;…, Boolean&gt;</code> overloads above receive lightweight
+        records declared in <code>com.easyparsingapi.yari.parser.xml.lexer.TagEntity</code>.
+        These are the values a custom predicate inspects to decide whether a tag or
+        attribute holds JavaScript or CSS.
+      </p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>TagEntity</strong>
+          <span>— record <code>(Markup markup, List&lt;Attribute&gt; attributes)</code></span>
+          <p>A parsed tag: its qualified name plus its attribute list. Passed to <code>javascriptTag</code>, <code>cssTag</code> and <code>tagAsPlainText</code> predicates.</p>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Accessor</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>markup()</code></td><td>Markup</td><td>The tag's qualified name (namespace + local name)</td></tr>
+              <tr><td><code>attributes()</code></td><td>List&lt;Attribute&gt;</td><td>The tag's attributes, in source order</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>TagEntity.Attribute</strong>
+          <span>— record <code>(Markup markup, String value)</code></span>
+          <p>A single attribute. Passed to <code>javascriptAttribute</code> and <code>cssAttribute</code> predicates.</p>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Accessor</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>markup()</code></td><td>Markup</td><td>The attribute's qualified name</td></tr>
+              <tr><td><code>value()</code></td><td>String</td><td>The unquoted attribute value, or <code>null</code> if the attribute has no value</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>TagEntity.Markup</strong>
+          <span>— record <code>(String namespace, String name)</code></span>
+          <p>A namespace-qualified name shared by tags and attributes. <code>toString()</code> renders it as <code>namespace:name</code> (or just <code>name</code> when there is no namespace).</p>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Accessor</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>namespace()</code></td><td>String</td><td>The namespace prefix, or <code>null</code> if none</td></tr>
+              <tr><td><code>name()</code></td><td>String</td><td>The local name</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <pre><code><span class="c">// Treat every &lt;x-script&gt; tag, in any namespace, as JavaScript</span>
+HtmlConfig config = HtmlConfig.builder()
+    .javascriptTag(tag -> <span class="s">"x-script"</span>.equals(tag.markup().name()))
+    .cssAttribute(attr -> attr.markup().name().startsWith(<span class="s">"css-"</span>))
+    .build();</code></pre>
+
+      <!-- ── Html ──────────────────────────────────────────────────── -->
+      <h2 id="html">Html — Root AST Node</h2>
+      <p>Root of a parsed HTML document. Extends <code>Xml</code> (which implements <code>AstUnit</code>), so its child nodes are <code>XmlNode</code> instances — the typed HTML nodes (<code>ScriptTag</code>, <code>StyleTag</code>) all implement <code>XmlNode</code>.</p>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>Html</strong>
+          <span>— extends Xml</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>getNodes()</td>
+                <td>→ List&lt;XmlNode&gt;</td>
+                <td>Top-level nodes (inherited from <code>Xml</code>)</td>
+              </tr>
+              <tr>
+                <td>walkChildren(Consumer&lt;Handler&gt;)</td>
+                <td></td>
+                <td>Walk direct children with a typed Handler</td>
+              </tr>
+              <tr>
+                <td>astComments()</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>astCommentsOf(AstNode, Position…)</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Unified Tree ──────────────────────────────────────────── -->
+      <h2 id="unified">Unified Tree — HTML Nodes</h2>
+      <p>The HTML parser reuses the <a href="xml-parser.html">XML AST node types</a> and adds JavaScript/CSS-aware nodes. Every node in the tree is an <code>XmlNode</code>; the types below are the ones you will branch on. The parser always produces a complete tree — even from malformed input.</p>
+      <div class="summary-table-wrap">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Node type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Tag</code></td>
+              <td>A regular HTML element with a head, body and foot. <code>getHead() → TagHead</code>, <code>getBody() → TagBody</code></td>
+            </tr>
+            <tr>
+              <td><code>ScriptTag</code></td>
+              <td>A <code>&lt;script&gt;</code> element (extends <code>TagAbstract&lt;Script&gt;</code>). <code>getBody() → Script</code></td>
+            </tr>
+            <tr>
+              <td><code>StyleTag</code></td>
+              <td>A <code>&lt;style&gt;</code> element (extends <code>TagAbstract&lt;Style&gt;</code>). <code>getBody() → Style</code></td>
+            </tr>
+            <tr>
+              <td><code>ScriptAttributeValue</code></td>
+              <td>The value of a JavaScript attribute (e.g. <code>onclick</code>). Extends <code>TagAttribute.Value</code>. <code>getNodes() → List&lt;JavascriptNode&gt;</code></td>
+            </tr>
+            <tr>
+              <td><code>StyleAttributeValue</code></td>
+              <td>The value of a CSS attribute (e.g. <code>style</code>). Extends <code>TagAttribute.Value</code>. <code>getNodes() → List&lt;CssNode&gt;</code></td>
+            </tr>
+            <tr>
+              <td><code>XmlComment</code></td>
+              <td>An HTML/XML comment. <code>getComment() → String</code></td>
+            </tr>
+            <tr>
+              <td><code>XmlError</code></td>
+              <td>Error node for malformed input. <code>getFailureMessage() → String</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── Embedded CSS & JS ─────────────────────────────────────── -->
+      <h2 id="embedded">Embedded CSS &amp; JS</h2>
+      <p><code>ScriptTag</code> and <code>StyleTag</code> carry the parsed sub-language AST directly: <code>Script</code> <em>extends</em> <code>Javascript</code> and <code>Style</code> <em>extends</em> <code>Css</code>. So <code>getBody()</code> hands you a node that <em>is</em> the JavaScript or CSS tree — no extra parsing step, no unwrapping.</p>
+<pre><code>Html html = HtmlParser.parseUnit(source, HtmlConfig.defaulConfig()).unit();
+
+html.walkChildren(handler -> {
+    <span class="k">switch</span> (handler.node()) {
+        <span class="k">case</span> Tag tag ->
+            System.out.println(<span class="s">"tag: "</span> + tag.getHead().getName().getValue());
+        <span class="k">case</span> ScriptTag scriptTag -> {
+            Script script = scriptTag.getBody();  <span class="c">// Script extends Javascript</span>
+            System.out.println(<span class="s">"JS statements: "</span> + script.getNodes().size());
+        }
+        <span class="k">case</span> StyleTag styleTag -> {
+            Style style = styleTag.getBody();     <span class="c">// Style extends Css</span>
+            System.out.println(<span class="s">"CSS rules: "</span> + style.getNodes().size());
+        }
+        <span class="k">default</span> -> {}
+    }
+});</code></pre>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>Script</strong>
+          <span>— extends Javascript, implements XmlNode</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>getNodes()</td>
+                <td>→ List&lt;JavascriptNode&gt;</td>
+                <td>The script's JavaScript statements (inherited from <code>Javascript</code>)</td>
+              </tr>
+              <tr>
+                <td>astComments()</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>Comments inside the script</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>Style</strong>
+          <span>— extends Css, implements XmlNode</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>getNodes()</td>
+                <td>→ List&lt;CssNode&gt;</td>
+                <td>The style's CSS rules (inherited from <code>Css</code>)</td>
+              </tr>
+              <tr>
+                <td>astComments()</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>Comments inside the style block</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>Inline event handlers (<code>onclick</code>, <code>onchange</code>…) and <code>style</code> attributes are also parsed. The matching <code>TagAttribute</code>'s value becomes a <code>ScriptAttributeValue</code> or <code>StyleAttributeValue</code>, each exposing <code>getNodes()</code> for the embedded JavaScript or CSS.</p>
+      </div>
+
+      <!-- ── Comments & Source Locations ──────────────────────────── -->
+      <h2 id="comments">Comments &amp; Source Locations</h2>
+      <p>Use <code>parseUnit</code> to get back an <code>AstResult&lt;Html&gt;</code> which bundles the root node together with the full token list. The token list enables accurate source substring extraction for any node in the tree.</p>
+<pre><code>AstResult&lt;Html&gt; result = HtmlParser.parseUnit(source, HtmlConfig.defaulConfig());
+Html html = result.unit();
+
+<span class="c">// All HTML comments</span>
+List&lt;AstComment&gt; htmlComments = html.astComments();
+
+<span class="c">// Comments before a specific node</span>
+html.getNodes().forEach(node ->
+    html.astCommentsOf(node, AstUnit.Position.before)
+        .forEach(c -> System.out.println(((XmlComment) c).getComment())));
+
+<span class="c">// Source substring for any node</span>
+System.out.println(result.substring(someNode.getSourceLocation()));</code></pre>
+
+      <!-- ── Error Recovery ────────────────────────────────────────── -->
+      <h2 id="recovery">Error Recovery — Malformed Pages</h2>
+      <p>
+        The parser is fault-tolerant: it <strong>never throws</strong> on malformed HTML.
+        Real-world pages are rarely well-formed, so the parser is built to keep going —
+        it always returns a complete, usable tree and marks the broken spots instead of
+        aborting. It recovers from, among others:
+      </p>
+      <ul>
+        <li><strong>Unclosed tags</strong> — an element that is opened but never closed (e.g. <code>&lt;li&gt;First&lt;li&gt;Second</code>, or a bare <code>&lt;br&gt;</code> / <code>&lt;img&gt;</code>).</li>
+        <li><strong>Closing-only tags</strong> — a closing tag with no matching opening tag (e.g. a stray <code>&lt;/div&gt;</code>).</li>
+        <li><strong>Broken nesting</strong> — overlapping or mis-ordered tags.</li>
+      </ul>
+      <p>
+        With <code>acceptUnclosedTag(true)</code> (the default in <code>defaulConfig()</code>)
+        unclosed tags are accepted silently; any genuinely unrecoverable fragment becomes an
+        <code>XmlError</code> node carrying its source location and a failure message — never an exception.
+      </p>
+<pre><code><span class="c">// A deliberately malformed page:</span>
+<span class="c">//  • &lt;li&gt; items are never closed   (unclosed tags)</span>
+<span class="c">//  • a stray &lt;/section&gt; has no opening tag   (closing-only tag)</span>
+String malformed = <span class="s">"""
+    &lt;ul&gt;
+      &lt;li&gt;First
+      &lt;li&gt;Second
+    &lt;/ul&gt;
+    &lt;/section&gt;
+    &lt;p&gt;Trailing text
+    """</span>;
+
+<span class="c">// defaulConfig() already sets acceptUnclosedTag(true)</span>
+AstResult&lt;Html&gt; result = HtmlParser.parseUnit(malformed, HtmlConfig.defaulConfig());
+Html html = result.unit();
+
+<span class="c">// The whole document still parsed into a usable tree — no exception thrown</span>
+System.out.println(html.getNodes().size() + <span class="s">" top-level nodes"</span>);
+
+<span class="c">// Inspect the recovered error markers</span>
+html.astStream()
+    .filter(n -> n <span class="k">instanceof</span> XmlError)
+    .forEach(n -> System.out.println(
+        <span class="s">"error at "</span> + n.getSourceLocation()));</code></pre>
+
+      <div class="note">
+        <p>To reject malformed input instead, build a config with <code>acceptUnclosedTag(false)</code>: unclosed tags then surface as <code>XmlError</code> nodes too, so you can validate strictly while still never having to catch an exception.</p>
+      </div>
+
+      <div class="note">
+        <p>For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and Javadoc under <code>yari-html-parser/src/main/java/</code>.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

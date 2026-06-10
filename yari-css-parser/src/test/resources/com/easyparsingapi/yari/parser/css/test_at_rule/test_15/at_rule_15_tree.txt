@@ -1,0 +1,46 @@
+[0, Css] @container style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple) {\\n /* <stylesheet> */\\n }
+ [1, AtRule] @container style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple) {\\n /* <stylesheet> */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, ListParameter] style(--themeBackground),\\n not style(background-color: red),\\n style(color: green) and style(background-color: transparent),\\n style(--themeColor: blue) or style(--themeColor: purple)
+   [3, Function] style(--themeBackground)
+    [4, Identifier] style
+    [4, Signature] (--themeBackground)
+     [5, Identifier] --themeBackground
+   [3, Prefix] not style(background-color: red)
+    [4, Operator] not
+    [4, Function] style(background-color: red)
+     [5, Identifier] style
+     [5, Signature] (background-color: red)
+      [6, Property] background-color: red
+       [7, Identifier] background-color
+       [7, Identifier] red
+   [3, Infix] style(color: green) and style(background-color: transparent)
+    [4, Function] style(color: green)
+     [5, Identifier] style
+     [5, Signature] (color: green)
+      [6, Property] color: green
+       [7, Identifier] color
+       [7, Identifier] green
+    [4, Operator] and
+    [4, Function] style(background-color: transparent)
+     [5, Identifier] style
+     [5, Signature] (background-color: transparent)
+      [6, Property] background-color: transparent
+       [7, Identifier] background-color
+       [7, Identifier] transparent
+   [3, Infix] style(--themeColor: blue) or style(--themeColor: purple)
+    [4, Function] style(--themeColor: blue)
+     [5, Identifier] style
+     [5, Signature] (--themeColor: blue)
+      [6, Property] --themeColor: blue
+       [7, Identifier] --themeColor
+       [7, Identifier] blue
+    [4, Operator] or
+    [4, Function] style(--themeColor: purple)
+     [5, Identifier] style
+     [5, Signature] (--themeColor: purple)
+      [6, Property] --themeColor: purple
+       [7, Identifier] --themeColor
+       [7, Identifier] purple
+  [2, Block] {\\n /* <stylesheet> */\\n }

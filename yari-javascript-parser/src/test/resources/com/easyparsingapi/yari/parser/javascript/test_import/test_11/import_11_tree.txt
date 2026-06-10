@@ -1,0 +1,10 @@
+[0, Javascript] var promise = import("module-name")
+ [1, VariableDeclaration] var promise = import("module-name")
+  [2, Type] var
+  [2, Variable] promise = import("module-name")
+   [3, Identifier] promise
+   [3, Operator] =
+   [3, FunctionCall] import("module-name")
+    [4, Identifier] import
+    [4, Signature] ("module-name")
+     [5, Literal] "module-name"

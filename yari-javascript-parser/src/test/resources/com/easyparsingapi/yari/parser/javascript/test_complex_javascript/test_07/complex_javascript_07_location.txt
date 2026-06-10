@@ -1,0 +1,1011 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 839] [Javascript]
+function(){var e,o="US",t="",n=!1,i=this;if(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}if(n===!1&&window.XDomainRequest){e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 839] [FunctionDeclaration]
+function(){var e,o="US",t="",n=!1,i=this;if(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}if(n===!1&&window.XDomainRequest){e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}}
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 839] [Procedure]
+{var e,o="US",t="",n=!1,i=this;if(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}if(n===!1&&window.XDomainRequest){e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}}
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 41] [VariableDeclaration]
+var e,o="US",t="",n=!1,i=this
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Variable]
+e
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 24] [Variable]
+o="US"
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 24] [Literal]
+"US"
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 29] [Variable]
+t=""
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 27] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 29] [Literal]
+""
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 34] [Variable]
+n=!1
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 31] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 34] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 33] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 34] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 41] [Variable]
+i=this
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 36] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 41] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 555] [If]
+if(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 555] [IfBlock]
+if(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)){n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 262] [Condition]
+(t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e))
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 261] [Sequence]
+t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 158] [Assignment]
+t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 46] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 47] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 158] [Ternary]
+/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 86] [QualifiedExpression]
+/.*pcmag\.com$/.test(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 63] [Qualifier]
+/.*pcmag\.com$/.
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 62] [Literal]
+/.*pcmag\.com$/
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 63] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 86] [FunctionCall]
+test(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 67] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 86] [Signature]
+(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 85] [QualifiedExpression]
+location.hostname
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 77] [Qualifier]
+location.
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 76] [Identifier]
+location
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 77] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 85] [Identifier]
+hostname
+---------------------------
+SourceLocation [start=line 1 column 87, end=line 1 column 120] [Literal]
+"//geo.pcmag.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 121, end=line 1 column 158] [Literal]
+"//geo.ziffdavis.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 159, end=line 1 column 193] [QualifiedExpression]
+this.SetCookie(this.CookieKey,o,1)
+---------------------------
+SourceLocation [start=line 1 column 159, end=line 1 column 164] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 159, end=line 1 column 163] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 163, end=line 1 column 164] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 164, end=line 1 column 193] [FunctionCall]
+SetCookie(this.CookieKey,o,1)
+---------------------------
+SourceLocation [start=line 1 column 164, end=line 1 column 173] [Identifier]
+SetCookie
+---------------------------
+SourceLocation [start=line 1 column 173, end=line 1 column 193] [Signature]
+(this.CookieKey,o,1)
+---------------------------
+SourceLocation [start=line 1 column 174, end=line 1 column 188] [QualifiedExpression]
+this.CookieKey
+---------------------------
+SourceLocation [start=line 1 column 174, end=line 1 column 179] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 174, end=line 1 column 178] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 178, end=line 1 column 179] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 179, end=line 1 column 188] [Identifier]
+CookieKey
+---------------------------
+SourceLocation [start=line 1 column 189, end=line 1 column 190] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 191, end=line 1 column 192] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 194, end=line 1 column 261] [Infix]
+window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+---------------------------
+SourceLocation [start=line 1 column 194, end=line 1 column 215] [QualifiedExpression]
+window.XMLHttpRequest
+---------------------------
+SourceLocation [start=line 1 column 194, end=line 1 column 201] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 1 column 194, end=line 1 column 200] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 1 column 200, end=line 1 column 201] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 201, end=line 1 column 215] [Identifier]
+XMLHttpRequest
+---------------------------
+SourceLocation [start=line 1 column 215, end=line 1 column 217] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 217, end=line 1 column 261] [Sequence]
+(e=new XMLHttpRequest,"withCredentials"in e)
+---------------------------
+SourceLocation [start=line 1 column 218, end=line 1 column 238] [Assignment]
+e=new XMLHttpRequest
+---------------------------
+SourceLocation [start=line 1 column 218, end=line 1 column 219] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 219, end=line 1 column 220] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 220, end=line 1 column 238] [New]
+new XMLHttpRequest
+---------------------------
+SourceLocation [start=line 1 column 224, end=line 1 column 238] [Identifier]
+XMLHttpRequest
+---------------------------
+SourceLocation [start=line 1 column 239, end=line 1 column 260] [Infix]
+"withCredentials"in e
+---------------------------
+SourceLocation [start=line 1 column 239, end=line 1 column 256] [Literal]
+"withCredentials"
+---------------------------
+SourceLocation [start=line 1 column 256, end=line 1 column 258] [Operator]
+in
+---------------------------
+SourceLocation [start=line 1 column 259, end=line 1 column 260] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 262, end=line 1 column 555] [Procedure]
+{n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}}
+---------------------------
+SourceLocation [start=line 1 column 263, end=line 1 column 464] [Sequence]
+n=!0,e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 263, end=line 1 column 267] [Assignment]
+n=!0
+---------------------------
+SourceLocation [start=line 1 column 263, end=line 1 column 264] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 264, end=line 1 column 265] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 265, end=line 1 column 267] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 1 column 265, end=line 1 column 266] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 266, end=line 1 column 267] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 268, end=line 1 column 464] [Assignment]
+e.onreadystatechange=function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 268, end=line 1 column 288] [QualifiedExpression]
+e.onreadystatechange
+---------------------------
+SourceLocation [start=line 1 column 268, end=line 1 column 270] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 268, end=line 1 column 269] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 269, end=line 1 column 270] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 270, end=line 1 column 288] [Identifier]
+onreadystatechange
+---------------------------
+SourceLocation [start=line 1 column 288, end=line 1 column 289] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 289, end=line 1 column 464] [FunctionDeclaration]
+function(){4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 297, end=line 1 column 299] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 299, end=line 1 column 464] [Procedure]
+{4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 463] [Infix]
+4==e.readyState&&200==e.status&&2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 356] [Infix]
+4==e.readyState&&200==e.status&&2==e.responseText.length
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 333] [Infix]
+4==e.readyState&&200==e.status&&2
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 330] [Infix]
+4==e.readyState&&200==e.status
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 320] [Infix]
+4==e.readyState&&200
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 315] [Infix]
+4==e.readyState
+---------------------------
+SourceLocation [start=line 1 column 300, end=line 1 column 301] [Literal]
+4
+---------------------------
+SourceLocation [start=line 1 column 301, end=line 1 column 303] [Operator]
+==
+---------------------------
+SourceLocation [start=line 1 column 303, end=line 1 column 315] [QualifiedExpression]
+e.readyState
+---------------------------
+SourceLocation [start=line 1 column 303, end=line 1 column 305] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 303, end=line 1 column 304] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 304, end=line 1 column 305] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 305, end=line 1 column 315] [Identifier]
+readyState
+---------------------------
+SourceLocation [start=line 1 column 315, end=line 1 column 317] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 317, end=line 1 column 320] [Literal]
+200
+---------------------------
+SourceLocation [start=line 1 column 320, end=line 1 column 322] [Operator]
+==
+---------------------------
+SourceLocation [start=line 1 column 322, end=line 1 column 330] [QualifiedExpression]
+e.status
+---------------------------
+SourceLocation [start=line 1 column 322, end=line 1 column 324] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 322, end=line 1 column 323] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 323, end=line 1 column 324] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 324, end=line 1 column 330] [Identifier]
+status
+---------------------------
+SourceLocation [start=line 1 column 330, end=line 1 column 332] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 332, end=line 1 column 333] [Literal]
+2
+---------------------------
+SourceLocation [start=line 1 column 333, end=line 1 column 335] [Operator]
+==
+---------------------------
+SourceLocation [start=line 1 column 335, end=line 1 column 356] [QualifiedExpression]
+e.responseText.length
+---------------------------
+SourceLocation [start=line 1 column 335, end=line 1 column 337] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 335, end=line 1 column 336] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 336, end=line 1 column 337] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 337, end=line 1 column 350] [Qualifier]
+responseText.
+---------------------------
+SourceLocation [start=line 1 column 337, end=line 1 column 349] [Identifier]
+responseText
+---------------------------
+SourceLocation [start=line 1 column 349, end=line 1 column 350] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 350, end=line 1 column 356] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 1 column 356, end=line 1 column 358] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 358, end=line 1 column 463] [Sequence]
+(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,o,iCookieExpire),i.CookieValue=o)
+---------------------------
+SourceLocation [start=line 1 column 359, end=line 1 column 374] [Assignment]
+iCookieExpire=7
+---------------------------
+SourceLocation [start=line 1 column 359, end=line 1 column 372] [Identifier]
+iCookieExpire
+---------------------------
+SourceLocation [start=line 1 column 372, end=line 1 column 373] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 373, end=line 1 column 374] [Literal]
+7
+---------------------------
+SourceLocation [start=line 1 column 375, end=line 1 column 405] [Assignment]
+o=e.responseText.toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 375, end=line 1 column 376] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 376, end=line 1 column 377] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 377, end=line 1 column 405] [QualifiedExpression]
+e.responseText.toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 377, end=line 1 column 379] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 377, end=line 1 column 378] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 378, end=line 1 column 379] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 379, end=line 1 column 392] [Qualifier]
+responseText.
+---------------------------
+SourceLocation [start=line 1 column 379, end=line 1 column 391] [Identifier]
+responseText
+---------------------------
+SourceLocation [start=line 1 column 391, end=line 1 column 392] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 392, end=line 1 column 405] [FunctionCall]
+toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 392, end=line 1 column 403] [Identifier]
+toUpperCase
+---------------------------
+SourceLocation [start=line 1 column 403, end=line 1 column 405] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 406, end=line 1 column 446] [QualifiedExpression]
+i.SetCookie(i.CookieKey,o,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 406, end=line 1 column 408] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 406, end=line 1 column 407] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 407, end=line 1 column 408] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 408, end=line 1 column 446] [FunctionCall]
+SetCookie(i.CookieKey,o,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 408, end=line 1 column 417] [Identifier]
+SetCookie
+---------------------------
+SourceLocation [start=line 1 column 417, end=line 1 column 446] [Signature]
+(i.CookieKey,o,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 418, end=line 1 column 429] [QualifiedExpression]
+i.CookieKey
+---------------------------
+SourceLocation [start=line 1 column 418, end=line 1 column 420] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 418, end=line 1 column 419] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 419, end=line 1 column 420] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 420, end=line 1 column 429] [Identifier]
+CookieKey
+---------------------------
+SourceLocation [start=line 1 column 430, end=line 1 column 431] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 432, end=line 1 column 445] [Identifier]
+iCookieExpire
+---------------------------
+SourceLocation [start=line 1 column 447, end=line 1 column 462] [Assignment]
+i.CookieValue=o
+---------------------------
+SourceLocation [start=line 1 column 447, end=line 1 column 460] [QualifiedExpression]
+i.CookieValue
+---------------------------
+SourceLocation [start=line 1 column 447, end=line 1 column 449] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 447, end=line 1 column 448] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 448, end=line 1 column 449] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 449, end=line 1 column 460] [Identifier]
+CookieValue
+---------------------------
+SourceLocation [start=line 1 column 460, end=line 1 column 461] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 461, end=line 1 column 462] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 465, end=line 1 column 554] [Try]
+try{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}catch(r){console.log("cerror1")}
+---------------------------
+SourceLocation [start=line 1 column 468, end=line 1 column 522] [Procedure]
+{e.open("GET",t,!0),e.withCredentials=!0,e.send(null)}
+---------------------------
+SourceLocation [start=line 1 column 469, end=line 1 column 521] [Sequence]
+e.open("GET",t,!0),e.withCredentials=!0,e.send(null)
+---------------------------
+SourceLocation [start=line 1 column 469, end=line 1 column 487] [QualifiedExpression]
+e.open("GET",t,!0)
+---------------------------
+SourceLocation [start=line 1 column 469, end=line 1 column 471] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 469, end=line 1 column 470] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 470, end=line 1 column 471] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 471, end=line 1 column 487] [FunctionCall]
+open("GET",t,!0)
+---------------------------
+SourceLocation [start=line 1 column 471, end=line 1 column 475] [Identifier]
+open
+---------------------------
+SourceLocation [start=line 1 column 475, end=line 1 column 487] [Signature]
+("GET",t,!0)
+---------------------------
+SourceLocation [start=line 1 column 476, end=line 1 column 481] [Literal]
+"GET"
+---------------------------
+SourceLocation [start=line 1 column 482, end=line 1 column 483] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 484, end=line 1 column 486] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 1 column 484, end=line 1 column 485] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 485, end=line 1 column 486] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 488, end=line 1 column 508] [Assignment]
+e.withCredentials=!0
+---------------------------
+SourceLocation [start=line 1 column 488, end=line 1 column 505] [QualifiedExpression]
+e.withCredentials
+---------------------------
+SourceLocation [start=line 1 column 488, end=line 1 column 490] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 488, end=line 1 column 489] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 489, end=line 1 column 490] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 490, end=line 1 column 505] [Identifier]
+withCredentials
+---------------------------
+SourceLocation [start=line 1 column 505, end=line 1 column 506] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 506, end=line 1 column 508] [Prefix]
+!0
+---------------------------
+SourceLocation [start=line 1 column 506, end=line 1 column 507] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 507, end=line 1 column 508] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 509, end=line 1 column 521] [QualifiedExpression]
+e.send(null)
+---------------------------
+SourceLocation [start=line 1 column 509, end=line 1 column 511] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 509, end=line 1 column 510] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 510, end=line 1 column 511] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 511, end=line 1 column 521] [FunctionCall]
+send(null)
+---------------------------
+SourceLocation [start=line 1 column 511, end=line 1 column 515] [Identifier]
+send
+---------------------------
+SourceLocation [start=line 1 column 515, end=line 1 column 521] [Signature]
+(null)
+---------------------------
+SourceLocation [start=line 1 column 516, end=line 1 column 520] [Null]
+null
+---------------------------
+SourceLocation [start=line 1 column 522, end=line 1 column 554] [Catch]
+catch(r){console.log("cerror1")}
+---------------------------
+SourceLocation [start=line 1 column 527, end=line 1 column 530] [Signature]
+(r)
+---------------------------
+SourceLocation [start=line 1 column 528, end=line 1 column 529] [Identifier]
+r
+---------------------------
+SourceLocation [start=line 1 column 530, end=line 1 column 554] [Procedure]
+{console.log("cerror1")}
+---------------------------
+SourceLocation [start=line 1 column 531, end=line 1 column 553] [QualifiedExpression]
+console.log("cerror1")
+---------------------------
+SourceLocation [start=line 1 column 531, end=line 1 column 539] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 531, end=line 1 column 538] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 538, end=line 1 column 539] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 539, end=line 1 column 553] [FunctionCall]
+log("cerror1")
+---------------------------
+SourceLocation [start=line 1 column 539, end=line 1 column 542] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 542, end=line 1 column 553] [Signature]
+("cerror1")
+---------------------------
+SourceLocation [start=line 1 column 543, end=line 1 column 552] [Literal]
+"cerror1"
+---------------------------
+SourceLocation [start=line 1 column 555, end=line 1 column 838] [If]
+if(n===!1&&window.XDomainRequest){e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}
+---------------------------
+SourceLocation [start=line 1 column 555, end=line 1 column 838] [IfBlock]
+if(n===!1&&window.XDomainRequest){e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}
+---------------------------
+SourceLocation [start=line 1 column 557, end=line 1 column 588] [Condition]
+(n===!1&&window.XDomainRequest)
+---------------------------
+SourceLocation [start=line 1 column 558, end=line 1 column 587] [Infix]
+n===!1&&window.XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 558, end=line 1 column 564] [Infix]
+n===!1
+---------------------------
+SourceLocation [start=line 1 column 558, end=line 1 column 559] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 559, end=line 1 column 562] [Operator]
+===
+---------------------------
+SourceLocation [start=line 1 column 562, end=line 1 column 564] [Prefix]
+!1
+---------------------------
+SourceLocation [start=line 1 column 562, end=line 1 column 563] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 563, end=line 1 column 564] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 564, end=line 1 column 566] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 566, end=line 1 column 587] [QualifiedExpression]
+window.XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 566, end=line 1 column 573] [Qualifier]
+window.
+---------------------------
+SourceLocation [start=line 1 column 566, end=line 1 column 572] [Identifier]
+window
+---------------------------
+SourceLocation [start=line 1 column 572, end=line 1 column 573] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 573, end=line 1 column 587] [Identifier]
+XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 588, end=line 1 column 838] [Procedure]
+{e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)};try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}}
+---------------------------
+SourceLocation [start=line 1 column 589, end=line 1 column 771] [Sequence]
+e=new XDomainRequest,e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 589, end=line 1 column 609] [Assignment]
+e=new XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 589, end=line 1 column 590] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 590, end=line 1 column 591] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 591, end=line 1 column 609] [New]
+new XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 595, end=line 1 column 609] [Identifier]
+XDomainRequest
+---------------------------
+SourceLocation [start=line 1 column 610, end=line 1 column 771] [Assignment]
+e.onload=function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 610, end=line 1 column 618] [QualifiedExpression]
+e.onload
+---------------------------
+SourceLocation [start=line 1 column 610, end=line 1 column 612] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 610, end=line 1 column 611] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 611, end=line 1 column 612] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 612, end=line 1 column 618] [Identifier]
+onload
+---------------------------
+SourceLocation [start=line 1 column 618, end=line 1 column 619] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 619, end=line 1 column 771] [FunctionDeclaration]
+function(){2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 627, end=line 1 column 629] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 629, end=line 1 column 771] [Procedure]
+{2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)}
+---------------------------
+SourceLocation [start=line 1 column 630, end=line 1 column 770] [Infix]
+2==e.responseText.length&&(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)
+---------------------------
+SourceLocation [start=line 1 column 630, end=line 1 column 654] [Infix]
+2==e.responseText.length
+---------------------------
+SourceLocation [start=line 1 column 630, end=line 1 column 631] [Literal]
+2
+---------------------------
+SourceLocation [start=line 1 column 631, end=line 1 column 633] [Operator]
+==
+---------------------------
+SourceLocation [start=line 1 column 633, end=line 1 column 654] [QualifiedExpression]
+e.responseText.length
+---------------------------
+SourceLocation [start=line 1 column 633, end=line 1 column 635] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 633, end=line 1 column 634] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 634, end=line 1 column 635] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 635, end=line 1 column 648] [Qualifier]
+responseText.
+---------------------------
+SourceLocation [start=line 1 column 635, end=line 1 column 647] [Identifier]
+responseText
+---------------------------
+SourceLocation [start=line 1 column 647, end=line 1 column 648] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 648, end=line 1 column 654] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 1 column 654, end=line 1 column 656] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 656, end=line 1 column 770] [Sequence]
+(iCookieExpire=7,o=e.responseText.toUpperCase(),i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire),i.CookieValue=o)
+---------------------------
+SourceLocation [start=line 1 column 657, end=line 1 column 672] [Assignment]
+iCookieExpire=7
+---------------------------
+SourceLocation [start=line 1 column 657, end=line 1 column 670] [Identifier]
+iCookieExpire
+---------------------------
+SourceLocation [start=line 1 column 670, end=line 1 column 671] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 671, end=line 1 column 672] [Literal]
+7
+---------------------------
+SourceLocation [start=line 1 column 673, end=line 1 column 703] [Assignment]
+o=e.responseText.toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 673, end=line 1 column 674] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 674, end=line 1 column 675] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 675, end=line 1 column 703] [QualifiedExpression]
+e.responseText.toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 675, end=line 1 column 677] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 675, end=line 1 column 676] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 676, end=line 1 column 677] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 677, end=line 1 column 690] [Qualifier]
+responseText.
+---------------------------
+SourceLocation [start=line 1 column 677, end=line 1 column 689] [Identifier]
+responseText
+---------------------------
+SourceLocation [start=line 1 column 689, end=line 1 column 690] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 690, end=line 1 column 703] [FunctionCall]
+toUpperCase()
+---------------------------
+SourceLocation [start=line 1 column 690, end=line 1 column 701] [Identifier]
+toUpperCase
+---------------------------
+SourceLocation [start=line 1 column 701, end=line 1 column 703] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 704, end=line 1 column 753] [QualifiedExpression]
+i.SetCookie(i.CookieKey,i.sCountry,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 704, end=line 1 column 706] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 704, end=line 1 column 705] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 705, end=line 1 column 706] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 706, end=line 1 column 753] [FunctionCall]
+SetCookie(i.CookieKey,i.sCountry,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 706, end=line 1 column 715] [Identifier]
+SetCookie
+---------------------------
+SourceLocation [start=line 1 column 715, end=line 1 column 753] [Signature]
+(i.CookieKey,i.sCountry,iCookieExpire)
+---------------------------
+SourceLocation [start=line 1 column 716, end=line 1 column 727] [QualifiedExpression]
+i.CookieKey
+---------------------------
+SourceLocation [start=line 1 column 716, end=line 1 column 718] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 716, end=line 1 column 717] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 717, end=line 1 column 718] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 718, end=line 1 column 727] [Identifier]
+CookieKey
+---------------------------
+SourceLocation [start=line 1 column 728, end=line 1 column 738] [QualifiedExpression]
+i.sCountry
+---------------------------
+SourceLocation [start=line 1 column 728, end=line 1 column 730] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 728, end=line 1 column 729] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 729, end=line 1 column 730] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 730, end=line 1 column 738] [Identifier]
+sCountry
+---------------------------
+SourceLocation [start=line 1 column 739, end=line 1 column 752] [Identifier]
+iCookieExpire
+---------------------------
+SourceLocation [start=line 1 column 754, end=line 1 column 769] [Assignment]
+i.CookieValue=o
+---------------------------
+SourceLocation [start=line 1 column 754, end=line 1 column 767] [QualifiedExpression]
+i.CookieValue
+---------------------------
+SourceLocation [start=line 1 column 754, end=line 1 column 756] [Qualifier]
+i.
+---------------------------
+SourceLocation [start=line 1 column 754, end=line 1 column 755] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 755, end=line 1 column 756] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 756, end=line 1 column 767] [Identifier]
+CookieValue
+---------------------------
+SourceLocation [start=line 1 column 767, end=line 1 column 768] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 768, end=line 1 column 769] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 772, end=line 1 column 837] [Try]
+try{e.open("GET",t),e.send(null)}catch(r){console.log("cerror2")}
+---------------------------
+SourceLocation [start=line 1 column 775, end=line 1 column 805] [Procedure]
+{e.open("GET",t),e.send(null)}
+---------------------------
+SourceLocation [start=line 1 column 776, end=line 1 column 804] [Sequence]
+e.open("GET",t),e.send(null)
+---------------------------
+SourceLocation [start=line 1 column 776, end=line 1 column 791] [QualifiedExpression]
+e.open("GET",t)
+---------------------------
+SourceLocation [start=line 1 column 776, end=line 1 column 778] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 776, end=line 1 column 777] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 777, end=line 1 column 778] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 778, end=line 1 column 791] [FunctionCall]
+open("GET",t)
+---------------------------
+SourceLocation [start=line 1 column 778, end=line 1 column 782] [Identifier]
+open
+---------------------------
+SourceLocation [start=line 1 column 782, end=line 1 column 791] [Signature]
+("GET",t)
+---------------------------
+SourceLocation [start=line 1 column 783, end=line 1 column 788] [Literal]
+"GET"
+---------------------------
+SourceLocation [start=line 1 column 789, end=line 1 column 790] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 792, end=line 1 column 804] [QualifiedExpression]
+e.send(null)
+---------------------------
+SourceLocation [start=line 1 column 792, end=line 1 column 794] [Qualifier]
+e.
+---------------------------
+SourceLocation [start=line 1 column 792, end=line 1 column 793] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 1 column 793, end=line 1 column 794] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 794, end=line 1 column 804] [FunctionCall]
+send(null)
+---------------------------
+SourceLocation [start=line 1 column 794, end=line 1 column 798] [Identifier]
+send
+---------------------------
+SourceLocation [start=line 1 column 798, end=line 1 column 804] [Signature]
+(null)
+---------------------------
+SourceLocation [start=line 1 column 799, end=line 1 column 803] [Null]
+null
+---------------------------
+SourceLocation [start=line 1 column 805, end=line 1 column 837] [Catch]
+catch(r){console.log("cerror2")}
+---------------------------
+SourceLocation [start=line 1 column 810, end=line 1 column 813] [Signature]
+(r)
+---------------------------
+SourceLocation [start=line 1 column 811, end=line 1 column 812] [Identifier]
+r
+---------------------------
+SourceLocation [start=line 1 column 813, end=line 1 column 837] [Procedure]
+{console.log("cerror2")}
+---------------------------
+SourceLocation [start=line 1 column 814, end=line 1 column 836] [QualifiedExpression]
+console.log("cerror2")
+---------------------------
+SourceLocation [start=line 1 column 814, end=line 1 column 822] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 814, end=line 1 column 821] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 821, end=line 1 column 822] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 822, end=line 1 column 836] [FunctionCall]
+log("cerror2")
+---------------------------
+SourceLocation [start=line 1 column 822, end=line 1 column 825] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 825, end=line 1 column 836] [Signature]
+("cerror2")
+---------------------------
+SourceLocation [start=line 1 column 826, end=line 1 column 835] [Literal]
+"cerror2"
+---------------------------

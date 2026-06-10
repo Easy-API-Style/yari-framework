@@ -1,0 +1,234 @@
+SourceLocation [start=line 1 column 5, end=line 24 column 6] [Css]
+@position-try --custom-left {\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }\\n\\n @position-try --custom-bottom {\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }\\n\\n @position-try --custom-right {\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }\\n\\n @position-try --custom-bottom-right {\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [AtRule]
+@position-try --custom-left {\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 18] [AtRuleName]
+@position-try
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 18] [Identifier]
+position-try
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 32] [Identifier]
+--custom-left
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 5 column 6] [Block]
+{\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 26] [Property]
+position-area: left
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 20] [Identifier]
+position-area
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 26] [Identifier]
+left
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 19] [Property]
+width: 100px
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 12] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 19] [Identifier]
+100px
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 25] [Property]
+margin-right: 10px
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 19] [Identifier]
+margin-right
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 25] [Identifier]
+10px
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 12 column 6] [AtRule]
+@position-try --custom-bottom {\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 18] [AtRuleName]
+@position-try
+---------------------------
+SourceLocation [start=line 7 column 6, end=line 7 column 18] [Identifier]
+position-try
+---------------------------
+SourceLocation [start=line 7 column 19, end=line 7 column 34] [Identifier]
+--custom-bottom
+---------------------------
+SourceLocation [start=line 7 column 35, end=line 12 column 6] [Block]
+{\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 26] [Property]
+top: anchor(bottom)
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 10] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 26] [Function]
+anchor(bottom)
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 18] [Identifier]
+anchor
+---------------------------
+SourceLocation [start=line 8 column 18, end=line 8 column 26] [Signature]
+(bottom)
+---------------------------
+SourceLocation [start=line 8 column 19, end=line 8 column 25] [Identifier]
+bottom
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 34] [Property]
+justify-self: anchor-center
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 19] [Identifier]
+justify-self
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 34] [Identifier]
+anchor-center
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 23] [Property]
+margin-top: 10px
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 17] [Identifier]
+margin-top
+---------------------------
+SourceLocation [start=line 10 column 19, end=line 10 column 23] [Identifier]
+10px
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 26] [Property]
+position-area: none
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 20] [Identifier]
+position-area
+---------------------------
+SourceLocation [start=line 11 column 22, end=line 11 column 26] [Identifier]
+none
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 19 column 6] [AtRule]
+@position-try --custom-right {\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 14 column 18] [AtRuleName]
+@position-try
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 18] [Identifier]
+position-try
+---------------------------
+SourceLocation [start=line 14 column 19, end=line 14 column 33] [Identifier]
+--custom-right
+---------------------------
+SourceLocation [start=line 14 column 34, end=line 19 column 6] [Block]
+{\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 39] [Property]
+left: calc(anchor(right) + 10px)
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 11] [Identifier]
+left
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 39] [Function]
+calc(anchor(right) + 10px)
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 17] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 15 column 17, end=line 15 column 39] [Signature]
+(anchor(right) + 10px)
+---------------------------
+SourceLocation [start=line 15 column 18, end=line 15 column 38] [Infix]
+anchor(right) + 10px
+---------------------------
+SourceLocation [start=line 15 column 18, end=line 15 column 31] [Function]
+anchor(right)
+---------------------------
+SourceLocation [start=line 15 column 18, end=line 15 column 24] [Identifier]
+anchor
+---------------------------
+SourceLocation [start=line 15 column 24, end=line 15 column 31] [Signature]
+(right)
+---------------------------
+SourceLocation [start=line 15 column 25, end=line 15 column 30] [Identifier]
+right
+---------------------------
+SourceLocation [start=line 15 column 32, end=line 15 column 33] [Operator]
++
+---------------------------
+SourceLocation [start=line 15 column 34, end=line 15 column 38] [Identifier]
+10px
+---------------------------
+SourceLocation [start=line 16 column 7, end=line 16 column 32] [Property]
+align-self: anchor-center
+---------------------------
+SourceLocation [start=line 16 column 7, end=line 16 column 17] [Identifier]
+align-self
+---------------------------
+SourceLocation [start=line 16 column 19, end=line 16 column 32] [Identifier]
+anchor-center
+---------------------------
+SourceLocation [start=line 17 column 7, end=line 17 column 19] [Property]
+width: 100px
+---------------------------
+SourceLocation [start=line 17 column 7, end=line 17 column 12] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 17 column 14, end=line 17 column 19] [Identifier]
+100px
+---------------------------
+SourceLocation [start=line 18 column 7, end=line 18 column 26] [Property]
+position-area: none
+---------------------------
+SourceLocation [start=line 18 column 7, end=line 18 column 20] [Identifier]
+position-area
+---------------------------
+SourceLocation [start=line 18 column 22, end=line 18 column 26] [Identifier]
+none
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 24 column 6] [AtRule]
+@position-try --custom-bottom-right {\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 21 column 18] [AtRuleName]
+@position-try
+---------------------------
+SourceLocation [start=line 21 column 6, end=line 21 column 18] [Identifier]
+position-try
+---------------------------
+SourceLocation [start=line 21 column 19, end=line 21 column 40] [Identifier]
+--custom-bottom-right
+---------------------------
+SourceLocation [start=line 21 column 41, end=line 24 column 6] [Block]
+{\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+---------------------------
+SourceLocation [start=line 22 column 7, end=line 22 column 34] [Property]
+position-area: bottom right
+---------------------------
+SourceLocation [start=line 22 column 7, end=line 22 column 20] [Identifier]
+position-area
+---------------------------
+SourceLocation [start=line 22 column 22, end=line 22 column 34] [ListValue]
+bottom right
+---------------------------
+SourceLocation [start=line 22 column 22, end=line 22 column 28] [Identifier]
+bottom
+---------------------------
+SourceLocation [start=line 22 column 29, end=line 22 column 34] [Identifier]
+right
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 28] [Property]
+margin: 10px 0 0 10px
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 13] [Identifier]
+margin
+---------------------------
+SourceLocation [start=line 23 column 15, end=line 23 column 28] [ListValue]
+10px 0 0 10px
+---------------------------
+SourceLocation [start=line 23 column 15, end=line 23 column 19] [Identifier]
+10px
+---------------------------
+SourceLocation [start=line 23 column 20, end=line 23 column 21] [Identifier]
+0
+---------------------------
+SourceLocation [start=line 23 column 22, end=line 23 column 23] [Identifier]
+0
+---------------------------
+SourceLocation [start=line 23 column 24, end=line 23 column 28] [Identifier]
+10px
+---------------------------

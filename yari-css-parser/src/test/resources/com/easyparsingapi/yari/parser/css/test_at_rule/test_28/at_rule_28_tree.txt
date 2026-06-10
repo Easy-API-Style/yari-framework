@@ -1,0 +1,25 @@
+[0, Css] @import "whatever.css" supports((selector(h2 > p)) and (font-tech(color-COLRv1)));
+ [1, AtRule] @import "whatever.css" supports((selector(h2 > p)) and (font-tech(color-COLRv1)))
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "whatever.css" supports((selector(h2 > p)) and (font-tech(color-COLRv1)))
+   [3, Literal] "whatever.css"
+   [3, Operator] 
+   [3, Function] supports((selector(h2 > p)) and (font-tech(color-COLRv1)))
+    [4, Identifier] supports
+    [4, Signature] ((selector(h2 > p)) and (font-tech(color-COLRv1)))
+     [5, Infix] (selector(h2 > p)) and (font-tech(color-COLRv1))
+      [6, Parenthesis] (selector(h2 > p))
+       [7, Function] selector(h2 > p)
+        [8, Identifier] selector
+        [8, Signature] (h2 > p)
+         [9, Infix] h2 > p
+          [10, Identifier] h2
+          [10, Operator] >
+          [10, Identifier] p
+      [6, Operator] and
+      [6, Parenthesis] (font-tech(color-COLRv1))
+       [7, Function] font-tech(color-COLRv1)
+        [8, Identifier] font-tech
+        [8, Signature] (color-COLRv1)
+         [9, Identifier] color-COLRv1

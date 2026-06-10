@@ -1,0 +1,31 @@
+[0, Css] @container scroll-state(scrollable: top) {\\n /* … */\\n }\\n @container scroll-state(stuck: inline-end) {\\n /* … */\\n }\\n @container scroll-state(snapped: both) {\\n /* … */\\n }
+ [1, AtRule] @container scroll-state(scrollable: top) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Function] scroll-state(scrollable: top)
+   [3, Identifier] scroll-state
+   [3, Signature] (scrollable: top)
+    [4, Property] scrollable: top
+     [5, Identifier] scrollable
+     [5, Identifier] top
+  [2, Block] {\\n /* … */\\n }
+ [1, AtRule] @container scroll-state(stuck: inline-end) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Function] scroll-state(stuck: inline-end)
+   [3, Identifier] scroll-state
+   [3, Signature] (stuck: inline-end)
+    [4, Property] stuck: inline-end
+     [5, Identifier] stuck
+     [5, Identifier] inline-end
+  [2, Block] {\\n /* … */\\n }
+ [1, AtRule] @container scroll-state(snapped: both) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Function] scroll-state(snapped: both)
+   [3, Identifier] scroll-state
+   [3, Signature] (snapped: both)
+    [4, Property] snapped: both
+     [5, Identifier] snapped
+     [5, Identifier] both
+  [2, Block] {\\n /* … */\\n }

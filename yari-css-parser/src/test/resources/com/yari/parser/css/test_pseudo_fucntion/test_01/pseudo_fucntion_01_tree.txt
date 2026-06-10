@@ -1,0 +1,11 @@
+[0, Css] :dir(rtl) {\\n background-color: red;\\n }
+ [1, RuleSet] :dir(rtl) {\\n background-color: red;\\n }
+  [2, PseudoFunctionSelector] :dir(rtl)
+   [3, PseudoClassSelector] :dir
+    [4, Identifier] dir
+   [3, Signature] (rtl)
+    [4, Identifier] rtl
+  [2, Block] {\\n background-color: red;\\n }
+   [3, Property] background-color: red
+    [4, Identifier] background-color
+    [4, Identifier] red

@@ -1,0 +1,39 @@
+[0, Css] .example {\\n font-family: system-ui;\\n font-size: 12rem;\\n & > a {\\n color: tomato;\\n &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }\\n }\\n }
+ [1, RuleSet] .example {\\n font-family: system-ui;\\n font-size: 12rem;\\n & > a {\\n color: tomato;\\n &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }\\n }\\n }
+  [2, ClassSelector] .example
+   [3, Identifier] example
+  [2, Block] {\\n font-family: system-ui;\\n font-size: 12rem;\\n & > a {\\n color: tomato;\\n &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }\\n }\\n }
+   [3, Property] font-family: system-ui
+    [4, Identifier] font-family
+    [4, Identifier] system-ui
+   [3, Property] font-size: 12rem
+    [4, Identifier] font-size
+    [4, Identifier] 12rem
+   [3, RuleSet] & > a {\\n color: tomato;\\n &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }\\n }
+    [4, CombinatorSelector] & > a
+     [5, Nesting] &
+     [5, Operator] >
+     [5, ElementSelector] a
+    [4, Block] {\\n color: tomato;\\n &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }\\n }
+     [5, Property] color: tomato
+      [6, Identifier] color
+      [6, Identifier] tomato
+     [5, RuleSet] &:hover,\\n &:focus {\\n color: ivory;\\n background-color: tomato;\\n }
+      [6, ListSelector] &:hover,\\n &:focus
+       [7, CombinatorSelector] &:hover
+        [8, Nesting] &
+        [8, Operator] 
+        [8, PseudoClassSelector] :hover
+         [9, Identifier] hover
+       [7, CombinatorSelector] &:focus
+        [8, Nesting] &
+        [8, Operator] 
+        [8, PseudoClassSelector] :focus
+         [9, Identifier] focus
+      [6, Block] {\\n color: ivory;\\n background-color: tomato;\\n }
+       [7, Property] color: ivory
+        [8, Identifier] color
+        [8, Identifier] ivory
+       [7, Property] background-color: tomato
+        [8, Identifier] background-color
+        [8, Identifier] tomato

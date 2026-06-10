@@ -1,0 +1,35 @@
+[0, Css] @function --anim-1s(--animation, --count) {\\n --duration: 1s;\\n --easing: linear;\\n result: var(--animation) var(--duration) var(--count) var(--easing);\\n }
+ [1, AtRule] @function --anim-1s(--animation, --count) {\\n --duration: 1s;\\n --easing: linear;\\n result: var(--animation) var(--duration) var(--count) var(--easing);\\n }
+  [2, AtRuleName] @function
+   [3, Identifier] function
+  [2, Function] --anim-1s(--animation, --count)
+   [3, Identifier] --anim-1s
+   [3, Signature] (--animation, --count)
+    [4, Identifier] --animation
+    [4, Identifier] --count
+  [2, Block] {\\n --duration: 1s;\\n --easing: linear;\\n result: var(--animation) var(--duration) var(--count) var(--easing);\\n }
+   [3, Property] --duration: 1s
+    [4, Identifier] --duration
+    [4, Identifier] 1s
+   [3, Property] --easing: linear
+    [4, Identifier] --easing
+    [4, Identifier] linear
+   [3, Property] result: var(--animation) var(--duration) var(--count) var(--easing)
+    [4, Identifier] result
+    [4, ListValue] var(--animation) var(--duration) var(--count) var(--easing)
+     [5, Function] var(--animation)
+      [6, Identifier] var
+      [6, Signature] (--animation)
+       [7, Identifier] --animation
+     [5, Function] var(--duration)
+      [6, Identifier] var
+      [6, Signature] (--duration)
+       [7, Identifier] --duration
+     [5, Function] var(--count)
+      [6, Identifier] var
+      [6, Signature] (--count)
+       [7, Identifier] --count
+     [5, Function] var(--easing)
+      [6, Identifier] var
+      [6, Signature] (--easing)
+       [7, Identifier] --easing

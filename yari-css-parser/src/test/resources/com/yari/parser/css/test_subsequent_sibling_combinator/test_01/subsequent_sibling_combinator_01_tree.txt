@@ -1,0 +1,10 @@
+[0, Css] img ~ p {\\n color: red;\\n }
+ [1, RuleSet] img ~ p {\\n color: red;\\n }
+  [2, CombinatorSelector] img ~ p
+   [3, ElementSelector] img
+   [3, Operator] ~
+   [3, ElementSelector] p
+  [2, Block] {\\n color: red;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red

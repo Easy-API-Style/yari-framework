@@ -1,0 +1,78 @@
+[0, Css] @position-try --custom-left {\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }\\n\\n @position-try --custom-bottom {\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }\\n\\n @position-try --custom-right {\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }\\n\\n @position-try --custom-bottom-right {\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+ [1, AtRule] @position-try --custom-left {\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }
+  [2, AtRuleName] @position-try
+   [3, Identifier] position-try
+  [2, Identifier] --custom-left
+  [2, Block] {\\n position-area: left;\\n width: 100px;\\n margin-right: 10px;\\n }
+   [3, Property] position-area: left
+    [4, Identifier] position-area
+    [4, Identifier] left
+   [3, Property] width: 100px
+    [4, Identifier] width
+    [4, Identifier] 100px
+   [3, Property] margin-right: 10px
+    [4, Identifier] margin-right
+    [4, Identifier] 10px
+ [1, AtRule] @position-try --custom-bottom {\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }
+  [2, AtRuleName] @position-try
+   [3, Identifier] position-try
+  [2, Identifier] --custom-bottom
+  [2, Block] {\\n top: anchor(bottom);\\n justify-self: anchor-center;\\n margin-top: 10px;\\n position-area: none;\\n }
+   [3, Property] top: anchor(bottom)
+    [4, Identifier] top
+    [4, Function] anchor(bottom)
+     [5, Identifier] anchor
+     [5, Signature] (bottom)
+      [6, Identifier] bottom
+   [3, Property] justify-self: anchor-center
+    [4, Identifier] justify-self
+    [4, Identifier] anchor-center
+   [3, Property] margin-top: 10px
+    [4, Identifier] margin-top
+    [4, Identifier] 10px
+   [3, Property] position-area: none
+    [4, Identifier] position-area
+    [4, Identifier] none
+ [1, AtRule] @position-try --custom-right {\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }
+  [2, AtRuleName] @position-try
+   [3, Identifier] position-try
+  [2, Identifier] --custom-right
+  [2, Block] {\\n left: calc(anchor(right) + 10px);\\n align-self: anchor-center;\\n width: 100px;\\n position-area: none;\\n }
+   [3, Property] left: calc(anchor(right) + 10px)
+    [4, Identifier] left
+    [4, Function] calc(anchor(right) + 10px)
+     [5, Identifier] calc
+     [5, Signature] (anchor(right) + 10px)
+      [6, Infix] anchor(right) + 10px
+       [7, Function] anchor(right)
+        [8, Identifier] anchor
+        [8, Signature] (right)
+         [9, Identifier] right
+       [7, Operator] +
+       [7, Identifier] 10px
+   [3, Property] align-self: anchor-center
+    [4, Identifier] align-self
+    [4, Identifier] anchor-center
+   [3, Property] width: 100px
+    [4, Identifier] width
+    [4, Identifier] 100px
+   [3, Property] position-area: none
+    [4, Identifier] position-area
+    [4, Identifier] none
+ [1, AtRule] @position-try --custom-bottom-right {\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+  [2, AtRuleName] @position-try
+   [3, Identifier] position-try
+  [2, Identifier] --custom-bottom-right
+  [2, Block] {\\n position-area: bottom right;\\n margin: 10px 0 0 10px;\\n }
+   [3, Property] position-area: bottom right
+    [4, Identifier] position-area
+    [4, ListValue] bottom right
+     [5, Identifier] bottom
+     [5, Identifier] right
+   [3, Property] margin: 10px 0 0 10px
+    [4, Identifier] margin
+    [4, ListValue] 10px 0 0 10px
+     [5, Identifier] 10px
+     [5, Identifier] 0
+     [5, Identifier] 0
+     [5, Identifier] 10px

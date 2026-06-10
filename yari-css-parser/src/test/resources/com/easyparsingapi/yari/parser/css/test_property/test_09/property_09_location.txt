@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 5, end=line 3 column 6] [Css]
+div {\\n transform: attr(x type(*));\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 3 column 6] [RuleSet]
+div {\\n transform: attr(x type(*));\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 3 column 6] [Block]
+{\\n transform: attr(x type(*));\\n }
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 35] [Property]
+transform: attr(x type(*))
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 18] [Identifier]
+transform
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 35] [Function]
+attr(x type(*))
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 24] [Identifier]
+attr
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 35] [Signature]
+(x type(*))
+---------------------------
+SourceLocation [start=line 2 column 25, end=line 2 column 34] [ListValue]
+x type(*)
+---------------------------
+SourceLocation [start=line 2 column 25, end=line 2 column 26] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 2 column 27, end=line 2 column 34] [Function]
+type(*)
+---------------------------
+SourceLocation [start=line 2 column 27, end=line 2 column 31] [Identifier]
+type
+---------------------------
+SourceLocation [start=line 2 column 31, end=line 2 column 34] [Signature]
+(*)
+---------------------------
+SourceLocation [start=line 2 column 32, end=line 2 column 33] [Universal]
+*
+---------------------------

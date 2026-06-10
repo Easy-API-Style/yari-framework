@@ -1,0 +1,16 @@
+[0, Javascript] if(!kc(a))throw qb("int64")
+ [1, If] if(!kc(a))throw qb("int64")
+  [2, IfBlock] if(!kc(a))throw qb("int64")
+   [3, Condition] (!kc(a))
+    [4, Prefix] !kc(a)
+     [5, Operator] !
+     [5, FunctionCall] kc(a)
+      [6, Identifier] kc
+      [6, Signature] (a)
+       [7, Identifier] a
+   [3, Procedure] throw qb("int64")
+    [4, Throw] throw qb("int64")
+     [5, FunctionCall] qb("int64")
+      [6, Identifier] qb
+      [6, Signature] ("int64")
+       [7, Literal] "int64"

@@ -1,0 +1,362 @@
+[0, Javascript] outer_block: {\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}\\n\\nlet allPass = true;\\nlet i, j;\\n\\ntop:\\nfor (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}\\n\\nfoo: {\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}\\nconsole.log('swap');\\n\\nboucle1: for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}\\n\\ntop: for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}\\n\\ntop: for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }\\n\\ntoto: {\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}\\n\\nL: function F() {}\\n\\nL: function* F() {}
+ [1, Label] outer_block: {\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}
+  [2, Identifier] outer_block
+  [2, BlockProcedure] {\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}
+   [3, Label] inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }
+    [4, Identifier] inner_block
+    [4, BlockProcedure] {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }
+     [5, QualifiedExpression] console.log('1')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('1')
+       [7, Identifier] log
+       [7, Signature] ('1')
+        [8, Literal] '1'
+     [5, Break] break outer_block
+      [6, Identifier] outer_block
+     [5, QualifiedExpression] console.log(':-(')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log(':-(')
+       [7, Identifier] log
+       [7, Signature] (':-(')
+        [8, Literal] ':-('
+   [3, QualifiedExpression] console.log('2')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('2')
+     [5, Identifier] log
+     [5, Signature] ('2')
+      [6, Literal] '2'
+ [1, VariableDeclaration] let allPass = true
+  [2, Type] let
+  [2, Variable] allPass = true
+   [3, Identifier] allPass
+   [3, Operator] =
+   [3, Literal] true
+ [1, VariableDeclaration] let i, j
+  [2, Type] let
+  [2, Variable] i
+   [3, Identifier] i
+  [2, Variable] j
+   [3, Identifier] j
+ [1, Label] top:\\nfor (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+  [2, Identifier] top
+  [2, For] for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+   [3, Iteration] i = 0; i < items.length; i++
+    [4, Assignment] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+    [4, Infix] i < items.length
+     [5, Identifier] i
+     [5, Operator] <
+     [5, QualifiedExpression] items.length
+      [6, Qualifier] items.
+       [7, Identifier] items
+       [7, Operator] .
+      [6, Identifier] length
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i
+   [3, Procedure] {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+    [4, For] for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }
+     [5, Iteration] j = 0; j < tests.length; j++
+      [6, Assignment] j = 0
+       [7, Identifier] j
+       [7, Operator] =
+       [7, Literal] 0
+      [6, Infix] j < tests.length
+       [7, Identifier] j
+       [7, Operator] <
+       [7, QualifiedExpression] tests.length
+        [8, Qualifier] tests.
+         [9, Identifier] tests
+         [9, Operator] .
+        [8, Identifier] length
+      [6, Increment] j++
+       [7, Operator] ++
+       [7, Identifier] j
+     [5, Procedure] {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }
+      [6, If] if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }
+       [7, IfBlock] if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }
+        [8, Condition] (!tests[j].pass(items[i]))
+         [9, Prefix] !tests[j].pass(items[i])
+          [10, Operator] !
+          [10, QualifiedExpression] tests[j].pass(items[i])
+           [11, Qualifier] tests[j].
+            [12, MapExpression] tests[j]
+             [13, Identifier] tests
+             [13, Bracket] [j]
+              [14, Identifier] j
+            [12, Operator] .
+           [11, FunctionCall] pass(items[i])
+            [12, Identifier] pass
+            [12, Signature] (items[i])
+             [13, MapExpression] items[i]
+              [14, Identifier] items
+              [14, Bracket] [i]
+               [15, Identifier] i
+        [8, Procedure] {\\n allPass = false;\\n break top;\\n }
+         [9, Assignment] allPass = false
+          [10, Identifier] allPass
+          [10, Operator] =
+          [10, Literal] false
+         [9, Break] break top
+          [10, Identifier] top
+ [1, Label] foo: {\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}
+  [2, Identifier] foo
+  [2, BlockProcedure] {\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}
+   [3, QualifiedExpression] console.log('face')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('face')
+     [5, Identifier] log
+     [5, Signature] ('face')
+      [6, Literal] 'face'
+   [3, Break] break foo
+    [4, Identifier] foo
+   [3, QualifiedExpression] console.log('this will not be executed')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('this will not be executed')
+     [5, Identifier] log
+     [5, Signature] ('this will not be executed')
+      [6, Literal] 'this will not be executed'
+ [1, QualifiedExpression] console.log('swap')
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log('swap')
+   [3, Identifier] log
+   [3, Signature] ('swap')
+    [4, Literal] 'swap'
+ [1, Label] boucle1: for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+  [2, Identifier] boucle1
+  [2, For] for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+   [3, Iteration] i = 0; i < 3; i++
+    [4, Assignment] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+    [4, Infix] i < 3
+     [5, Identifier] i
+     [5, Operator] <
+     [5, Literal] 3
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i
+   [3, Procedure] {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+    [4, Label] boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+     [5, Identifier] boucle2
+     [5, For] for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+      [6, Iteration] j = 0; j < 3; j++
+       [7, Assignment] j = 0
+        [8, Identifier] j
+        [8, Operator] =
+        [8, Literal] 0
+       [7, Infix] j < 3
+        [8, Identifier] j
+        [8, Operator] <
+        [8, Literal] 3
+       [7, Increment] j++
+        [8, Operator] ++
+        [8, Identifier] j
+      [6, Procedure] {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+       [7, If] if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }
+        [8, IfBlock] if (i === 1 && j === 1) {\\n continue boucle1;\\n }
+         [9, Condition] (i === 1 && j === 1)
+          [10, Infix] i === 1 && j === 1
+           [11, Infix] i === 1 && j
+            [12, Infix] i === 1
+             [13, Identifier] i
+             [13, Operator] ===
+             [13, Literal] 1
+            [12, Operator] &&
+            [12, Identifier] j
+           [11, Operator] ===
+           [11, Literal] 1
+         [9, Procedure] {\\n continue boucle1;\\n }
+          [10, Continue] continue boucle1
+           [11, Identifier] boucle1
+        [8, ElseBlock] else {\\n console.log("i = " + i + ", j = " + j);\\n }
+         [9, Procedure] {\\n console.log("i = " + i + ", j = " + j);\\n }
+          [10, QualifiedExpression] console.log("i = " + i + ", j = " + j)
+           [11, Qualifier] console.
+            [12, Identifier] console
+            [12, Operator] .
+           [11, FunctionCall] log("i = " + i + ", j = " + j)
+            [12, Identifier] log
+            [12, Signature] ("i = " + i + ", j = " + j)
+             [13, Infix] "i = " + i + ", j = " + j
+              [14, Infix] "i = " + i + ", j = "
+               [15, Infix] "i = " + i
+                [16, Literal] "i = "
+                [16, Operator] +
+                [16, Identifier] i
+               [15, Operator] +
+               [15, Literal] ", j = "
+              [14, Operator] +
+              [14, Identifier] j
+ [1, Label] top: for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+  [2, Identifier] top
+  [2, For] for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+   [3, Iteration] i = 0; i < items.length; i++
+    [4, Assignment] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+    [4, Infix] i < items.length
+     [5, Identifier] i
+     [5, Operator] <
+     [5, QualifiedExpression] items.length
+      [6, Qualifier] items.
+       [7, Identifier] items
+       [7, Operator] .
+      [6, Identifier] length
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i
+   [3, Procedure] {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+    [4, For] for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }
+     [5, Iteration] j = 0; j < tests.length; j++
+      [6, Assignment] j = 0
+       [7, Identifier] j
+       [7, Operator] =
+       [7, Literal] 0
+      [6, Infix] j < tests.length
+       [7, Identifier] j
+       [7, Operator] <
+       [7, QualifiedExpression] tests.length
+        [8, Qualifier] tests.
+         [9, Identifier] tests
+         [9, Operator] .
+        [8, Identifier] length
+      [6, Increment] j++
+       [7, Operator] ++
+       [7, Identifier] j
+     [5, Procedure] {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }
+      [6, If] if (!tests[j].reussi(items[i])) {\\n continue top;\\n }
+       [7, IfBlock] if (!tests[j].reussi(items[i])) {\\n continue top;\\n }
+        [8, Condition] (!tests[j].reussi(items[i]))
+         [9, Prefix] !tests[j].reussi(items[i])
+          [10, Operator] !
+          [10, QualifiedExpression] tests[j].reussi(items[i])
+           [11, Qualifier] tests[j].
+            [12, MapExpression] tests[j]
+             [13, Identifier] tests
+             [13, Bracket] [j]
+              [14, Identifier] j
+            [12, Operator] .
+           [11, FunctionCall] reussi(items[i])
+            [12, Identifier] reussi
+            [12, Signature] (items[i])
+             [13, MapExpression] items[i]
+              [14, Identifier] items
+              [14, Bracket] [i]
+               [15, Identifier] i
+        [8, Procedure] {\\n continue top;\\n }
+         [9, Continue] continue top
+          [10, Identifier] top
+    [4, Increment] nbItemsReussis++
+     [5, Operator] ++
+     [5, Identifier] nbItemsReussis
+ [1, Label] top: for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+  [2, Identifier] top
+  [2, For] for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+   [3, Iteration] i = 0; items.length; i++
+    [4, Assignment] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+    [4, QualifiedExpression] items.length
+     [5, Qualifier] items.
+      [6, Identifier] items
+      [6, Operator] .
+     [5, Identifier] length
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i
+   [3, Procedure] for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+    [4, For] for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+     [5, Iteration] j = 0; j < tests.length; i++
+      [6, Assignment] j = 0
+       [7, Identifier] j
+       [7, Operator] =
+       [7, Literal] 0
+      [6, Infix] j < tests.length
+       [7, Identifier] j
+       [7, Operator] <
+       [7, QualifiedExpression] tests.length
+        [8, Qualifier] tests.
+         [9, Identifier] tests
+         [9, Operator] .
+        [8, Identifier] length
+      [6, Increment] i++
+       [7, Operator] ++
+       [7, Identifier] i
+     [5, Procedure] if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+      [6, If] if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+       [7, IfBlock] if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+        [8, Condition] (!tests[j].reusi(items[i]))
+         [9, Prefix] !tests[j].reusi(items[i])
+          [10, Operator] !
+          [10, QualifiedExpression] tests[j].reusi(items[i])
+           [11, Qualifier] tests[j].
+            [12, MapExpression] tests[j]
+             [13, Identifier] tests
+             [13, Bracket] [j]
+              [14, Identifier] j
+            [12, Operator] .
+           [11, FunctionCall] reusi(items[i])
+            [12, Identifier] reusi
+            [12, Signature] (items[i])
+             [13, MapExpression] items[i]
+              [14, Identifier] items
+              [14, Bracket] [i]
+               [15, Identifier] i
+        [8, Procedure] {\\n toutReussi = false;\\n break top;\\n }
+         [9, Assignment] toutReussi = false
+          [10, Identifier] toutReussi
+          [10, Operator] =
+          [10, Literal] false
+         [9, Break] break top
+          [10, Identifier] top
+ [1, Label] toto: {\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}
+  [2, Identifier] toto
+  [2, BlockProcedure] {\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}
+   [3, QualifiedExpression] console.log("face")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("face")
+     [5, Identifier] log
+     [5, Signature] ("face")
+      [6, Literal] "face"
+   [3, Break] break toto
+    [4, Identifier] toto
+   [3, QualifiedExpression] console.log("this will not be executed")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("this will not be executed")
+     [5, Identifier] log
+     [5, Signature] ("this will not be executed")
+      [6, Literal] "this will not be executed"
+ [1, Label] L: function F() {}
+  [2, Identifier] L
+  [2, FunctionDeclaration] function F() {}
+   [3, Identifier] F
+   [3, Signature] ()
+   [3, Procedure] {}
+ [1, Label] L: function* F() {}
+  [2, Identifier] L
+  [2, FunctionDeclaration] function* F() {}
+   [3, Identifier] F
+   [3, Signature] ()
+   [3, Procedure] {}

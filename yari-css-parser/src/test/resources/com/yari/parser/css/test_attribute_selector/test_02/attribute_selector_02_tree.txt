@@ -1,0 +1,14 @@
+[0, Css] a[href="https://example.org"]\\n {\\n color: green;\\n }
+ [1, RuleSet] a[href="https://example.org"]\\n {\\n color: green;\\n }
+  [2, CombinatorSelector] a[href="https://example.org"]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [href="https://example.org"]
+    [4, Expression] href="https://example.org"
+     [5, Identifier] href
+     [5, Operator] =
+     [5, Literal] "https://example.org"
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green

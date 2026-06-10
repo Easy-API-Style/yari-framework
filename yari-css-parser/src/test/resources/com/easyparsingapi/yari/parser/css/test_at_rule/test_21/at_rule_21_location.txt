@@ -1,0 +1,105 @@
+SourceLocation [start=line 1 column 5, end=line 1 column 47] [Css]
+/* At-rule for "nice-style" in Font One */
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 47] [Css]
+/* At-rule for "nice-style" in Font Two */
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 13 column 6] [Css]
+@font-feature-values Font One {\\n @styleset {\\n nice-style: 12;\\n }\\n }\\n\\n /* At-rule for "nice-style" in Font Two */\\n @font-feature-values Font Two {\\n @styleset {\\n nice-style: 4;\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 6 column 6] [AtRule]
+@font-feature-values Font One {\\n @styleset {\\n nice-style: 12;\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 25] [AtRuleName]
+@font-feature-values
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 25] [Identifier]
+font-feature-values
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 34] [Infix]
+Font One
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 30] [Identifier]
+Font
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 30] [Operator]
+
+---------------------------
+SourceLocation [start=line 2 column 31, end=line 2 column 34] [Identifier]
+One
+---------------------------
+SourceLocation [start=line 2 column 35, end=line 6 column 6] [Block]
+{\\n @styleset {\\n nice-style: 12;\\n }\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 5 column 8] [AtRule]
+@styleset {\\n nice-style: 12;\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 16] [AtRuleName]
+@styleset
+---------------------------
+SourceLocation [start=line 3 column 8, end=line 3 column 16] [Identifier]
+styleset
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 18] [ListParameter]
+{
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 5 column 8] [Block]
+{\\n nice-style: 12;\\n }
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 23] [Property]
+nice-style: 12
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 19] [Identifier]
+nice-style
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 23] [Identifier]
+12
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 13 column 6] [AtRule]
+@font-feature-values Font Two {\\n @styleset {\\n nice-style: 4;\\n }\\n }
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 25] [AtRuleName]
+@font-feature-values
+---------------------------
+SourceLocation [start=line 9 column 6, end=line 9 column 25] [Identifier]
+font-feature-values
+---------------------------
+SourceLocation [start=line 9 column 26, end=line 9 column 34] [Infix]
+Font Two
+---------------------------
+SourceLocation [start=line 9 column 26, end=line 9 column 30] [Identifier]
+Font
+---------------------------
+SourceLocation [start=line 9 column 30, end=line 9 column 30] [Operator]
+
+---------------------------
+SourceLocation [start=line 9 column 31, end=line 9 column 34] [Identifier]
+Two
+---------------------------
+SourceLocation [start=line 9 column 35, end=line 13 column 6] [Block]
+{\\n @styleset {\\n nice-style: 4;\\n }\\n }
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 12 column 8] [AtRule]
+@styleset {\\n nice-style: 4;\\n }
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 16] [AtRuleName]
+@styleset
+---------------------------
+SourceLocation [start=line 10 column 8, end=line 10 column 16] [Identifier]
+styleset
+---------------------------
+SourceLocation [start=line 10 column 17, end=line 10 column 18] [ListParameter]
+{
+---------------------------
+SourceLocation [start=line 10 column 17, end=line 12 column 8] [Block]
+{\\n nice-style: 4;\\n }
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 22] [Property]
+nice-style: 4
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 19] [Identifier]
+nice-style
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 22] [Identifier]
+4
+---------------------------

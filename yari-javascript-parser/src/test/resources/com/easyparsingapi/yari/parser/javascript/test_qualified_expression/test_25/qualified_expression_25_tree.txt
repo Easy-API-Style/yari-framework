@@ -1,0 +1,26 @@
+[0, JavascriptNodeUnit] w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+ [1, QualifiedExpression] w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+  [2, Qualifier] w[l].
+   [3, MapExpression] w[l]
+    [4, Identifier] w
+    [4, Bracket] [l]
+     [5, Identifier] l
+   [3, Operator] .
+  [2, FunctionCall] push({'gtm.start': new Date().getTime(),event:'gtm.js'})
+   [3, Identifier] push
+   [3, Signature] ({'gtm.start': new Date().getTime(),event:'gtm.js'})
+    [4, ObjectDeclaration] {'gtm.start': new Date().getTime(),event:'gtm.js'}
+     [5, FieldDeclaration] 'gtm.start': new Date().getTime()
+      [6, Literal] 'gtm.start'
+      [6, QualifiedExpression] new Date().getTime()
+       [7, Qualifier] new Date().
+        [8, New] new Date()
+         [9, Identifier] Date
+         [9, Signature] ()
+        [8, Operator] .
+       [7, FunctionCall] getTime()
+        [8, Identifier] getTime
+        [8, Signature] ()
+     [5, FieldDeclaration] event:'gtm.js'
+      [6, Identifier] event
+      [6, Literal] 'gtm.js'

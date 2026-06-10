@@ -1,0 +1,123 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [Javascript]
+switch(typeof a){case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [Switch]
+switch(typeof a){case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 17] [SwitchExpression]
+(typeof a)
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 16] [Prefix]
+typeof a
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 14] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 78] [SwitchProcedure]
+case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 78] [SwitchCase]
+case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 31] [Literal]
+"string"
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 78] [CaseProcedure]
+kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 37] [FunctionCall]
+kc(a)
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 34] [Identifier]
+kc
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 37] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 36] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 57] [VariableDeclaration]
+var b=hc(Number(a))
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 41] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 57] [Variable]
+b=hc(Number(a))
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 43] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 44] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 57] [FunctionCall]
+hc(Number(a))
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 46] [Identifier]
+hc
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 57] [Signature]
+(Number(a))
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 56] [FunctionCall]
+Number(a)
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 53] [Identifier]
+Number
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 56] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 55] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 78] [If]
+if(ec(b))a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 78] [IfBlock]
+if(ec(b))a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 67] [Condition]
+(ec(b))
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 66] [FunctionCall]
+ec(b)
+---------------------------
+SourceLocation [start=line 1 column 61, end=line 1 column 63] [Identifier]
+ec
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 66] [Signature]
+(b)
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 65] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 78] [Procedure]
+a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 78] [Assignment]
+a=String(b)
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 68] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 69] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 78] [FunctionCall]
+String(b)
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 75] [Identifier]
+String
+---------------------------
+SourceLocation [start=line 1 column 75, end=line 1 column 78] [Signature]
+(b)
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 77] [Identifier]
+b
+---------------------------

@@ -1,0 +1,105 @@
+SourceLocation [start=line 1 column 4, end=line 9 column 11] [Html]
+<test>\\n <script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 9 column 11] [Tag]
+<test>\\n <script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 10] [TagHead]
+<test>
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [TagName]
+test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Name]
+test
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 8 column 14] [TagBody]
+<script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 5 column 17] [ScriptTag]
+<script att='yo'>\\n < bbbb\\n > tttt\\n </script>
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 25] [TagHead]
+<script att='yo'>
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 15] [TagName]
+script
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 15] [Name]
+script
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 24] [TagAttribute]
+att='yo'
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 19] [Name]
+att
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 19] [Name]
+att
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 24] [Value]
+'yo'
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 4 column 17] [Script]
+< bbbb\\n > tttt
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 12] [JavascriptError]
+<
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 4 column 17] [Infix]
+bbbb\\n > tttt
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 17] [Identifier]
+bbbb
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 12] [Operator]
+>
+---------------------------
+SourceLocation [start=line 4 column 13, end=line 4 column 17] [Identifier]
+tttt
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 17] [TagFoot]
+</script>
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 16] [TagName]
+script
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 16] [Name]
+script
+---------------------------
+SourceLocation [start=line 6 column 8, end=line 8 column 14] [Tag]
+<div>\\n aaaa\\n </div>
+---------------------------
+SourceLocation [start=line 6 column 8, end=line 6 column 13] [TagHead]
+<div>
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 12] [TagName]
+div
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 12] [Name]
+div
+---------------------------
+SourceLocation [start=line 7 column 10, end=line 7 column 14] [TagBody]
+aaaa
+---------------------------
+SourceLocation [start=line 7 column 10, end=line 7 column 14] [Text]
+aaaa
+---------------------------
+SourceLocation [start=line 8 column 8, end=line 8 column 14] [TagFoot]
+</div>
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 13] [TagName]
+div
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 13] [Name]
+div
+---------------------------
+SourceLocation [start=line 9 column 4, end=line 9 column 11] [TagFoot]
+</test>
+---------------------------
+SourceLocation [start=line 9 column 6, end=line 9 column 10] [TagName]
+test
+---------------------------
+SourceLocation [start=line 9 column 6, end=line 9 column 10] [Name]
+test
+---------------------------

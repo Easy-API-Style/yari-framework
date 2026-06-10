@@ -1,0 +1,32 @@
+[0, JavascriptNodeUnit] b===c?b!==0||1 /b===1/ c:b!==b&&c!==c
+ [1, Ternary] b===c?b!==0||1 /b===1/ c:b!==b&&c!==c
+  [2, Infix] b===c
+   [3, Identifier] b
+   [3, Operator] ===
+   [3, Identifier] c
+  [2, Infix] b!==0||1 /b===1/ c
+   [3, Infix] b!==0||1 /b
+    [4, Infix] b!==0
+     [5, Identifier] b
+     [5, Operator] !==
+     [5, Literal] 0
+    [4, Operator] ||
+    [4, Infix] 1 /b
+     [5, Literal] 1
+     [5, Operator] /
+     [5, Identifier] b
+   [3, Operator] ===
+   [3, Infix] 1/ c
+    [4, Literal] 1
+    [4, Operator] /
+    [4, Identifier] c
+  [2, Infix] b!==b&&c!==c
+   [3, Infix] b!==b&&c
+    [4, Infix] b!==b
+     [5, Identifier] b
+     [5, Operator] !==
+     [5, Identifier] b
+    [4, Operator] &&
+    [4, Identifier] c
+   [3, Operator] !==
+   [3, Identifier] c

@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-parsec — Yari Framework</title>
+  <meta name="description" content="yari-parsec: the parser-combinator engine underpinning the Yari framework. Compose typed Parser&lt;T&gt; values, track source locations, and recover from parse errors.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html" class="is-active">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#apiparser">ApiParser</a></li>
+      <li><a href="#parser">Parser</a></li>
+      <li><a href="#parsers">Parsers</a></li>
+      <li><a href="#tokens">Tokens</a></li>
+      <li><a href="#terminals">Terminals</a></li>
+      <li><a href="#pattern">Pattern / Patterns</a></li>
+      <li><a href="#sourceloc">Source locations</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">/</span>
+        <span>yari-parsec</span>
+      </nav>
+
+      <h1>yari-parsec</h1>
+      <p class="lead">The parser-combinator engine that underpins the entire Yari framework. Compose typed <code>Parser&lt;T&gt;</code> values to scan characters, tokenize input, build expression parsers with operator precedence and associativity, track exact source locations, and recover from parse errors. All parsers are immutable and composable.</p>
+
+      <!-- ── Installation ─────────────────────────────────────────────── -->
+      <h2 id="install">Installation</h2>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-parsec:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-parsec<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+      <p class="note">yari-parsec is pulled transitively by every other Yari module, so you rarely need to declare it explicitly.</p>
+
+      <!-- ── ApiParser ─────────────────────────────────────────────────── -->
+      <h2 id="apiparser">ApiParser — Entry Points</h2>
+      <p>Static entry points for running a lexer + parser pipeline.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>ApiParser</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>parse(<wbr>Parser&lt;T&gt;, Parser&lt;List&lt;Token&gt;&gt;, Config, String)</td>
+                <td>→ T</td>
+                <td>Lex the string then parse it</td>
+              </tr>
+              <tr>
+                <td>parse(<wbr>Parser&lt;T&gt;, List&lt;Token&gt;)</td>
+                <td>→ T</td>
+                <td>Parse a pre-built token list</td>
+              </tr>
+              <tr>
+                <td>parse(<wbr>Parser&lt;T&gt;, List&lt;Token&gt;, Config)</td>
+                <td>→ T</td>
+                <td>Parse a pre-built token list with config callback</td>
+              </tr>
+              <tr>
+                <td>lexer(<wbr>Parser&lt;Fragment&gt;, Parser&lt;Void&gt;)</td>
+                <td>→ Parser&lt;List&lt;Token&gt;&gt;</td>
+                <td>Build a lexer parser from a tokenizer and whitespace skipper</td>
+              </tr>
+              <tr>
+                <td>lex(<wbr>Parser&lt;Fragment&gt;, Parser&lt;Void&gt;, String)</td>
+                <td>→ List&lt;Token&gt;</td>
+                <td>Lex a raw string into a token list</td>
+              </tr>
+              <tr>
+                <td>lex(<wbr>Parser&lt;Fragment&gt;, Parser&lt;Void&gt;, Token)</td>
+                <td>→ List&lt;Token&gt;</td>
+                <td>Re-lex the text of an existing token</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Parser<T> ─────────────────────────────────────────────────── -->
+      <h2 id="parser">Parser&lt;T&gt; — Core Combinator</h2>
+      <p>The fundamental building block. Every parser is a pure function from a token stream to a typed result, with backtracking and error recovery.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Parser&lt;T&gt;</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Sequencing</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>map(<wbr>Function&lt;T,R&gt;)</td>
+                  <td>→ Parser&lt;R&gt;</td>
+                  <td>Transform the parsed value</td>
+                </tr>
+                <tr>
+                  <td>next(<wbr>Function&lt;T, Parser&lt;R&gt;&gt;)</td>
+                  <td>→ Parser&lt;R&gt;</td>
+                  <td>Monadic bind — chain a second parser that depends on the first result</td>
+                </tr>
+                <tr>
+                  <td>next(<wbr>Parser&lt;R&gt;)</td>
+                  <td>→ Parser&lt;R&gt;</td>
+                  <td>Run this parser then the next; keep the second result</td>
+                </tr>
+                <tr>
+                  <td>followedBy(<wbr>Parser&lt;?&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Run this parser then the next; keep the first result</td>
+                </tr>
+                <tr>
+                  <td>between(<wbr>Parser&lt;?&gt;, Parser&lt;?&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Wrap this parser between an open and close parser</td>
+                </tr>
+                <tr>
+                  <td>between(<wbr>Supplier, Parser&lt;?&gt;, Parser&lt;?&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Like <code>between</code> with a custom error supplier for missing close</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Alternation</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>or(<wbr>Parser&lt;T&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Try this parser; fall back to the alternative on failure</td>
+                </tr>
+                <tr>
+                  <td>optional()</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Return <code>null</code> if the parser does not match</td>
+                </tr>
+                <tr>
+                  <td>optional(<wbr>Supplier&lt;T&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Return a supplied default value if the parser does not match</td>
+                </tr>
+                <tr>
+                  <td>asOptional()</td>
+                  <td>→ Parser&lt;Optional&lt;T&gt;&gt;</td>
+                  <td>Return an empty <code>Optional</code> if the parser does not match</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Repetition</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>many()</td>
+                  <td>→ Parser&lt;List&lt;T&gt;&gt;</td>
+                  <td>Zero or more repetitions</td>
+                </tr>
+                <tr>
+                  <td>many1()</td>
+                  <td>→ Parser&lt;List&lt;T&gt;&gt;</td>
+                  <td>One or more repetitions</td>
+                </tr>
+                <tr>
+                  <td>sepBy(<wbr>Parser&lt;?&gt;)</td>
+                  <td>→ Parser&lt;List&lt;T&gt;&gt;</td>
+                  <td>Zero or more separated by a delimiter</td>
+                </tr>
+                <tr>
+                  <td>sepBy1(<wbr>Parser&lt;?&gt;)</td>
+                  <td>→ Parser&lt;List&lt;T&gt;&gt;</td>
+                  <td>One or more separated by a delimiter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Filtering</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>acceptIf(<wbr>Predicate&lt;T&gt;)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Reject the result if the predicate is not satisfied</td>
+                </tr>
+                <tr>
+                  <td>label(<wbr>String)</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Attach a human-readable name used in error messages</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Lookahead &amp; References</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>lazy()</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Defer reference resolution to first invocation</td>
+                </tr>
+                <tr>
+                  <td><em>static</em> newReference()</td>
+                  <td>→ Reference&lt;T&gt;</td>
+                  <td>Create a forward reference for mutually-recursive grammars</td>
+                </tr>
+                <tr>
+                  <td>Reference.set(<wbr>Parser&lt;T&gt;)</td>
+                  <td>→ void</td>
+                  <td>Resolve the forward reference to a concrete parser</td>
+                </tr>
+                <tr>
+                  <td>Reference.lazy()</td>
+                  <td>→ Parser&lt;T&gt;</td>
+                  <td>Return a lazy parser backed by the reference</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Parsers ────────────────────────────────────────────────────── -->
+      <h2 id="parsers">Parsers — Combinator Factories</h2>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Parsers</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>sequence(<wbr>p1, p2, BiFunction)</td>
+                <td>→ Parser&lt;R&gt;</td>
+                <td>Sequence two parsers, map their results with a combining function</td>
+              </tr>
+              <tr>
+                <td>sequence(<wbr>parsers…)</td>
+                <td>→ Parser&lt;List&gt;</td>
+                <td>Sequence N parsers, collect results into a list</td>
+              </tr>
+              <tr>
+                <td>or(<wbr>parsers…)</td>
+                <td>→ Parser&lt;T&gt;</td>
+                <td>Try each parser in order; first match wins</td>
+              </tr>
+              <tr>
+                <td>parseIf(<wbr>Predicate&lt;TokenContext&gt;, Parser)</td>
+                <td>→ Parser&lt;T&gt;</td>
+                <td>Lookahead guard — only attempt the parser if the predicate holds</td>
+              </tr>
+              <tr>
+                <td>runtime(<wbr>Supplier&lt;Parser&gt;)</td>
+                <td>→ Parser&lt;T&gt;</td>
+                <td>Defer parser construction entirely to runtime</td>
+              </tr>
+              <tr>
+                <td>always()</td>
+                <td>→ Parser&lt;Void&gt;</td>
+                <td>Always succeeds and consumes nothing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Tokens ─────────────────────────────────────────────────────── -->
+      <h2 id="tokens">Tokens — Token Model</h2>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Tokens</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Tokens.Fragment</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>tag</td>
+                  <td>Tokens.Tag</td>
+                  <td>The tag assigned to this fragment by the lexer</td>
+                </tr>
+                <tr>
+                  <td>text</td>
+                  <td>String</td>
+                  <td>The raw matched text</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Tokens.Tag (enum)</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>RESERVED</td>
+                  <td></td>
+                  <td>A keyword or operator matched exactly</td>
+                </tr>
+                <tr>
+                  <td>IDENTIFIER</td>
+                  <td></td>
+                  <td>An identifier (name, symbol) not in the reserved set</td>
+                </tr>
+                <tr>
+                  <td>INTEGER</td>
+                  <td></td>
+                  <td>An integer literal</td>
+                </tr>
+                <tr>
+                  <td>DECIMAL</td>
+                  <td></td>
+                  <td>A decimal literal</td>
+                </tr>
+                <tr>
+                  <td>COMMENT</td>
+                  <td></td>
+                  <td>A comment fragment</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Static factory methods</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>fragment(<wbr>String text, Object tag)</td>
+                  <td>→ Fragment</td>
+                  <td>Create a fragment carrying the given text and tag (typically a <code>Tokens.Tag</code> value)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Token (class)</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>index()</td>
+                  <td>→ int</td>
+                  <td>Start offset in the source character array</td>
+                </tr>
+                <tr>
+                  <td>length()</td>
+                  <td>→ int</td>
+                  <td>Length in characters</td>
+                </tr>
+                <tr>
+                  <td>value()</td>
+                  <td>→ Object</td>
+                  <td>The logical token value (a <code>Fragment</code>, <code>String</code>, <code>Long</code>…)</td>
+                </tr>
+                <tr>
+                  <td>sourceLocator()</td>
+                  <td>→ SourceLocator</td>
+                  <td>The locator used to convert offsets to line/column positions</td>
+                </tr>
+                <tr>
+                  <td>sourceLocation()</td>
+                  <td>→ SourceLocation</td>
+                  <td>Precise start/end position in the source</td>
+                </tr>
+                <tr>
+                  <td>toString()</td>
+                  <td>→ String</td>
+                  <td>Human-readable representation of the token</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Terminals ──────────────────────────────────────────────────── -->
+      <h2 id="terminals">Terminals — Keyword/Operator Builder</h2>
+      <p>Fluent builder for scanners that distinguish keywords, operators, and identifiers.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Terminals</strong> / <strong>Terminals.Builder</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td><em>static</em> operators(<wbr>String…)</td>
+                <td>→ Terminals</td>
+                <td>Start a <code>Terminals</code> describing the operator set (also accepts a <code>Collection&lt;String&gt;</code>)</td>
+              </tr>
+              <tr>
+                <td>words(<wbr>Parser&lt;String&gt;)</td>
+                <td>→ Builder</td>
+                <td>Provide the word scanner (what counts as an identifier-shaped token)</td>
+              </tr>
+              <tr>
+                <td>keywords(<wbr>String…)</td>
+                <td>→ Builder</td>
+                <td>Register reserved, case-sensitive keywords</td>
+              </tr>
+              <tr>
+                <td>caseInsensitiveKeywords(<wbr>String…)</td>
+                <td>→ Builder</td>
+                <td>Register reserved, case-insensitive keywords</td>
+              </tr>
+              <tr>
+                <td>build()</td>
+                <td>→ Terminals</td>
+                <td>Build the immutable <code>Terminals</code></td>
+              </tr>
+              <tr>
+                <td>tokenizer()</td>
+                <td>→ Parser&lt;?&gt;</td>
+                <td>The composed tokenizer parser, ready for use with <code>ApiParser</code></td>
+              </tr>
+              <tr>
+                <td><em>static</em> identifier()</td>
+                <td>→ Parser&lt;String&gt;</td>
+                <td>Token-level parser matching any non-reserved word</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Pattern / Patterns ─────────────────────────────────────────── -->
+      <h2 id="pattern">Pattern / Patterns — Character-level matchers</h2>
+      <p>Low-level character matchers used to build lexers.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Patterns</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Factory methods</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>isChar(<wbr>char)</td>
+                  <td>→ Pattern</td>
+                  <td>Match a single literal character</td>
+                </tr>
+                <tr>
+                  <td>isChar(<wbr>CharPredicate)</td>
+                  <td>→ Pattern</td>
+                  <td>Match any character satisfying the predicate</td>
+                </tr>
+                <tr>
+                  <td>string(<wbr>String)</td>
+                  <td>→ Pattern</td>
+                  <td>Match an exact string literally</td>
+                </tr>
+                <tr>
+                  <td>many1(<wbr>CharPredicate)</td>
+                  <td>→ Pattern</td>
+                  <td>Match one or more characters satisfying the predicate</td>
+                </tr>
+                <tr>
+                  <td>sequence(<wbr>patterns…)</td>
+                  <td>→ Pattern</td>
+                  <td>Match each pattern in sequence</td>
+                </tr>
+                <tr>
+                  <td>or(<wbr>patterns…)</td>
+                  <td>→ Pattern</td>
+                  <td>Try each pattern in order; first match wins</td>
+                </tr>
+                <tr>
+                  <td>lineComment(<wbr>String prefix)</td>
+                  <td>→ Pattern</td>
+                  <td>Match a single-line comment starting with the given prefix</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Pattern interface</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>static MISMATCH = -1</td>
+                  <td>int</td>
+                  <td>Sentinel return value indicating the pattern did not match</td>
+                </tr>
+                <tr>
+                  <td><em>static</em> Pattern.rule(<wbr>Function&lt;Context, Integer&gt;)</td>
+                  <td>→ Pattern</td>
+                  <td>Define a custom pattern from a lambda — return the number of characters matched, or MISMATCH</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Source locations ───────────────────────────────────────────── -->
+      <h2 id="sourceloc">Source Locations</h2>
+      <p>Every token carries its position; <code>ApiParser</code> maps positions to line/column via <code>SourceLocator</code>.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Source location API</strong> <span>— com.easyparsingapi.yari.parsec</span></div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">SourceLocation</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>SourceLocation(<wbr>Position start, Position end)</td>
+                  <td>class</td>
+                  <td>A span from start to end in the source; <code>start()</code> / <code>end()</code> → Position</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Position</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>line()</td>
+                  <td>→ int</td>
+                  <td>1-based line number</td>
+                </tr>
+                <tr>
+                  <td>column()</td>
+                  <td>→ int</td>
+                  <td>1-based column number</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">SourceLocator</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>locate(<wbr>int offset)</td>
+                  <td>→ Position</td>
+                  <td>Convert a character offset to a line/column Position</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">SourceLocalisable interface</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>getSourceLocation()</td>
+                  <td>→ SourceLocation</td>
+                  <td>Return the location attached to this node or token</td>
+                </tr>
+                <tr>
+                  <td>setSourceLocation(<wbr>SourceLocation)</td>
+                  <td>→ void</td>
+                  <td>Attach a source location (used during parsing)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and the Javadoc-annotated source under <code>yari-parsec/src/main/java/</code>.</p>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

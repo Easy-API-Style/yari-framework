@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 39] [Javascript]
+export const { name1, name2: bar } = o
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 39] [Export]
+export const { name1, name2: bar } = o
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 39] [VariableDeclaration]
+const { name1, name2: bar } = o
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 13] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 39] [Variable]
+{ name1, name2: bar } = o
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 35] [DestructuringObject]
+{ name1, name2: bar }
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 21] [Field]
+name1
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 21] [Identifier]
+name1
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 33] [Field]
+name2: bar
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 28] [Identifier]
+name2
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Identifier]
+: bar
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 39] [Identifier]
+o
+---------------------------

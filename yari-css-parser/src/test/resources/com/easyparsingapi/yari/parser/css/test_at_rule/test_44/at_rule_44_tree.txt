@@ -1,0 +1,24 @@
+[0, Css] @starting-style {\\n [popover]:popover-open {\\n opacity: 0;\\n transform: scaleX(0);\\n }\\n }
+ [1, AtRule] @starting-style {\\n [popover]:popover-open {\\n opacity: 0;\\n transform: scaleX(0);\\n }\\n }
+  [2, AtRuleName] @starting-style
+   [3, Identifier] starting-style
+  [2, ListParameter] {
+  [2, Block] {\\n [popover]:popover-open {\\n opacity: 0;\\n transform: scaleX(0);\\n }\\n }
+   [3, RuleSet] [popover]:popover-open {\\n opacity: 0;\\n transform: scaleX(0);\\n }
+    [4, CombinatorSelector] [popover]:popover-open
+     [5, AttributeSelector] [popover]
+      [6, Expression] popover
+       [7, Identifier] popover
+     [5, Operator] 
+     [5, PseudoClassSelector] :popover-open
+      [6, Identifier] popover-open
+    [4, Block] {\\n opacity: 0;\\n transform: scaleX(0);\\n }
+     [5, Property] opacity: 0
+      [6, Identifier] opacity
+      [6, Identifier] 0
+     [5, Property] transform: scaleX(0)
+      [6, Identifier] transform
+      [6, Function] scaleX(0)
+       [7, Identifier] scaleX
+       [7, Signature] (0)
+        [8, Identifier] 0

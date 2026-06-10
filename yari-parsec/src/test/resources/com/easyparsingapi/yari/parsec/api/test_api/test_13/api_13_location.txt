@@ -1,0 +1,33 @@
+Program [statements=[Declaration [type=Identifier [value=String, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 7]], name=Identifier [value=fifi, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 12]], value=Identifier [value=lolo, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 19]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 19]], Error [message=null, tokens=[int, dd, ff, ;], sourceLocation=SourceLocation [start=line 2 column 1, end=line 2 column 11]], Declaration [type=Identifier [value=int, sourceLocation=SourceLocation [start=line 3 column 1, end=line 3 column 4]], name=Identifier [value=bibi, sourceLocation=SourceLocation [start=line 3 column 5, end=line 3 column 9]], value=Identifier [value=roro, sourceLocation=SourceLocation [start=line 3 column 12, end=line 3 column 16]], sourceLocation=SourceLocation [start=line 3 column 1, end=line 3 column 16]], Error [message=null, tokens=[int, ?], sourceLocation=SourceLocation [start=line 4 column 1, end=line 4 column 6]]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 4 column 6]]
+String fifi = lolo;\\nint dd ff;\\nint bibi = roro;\\nint ?
+---------------------------
+Declaration [type=Identifier [value=String, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 7]], name=Identifier [value=fifi, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 12]], value=Identifier [value=lolo, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 19]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 19]]
+String fifi = lolo
+---------------------------
+Identifier [value=String, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 7]]
+String
+---------------------------
+Identifier [value=fifi, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 12]]
+fifi
+---------------------------
+Identifier [value=lolo, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 19]]
+lolo
+---------------------------
+Error [message=null, tokens=[int, dd, ff, ;], sourceLocation=SourceLocation [start=line 2 column 1, end=line 2 column 11]]
+int dd ff;
+---------------------------
+Declaration [type=Identifier [value=int, sourceLocation=SourceLocation [start=line 3 column 1, end=line 3 column 4]], name=Identifier [value=bibi, sourceLocation=SourceLocation [start=line 3 column 5, end=line 3 column 9]], value=Identifier [value=roro, sourceLocation=SourceLocation [start=line 3 column 12, end=line 3 column 16]], sourceLocation=SourceLocation [start=line 3 column 1, end=line 3 column 16]]
+int bibi = roro
+---------------------------
+Identifier [value=int, sourceLocation=SourceLocation [start=line 3 column 1, end=line 3 column 4]]
+int
+---------------------------
+Identifier [value=bibi, sourceLocation=SourceLocation [start=line 3 column 5, end=line 3 column 9]]
+bibi
+---------------------------
+Identifier [value=roro, sourceLocation=SourceLocation [start=line 3 column 12, end=line 3 column 16]]
+roro
+---------------------------
+Error [message=null, tokens=[int, ?], sourceLocation=SourceLocation [start=line 4 column 1, end=line 4 column 6]]
+int ?
+---------------------------

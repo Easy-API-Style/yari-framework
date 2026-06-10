@@ -1,0 +1,46 @@
+[0, Css] li:has(+ li:last-of-type ~ div::has .test > .tag.go.over) {\\n color: red;\\n font-weight: bold;\\n }
+ [1, RuleSet] li:has(+ li:last-of-type ~ div::has .test > .tag.go.over) {\\n color: red;\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] li:has(+ li:last-of-type ~ div::has .test > .tag.go.over)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :has(+ li:last-of-type ~ div::has .test > .tag.go.over)
+    [4, PseudoClassSelector] :has
+     [5, Identifier] has
+    [4, Signature] (+ li:last-of-type ~ div::has .test > .tag.go.over)
+     [5, CombinatorSelector] + li:last-of-type ~ div::has .test > .tag.go.over
+      [6, CombinatorSelector] + li:last-of-type ~ div::has .test > .tag.go
+       [7, CombinatorSelector] + li:last-of-type ~ div::has .test > .tag
+        [8, CombinatorSelector] + li:last-of-type ~ div::has .test
+         [9, CombinatorSelector] + li:last-of-type ~ div::has
+          [10, CombinatorSelector] + li:last-of-type ~ div
+           [11, CombinatorSelector] + li:last-of-type
+            [12, PrefixSelector] + li
+             [13, Operator] +
+             [13, ElementSelector] li
+            [12, Operator] 
+            [12, PseudoClassSelector] :last-of-type
+             [13, Identifier] last-of-type
+           [11, Operator] ~
+           [11, ElementSelector] div
+          [10, Operator] 
+          [10, PseudoElementSelector] ::has
+           [11, Identifier] has
+         [9, Operator] 
+         [9, ClassSelector] .test
+          [10, Identifier] test
+        [8, Operator] >
+        [8, ClassSelector] .tag
+         [9, Identifier] tag
+       [7, Operator] 
+       [7, ClassSelector] .go
+        [8, Identifier] go
+      [6, Operator] 
+      [6, ClassSelector] .over
+       [7, Identifier] over
+  [2, Block] {\\n color: red;\\n font-weight: bold;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold

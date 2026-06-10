@@ -1,0 +1,12 @@
+[0, JavascriptNodeUnit] condition.v(e) ? value1 : value2
+ [1, Ternary] condition.v(e) ? value1 : value2
+  [2, QualifiedExpression] condition.v(e)
+   [3, Qualifier] condition.
+    [4, Identifier] condition
+    [4, Operator] .
+   [3, FunctionCall] v(e)
+    [4, Identifier] v
+    [4, Signature] (e)
+     [5, Identifier] e
+  [2, Identifier] value1
+  [2, Identifier] value2

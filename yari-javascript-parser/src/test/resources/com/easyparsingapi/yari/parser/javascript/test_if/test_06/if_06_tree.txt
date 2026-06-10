@@ -1,0 +1,9 @@
+[0, Javascript] if (p_1 && p_2) { /* toto */}
+ [1, If] if (p_1 && p_2) { /* toto */}
+  [2, IfBlock] if (p_1 && p_2) { /* toto */}
+   [3, Condition] (p_1 && p_2)
+    [4, Infix] p_1 && p_2
+     [5, Identifier] p_1
+     [5, Operator] &&
+     [5, Identifier] p_2
+   [3, Procedure] { /* toto */}

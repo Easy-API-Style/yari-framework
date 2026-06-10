@@ -1,0 +1,55 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Import",
+    "moduleName" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+      "type" : "doubleQuoteString",
+      "value" : "module-name",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 23
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 36
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 36
+      }
+    },
+    "alias" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+      "value" : "name",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 13
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 17
+        }
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 36
+    }
+  }
+}

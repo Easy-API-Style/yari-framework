@@ -1,0 +1,175 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Parenthesis",
+    "operand" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Assignment",
+      "leftOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.DestructuringObject",
+        "fields" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.DestructuringObject$Field",
+          "id" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "a",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 4
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 5
+              }
+            }
+          },
+          "binding" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "a1",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 5
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 9
+              }
+            }
+          },
+          "defaultValue" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "aDefault",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 10
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 20
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 4
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 20
+            }
+          }
+        }, {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.DestructuringObject$Field",
+          "id" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "b",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 22
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 23
+              }
+            }
+          },
+          "defaultValue" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "bDefault",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 24
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 34
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 22
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 34
+            }
+          }
+        } ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 2
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 36
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 37
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 38
+          }
+        }
+      },
+      "rightOperand" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "obj",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 39
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 42
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 2
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 42
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 43
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 1,
+      "column" : 43
+    }
+  }
+}

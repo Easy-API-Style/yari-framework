@@ -1,0 +1,14 @@
+[0, Javascript] let bob = a => b + 100;
+ [1, VariableDeclaration] let bob = a => b + 100;
+  [2, Type] let
+  [2, Variable] bob = a => b + 100;
+   [3, Identifier] bob
+   [3, Operator] =
+   [3, ArrowFunction] a => b + 100;
+    [4, Signature] a
+     [5, Identifier] a
+    [4, Procedure] b + 100;
+     [5, Infix] b + 100
+      [6, Identifier] b
+      [6, Operator] +
+      [6, Literal] 100

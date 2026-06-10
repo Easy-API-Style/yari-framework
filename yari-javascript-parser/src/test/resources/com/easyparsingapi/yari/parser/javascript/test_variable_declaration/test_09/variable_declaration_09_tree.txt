@@ -1,0 +1,42 @@
+[0, Javascript] var uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '');
+ [1, VariableDeclaration] var uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+  [2, Type] var
+  [2, Variable] uniqueIdentifier =\\n source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+   [3, Identifier] uniqueIdentifier
+   [3, Operator] =
+   [3, Infix] source.uniqueId +\\n source.name +\\n '_' +\\n (Array.isArray(args) ? args.join('_') : '')
+    [4, Infix] source.uniqueId +\\n source.name +\\n '_'
+     [5, Infix] source.uniqueId +\\n source.name
+      [6, QualifiedExpression] source.uniqueId
+       [7, Qualifier] source.
+        [8, Identifier] source
+        [8, Operator] .
+       [7, Identifier] uniqueId
+      [6, Operator] +
+      [6, QualifiedExpression] source.name
+       [7, Qualifier] source.
+        [8, Identifier] source
+        [8, Operator] .
+       [7, Identifier] name
+     [5, Operator] +
+     [5, Literal] '_'
+    [4, Operator] +
+    [4, Parenthesis] (Array.isArray(args) ? args.join('_') : '')
+     [5, Ternary] Array.isArray(args) ? args.join('_') : ''
+      [6, QualifiedExpression] Array.isArray(args)
+       [7, Qualifier] Array.
+        [8, Identifier] Array
+        [8, Operator] .
+       [7, FunctionCall] isArray(args)
+        [8, Identifier] isArray
+        [8, Signature] (args)
+         [9, Identifier] args
+      [6, QualifiedExpression] args.join('_')
+       [7, Qualifier] args.
+        [8, Identifier] args
+        [8, Operator] .
+       [7, FunctionCall] join('_')
+        [8, Identifier] join
+        [8, Signature] ('_')
+         [9, Literal] '_'
+      [6, Literal] ''

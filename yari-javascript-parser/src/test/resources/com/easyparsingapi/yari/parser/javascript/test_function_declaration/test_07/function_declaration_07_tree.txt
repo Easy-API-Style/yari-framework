@@ -1,0 +1,13 @@
+[0, Javascript] async function asyncCall() { console.log('calling'); }
+ [1, FunctionDeclaration] async function asyncCall() { console.log('calling'); }
+  [2, Identifier] asyncCall
+  [2, Signature] ()
+  [2, Procedure] { console.log('calling'); }
+   [3, QualifiedExpression] console.log('calling')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('calling')
+     [5, Identifier] log
+     [5, Signature] ('calling')
+      [6, Literal] 'calling'

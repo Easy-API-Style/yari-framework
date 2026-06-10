@@ -1,0 +1,14 @@
+[0, Css] @layer framework.layout {\\n p {\\n margin-block: 1rem;\\n }\\n }
+ [1, AtRule] @layer framework.layout {\\n p {\\n margin-block: 1rem;\\n }\\n }
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, QualifiedIdentifier] framework.layout
+   [3, Identifier] framework
+   [3, Identifier] layout
+  [2, Block] {\\n p {\\n margin-block: 1rem;\\n }\\n }
+   [3, RuleSet] p {\\n margin-block: 1rem;\\n }
+    [4, ElementSelector] p
+    [4, Block] {\\n margin-block: 1rem;\\n }
+     [5, Property] margin-block: 1rem
+      [6, Identifier] margin-block
+      [6, Identifier] 1rem

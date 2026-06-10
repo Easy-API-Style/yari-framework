@@ -1,0 +1,39 @@
+[0, Javascript] i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }
+ [1, Assignment] i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }
+  [2, MapExpression] i[r]
+   [3, Identifier] i
+   [3, Bracket] [r]
+    [4, Identifier] r
+  [2, Operator] =
+  [2, FunctionDeclaration] function(){ (i[r].q=i[r].q||[]).push(arguments) }
+   [3, Signature] ()
+   [3, Procedure] { (i[r].q=i[r].q||[]).push(arguments) }
+    [4, QualifiedExpression] (i[r].q=i[r].q||[]).push(arguments)
+     [5, Qualifier] (i[r].q=i[r].q||[]).
+      [6, Sequence] i[r].q=i[r].q||[]
+       [7, Assignment] i[r].q=i[r].q||[]
+        [8, QualifiedExpression] i[r].q
+         [9, Qualifier] i[r].
+          [10, MapExpression] i[r]
+           [11, Identifier] i
+           [11, Bracket] [r]
+            [12, Identifier] r
+          [10, Operator] .
+         [9, Identifier] q
+        [8, Operator] =
+        [8, Infix] i[r].q||[]
+         [9, QualifiedExpression] i[r].q
+          [10, Qualifier] i[r].
+           [11, MapExpression] i[r]
+            [12, Identifier] i
+            [12, Bracket] [r]
+             [13, Identifier] r
+           [11, Operator] .
+          [10, Identifier] q
+         [9, Operator] ||
+         [9, ArrayDeclaration] []
+      [6, Operator] .
+     [5, FunctionCall] push(arguments)
+      [6, Identifier] push
+      [6, Signature] (arguments)
+       [7, Identifier] arguments

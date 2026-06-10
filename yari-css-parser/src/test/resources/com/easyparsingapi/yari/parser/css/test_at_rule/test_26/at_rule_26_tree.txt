@@ -1,0 +1,37 @@
+[0, Css] @import "fine-print.css" print;\\n @import "bluish.css" print, screen;\\n @import "common.css" screen;\\n @import "landscape.css" screen and (orientation: landscape);
+ [1, AtRule] @import "fine-print.css" print
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "fine-print.css" print
+   [3, Literal] "fine-print.css"
+   [3, Operator] 
+   [3, Identifier] print
+ [1, AtRule] @import "bluish.css" print, screen
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, ListParameter] "bluish.css" print, screen
+   [3, Infix] "bluish.css" print
+    [4, Literal] "bluish.css"
+    [4, Operator] 
+    [4, Identifier] print
+   [3, Identifier] screen
+ [1, AtRule] @import "common.css" screen
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "common.css" screen
+   [3, Literal] "common.css"
+   [3, Operator] 
+   [3, Identifier] screen
+ [1, AtRule] @import "landscape.css" screen and (orientation: landscape)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "landscape.css" screen and (orientation: landscape)
+   [3, Infix] "landscape.css" screen
+    [4, Literal] "landscape.css"
+    [4, Operator] 
+    [4, Identifier] screen
+   [3, Operator] and
+   [3, Parenthesis] (orientation: landscape)
+    [4, Property] orientation: landscape
+     [5, Identifier] orientation
+     [5, Identifier] landscape

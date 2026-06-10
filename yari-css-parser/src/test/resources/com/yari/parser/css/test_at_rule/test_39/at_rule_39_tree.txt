@@ -1,0 +1,69 @@
+[0, Css] @property --progress {\\n syntax: "<percentage>";\\n inherits: false;\\n initial-value: 25%;\\n }\\n\\n .bar {\\n display: inline-block;\\n --progress: 25%;\\n width: 100%;\\n height: 5px;\\n background: linear-gradient(\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n );\\n animation: progressAnimation 2.5s ease infinite;\\n }\\n\\n @keyframes progressAnimation {\\n to {\\n --progress: 100%;\\n }\\n }
+ [1, AtRule] @property --progress {\\n syntax: "<percentage>";\\n inherits: false;\\n initial-value: 25%;\\n }
+  [2, AtRuleName] @property
+   [3, Identifier] property
+  [2, Identifier] --progress
+  [2, Block] {\\n syntax: "<percentage>";\\n inherits: false;\\n initial-value: 25%;\\n }
+   [3, Property] syntax: "<percentage>"
+    [4, Identifier] syntax
+    [4, Literal] "<percentage>"
+   [3, Property] inherits: false
+    [4, Identifier] inherits
+    [4, Identifier] false
+   [3, Property] initial-value: 25%
+    [4, Identifier] initial-value
+    [4, Identifier] 25%
+ [1, RuleSet] .bar {\\n display: inline-block;\\n --progress: 25%;\\n width: 100%;\\n height: 5px;\\n background: linear-gradient(\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n );\\n animation: progressAnimation 2.5s ease infinite;\\n }
+  [2, ClassSelector] .bar
+   [3, Identifier] bar
+  [2, Block] {\\n display: inline-block;\\n --progress: 25%;\\n width: 100%;\\n height: 5px;\\n background: linear-gradient(\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n );\\n animation: progressAnimation 2.5s ease infinite;\\n }
+   [3, Property] display: inline-block
+    [4, Identifier] display
+    [4, Identifier] inline-block
+   [3, Property] --progress: 25%
+    [4, Identifier] --progress
+    [4, Identifier] 25%
+   [3, Property] width: 100%
+    [4, Identifier] width
+    [4, Identifier] 100%
+   [3, Property] height: 5px
+    [4, Identifier] height
+    [4, Identifier] 5px
+   [3, Property] background: linear-gradient(\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n )
+    [4, Identifier] background
+    [4, Function] linear-gradient(\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n )
+     [5, Identifier] linear-gradient
+     [5, Signature] (\\n to right,\\n #00d230 var(--progress),\\n black var(--progress)\\n )
+      [6, ListValue] to right
+       [7, Identifier] to
+       [7, Identifier] right
+      [6, ListValue] #00d230 var(--progress)
+       [7, Literal] #00d230
+       [7, Function] var(--progress)
+        [8, Identifier] var
+        [8, Signature] (--progress)
+         [9, Identifier] --progress
+      [6, ListValue] black var(--progress)
+       [7, Identifier] black
+       [7, Function] var(--progress)
+        [8, Identifier] var
+        [8, Signature] (--progress)
+         [9, Identifier] --progress
+   [3, Property] animation: progressAnimation 2.5s ease infinite
+    [4, Identifier] animation
+    [4, ListValue] progressAnimation 2.5s ease infinite
+     [5, Identifier] progressAnimation
+     [5, Identifier] 2.5s
+     [5, Identifier] ease
+     [5, Identifier] infinite
+ [1, AtRule] @keyframes progressAnimation {\\n to {\\n --progress: 100%;\\n }\\n }
+  [2, AtRuleName] @keyframes
+   [3, Identifier] keyframes
+  [2, Identifier] progressAnimation
+  [2, Block] {\\n to {\\n --progress: 100%;\\n }\\n }
+   [3, RuleSet] to {\\n --progress: 100%;\\n }
+    [4, ElementSelector] to
+    [4, Block] {\\n --progress: 100%;\\n }
+     [5, Property] --progress: 100%
+      [6, Identifier] --progress
+      [6, Identifier] 100%

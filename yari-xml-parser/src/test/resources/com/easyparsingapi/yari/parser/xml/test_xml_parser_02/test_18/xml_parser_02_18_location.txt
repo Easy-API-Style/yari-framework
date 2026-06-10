@@ -1,0 +1,105 @@
+SourceLocation [start=line 1 column 4, end=line 7 column 11] [Xml]
+<test>\\n <title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 7 column 11] [Tag]
+<test>\\n <title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>\\n </div>\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 10] [TagHead]
+<test>
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [TagName]
+test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Name]
+test
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 6 column 12] [TagBody]
+<title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>\\n </div>
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 42] [TagEmpty]
+<title att_1="11" att_2 att_3='33'/>
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [TagName]
+title
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Name]
+title
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 23] [TagAttribute]
+att_1="11"
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 18] [Name]
+att_1
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 18] [Name]
+att_1
+---------------------------
+SourceLocation [start=line 2 column 19, end=line 2 column 23] [Value]
+"11"
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 29] [TagAttribute]
+att_2
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 29] [Name]
+att_2
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 29] [Name]
+att_2
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 40] [TagAttribute]
+att_3='33'
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 35] [Name]
+att_3
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 35] [Name]
+att_3
+---------------------------
+SourceLocation [start=line 2 column 36, end=line 2 column 40] [Value]
+'33'
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 5 column 12] [Tag]
+<div>\\n aaaaa\\n </div>
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 11] [TagHead]
+<div>
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 10] [TagName]
+div
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 10] [Name]
+div
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 14] [TagBody]
+aaaaa
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 14] [Text]
+aaaaa
+---------------------------
+SourceLocation [start=line 5 column 6, end=line 5 column 12] [TagFoot]
+</div>
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 11] [TagName]
+div
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 11] [Name]
+div
+---------------------------
+SourceLocation [start=line 6 column 6, end=line 6 column 12] [SingleTagFootError]
+</div>
+---------------------------
+SourceLocation [start=line 6 column 8, end=line 6 column 11] [TagName]
+div
+---------------------------
+SourceLocation [start=line 6 column 8, end=line 6 column 11] [Name]
+div
+---------------------------
+SourceLocation [start=line 7 column 4, end=line 7 column 11] [TagFoot]
+</test>
+---------------------------
+SourceLocation [start=line 7 column 6, end=line 7 column 10] [TagName]
+test
+---------------------------
+SourceLocation [start=line 7 column 6, end=line 7 column 10] [Name]
+test
+---------------------------

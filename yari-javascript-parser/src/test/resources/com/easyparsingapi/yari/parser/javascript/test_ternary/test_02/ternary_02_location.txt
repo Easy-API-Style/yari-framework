@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 73] [JavascriptNodeUnit]
+condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 73] [Ternary]
+condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 11] [Identifier]
+condition1
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 20] [Identifier]
+value1
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 73] [Ternary]
+condition2 ? value2 : condition3 ? value3 : value4
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 33] [Identifier]
+condition2
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 42] [Identifier]
+value2
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 73] [Ternary]
+condition3 ? value3 : value4
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 55] [Identifier]
+condition3
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 64] [Identifier]
+value3
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 73] [Identifier]
+value4
+---------------------------

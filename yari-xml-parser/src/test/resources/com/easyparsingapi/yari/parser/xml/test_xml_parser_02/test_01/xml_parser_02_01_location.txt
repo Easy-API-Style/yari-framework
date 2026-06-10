@@ -1,0 +1,30 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 11] [Xml]
+<test>\\n blabla\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 11] [Tag]
+<test>\\n blabla\\n </test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 10] [TagHead]
+<test>
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [TagName]
+test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Name]
+test
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 12] [TagBody]
+blabla
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 12] [Text]
+blabla
+---------------------------
+SourceLocation [start=line 3 column 4, end=line 3 column 11] [TagFoot]
+</test>
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 10] [TagName]
+test
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 10] [Name]
+test
+---------------------------

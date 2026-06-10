@@ -1,0 +1,63 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 37] [JavascriptNodeUnit]
+function(D){return""+D}(z).join("A")
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 37] [QualifiedExpression]
+function(D){return""+D}(z).join("A")
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 28] [Qualifier]
+function(D){return""+D}(z).
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 27] [InvokedFunction]
+function(D){return""+D}(z)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Definition]
+function(D){return""+D}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [FunctionDeclaration]
+function(D){return""+D}
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 12] [Signature]
+(D)
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Identifier]
+D
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 24] [Procedure]
+{return""+D}
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 23] [Return]
+return""+D
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 23] [Infix]
+""+D
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 21] [Literal]
+""
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Identifier]
+D
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 27] [Signature]
+(z)
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 37] [FunctionCall]
+join("A")
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 32] [Identifier]
+join
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 37] [Signature]
+("A")
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 36] [Literal]
+"A"
+---------------------------

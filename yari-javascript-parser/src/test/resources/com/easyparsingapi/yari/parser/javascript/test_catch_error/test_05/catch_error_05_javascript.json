@@ -1,0 +1,532 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "var",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "vv",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 7
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 8
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 9
+          }
+        }
+      },
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "integer",
+        "value" : "33",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 10
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 12
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 12
+        }
+      },
+      "initialized" : true
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "kk",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 13
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 15
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 13
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 15
+        }
+      },
+      "initialized" : false
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 15
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "xxxxxxxxx",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 16
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 25
+        }
+      }
+    } ],
+    "encountered" : "xxxxxxxxx",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 16
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 25
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "qqq",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 26
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 29
+        }
+      }
+    } ],
+    "encountered" : "qqq",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 26
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 29
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "fffff",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 30
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 35
+        }
+      }
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : ";",
+      "tag" : "KEYWORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 35
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 36
+        }
+      }
+    } ],
+    "encountered" : "fffff",
+    "expected" : [ "useStrict", "token[KEYWORD][;]", "fragment[RETURN_CARRIAGE]", "emptyStatement", "token[KEYWORD][const,var,let]", "variableDeclaration", "token[KEYWORD][await]", "awaitStatement", "labelStatement", "token[KEYWORD][import]", "token[KEYWORD][import]", "javascriptImport", "token[KEYWORD][export]", "phrase[export *]", "allFromExport", "token[KEYWORD][export]", "fromExport", "token[KEYWORD][export]", "phrase[export default]", "exportDefault", "token[KEYWORD][export]", "export", "token[KEYWORD][export]", "listExport", "javascriptExport", "token[KEYWORD][yield]", "yield", "token[KEYWORD][return]", "returnStatement", "token[KEYWORD][switch]", "switchStatment", "token[KEYWORD][try]", "tryCatchFinally", "token[KEYWORD][throw]", "throwStatement", "token[KEYWORD][do]", "doWhileStatement", "token[KEYWORD][while]", "whileStatement", "token[KEYWORD][for]", "forStatement", "token[KEYWORD][continue]", "continueStatement", "token[KEYWORD][break]", "breakStatement", "token[KEYWORD][if]", "ifStatment", "assignmentDestructuringObject", "assignment", "assignment", "statementBlock", "blockProcedure" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 30
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 36
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "let",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 36
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 39
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "cc",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 40
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 42
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 40
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 42
+        }
+      },
+      "initialized" : false
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 36
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 42
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "dd",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 43
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 45
+        }
+      }
+    } ],
+    "encountered" : "rrr",
+    "expected" : [ "token[KEYWORD][>>>=]", "token[KEYWORD][&gt;&gt;&gt;=]", "token[KEYWORD][&#62;&#62;&#62;=]", "token[KEYWORD][<<=]", "token[KEYWORD][&lt;&lt;=]", "token[KEYWORD][&#60;&#60;&#60;=]", "token[KEYWORD][>>=]", "token[KEYWORD][&gt;&gt;=]", "token[KEYWORD][&#62;&#62;=]", "token[KEYWORD][&&=]", "token[KEYWORD][&amp;&amp;=]", "token[KEYWORD][&#38;&#38;=]", "token[KEYWORD][||=]", "token[KEYWORD][??=]", "token[KEYWORD][**=]", "token[KEYWORD][+=]", "token[KEYWORD][-=]", "token[KEYWORD][*=]", "token[KEYWORD][/=]", "token[KEYWORD][%=]", "token[KEYWORD][&=]", "token[KEYWORD][&amp;=]", "token[KEYWORD][&#38;=]", "token[KEYWORD][^=]", "token[KEYWORD][|=]", "token[KEYWORD][=]" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 43
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 45
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "rrr",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 46
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 49
+        }
+      }
+    } ],
+    "encountered" : "fff",
+    "expected" : [ "token[KEYWORD][>>>=]", "token[KEYWORD][&gt;&gt;&gt;=]", "token[KEYWORD][&#62;&#62;&#62;=]", "token[KEYWORD][<<=]", "token[KEYWORD][&lt;&lt;=]", "token[KEYWORD][&#60;&#60;&#60;=]", "token[KEYWORD][>>=]", "token[KEYWORD][&gt;&gt;=]", "token[KEYWORD][&#62;&#62;=]", "token[KEYWORD][&&=]", "token[KEYWORD][&amp;&amp;=]", "token[KEYWORD][&#38;&#38;=]", "token[KEYWORD][||=]", "token[KEYWORD][??=]", "token[KEYWORD][**=]", "token[KEYWORD][+=]", "token[KEYWORD][-=]", "token[KEYWORD][*=]", "token[KEYWORD][/=]", "token[KEYWORD][%=]", "token[KEYWORD][&=]", "token[KEYWORD][&amp;=]", "token[KEYWORD][&#38;=]", "token[KEYWORD][^=]", "token[KEYWORD][|=]", "token[KEYWORD][=]" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 46
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 49
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "fff",
+      "tag" : "WORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 50
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 53
+        }
+      }
+    } ],
+    "encountered" : "let",
+    "expected" : [ "token[KEYWORD][>>>=]", "token[KEYWORD][&gt;&gt;&gt;=]", "token[KEYWORD][&#62;&#62;&#62;=]", "token[KEYWORD][<<=]", "token[KEYWORD][&lt;&lt;=]", "token[KEYWORD][&#60;&#60;&#60;=]", "token[KEYWORD][>>=]", "token[KEYWORD][&gt;&gt;=]", "token[KEYWORD][&#62;&#62;=]", "token[KEYWORD][&&=]", "token[KEYWORD][&amp;&amp;=]", "token[KEYWORD][&#38;&#38;=]", "token[KEYWORD][||=]", "token[KEYWORD][??=]", "token[KEYWORD][**=]", "token[KEYWORD][+=]", "token[KEYWORD][-=]", "token[KEYWORD][*=]", "token[KEYWORD][/=]", "token[KEYWORD][%=]", "token[KEYWORD][&=]", "token[KEYWORD][&amp;=]", "token[KEYWORD][&#38;=]", "token[KEYWORD][^=]", "token[KEYWORD][|=]", "token[KEYWORD][=]" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 50
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 53
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "let",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 2
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 5
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "bibi",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 7
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 11
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 12
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 13
+          }
+        }
+      },
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+        "type" : "singleQuoteString",
+        "value" : "ggg",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 14
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 19
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 7
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 19
+        }
+      },
+      "initialized" : true
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 2
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 19
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.JavascriptError",
+    "tokens" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.parser.JavascriptToken",
+      "text" : "var",
+      "tag" : "KEYWORD",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 20
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 23
+        }
+      }
+    } ],
+    "encountered" : "const",
+    "expected" : [ "destructuringArray", "destructuringObject", "qualifiedExpression", "invokedFunction", "token[KEYWORD][new]", "newClass", "token[KEYWORD][new]", "newStatement", "newStatement", "functionCall", "mapExpression", "callExpression[invokedFunction]", "fragment[WORD]", "identifier", "assignableKey", "destructuringArray", "destructuringObject", "qualifiedExpression", "invokedFunction", "token[KEYWORD][new]", "newClass", "token[KEYWORD][new]", "newStatement", "newStatement", "functionCall", "mapExpression", "callExpression[invokedFunction]", "fragment[WORD]", "identifier", "assignableKey" ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 20
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 23
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "const",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 24
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 29
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "roro",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 30
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 34
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 2,
+          "column" : 30
+        },
+        "end" : {
+          "line" : 2,
+          "column" : 34
+        }
+      },
+      "initialized" : false
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 24
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 34
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 2,
+      "column" : 34
+    }
+  }
+}

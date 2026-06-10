@@ -1,0 +1,1167 @@
+SourceLocation [start=line 10 column 3, end=line 10 column 14] [Javascript]
+// -- or --
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 14] [Javascript]
+// -- or --
+---------------------------
+SourceLocation [start=line 15 column 36, end=line 15 column 67] [Javascript]
+// OK, gives the first argument
+---------------------------
+SourceLocation [start=line 16 column 36, end=line 16 column 78] [Javascript]
+// ERROR (arguments is not a normal array)
+---------------------------
+SourceLocation [start=line 21 column 35, end=line 21 column 66] [Javascript]
+// OK, gives the first argument
+---------------------------
+SourceLocation [start=line 35 column 16, end=line 35 column 20] [Javascript]
+// 0
+---------------------------
+SourceLocation [start=line 36 column 16, end=line 36 column 20] [Javascript]
+// 1
+---------------------------
+SourceLocation [start=line 37 column 16, end=line 37 column 20] [Javascript]
+// 3
+---------------------------
+SourceLocation [start=line 45 column 19, end=line 45 column 34] [Javascript]
+// [30, 50, 84]
+---------------------------
+SourceLocation [start=line 51 column 39, end=line 51 column 52] [Javascript]
+// 1, 3, 5, 7
+---------------------------
+SourceLocation [start=line 55 column 22, end=line 55 column 47] [Javascript]
+// this will never happen
+---------------------------
+SourceLocation [start=line 64 column 41, end=line 64 column 54] [Javascript]
+// 1, 3, 5, 7
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 64 column 39] [Javascript]
+function myFun(a, b, ...manyMoreArgs) {\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}\\nmyFun("one", "two", "three", "four", "five", "six")\\n\\nfunction f(a, b) {\\n let normalArray = Array.prototype.slice.call(arguments)\\n // -- or --\\n let normalArray = [].slice.call(arguments)\\n // -- or --\\n let normalArray = Array.from(arguments)\\n\\n let first = normalArray.shift() // OK, gives the first argument\\n let first = arguments.shift() // ERROR (arguments is not a normal array)\\n}\\n\\nfunction f(...args) {\\n let normalArray = args\\n let first = normalArray.shift() // OK, gives the first argument\\n}\\n\\nfunction myFun(a, b, ...manyMoreArgs) {\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}\\n\\nmyFun("one", "two", "three", "four", "five", "six")\\n\\nfunction fun1(...theArgs) {\\n console.log(theArgs.length)\\n}\\nfun1() // 0\\nfun1(5) // 1\\nfun1(5, 6, 7) // 3\\n\\nfunction multiply(multiplier, ...theArgs) {\\n return theArgs.map(element => {\\n return multiplier * element\\n })\\n}\\nlet arr = multiply(2, 15, 25, 42)\\nconsole.log(arr) // [30, 50, 84]\\n\\nfunction sortRestArgs(...theArgs) {\\n let sortedArgs = theArgs.sort()\\n return sortedArgs\\n}\\nconsole.log(sortRestArgs(5, 3, 7, 1)) // 1, 3, 5, 7\\n\\nfunction sortArguments() {\\n let sortedArgs = arguments.sort()\\n return sortedArgs // this will never happen\\n}\\nconsole.log(sortArguments(5, 3, 7, 1))\\n\\nfunction sortArguments() {\\n let args = Array.from(arguments)\\n let sortedArgs = args.sort()\\n return sortedArgs\\n}\\nconsole.log(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 5 column 2] [FunctionDeclaration]
+function myFun(a, b, ...manyMoreArgs) {\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 15] [Identifier]
+myFun
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 39] [Signature]
+(a, b, ...manyMoreArgs)
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 38] [Spread]
+...manyMoreArgs
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 38] [Identifier]
+manyMoreArgs
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 5 column 2] [Procedure]
+{\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 22] [QualifiedExpression]
+console.log("a", a)
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 22] [FunctionCall]
+log("a", a)
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 22] [Signature]
+("a", a)
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 18] [Literal]
+"a"
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 21] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 22] [QualifiedExpression]
+console.log("b", b)
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 3 column 10, end=line 3 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 22] [FunctionCall]
+log("b", b)
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 22] [Signature]
+("b", b)
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 18] [Literal]
+"b"
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 21] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 44] [QualifiedExpression]
+console.log("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 44] [FunctionCall]
+log("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 44] [Signature]
+("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 29] [Literal]
+"manyMoreArgs"
+---------------------------
+SourceLocation [start=line 4 column 31, end=line 4 column 43] [Identifier]
+manyMoreArgs
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 6 column 52] [FunctionCall]
+myFun("one", "two", "three", "four", "five", "six")
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 6 column 6] [Identifier]
+myFun
+---------------------------
+SourceLocation [start=line 6 column 6, end=line 6 column 52] [Signature]
+("one", "two", "three", "four", "five", "six")
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 12] [Literal]
+"one"
+---------------------------
+SourceLocation [start=line 6 column 14, end=line 6 column 19] [Literal]
+"two"
+---------------------------
+SourceLocation [start=line 6 column 21, end=line 6 column 28] [Literal]
+"three"
+---------------------------
+SourceLocation [start=line 6 column 30, end=line 6 column 36] [Literal]
+"four"
+---------------------------
+SourceLocation [start=line 6 column 38, end=line 6 column 44] [Literal]
+"five"
+---------------------------
+SourceLocation [start=line 6 column 46, end=line 6 column 51] [Literal]
+"six"
+---------------------------
+SourceLocation [start=line 8 column 1, end=line 17 column 2] [FunctionDeclaration]
+function f(a, b) {\\n let normalArray = Array.prototype.slice.call(arguments)\\n // -- or --\\n let normalArray = [].slice.call(arguments)\\n // -- or --\\n let normalArray = Array.from(arguments)\\n\\n let first = normalArray.shift() // OK, gives the first argument\\n let first = arguments.shift() // ERROR (arguments is not a normal array)\\n}
+---------------------------
+SourceLocation [start=line 8 column 10, end=line 8 column 11] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 17] [Signature]
+(a, b)
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 13] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 8 column 15, end=line 8 column 16] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 8 column 18, end=line 17 column 2] [Procedure]
+{\\n let normalArray = Array.prototype.slice.call(arguments)\\n // -- or --\\n let normalArray = [].slice.call(arguments)\\n // -- or --\\n let normalArray = Array.from(arguments)\\n\\n let first = normalArray.shift() // OK, gives the first argument\\n let first = arguments.shift() // ERROR (arguments is not a normal array)\\n}
+---------------------------
+SourceLocation [start=line 9 column 3, end=line 9 column 58] [VariableDeclaration]
+let normalArray = Array.prototype.slice.call(arguments)
+---------------------------
+SourceLocation [start=line 9 column 3, end=line 9 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 58] [Variable]
+normalArray = Array.prototype.slice.call(arguments)
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 18] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 9 column 19, end=line 9 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 58] [QualifiedExpression]
+Array.prototype.slice.call(arguments)
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 27] [Qualifier]
+Array.
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 26] [Identifier]
+Array
+---------------------------
+SourceLocation [start=line 9 column 26, end=line 9 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 9 column 27, end=line 9 column 37] [Qualifier]
+prototype.
+---------------------------
+SourceLocation [start=line 9 column 27, end=line 9 column 36] [Identifier]
+prototype
+---------------------------
+SourceLocation [start=line 9 column 36, end=line 9 column 37] [Operator]
+.
+---------------------------
+SourceLocation [start=line 9 column 37, end=line 9 column 43] [Qualifier]
+slice.
+---------------------------
+SourceLocation [start=line 9 column 37, end=line 9 column 42] [Identifier]
+slice
+---------------------------
+SourceLocation [start=line 9 column 42, end=line 9 column 43] [Operator]
+.
+---------------------------
+SourceLocation [start=line 9 column 43, end=line 9 column 58] [FunctionCall]
+call(arguments)
+---------------------------
+SourceLocation [start=line 9 column 43, end=line 9 column 47] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 9 column 47, end=line 9 column 58] [Signature]
+(arguments)
+---------------------------
+SourceLocation [start=line 9 column 48, end=line 9 column 57] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 45] [VariableDeclaration]
+let normalArray = [].slice.call(arguments)
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 45] [Variable]
+normalArray = [].slice.call(arguments)
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 18] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 11 column 19, end=line 11 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 45] [QualifiedExpression]
+[].slice.call(arguments)
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 24] [Qualifier]
+[].
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 23] [ArrayDeclaration]
+[]
+---------------------------
+SourceLocation [start=line 11 column 23, end=line 11 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 24, end=line 11 column 30] [Qualifier]
+slice.
+---------------------------
+SourceLocation [start=line 11 column 24, end=line 11 column 29] [Identifier]
+slice
+---------------------------
+SourceLocation [start=line 11 column 29, end=line 11 column 30] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 30, end=line 11 column 45] [FunctionCall]
+call(arguments)
+---------------------------
+SourceLocation [start=line 11 column 30, end=line 11 column 34] [Identifier]
+call
+---------------------------
+SourceLocation [start=line 11 column 34, end=line 11 column 45] [Signature]
+(arguments)
+---------------------------
+SourceLocation [start=line 11 column 35, end=line 11 column 44] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 13 column 3, end=line 13 column 42] [VariableDeclaration]
+let normalArray = Array.from(arguments)
+---------------------------
+SourceLocation [start=line 13 column 3, end=line 13 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 42] [Variable]
+normalArray = Array.from(arguments)
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 18] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 13 column 19, end=line 13 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 13 column 21, end=line 13 column 42] [QualifiedExpression]
+Array.from(arguments)
+---------------------------
+SourceLocation [start=line 13 column 21, end=line 13 column 27] [Qualifier]
+Array.
+---------------------------
+SourceLocation [start=line 13 column 21, end=line 13 column 26] [Identifier]
+Array
+---------------------------
+SourceLocation [start=line 13 column 26, end=line 13 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 13 column 27, end=line 13 column 42] [FunctionCall]
+from(arguments)
+---------------------------
+SourceLocation [start=line 13 column 27, end=line 13 column 31] [Identifier]
+from
+---------------------------
+SourceLocation [start=line 13 column 31, end=line 13 column 42] [Signature]
+(arguments)
+---------------------------
+SourceLocation [start=line 13 column 32, end=line 13 column 41] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 34] [VariableDeclaration]
+let first = normalArray.shift()
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 34] [Variable]
+first = normalArray.shift()
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 12] [Identifier]
+first
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 15 column 15, end=line 15 column 34] [QualifiedExpression]
+normalArray.shift()
+---------------------------
+SourceLocation [start=line 15 column 15, end=line 15 column 27] [Qualifier]
+normalArray.
+---------------------------
+SourceLocation [start=line 15 column 15, end=line 15 column 26] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 15 column 26, end=line 15 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 27, end=line 15 column 34] [FunctionCall]
+shift()
+---------------------------
+SourceLocation [start=line 15 column 27, end=line 15 column 32] [Identifier]
+shift
+---------------------------
+SourceLocation [start=line 15 column 32, end=line 15 column 34] [Signature]
+()
+---------------------------
+SourceLocation [start=line 16 column 3, end=line 16 column 32] [VariableDeclaration]
+let first = arguments.shift()
+---------------------------
+SourceLocation [start=line 16 column 3, end=line 16 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 16 column 7, end=line 16 column 32] [Variable]
+first = arguments.shift()
+---------------------------
+SourceLocation [start=line 16 column 7, end=line 16 column 12] [Identifier]
+first
+---------------------------
+SourceLocation [start=line 16 column 13, end=line 16 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 16 column 15, end=line 16 column 32] [QualifiedExpression]
+arguments.shift()
+---------------------------
+SourceLocation [start=line 16 column 15, end=line 16 column 25] [Qualifier]
+arguments.
+---------------------------
+SourceLocation [start=line 16 column 15, end=line 16 column 24] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 16 column 24, end=line 16 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 16 column 25, end=line 16 column 32] [FunctionCall]
+shift()
+---------------------------
+SourceLocation [start=line 16 column 25, end=line 16 column 30] [Identifier]
+shift
+---------------------------
+SourceLocation [start=line 16 column 30, end=line 16 column 32] [Signature]
+()
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 22 column 2] [FunctionDeclaration]
+function f(...args) {\\n let normalArray = args\\n let first = normalArray.shift() // OK, gives the first argument\\n}
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 11] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 19 column 11, end=line 19 column 20] [Signature]
+(...args)
+---------------------------
+SourceLocation [start=line 19 column 12, end=line 19 column 19] [Spread]
+...args
+---------------------------
+SourceLocation [start=line 19 column 15, end=line 19 column 19] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 19 column 21, end=line 22 column 2] [Procedure]
+{\\n let normalArray = args\\n let first = normalArray.shift() // OK, gives the first argument\\n}
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 20 column 25] [VariableDeclaration]
+let normalArray = args
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 20 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 20 column 7, end=line 20 column 25] [Variable]
+normalArray = args
+---------------------------
+SourceLocation [start=line 20 column 7, end=line 20 column 18] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 20 column 19, end=line 20 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 20 column 21, end=line 20 column 25] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 21 column 3, end=line 21 column 34] [VariableDeclaration]
+let first = normalArray.shift()
+---------------------------
+SourceLocation [start=line 21 column 3, end=line 21 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 21 column 7, end=line 21 column 34] [Variable]
+first = normalArray.shift()
+---------------------------
+SourceLocation [start=line 21 column 7, end=line 21 column 12] [Identifier]
+first
+---------------------------
+SourceLocation [start=line 21 column 13, end=line 21 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 21 column 34] [QualifiedExpression]
+normalArray.shift()
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 21 column 27] [Qualifier]
+normalArray.
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 21 column 26] [Identifier]
+normalArray
+---------------------------
+SourceLocation [start=line 21 column 26, end=line 21 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 21 column 27, end=line 21 column 34] [FunctionCall]
+shift()
+---------------------------
+SourceLocation [start=line 21 column 27, end=line 21 column 32] [Identifier]
+shift
+---------------------------
+SourceLocation [start=line 21 column 32, end=line 21 column 34] [Signature]
+()
+---------------------------
+SourceLocation [start=line 24 column 1, end=line 28 column 2] [FunctionDeclaration]
+function myFun(a, b, ...manyMoreArgs) {\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}
+---------------------------
+SourceLocation [start=line 24 column 10, end=line 24 column 15] [Identifier]
+myFun
+---------------------------
+SourceLocation [start=line 24 column 15, end=line 24 column 38] [Signature]
+(a, b, ...manyMoreArgs)
+---------------------------
+SourceLocation [start=line 24 column 16, end=line 24 column 17] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 24 column 19, end=line 24 column 20] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 24 column 22, end=line 24 column 37] [Spread]
+...manyMoreArgs
+---------------------------
+SourceLocation [start=line 24 column 25, end=line 24 column 37] [Identifier]
+manyMoreArgs
+---------------------------
+SourceLocation [start=line 24 column 39, end=line 28 column 2] [Procedure]
+{\\n console.log("a", a)\\n console.log("b", b)\\n console.log("manyMoreArgs", manyMoreArgs)\\n}
+---------------------------
+SourceLocation [start=line 25 column 3, end=line 25 column 22] [QualifiedExpression]
+console.log("a", a)
+---------------------------
+SourceLocation [start=line 25 column 3, end=line 25 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 25 column 3, end=line 25 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 25 column 10, end=line 25 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 25 column 11, end=line 25 column 22] [FunctionCall]
+log("a", a)
+---------------------------
+SourceLocation [start=line 25 column 11, end=line 25 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 25 column 14, end=line 25 column 22] [Signature]
+("a", a)
+---------------------------
+SourceLocation [start=line 25 column 15, end=line 25 column 18] [Literal]
+"a"
+---------------------------
+SourceLocation [start=line 25 column 20, end=line 25 column 21] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 26 column 3, end=line 26 column 22] [QualifiedExpression]
+console.log("b", b)
+---------------------------
+SourceLocation [start=line 26 column 3, end=line 26 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 26 column 3, end=line 26 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 26 column 10, end=line 26 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 26 column 11, end=line 26 column 22] [FunctionCall]
+log("b", b)
+---------------------------
+SourceLocation [start=line 26 column 11, end=line 26 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 26 column 14, end=line 26 column 22] [Signature]
+("b", b)
+---------------------------
+SourceLocation [start=line 26 column 15, end=line 26 column 18] [Literal]
+"b"
+---------------------------
+SourceLocation [start=line 26 column 20, end=line 26 column 21] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 27 column 3, end=line 27 column 44] [QualifiedExpression]
+console.log("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 27 column 3, end=line 27 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 27 column 3, end=line 27 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 27 column 10, end=line 27 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 27 column 11, end=line 27 column 44] [FunctionCall]
+log("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 27 column 11, end=line 27 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 27 column 14, end=line 27 column 44] [Signature]
+("manyMoreArgs", manyMoreArgs)
+---------------------------
+SourceLocation [start=line 27 column 15, end=line 27 column 29] [Literal]
+"manyMoreArgs"
+---------------------------
+SourceLocation [start=line 27 column 31, end=line 27 column 43] [Identifier]
+manyMoreArgs
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 52] [FunctionCall]
+myFun("one", "two", "three", "four", "five", "six")
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 6] [Identifier]
+myFun
+---------------------------
+SourceLocation [start=line 30 column 6, end=line 30 column 52] [Signature]
+("one", "two", "three", "four", "five", "six")
+---------------------------
+SourceLocation [start=line 30 column 7, end=line 30 column 12] [Literal]
+"one"
+---------------------------
+SourceLocation [start=line 30 column 14, end=line 30 column 19] [Literal]
+"two"
+---------------------------
+SourceLocation [start=line 30 column 21, end=line 30 column 28] [Literal]
+"three"
+---------------------------
+SourceLocation [start=line 30 column 30, end=line 30 column 36] [Literal]
+"four"
+---------------------------
+SourceLocation [start=line 30 column 38, end=line 30 column 44] [Literal]
+"five"
+---------------------------
+SourceLocation [start=line 30 column 46, end=line 30 column 51] [Literal]
+"six"
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 34 column 2] [FunctionDeclaration]
+function fun1(...theArgs) {\\n console.log(theArgs.length)\\n}
+---------------------------
+SourceLocation [start=line 32 column 10, end=line 32 column 14] [Identifier]
+fun1
+---------------------------
+SourceLocation [start=line 32 column 14, end=line 32 column 26] [Signature]
+(...theArgs)
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 25] [Spread]
+...theArgs
+---------------------------
+SourceLocation [start=line 32 column 18, end=line 32 column 25] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 32 column 27, end=line 34 column 2] [Procedure]
+{\\n console.log(theArgs.length)\\n}
+---------------------------
+SourceLocation [start=line 33 column 3, end=line 33 column 30] [QualifiedExpression]
+console.log(theArgs.length)
+---------------------------
+SourceLocation [start=line 33 column 3, end=line 33 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 33 column 3, end=line 33 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 33 column 10, end=line 33 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 33 column 11, end=line 33 column 30] [FunctionCall]
+log(theArgs.length)
+---------------------------
+SourceLocation [start=line 33 column 11, end=line 33 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 33 column 14, end=line 33 column 30] [Signature]
+(theArgs.length)
+---------------------------
+SourceLocation [start=line 33 column 15, end=line 33 column 29] [QualifiedExpression]
+theArgs.length
+---------------------------
+SourceLocation [start=line 33 column 15, end=line 33 column 23] [Qualifier]
+theArgs.
+---------------------------
+SourceLocation [start=line 33 column 15, end=line 33 column 22] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 33 column 22, end=line 33 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 33 column 23, end=line 33 column 29] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 7] [FunctionCall]
+fun1()
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 5] [Identifier]
+fun1
+---------------------------
+SourceLocation [start=line 35 column 5, end=line 35 column 7] [Signature]
+()
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 8] [FunctionCall]
+fun1(5)
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 5] [Identifier]
+fun1
+---------------------------
+SourceLocation [start=line 36 column 5, end=line 36 column 8] [Signature]
+(5)
+---------------------------
+SourceLocation [start=line 36 column 6, end=line 36 column 7] [Literal]
+5
+---------------------------
+SourceLocation [start=line 37 column 1, end=line 37 column 14] [FunctionCall]
+fun1(5, 6, 7)
+---------------------------
+SourceLocation [start=line 37 column 1, end=line 37 column 5] [Identifier]
+fun1
+---------------------------
+SourceLocation [start=line 37 column 5, end=line 37 column 14] [Signature]
+(5, 6, 7)
+---------------------------
+SourceLocation [start=line 37 column 6, end=line 37 column 7] [Literal]
+5
+---------------------------
+SourceLocation [start=line 37 column 9, end=line 37 column 10] [Literal]
+6
+---------------------------
+SourceLocation [start=line 37 column 12, end=line 37 column 13] [Literal]
+7
+---------------------------
+SourceLocation [start=line 39 column 1, end=line 43 column 2] [FunctionDeclaration]
+function multiply(multiplier, ...theArgs) {\\n return theArgs.map(element => {\\n return multiplier * element\\n })\\n}
+---------------------------
+SourceLocation [start=line 39 column 10, end=line 39 column 18] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 39 column 18, end=line 39 column 42] [Signature]
+(multiplier, ...theArgs)
+---------------------------
+SourceLocation [start=line 39 column 19, end=line 39 column 29] [Identifier]
+multiplier
+---------------------------
+SourceLocation [start=line 39 column 31, end=line 39 column 41] [Spread]
+...theArgs
+---------------------------
+SourceLocation [start=line 39 column 34, end=line 39 column 41] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 39 column 43, end=line 43 column 2] [Procedure]
+{\\n return theArgs.map(element => {\\n return multiplier * element\\n })\\n}
+---------------------------
+SourceLocation [start=line 40 column 3, end=line 42 column 5] [Return]
+return theArgs.map(element => {\\n return multiplier * element\\n })
+---------------------------
+SourceLocation [start=line 40 column 10, end=line 42 column 5] [QualifiedExpression]
+theArgs.map(element => {\\n return multiplier * element\\n })
+---------------------------
+SourceLocation [start=line 40 column 10, end=line 40 column 18] [Qualifier]
+theArgs.
+---------------------------
+SourceLocation [start=line 40 column 10, end=line 40 column 17] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 40 column 17, end=line 40 column 18] [Operator]
+.
+---------------------------
+SourceLocation [start=line 40 column 18, end=line 42 column 5] [FunctionCall]
+map(element => {\\n return multiplier * element\\n })
+---------------------------
+SourceLocation [start=line 40 column 18, end=line 40 column 21] [Identifier]
+map
+---------------------------
+SourceLocation [start=line 40 column 21, end=line 42 column 5] [Signature]
+(element => {\\n return multiplier * element\\n })
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 42 column 4] [ArrowFunction]
+element => {\\n return multiplier * element\\n }
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 40 column 29] [Signature]
+element
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 40 column 29] [Identifier]
+element
+---------------------------
+SourceLocation [start=line 40 column 33, end=line 42 column 4] [Procedure]
+{\\n return multiplier * element\\n }
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 41 column 32] [Return]
+return multiplier * element
+---------------------------
+SourceLocation [start=line 41 column 12, end=line 41 column 32] [Infix]
+multiplier * element
+---------------------------
+SourceLocation [start=line 41 column 12, end=line 41 column 22] [Identifier]
+multiplier
+---------------------------
+SourceLocation [start=line 41 column 23, end=line 41 column 24] [Operator]
+*
+---------------------------
+SourceLocation [start=line 41 column 25, end=line 41 column 32] [Identifier]
+element
+---------------------------
+SourceLocation [start=line 44 column 1, end=line 44 column 34] [VariableDeclaration]
+let arr = multiply(2, 15, 25, 42)
+---------------------------
+SourceLocation [start=line 44 column 1, end=line 44 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 44 column 5, end=line 44 column 34] [Variable]
+arr = multiply(2, 15, 25, 42)
+---------------------------
+SourceLocation [start=line 44 column 5, end=line 44 column 8] [Identifier]
+arr
+---------------------------
+SourceLocation [start=line 44 column 9, end=line 44 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 44 column 11, end=line 44 column 34] [FunctionCall]
+multiply(2, 15, 25, 42)
+---------------------------
+SourceLocation [start=line 44 column 11, end=line 44 column 19] [Identifier]
+multiply
+---------------------------
+SourceLocation [start=line 44 column 19, end=line 44 column 34] [Signature]
+(2, 15, 25, 42)
+---------------------------
+SourceLocation [start=line 44 column 20, end=line 44 column 21] [Literal]
+2
+---------------------------
+SourceLocation [start=line 44 column 23, end=line 44 column 25] [Literal]
+15
+---------------------------
+SourceLocation [start=line 44 column 27, end=line 44 column 29] [Literal]
+25
+---------------------------
+SourceLocation [start=line 44 column 31, end=line 44 column 33] [Literal]
+42
+---------------------------
+SourceLocation [start=line 45 column 1, end=line 45 column 17] [QualifiedExpression]
+console.log(arr)
+---------------------------
+SourceLocation [start=line 45 column 1, end=line 45 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 45 column 1, end=line 45 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 45 column 8, end=line 45 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 45 column 9, end=line 45 column 17] [FunctionCall]
+log(arr)
+---------------------------
+SourceLocation [start=line 45 column 9, end=line 45 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 45 column 12, end=line 45 column 17] [Signature]
+(arr)
+---------------------------
+SourceLocation [start=line 45 column 13, end=line 45 column 16] [Identifier]
+arr
+---------------------------
+SourceLocation [start=line 47 column 1, end=line 50 column 2] [FunctionDeclaration]
+function sortRestArgs(...theArgs) {\\n let sortedArgs = theArgs.sort()\\n return sortedArgs\\n}
+---------------------------
+SourceLocation [start=line 47 column 10, end=line 47 column 22] [Identifier]
+sortRestArgs
+---------------------------
+SourceLocation [start=line 47 column 22, end=line 47 column 34] [Signature]
+(...theArgs)
+---------------------------
+SourceLocation [start=line 47 column 23, end=line 47 column 33] [Spread]
+...theArgs
+---------------------------
+SourceLocation [start=line 47 column 26, end=line 47 column 33] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 47 column 35, end=line 50 column 2] [Procedure]
+{\\n let sortedArgs = theArgs.sort()\\n return sortedArgs\\n}
+---------------------------
+SourceLocation [start=line 48 column 3, end=line 48 column 34] [VariableDeclaration]
+let sortedArgs = theArgs.sort()
+---------------------------
+SourceLocation [start=line 48 column 3, end=line 48 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 48 column 7, end=line 48 column 34] [Variable]
+sortedArgs = theArgs.sort()
+---------------------------
+SourceLocation [start=line 48 column 7, end=line 48 column 17] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 48 column 18, end=line 48 column 19] [Operator]
+=
+---------------------------
+SourceLocation [start=line 48 column 20, end=line 48 column 34] [QualifiedExpression]
+theArgs.sort()
+---------------------------
+SourceLocation [start=line 48 column 20, end=line 48 column 28] [Qualifier]
+theArgs.
+---------------------------
+SourceLocation [start=line 48 column 20, end=line 48 column 27] [Identifier]
+theArgs
+---------------------------
+SourceLocation [start=line 48 column 27, end=line 48 column 28] [Operator]
+.
+---------------------------
+SourceLocation [start=line 48 column 28, end=line 48 column 34] [FunctionCall]
+sort()
+---------------------------
+SourceLocation [start=line 48 column 28, end=line 48 column 32] [Identifier]
+sort
+---------------------------
+SourceLocation [start=line 48 column 32, end=line 48 column 34] [Signature]
+()
+---------------------------
+SourceLocation [start=line 49 column 3, end=line 49 column 20] [Return]
+return sortedArgs
+---------------------------
+SourceLocation [start=line 49 column 10, end=line 49 column 20] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 51 column 1, end=line 51 column 38] [QualifiedExpression]
+console.log(sortRestArgs(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 51 column 1, end=line 51 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 51 column 1, end=line 51 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 51 column 8, end=line 51 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 51 column 38] [FunctionCall]
+log(sortRestArgs(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 51 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 51 column 12, end=line 51 column 38] [Signature]
+(sortRestArgs(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 51 column 13, end=line 51 column 37] [FunctionCall]
+sortRestArgs(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 51 column 13, end=line 51 column 25] [Identifier]
+sortRestArgs
+---------------------------
+SourceLocation [start=line 51 column 25, end=line 51 column 37] [Signature]
+(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 51 column 26, end=line 51 column 27] [Literal]
+5
+---------------------------
+SourceLocation [start=line 51 column 29, end=line 51 column 30] [Literal]
+3
+---------------------------
+SourceLocation [start=line 51 column 32, end=line 51 column 33] [Literal]
+7
+---------------------------
+SourceLocation [start=line 51 column 35, end=line 51 column 36] [Literal]
+1
+---------------------------
+SourceLocation [start=line 53 column 1, end=line 56 column 2] [FunctionDeclaration]
+function sortArguments() {\\n let sortedArgs = arguments.sort()\\n return sortedArgs // this will never happen\\n}
+---------------------------
+SourceLocation [start=line 53 column 10, end=line 53 column 23] [Identifier]
+sortArguments
+---------------------------
+SourceLocation [start=line 53 column 23, end=line 53 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 53 column 26, end=line 56 column 2] [Procedure]
+{\\n let sortedArgs = arguments.sort()\\n return sortedArgs // this will never happen\\n}
+---------------------------
+SourceLocation [start=line 54 column 3, end=line 54 column 36] [VariableDeclaration]
+let sortedArgs = arguments.sort()
+---------------------------
+SourceLocation [start=line 54 column 3, end=line 54 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 54 column 7, end=line 54 column 36] [Variable]
+sortedArgs = arguments.sort()
+---------------------------
+SourceLocation [start=line 54 column 7, end=line 54 column 17] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 54 column 18, end=line 54 column 19] [Operator]
+=
+---------------------------
+SourceLocation [start=line 54 column 20, end=line 54 column 36] [QualifiedExpression]
+arguments.sort()
+---------------------------
+SourceLocation [start=line 54 column 20, end=line 54 column 30] [Qualifier]
+arguments.
+---------------------------
+SourceLocation [start=line 54 column 20, end=line 54 column 29] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 54 column 29, end=line 54 column 30] [Operator]
+.
+---------------------------
+SourceLocation [start=line 54 column 30, end=line 54 column 36] [FunctionCall]
+sort()
+---------------------------
+SourceLocation [start=line 54 column 30, end=line 54 column 34] [Identifier]
+sort
+---------------------------
+SourceLocation [start=line 54 column 34, end=line 54 column 36] [Signature]
+()
+---------------------------
+SourceLocation [start=line 55 column 3, end=line 55 column 20] [Return]
+return sortedArgs
+---------------------------
+SourceLocation [start=line 55 column 10, end=line 55 column 20] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 57 column 1, end=line 57 column 39] [QualifiedExpression]
+console.log(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 57 column 1, end=line 57 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 57 column 1, end=line 57 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 57 column 8, end=line 57 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 57 column 9, end=line 57 column 39] [FunctionCall]
+log(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 57 column 9, end=line 57 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 57 column 12, end=line 57 column 39] [Signature]
+(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 57 column 13, end=line 57 column 38] [FunctionCall]
+sortArguments(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 57 column 13, end=line 57 column 26] [Identifier]
+sortArguments
+---------------------------
+SourceLocation [start=line 57 column 26, end=line 57 column 38] [Signature]
+(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 57 column 27, end=line 57 column 28] [Literal]
+5
+---------------------------
+SourceLocation [start=line 57 column 30, end=line 57 column 31] [Literal]
+3
+---------------------------
+SourceLocation [start=line 57 column 33, end=line 57 column 34] [Literal]
+7
+---------------------------
+SourceLocation [start=line 57 column 36, end=line 57 column 37] [Literal]
+1
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 63 column 2] [FunctionDeclaration]
+function sortArguments() {\\n let args = Array.from(arguments)\\n let sortedArgs = args.sort()\\n return sortedArgs\\n}
+---------------------------
+SourceLocation [start=line 59 column 10, end=line 59 column 23] [Identifier]
+sortArguments
+---------------------------
+SourceLocation [start=line 59 column 23, end=line 59 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 59 column 26, end=line 63 column 2] [Procedure]
+{\\n let args = Array.from(arguments)\\n let sortedArgs = args.sort()\\n return sortedArgs\\n}
+---------------------------
+SourceLocation [start=line 60 column 3, end=line 60 column 35] [VariableDeclaration]
+let args = Array.from(arguments)
+---------------------------
+SourceLocation [start=line 60 column 3, end=line 60 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 60 column 7, end=line 60 column 35] [Variable]
+args = Array.from(arguments)
+---------------------------
+SourceLocation [start=line 60 column 7, end=line 60 column 11] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 60 column 12, end=line 60 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 60 column 14, end=line 60 column 35] [QualifiedExpression]
+Array.from(arguments)
+---------------------------
+SourceLocation [start=line 60 column 14, end=line 60 column 20] [Qualifier]
+Array.
+---------------------------
+SourceLocation [start=line 60 column 14, end=line 60 column 19] [Identifier]
+Array
+---------------------------
+SourceLocation [start=line 60 column 19, end=line 60 column 20] [Operator]
+.
+---------------------------
+SourceLocation [start=line 60 column 20, end=line 60 column 35] [FunctionCall]
+from(arguments)
+---------------------------
+SourceLocation [start=line 60 column 20, end=line 60 column 24] [Identifier]
+from
+---------------------------
+SourceLocation [start=line 60 column 24, end=line 60 column 35] [Signature]
+(arguments)
+---------------------------
+SourceLocation [start=line 60 column 25, end=line 60 column 34] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 61 column 3, end=line 61 column 31] [VariableDeclaration]
+let sortedArgs = args.sort()
+---------------------------
+SourceLocation [start=line 61 column 3, end=line 61 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 61 column 7, end=line 61 column 31] [Variable]
+sortedArgs = args.sort()
+---------------------------
+SourceLocation [start=line 61 column 7, end=line 61 column 17] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 61 column 18, end=line 61 column 19] [Operator]
+=
+---------------------------
+SourceLocation [start=line 61 column 20, end=line 61 column 31] [QualifiedExpression]
+args.sort()
+---------------------------
+SourceLocation [start=line 61 column 20, end=line 61 column 25] [Qualifier]
+args.
+---------------------------
+SourceLocation [start=line 61 column 20, end=line 61 column 24] [Identifier]
+args
+---------------------------
+SourceLocation [start=line 61 column 24, end=line 61 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 61 column 25, end=line 61 column 31] [FunctionCall]
+sort()
+---------------------------
+SourceLocation [start=line 61 column 25, end=line 61 column 29] [Identifier]
+sort
+---------------------------
+SourceLocation [start=line 61 column 29, end=line 61 column 31] [Signature]
+()
+---------------------------
+SourceLocation [start=line 62 column 3, end=line 62 column 20] [Return]
+return sortedArgs
+---------------------------
+SourceLocation [start=line 62 column 10, end=line 62 column 20] [Identifier]
+sortedArgs
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 64 column 39] [QualifiedExpression]
+console.log(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 64 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 64 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 64 column 8, end=line 64 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 64 column 9, end=line 64 column 39] [FunctionCall]
+log(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 64 column 9, end=line 64 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 64 column 12, end=line 64 column 39] [Signature]
+(sortArguments(5, 3, 7, 1))
+---------------------------
+SourceLocation [start=line 64 column 13, end=line 64 column 38] [FunctionCall]
+sortArguments(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 64 column 13, end=line 64 column 26] [Identifier]
+sortArguments
+---------------------------
+SourceLocation [start=line 64 column 26, end=line 64 column 38] [Signature]
+(5, 3, 7, 1)
+---------------------------
+SourceLocation [start=line 64 column 27, end=line 64 column 28] [Literal]
+5
+---------------------------
+SourceLocation [start=line 64 column 30, end=line 64 column 31] [Literal]
+3
+---------------------------
+SourceLocation [start=line 64 column 33, end=line 64 column 34] [Literal]
+7
+---------------------------
+SourceLocation [start=line 64 column 36, end=line 64 column 37] [Literal]
+1
+---------------------------

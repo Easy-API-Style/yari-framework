@@ -1,0 +1,164 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.css.ast.Css",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.RuleSet",
+    "selector" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.ClassSelector",
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+        "value" : "sb86",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 10
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 10
+        }
+      },
+      "className" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+        "value" : "sb86",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 10
+          }
+        }
+      }
+    },
+    "block" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.Block",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Property",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+          "value" : "background",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 9
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 19
+            }
+          }
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+          "value" : "url",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 21
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 24
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 24
+          }
+        }
+      }, {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.CssError",
+        "tokens" : [ {
+          "@class" : "com.easyparsingapi.yari.parser.css.parser.CssToken",
+          "text" : "(",
+          "tag" : "OPERATOR",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 24
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 25
+            }
+          }
+        }, {
+          "@class" : "com.easyparsingapi.yari.parser.css.parser.CssToken",
+          "text" : ";",
+          "tag" : "OPERATOR",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 25
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 26
+            }
+          }
+        } ],
+        "encountered" : "(",
+        "expected" : [ "block", "token[OPERATOR][;]", "token[OPERATOR][@]", "atRuleName", "atRule", "combinatorSelector", "block", "ruleSet", "fragment[WORD]", "identifier", "property" ],
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 24
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 26
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 11
+        },
+        "end" : {
+          "line" : 3,
+          "column" : 6
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 5
+      },
+      "end" : {
+        "line" : 3,
+        "column" : 6
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 5
+    },
+    "end" : {
+      "line" : 3,
+      "column" : 6
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[0, JavascriptNodeUnit] { a, b: { c: d }, }
+ [1, DestructuringObject] { a, b: { c: d }, }
+  [2, Field] a
+   [3, Identifier] a
+  [2, Field] b: { c: d }
+   [3, Identifier] b
+   [3, DestructuringObject] : { c: d }
+    [4, Field] c: d
+     [5, Identifier] c
+     [5, Identifier] : d
+  [2, Empty] 

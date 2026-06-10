@@ -1,0 +1,19 @@
+[0, Javascript] function toto((v_1, v_2) {\\n var x_1 = v_1 + v_2;\\n return x_1;\\n }
+ [1, JavascriptError] function
+ [1, JavascriptError] toto
+ [1, JavascriptError] (
+ [1, Sequence] (v_1, v_2)
+  [2, Identifier] v_1
+  [2, Identifier] v_2
+ [1, BlockProcedure] {\\n var x_1 = v_1 + v_2;\\n return x_1;\\n }
+  [2, VariableDeclaration] var x_1 = v_1 + v_2
+   [3, Type] var
+   [3, Variable] x_1 = v_1 + v_2
+    [4, Identifier] x_1
+    [4, Operator] =
+    [4, Infix] v_1 + v_2
+     [5, Identifier] v_1
+     [5, Operator] +
+     [5, Identifier] v_2
+  [2, Return] return x_1
+   [3, Identifier] x_1

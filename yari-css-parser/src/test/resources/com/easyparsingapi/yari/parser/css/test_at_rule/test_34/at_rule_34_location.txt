@@ -1,0 +1,198 @@
+SourceLocation [start=line 1 column 5, end=line 18 column 6] [Css]
+abbr {\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }\\n\\n @media (hover: hover) {\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }\\n\\n @media not all and (hover: hover) {\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [RuleSet]
+abbr {\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [ElementSelector]
+abbr
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 5 column 6] [Block]
+{\\n color: #860304;\\n font-weight: bold;\\n transition: color 0.5s ease;\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 21] [Property]
+color: #860304
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 21] [Literal]
+#860304
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 24] [Property]
+font-weight: bold
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 18] [Identifier]
+font-weight
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 24] [Identifier]
+bold
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 34] [Property]
+transition: color 0.5s ease
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 17] [Identifier]
+transition
+---------------------------
+SourceLocation [start=line 4 column 19, end=line 4 column 34] [ListValue]
+color 0.5s ease
+---------------------------
+SourceLocation [start=line 4 column 19, end=line 4 column 24] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 4 column 25, end=line 4 column 29] [Identifier]
+0.5s
+---------------------------
+SourceLocation [start=line 4 column 30, end=line 4 column 34] [Identifier]
+ease
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 12 column 6] [AtRule]
+@media (hover: hover) {\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 11] [AtRuleName]
+@media
+---------------------------
+SourceLocation [start=line 7 column 6, end=line 7 column 11] [Identifier]
+media
+---------------------------
+SourceLocation [start=line 7 column 12, end=line 7 column 26] [Parenthesis]
+(hover: hover)
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 25] [Property]
+hover: hover
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 18] [Identifier]
+hover
+---------------------------
+SourceLocation [start=line 7 column 20, end=line 7 column 25] [Identifier]
+hover
+---------------------------
+SourceLocation [start=line 7 column 27, end=line 12 column 6] [Block]
+{\\n abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }\\n }
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 11 column 8] [RuleSet]
+abbr:hover {\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 17] [CombinatorSelector]
+abbr:hover
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 11] [ElementSelector]
+abbr
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 11] [Operator]
+
+---------------------------
+SourceLocation [start=line 8 column 11, end=line 8 column 17] [PseudoClassSelector]
+:hover
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 17] [Identifier]
+hover
+---------------------------
+SourceLocation [start=line 8 column 18, end=line 11 column 8] [Block]
+{\\n color: #001ca8;\\n transition-duration: 0.5s;\\n }
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 23] [Property]
+color: #001ca8
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 9 column 16, end=line 9 column 23] [Literal]
+#001ca8
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 34] [Property]
+transition-duration: 0.5s
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 28] [Identifier]
+transition-duration
+---------------------------
+SourceLocation [start=line 10 column 30, end=line 10 column 34] [Identifier]
+0.5s
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 18 column 6] [AtRule]
+@media not all and (hover: hover) {\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 14 column 11] [AtRuleName]
+@media
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 11] [Identifier]
+media
+---------------------------
+SourceLocation [start=line 14 column 12, end=line 14 column 38] [Infix]
+not all and (hover: hover)
+---------------------------
+SourceLocation [start=line 14 column 12, end=line 14 column 19] [Prefix]
+not all
+---------------------------
+SourceLocation [start=line 14 column 12, end=line 14 column 15] [Operator]
+not
+---------------------------
+SourceLocation [start=line 14 column 16, end=line 14 column 19] [Identifier]
+all
+---------------------------
+SourceLocation [start=line 14 column 20, end=line 14 column 23] [Operator]
+and
+---------------------------
+SourceLocation [start=line 14 column 24, end=line 14 column 38] [Parenthesis]
+(hover: hover)
+---------------------------
+SourceLocation [start=line 14 column 25, end=line 14 column 37] [Property]
+hover: hover
+---------------------------
+SourceLocation [start=line 14 column 25, end=line 14 column 30] [Identifier]
+hover
+---------------------------
+SourceLocation [start=line 14 column 32, end=line 14 column 37] [Identifier]
+hover
+---------------------------
+SourceLocation [start=line 14 column 39, end=line 18 column 6] [Block]
+{\\n abbr::after {\\n content: " (" attr(title) ")";\\n }\\n }
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 17 column 8] [RuleSet]
+abbr::after {\\n content: " (" attr(title) ")";\\n }
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 18] [CombinatorSelector]
+abbr::after
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 11] [ElementSelector]
+abbr
+---------------------------
+SourceLocation [start=line 15 column 11, end=line 15 column 11] [Operator]
+
+---------------------------
+SourceLocation [start=line 15 column 11, end=line 15 column 18] [PseudoElementSelector]
+::after
+---------------------------
+SourceLocation [start=line 15 column 13, end=line 15 column 18] [Identifier]
+after
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 17 column 8] [Block]
+{\\n content: " (" attr(title) ")";\\n }
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 38] [Property]
+content: " (" attr(title) ")"
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 16 column 18, end=line 16 column 38] [ListValue]
+" (" attr(title) ")"
+---------------------------
+SourceLocation [start=line 16 column 18, end=line 16 column 22] [Literal]
+" ("
+---------------------------
+SourceLocation [start=line 16 column 23, end=line 16 column 34] [Function]
+attr(title)
+---------------------------
+SourceLocation [start=line 16 column 23, end=line 16 column 27] [Identifier]
+attr
+---------------------------
+SourceLocation [start=line 16 column 27, end=line 16 column 34] [Signature]
+(title)
+---------------------------
+SourceLocation [start=line 16 column 28, end=line 16 column 33] [Identifier]
+title
+---------------------------
+SourceLocation [start=line 16 column 35, end=line 16 column 38] [Literal]
+")"
+---------------------------

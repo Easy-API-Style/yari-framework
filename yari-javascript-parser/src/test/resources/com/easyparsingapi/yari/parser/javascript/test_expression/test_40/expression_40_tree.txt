@@ -1,0 +1,5 @@
+[0, JavascriptNodeUnit] v || /(\w+)\s(\w+)/
+ [1, Infix] v || /(\w+)\s(\w+)/
+  [2, Identifier] v
+  [2, Operator] ||
+  [2, Literal] /(\w+)\s(\w+)/

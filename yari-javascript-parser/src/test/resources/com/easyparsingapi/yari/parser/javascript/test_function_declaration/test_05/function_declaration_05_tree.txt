@@ -1,0 +1,13 @@
+[0, Javascript] function* generator(i) { yield i yield i + 10;}
+ [1, FunctionDeclaration] function* generator(i) { yield i yield i + 10;}
+  [2, Identifier] generator
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] { yield i yield i + 10;}
+   [3, Yield] yield i
+    [4, Identifier] i
+   [3, Yield] yield i + 10
+    [4, Infix] i + 10
+     [5, Identifier] i
+     [5, Operator] +
+     [5, Literal] 10

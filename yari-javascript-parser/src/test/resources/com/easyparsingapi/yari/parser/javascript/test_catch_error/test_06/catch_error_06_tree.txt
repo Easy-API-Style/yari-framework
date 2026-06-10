@@ -1,0 +1,18 @@
+[0, Javascript] function toto(v_1, v_2) { var ! x_1 = v_1 + v_2; return x_1; }
+ [1, FunctionDeclaration] function toto(v_1, v_2) { var ! x_1 = v_1 + v_2; return x_1; }
+  [2, Identifier] toto
+  [2, Signature] (v_1, v_2)
+   [3, Identifier] v_1
+   [3, Identifier] v_2
+  [2, Procedure] { var ! x_1 = v_1 + v_2; return x_1; }
+   [3, JavascriptError] var
+   [3, Prefix] ! x_1
+    [4, Operator] !
+    [4, Identifier] x_1
+   [3, JavascriptError] =
+   [3, Infix] v_1 + v_2
+    [4, Identifier] v_1
+    [4, Operator] +
+    [4, Identifier] v_2
+   [3, Return] return x_1
+    [4, Identifier] x_1

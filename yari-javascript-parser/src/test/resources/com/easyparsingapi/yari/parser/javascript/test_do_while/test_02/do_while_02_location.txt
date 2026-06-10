@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 45] [Javascript]
+do var v_1 while (fct_1(), fct_2(), fct_3())
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 45] [DoWhile]
+do var v_1 while (fct_1(), fct_2(), fct_3())
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 11] [Procedure]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 11] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 7] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 11] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 11] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 45] [Condition]
+(fct_1(), fct_2(), fct_3())
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 44] [Sequence]
+fct_1(), fct_2(), fct_3()
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 26] [FunctionCall]
+fct_1()
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 24] [Identifier]
+fct_1
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 26] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 35] [FunctionCall]
+fct_2()
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Identifier]
+fct_2
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 35] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 44] [FunctionCall]
+fct_3()
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 42] [Identifier]
+fct_3
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 44] [Signature]
+()
+---------------------------

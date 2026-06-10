@@ -1,0 +1,23 @@
+[0, Css] @container sticky-heading scroll-state(stuck: top) {\\n h2 {\\n background: purple;\\n color: white;\\n }\\n }
+ [1, AtRule] @container sticky-heading scroll-state(stuck: top) {\\n h2 {\\n background: purple;\\n color: white;\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] sticky-heading scroll-state(stuck: top)
+   [3, Identifier] sticky-heading
+   [3, Operator] 
+   [3, Function] scroll-state(stuck: top)
+    [4, Identifier] scroll-state
+    [4, Signature] (stuck: top)
+     [5, Property] stuck: top
+      [6, Identifier] stuck
+      [6, Identifier] top
+  [2, Block] {\\n h2 {\\n background: purple;\\n color: white;\\n }\\n }
+   [3, RuleSet] h2 {\\n background: purple;\\n color: white;\\n }
+    [4, ElementSelector] h2
+    [4, Block] {\\n background: purple;\\n color: white;\\n }
+     [5, Property] background: purple
+      [6, Identifier] background
+      [6, Identifier] purple
+     [5, Property] color: white
+      [6, Identifier] color
+      [6, Identifier] white

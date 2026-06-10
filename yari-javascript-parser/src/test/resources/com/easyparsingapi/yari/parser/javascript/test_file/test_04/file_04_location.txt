@@ -1,0 +1,1305 @@
+SourceLocation [start=line 9 column 44, end=line 9 column 61] [Javascript]
+// "Howdy, Alice"
+---------------------------
+SourceLocation [start=line 10 column 42, end=line 10 column 62] [Javascript]
+// "Howdy, stranger"
+---------------------------
+SourceLocation [start=line 13 column 19, end=line 13 column 34] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 14 column 19, end=line 14 column 34] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 35] [Javascript]
+// returns false
+---------------------------
+SourceLocation [start=line 16 column 19, end=line 16 column 100] [Javascript]
+// returns false (you must specify the index number, not the value at that index)
+---------------------------
+SourceLocation [start=line 17 column 19, end=line 17 column 64] [Javascript]
+// returns true (length is an Array property)
+---------------------------
+SourceLocation [start=line 18 column 26, end=line 18 column 86] [Javascript]
+// returns true (arrays are iterable, works only in ES2015+)
+---------------------------
+SourceLocation [start=line 19 column 23, end=line 19 column 38] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 21 column 18, end=line 21 column 33] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 22 column 18, end=line 22 column 33] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 23 column 19, end=line 23 column 34] [Javascript]
+// returns true
+---------------------------
+SourceLocation [start=line 25 column 22, end=line 25 column 30] [Javascript]
+// false
+---------------------------
+SourceLocation [start=line 26 column 23, end=line 26 column 31] [Javascript]
+// false
+---------------------------
+SourceLocation [start=line 27 column 23, end=line 27 column 31] [Javascript]
+// false
+---------------------------
+SourceLocation [start=line 28 column 23, end=line 28 column 30] [Javascript]
+// true
+---------------------------
+SourceLocation [start=line 29 column 23, end=line 29 column 30] [Javascript]
+// true
+---------------------------
+SourceLocation [start=line 30 column 23, end=line 30 column 61] [Javascript]
+// false, look at Logical NOT operator
+---------------------------
+SourceLocation [start=line 31 column 23, end=line 31 column 61] [Javascript]
+// false, look at Logical NOT operator
+---------------------------
+SourceLocation [start=line 32 column 23, end=line 32 column 31] [Javascript]
+// false
+---------------------------
+SourceLocation [start=line 36 column 23, end=line 36 column 31] [Javascript]
+// false
+---------------------------
+SourceLocation [start=line 37 column 23, end=line 37 column 30] [Javascript]
+// true
+---------------------------
+SourceLocation [start=line 66 column 13, end=line 66 column 74] [Javascript]
+// console.log renvoie "undefined", mais cela importe peu car
+---------------------------
+SourceLocation [start=line 67 column 13, end=line 67 column 63] [Javascript]
+// ce n'est pas le dernier élément de l'expression
+---------------------------
+SourceLocation [start=line 68 column 30, end=line 68 column 65] [Javascript]
+// la valeur à affecter si âge > 18
+---------------------------
+SourceLocation [start=line 70 column 13, end=line 70 column 20] [Javascript]
+// etc.
+---------------------------
+SourceLocation [start=line 71 column 27, end=line 71 column 63] [Javascript]
+// la valeur à affecter si âge <= 18
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 86 column 2] [Javascript]
+var age = 26;\\nvar beverage = (age >= 21) ? "Beer" : "Juice";\\n\\nlet greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}\\n\\nconsole.log(greeting({ name: `Alice` })); // "Howdy, Alice"\\nconsole.log(greeting(null)); // "Howdy, stranger"\\n\\nlet trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']\\n0 in trees // returns true\\n3 in trees // returns true\\n6 in trees // returns false\\n'bay' in trees // returns false (you must specify the index number, not the value at that index)\\n'length' in trees // returns true (length is an Array property)\\nSymbol.iterator in trees // returns true (arrays are iterable, works only in ES2015+)\\n'PI' in Math // returns true\\nlet mycar = { make: 'Honda', model: 'Accord', year: 1998 }\\n'make' in mycar // returns true\\n'model' in mycar // returns true\\n'toString' in {} // returns true\\n\\n"1" != 1; // false\\n1 != "1"; // false\\n0 != false; // false\\n0 != null; // true\\n0 != undefined; // true\\n0 != !!null; // false, look at Logical NOT operator\\n0 != !!undefined; // false, look at Logical NOT operator\\nnull != undefined; // false\\n\\nconst number1 = new Number(3);\\nconst number2 = new Number(3);\\nnumber1 != 3; // false\\nnumber1 != number2; // true\\n\\n"Le prix est : " + (estMembre ? "15 €" : "30 €");\\n\\nvar elvisLives = Math.PI > 4 ? "Yep" : "Nope";\\n\\nvar premierControle = false,\\n secondControle = false,\\n acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé";\\n\\nvar stop = false,\\n age = 16;\\n\\nage > 18 ? location.assign("continue.html") : (stop = true);\\n\\nvar stop = false,\\n age = 23;\\n\\nage > 18\\n ? (console.log("OK, accès autorisé."), location.assign("continue.html"))\\n : ((stop = true), console.log("Accès refusé !"));\\n\\nvar url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html"); // la valeur à affecter si âge <= 18\\n\\n\\nvar func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}\\n\\nvar func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 13] [VariableDeclaration]
+var age = 26
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 13] [Variable]
+age = 26
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 13] [Literal]
+26
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 46] [VariableDeclaration]
+var beverage = (age >= 21) ? "Beer" : "Juice"
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 46] [Variable]
+beverage = (age >= 21) ? "Beer" : "Juice"
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 13] [Identifier]
+beverage
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 46] [Ternary]
+(age >= 21) ? "Beer" : "Juice"
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 27] [Parenthesis]
+(age >= 21)
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 26] [Infix]
+age >= 21
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 20] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 2 column 21, end=line 2 column 23] [Operator]
+>=
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 26] [Literal]
+21
+---------------------------
+SourceLocation [start=line 2 column 30, end=line 2 column 36] [Literal]
+"Beer"
+---------------------------
+SourceLocation [start=line 2 column 39, end=line 2 column 46] [Literal]
+"Juice"
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 7 column 2] [VariableDeclaration]
+let greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 7 column 2] [Variable]
+greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 13] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 4 column 16, end=line 7 column 2] [ArrowFunction]
+person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+---------------------------
+SourceLocation [start=line 4 column 16, end=line 4 column 22] [Signature]
+person
+---------------------------
+SourceLocation [start=line 4 column 16, end=line 4 column 22] [Identifier]
+person
+---------------------------
+SourceLocation [start=line 4 column 26, end=line 7 column 2] [Procedure]
+{\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 49] [VariableDeclaration]
+let name = person ? person.name : `stranger`
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 8] [Type]
+let
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 49] [Variable]
+name = person ? person.name : `stranger`
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 13] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 5 column 14, end=line 5 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 5 column 16, end=line 5 column 49] [Ternary]
+person ? person.name : `stranger`
+---------------------------
+SourceLocation [start=line 5 column 16, end=line 5 column 22] [Identifier]
+person
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 36] [QualifiedExpression]
+person.name
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 32] [Qualifier]
+person.
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 31] [Identifier]
+person
+---------------------------
+SourceLocation [start=line 5 column 31, end=line 5 column 32] [Operator]
+.
+---------------------------
+SourceLocation [start=line 5 column 32, end=line 5 column 36] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 5 column 39, end=line 5 column 49] [LiteralTemplate]
+`stranger`
+---------------------------
+SourceLocation [start=line 5 column 40, end=line 5 column 48] [Constant]
+stranger
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 28] [Return]
+return `Howdy, ${name}`
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 28] [LiteralTemplate]
+`Howdy, ${name}`
+---------------------------
+SourceLocation [start=line 6 column 13, end=line 6 column 20] [Constant]
+Howdy, 
+---------------------------
+SourceLocation [start=line 6 column 20, end=line 6 column 27] [Variable]
+${name}
+---------------------------
+SourceLocation [start=line 6 column 22, end=line 6 column 26] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 41] [QualifiedExpression]
+console.log(greeting({ name: `Alice` }))
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 9 column 8, end=line 9 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 41] [FunctionCall]
+log(greeting({ name: `Alice` }))
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 9 column 12, end=line 9 column 41] [Signature]
+(greeting({ name: `Alice` }))
+---------------------------
+SourceLocation [start=line 9 column 13, end=line 9 column 40] [FunctionCall]
+greeting({ name: `Alice` })
+---------------------------
+SourceLocation [start=line 9 column 13, end=line 9 column 21] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 40] [Signature]
+({ name: `Alice` })
+---------------------------
+SourceLocation [start=line 9 column 22, end=line 9 column 39] [ObjectDeclaration]
+{ name: `Alice` }
+---------------------------
+SourceLocation [start=line 9 column 24, end=line 9 column 37] [FieldDeclaration]
+name: `Alice`
+---------------------------
+SourceLocation [start=line 9 column 24, end=line 9 column 28] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 9 column 30, end=line 9 column 37] [LiteralTemplate]
+`Alice`
+---------------------------
+SourceLocation [start=line 9 column 31, end=line 9 column 36] [Constant]
+Alice
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 28] [QualifiedExpression]
+console.log(greeting(null))
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 10 column 8, end=line 10 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 28] [FunctionCall]
+log(greeting(null))
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 10 column 12, end=line 10 column 28] [Signature]
+(greeting(null))
+---------------------------
+SourceLocation [start=line 10 column 13, end=line 10 column 27] [FunctionCall]
+greeting(null)
+---------------------------
+SourceLocation [start=line 10 column 13, end=line 10 column 21] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 10 column 21, end=line 10 column 27] [Signature]
+(null)
+---------------------------
+SourceLocation [start=line 10 column 22, end=line 10 column 26] [Null]
+null
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 56] [VariableDeclaration]
+let trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 12 column 56] [Variable]
+trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 12 column 10] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 12 column 11, end=line 12 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 12 column 13, end=line 12 column 56] [ArrayDeclaration]
+['redwood', 'bay', 'cedar', 'oak', 'maple']
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 23] [Literal]
+'redwood'
+---------------------------
+SourceLocation [start=line 12 column 25, end=line 12 column 30] [Literal]
+'bay'
+---------------------------
+SourceLocation [start=line 12 column 32, end=line 12 column 39] [Literal]
+'cedar'
+---------------------------
+SourceLocation [start=line 12 column 41, end=line 12 column 46] [Literal]
+'oak'
+---------------------------
+SourceLocation [start=line 12 column 48, end=line 12 column 55] [Literal]
+'maple'
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 13 column 11] [Infix]
+0 in trees
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 13 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 13 column 3, end=line 13 column 5] [Operator]
+in
+---------------------------
+SourceLocation [start=line 13 column 6, end=line 13 column 11] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 11] [Infix]
+3 in trees
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 2] [Literal]
+3
+---------------------------
+SourceLocation [start=line 14 column 3, end=line 14 column 5] [Operator]
+in
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 11] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 11] [Infix]
+6 in trees
+---------------------------
+SourceLocation [start=line 15 column 1, end=line 15 column 2] [Literal]
+6
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 5] [Operator]
+in
+---------------------------
+SourceLocation [start=line 15 column 6, end=line 15 column 11] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 15] [Infix]
+'bay' in trees
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 6] [Literal]
+'bay'
+---------------------------
+SourceLocation [start=line 16 column 7, end=line 16 column 9] [Operator]
+in
+---------------------------
+SourceLocation [start=line 16 column 10, end=line 16 column 15] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 18] [Infix]
+'length' in trees
+---------------------------
+SourceLocation [start=line 17 column 1, end=line 17 column 9] [Literal]
+'length'
+---------------------------
+SourceLocation [start=line 17 column 10, end=line 17 column 12] [Operator]
+in
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 18] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 25] [Infix]
+Symbol.iterator in trees
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 16] [QualifiedExpression]
+Symbol.iterator
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 8] [Qualifier]
+Symbol.
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 7] [Identifier]
+Symbol
+---------------------------
+SourceLocation [start=line 18 column 7, end=line 18 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 18 column 8, end=line 18 column 16] [Identifier]
+iterator
+---------------------------
+SourceLocation [start=line 18 column 17, end=line 18 column 19] [Operator]
+in
+---------------------------
+SourceLocation [start=line 18 column 20, end=line 18 column 25] [Identifier]
+trees
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 19 column 13] [Infix]
+'PI' in Math
+---------------------------
+SourceLocation [start=line 19 column 1, end=line 19 column 5] [Literal]
+'PI'
+---------------------------
+SourceLocation [start=line 19 column 6, end=line 19 column 8] [Operator]
+in
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 13] [Identifier]
+Math
+---------------------------
+SourceLocation [start=line 20 column 1, end=line 20 column 59] [VariableDeclaration]
+let mycar = { make: 'Honda', model: 'Accord', year: 1998 }
+---------------------------
+SourceLocation [start=line 20 column 1, end=line 20 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 20 column 5, end=line 20 column 59] [Variable]
+mycar = { make: 'Honda', model: 'Accord', year: 1998 }
+---------------------------
+SourceLocation [start=line 20 column 5, end=line 20 column 10] [Identifier]
+mycar
+---------------------------
+SourceLocation [start=line 20 column 11, end=line 20 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 59] [ObjectDeclaration]
+{ make: 'Honda', model: 'Accord', year: 1998 }
+---------------------------
+SourceLocation [start=line 20 column 15, end=line 20 column 28] [FieldDeclaration]
+make: 'Honda'
+---------------------------
+SourceLocation [start=line 20 column 15, end=line 20 column 19] [Identifier]
+make
+---------------------------
+SourceLocation [start=line 20 column 21, end=line 20 column 28] [Literal]
+'Honda'
+---------------------------
+SourceLocation [start=line 20 column 30, end=line 20 column 45] [FieldDeclaration]
+model: 'Accord'
+---------------------------
+SourceLocation [start=line 20 column 30, end=line 20 column 35] [Identifier]
+model
+---------------------------
+SourceLocation [start=line 20 column 37, end=line 20 column 45] [Literal]
+'Accord'
+---------------------------
+SourceLocation [start=line 20 column 47, end=line 20 column 57] [FieldDeclaration]
+year: 1998
+---------------------------
+SourceLocation [start=line 20 column 47, end=line 20 column 51] [Identifier]
+year
+---------------------------
+SourceLocation [start=line 20 column 53, end=line 20 column 57] [Literal]
+1998
+---------------------------
+SourceLocation [start=line 21 column 1, end=line 21 column 16] [Infix]
+'make' in mycar
+---------------------------
+SourceLocation [start=line 21 column 1, end=line 21 column 7] [Literal]
+'make'
+---------------------------
+SourceLocation [start=line 21 column 8, end=line 21 column 10] [Operator]
+in
+---------------------------
+SourceLocation [start=line 21 column 11, end=line 21 column 16] [Identifier]
+mycar
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 22 column 17] [Infix]
+'model' in mycar
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 22 column 8] [Literal]
+'model'
+---------------------------
+SourceLocation [start=line 22 column 9, end=line 22 column 11] [Operator]
+in
+---------------------------
+SourceLocation [start=line 22 column 12, end=line 22 column 17] [Identifier]
+mycar
+---------------------------
+SourceLocation [start=line 23 column 1, end=line 23 column 17] [Infix]
+'toString' in {}
+---------------------------
+SourceLocation [start=line 23 column 1, end=line 23 column 11] [Literal]
+'toString'
+---------------------------
+SourceLocation [start=line 23 column 12, end=line 23 column 14] [Operator]
+in
+---------------------------
+SourceLocation [start=line 23 column 15, end=line 23 column 17] [ObjectDeclaration]
+{}
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 9] [Infix]
+"1" != 1
+---------------------------
+SourceLocation [start=line 25 column 1, end=line 25 column 4] [Literal]
+"1"
+---------------------------
+SourceLocation [start=line 25 column 5, end=line 25 column 7] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 25 column 8, end=line 25 column 9] [Literal]
+1
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 9] [Infix]
+1 != "1"
+---------------------------
+SourceLocation [start=line 26 column 1, end=line 26 column 2] [Literal]
+1
+---------------------------
+SourceLocation [start=line 26 column 3, end=line 26 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 26 column 6, end=line 26 column 9] [Literal]
+"1"
+---------------------------
+SourceLocation [start=line 27 column 1, end=line 27 column 11] [Infix]
+0 != false
+---------------------------
+SourceLocation [start=line 27 column 1, end=line 27 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 27 column 3, end=line 27 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 27 column 6, end=line 27 column 11] [Literal]
+false
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 10] [Infix]
+0 != null
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 28 column 3, end=line 28 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 28 column 6, end=line 28 column 10] [Null]
+null
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 15] [Infix]
+0 != undefined
+---------------------------
+SourceLocation [start=line 29 column 1, end=line 29 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 29 column 3, end=line 29 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 29 column 6, end=line 29 column 15] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 12] [Infix]
+0 != !!null
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 30 column 3, end=line 30 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 30 column 6, end=line 30 column 12] [Prefix]
+!!null
+---------------------------
+SourceLocation [start=line 30 column 6, end=line 30 column 7] [Operator]
+!
+---------------------------
+SourceLocation [start=line 30 column 7, end=line 30 column 12] [Prefix]
+!null
+---------------------------
+SourceLocation [start=line 30 column 7, end=line 30 column 8] [Operator]
+!
+---------------------------
+SourceLocation [start=line 30 column 8, end=line 30 column 12] [Null]
+null
+---------------------------
+SourceLocation [start=line 31 column 1, end=line 31 column 17] [Infix]
+0 != !!undefined
+---------------------------
+SourceLocation [start=line 31 column 1, end=line 31 column 2] [Literal]
+0
+---------------------------
+SourceLocation [start=line 31 column 3, end=line 31 column 5] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 31 column 6, end=line 31 column 17] [Prefix]
+!!undefined
+---------------------------
+SourceLocation [start=line 31 column 6, end=line 31 column 7] [Operator]
+!
+---------------------------
+SourceLocation [start=line 31 column 7, end=line 31 column 17] [Prefix]
+!undefined
+---------------------------
+SourceLocation [start=line 31 column 7, end=line 31 column 8] [Operator]
+!
+---------------------------
+SourceLocation [start=line 31 column 8, end=line 31 column 17] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 32 column 18] [Infix]
+null != undefined
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 32 column 5] [Null]
+null
+---------------------------
+SourceLocation [start=line 32 column 6, end=line 32 column 8] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 32 column 18] [Undefined]
+undefined
+---------------------------
+SourceLocation [start=line 34 column 1, end=line 34 column 30] [VariableDeclaration]
+const number1 = new Number(3)
+---------------------------
+SourceLocation [start=line 34 column 1, end=line 34 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 34 column 7, end=line 34 column 30] [Variable]
+number1 = new Number(3)
+---------------------------
+SourceLocation [start=line 34 column 7, end=line 34 column 14] [Identifier]
+number1
+---------------------------
+SourceLocation [start=line 34 column 15, end=line 34 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 34 column 17, end=line 34 column 30] [New]
+new Number(3)
+---------------------------
+SourceLocation [start=line 34 column 21, end=line 34 column 27] [Identifier]
+Number
+---------------------------
+SourceLocation [start=line 34 column 27, end=line 34 column 30] [Signature]
+(3)
+---------------------------
+SourceLocation [start=line 34 column 28, end=line 34 column 29] [Literal]
+3
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 30] [VariableDeclaration]
+const number2 = new Number(3)
+---------------------------
+SourceLocation [start=line 35 column 1, end=line 35 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 35 column 7, end=line 35 column 30] [Variable]
+number2 = new Number(3)
+---------------------------
+SourceLocation [start=line 35 column 7, end=line 35 column 14] [Identifier]
+number2
+---------------------------
+SourceLocation [start=line 35 column 15, end=line 35 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 35 column 17, end=line 35 column 30] [New]
+new Number(3)
+---------------------------
+SourceLocation [start=line 35 column 21, end=line 35 column 27] [Identifier]
+Number
+---------------------------
+SourceLocation [start=line 35 column 27, end=line 35 column 30] [Signature]
+(3)
+---------------------------
+SourceLocation [start=line 35 column 28, end=line 35 column 29] [Literal]
+3
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 13] [Infix]
+number1 != 3
+---------------------------
+SourceLocation [start=line 36 column 1, end=line 36 column 8] [Identifier]
+number1
+---------------------------
+SourceLocation [start=line 36 column 9, end=line 36 column 11] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 36 column 12, end=line 36 column 13] [Literal]
+3
+---------------------------
+SourceLocation [start=line 37 column 1, end=line 37 column 19] [Infix]
+number1 != number2
+---------------------------
+SourceLocation [start=line 37 column 1, end=line 37 column 8] [Identifier]
+number1
+---------------------------
+SourceLocation [start=line 37 column 9, end=line 37 column 11] [Operator]
+!=
+---------------------------
+SourceLocation [start=line 37 column 12, end=line 37 column 19] [Identifier]
+number2
+---------------------------
+SourceLocation [start=line 39 column 1, end=line 39 column 49] [Infix]
+"Le prix est : " + (estMembre ? "15 €" : "30 €")
+---------------------------
+SourceLocation [start=line 39 column 1, end=line 39 column 17] [Literal]
+"Le prix est : "
+---------------------------
+SourceLocation [start=line 39 column 18, end=line 39 column 19] [Operator]
++
+---------------------------
+SourceLocation [start=line 39 column 20, end=line 39 column 49] [Parenthesis]
+(estMembre ? "15 €" : "30 €")
+---------------------------
+SourceLocation [start=line 39 column 21, end=line 39 column 48] [Ternary]
+estMembre ? "15 €" : "30 €"
+---------------------------
+SourceLocation [start=line 39 column 21, end=line 39 column 30] [Identifier]
+estMembre
+---------------------------
+SourceLocation [start=line 39 column 33, end=line 39 column 39] [Literal]
+"15 €"
+---------------------------
+SourceLocation [start=line 39 column 42, end=line 39 column 48] [Literal]
+"30 €"
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 46] [VariableDeclaration]
+var elvisLives = Math.PI > 4 ? "Yep" : "Nope"
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 41 column 46] [Variable]
+elvisLives = Math.PI > 4 ? "Yep" : "Nope"
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 41 column 15] [Identifier]
+elvisLives
+---------------------------
+SourceLocation [start=line 41 column 16, end=line 41 column 17] [Operator]
+=
+---------------------------
+SourceLocation [start=line 41 column 18, end=line 41 column 46] [Ternary]
+Math.PI > 4 ? "Yep" : "Nope"
+---------------------------
+SourceLocation [start=line 41 column 18, end=line 41 column 29] [Infix]
+Math.PI > 4
+---------------------------
+SourceLocation [start=line 41 column 18, end=line 41 column 25] [QualifiedExpression]
+Math.PI
+---------------------------
+SourceLocation [start=line 41 column 18, end=line 41 column 23] [Qualifier]
+Math.
+---------------------------
+SourceLocation [start=line 41 column 18, end=line 41 column 22] [Identifier]
+Math
+---------------------------
+SourceLocation [start=line 41 column 22, end=line 41 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 41 column 23, end=line 41 column 25] [Identifier]
+PI
+---------------------------
+SourceLocation [start=line 41 column 26, end=line 41 column 27] [Operator]
+>
+---------------------------
+SourceLocation [start=line 41 column 28, end=line 41 column 29] [Literal]
+4
+---------------------------
+SourceLocation [start=line 41 column 32, end=line 41 column 37] [Literal]
+"Yep"
+---------------------------
+SourceLocation [start=line 41 column 40, end=line 41 column 46] [Literal]
+"Nope"
+---------------------------
+SourceLocation [start=line 43 column 1, end=line 49 column 31] [VariableDeclaration]
+var premierControle = false,\\n secondControle = false,\\n acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+---------------------------
+SourceLocation [start=line 43 column 1, end=line 43 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 43 column 5, end=line 43 column 28] [Variable]
+premierControle = false
+---------------------------
+SourceLocation [start=line 43 column 5, end=line 43 column 20] [Identifier]
+premierControle
+---------------------------
+SourceLocation [start=line 43 column 21, end=line 43 column 22] [Operator]
+=
+---------------------------
+SourceLocation [start=line 43 column 23, end=line 43 column 28] [Literal]
+false
+---------------------------
+SourceLocation [start=line 44 column 5, end=line 44 column 27] [Variable]
+secondControle = false
+---------------------------
+SourceLocation [start=line 44 column 5, end=line 44 column 19] [Identifier]
+secondControle
+---------------------------
+SourceLocation [start=line 44 column 20, end=line 44 column 21] [Operator]
+=
+---------------------------
+SourceLocation [start=line 44 column 22, end=line 44 column 27] [Literal]
+false
+---------------------------
+SourceLocation [start=line 45 column 5, end=line 49 column 31] [Variable]
+acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+---------------------------
+SourceLocation [start=line 45 column 5, end=line 45 column 10] [Identifier]
+acces
+---------------------------
+SourceLocation [start=line 45 column 11, end=line 45 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 45 column 13, end=line 49 column 31] [Ternary]
+premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+---------------------------
+SourceLocation [start=line 45 column 13, end=line 45 column 28] [Identifier]
+premierControle
+---------------------------
+SourceLocation [start=line 46 column 11, end=line 46 column 25] [Literal]
+"Accès refusé"
+---------------------------
+SourceLocation [start=line 47 column 11, end=line 49 column 31] [Ternary]
+secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+---------------------------
+SourceLocation [start=line 47 column 11, end=line 47 column 25] [Identifier]
+secondControle
+---------------------------
+SourceLocation [start=line 48 column 15, end=line 48 column 29] [Literal]
+"Accès refusé"
+---------------------------
+SourceLocation [start=line 49 column 15, end=line 49 column 31] [Literal]
+"Accès autorisé"
+---------------------------
+SourceLocation [start=line 51 column 1, end=line 52 column 13] [VariableDeclaration]
+var stop = false,\\n age = 16
+---------------------------
+SourceLocation [start=line 51 column 1, end=line 51 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 51 column 5, end=line 51 column 17] [Variable]
+stop = false
+---------------------------
+SourceLocation [start=line 51 column 5, end=line 51 column 9] [Identifier]
+stop
+---------------------------
+SourceLocation [start=line 51 column 10, end=line 51 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 51 column 12, end=line 51 column 17] [Literal]
+false
+---------------------------
+SourceLocation [start=line 52 column 5, end=line 52 column 13] [Variable]
+age = 16
+---------------------------
+SourceLocation [start=line 52 column 5, end=line 52 column 8] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 52 column 9, end=line 52 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 52 column 11, end=line 52 column 13] [Literal]
+16
+---------------------------
+SourceLocation [start=line 54 column 1, end=line 54 column 60] [Ternary]
+age > 18 ? location.assign("continue.html") : (stop = true)
+---------------------------
+SourceLocation [start=line 54 column 1, end=line 54 column 9] [Infix]
+age > 18
+---------------------------
+SourceLocation [start=line 54 column 1, end=line 54 column 4] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 54 column 5, end=line 54 column 6] [Operator]
+>
+---------------------------
+SourceLocation [start=line 54 column 7, end=line 54 column 9] [Literal]
+18
+---------------------------
+SourceLocation [start=line 54 column 12, end=line 54 column 44] [QualifiedExpression]
+location.assign("continue.html")
+---------------------------
+SourceLocation [start=line 54 column 12, end=line 54 column 21] [Qualifier]
+location.
+---------------------------
+SourceLocation [start=line 54 column 12, end=line 54 column 20] [Identifier]
+location
+---------------------------
+SourceLocation [start=line 54 column 20, end=line 54 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 54 column 21, end=line 54 column 44] [FunctionCall]
+assign("continue.html")
+---------------------------
+SourceLocation [start=line 54 column 21, end=line 54 column 27] [Identifier]
+assign
+---------------------------
+SourceLocation [start=line 54 column 27, end=line 54 column 44] [Signature]
+("continue.html")
+---------------------------
+SourceLocation [start=line 54 column 28, end=line 54 column 43] [Literal]
+"continue.html"
+---------------------------
+SourceLocation [start=line 54 column 47, end=line 54 column 60] [Sequence]
+(stop = true)
+---------------------------
+SourceLocation [start=line 54 column 48, end=line 54 column 59] [Assignment]
+stop = true
+---------------------------
+SourceLocation [start=line 54 column 48, end=line 54 column 52] [Identifier]
+stop
+---------------------------
+SourceLocation [start=line 54 column 53, end=line 54 column 54] [Operator]
+=
+---------------------------
+SourceLocation [start=line 54 column 55, end=line 54 column 59] [Literal]
+true
+---------------------------
+SourceLocation [start=line 56 column 1, end=line 57 column 13] [VariableDeclaration]
+var stop = false,\\n age = 23
+---------------------------
+SourceLocation [start=line 56 column 1, end=line 56 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 56 column 5, end=line 56 column 17] [Variable]
+stop = false
+---------------------------
+SourceLocation [start=line 56 column 5, end=line 56 column 9] [Identifier]
+stop
+---------------------------
+SourceLocation [start=line 56 column 10, end=line 56 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 56 column 12, end=line 56 column 17] [Literal]
+false
+---------------------------
+SourceLocation [start=line 57 column 5, end=line 57 column 13] [Variable]
+age = 23
+---------------------------
+SourceLocation [start=line 57 column 5, end=line 57 column 8] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 57 column 9, end=line 57 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 57 column 11, end=line 57 column 13] [Literal]
+23
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 61 column 53] [Ternary]
+age > 18\\n ? (console.log("OK, accès autorisé."), location.assign("continue.html"))\\n : ((stop = true), console.log("Accès refusé !"))
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 59 column 9] [Infix]
+age > 18
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 59 column 4] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 59 column 5, end=line 59 column 6] [Operator]
+>
+---------------------------
+SourceLocation [start=line 59 column 7, end=line 59 column 9] [Literal]
+18
+---------------------------
+SourceLocation [start=line 60 column 7, end=line 60 column 77] [Sequence]
+(console.log("OK, accès autorisé."), location.assign("continue.html"))
+---------------------------
+SourceLocation [start=line 60 column 8, end=line 60 column 42] [QualifiedExpression]
+console.log("OK, accès autorisé.")
+---------------------------
+SourceLocation [start=line 60 column 8, end=line 60 column 16] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 60 column 8, end=line 60 column 15] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 60 column 15, end=line 60 column 16] [Operator]
+.
+---------------------------
+SourceLocation [start=line 60 column 16, end=line 60 column 42] [FunctionCall]
+log("OK, accès autorisé.")
+---------------------------
+SourceLocation [start=line 60 column 16, end=line 60 column 19] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 60 column 19, end=line 60 column 42] [Signature]
+("OK, accès autorisé.")
+---------------------------
+SourceLocation [start=line 60 column 20, end=line 60 column 41] [Literal]
+"OK, accès autorisé."
+---------------------------
+SourceLocation [start=line 60 column 44, end=line 60 column 76] [QualifiedExpression]
+location.assign("continue.html")
+---------------------------
+SourceLocation [start=line 60 column 44, end=line 60 column 53] [Qualifier]
+location.
+---------------------------
+SourceLocation [start=line 60 column 44, end=line 60 column 52] [Identifier]
+location
+---------------------------
+SourceLocation [start=line 60 column 52, end=line 60 column 53] [Operator]
+.
+---------------------------
+SourceLocation [start=line 60 column 53, end=line 60 column 76] [FunctionCall]
+assign("continue.html")
+---------------------------
+SourceLocation [start=line 60 column 53, end=line 60 column 59] [Identifier]
+assign
+---------------------------
+SourceLocation [start=line 60 column 59, end=line 60 column 76] [Signature]
+("continue.html")
+---------------------------
+SourceLocation [start=line 60 column 60, end=line 60 column 75] [Literal]
+"continue.html"
+---------------------------
+SourceLocation [start=line 61 column 7, end=line 61 column 53] [Sequence]
+((stop = true), console.log("Accès refusé !"))
+---------------------------
+SourceLocation [start=line 61 column 8, end=line 61 column 21] [Sequence]
+(stop = true)
+---------------------------
+SourceLocation [start=line 61 column 9, end=line 61 column 20] [Assignment]
+stop = true
+---------------------------
+SourceLocation [start=line 61 column 9, end=line 61 column 13] [Identifier]
+stop
+---------------------------
+SourceLocation [start=line 61 column 14, end=line 61 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 61 column 16, end=line 61 column 20] [Literal]
+true
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 52] [QualifiedExpression]
+console.log("Accès refusé !")
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 31] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 30] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 61 column 30, end=line 61 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 61 column 31, end=line 61 column 52] [FunctionCall]
+log("Accès refusé !")
+---------------------------
+SourceLocation [start=line 61 column 31, end=line 61 column 34] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 61 column 34, end=line 61 column 52] [Signature]
+("Accès refusé !")
+---------------------------
+SourceLocation [start=line 61 column 35, end=line 61 column 51] [Literal]
+"Accès refusé !"
+---------------------------
+SourceLocation [start=line 63 column 1, end=line 71 column 25] [VariableDeclaration]
+var url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+---------------------------
+SourceLocation [start=line 63 column 1, end=line 63 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 63 column 5, end=line 71 column 25] [Variable]
+url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+---------------------------
+SourceLocation [start=line 63 column 5, end=line 63 column 8] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 63 column 9, end=line 63 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 64 column 5, end=line 71 column 25] [Ternary]
+age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+---------------------------
+SourceLocation [start=line 64 column 5, end=line 64 column 13] [Infix]
+age > 18
+---------------------------
+SourceLocation [start=line 64 column 5, end=line 64 column 8] [Identifier]
+age
+---------------------------
+SourceLocation [start=line 64 column 9, end=line 64 column 10] [Operator]
+>
+---------------------------
+SourceLocation [start=line 64 column 11, end=line 64 column 13] [Literal]
+18
+---------------------------
+SourceLocation [start=line 65 column 11, end=line 68 column 29] [Sequence]
+(console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html")
+---------------------------
+SourceLocation [start=line 65 column 12, end=line 65 column 42] [QualifiedExpression]
+console.log("Accès autorisé.")
+---------------------------
+SourceLocation [start=line 65 column 12, end=line 65 column 20] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 65 column 12, end=line 65 column 19] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 65 column 19, end=line 65 column 20] [Operator]
+.
+---------------------------
+SourceLocation [start=line 65 column 20, end=line 65 column 42] [FunctionCall]
+log("Accès autorisé.")
+---------------------------
+SourceLocation [start=line 65 column 20, end=line 65 column 23] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 65 column 23, end=line 65 column 42] [Signature]
+("Accès autorisé.")
+---------------------------
+SourceLocation [start=line 65 column 24, end=line 65 column 41] [Literal]
+"Accès autorisé."
+---------------------------
+SourceLocation [start=line 68 column 13, end=line 68 column 28] [Literal]
+"continue.html"
+---------------------------
+SourceLocation [start=line 69 column 11, end=line 71 column 25] [Sequence]
+(console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+---------------------------
+SourceLocation [start=line 69 column 12, end=line 69 column 41] [QualifiedExpression]
+console.log("Accès refusé !")
+---------------------------
+SourceLocation [start=line 69 column 12, end=line 69 column 20] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 69 column 12, end=line 69 column 19] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 69 column 19, end=line 69 column 20] [Operator]
+.
+---------------------------
+SourceLocation [start=line 69 column 20, end=line 69 column 41] [FunctionCall]
+log("Accès refusé !")
+---------------------------
+SourceLocation [start=line 69 column 20, end=line 69 column 23] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 69 column 23, end=line 69 column 41] [Signature]
+("Accès refusé !")
+---------------------------
+SourceLocation [start=line 69 column 24, end=line 69 column 40] [Literal]
+"Accès refusé !"
+---------------------------
+SourceLocation [start=line 71 column 13, end=line 71 column 24] [Literal]
+"stop.html"
+---------------------------
+SourceLocation [start=line 74 column 1, end=line 79 column 2] [VariableDeclaration]
+var func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+---------------------------
+SourceLocation [start=line 74 column 1, end=line 74 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 74 column 5, end=line 79 column 2] [Variable]
+func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+---------------------------
+SourceLocation [start=line 74 column 5, end=line 74 column 10] [Identifier]
+func1
+---------------------------
+SourceLocation [start=line 74 column 11, end=line 74 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 74 column 13, end=line 79 column 2] [FunctionDeclaration]
+function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+---------------------------
+SourceLocation [start=line 74 column 21, end=line 74 column 23] [Signature]
+()
+---------------------------
+SourceLocation [start=line 74 column 24, end=line 79 column 2] [Procedure]
+{\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+---------------------------
+SourceLocation [start=line 75 column 5, end=line 78 column 27] [If]
+if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }
+---------------------------
+SourceLocation [start=line 75 column 5, end=line 75 column 39] [IfBlock]
+if (condition1) { return valeur1 }
+---------------------------
+SourceLocation [start=line 75 column 8, end=line 75 column 20] [Condition]
+(condition1)
+---------------------------
+SourceLocation [start=line 75 column 9, end=line 75 column 19] [Identifier]
+condition1
+---------------------------
+SourceLocation [start=line 75 column 21, end=line 75 column 39] [Procedure]
+{ return valeur1 }
+---------------------------
+SourceLocation [start=line 75 column 23, end=line 75 column 37] [Return]
+return valeur1
+---------------------------
+SourceLocation [start=line 75 column 30, end=line 75 column 37] [Identifier]
+valeur1
+---------------------------
+SourceLocation [start=line 76 column 5, end=line 76 column 44] [ElseIfBlock]
+else if (condition2) { return valeur2 }
+---------------------------
+SourceLocation [start=line 76 column 13, end=line 76 column 25] [Condition]
+(condition2)
+---------------------------
+SourceLocation [start=line 76 column 14, end=line 76 column 24] [Identifier]
+condition2
+---------------------------
+SourceLocation [start=line 76 column 26, end=line 76 column 44] [Procedure]
+{ return valeur2 }
+---------------------------
+SourceLocation [start=line 76 column 28, end=line 76 column 42] [Return]
+return valeur2
+---------------------------
+SourceLocation [start=line 76 column 35, end=line 76 column 42] [Identifier]
+valeur2
+---------------------------
+SourceLocation [start=line 77 column 5, end=line 77 column 44] [ElseIfBlock]
+else if (condition3) { return valeur3 }
+---------------------------
+SourceLocation [start=line 77 column 13, end=line 77 column 25] [Condition]
+(condition3)
+---------------------------
+SourceLocation [start=line 77 column 14, end=line 77 column 24] [Identifier]
+condition3
+---------------------------
+SourceLocation [start=line 77 column 26, end=line 77 column 44] [Procedure]
+{ return valeur3 }
+---------------------------
+SourceLocation [start=line 77 column 28, end=line 77 column 42] [Return]
+return valeur3
+---------------------------
+SourceLocation [start=line 77 column 35, end=line 77 column 42] [Identifier]
+valeur3
+---------------------------
+SourceLocation [start=line 78 column 5, end=line 78 column 27] [ElseBlock]
+else { return value4 }
+---------------------------
+SourceLocation [start=line 78 column 10, end=line 78 column 27] [Procedure]
+{ return value4 }
+---------------------------
+SourceLocation [start=line 78 column 12, end=line 78 column 25] [Return]
+return value4
+---------------------------
+SourceLocation [start=line 78 column 19, end=line 78 column 25] [Identifier]
+value4
+---------------------------
+SourceLocation [start=line 81 column 1, end=line 86 column 2] [VariableDeclaration]
+var func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+---------------------------
+SourceLocation [start=line 81 column 1, end=line 81 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 81 column 5, end=line 86 column 2] [Variable]
+func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+---------------------------
+SourceLocation [start=line 81 column 5, end=line 81 column 10] [Identifier]
+func2
+---------------------------
+SourceLocation [start=line 81 column 11, end=line 81 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 81 column 13, end=line 86 column 2] [FunctionDeclaration]
+function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+---------------------------
+SourceLocation [start=line 81 column 21, end=line 81 column 23] [Signature]
+()
+---------------------------
+SourceLocation [start=line 81 column 24, end=line 86 column 2] [Procedure]
+{\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+---------------------------
+SourceLocation [start=line 82 column 5, end=line 85 column 26] [Return]
+return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+---------------------------
+SourceLocation [start=line 82 column 12, end=line 85 column 26] [Ternary]
+condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+---------------------------
+SourceLocation [start=line 82 column 12, end=line 82 column 22] [Identifier]
+condition1
+---------------------------
+SourceLocation [start=line 82 column 25, end=line 82 column 32] [Identifier]
+valeur1
+---------------------------
+SourceLocation [start=line 83 column 11, end=line 85 column 26] [Ternary]
+condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+---------------------------
+SourceLocation [start=line 83 column 11, end=line 83 column 21] [Identifier]
+condition2
+---------------------------
+SourceLocation [start=line 83 column 24, end=line 83 column 31] [Identifier]
+valeur2
+---------------------------
+SourceLocation [start=line 84 column 15, end=line 85 column 26] [Ternary]
+condition3 ? valeur3\\n : valeur4
+---------------------------
+SourceLocation [start=line 84 column 15, end=line 84 column 25] [Identifier]
+condition3
+---------------------------
+SourceLocation [start=line 84 column 28, end=line 84 column 35] [Identifier]
+valeur3
+---------------------------
+SourceLocation [start=line 85 column 19, end=line 85 column 26] [Identifier]
+valeur4
+---------------------------

@@ -1,0 +1,1189 @@
+[0, Javascript] function resolveAfter2Seconds() {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}\\n\\nasync function asyncCall() {\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}\\n\\nasyncCall();\\n\\nfunction resolveAfter2Seconds() {\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}\\n\\nfunction resolveAfter1Second() {\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}\\n\\nasync function sequentialStart() {\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}\\n\\nasync function concurrentStart() {\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}\\n\\nfunction concurrentPromise() {\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}\\n\\nasync function parallel() {\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}\\n\\nsequentialStart() // after 2 seconds, logs "slow", then after 1 more second, "fast"\\n\\n// wait above to finish\\nsetTimeout(concurrentStart, 4000) // after 2 seconds, logs "slow" and then "fast"\\n\\n// wait again\\nsetTimeout(concurrentPromise, 7000) // same as concurrentStart\\n\\n// wait again\\nsetTimeout(parallel, 10000) // truly parallel: after 1 second, logs "fast", then after 1 more second, "slow"\\n\\nfunction getProcessedData(url) {\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}\\n\\nasync function getProcessedData(url) {\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}\\n\\nasync function getProcessedData(url) {\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}\\n\\nvar hoisted = "foo" in this;\\nconsole.log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`);\\nif (false) {\\n function foo(){ return 1; }\\n}\\n\\nfunction calc_sales(units_a, units_b, units_c) {\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}\\n\\nfunction testBreak(x) {\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}\\n\\nfunction resolveAfter2Seconds(x) {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n};\\n\\nconst add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n};\\n\\nadd(10).then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n});\\n\\n(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n});\\n\\nlet math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n};\\nmath.factit(3) //3;2;1;\\n\\nbutton.addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})\\n\\nvar créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n};\\n\\nvar getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})();\\n\\nfunction multiplier(a, b) {\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}\\n\\nfunction multiplier(facteur, ...lesArgs) {\\n return lesArgs.map((x) => facteur * x);\\n}\\n\\nfunction Personne() {\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}\\n\\nfunction Personne() {\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}\\n\\nfunction multiplier(a, b = 1) {\\n return a * b;\\n}\\n\\nfunction monConcat(séparateur) {\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}\\n\\nvar getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})();\\n\\nvar animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n};\\n\\nfunction A(x) {\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}\\n\\nfunction ajouteCarrés(a, b) {\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}\\n\\nfunction toto(i) {\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+ [1, FunctionDeclaration] function resolveAfter2Seconds() {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}
+  [2, Identifier] resolveAfter2Seconds
+  [2, Signature] ()
+  [2, Procedure] {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}
+   [3, Return] return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+    [4, New] new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+     [5, Identifier] Promise
+     [5, Signature] (resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+      [6, ArrowFunction] resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n }
+       [7, Signature] resolve
+        [8, Identifier] resolve
+       [7, Procedure] {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n }
+        [8, FunctionCall] setTimeout(() => {\\n resolve('resolved');\\n }, 2000)
+         [9, Identifier] setTimeout
+         [9, Signature] (() => {\\n resolve('resolved');\\n }, 2000)
+          [10, ArrowFunction] () => {\\n resolve('resolved');\\n }
+           [11, Signature] ()
+           [11, Procedure] {\\n resolve('resolved');\\n }
+            [12, FunctionCall] resolve('resolved')
+             [13, Identifier] resolve
+             [13, Signature] ('resolved')
+              [14, Literal] 'resolved'
+          [10, Literal] 2000
+ [1, FunctionDeclaration] async function asyncCall() {\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}
+  [2, Identifier] asyncCall
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}
+   [3, QualifiedExpression] console.log('calling')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('calling')
+     [5, Identifier] log
+     [5, Signature] ('calling')
+      [6, Literal] 'calling'
+   [3, VariableDeclaration] const result = await resolveAfter2Seconds()
+    [4, Type] const
+    [4, Variable] result = await resolveAfter2Seconds()
+     [5, Identifier] result
+     [5, Operator] =
+     [5, Await] await resolveAfter2Seconds()
+      [6, FunctionCall] resolveAfter2Seconds()
+       [7, Identifier] resolveAfter2Seconds
+       [7, Signature] ()
+   [3, QualifiedExpression] console.log(result)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(result)
+     [5, Identifier] log
+     [5, Signature] (result)
+      [6, Identifier] result
+ [1, FunctionCall] asyncCall()
+  [2, Identifier] asyncCall
+  [2, Signature] ()
+ [1, FunctionDeclaration] function resolveAfter2Seconds() {\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}
+  [2, Identifier] resolveAfter2Seconds
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}
+   [3, QualifiedExpression] console.log("starting slow promise")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("starting slow promise")
+     [5, Identifier] log
+     [5, Signature] ("starting slow promise")
+      [6, Literal] "starting slow promise"
+   [3, Return] return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+    [4, New] new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+     [5, Identifier] Promise
+     [5, Signature] (resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+      [6, ArrowFunction] resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n }
+       [7, Signature] resolve
+        [8, Identifier] resolve
+       [7, Procedure] {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n }
+        [8, FunctionCall] setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)
+         [9, Identifier] setTimeout
+         [9, Signature] (function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)
+          [10, FunctionDeclaration] function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }
+           [11, Signature] ()
+           [11, Procedure] {\\n resolve("slow")\\n console.log("slow promise is done")\\n }
+            [12, FunctionCall] resolve("slow")
+             [13, Identifier] resolve
+             [13, Signature] ("slow")
+              [14, Literal] "slow"
+            [12, QualifiedExpression] console.log("slow promise is done")
+             [13, Qualifier] console.
+              [14, Identifier] console
+              [14, Operator] .
+             [13, FunctionCall] log("slow promise is done")
+              [14, Identifier] log
+              [14, Signature] ("slow promise is done")
+               [15, Literal] "slow promise is done"
+          [10, Literal] 2000
+ [1, FunctionDeclaration] function resolveAfter1Second() {\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}
+  [2, Identifier] resolveAfter1Second
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}
+   [3, QualifiedExpression] console.log("starting fast promise")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("starting fast promise")
+     [5, Identifier] log
+     [5, Signature] ("starting fast promise")
+      [6, Literal] "starting fast promise"
+   [3, Return] return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+    [4, New] new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+     [5, Identifier] Promise
+     [5, Signature] (resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+      [6, ArrowFunction] resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n }
+       [7, Signature] resolve
+        [8, Identifier] resolve
+       [7, Procedure] {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n }
+        [8, FunctionCall] setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)
+         [9, Identifier] setTimeout
+         [9, Signature] (function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)
+          [10, FunctionDeclaration] function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }
+           [11, Signature] ()
+           [11, Procedure] {\\n resolve("fast")\\n console.log("fast promise is done")\\n }
+            [12, FunctionCall] resolve("fast")
+             [13, Identifier] resolve
+             [13, Signature] ("fast")
+              [14, Literal] "fast"
+            [12, QualifiedExpression] console.log("fast promise is done")
+             [13, Qualifier] console.
+              [14, Identifier] console
+              [14, Operator] .
+             [13, FunctionCall] log("fast promise is done")
+              [14, Identifier] log
+              [14, Signature] ("fast promise is done")
+               [15, Literal] "fast promise is done"
+          [10, Literal] 1000
+ [1, FunctionDeclaration] async function sequentialStart() {\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}
+  [2, Identifier] sequentialStart
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}
+   [3, QualifiedExpression] console.log('==SEQUENTIAL START==')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('==SEQUENTIAL START==')
+     [5, Identifier] log
+     [5, Signature] ('==SEQUENTIAL START==')
+      [6, Literal] '==SEQUENTIAL START=='
+   [3, VariableDeclaration] const slow = await resolveAfter2Seconds()
+    [4, Type] const
+    [4, Variable] slow = await resolveAfter2Seconds()
+     [5, Identifier] slow
+     [5, Operator] =
+     [5, Await] await resolveAfter2Seconds()
+      [6, FunctionCall] resolveAfter2Seconds()
+       [7, Identifier] resolveAfter2Seconds
+       [7, Signature] ()
+   [3, QualifiedExpression] console.log(slow)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(slow)
+     [5, Identifier] log
+     [5, Signature] (slow)
+      [6, Identifier] slow
+   [3, VariableDeclaration] const fast = await resolveAfter1Second()
+    [4, Type] const
+    [4, Variable] fast = await resolveAfter1Second()
+     [5, Identifier] fast
+     [5, Operator] =
+     [5, Await] await resolveAfter1Second()
+      [6, FunctionCall] resolveAfter1Second()
+       [7, Identifier] resolveAfter1Second
+       [7, Signature] ()
+   [3, QualifiedExpression] console.log(fast)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(fast)
+     [5, Identifier] log
+     [5, Signature] (fast)
+      [6, Identifier] fast
+ [1, FunctionDeclaration] async function concurrentStart() {\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}
+  [2, Identifier] concurrentStart
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}
+   [3, QualifiedExpression] console.log('==CONCURRENT START with await==')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('==CONCURRENT START with await==')
+     [5, Identifier] log
+     [5, Signature] ('==CONCURRENT START with await==')
+      [6, Literal] '==CONCURRENT START with await=='
+   [3, VariableDeclaration] const slow = resolveAfter2Seconds()
+    [4, Type] const
+    [4, Variable] slow = resolveAfter2Seconds()
+     [5, Identifier] slow
+     [5, Operator] =
+     [5, FunctionCall] resolveAfter2Seconds()
+      [6, Identifier] resolveAfter2Seconds
+      [6, Signature] ()
+   [3, VariableDeclaration] const fast = resolveAfter1Second()
+    [4, Type] const
+    [4, Variable] fast = resolveAfter1Second()
+     [5, Identifier] fast
+     [5, Operator] =
+     [5, FunctionCall] resolveAfter1Second()
+      [6, Identifier] resolveAfter1Second
+      [6, Signature] ()
+   [3, QualifiedExpression] console.log(await slow)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(await slow)
+     [5, Identifier] log
+     [5, Signature] (await slow)
+      [6, Await] await slow
+       [7, Identifier] slow
+   [3, QualifiedExpression] console.log(await fast)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(await fast)
+     [5, Identifier] log
+     [5, Signature] (await fast)
+      [6, Await] await fast
+       [7, Identifier] fast
+ [1, FunctionDeclaration] function concurrentPromise() {\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}
+  [2, Identifier] concurrentPromise
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}
+   [3, QualifiedExpression] console.log('==CONCURRENT START with Promise.all==')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('==CONCURRENT START with Promise.all==')
+     [5, Identifier] log
+     [5, Signature] ('==CONCURRENT START with Promise.all==')
+      [6, Literal] '==CONCURRENT START with Promise.all=='
+   [3, Return] return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+    [4, QualifiedExpression] Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+     [5, Qualifier] Promise.
+      [6, Identifier] Promise
+      [6, Operator] .
+     [5, Qualifier] all([resolveAfter2Seconds(), resolveAfter1Second()]).
+      [6, FunctionCall] all([resolveAfter2Seconds(), resolveAfter1Second()])
+       [7, Identifier] all
+       [7, Signature] ([resolveAfter2Seconds(), resolveAfter1Second()])
+        [8, ArrayDeclaration] [resolveAfter2Seconds(), resolveAfter1Second()]
+         [9, FunctionCall] resolveAfter2Seconds()
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] ()
+         [9, FunctionCall] resolveAfter1Second()
+          [10, Identifier] resolveAfter1Second
+          [10, Signature] ()
+      [6, Operator] .
+     [5, FunctionCall] then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+      [6, Identifier] then
+      [6, Signature] ((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+       [7, ArrowFunction] (messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n }
+        [8, Signature] (messages)
+         [9, Identifier] messages
+        [8, Procedure] {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n }
+         [9, QualifiedExpression] console.log(messages[0])
+          [10, Qualifier] console.
+           [11, Identifier] console
+           [11, Operator] .
+          [10, FunctionCall] log(messages[0])
+           [11, Identifier] log
+           [11, Signature] (messages[0])
+            [12, MapExpression] messages[0]
+             [13, Identifier] messages
+             [13, Bracket] [0]
+              [14, Literal] 0
+         [9, QualifiedExpression] console.log(messages[1])
+          [10, Qualifier] console.
+           [11, Identifier] console
+           [11, Operator] .
+          [10, FunctionCall] log(messages[1])
+           [11, Identifier] log
+           [11, Signature] (messages[1])
+            [12, MapExpression] messages[1]
+             [13, Identifier] messages
+             [13, Bracket] [1]
+              [14, Literal] 1
+ [1, FunctionDeclaration] async function parallel() {\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}
+  [2, Identifier] parallel
+  [2, Signature] ()
+  [2, Procedure] {\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}
+   [3, QualifiedExpression] console.log('==PARALLEL with await Promise.all==')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('==PARALLEL with await Promise.all==')
+     [5, Identifier] log
+     [5, Signature] ('==PARALLEL with await Promise.all==')
+      [6, Literal] '==PARALLEL with await Promise.all=='
+   [3, Await] await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+    [4, QualifiedExpression] Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+     [5, Qualifier] Promise.
+      [6, Identifier] Promise
+      [6, Operator] .
+     [5, FunctionCall] all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+      [6, Identifier] all
+      [6, Signature] ([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+       [7, ArrayDeclaration] [\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ]
+        [8, InvokedFunction] (async()=>console.log(await resolveAfter2Seconds()))()
+         [9, Definition] (async()=>console.log(await resolveAfter2Seconds()))
+          [10, ArrowFunction] async()=>console.log(await resolveAfter2Seconds())
+           [11, Signature] ()
+           [11, Procedure] console.log(await resolveAfter2Seconds())
+            [12, QualifiedExpression] console.log(await resolveAfter2Seconds())
+             [13, Qualifier] console.
+              [14, Identifier] console
+              [14, Operator] .
+             [13, FunctionCall] log(await resolveAfter2Seconds())
+              [14, Identifier] log
+              [14, Signature] (await resolveAfter2Seconds())
+               [15, Await] await resolveAfter2Seconds()
+                [16, FunctionCall] resolveAfter2Seconds()
+                 [17, Identifier] resolveAfter2Seconds
+                 [17, Signature] ()
+         [9, Signature] ()
+        [8, InvokedFunction] (async()=>console.log(await resolveAfter1Second()))()
+         [9, Definition] (async()=>console.log(await resolveAfter1Second()))
+          [10, ArrowFunction] async()=>console.log(await resolveAfter1Second())
+           [11, Signature] ()
+           [11, Procedure] console.log(await resolveAfter1Second())
+            [12, QualifiedExpression] console.log(await resolveAfter1Second())
+             [13, Qualifier] console.
+              [14, Identifier] console
+              [14, Operator] .
+             [13, FunctionCall] log(await resolveAfter1Second())
+              [14, Identifier] log
+              [14, Signature] (await resolveAfter1Second())
+               [15, Await] await resolveAfter1Second()
+                [16, FunctionCall] resolveAfter1Second()
+                 [17, Identifier] resolveAfter1Second
+                 [17, Signature] ()
+         [9, Signature] ()
+ [1, FunctionCall] sequentialStart()
+  [2, Identifier] sequentialStart
+  [2, Signature] ()
+ [1, FunctionCall] setTimeout(concurrentStart, 4000)
+  [2, Identifier] setTimeout
+  [2, Signature] (concurrentStart, 4000)
+   [3, Identifier] concurrentStart
+   [3, Literal] 4000
+ [1, FunctionCall] setTimeout(concurrentPromise, 7000)
+  [2, Identifier] setTimeout
+  [2, Signature] (concurrentPromise, 7000)
+   [3, Identifier] concurrentPromise
+   [3, Literal] 7000
+ [1, FunctionCall] setTimeout(parallel, 10000)
+  [2, Identifier] setTimeout
+  [2, Signature] (parallel, 10000)
+   [3, Identifier] parallel
+   [3, Literal] 10000
+ [1, FunctionDeclaration] function getProcessedData(url) {\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}
+  [2, Identifier] getProcessedData
+  [2, Signature] (url)
+   [3, Identifier] url
+  [2, Procedure] {\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}
+   [3, Return] return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+    [4, QualifiedExpression] downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+     [5, Qualifier] downloadData(url) // returns a promise\\n .
+      [6, FunctionCall] downloadData(url)
+       [7, Identifier] downloadData
+       [7, Signature] (url)
+        [8, Identifier] url
+      [6, Operator] .
+     [5, Qualifier] catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .
+      [6, FunctionCall] catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })
+       [7, Identifier] catch
+       [7, Signature] (e => {\\n return downloadFallbackData(url) // returns a promise\\n })
+        [8, ArrowFunction] e => {\\n return downloadFallbackData(url) // returns a promise\\n }
+         [9, Signature] e
+          [10, Identifier] e
+         [9, Procedure] {\\n return downloadFallbackData(url) // returns a promise\\n }
+          [10, Return] return downloadFallbackData(url)
+           [11, FunctionCall] downloadFallbackData(url)
+            [12, Identifier] downloadFallbackData
+            [12, Signature] (url)
+             [13, Identifier] url
+      [6, Operator] .
+     [5, FunctionCall] then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+      [6, Identifier] then
+      [6, Signature] (v => {\\n return processDataInWorker(v) // returns a promise\\n })
+       [7, ArrowFunction] v => {\\n return processDataInWorker(v) // returns a promise\\n }
+        [8, Signature] v
+         [9, Identifier] v
+        [8, Procedure] {\\n return processDataInWorker(v) // returns a promise\\n }
+         [9, Return] return processDataInWorker(v)
+          [10, FunctionCall] processDataInWorker(v)
+           [11, Identifier] processDataInWorker
+           [11, Signature] (v)
+            [12, Identifier] v
+ [1, FunctionDeclaration] async function getProcessedData(url) {\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}
+  [2, Identifier] getProcessedData
+  [2, Signature] (url)
+   [3, Identifier] url
+  [2, Procedure] {\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}
+   [3, VariableDeclaration] let v
+    [4, Type] let
+    [4, Variable] v
+     [5, Identifier] v
+   [3, Try] try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }
+    [4, Procedure] {\\n v = await downloadData(url)\\n }
+     [5, Assignment] v = await downloadData(url)
+      [6, Identifier] v
+      [6, Operator] =
+      [6, Await] await downloadData(url)
+       [7, FunctionCall] downloadData(url)
+        [8, Identifier] downloadData
+        [8, Signature] (url)
+         [9, Identifier] url
+    [4, Catch] catch(e) {\\n v = await downloadFallbackData(url)\\n }
+     [5, Signature] (e)
+      [6, Identifier] e
+     [5, Procedure] {\\n v = await downloadFallbackData(url)\\n }
+      [6, Assignment] v = await downloadFallbackData(url)
+       [7, Identifier] v
+       [7, Operator] =
+       [7, Await] await downloadFallbackData(url)
+        [8, FunctionCall] downloadFallbackData(url)
+         [9, Identifier] downloadFallbackData
+         [9, Signature] (url)
+          [10, Identifier] url
+   [3, Return] return processDataInWorker(v)
+    [4, FunctionCall] processDataInWorker(v)
+     [5, Identifier] processDataInWorker
+     [5, Signature] (v)
+      [6, Identifier] v
+ [1, FunctionDeclaration] async function getProcessedData(url) {\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}
+  [2, Identifier] getProcessedData
+  [2, Signature] (url)
+   [3, Identifier] url
+  [2, Procedure] {\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}
+   [3, VariableDeclaration] const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+    [4, Type] const
+    [4, Variable] v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+     [5, Identifier] v
+     [5, Operator] =
+     [5, Await] await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+      [6, QualifiedExpression] downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+       [7, Qualifier] downloadData(url).
+        [8, FunctionCall] downloadData(url)
+         [9, Identifier] downloadData
+         [9, Signature] (url)
+          [10, Identifier] url
+        [8, Operator] .
+       [7, FunctionCall] catch(e => {\\n return downloadFallbackData(url)\\n })
+        [8, Identifier] catch
+        [8, Signature] (e => {\\n return downloadFallbackData(url)\\n })
+         [9, ArrowFunction] e => {\\n return downloadFallbackData(url)\\n }
+          [10, Signature] e
+           [11, Identifier] e
+          [10, Procedure] {\\n return downloadFallbackData(url)\\n }
+           [11, Return] return downloadFallbackData(url)
+            [12, FunctionCall] downloadFallbackData(url)
+             [13, Identifier] downloadFallbackData
+             [13, Signature] (url)
+              [14, Identifier] url
+   [3, Return] return processDataInWorker(v)
+    [4, FunctionCall] processDataInWorker(v)
+     [5, Identifier] processDataInWorker
+     [5, Signature] (v)
+      [6, Identifier] v
+ [1, VariableDeclaration] var hoisted = "foo" in this
+  [2, Type] var
+  [2, Variable] hoisted = "foo" in this
+   [3, Identifier] hoisted
+   [3, Operator] =
+   [3, Infix] "foo" in this
+    [4, Literal] "foo"
+    [4, Operator] in
+    [4, This] this
+ [1, QualifiedExpression] console.log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+   [3, Identifier] log
+   [3, Signature] (`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+    [4, LiteralTemplate] `'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`
+     [5, Constant] 'foo' name 
+     [5, Variable] ${hoisted ? "is" : "is not"}
+      [6, Ternary] hoisted ? "is" : "is not"
+       [7, Identifier] hoisted
+       [7, Literal] "is"
+       [7, Literal] "is not"
+     [5, Constant]  hoisted. typeof foo is 
+     [5, Variable] ${typeof foo}
+      [6, Prefix] typeof foo
+       [7, Operator] typeof
+       [7, Identifier] foo
+ [1, If] if (false) {\\n function foo(){ return 1; }\\n}
+  [2, IfBlock] if (false) {\\n function foo(){ return 1; }\\n}
+   [3, Condition] (false)
+    [4, Literal] false
+   [3, Procedure] {\\n function foo(){ return 1; }\\n}
+    [4, FunctionDeclaration] function foo(){ return 1; }
+     [5, Identifier] foo
+     [5, Signature] ()
+     [5, Procedure] { return 1; }
+      [6, Return] return 1
+       [7, Literal] 1
+ [1, FunctionDeclaration] function calc_sales(units_a, units_b, units_c) {\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}
+  [2, Identifier] calc_sales
+  [2, Signature] (units_a, units_b, units_c)
+   [3, Identifier] units_a
+   [3, Identifier] units_b
+   [3, Identifier] units_c
+  [2, Procedure] {\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}
+   [3, Return] return units_a * 79 + units_b * 129 + units_c * 699
+    [4, Infix] units_a * 79 + units_b * 129 + units_c * 699
+     [5, Infix] units_a * 79 + units_b * 129
+      [6, Infix] units_a * 79
+       [7, Identifier] units_a
+       [7, Operator] *
+       [7, Literal] 79
+      [6, Operator] +
+      [6, Infix] units_b * 129
+       [7, Identifier] units_b
+       [7, Operator] *
+       [7, Literal] 129
+     [5, Operator] +
+     [5, Infix] units_c * 699
+      [6, Identifier] units_c
+      [6, Operator] *
+      [6, Literal] 699
+ [1, FunctionDeclaration] function testBreak(x) {\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}
+  [2, Identifier] testBreak
+  [2, Signature] (x)
+   [3, Identifier] x
+  [2, Procedure] {\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}
+   [3, VariableDeclaration] var i = 0
+    [4, Type] var
+    [4, Variable] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+   [3, While] while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }
+    [4, Condition] (i < 6)
+     [5, Infix] i < 6
+      [6, Identifier] i
+      [6, Operator] <
+      [6, Literal] 6
+    [4, Procedure] {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }
+     [5, If] if (i == 3) {\\n break;\\n }
+      [6, IfBlock] if (i == 3) {\\n break;\\n }
+       [7, Condition] (i == 3)
+        [8, Infix] i == 3
+         [9, Identifier] i
+         [9, Operator] ==
+         [9, Literal] 3
+       [7, Procedure] {\\n break;\\n }
+        [8, Break] break
+     [5, Assignment] i += 1
+      [6, Identifier] i
+      [6, Operator] +=
+      [6, Literal] 1
+   [3, Return] return i * x
+    [4, Infix] i * x
+     [5, Identifier] i
+     [5, Operator] *
+     [5, Identifier] x
+ [1, FunctionDeclaration] function resolveAfter2Seconds(x) {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n}
+  [2, Identifier] resolveAfter2Seconds
+  [2, Signature] (x)
+   [3, Identifier] x
+  [2, Procedure] {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n}
+   [3, Return] return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+    [4, New] new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+     [5, Identifier] Promise
+     [5, Signature] (resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+      [6, ArrowFunction] resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n }
+       [7, Signature] resolve
+        [8, Identifier] resolve
+       [7, Procedure] {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n }
+        [8, FunctionCall] setTimeout(() => {\\n resolve(x);\\n }, 2000)
+         [9, Identifier] setTimeout
+         [9, Signature] (() => {\\n resolve(x);\\n }, 2000)
+          [10, ArrowFunction] () => {\\n resolve(x);\\n }
+           [11, Signature] ()
+           [11, Procedure] {\\n resolve(x);\\n }
+            [12, FunctionCall] resolve(x)
+             [13, Identifier] resolve
+             [13, Signature] (x)
+              [14, Identifier] x
+          [10, Literal] 2000
+ [1, VariableDeclaration] const add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+  [2, Type] const
+  [2, Variable] add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+   [3, Identifier] add
+   [3, Operator] =
+   [3, FunctionDeclaration] async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+    [4, Signature] (x)
+     [5, Identifier] x
+    [4, Procedure] { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+     [5, VariableDeclaration] let a = await resolveAfter2Seconds(20)
+      [6, Type] let
+      [6, Variable] a = await resolveAfter2Seconds(20)
+       [7, Identifier] a
+       [7, Operator] =
+       [7, Await] await resolveAfter2Seconds(20)
+        [8, FunctionCall] resolveAfter2Seconds(20)
+         [9, Identifier] resolveAfter2Seconds
+         [9, Signature] (20)
+          [10, Literal] 20
+     [5, VariableDeclaration] let b = await resolveAfter2Seconds(30)
+      [6, Type] let
+      [6, Variable] b = await resolveAfter2Seconds(30)
+       [7, Identifier] b
+       [7, Operator] =
+       [7, Await] await resolveAfter2Seconds(30)
+        [8, FunctionCall] resolveAfter2Seconds(30)
+         [9, Identifier] resolveAfter2Seconds
+         [9, Signature] (30)
+          [10, Literal] 30
+     [5, Return] return x + a + b
+      [6, Infix] x + a + b
+       [7, Infix] x + a
+        [8, Identifier] x
+        [8, Operator] +
+        [8, Identifier] a
+       [7, Operator] +
+       [7, Identifier] b
+ [1, QualifiedExpression] add(10).then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+  [2, Qualifier] add(10).
+   [3, FunctionCall] add(10)
+    [4, Identifier] add
+    [4, Signature] (10)
+     [5, Literal] 10
+   [3, Operator] .
+  [2, FunctionCall] then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+   [3, Identifier] then
+   [3, Signature] (v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+    [4, ArrowFunction] v => {\\n console.log(v); // prints 60 after 4 seconds.\\n}
+     [5, Signature] v
+      [6, Identifier] v
+     [5, Procedure] {\\n console.log(v); // prints 60 after 4 seconds.\\n}
+      [6, QualifiedExpression] console.log(v)
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log(v)
+        [8, Identifier] log
+        [8, Signature] (v)
+         [9, Identifier] v
+ [1, QualifiedExpression] (async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+  [2, Qualifier] (async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).
+   [3, InvokedFunction] (async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10)
+    [4, Definition] (async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})
+     [5, FunctionDeclaration] async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n}
+      [6, Signature] (x)
+       [7, Identifier] x
+      [6, Procedure] { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n}
+       [7, VariableDeclaration] let p_a = resolveAfter2Seconds(20)
+        [8, Type] let
+        [8, Variable] p_a = resolveAfter2Seconds(20)
+         [9, Identifier] p_a
+         [9, Operator] =
+         [9, FunctionCall] resolveAfter2Seconds(20)
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] (20)
+           [11, Literal] 20
+       [7, VariableDeclaration] let p_b = resolveAfter2Seconds(30)
+        [8, Type] let
+        [8, Variable] p_b = resolveAfter2Seconds(30)
+         [9, Identifier] p_b
+         [9, Operator] =
+         [9, FunctionCall] resolveAfter2Seconds(30)
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] (30)
+           [11, Literal] 30
+       [7, Return] return x + await p_a + await p_b
+        [8, Infix] x + await p_a + await p_b
+         [9, Identifier] x
+         [9, Operator] +
+         [9, Await] await p_a + await p_b
+          [10, Infix] p_a + await p_b
+           [11, Identifier] p_a
+           [11, Operator] +
+           [11, Await] await p_b
+            [12, Identifier] p_b
+    [4, Signature] (10)
+     [5, Literal] 10
+   [3, Operator] .
+  [2, FunctionCall] then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+   [3, Identifier] then
+   [3, Signature] (v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+    [4, ArrowFunction] v => {\\n console.log(v); // prints 60 after 2 seconds.\\n}
+     [5, Signature] v
+      [6, Identifier] v
+     [5, Procedure] {\\n console.log(v); // prints 60 after 2 seconds.\\n}
+      [6, QualifiedExpression] console.log(v)
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log(v)
+        [8, Identifier] log
+        [8, Signature] (v)
+         [9, Identifier] v
+ [1, VariableDeclaration] let math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+  [2, Type] let
+  [2, Variable] math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+   [3, Identifier] math
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+    [4, FieldDeclaration] 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+     [5, Literal] 'factit'
+     [5, FunctionDeclaration] function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+      [6, Identifier] factorial
+      [6, Signature] (n)
+       [7, Identifier] n
+      [6, Procedure] {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+       [7, QualifiedExpression] console.log(n)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(n)
+         [9, Identifier] log
+         [9, Signature] (n)
+          [10, Identifier] n
+       [7, If] if (n <= 1) {\\n return 1;\\n }
+        [8, IfBlock] if (n <= 1) {\\n return 1;\\n }
+         [9, Condition] (n <= 1)
+          [10, Infix] n <= 1
+           [11, Identifier] n
+           [11, Operator] <=
+           [11, Literal] 1
+         [9, Procedure] {\\n return 1;\\n }
+          [10, Return] return 1
+           [11, Literal] 1
+       [7, Return] return n * factorial(n - 1)
+        [8, Infix] n * factorial(n - 1)
+         [9, Identifier] n
+         [9, Operator] *
+         [9, FunctionCall] factorial(n - 1)
+          [10, Identifier] factorial
+          [10, Signature] (n - 1)
+           [11, Infix] n - 1
+            [12, Identifier] n
+            [12, Operator] -
+            [12, Literal] 1
+ [1, QualifiedExpression] math.factit(3)
+  [2, Qualifier] math.
+   [3, Identifier] math
+   [3, Operator] .
+  [2, FunctionCall] factit(3)
+   [3, Identifier] factit
+   [3, Signature] (3)
+    [4, Literal] 3
+ [1, QualifiedExpression] button.addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})
+  [2, Qualifier] button.
+   [3, Identifier] button
+   [3, Operator] .
+  [2, FunctionCall] addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})
+   [3, Identifier] addEventListener
+   [3, Signature] ('click', function(event) {\\n console.log('button is clicked!')\\n})
+    [4, Literal] 'click'
+    [4, FunctionDeclaration] function(event) {\\n console.log('button is clicked!')\\n}
+     [5, Signature] (event)
+      [6, Identifier] event
+     [5, Procedure] {\\n console.log('button is clicked!')\\n}
+      [6, QualifiedExpression] console.log('button is clicked!')
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log('button is clicked!')
+        [8, Identifier] log
+        [8, Signature] ('button is clicked!')
+         [9, Literal] 'button is clicked!'
+ [1, VariableDeclaration] var créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+  [2, Type] var
+  [2, Variable] créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+   [3, Identifier] créerAnimal
+   [3, Operator] =
+   [3, FunctionDeclaration] function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+    [4, Signature] (nom)
+     [5, Identifier] nom
+    [4, Procedure] {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+     [5, VariableDeclaration] var sexe
+      [6, Type] var
+      [6, Variable] sexe
+       [7, Identifier] sexe
+     [5, Return] return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n }
+      [6, ObjectDeclaration] {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n }
+       [7, FieldDeclaration] setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n }
+        [8, Identifier] setNom
+        [8, FunctionDeclaration] function (nouveauNom) {\\n nom = nouveauNom;\\n }
+         [9, Signature] (nouveauNom)
+          [10, Identifier] nouveauNom
+         [9, Procedure] {\\n nom = nouveauNom;\\n }
+          [10, Assignment] nom = nouveauNom
+           [11, Identifier] nom
+           [11, Operator] =
+           [11, Identifier] nouveauNom
+       [7, FieldDeclaration] getNom: function () {\\n return nom;\\n }
+        [8, Identifier] getNom
+        [8, FunctionDeclaration] function () {\\n return nom;\\n }
+         [9, Signature] ()
+         [9, Procedure] {\\n return nom;\\n }
+          [10, Return] return nom
+           [11, Identifier] nom
+       [7, FieldDeclaration] getSexe: function () {\\n return sexe;\\n }
+        [8, Identifier] getSexe
+        [8, FunctionDeclaration] function () {\\n return sexe;\\n }
+         [9, Signature] ()
+         [9, Procedure] {\\n return sexe;\\n }
+          [10, Return] return sexe
+           [11, Identifier] sexe
+       [7, FieldDeclaration] setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+        [8, Identifier] setSexe
+        [8, FunctionDeclaration] function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+         [9, Signature] (nouveauSexe)
+          [10, Identifier] nouveauSexe
+         [9, Procedure] {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+          [10, If] if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }
+           [11, IfBlock] if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }
+            [12, Condition] (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n )
+             [13, Infix] typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")
+              [14, Infix] typeof nouveauSexe == "string"
+               [15, Prefix] typeof nouveauSexe
+                [16, Operator] typeof
+                [16, Identifier] nouveauSexe
+               [15, Operator] ==
+               [15, Literal] "string"
+              [14, Operator] &&
+              [14, Parenthesis] (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")
+               [15, Infix] nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle"
+                [16, Infix] nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase()
+                 [17, Infix] nouveauSexe.toLowerCase() == "mâle"
+                  [18, QualifiedExpression] nouveauSexe.toLowerCase()
+                   [19, Qualifier] nouveauSexe.
+                    [20, Identifier] nouveauSexe
+                    [20, Operator] .
+                   [19, FunctionCall] toLowerCase()
+                    [20, Identifier] toLowerCase
+                    [20, Signature] ()
+                  [18, Operator] ==
+                  [18, Literal] "mâle"
+                 [17, Operator] ||
+                 [17, QualifiedExpression] nouveauSexe.toLowerCase()
+                  [18, Qualifier] nouveauSexe.
+                   [19, Identifier] nouveauSexe
+                   [19, Operator] .
+                  [18, FunctionCall] toLowerCase()
+                   [19, Identifier] toLowerCase
+                   [19, Signature] ()
+                [16, Operator] ==
+                [16, Literal] "femelle"
+            [12, Procedure] {\\n sexe = nouveauSexe;\\n }
+             [13, Assignment] sexe = nouveauSexe
+              [14, Identifier] sexe
+              [14, Operator] =
+              [14, Identifier] nouveauSexe
+       [7, Empty] 
+ [1, VariableDeclaration] var getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+  [2, Type] var
+  [2, Variable] getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+   [3, Identifier] getCode
+   [3, Operator] =
+   [3, InvokedFunction] (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+    [4, Definition] (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})
+     [5, FunctionDeclaration] function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+      [6, Signature] ()
+      [6, Procedure] {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+       [7, VariableDeclaration] var codeAPI = "0]Eal(eh&2"
+        [8, Type] var
+        [8, Variable] codeAPI = "0]Eal(eh&2"
+         [9, Identifier] codeAPI
+         [9, Operator] =
+         [9, Literal] "0]Eal(eh&2"
+       [7, Return] return function () {\\n return codeAPI;\\n }
+        [8, FunctionDeclaration] function () {\\n return codeAPI;\\n }
+         [9, Signature] ()
+         [9, Procedure] {\\n return codeAPI;\\n }
+          [10, Return] return codeAPI
+           [11, Identifier] codeAPI
+    [4, Signature] ()
+ [1, FunctionDeclaration] function multiplier(a, b) {\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}
+  [2, Identifier] multiplier
+  [2, Signature] (a, b)
+   [3, Identifier] a
+   [3, Identifier] b
+  [2, Procedure] {\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}
+   [3, Assignment] b = typeof b !== "undefined" ? b : 1
+    [4, Identifier] b
+    [4, Operator] =
+    [4, Prefix] typeof b !== "undefined" ? b : 1
+     [5, Operator] typeof
+     [5, Ternary] b !== "undefined" ? b : 1
+      [6, Infix] b !== "undefined"
+       [7, Identifier] b
+       [7, Operator] !==
+       [7, Literal] "undefined"
+      [6, Identifier] b
+      [6, Literal] 1
+   [3, Return] return a * b
+    [4, Infix] a * b
+     [5, Identifier] a
+     [5, Operator] *
+     [5, Identifier] b
+ [1, FunctionDeclaration] function multiplier(facteur, ...lesArgs) {\\n return lesArgs.map((x) => facteur * x);\\n}
+  [2, Identifier] multiplier
+  [2, Signature] (facteur, ...lesArgs)
+   [3, Identifier] facteur
+   [3, Spread] ...lesArgs
+    [4, Identifier] lesArgs
+  [2, Procedure] {\\n return lesArgs.map((x) => facteur * x);\\n}
+   [3, Return] return lesArgs.map((x) => facteur * x)
+    [4, QualifiedExpression] lesArgs.map((x) => facteur * x)
+     [5, Qualifier] lesArgs.
+      [6, Identifier] lesArgs
+      [6, Operator] .
+     [5, FunctionCall] map((x) => facteur * x)
+      [6, Identifier] map
+      [6, Signature] ((x) => facteur * x)
+       [7, ArrowFunction] (x) => facteur * x
+        [8, Signature] (x)
+         [9, Identifier] x
+        [8, Procedure] facteur * x
+         [9, Infix] facteur * x
+          [10, Identifier] facteur
+          [10, Operator] *
+          [10, Identifier] x
+ [1, FunctionDeclaration] function Personne() {\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}
+  [2, Identifier] Personne
+  [2, Signature] ()
+  [2, Procedure] {\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}
+   [3, Assignment] this.âge = 0
+    [4, QualifiedExpression] this.âge
+     [5, Qualifier] this.
+      [6, This] this
+      [6, Operator] .
+     [5, Identifier] âge
+    [4, Operator] =
+    [4, Literal] 0
+   [3, FunctionCall] setInterval(function grandir() {\\n this.âge++;\\n }, 1000)
+    [4, Identifier] setInterval
+    [4, Signature] (function grandir() {\\n this.âge++;\\n }, 1000)
+     [5, FunctionDeclaration] function grandir() {\\n this.âge++;\\n }
+      [6, Identifier] grandir
+      [6, Signature] ()
+      [6, Procedure] {\\n this.âge++;\\n }
+       [7, Increment] this.âge++
+        [8, Operator] ++
+        [8, QualifiedExpression] this.âge
+         [9, Qualifier] this.
+          [10, This] this
+          [10, Operator] .
+         [9, Identifier] âge
+     [5, Literal] 1000
+ [1, FunctionDeclaration] function Personne() {\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}
+  [2, Identifier] Personne
+  [2, Signature] ()
+  [2, Procedure] {\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}
+   [3, Assignment] this.âge = 0
+    [4, QualifiedExpression] this.âge
+     [5, Qualifier] this.
+      [6, This] this
+      [6, Operator] .
+     [5, Identifier] âge
+    [4, Operator] =
+    [4, Literal] 0
+   [3, FunctionCall] setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000)
+    [4, Identifier] setInterval
+    [4, Signature] (() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000)
+     [5, ArrowFunction] () => {\\n this.âge++; // this fait référence à l'objet personne\\n }
+      [6, Signature] ()
+      [6, Procedure] {\\n this.âge++; // this fait référence à l'objet personne\\n }
+       [7, Increment] this.âge++
+        [8, Operator] ++
+        [8, QualifiedExpression] this.âge
+         [9, Qualifier] this.
+          [10, This] this
+          [10, Operator] .
+         [9, Identifier] âge
+     [5, Literal] 1000
+ [1, FunctionDeclaration] function multiplier(a, b = 1) {\\n return a * b;\\n}
+  [2, Identifier] multiplier
+  [2, Signature] (a, b = 1)
+   [3, Identifier] a
+   [3, ParameterWithValue] b = 1
+    [4, Identifier] b
+    [4, Literal] 1
+  [2, Procedure] {\\n return a * b;\\n}
+   [3, Return] return a * b
+    [4, Infix] a * b
+     [5, Identifier] a
+     [5, Operator] *
+     [5, Identifier] b
+ [1, FunctionDeclaration] function monConcat(séparateur) {\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}
+  [2, Identifier] monConcat
+  [2, Signature] (séparateur)
+   [3, Identifier] séparateur
+  [2, Procedure] {\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}
+   [3, VariableDeclaration] var result = ""
+    [4, Type] var
+    [4, Variable] result = ""
+     [5, Identifier] result
+     [5, Operator] =
+     [5, Literal] ""
+   [3, VariableDeclaration] var i
+    [4, Type] var
+    [4, Variable] i
+     [5, Identifier] i
+   [3, For] for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }
+    [4, Iteration] i = 1; i < arguments.length; i++
+     [5, Assignment] i = 1
+      [6, Identifier] i
+      [6, Operator] =
+      [6, Literal] 1
+     [5, Infix] i < arguments.length
+      [6, Identifier] i
+      [6, Operator] <
+      [6, QualifiedExpression] arguments.length
+       [7, Qualifier] arguments.
+        [8, Identifier] arguments
+        [8, Operator] .
+       [7, Identifier] length
+     [5, Increment] i++
+      [6, Operator] ++
+      [6, Identifier] i
+    [4, Procedure] {\\n result += arguments[i] + séparateur;\\n }
+     [5, Assignment] result += arguments[i] + séparateur
+      [6, Identifier] result
+      [6, Operator] +=
+      [6, Infix] arguments[i] + séparateur
+       [7, MapExpression] arguments[i]
+        [8, Identifier] arguments
+        [8, Bracket] [i]
+         [9, Identifier] i
+       [7, Operator] +
+       [7, Identifier] séparateur
+   [3, Return] return result
+    [4, Identifier] result
+ [1, VariableDeclaration] var getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+  [2, Type] var
+  [2, Variable] getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+   [3, Identifier] getCode
+   [3, Operator] =
+   [3, InvokedFunction] (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+    [4, Definition] (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})
+     [5, FunctionDeclaration] function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+      [6, Signature] ()
+      [6, Procedure] {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+       [7, VariableDeclaration] var codeAPI = "0]Eal(eh&2"
+        [8, Type] var
+        [8, Variable] codeAPI = "0]Eal(eh&2"
+         [9, Identifier] codeAPI
+         [9, Operator] =
+         [9, Literal] "0]Eal(eh&2"
+       [7, Return] return function () {\\n return codeAPI;\\n }
+        [8, FunctionDeclaration] function () {\\n return codeAPI;\\n }
+         [9, Signature] ()
+         [9, Procedure] {\\n return codeAPI;\\n }
+          [10, Return] return codeAPI
+           [11, Identifier] codeAPI
+    [4, Signature] ()
+ [1, VariableDeclaration] var animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+  [2, Type] var
+  [2, Variable] animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+   [3, Identifier] animal
+   [3, Operator] =
+   [3, FunctionDeclaration] function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+    [4, Signature] (nom)
+     [5, Identifier] nom
+    [4, Procedure] {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+     [5, VariableDeclaration] var getNom = function () {\\n return nom; \\n }
+      [6, Type] var
+      [6, Variable] getNom = function () {\\n return nom; \\n }
+       [7, Identifier] getNom
+       [7, Operator] =
+       [7, FunctionDeclaration] function () {\\n return nom; \\n }
+        [8, Signature] ()
+        [8, Procedure] {\\n return nom; \\n }
+         [9, Return] return nom
+          [10, Identifier] nom
+     [5, Return] return getNom
+      [6, Identifier] getNom
+ [1, FunctionDeclaration] function A(x) {\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}
+  [2, Identifier] A
+  [2, Signature] (x)
+   [3, Identifier] x
+  [2, Procedure] {\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}
+   [3, FunctionDeclaration] function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }
+    [4, Identifier] B
+    [4, Signature] (y)
+     [5, Identifier] y
+    [4, Procedure] {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }
+     [5, FunctionDeclaration] function C(z) {\\n console.log(x + y + z);\\n }
+      [6, Identifier] C
+      [6, Signature] (z)
+       [7, Identifier] z
+      [6, Procedure] {\\n console.log(x + y + z);\\n }
+       [7, QualifiedExpression] console.log(x + y + z)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(x + y + z)
+         [9, Identifier] log
+         [9, Signature] (x + y + z)
+          [10, Infix] x + y + z
+           [11, Infix] x + y
+            [12, Identifier] x
+            [12, Operator] +
+            [12, Identifier] y
+           [11, Operator] +
+           [11, Identifier] z
+     [5, FunctionCall] C(3)
+      [6, Identifier] C
+      [6, Signature] (3)
+       [7, Literal] 3
+   [3, FunctionCall] B(2)
+    [4, Identifier] B
+    [4, Signature] (2)
+     [5, Literal] 2
+ [1, FunctionDeclaration] function ajouteCarrés(a, b) {\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}
+  [2, Identifier] ajouteCarrés
+  [2, Signature] (a, b)
+   [3, Identifier] a
+   [3, Identifier] b
+  [2, Procedure] {\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}
+   [3, FunctionDeclaration] function carré(x) {\\n return x * x;\\n }
+    [4, Identifier] carré
+    [4, Signature] (x)
+     [5, Identifier] x
+    [4, Procedure] {\\n return x * x;\\n }
+     [5, Return] return x * x
+      [6, Infix] x * x
+       [7, Identifier] x
+       [7, Operator] *
+       [7, Identifier] x
+   [3, Return] return carré(a) + carré(b)
+    [4, Infix] carré(a) + carré(b)
+     [5, FunctionCall] carré(a)
+      [6, Identifier] carré
+      [6, Signature] (a)
+       [7, Identifier] a
+     [5, Operator] +
+     [5, FunctionCall] carré(b)
+      [6, Identifier] carré
+      [6, Signature] (b)
+       [7, Identifier] b
+ [1, FunctionDeclaration] function toto(i) {\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+  [2, Identifier] toto
+  [2, Signature] (i)
+   [3, Identifier] i
+  [2, Procedure] {\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+   [3, If] if (i < 0) return;
+    [4, IfBlock] if (i < 0) return;
+     [5, Condition] (i < 0)
+      [6, Infix] i < 0
+       [7, Identifier] i
+       [7, Operator] <
+       [7, Literal] 0
+     [5, Procedure] return;
+      [6, Return] return
+   [3, QualifiedExpression] console.log("début : " + i)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("début : " + i)
+     [5, Identifier] log
+     [5, Signature] ("début : " + i)
+      [6, Infix] "début : " + i
+       [7, Literal] "début : "
+       [7, Operator] +
+       [7, Identifier] i
+   [3, FunctionCall] toto(i - 1)
+    [4, Identifier] toto
+    [4, Signature] (i - 1)
+     [5, Infix] i - 1
+      [6, Identifier] i
+      [6, Operator] -
+      [6, Literal] 1
+   [3, QualifiedExpression] console.log("fin : " + i)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("fin : " + i)
+     [5, Identifier] log
+     [5, Signature] ("fin : " + i)
+      [6, Infix] "fin : " + i
+       [7, Literal] "fin : "
+       [7, Operator] +
+       [7, Identifier] i

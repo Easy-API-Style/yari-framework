@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Javascript]
+{a: aa = 10, b: bb = 5}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [BlockProcedure]
+{a: aa = 10, b: bb = 5}
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [JavascriptError]
+a
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [JavascriptError]
+:
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [Sequence]
+aa = 10, b
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [Assignment]
+aa = 10
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 7] [Identifier]
+aa
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 12] [Literal]
+10
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [JavascriptError]
+:
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 23] [Assignment]
+bb = 5
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 19] [Identifier]
+bb
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Literal]
+5
+---------------------------

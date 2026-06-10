@@ -1,0 +1,16 @@
+[0, Javascript] ({ a, b } = { a: 10, b: 20 })
+ [1, Parenthesis] ({ a, b } = { a: 10, b: 20 })
+  [2, Assignment] { a, b } = { a: 10, b: 20 }
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 10, b: 20 }
+    [4, FieldDeclaration] a: 10
+     [5, Identifier] a
+     [5, Literal] 10
+    [4, FieldDeclaration] b: 20
+     [5, Identifier] b
+     [5, Literal] 20

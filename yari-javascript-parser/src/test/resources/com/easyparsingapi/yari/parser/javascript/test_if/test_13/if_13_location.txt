@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 1, end=line 4 column 26] [Javascript]
+if (a > 0) \\n result = "positive";\\nelse \\n result = "NOT positive";
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 4 column 26] [If]
+if (a > 0) \\n result = "positive";\\nelse \\n result = "NOT positive";
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 2 column 22] [IfBlock]
+if (a > 0) \\n result = "positive";
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 11] [Condition]
+(a > 0)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 10] [Infix]
+a > 0
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Operator]
+>
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Literal]
+0
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 22] [Procedure]
+result = "positive";
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 21] [Assignment]
+result = "positive"
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 2 column 8] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 21] [Literal]
+"positive"
+---------------------------
+SourceLocation [start=line 3 column 1, end=line 4 column 26] [ElseBlock]
+else \\n result = "NOT positive";
+---------------------------
+SourceLocation [start=line 4 column 2, end=line 4 column 26] [Procedure]
+result = "NOT positive";
+---------------------------
+SourceLocation [start=line 4 column 2, end=line 4 column 25] [Assignment]
+result = "NOT positive"
+---------------------------
+SourceLocation [start=line 4 column 2, end=line 4 column 8] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 25] [Literal]
+"NOT positive"
+---------------------------

@@ -1,0 +1,23 @@
+[0, Javascript] function toto(v_1, v_2) ({(\\n var { x_1 = v_1 + v_2;\\n [ return x_1;\\n }
+ [1, JavascriptError] function
+ [1, FunctionCall] toto(v_1, v_2)
+  [2, Identifier] toto
+  [2, Signature] (v_1, v_2)
+   [3, Identifier] v_1
+   [3, Identifier] v_2
+ [1, JavascriptError] (
+ [1, JavascriptError] {
+ [1, JavascriptError] (
+ [1, JavascriptError] var
+ [1, JavascriptError] {
+ [1, Assignment] x_1 = v_1 + v_2
+  [2, Identifier] x_1
+  [2, Operator] =
+  [2, Infix] v_1 + v_2
+   [3, Identifier] v_1
+   [3, Operator] +
+   [3, Identifier] v_2
+ [1, JavascriptError] [
+ [1, Return] return x_1
+  [2, Identifier] x_1
+ [1, JavascriptError] }

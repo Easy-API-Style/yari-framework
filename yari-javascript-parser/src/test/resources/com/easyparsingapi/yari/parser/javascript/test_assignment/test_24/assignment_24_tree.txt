@@ -1,0 +1,13 @@
+[0, Javascript] ({ a: a1 = aDefault, b = bDefault } = obj)
+ [1, Parenthesis] ({ a: a1 = aDefault, b = bDefault } = obj)
+  [2, Assignment] { a: a1 = aDefault, b = bDefault } = obj
+   [3, DestructuringObject] { a: a1 = aDefault, b = bDefault }
+    [4, Field] a: a1 = aDefault
+     [5, Identifier] a
+     [5, Identifier] : a1
+     [5, Identifier] = aDefault
+    [4, Field] b = bDefault
+     [5, Identifier] b
+     [5, Identifier] = bDefault
+   [3, Operator] =
+   [3, Identifier] obj

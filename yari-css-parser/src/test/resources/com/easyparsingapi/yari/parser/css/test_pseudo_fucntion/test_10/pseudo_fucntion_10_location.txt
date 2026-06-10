@@ -1,0 +1,108 @@
+SourceLocation [start=line 1 column 3, end=line 6 column 4] [Css]
+span:nth-last-of-type(2) {\\n background-color: lime;\\n }\\n p.fancy:nth-of-type(2n + 1) {\\n text-decoration: underline;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 3 column 4] [RuleSet]
+span:nth-last-of-type(2) {\\n background-color: lime;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 27] [CombinatorSelector]
+span:nth-last-of-type(2)
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 7] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 7] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 27] [PseudoFunctionSelector]
+:nth-last-of-type(2)
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 24] [PseudoClassSelector]
+:nth-last-of-type
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 24] [Identifier]
+nth-last-of-type
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 27] [Signature]
+(2)
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [NthPattern]
+2
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Literal]
+2
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 3 column 4] [Block]
+{\\n background-color: lime;\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 27] [Property]
+background-color: lime
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 21] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 2 column 23, end=line 2 column 27] [Identifier]
+lime
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 6 column 4] [RuleSet]
+p.fancy:nth-of-type(2n + 1) {\\n text-decoration: underline;\\n }
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 30] [CombinatorSelector]
+p.fancy:nth-of-type(2n + 1)
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 10] [CombinatorSelector]
+p.fancy
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 4] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 4] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 10] [ClassSelector]
+.fancy
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 10] [Identifier]
+fancy
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 10] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 30] [PseudoFunctionSelector]
+:nth-of-type(2n + 1)
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 22] [PseudoClassSelector]
+:nth-of-type
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 22] [Identifier]
+nth-of-type
+---------------------------
+SourceLocation [start=line 4 column 22, end=line 4 column 30] [Signature]
+(2n + 1)
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 29] [NthPattern]
+2n + 1
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 29] [Infix]
+2n + 1
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 25] [Literal]
+2n
+---------------------------
+SourceLocation [start=line 4 column 26, end=line 4 column 27] [Operator]
++
+---------------------------
+SourceLocation [start=line 4 column 28, end=line 4 column 29] [Literal]
+1
+---------------------------
+SourceLocation [start=line 4 column 31, end=line 6 column 4] [Block]
+{\\n text-decoration: underline;\\n }
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 31] [Property]
+text-decoration: underline
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 20] [Identifier]
+text-decoration
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 31] [Identifier]
+underline
+---------------------------

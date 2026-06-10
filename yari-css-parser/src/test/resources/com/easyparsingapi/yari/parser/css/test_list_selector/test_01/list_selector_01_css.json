@@ -1,0 +1,213 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.css.ast.Css",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.RuleSet",
+    "selector" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.PseudoFunctionSelector",
+      "pseudoSelector" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.PseudoClassSelector",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+          "value" : "is",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 5
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 7
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 4
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 7
+          }
+        }
+      },
+      "signature" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.PseudoFunctionSelector$Signature",
+        "parameter" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.ListSelector",
+          "selectors" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.ElementSelector",
+            "name" : "span",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 8
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 12
+              }
+            }
+          }, {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.ElementSelector",
+            "name" : "div",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 1,
+                "column" : 14
+              },
+              "end" : {
+                "line" : 1,
+                "column" : 17
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 1,
+              "column" : 8
+            },
+            "end" : {
+              "line" : 1,
+              "column" : 17
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 7
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 18
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 18
+        }
+      }
+    },
+    "block" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.Block",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Property",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+          "value" : "border",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 7
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 13
+            }
+          }
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.ListValue",
+          "separator" : "space",
+          "values" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "red",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 15
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 18
+              }
+            }
+          }, {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "2px",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 19
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 22
+              }
+            }
+          }, {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "solid",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 23
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 28
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 15
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 28
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 7
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 28
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 19
+        },
+        "end" : {
+          "line" : 3,
+          "column" : 5
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 3,
+        "column" : 5
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 4
+    },
+    "end" : {
+      "line" : 3,
+      "column" : 5
+    }
+  }
+}

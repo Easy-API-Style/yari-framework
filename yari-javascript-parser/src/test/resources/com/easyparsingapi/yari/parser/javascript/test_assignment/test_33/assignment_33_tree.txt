@@ -1,0 +1,13 @@
+[0, Javascript] d=d.replace(/(["' :.[\],=])/g,"\$1")
+ [1, Assignment] d=d.replace(/(["' :.[\],=])/g,"\$1")
+  [2, Identifier] d
+  [2, Operator] =
+  [2, QualifiedExpression] d.replace(/(["' :.[\],=])/g,"\$1")
+   [3, Qualifier] d.
+    [4, Identifier] d
+    [4, Operator] .
+   [3, FunctionCall] replace(/(["' :.[\],=])/g,"\$1")
+    [4, Identifier] replace
+    [4, Signature] (/(["' :.[\],=])/g,"\$1")
+     [5, Literal] /(["' :.[\],=])/g
+     [5, Literal] "\$1"

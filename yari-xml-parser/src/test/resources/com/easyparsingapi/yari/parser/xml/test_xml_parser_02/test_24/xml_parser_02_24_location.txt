@@ -1,0 +1,63 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 14] [Xml]
+<pc:test attr_1 attr_2 = 'fff' <>\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 14] [Tag]
+<pc:test attr_1 attr_2 = 'fff' <>\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 34] [TagHeadError]
+<pc:test attr_1 attr_2 = 'fff'
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 7] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [Name]
+test
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 19] [TagAttribute]
+attr_1
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 19] [Name]
+attr_1
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 19] [Name]
+attr_1
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 34] [TagAttribute]
+attr_2 = 'fff'
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 26] [Name]
+attr_2
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 26] [Name]
+attr_2
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 34] [Value]
+'fff'
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 2 column 12] [TagBody]
+<>\\n blabla
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 36] [TokenError]
+<
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [TokenError]
+>
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 12] [Text]
+blabla
+---------------------------
+SourceLocation [start=line 3 column 4, end=line 3 column 14] [TagFoot]
+</pc:test>
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 13] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 8] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 13] [Name]
+test
+---------------------------

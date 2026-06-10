@@ -1,0 +1,51 @@
+[0, Javascript] t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+ [1, Sequence] t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php",this.SetCookie(this.CookieKey,o,1),window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+  [2, Assignment] t=/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+   [3, Identifier] t
+   [3, Operator] =
+   [3, Ternary] /.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+    [4, QualifiedExpression] /.*pcmag\.com$/.test(location.hostname)
+     [5, Qualifier] /.*pcmag\.com$/.
+      [6, Literal] /.*pcmag\.com$/
+      [6, Operator] .
+     [5, FunctionCall] test(location.hostname)
+      [6, Identifier] test
+      [6, Signature] (location.hostname)
+       [7, QualifiedExpression] location.hostname
+        [8, Qualifier] location.
+         [9, Identifier] location
+         [9, Operator] .
+        [8, Identifier] hostname
+    [4, Literal] "//geo.pcmag.com/loc/country.php"
+    [4, Literal] "//geo.ziffdavis.com/loc/country.php"
+  [2, QualifiedExpression] this.SetCookie(this.CookieKey,o,1)
+   [3, Qualifier] this.
+    [4, This] this
+    [4, Operator] .
+   [3, FunctionCall] SetCookie(this.CookieKey,o,1)
+    [4, Identifier] SetCookie
+    [4, Signature] (this.CookieKey,o,1)
+     [5, QualifiedExpression] this.CookieKey
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] CookieKey
+     [5, Identifier] o
+     [5, Literal] 1
+  [2, Infix] window.XMLHttpRequest&&(e=new XMLHttpRequest,"withCredentials"in e)
+   [3, QualifiedExpression] window.XMLHttpRequest
+    [4, Qualifier] window.
+     [5, Identifier] window
+     [5, Operator] .
+    [4, Identifier] XMLHttpRequest
+   [3, Operator] &&
+   [3, Sequence] (e=new XMLHttpRequest,"withCredentials"in e)
+    [4, Assignment] e=new XMLHttpRequest
+     [5, Identifier] e
+     [5, Operator] =
+     [5, New] new XMLHttpRequest
+      [6, Identifier] XMLHttpRequest
+    [4, Infix] "withCredentials"in e
+     [5, Literal] "withCredentials"
+     [5, Operator] in
+     [5, Identifier] e

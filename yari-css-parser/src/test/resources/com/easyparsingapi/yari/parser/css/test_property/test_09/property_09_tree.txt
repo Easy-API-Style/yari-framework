@@ -1,0 +1,15 @@
+[0, Css] div {\\n transform: attr(x type(*));\\n }
+ [1, RuleSet] div {\\n transform: attr(x type(*));\\n }
+  [2, ElementSelector] div
+  [2, Block] {\\n transform: attr(x type(*));\\n }
+   [3, Property] transform: attr(x type(*))
+    [4, Identifier] transform
+    [4, Function] attr(x type(*))
+     [5, Identifier] attr
+     [5, Signature] (x type(*))
+      [6, ListValue] x type(*)
+       [7, Identifier] x
+       [7, Function] type(*)
+        [8, Identifier] type
+        [8, Signature] (*)
+         [9, Universal] *

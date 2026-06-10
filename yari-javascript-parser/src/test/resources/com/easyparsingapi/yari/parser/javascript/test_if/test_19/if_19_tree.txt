@@ -1,0 +1,30 @@
+[0, Javascript] if (!google.stvsc){google.ml(new Error('img_giir'),false,{'id':i,},);}
+ [1, If] if (!google.stvsc){google.ml(new Error('img_giir'),false,{'id':i,},);}
+  [2, IfBlock] if (!google.stvsc){google.ml(new Error('img_giir'),false,{'id':i,},);}
+   [3, Condition] (!google.stvsc)
+    [4, Prefix] !google.stvsc
+     [5, Operator] !
+     [5, QualifiedExpression] google.stvsc
+      [6, Qualifier] google.
+       [7, Identifier] google
+       [7, Operator] .
+      [6, Identifier] stvsc
+   [3, Procedure] {google.ml(new Error('img_giir'),false,{'id':i,},);}
+    [4, QualifiedExpression] google.ml(new Error('img_giir'),false,{'id':i,},)
+     [5, Qualifier] google.
+      [6, Identifier] google
+      [6, Operator] .
+     [5, FunctionCall] ml(new Error('img_giir'),false,{'id':i,},)
+      [6, Identifier] ml
+      [6, Signature] (new Error('img_giir'),false,{'id':i,},)
+       [7, New] new Error('img_giir')
+        [8, Identifier] Error
+        [8, Signature] ('img_giir')
+         [9, Literal] 'img_giir'
+       [7, Literal] false
+       [7, ObjectDeclaration] {'id':i,}
+        [8, FieldDeclaration] 'id':i
+         [9, Literal] 'id'
+         [9, Identifier] i
+        [8, Empty] 
+       [7, Empty] 

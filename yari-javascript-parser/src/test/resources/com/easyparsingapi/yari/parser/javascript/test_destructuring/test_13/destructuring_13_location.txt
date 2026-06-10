@@ -1,0 +1,51 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Javascript]
+({a: aa = 10, b: bb = 5} = {a: 3})
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Parenthesis]
+({a: aa = 10, b: bb = 5} = {a: 3})
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 34] [Assignment]
+{a: aa = 10, b: bb = 5} = {a: 3}
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 25] [DestructuringObject]
+{a: aa = 10, b: bb = 5}
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 13] [Field]
+a: aa = 10
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 8] [Identifier]
+: aa
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 13] [Literal]
+= 10
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 24] [Field]
+b: bb = 5
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 20] [Identifier]
+: bb
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 24] [Literal]
+= 5
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 27] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 34] [ObjectDeclaration]
+{a: 3}
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 33] [FieldDeclaration]
+a: 3
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 30] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 33] [Literal]
+3
+---------------------------

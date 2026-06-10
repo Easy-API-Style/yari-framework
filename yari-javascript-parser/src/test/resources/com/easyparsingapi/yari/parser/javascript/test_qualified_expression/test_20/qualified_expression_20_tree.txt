@@ -1,0 +1,13 @@
+[0, JavascriptNodeUnit] this.info((4+5))
+ [1, QualifiedExpression] this.info((4+5))
+  [2, Qualifier] this.
+   [3, This] this
+   [3, Operator] .
+  [2, FunctionCall] info((4+5))
+   [3, Identifier] info
+   [3, Signature] ((4+5))
+    [4, Parenthesis] (4+5)
+     [5, Infix] 4+5
+      [6, Literal] 4
+      [6, Operator] +
+      [6, Literal] 5

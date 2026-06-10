@@ -1,0 +1,30 @@
+[0, Javascript] if (p_1 && p_2) { var v_1 = 44;}else if (p_1 && p_2 || p_3) ;else v_3 = 'yiyi'
+ [1, If] if (p_1 && p_2) { var v_1 = 44;}else if (p_1 && p_2 || p_3) ;else v_3 = 'yiyi'
+  [2, IfBlock] if (p_1 && p_2) { var v_1 = 44;}
+   [3, Condition] (p_1 && p_2)
+    [4, Infix] p_1 && p_2
+     [5, Identifier] p_1
+     [5, Operator] &&
+     [5, Identifier] p_2
+   [3, Procedure] { var v_1 = 44;}
+    [4, VariableDeclaration] var v_1 = 44
+     [5, Type] var
+     [5, Variable] v_1 = 44
+      [6, Identifier] v_1
+      [6, Operator] =
+      [6, Literal] 44
+  [2, ElseIfBlock] else if (p_1 && p_2 || p_3) ;
+   [3, Condition] (p_1 && p_2 || p_3)
+    [4, Infix] p_1 && p_2 || p_3
+     [5, Infix] p_1 && p_2
+      [6, Identifier] p_1
+      [6, Operator] &&
+      [6, Identifier] p_2
+     [5, Operator] ||
+     [5, Identifier] p_3
+  [2, ElseBlock] else v_3 = 'yiyi'
+   [3, Procedure] v_3 = 'yiyi'
+    [4, Assignment] v_3 = 'yiyi'
+     [5, Identifier] v_3
+     [5, Operator] =
+     [5, Literal] 'yiyi'

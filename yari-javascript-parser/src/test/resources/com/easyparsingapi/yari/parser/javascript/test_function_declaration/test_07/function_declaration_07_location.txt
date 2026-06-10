@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [Javascript]
+async function asyncCall() { console.log('calling'); }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 56] [FunctionDeclaration]
+async function asyncCall() { console.log('calling'); }
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 25] [Identifier]
+asyncCall
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 56] [Procedure]
+{ console.log('calling'); }
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 53] [QualifiedExpression]
+console.log('calling')
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 39] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 38] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 39] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 53] [FunctionCall]
+log('calling')
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 42] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 53] [Signature]
+('calling')
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 52] [Literal]
+'calling'
+---------------------------

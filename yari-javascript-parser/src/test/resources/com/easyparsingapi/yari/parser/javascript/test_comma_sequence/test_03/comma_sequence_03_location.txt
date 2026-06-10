@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 21] [Javascript]
+const a = (1, b = 2)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 21] [VariableDeclaration]
+const a = (1, b = 2)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 21] [Variable]
+a = (1, b = 2)
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 21] [Sequence]
+(1, b = 2)
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 20] [Assignment]
+b = 2
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Literal]
+2
+---------------------------

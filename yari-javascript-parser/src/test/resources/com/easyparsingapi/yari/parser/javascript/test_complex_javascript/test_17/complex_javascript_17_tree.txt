@@ -1,0 +1,21 @@
+[0, Javascript] function(){return this.LoadCountry(),"US"===this.CookieValue}
+ [1, FunctionDeclaration] function(){return this.LoadCountry(),"US"===this.CookieValue}
+  [2, Signature] ()
+  [2, Procedure] {return this.LoadCountry(),"US"===this.CookieValue}
+   [3, Return] return this.LoadCountry(),"US"===this.CookieValue
+    [4, Sequence] this.LoadCountry(),"US"===this.CookieValue
+     [5, QualifiedExpression] this.LoadCountry()
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, FunctionCall] LoadCountry()
+       [7, Identifier] LoadCountry
+       [7, Signature] ()
+     [5, Infix] "US"===this.CookieValue
+      [6, Literal] "US"
+      [6, Operator] ===
+      [6, QualifiedExpression] this.CookieValue
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] CookieValue

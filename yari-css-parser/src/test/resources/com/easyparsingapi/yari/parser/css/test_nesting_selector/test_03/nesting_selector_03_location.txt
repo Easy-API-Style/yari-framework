@@ -1,0 +1,39 @@
+SourceLocation [start=line 2 column 5, end=line 2 column 23] [Css]
+/* .card styles */
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 35] [Css]
+/* .featured .card styles */
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 6 column 4] [Css]
+.card {\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 6 column 4] [RuleSet]
+.card {\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 9] [ClassSelector]
+.card
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+card
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 6 column 4] [Block]
+{\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 5 column 6] [RuleSet]
+.featured & {\\n /* .featured .card styles */\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 16] [QualifiedSelector]
+.featured &
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 14] [ClassSelector]
+.featured
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 14] [Identifier]
+featured
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 16] [Nesting]
+&
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 5 column 6] [Block]
+{\\n /* .featured .card styles */\\n }
+---------------------------

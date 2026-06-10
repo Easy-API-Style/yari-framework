@@ -1,0 +1,20 @@
+[0, Javascript] const Ah=new class{constructor(){}}(new class{constructor(){}})
+ [1, VariableDeclaration] const Ah=new class{constructor(){}}(new class{constructor(){}})
+  [2, Type] const
+  [2, Variable] Ah=new class{constructor(){}}(new class{constructor(){}})
+   [3, Identifier] Ah
+   [3, Operator] =
+   [3, FunctionCall] new class{constructor(){}}(new class{constructor(){}})
+    [4, NewClass] new class{constructor(){}}
+     [5, ClassDeclaration] class{constructor(){}}
+      [6, ClassMethodDeclaration] constructor(){}
+       [7, Identifier] constructor
+       [7, Signature] ()
+       [7, Procedure] {}
+    [4, Signature] (new class{constructor(){}})
+     [5, NewClass] new class{constructor(){}}
+      [6, ClassDeclaration] class{constructor(){}}
+       [7, ClassMethodDeclaration] constructor(){}
+        [8, Identifier] constructor
+        [8, Signature] ()
+        [8, Procedure] {}

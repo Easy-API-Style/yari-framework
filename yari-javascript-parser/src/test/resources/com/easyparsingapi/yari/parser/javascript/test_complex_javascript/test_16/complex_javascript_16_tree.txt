@@ -1,0 +1,55 @@
+[0, Javascript] function(){var e;this.AreCookiesEnabled()&&(e=this.GetCookie(this.CookieKey),"undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e)}
+ [1, FunctionDeclaration] function(){var e;this.AreCookiesEnabled()&&(e=this.GetCookie(this.CookieKey),"undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e)}
+  [2, Signature] ()
+  [2, Procedure] {var e;this.AreCookiesEnabled()&&(e=this.GetCookie(this.CookieKey),"undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e)}
+   [3, VariableDeclaration] var e
+    [4, Type] var
+    [4, Variable] e
+     [5, Identifier] e
+   [3, Infix] this.AreCookiesEnabled()&&(e=this.GetCookie(this.CookieKey),"undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e)
+    [4, QualifiedExpression] this.AreCookiesEnabled()
+     [5, Qualifier] this.
+      [6, This] this
+      [6, Operator] .
+     [5, FunctionCall] AreCookiesEnabled()
+      [6, Identifier] AreCookiesEnabled
+      [6, Signature] ()
+    [4, Operator] &&
+    [4, Sequence] (e=this.GetCookie(this.CookieKey),"undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e)
+     [5, Assignment] e=this.GetCookie(this.CookieKey)
+      [6, Identifier] e
+      [6, Operator] =
+      [6, QualifiedExpression] this.GetCookie(this.CookieKey)
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, FunctionCall] GetCookie(this.CookieKey)
+        [8, Identifier] GetCookie
+        [8, Signature] (this.CookieKey)
+         [9, QualifiedExpression] this.CookieKey
+          [10, Qualifier] this.
+           [11, This] this
+           [11, Operator] .
+          [10, Identifier] CookieKey
+     [5, Ternary] "undefined"==typeof e?this.SetCountryFromServer():this.CookieValue=e
+      [6, Infix] "undefined"==typeof e
+       [7, Literal] "undefined"
+       [7, Operator] ==
+       [7, Prefix] typeof e
+        [8, Operator] typeof
+        [8, Identifier] e
+      [6, QualifiedExpression] this.SetCountryFromServer()
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, FunctionCall] SetCountryFromServer()
+        [8, Identifier] SetCountryFromServer
+        [8, Signature] ()
+      [6, Assignment] this.CookieValue=e
+       [7, QualifiedExpression] this.CookieValue
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] CookieValue
+       [7, Operator] =
+       [7, Identifier] e

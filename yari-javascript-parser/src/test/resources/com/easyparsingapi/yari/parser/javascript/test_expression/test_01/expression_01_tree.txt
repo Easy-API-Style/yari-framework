@@ -1,0 +1,13 @@
+[0, JavascriptNodeUnit] toto+(3+(4.9*bibi))
+ [1, Infix] toto+(3+(4.9*bibi))
+  [2, Identifier] toto
+  [2, Operator] +
+  [2, Parenthesis] (3+(4.9*bibi))
+   [3, Infix] 3+(4.9*bibi)
+    [4, Literal] 3
+    [4, Operator] +
+    [4, Parenthesis] (4.9*bibi)
+     [5, Infix] 4.9*bibi
+      [6, Literal] 4.9
+      [6, Operator] *
+      [6, Identifier] bibi

@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 127] [Javascript]
+class A { static fieldA = 'A.fieldA'; static fieldB = 'A.fieldB';}class B extends A { static { let x = super.fieldA; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 69] [ClassDeclaration]
+class A { static fieldA = 'A.fieldA'; static fieldB = 'A.fieldB';}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Identifier]
+A
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 38] [ClassFieldDeclaration]
+static fieldA = 'A.fieldA'
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 25] [Identifier]
+fieldA
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 38] [Literal]
+= 'A.fieldA'
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 67] [ClassFieldDeclaration]
+static fieldB = 'A.fieldB'
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 54] [Identifier]
+fieldB
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 67] [Literal]
+= 'A.fieldB'
+---------------------------
+SourceLocation [start=line 1 column 69, end=line 1 column 127] [ClassDeclaration]
+class B extends A { static { let x = super.fieldA; }}
+---------------------------
+SourceLocation [start=line 1 column 75, end=line 1 column 76] [Identifier]
+B
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 86] [Identifier]
+extends A
+---------------------------
+SourceLocation [start=line 1 column 90, end=line 1 column 126] [StaticProcedure]
+static { let x = super.fieldA; }
+---------------------------
+SourceLocation [start=line 1 column 97, end=line 1 column 126] [Procedure]
+{ let x = super.fieldA; }
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 122] [VariableDeclaration]
+let x = super.fieldA
+---------------------------
+SourceLocation [start=line 1 column 102, end=line 1 column 105] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 106, end=line 1 column 122] [Variable]
+x = super.fieldA
+---------------------------
+SourceLocation [start=line 1 column 106, end=line 1 column 107] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 108, end=line 1 column 109] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 110, end=line 1 column 122] [QualifiedExpression]
+super.fieldA
+---------------------------
+SourceLocation [start=line 1 column 110, end=line 1 column 116] [Qualifier]
+super.
+---------------------------
+SourceLocation [start=line 1 column 110, end=line 1 column 115] [Identifier]
+super
+---------------------------
+SourceLocation [start=line 1 column 115, end=line 1 column 116] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 116, end=line 1 column 122] [Identifier]
+fieldA
+---------------------------

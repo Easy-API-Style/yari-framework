@@ -1,0 +1,13 @@
+[0, Javascript] while (fct_1(), fct_2(), fct_3());
+ [1, While] while (fct_1(), fct_2(), fct_3());
+  [2, Condition] (fct_1(), fct_2(), fct_3())
+   [3, Sequence] fct_1(), fct_2(), fct_3()
+    [4, FunctionCall] fct_1()
+     [5, Identifier] fct_1
+     [5, Signature] ()
+    [4, FunctionCall] fct_2()
+     [5, Identifier] fct_2
+     [5, Signature] ()
+    [4, FunctionCall] fct_3()
+     [5, Identifier] fct_3
+     [5, Signature] ()

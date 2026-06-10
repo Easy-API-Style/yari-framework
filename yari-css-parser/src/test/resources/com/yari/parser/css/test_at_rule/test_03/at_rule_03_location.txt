@@ -1,0 +1,51 @@
+SourceLocation [start=line 1 column 5, end=line 1 column 30] [Css]
+/* With a <size-query> */
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 6 column 6] [Css]
+@container (width > 400px) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 6 column 6] [AtRule]
+@container (width > 400px) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 15] [AtRuleName]
+@container
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 15] [Identifier]
+container
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 31] [Parenthesis]
+(width > 400px)
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 30] [Infix]
+width > 400px
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 22] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 2 column 23, end=line 2 column 24] [Operator]
+>
+---------------------------
+SourceLocation [start=line 2 column 25, end=line 2 column 30] [Identifier]
+400px
+---------------------------
+SourceLocation [start=line 2 column 32, end=line 6 column 6] [Block]
+{\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 5 column 8] [RuleSet]
+h2 {\\n font-size: 1.5em;\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 9] [ElementSelector]
+h2
+---------------------------
+SourceLocation [start=line 3 column 10, end=line 5 column 8] [Block]
+{\\n font-size: 1.5em;\\n }
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 25] [Property]
+font-size: 1.5em
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 18] [Identifier]
+font-size
+---------------------------
+SourceLocation [start=line 4 column 20, end=line 4 column 25] [Identifier]
+1.5em
+---------------------------

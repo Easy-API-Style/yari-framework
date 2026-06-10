@@ -1,0 +1,11 @@
+[0, Css] .floating + * {\\n clear: left;\\n }
+ [1, RuleSet] .floating + * {\\n clear: left;\\n }
+  [2, CombinatorSelector] .floating + *
+   [3, ClassSelector] .floating
+    [4, Identifier] floating
+   [3, Operator] +
+   [3, Universal] *
+  [2, Block] {\\n clear: left;\\n }
+   [3, Property] clear: left
+    [4, Identifier] clear
+    [4, Identifier] left

@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 20] [Javascript]
+(i = q && q).toto()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 20] [QualifiedExpression]
+(i = q && q).toto()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 14] [Qualifier]
+(i = q && q).
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 12] [Sequence]
+i = q && q
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 12] [Assignment]
+i = q && q
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 12] [Infix]
+q && q
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+q
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 10] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Identifier]
+q
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 20] [FunctionCall]
+toto()
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 18] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 20] [Signature]
+()
+---------------------------

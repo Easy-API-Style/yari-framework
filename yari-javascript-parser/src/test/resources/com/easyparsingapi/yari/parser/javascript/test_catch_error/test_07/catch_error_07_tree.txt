@@ -1,0 +1,15 @@
+[0, Javascript] {a: aa = 10, b: bb = 5}
+ [1, BlockProcedure] {a: aa = 10, b: bb = 5}
+  [2, JavascriptError] a
+  [2, JavascriptError] :
+  [2, Sequence] aa = 10, b
+   [3, Assignment] aa = 10
+    [4, Identifier] aa
+    [4, Operator] =
+    [4, Literal] 10
+   [3, Identifier] b
+  [2, JavascriptError] :
+  [2, Assignment] bb = 5
+   [3, Identifier] bb
+   [3, Operator] =
+   [3, Literal] 5

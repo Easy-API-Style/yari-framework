@@ -1,0 +1,18 @@
+Block [elements=[Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 3]], Identifier [value=bb, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 6]], Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 7, end=line 1 column 9]], Error [message=null, tokens=[11, ,, 55, ;], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 18]], Identifier [value=vv, sourceLocation=SourceLocation [start=line 1 column 19, end=line 1 column 21]]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 21]]
+aa bb cc 11, 55 ; vv
+---------------------------
+Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 3]]
+aa
+---------------------------
+Identifier [value=bb, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 6]]
+bb
+---------------------------
+Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 7, end=line 1 column 9]]
+cc
+---------------------------
+Error [message=null, tokens=[11, ,, 55, ;], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 18]]
+11, 55 ;
+---------------------------
+Identifier [value=vv, sourceLocation=SourceLocation [start=line 1 column 19, end=line 1 column 21]]
+vv
+---------------------------

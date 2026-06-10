@@ -1,0 +1,162 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.css.ast.Css",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.AtRule",
+    "name" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.AtRuleName",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+        "value" : "color-profile",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 4
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 17
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 3
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 17
+        }
+      }
+    },
+    "signature" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+      "value" : "--swop5c",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 18
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 26
+        }
+      }
+    },
+    "block" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.Block",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Property",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+          "value" : "src",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 9
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 12
+            }
+          }
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Function",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "url",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 14
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 17
+              }
+            }
+          },
+          "signature" : {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Function$Signature",
+            "parameters" : [ {
+              "@class" : "com.easyparsingapi.yari.parser.css.ast.Literal",
+              "type" : "doubleQuoteString",
+              "value" : "\"https://example.org/SWOP2006_Coated5v2.icc\"",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 18
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 62
+                }
+              }
+            } ],
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 17
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 63
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 14
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 63
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 63
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 27
+        },
+        "end" : {
+          "line" : 3,
+          "column" : 4
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 3
+      },
+      "end" : {
+        "line" : 3,
+        "column" : 4
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 3
+    },
+    "end" : {
+      "line" : 3,
+      "column" : 4
+    }
+  }
+}

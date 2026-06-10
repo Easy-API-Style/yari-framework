@@ -1,0 +1,64 @@
+[0, Javascript] function(){var e=!!navigator.cookieEnabled;return "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie")), e}
+ [1, FunctionDeclaration] function(){var e=!!navigator.cookieEnabled;return "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie")), e}
+  [2, Signature] ()
+  [2, Procedure] {var e=!!navigator.cookieEnabled;return "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie")), e}
+   [3, VariableDeclaration] var e=!!navigator.cookieEnabled
+    [4, Type] var
+    [4, Variable] e=!!navigator.cookieEnabled
+     [5, Identifier] e
+     [5, Operator] =
+     [5, Prefix] !!navigator.cookieEnabled
+      [6, Operator] !
+      [6, Prefix] !navigator.cookieEnabled
+       [7, Operator] !
+       [7, QualifiedExpression] navigator.cookieEnabled
+        [8, Qualifier] navigator.
+         [9, Identifier] navigator
+         [9, Operator] .
+        [8, Identifier] cookieEnabled
+   [3, Return] return "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie")), e
+    [4, Sequence] "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie")), e
+     [5, Infix] "undefined"!= typeof navigator.cookieEnabled || e || (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie"))
+      [6, Infix] "undefined"!= typeof navigator.cookieEnabled || e
+       [7, Infix] "undefined"!= typeof navigator.cookieEnabled
+        [8, Literal] "undefined"
+        [8, Operator] !=
+        [8, Prefix] typeof navigator.cookieEnabled
+         [9, Operator] typeof
+         [9, QualifiedExpression] navigator.cookieEnabled
+          [10, Qualifier] navigator.
+           [11, Identifier] navigator
+           [11, Operator] .
+          [10, Identifier] cookieEnabled
+       [7, Operator] ||
+       [7, Identifier] e
+      [6, Operator] ||
+      [6, Sequence] (document.cookie="testcookie", e=-1!=document.cookie.indexOf("testcookie"))
+       [7, Assignment] document.cookie="testcookie"
+        [8, QualifiedExpression] document.cookie
+         [9, Qualifier] document.
+          [10, Identifier] document
+          [10, Operator] .
+         [9, Identifier] cookie
+        [8, Operator] =
+        [8, Literal] "testcookie"
+       [7, Assignment] e=-1!=document.cookie.indexOf("testcookie")
+        [8, Identifier] e
+        [8, Operator] =
+        [8, Infix] -1!=document.cookie.indexOf("testcookie")
+         [9, Prefix] -1
+          [10, Operator] -
+          [10, Literal] 1
+         [9, Operator] !=
+         [9, QualifiedExpression] document.cookie.indexOf("testcookie")
+          [10, Qualifier] document.
+           [11, Identifier] document
+           [11, Operator] .
+          [10, Qualifier] cookie.
+           [11, Identifier] cookie
+           [11, Operator] .
+          [10, FunctionCall] indexOf("testcookie")
+           [11, Identifier] indexOf
+           [11, Signature] ("testcookie")
+            [12, Literal] "testcookie"
+     [5, Identifier] e

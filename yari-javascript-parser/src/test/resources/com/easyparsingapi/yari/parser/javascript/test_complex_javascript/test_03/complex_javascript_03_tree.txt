@@ -1,0 +1,211 @@
+[0, Javascript] !function e(o,t,n){ function i(u,s){ if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports } for(var r="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]); return i}
+ [1, Prefix] !function e(o,t,n){ function i(u,s){ if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports } for(var r="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]); return i}
+  [2, Operator] !
+  [2, FunctionDeclaration] function e(o,t,n){ function i(u,s){ if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports } for(var r="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]); return i}
+   [3, Identifier] e
+   [3, Signature] (o,t,n)
+    [4, Identifier] o
+    [4, Identifier] t
+    [4, Identifier] n
+   [3, Procedure] { function i(u,s){ if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports } for(var r="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]); return i}
+    [4, FunctionDeclaration] function i(u,s){ if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports }
+     [5, Identifier] i
+     [5, Signature] (u,s)
+      [6, Identifier] u
+      [6, Identifier] s
+     [5, Procedure] { if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) } return t[u].exports }
+      [6, If] if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) }
+       [7, IfBlock] if(!t[u]){ if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) }
+        [8, Condition] (!t[u])
+         [9, Prefix] !t[u]
+          [10, Operator] !
+          [10, MapExpression] t[u]
+           [11, Identifier] t
+           [11, Bracket] [u]
+            [12, Identifier] u
+        [8, Procedure] { if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") } var a=t[u]={exports:{}}; o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n) }
+         [9, If] if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") }
+          [10, IfBlock] if(!o[u]){ var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") }
+           [11, Condition] (!o[u])
+            [12, Prefix] !o[u]
+             [13, Operator] !
+             [13, MapExpression] o[u]
+              [14, Identifier] o
+              [14, Bracket] [u]
+               [15, Identifier] u
+           [11, Procedure] { var c="function"==typeof require && require; if(!s&&c)return c(u,!0); if(r)return r(u,!0); throw new Error("Cannot find module '"+u+"'") }
+            [12, VariableDeclaration] var c="function"==typeof require && require
+             [13, Type] var
+             [13, Variable] c="function"==typeof require && require
+              [14, Identifier] c
+              [14, Operator] =
+              [14, Infix] "function"==typeof require && require
+               [15, Infix] "function"==typeof require
+                [16, Literal] "function"
+                [16, Operator] ==
+                [16, Prefix] typeof require
+                 [17, Operator] typeof
+                 [17, Identifier] require
+               [15, Operator] &&
+               [15, Identifier] require
+            [12, If] if(!s&&c)return c(u,!0);
+             [13, IfBlock] if(!s&&c)return c(u,!0);
+              [14, Condition] (!s&&c)
+               [15, Infix] !s&&c
+                [16, Prefix] !s
+                 [17, Operator] !
+                 [17, Identifier] s
+                [16, Operator] &&
+                [16, Identifier] c
+              [14, Procedure] return c(u,!0);
+               [15, Return] return c(u,!0)
+                [16, FunctionCall] c(u,!0)
+                 [17, Identifier] c
+                 [17, Signature] (u,!0)
+                  [18, Identifier] u
+                  [18, Prefix] !0
+                   [19, Operator] !
+                   [19, Literal] 0
+            [12, If] if(r)return r(u,!0);
+             [13, IfBlock] if(r)return r(u,!0);
+              [14, Condition] (r)
+               [15, Identifier] r
+              [14, Procedure] return r(u,!0);
+               [15, Return] return r(u,!0)
+                [16, FunctionCall] r(u,!0)
+                 [17, Identifier] r
+                 [17, Signature] (u,!0)
+                  [18, Identifier] u
+                  [18, Prefix] !0
+                   [19, Operator] !
+                   [19, Literal] 0
+            [12, Throw] throw new Error("Cannot find module '"+u+"'")
+             [13, New] new Error("Cannot find module '"+u+"'")
+              [14, Identifier] Error
+              [14, Signature] ("Cannot find module '"+u+"'")
+               [15, Infix] "Cannot find module '"+u+"'"
+                [16, Infix] "Cannot find module '"+u
+                 [17, Literal] "Cannot find module '"
+                 [17, Operator] +
+                 [17, Identifier] u
+                [16, Operator] +
+                [16, Literal] "'"
+         [9, VariableDeclaration] var a=t[u]={exports:{}}
+          [10, Type] var
+          [10, Variable] a=t[u]={exports:{}}
+           [11, Identifier] a
+           [11, Operator] =
+           [11, Chaining] t[u]={exports:{}}
+            [12, MapExpression] t[u]
+             [13, Identifier] t
+             [13, Bracket] [u]
+              [14, Identifier] u
+            [12, ObjectDeclaration] {exports:{}}
+             [13, FieldDeclaration] exports:{}
+              [14, Identifier] exports
+              [14, ObjectDeclaration] {}
+         [9, QualifiedExpression] o[u][0].call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n)
+          [10, Qualifier] o[u][0].
+           [11, MapExpression] o[u][0]
+            [12, MapExpression] o[u]
+             [13, Identifier] o
+             [13, Bracket] [u]
+              [14, Identifier] u
+            [12, Bracket] [0]
+             [13, Literal] 0
+           [11, Operator] .
+          [10, FunctionCall] call(a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n)
+           [11, Identifier] call
+           [11, Signature] (a.exports,function(e){ var t=o[u][1][e]; return i(t?t:e) },a,a.exports,e,o,t,n)
+            [12, QualifiedExpression] a.exports
+             [13, Qualifier] a.
+              [14, Identifier] a
+              [14, Operator] .
+             [13, Identifier] exports
+            [12, FunctionDeclaration] function(e){ var t=o[u][1][e]; return i(t?t:e) }
+             [13, Signature] (e)
+              [14, Identifier] e
+             [13, Procedure] { var t=o[u][1][e]; return i(t?t:e) }
+              [14, VariableDeclaration] var t=o[u][1][e]
+               [15, Type] var
+               [15, Variable] t=o[u][1][e]
+                [16, Identifier] t
+                [16, Operator] =
+                [16, MapExpression] o[u][1][e]
+                 [17, MapExpression] o[u][1]
+                  [18, MapExpression] o[u]
+                   [19, Identifier] o
+                   [19, Bracket] [u]
+                    [20, Identifier] u
+                  [18, Bracket] [1]
+                   [19, Literal] 1
+                 [17, Bracket] [e]
+                  [18, Identifier] e
+              [14, Return] return i(t?t:e)
+               [15, FunctionCall] i(t?t:e)
+                [16, Identifier] i
+                [16, Signature] (t?t:e)
+                 [17, Ternary] t?t:e
+                  [18, Identifier] t
+                  [18, Identifier] t
+                  [18, Identifier] e
+            [12, Identifier] a
+            [12, QualifiedExpression] a.exports
+             [13, Qualifier] a.
+              [14, Identifier] a
+              [14, Operator] .
+             [13, Identifier] exports
+            [12, Identifier] e
+            [12, Identifier] o
+            [12, Identifier] t
+            [12, Identifier] n
+      [6, Return] return t[u].exports
+       [7, QualifiedExpression] t[u].exports
+        [8, Qualifier] t[u].
+         [9, MapExpression] t[u]
+          [10, Identifier] t
+          [10, Bracket] [u]
+           [11, Identifier] u
+         [9, Operator] .
+        [8, Identifier] exports
+    [4, For] for(var r="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]);
+     [5, Iteration] var r="function"==typeof require&&require,u=0;u<n.length;u++
+      [6, VariableDeclaration] var r="function"==typeof require&&require,u=0
+       [7, Type] var
+       [7, Variable] r="function"==typeof require&&require
+        [8, Identifier] r
+        [8, Operator] =
+        [8, Infix] "function"==typeof require&&require
+         [9, Infix] "function"==typeof require
+          [10, Literal] "function"
+          [10, Operator] ==
+          [10, Prefix] typeof require
+           [11, Operator] typeof
+           [11, Identifier] require
+         [9, Operator] &&
+         [9, Identifier] require
+       [7, Variable] u=0
+        [8, Identifier] u
+        [8, Operator] =
+        [8, Literal] 0
+      [6, Infix] u<n.length
+       [7, Identifier] u
+       [7, Operator] <
+       [7, QualifiedExpression] n.length
+        [8, Qualifier] n.
+         [9, Identifier] n
+         [9, Operator] .
+        [8, Identifier] length
+      [6, Increment] u++
+       [7, Operator] ++
+       [7, Identifier] u
+     [5, Procedure] i(n[u]);
+      [6, FunctionCall] i(n[u])
+       [7, Identifier] i
+       [7, Signature] (n[u])
+        [8, MapExpression] n[u]
+         [9, Identifier] n
+         [9, Bracket] [u]
+          [10, Identifier] u
+    [4, Return] return i
+     [5, Identifier] i

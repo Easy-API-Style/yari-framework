@@ -1,0 +1,48 @@
+Procedure [name=Identifier [value=toto, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 14]], signature=Signature [parameters=[Identifier [value=p_1, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 18]], Error [message=null, tokens=[,, *, ,], sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 22]], Identifier [value=p_3, sourceLocation=SourceLocation [start=line 1 column 23, end=line 1 column 26]], Identifier [value=p_4, sourceLocation=SourceLocation [start=line 1 column 28, end=line 1 column 31]]], sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 32]], block=Block [declarations=[Declaration [type=Identifier [value=int, sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 8]], name=Identifier [value=bibi, sourceLocation=SourceLocation [start=line 2 column 9, end=line 2 column 13]], value=Identifier [value=roro, sourceLocation=SourceLocation [start=line 2 column 16, end=line 2 column 20]], sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 20]], Declaration [type=Identifier [value=String, sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 11]], name=Identifier [value=fifi, sourceLocation=SourceLocation [start=line 4 column 12, end=line 4 column 16]], value=Identifier [value=lolo, sourceLocation=SourceLocation [start=line 4 column 19, end=line 4 column 23]], sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 23]]], sourceLocation=SourceLocation [start=line 1 column 33, end=line 5 column 2]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 5 column 2]]
+function toto(p_1, *, p_3, p_4) {\\n    int bibi = roro;\\n    // comment\\n    String fifi = lolo;\\n}
+---------------------------
+Identifier [value=toto, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 14]]
+toto
+---------------------------
+Signature [parameters=[Identifier [value=p_1, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 18]], Error [message=null, tokens=[,, *, ,], sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 22]], Identifier [value=p_3, sourceLocation=SourceLocation [start=line 1 column 23, end=line 1 column 26]], Identifier [value=p_4, sourceLocation=SourceLocation [start=line 1 column 28, end=line 1 column 31]]], sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 32]]
+(p_1, *, p_3, p_4)
+---------------------------
+Identifier [value=p_1, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 18]]
+p_1
+---------------------------
+Error [message=null, tokens=[,, *, ,], sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 22]]
+, *,
+---------------------------
+Identifier [value=p_3, sourceLocation=SourceLocation [start=line 1 column 23, end=line 1 column 26]]
+p_3
+---------------------------
+Identifier [value=p_4, sourceLocation=SourceLocation [start=line 1 column 28, end=line 1 column 31]]
+p_4
+---------------------------
+Block [declarations=[Declaration [type=Identifier [value=int, sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 8]], name=Identifier [value=bibi, sourceLocation=SourceLocation [start=line 2 column 9, end=line 2 column 13]], value=Identifier [value=roro, sourceLocation=SourceLocation [start=line 2 column 16, end=line 2 column 20]], sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 20]], Declaration [type=Identifier [value=String, sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 11]], name=Identifier [value=fifi, sourceLocation=SourceLocation [start=line 4 column 12, end=line 4 column 16]], value=Identifier [value=lolo, sourceLocation=SourceLocation [start=line 4 column 19, end=line 4 column 23]], sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 23]]], sourceLocation=SourceLocation [start=line 1 column 33, end=line 5 column 2]]
+{\\n    int bibi = roro;\\n    // comment\\n    String fifi = lolo;\\n}
+---------------------------
+Declaration [type=Identifier [value=int, sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 8]], name=Identifier [value=bibi, sourceLocation=SourceLocation [start=line 2 column 9, end=line 2 column 13]], value=Identifier [value=roro, sourceLocation=SourceLocation [start=line 2 column 16, end=line 2 column 20]], sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 20]]
+int bibi = roro
+---------------------------
+Identifier [value=int, sourceLocation=SourceLocation [start=line 2 column 5, end=line 2 column 8]]
+int
+---------------------------
+Identifier [value=bibi, sourceLocation=SourceLocation [start=line 2 column 9, end=line 2 column 13]]
+bibi
+---------------------------
+Identifier [value=roro, sourceLocation=SourceLocation [start=line 2 column 16, end=line 2 column 20]]
+roro
+---------------------------
+Declaration [type=Identifier [value=String, sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 11]], name=Identifier [value=fifi, sourceLocation=SourceLocation [start=line 4 column 12, end=line 4 column 16]], value=Identifier [value=lolo, sourceLocation=SourceLocation [start=line 4 column 19, end=line 4 column 23]], sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 23]]
+String fifi = lolo
+---------------------------
+Identifier [value=String, sourceLocation=SourceLocation [start=line 4 column 5, end=line 4 column 11]]
+String
+---------------------------
+Identifier [value=fifi, sourceLocation=SourceLocation [start=line 4 column 12, end=line 4 column 16]]
+fifi
+---------------------------
+Identifier [value=lolo, sourceLocation=SourceLocation [start=line 4 column 19, end=line 4 column 23]]
+lolo
+---------------------------

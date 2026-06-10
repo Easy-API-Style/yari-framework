@@ -1,0 +1,12 @@
+# --- GitHub Linguist: keep the language bar focused on the Java library ---
+
+# Documentation website (HTML/CSS/JS) — not part of the library
+easyparsingapi.com/**            linguist-documentation
+easyparsingapi.com/**            linguist-generated=false
+
+# Parser test fixtures (HTML/CSS/JS/XML sample inputs) — test data, not source
+**/src/test/**                   linguist-vendored
+
+# Safety net: never count build / IDE output if it ever gets tracked
+**/build/**                      linguist-generated
+**/bin/**                        linguist-generated

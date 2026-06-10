@@ -1,0 +1,761 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration",
+    "type" : {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Type",
+      "value" : "var",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 1
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 4
+        }
+      }
+    },
+    "variableDeclarations" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.VariableDeclaration$Variable",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+        "value" : "uniqueIdentifier",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 21
+          }
+        }
+      },
+      "operator" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+        "symbol" : "=",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 22
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 23
+          }
+        }
+      },
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Infix",
+        "leftOperand" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Infix",
+          "leftOperand" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Infix",
+            "leftOperand" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+              "qualifiers" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+                "expression" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "source",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 2
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 8
+                    }
+                  }
+                },
+                "operator" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                  "symbol" : ".",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 8
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 9
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 2
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 9
+                  }
+                }
+              } ],
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "uniqueId",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 17
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 2
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 17
+                }
+              },
+              "expressions" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "source",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 2
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 8
+                  }
+                }
+              }, {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "uniqueId",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 17
+                  }
+                }
+              } ]
+            },
+            "operator" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+              "symbol" : "+",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 18
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 19
+                }
+              }
+            },
+            "rightOperand" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+              "qualifiers" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+                "expression" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "source",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 3,
+                      "column" : 2
+                    },
+                    "end" : {
+                      "line" : 3,
+                      "column" : 8
+                    }
+                  }
+                },
+                "operator" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                  "symbol" : ".",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 3,
+                      "column" : 8
+                    },
+                    "end" : {
+                      "line" : 3,
+                      "column" : 9
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 3,
+                    "column" : 2
+                  },
+                  "end" : {
+                    "line" : 3,
+                    "column" : 9
+                  }
+                }
+              } ],
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "name",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 3,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 3,
+                    "column" : 13
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 3,
+                  "column" : 2
+                },
+                "end" : {
+                  "line" : 3,
+                  "column" : 13
+                }
+              },
+              "expressions" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "source",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 3,
+                    "column" : 2
+                  },
+                  "end" : {
+                    "line" : 3,
+                    "column" : 8
+                  }
+                }
+              }, {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "name",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 3,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 3,
+                    "column" : 13
+                  }
+                }
+              } ]
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 2
+              },
+              "end" : {
+                "line" : 3,
+                "column" : 13
+              }
+            }
+          },
+          "operator" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+            "symbol" : "+",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 3,
+                "column" : 14
+              },
+              "end" : {
+                "line" : 3,
+                "column" : 15
+              }
+            }
+          },
+          "rightOperand" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+            "type" : "singleQuoteString",
+            "value" : "_",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 4,
+                "column" : 2
+              },
+              "end" : {
+                "line" : 4,
+                "column" : 5
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 2
+            },
+            "end" : {
+              "line" : 4,
+              "column" : 5
+            }
+          }
+        },
+        "operator" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+          "symbol" : "+",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 4,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 4,
+              "column" : 7
+            }
+          }
+        },
+        "rightOperand" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Parenthesis",
+          "operand" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Ternary",
+            "condition" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+              "qualifiers" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+                "expression" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "Array",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 3
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 8
+                    }
+                  }
+                },
+                "operator" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                  "symbol" : ".",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 8
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 9
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 3
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 9
+                  }
+                }
+              } ],
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+                "name" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "isArray",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 9
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 16
+                    }
+                  }
+                },
+                "signature" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+                  "parameters" : [ {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                    "value" : "args",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 5,
+                        "column" : 17
+                      },
+                      "end" : {
+                        "line" : 5,
+                        "column" : 21
+                      }
+                    }
+                  } ],
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 16
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 22
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 22
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 5,
+                  "column" : 3
+                },
+                "end" : {
+                  "line" : 5,
+                  "column" : 22
+                }
+              },
+              "expressions" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "Array",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 3
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 8
+                  }
+                }
+              }, {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+                "name" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "isArray",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 9
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 16
+                    }
+                  }
+                },
+                "signature" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+                  "parameters" : [ {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                    "value" : "args",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 5,
+                        "column" : 17
+                      },
+                      "end" : {
+                        "line" : 5,
+                        "column" : 21
+                      }
+                    }
+                  } ],
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 16
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 22
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 9
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 22
+                  }
+                }
+              } ]
+            },
+            "ifPart" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+              "qualifiers" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+                "expression" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "args",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 25
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 29
+                    }
+                  }
+                },
+                "operator" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                  "symbol" : ".",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 29
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 30
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 25
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 30
+                  }
+                }
+              } ],
+              "expression" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+                "name" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "join",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 30
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 34
+                    }
+                  }
+                },
+                "signature" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+                  "parameters" : [ {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+                    "type" : "singleQuoteString",
+                    "value" : "_",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 5,
+                        "column" : 35
+                      },
+                      "end" : {
+                        "line" : 5,
+                        "column" : 38
+                      }
+                    }
+                  } ],
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 34
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 39
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 30
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 39
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 5,
+                  "column" : 25
+                },
+                "end" : {
+                  "line" : 5,
+                  "column" : 39
+                }
+              },
+              "expressions" : [ {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                "value" : "args",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 25
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 29
+                  }
+                }
+              }, {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+                "name" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "join",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 30
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 34
+                    }
+                  }
+                },
+                "signature" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+                  "parameters" : [ {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+                    "type" : "singleQuoteString",
+                    "value" : "_",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 5,
+                        "column" : 35
+                      },
+                      "end" : {
+                        "line" : 5,
+                        "column" : 38
+                      }
+                    }
+                  } ],
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 5,
+                      "column" : 34
+                    },
+                    "end" : {
+                      "line" : 5,
+                      "column" : 39
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 5,
+                    "column" : 30
+                  },
+                  "end" : {
+                    "line" : 5,
+                    "column" : 39
+                  }
+                }
+              } ]
+            },
+            "elsePart" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+              "type" : "singleQuoteString",
+              "value" : "",
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 5,
+                  "column" : 42
+                },
+                "end" : {
+                  "line" : 5,
+                  "column" : 44
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 5,
+                "column" : 3
+              },
+              "end" : {
+                "line" : 5,
+                "column" : 44
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 5,
+              "column" : 2
+            },
+            "end" : {
+              "line" : 5,
+              "column" : 45
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 2
+          },
+          "end" : {
+            "line" : 5,
+            "column" : 45
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 5
+        },
+        "end" : {
+          "line" : 5,
+          "column" : 45
+        }
+      },
+      "initialized" : true
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 5,
+        "column" : 45
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 5,
+      "column" : 46
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[0, Javascript] 2 ** (3 ** 2) // 512\\n; (2 ** 3) ** 2
+ [1, Infix] 2 ** (3 ** 2)
+  [2, Literal] 2
+  [2, Operator] **
+  [2, Parenthesis] (3 ** 2)
+   [3, Infix] 3 ** 2
+    [4, Literal] 3
+    [4, Operator] **
+    [4, Literal] 2
+ [1, Infix] (2 ** 3) ** 2
+  [2, Parenthesis] (2 ** 3)
+   [3, Infix] 2 ** 3
+    [4, Literal] 2
+    [4, Operator] **
+    [4, Literal] 3
+  [2, Operator] **
+  [2, Literal] 2

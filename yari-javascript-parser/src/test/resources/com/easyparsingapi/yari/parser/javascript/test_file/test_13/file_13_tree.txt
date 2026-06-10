@@ -1,0 +1,111 @@
+[0, Javascript] const food = "sushi";\\n\\nswitch (food) {\\n case "sushi":\\n console.log("Sushi is originally from Japan.");\\n break;\\n case "pizza":\\n console.log("Pizza is originally from Italy.");\\n break;\\n default:\\n console.log("I have never heard of that dish.");\\n break;\\n}\\n\\nswitch (arguments.length) {\\n case 0:\\n a = 4;\\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n}
+ [1, VariableDeclaration] const food = "sushi"
+  [2, Type] const
+  [2, Variable] food = "sushi"
+   [3, Identifier] food
+   [3, Operator] =
+   [3, Literal] "sushi"
+ [1, Switch] switch (food) {\\n case "sushi":\\n console.log("Sushi is originally from Japan.");\\n break;\\n case "pizza":\\n console.log("Pizza is originally from Italy.");\\n break;\\n default:\\n console.log("I have never heard of that dish.");\\n break;\\n}
+  [2, SwitchExpression] (food)
+   [3, Identifier] food
+  [2, SwitchProcedure] case "sushi":\\n console.log("Sushi is originally from Japan.");\\n break;\\n case "pizza":\\n console.log("Pizza is originally from Italy.");\\n break;\\n default:\\n console.log("I have never heard of that dish.");\\n break;
+   [3, SwitchCase] case "sushi":\\n console.log("Sushi is originally from Japan.");\\n break;
+    [4, Literal] "sushi"
+    [4, CaseProcedure] console.log("Sushi is originally from Japan.");\\n break;
+     [5, QualifiedExpression] console.log("Sushi is originally from Japan.")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("Sushi is originally from Japan.")
+       [7, Identifier] log
+       [7, Signature] ("Sushi is originally from Japan.")
+        [8, Literal] "Sushi is originally from Japan."
+     [5, Break] break
+   [3, SwitchCase] case "pizza":\\n console.log("Pizza is originally from Italy.");\\n break;
+    [4, Literal] "pizza"
+    [4, CaseProcedure] console.log("Pizza is originally from Italy.");\\n break;
+     [5, QualifiedExpression] console.log("Pizza is originally from Italy.")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("Pizza is originally from Italy.")
+       [7, Identifier] log
+       [7, Signature] ("Pizza is originally from Italy.")
+        [8, Literal] "Pizza is originally from Italy."
+     [5, Break] break
+   [3, DefaultCase] default:\\n console.log("I have never heard of that dish.");\\n break;
+    [4, CaseProcedure] console.log("I have never heard of that dish.");\\n break;
+     [5, QualifiedExpression] console.log("I have never heard of that dish.")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("I have never heard of that dish.")
+       [7, Identifier] log
+       [7, Signature] ("I have never heard of that dish.")
+        [8, Literal] "I have never heard of that dish."
+     [5, Break] break
+ [1, Switch] switch (arguments.length) {\\n case 0:\\n a = 4;\\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n}
+  [2, SwitchExpression] (arguments.length)
+   [3, QualifiedExpression] arguments.length
+    [4, Qualifier] arguments.
+     [5, Identifier] arguments
+     [5, Operator] .
+    [4, Identifier] length
+  [2, SwitchProcedure] case 0:\\n a = 4;\\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:
+   [3, SwitchCase] case 0:\\n a = 4;
+    [4, Literal] 0
+    [4, CaseProcedure] a = 4;
+     [5, Assignment] a = 4
+      [6, Identifier] a
+      [6, Operator] =
+      [6, Literal] 4
+   [3, SwitchCase] case 1:\\n b = 5;
+    [4, Literal] 1
+    [4, CaseProcedure] b = 5;
+     [5, Assignment] b = 5
+      [6, Identifier] b
+      [6, Operator] =
+      [6, Literal] 5
+   [3, SwitchCase] case 2:\\n c = b;
+    [4, Literal] 2
+    [4, CaseProcedure] c = b;
+     [5, Assignment] c = b
+      [6, Identifier] c
+      [6, Operator] =
+      [6, Identifier] b
+   [3, SwitchCase] case 3:\\n d = go();
+    [4, Literal] 3
+    [4, CaseProcedure] d = go();
+     [5, Assignment] d = go()
+      [6, Identifier] d
+      [6, Operator] =
+      [6, FunctionCall] go()
+       [7, Identifier] go
+       [7, Signature] ()
+   [3, SwitchCase] case 4:\\n e = this;
+    [4, Literal] 4
+    [4, CaseProcedure] e = this;
+     [5, Assignment] e = this
+      [6, Identifier] e
+      [6, Operator] =
+      [6, This] this
+   [3, SwitchCase] case 5:\\n f = arguments;
+    [4, Literal] 5
+    [4, CaseProcedure] f = arguments;
+     [5, Assignment] f = arguments
+      [6, Identifier] f
+      [6, Operator] =
+      [6, Identifier] arguments
+   [3, SwitchCase] case 6:\\n g = this.value;
+    [4, Literal] 6
+    [4, CaseProcedure] g = this.value;
+     [5, Assignment] g = this.value
+      [6, Identifier] g
+      [6, Operator] =
+      [6, QualifiedExpression] this.value
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] value
+   [3, DefaultCase] default:
+    [4, CaseProcedure] }

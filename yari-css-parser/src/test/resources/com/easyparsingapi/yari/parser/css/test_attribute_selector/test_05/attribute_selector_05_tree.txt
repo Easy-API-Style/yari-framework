@@ -1,0 +1,14 @@
+[0, Css] a[class~="logo"] {\\n padding: 2px;\\n }
+ [1, RuleSet] a[class~="logo"] {\\n padding: 2px;\\n }
+  [2, CombinatorSelector] a[class~="logo"]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [class~="logo"]
+    [4, Expression] class~="logo"
+     [5, Identifier] class
+     [5, Operator] ~=
+     [5, Literal] "logo"
+  [2, Block] {\\n padding: 2px;\\n }
+   [3, Property] padding: 2px
+    [4, Identifier] padding
+    [4, Identifier] 2px

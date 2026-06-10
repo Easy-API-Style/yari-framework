@@ -1,0 +1,15 @@
+[0, Css] @document url("https://www.example.com/")\\n {\\n h1 {\\n color: green;\\n }\\n }
+ [1, AtRule] @document url("https://www.example.com/")\\n {\\n h1 {\\n color: green;\\n }\\n }
+  [2, AtRuleName] @document
+   [3, Identifier] document
+  [2, Function] url("https://www.example.com/")
+   [3, Identifier] url
+   [3, Signature] ("https://www.example.com/")
+    [4, Literal] "https://www.example.com/"
+  [2, Block] {\\n h1 {\\n color: green;\\n }\\n }
+   [3, RuleSet] h1 {\\n color: green;\\n }
+    [4, ElementSelector] h1
+    [4, Block] {\\n color: green;\\n }
+     [5, Property] color: green
+      [6, Identifier] color
+      [6, Identifier] green

@@ -1,0 +1,42 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [Css]
+a[href$=".org"] {\\n font-style: italic;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [RuleSet]
+a[href$=".org"] {\\n font-style: italic;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 19] [CombinatorSelector]
+a[href$=".org"]
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 5] [ElementSelector]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 5] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 19] [AttributeSelector]
+[href$=".org"]
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 18] [Expression]
+href$=".org"
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 10] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 12] [Operator]
+$=
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 18] [Literal]
+".org"
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 3 column 5] [Block]
+{\\n font-style: italic;\\n }
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 24] [Property]
+font-style: italic
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 16] [Identifier]
+font-style
+---------------------------
+SourceLocation [start=line 2 column 18, end=line 2 column 24] [Identifier]
+italic
+---------------------------

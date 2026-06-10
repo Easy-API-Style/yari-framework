@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-xml-parser — Yari Framework</title>
+  <meta name="description" content="yari-xml-parser: fault-tolerant XML parser producing a typed, fully-located AST. Handles tags, self-closing tags, comments, CDATA, DOCTYPE, prolog, and namespaces.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html" class="is-active">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#xmlparser">XmlParser</a></li>
+      <li><a href="#xmlconfig">XmlConfig</a></li>
+      <li><a href="#xml">Xml (AST)</a></li>
+      <li><a href="#astnodes">AST nodes</a></li>
+      <li><a href="#recovery">Error recovery</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">/</span>
+        <span>yari-xml-parser</span>
+      </nav>
+
+      <h1>yari-xml-parser</h1>
+      <p class="lead">Fault-tolerant XML parser producing a typed, fully-located AST. Handles simple and complex tags, self-closing tags, comments, CDATA sections, DOCTYPE declarations, XML prolog, and namespaces. When the parser encounters malformed input it emits an error node and resumes — never throws.</p>
+
+      <!-- ── Installation ── -->
+      <h2 id="install">Installation</h2>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-xml-parser:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-xml-parser<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+
+      <!-- ── XmlParser ── -->
+      <h2 id="xmlparser">XmlParser — Entry Points</h2>
+
+      <p>All methods are static. <code>XmlParser</code> is not instantiable.</p>
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>class</span>
+          <strong>XmlParser</strong>
+          <span>(static)</span>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>parseUnit(String, XmlConfig)</td>
+                  <td>AstResult&lt;Xml&gt;</td>
+                  <td>Parse a raw XML string; returns the AST plus the full token list</td>
+                </tr>
+                <tr>
+                  <td>parseUnit(List&lt;Token&gt;, XmlConfig)</td>
+                  <td>AstResult&lt;Xml&gt;</td>
+                  <td>Parse a pre-tokenised list; returns the AST plus the full token list</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── XmlConfig ── -->
+      <h2 id="xmlconfig">XmlConfig — Parser Configuration</h2>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>class</span>
+          <strong>XmlConfig</strong>
+          <span>with builder</span>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>static builder()</td>
+                  <td>Builder</td>
+                  <td>Start a fluent configuration</td>
+                </tr>
+                <tr>
+                  <td>acceptUnclosedTag(boolean)</td>
+                  <td>Builder</td>
+                  <td>When <code>true</code>, accept tags that are not explicitly self-closed; when <code>false</code>, they produce an <code>XmlError</code> node</td>
+                </tr>
+                <tr>
+                  <td>tagAsPlainText(String)</td>
+                  <td>Builder</td>
+                  <td>Tokenise the named tag's content as raw text instead of XML markup (also accepts a <code>Markup</code> or a <code>Function&lt;TagEntity, Boolean&gt;</code> predicate)</td>
+                </tr>
+                <tr>
+                  <td>build()</td>
+                  <td>XmlConfig</td>
+                  <td>Materialise the configuration</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Xml ── -->
+      <h2 id="xml">Xml — Root AST Node</h2>
+      <p>Implements <code>AstUnit</code>. Root of a parsed XML document.</p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>class</span>
+          <strong>Xml</strong>
+          <span>implements AstUnit</span>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>getNodes()</td>
+                  <td>List&lt;XmlNode&gt;</td>
+                  <td>Top-level nodes (prolog, DOCTYPE, root element, comments…)</td>
+                </tr>
+                <tr>
+                  <td>astComments()</td>
+                  <td>List&lt;AstComment&gt;</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>astCommentsOf(AstNode, Position…)</td>
+                  <td>List&lt;AstComment&gt;</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── AST Nodes ── -->
+      <h2 id="astnodes">AST Nodes</h2>
+      <p>Structural nodes implement <code>XmlNode</code> and carry a source location (<code>XmlError</code> extends <code>AstError</code>).</p>
+
+      <h3>Tag structure</h3>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>Tag structure</strong>
+          <span>com.easyparsingapi.yari.parser.xml.ast</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Node</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>Xml</code></td>
+                <td>Root — complete XML document</td>
+              </tr>
+              <tr>
+                <td><code>Tag</code></td>
+                <td>Complete tag: <code>&lt;foo&gt;…&lt;/foo&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>TagHead</code></td>
+                <td>Tag opening: <code>&lt;foo attr="val"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>TagBody</code></td>
+                <td>Tag body: content between <code>&lt;foo&gt;</code> and <code>&lt;/foo&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>TagFoot</code></td>
+                <td>Tag closing: <code>&lt;/foo&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>TagEmpty</code></td>
+                <td>Self-closing tag: <code>&lt;br/&gt;</code>, <code>&lt;img src="…"/&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>TagSimple</code></td>
+                <td>Interface — a tag with a name and attributes (<code>Tag</code>, <code>TagEmpty</code>…)</td>
+              </tr>
+              <tr>
+                <td><code>TagComplex&lt;B&gt;</code></td>
+                <td>Interface — a tag with head, body and foot (extends <code>TagSimple</code>)</td>
+              </tr>
+              <tr>
+                <td><code>TagAttribute</code></td>
+                <td>Attribute: <code>name="value"</code></td>
+              </tr>
+              <tr>
+                <td><code>TagName</code></td>
+                <td>Tag name, with optional namespace (extends <code>Markup</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Other nodes</h3>
+      <div class="api-class">
+        <div class="api-class__header">
+          <strong>Other nodes</strong>
+          <span>com.easyparsingapi.yari.parser.xml.ast</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Node</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>Text</code></td>
+                <td>Text content between tags</td>
+              </tr>
+              <tr>
+                <td><code>XmlComment</code></td>
+                <td>Comment: <code>&lt;!-- … --&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>CData</code></td>
+                <td>CDATA section: <code>&lt;![CDATA[…]]&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>Prolog</code></td>
+                <td>Prolog: <code>&lt;?xml version="1.0"?&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>DocType</code></td>
+                <td>Declaration: <code>&lt;!DOCTYPE …&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>Markup</code></td>
+                <td>Base class for tag/attribute identifiers</td>
+              </tr>
+              <tr>
+                <td><code>XmlIdentifier</code></td>
+                <td>Interface — a qualified XML identifier (with namespace)</td>
+              </tr>
+              <tr>
+                <td><code>XmlError</code></td>
+                <td>Error node (fault-tolerant parsing)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Error Recovery ── -->
+      <h2 id="recovery">Error Recovery</h2>
+      <p>The parser continues past malformed input by emitting an <code>XmlError</code> node and resuming. Enable fault-tolerance via <code>XmlConfig</code>:</p>
+
+<pre><code>Xml xml = XmlParser.parseUnit(<span class="s">"""
+    &lt;root&gt;
+        &lt;item&gt;ok&lt;/item&gt;
+        &lt;broken
+        &lt;item&gt;still parsed&lt;/item&gt;
+    &lt;/root&gt;
+    """</span>, XmlConfig.builder()
+        .acceptUnclosedTag(<span class="k">true</span>)
+        .build()).unit();
+
+xml.astStream()
+   .filter(n -> n <span class="k">instanceof</span> XmlError)
+   .forEach(n -> System.out.println(<span class="s">"error at "</span> + n.getSourceLocation()));</code></pre>
+
+      <div class="note">
+        <p>The parser never throws. Every recoverable error produces an <code>XmlError</code> node with its source location and a human-readable failure message.</p>
+      </div>
+
+      <div class="note">
+        <p>For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and the Javadoc-annotated source under <code>yari-xml-parser/src/main/java/</code>.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[0, Javascript] for (fct_1(), var i = 0; fct_2(), i < values.length; fct_3(), i++);
+ [1, For] for (fct_1(), var i = 0; fct_2(), i < values.length; fct_3(), i++);
+  [2, Iteration] fct_1(), var i = 0; fct_2(), i < values.length; fct_3(), i++
+   [3, Sequence] fct_1(), var i = 0
+    [4, FunctionCall] fct_1()
+     [5, Identifier] fct_1
+     [5, Signature] ()
+    [4, VariableDeclaration] var i = 0
+     [5, Type] var
+     [5, Variable] i = 0
+      [6, Identifier] i
+      [6, Operator] =
+      [6, Literal] 0
+   [3, Sequence] fct_2(), i < values.length
+    [4, FunctionCall] fct_2()
+     [5, Identifier] fct_2
+     [5, Signature] ()
+    [4, Infix] i < values.length
+     [5, Identifier] i
+     [5, Operator] <
+     [5, QualifiedExpression] values.length
+      [6, Qualifier] values.
+       [7, Identifier] values
+       [7, Operator] .
+      [6, Identifier] length
+   [3, Sequence] fct_3(), i++
+    [4, FunctionCall] fct_3()
+     [5, Identifier] fct_3
+     [5, Signature] ()
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i

@@ -1,0 +1,24 @@
+[0, Javascript] function func(a, b, c = 9) { console.log(a + " " + b); }
+ [1, FunctionDeclaration] function func(a, b, c = 9) { console.log(a + " " + b); }
+  [2, Identifier] func
+  [2, Signature] (a, b, c = 9)
+   [3, Identifier] a
+   [3, Identifier] b
+   [3, ParameterWithValue] c = 9
+    [4, Identifier] c
+    [4, Literal] 9
+  [2, Procedure] { console.log(a + " " + b); }
+   [3, QualifiedExpression] console.log(a + " " + b)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(a + " " + b)
+     [5, Identifier] log
+     [5, Signature] (a + " " + b)
+      [6, Infix] a + " " + b
+       [7, Infix] a + " "
+        [8, Identifier] a
+        [8, Operator] +
+        [8, Literal] " "
+       [7, Operator] +
+       [7, Identifier] b

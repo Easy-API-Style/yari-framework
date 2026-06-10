@@ -1,0 +1,16 @@
+[0, Css] @container (width > 400px) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+ [1, AtRule] @container (width > 400px) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Parenthesis] (width > 400px)
+   [3, Infix] width > 400px
+    [4, Identifier] width
+    [4, Operator] >
+    [4, Identifier] 400px
+  [2, Block] {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+   [3, RuleSet] h2 {\\n font-size: 1.5em;\\n }
+    [4, ElementSelector] h2
+    [4, Block] {\\n font-size: 1.5em;\\n }
+     [5, Property] font-size: 1.5em
+      [6, Identifier] font-size
+      [6, Identifier] 1.5em

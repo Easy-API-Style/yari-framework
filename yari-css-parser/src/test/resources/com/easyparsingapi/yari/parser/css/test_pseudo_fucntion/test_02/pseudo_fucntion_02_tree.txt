@@ -1,0 +1,16 @@
+[0, Css] h1:has(+ p) {\\n margin-bottom: 0;\\n }
+ [1, RuleSet] h1:has(+ p) {\\n margin-bottom: 0;\\n }
+  [2, CombinatorSelector] h1:has(+ p)
+   [3, ElementSelector] h1
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :has(+ p)
+    [4, PseudoClassSelector] :has
+     [5, Identifier] has
+    [4, Signature] (+ p)
+     [5, PrefixSelector] + p
+      [6, Operator] +
+      [6, ElementSelector] p
+  [2, Block] {\\n margin-bottom: 0;\\n }
+   [3, Property] margin-bottom: 0
+    [4, Identifier] margin-bottom
+    [4, Identifier] 0

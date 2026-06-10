@@ -1,0 +1,13 @@
+[0, Javascript] const {p: foo, q: bar} = o
+ [1, VariableDeclaration] const {p: foo, q: bar} = o
+  [2, Type] const
+  [2, Variable] {p: foo, q: bar} = o
+   [3, DestructuringObject] {p: foo, q: bar}
+    [4, Field] p: foo
+     [5, Identifier] p
+     [5, Identifier] : foo
+    [4, Field] q: bar
+     [5, Identifier] q
+     [5, Identifier] : bar
+   [3, Operator] =
+   [3, Identifier] o

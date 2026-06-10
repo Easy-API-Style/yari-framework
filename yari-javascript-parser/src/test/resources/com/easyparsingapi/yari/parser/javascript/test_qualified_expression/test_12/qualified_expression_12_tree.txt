@@ -1,0 +1,9 @@
+[0, JavascriptNodeUnit] /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url)
+ [1, QualifiedExpression] /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url)
+  [2, Qualifier] /^(\w+)\:\/\/([^\/]+)\/(.*)$/.
+   [3, Literal] /^(\w+)\:\/\/([^\/]+)\/(.*)$/
+   [3, Operator] .
+  [2, FunctionCall] exec(url)
+   [3, Identifier] exec
+   [3, Signature] (url)
+    [4, Identifier] url

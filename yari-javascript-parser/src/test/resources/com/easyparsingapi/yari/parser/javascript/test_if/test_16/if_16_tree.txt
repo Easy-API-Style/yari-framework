@@ -1,0 +1,23 @@
+[0, Javascript] if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+ [1, If] if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+  [2, IfBlock] if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+   [3, Condition] (!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))
+    [4, Prefix] !/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b)
+     [5, Operator] !
+     [5, QualifiedExpression] /^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b)
+      [6, Qualifier] /^\s*(?:-?[1-9]\d*|0)?\s*$/.
+       [7, Literal] /^\s*(?:-?[1-9]\d*|0)?\s*$/
+       [7, Operator] .
+      [6, FunctionCall] test(b)
+       [7, Identifier] test
+       [7, Signature] (b)
+        [8, Identifier] b
+   [3, Procedure] throw Error(String(b));
+    [4, Throw] throw Error(String(b))
+     [5, FunctionCall] Error(String(b))
+      [6, Identifier] Error
+      [6, Signature] (String(b))
+       [7, FunctionCall] String(b)
+        [8, Identifier] String
+        [8, Signature] (b)
+         [9, Identifier] b

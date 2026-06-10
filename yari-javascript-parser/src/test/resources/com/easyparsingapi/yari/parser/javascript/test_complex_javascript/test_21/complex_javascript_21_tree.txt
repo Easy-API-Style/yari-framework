@@ -1,0 +1,85 @@
+[0, Javascript] !function() {\\n var t,e,\\n n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }\\n}
+ [1, Prefix] !function() {\\n var t,e,\\n n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }\\n}
+  [2, Operator] !
+  [2, FunctionDeclaration] function() {\\n var t,e,\\n n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }\\n}
+   [3, Signature] ()
+   [3, Procedure] {\\n var t,e,\\n n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }\\n}
+    [4, VariableDeclaration] var t,e,\\n n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }
+     [5, Type] var
+     [5, Variable] t
+      [6, Identifier] t
+     [5, Variable] e
+      [6, Identifier] e
+     [5, Variable] n= {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }
+      [6, Identifier] n
+      [6, Operator] =
+      [6, ObjectDeclaration] {\\n 696:function(t,e) {},\\n 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }\\n }
+       [7, FieldDeclaration] 696:function(t,e) {}
+        [8, Literal] 696
+        [8, FunctionDeclaration] function(t,e) {}
+         [9, Signature] (t,e)
+          [10, Identifier] t
+          [10, Identifier] e
+         [9, Procedure] {}
+       [7, FieldDeclaration] 9128:function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }
+        [8, Literal] 9128
+        [8, FunctionDeclaration] function(t,e,n) {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }
+         [9, Signature] (t,e,n)
+          [10, Identifier] t
+          [10, Identifier] e
+          [10, Identifier] n
+         [9, Procedure] {\\n "use strict";\\n function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }\\n }
+          [10, UseStrict] 
+          [10, FunctionDeclaration] function r(t,e,n){\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }
+           [11, Identifier] r
+           [11, Signature] (t,e,n)
+            [12, Identifier] t
+            [12, Identifier] e
+            [12, Identifier] n
+           [11, Procedure] {\\n this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }\\n }
+            [12, Assignment] this.off=function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }
+             [13, QualifiedExpression] this.off
+              [14, Qualifier] this.
+               [15, This] this
+               [15, Operator] .
+              [14, Identifier] off
+             [13, Operator] =
+             [13, FunctionDeclaration] function() {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }
+              [14, Signature] ()
+              [14, Procedure] {\\n e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )\\n }
+               [15, QualifiedExpression] e.forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )
+                [16, Qualifier] e.
+                 [17, Identifier] e
+                 [17, Operator] .
+                [16, FunctionCall] forEach(\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )
+                 [17, Identifier] forEach
+                 [17, Signature] (\\n function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }\\n )
+                  [18, FunctionDeclaration] function(e) {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }
+                   [19, Signature] (e)
+                    [20, Identifier] e
+                   [19, Procedure] {\\n var n=i[e];\\n n && (t[e]=n, delete i[e])\\n }
+                    [20, VariableDeclaration] var n=i[e]
+                     [21, Type] var
+                     [21, Variable] n=i[e]
+                      [22, Identifier] n
+                      [22, Operator] =
+                      [22, MapExpression] i[e]
+                       [23, Identifier] i
+                       [23, Bracket] [e]
+                        [24, Identifier] e
+                    [20, Infix] n && (t[e]=n, delete i[e])
+                     [21, Identifier] n
+                     [21, Operator] &&
+                     [21, Sequence] (t[e]=n, delete i[e])
+                      [22, Assignment] t[e]=n
+                       [23, MapExpression] t[e]
+                        [24, Identifier] t
+                        [24, Bracket] [e]
+                         [25, Identifier] e
+                       [23, Operator] =
+                       [23, Identifier] n
+                      [22, Delete] delete i[e]
+                       [23, MapExpression] i[e]
+                        [24, Identifier] i
+                        [24, Bracket] [e]
+                         [25, Identifier] e

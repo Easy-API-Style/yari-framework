@@ -1,0 +1,111 @@
+SourceLocation [start=line 6 column 7, end=line 12 column 54] [Css]
+/* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */
+---------------------------
+SourceLocation [start=line 14 column 7, end=line 14 column 55] [Css]
+/* Make the above-mentioned pages really ugly */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 19 column 6] [Css]
+@document url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*") {\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 19 column 6] [AtRule]
+@document url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*") {\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 14] [AtRuleName]
+@document
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 14] [Identifier]
+document
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 5 column 33] [ListParameter]
+url("http://www.w3.org/"),\\n url-prefix("http://www.w3.org/Style/"),\\n domain("mozilla.org"),\\n media-document("video"),\\n regexp("https:.*")
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 40] [Function]
+url("http://www.w3.org/")
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 18] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 40] [Signature]
+("http://www.w3.org/")
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 39] [Literal]
+"http://www.w3.org/"
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 53] [Function]
+url-prefix("http://www.w3.org/Style/")
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 25] [Identifier]
+url-prefix
+---------------------------
+SourceLocation [start=line 2 column 25, end=line 2 column 53] [Signature]
+("http://www.w3.org/Style/")
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 52] [Literal]
+"http://www.w3.org/Style/"
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 36] [Function]
+domain("mozilla.org")
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 21] [Identifier]
+domain
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 36] [Signature]
+("mozilla.org")
+---------------------------
+SourceLocation [start=line 3 column 22, end=line 3 column 35] [Literal]
+"mozilla.org"
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 38] [Function]
+media-document("video")
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 29] [Identifier]
+media-document
+---------------------------
+SourceLocation [start=line 4 column 29, end=line 4 column 38] [Signature]
+("video")
+---------------------------
+SourceLocation [start=line 4 column 30, end=line 4 column 37] [Literal]
+"video"
+---------------------------
+SourceLocation [start=line 5 column 15, end=line 5 column 33] [Function]
+regexp("https:.*")
+---------------------------
+SourceLocation [start=line 5 column 15, end=line 5 column 21] [Identifier]
+regexp
+---------------------------
+SourceLocation [start=line 5 column 21, end=line 5 column 33] [Signature]
+("https:.*")
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 32] [Literal]
+"https:.*"
+---------------------------
+SourceLocation [start=line 5 column 34, end=line 19 column 6] [Block]
+{\\n /* CSS rules here apply to:\\n - The page "http://www.w3.org/"\\n - Any page whose URL begins with "http://www.w3.org/Style/"\\n - Any page whose URL's host is "mozilla.org"\\n or ends with ".mozilla.org"\\n - Any standalone video\\n - Any page whose URL starts with "https:" */\\n\\n /* Make the above-mentioned pages really ugly */\\n body {\\n color: purple;\\n background: yellow;\\n }\\n }
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 18 column 8] [RuleSet]
+body {\\n color: purple;\\n background: yellow;\\n }
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 11] [ElementSelector]
+body
+---------------------------
+SourceLocation [start=line 15 column 12, end=line 18 column 8] [Block]
+{\\n color: purple;\\n background: yellow;\\n }
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 22] [Property]
+color: purple
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 14] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 16 column 16, end=line 16 column 22] [Identifier]
+purple
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 27] [Property]
+background: yellow
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 19] [Identifier]
+background
+---------------------------
+SourceLocation [start=line 17 column 21, end=line 17 column 27] [Identifier]
+yellow
+---------------------------

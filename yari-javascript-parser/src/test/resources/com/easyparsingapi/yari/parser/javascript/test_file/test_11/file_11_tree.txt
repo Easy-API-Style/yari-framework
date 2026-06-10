@@ -1,0 +1,184 @@
+[0, Javascript] let customer = {\\n name: "Carl",\\n details: { age: 82 }\\n};\\nconst customerCity = customer?.city ?? "Unknown city";\\nconsole.log(customerCity); // Unknown city\\n\\nlet customer = {\\n name: "Carl",\\n details: {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }\\n};\\nlet customerCity = customer.details?.address?.city;\\nlet customerName = customer.name?.getName?.(); // method does not exist, customerName is undefined\\n\\nlet potentiallyNullObj = null;\\nlet x = 0;\\nlet prop = potentiallyNullObj?.[x++];\\nconsole.log(x); // 0 as x was not incremented\\n\\nlet myMap = new Map();\\nmyMap.set("foo", {name: "baz", desc: "inga"});\\nlet nameBar = myMap.get("bar")?.name;\\n\\nnew URL(import.meta.url).searchParams.get('someURLInfo');
+ [1, VariableDeclaration] let customer = {\\n name: "Carl",\\n details: { age: 82 }\\n}
+  [2, Type] let
+  [2, Variable] customer = {\\n name: "Carl",\\n details: { age: 82 }\\n}
+   [3, Identifier] customer
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n name: "Carl",\\n details: { age: 82 }\\n}
+    [4, FieldDeclaration] name: "Carl"
+     [5, Identifier] name
+     [5, Literal] "Carl"
+    [4, FieldDeclaration] details: { age: 82 }
+     [5, Identifier] details
+     [5, ObjectDeclaration] { age: 82 }
+      [6, FieldDeclaration] age: 82
+       [7, Identifier] age
+       [7, Literal] 82
+ [1, VariableDeclaration] const customerCity = customer?.city ?? "Unknown city"
+  [2, Type] const
+  [2, Variable] customerCity = customer?.city ?? "Unknown city"
+   [3, Identifier] customerCity
+   [3, Operator] =
+   [3, Infix] customer?.city ?? "Unknown city"
+    [4, QualifiedExpression] customer?.city
+     [5, Qualifier] customer?.
+      [6, Identifier] customer
+      [6, Operator] ?.
+     [5, Identifier] city
+    [4, Operator] ??
+    [4, Literal] "Unknown city"
+ [1, QualifiedExpression] console.log(customerCity)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(customerCity)
+   [3, Identifier] log
+   [3, Signature] (customerCity)
+    [4, Identifier] customerCity
+ [1, VariableDeclaration] let customer = {\\n name: "Carl",\\n details: {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }\\n}
+  [2, Type] let
+  [2, Variable] customer = {\\n name: "Carl",\\n details: {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }\\n}
+   [3, Identifier] customer
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n name: "Carl",\\n details: {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }\\n}
+    [4, FieldDeclaration] name: "Carl"
+     [5, Identifier] name
+     [5, Literal] "Carl"
+    [4, FieldDeclaration] details: {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }
+     [5, Identifier] details
+     [5, ObjectDeclaration] {\\n age: 82,\\n location: "Paradise Falls" // detailed address is unknown\\n }
+      [6, FieldDeclaration] age: 82
+       [7, Identifier] age
+       [7, Literal] 82
+      [6, FieldDeclaration] location: "Paradise Falls"
+       [7, Identifier] location
+       [7, Literal] "Paradise Falls"
+ [1, VariableDeclaration] let customerCity = customer.details?.address?.city
+  [2, Type] let
+  [2, Variable] customerCity = customer.details?.address?.city
+   [3, Identifier] customerCity
+   [3, Operator] =
+   [3, QualifiedExpression] customer.details?.address?.city
+    [4, Qualifier] customer.
+     [5, Identifier] customer
+     [5, Operator] .
+    [4, Qualifier] details?.
+     [5, Identifier] details
+     [5, Operator] ?.
+    [4, Qualifier] address?.
+     [5, Identifier] address
+     [5, Operator] ?.
+    [4, Identifier] city
+ [1, VariableDeclaration] let customerName = customer.name?.getName?.()
+  [2, Type] let
+  [2, Variable] customerName = customer.name?.getName?.()
+   [3, Identifier] customerName
+   [3, Operator] =
+   [3, QualifiedExpression] customer.name?.getName?.()
+    [4, Qualifier] customer.
+     [5, Identifier] customer
+     [5, Operator] .
+    [4, Qualifier] name?.
+     [5, Identifier] name
+     [5, Operator] ?.
+    [4, Qualifier] getName?.
+     [5, Identifier] getName
+     [5, Operator] ?.
+    [4, FunctionCall] ()
+     [5, Empty] 
+     [5, Signature] ()
+ [1, VariableDeclaration] let potentiallyNullObj = null
+  [2, Type] let
+  [2, Variable] potentiallyNullObj = null
+   [3, Identifier] potentiallyNullObj
+   [3, Operator] =
+   [3, Null] null
+ [1, VariableDeclaration] let x = 0
+  [2, Type] let
+  [2, Variable] x = 0
+   [3, Identifier] x
+   [3, Operator] =
+   [3, Literal] 0
+ [1, VariableDeclaration] let prop = potentiallyNullObj?.[x++]
+  [2, Type] let
+  [2, Variable] prop = potentiallyNullObj?.[x++]
+   [3, Identifier] prop
+   [3, Operator] =
+   [3, QualifiedExpression] potentiallyNullObj?.[x++]
+    [4, Qualifier] potentiallyNullObj?.
+     [5, Identifier] potentiallyNullObj
+     [5, Operator] ?.
+    [4, MapExpression] [x++]
+     [5, Empty] 
+     [5, Bracket] [x++]
+      [6, Increment] x++
+       [7, Operator] ++
+       [7, Identifier] x
+ [1, QualifiedExpression] console.log(x)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(x)
+   [3, Identifier] log
+   [3, Signature] (x)
+    [4, Identifier] x
+ [1, VariableDeclaration] let myMap = new Map()
+  [2, Type] let
+  [2, Variable] myMap = new Map()
+   [3, Identifier] myMap
+   [3, Operator] =
+   [3, New] new Map()
+    [4, Identifier] Map
+    [4, Signature] ()
+ [1, QualifiedExpression] myMap.set("foo", {name: "baz", desc: "inga"})
+  [2, Qualifier] myMap.
+   [3, Identifier] myMap
+   [3, Operator] .
+  [2, FunctionCall] set("foo", {name: "baz", desc: "inga"})
+   [3, Identifier] set
+   [3, Signature] ("foo", {name: "baz", desc: "inga"})
+    [4, Literal] "foo"
+    [4, ObjectDeclaration] {name: "baz", desc: "inga"}
+     [5, FieldDeclaration] name: "baz"
+      [6, Identifier] name
+      [6, Literal] "baz"
+     [5, FieldDeclaration] desc: "inga"
+      [6, Identifier] desc
+      [6, Literal] "inga"
+ [1, VariableDeclaration] let nameBar = myMap.get("bar")?.name
+  [2, Type] let
+  [2, Variable] nameBar = myMap.get("bar")?.name
+   [3, Identifier] nameBar
+   [3, Operator] =
+   [3, QualifiedExpression] myMap.get("bar")?.name
+    [4, Qualifier] myMap.
+     [5, Identifier] myMap
+     [5, Operator] .
+    [4, Qualifier] get("bar")?.
+     [5, FunctionCall] get("bar")
+      [6, Identifier] get
+      [6, Signature] ("bar")
+       [7, Literal] "bar"
+     [5, Operator] ?.
+    [4, Identifier] name
+ [1, QualifiedExpression] new URL(import.meta.url).searchParams.get('someURLInfo')
+  [2, Qualifier] new URL(import.meta.url).
+   [3, New] new URL(import.meta.url)
+    [4, Identifier] URL
+    [4, Signature] (import.meta.url)
+     [5, QualifiedExpression] import.meta.url
+      [6, Qualifier] import.
+       [7, Identifier] import
+       [7, Operator] .
+      [6, Qualifier] meta.
+       [7, Identifier] meta
+       [7, Operator] .
+      [6, Identifier] url
+   [3, Operator] .
+  [2, Qualifier] searchParams.
+   [3, Identifier] searchParams
+   [3, Operator] .
+  [2, FunctionCall] get('someURLInfo')
+   [3, Identifier] get
+   [3, Signature] ('someURLInfo')
+    [4, Literal] 'someURLInfo'

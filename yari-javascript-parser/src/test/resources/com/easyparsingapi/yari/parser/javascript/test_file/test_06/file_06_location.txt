@@ -1,0 +1,3663 @@
+SourceLocation [start=line 13 column 3, end=line 13 column 33] [Javascript]
+// expected output: "resolved"
+---------------------------
+SourceLocation [start=line 41 column 3, end=line 41 column 45] [Javascript]
+// 1. Execution gets here almost instantly
+---------------------------
+SourceLocation [start=line 43 column 21, end=line 43 column 55] [Javascript]
+// 2. this runs 2 seconds after 1.
+---------------------------
+SourceLocation [start=line 46 column 21, end=line 46 column 55] [Javascript]
+// 3. this runs 3 seconds after 1.
+---------------------------
+SourceLocation [start=line 51 column 39, end=line 51 column 66] [Javascript]
+// starts timer immediately
+---------------------------
+SourceLocation [start=line 52 column 38, end=line 52 column 65] [Javascript]
+// starts timer immediately
+---------------------------
+SourceLocation [start=line 54 column 3, end=line 54 column 45] [Javascript]
+// 1. Execution gets here almost instantly
+---------------------------
+SourceLocation [start=line 55 column 27, end=line 55 column 61] [Javascript]
+// 2. this runs 2 seconds after 1.
+---------------------------
+SourceLocation [start=line 56 column 27, end=line 56 column 115] [Javascript]
+// 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved
+---------------------------
+SourceLocation [start=line 62 column 30, end=line 62 column 37] [Javascript]
+// slow
+---------------------------
+SourceLocation [start=line 63 column 30, end=line 63 column 37] [Javascript]
+// fast
+---------------------------
+SourceLocation [start=line 70 column 3, end=line 70 column 70] [Javascript]
+// Start 2 "jobs" in parallel and wait for both of them to complete
+---------------------------
+SourceLocation [start=line 77 column 19, end=line 77 column 84] [Javascript]
+// after 2 seconds, logs "slow", then after 1 more second, "fast"
+---------------------------
+SourceLocation [start=line 79 column 1, end=line 79 column 24] [Javascript]
+// wait above to finish
+---------------------------
+SourceLocation [start=line 80 column 35, end=line 80 column 82] [Javascript]
+// after 2 seconds, logs "slow" and then "fast"
+---------------------------
+SourceLocation [start=line 82 column 1, end=line 82 column 14] [Javascript]
+// wait again
+---------------------------
+SourceLocation [start=line 83 column 37, end=line 83 column 63] [Javascript]
+// same as concurrentStart
+---------------------------
+SourceLocation [start=line 85 column 1, end=line 85 column 14] [Javascript]
+// wait again
+---------------------------
+SourceLocation [start=line 86 column 29, end=line 86 column 109] [Javascript]
+// truly parallel: after 1 second, logs "fast", then after 1 more second, "slow"
+---------------------------
+SourceLocation [start=line 89 column 28, end=line 89 column 48] [Javascript]
+// returns a promise
+---------------------------
+SourceLocation [start=line 91 column 41, end=line 91 column 61] [Javascript]
+// returns a promise
+---------------------------
+SourceLocation [start=line 94 column 38, end=line 94 column 58] [Javascript]
+// returns a promise
+---------------------------
+SourceLocation [start=line 146 column 33, end=line 146 column 84] [Javascript]
+// async function expression assigned to a variable
+---------------------------
+SourceLocation [start=line 153 column 20, end=line 153 column 49] [Javascript]
+// prints 60 after 4 seconds.
+---------------------------
+SourceLocation [start=line 156 column 22, end=line 156 column 66] [Javascript]
+// async function expression used as an IIFE
+---------------------------
+SourceLocation [start=line 161 column 20, end=line 161 column 49] [Javascript]
+// prints 60 after 2 seconds.
+---------------------------
+SourceLocation [start=line 173 column 16, end=line 173 column 24] [Javascript]
+//3;2;1;
+---------------------------
+SourceLocation [start=line 208 column 31, end=line 208 column 84] [Javascript]
+// Un code qu'on ne souhaite pas diffuser ni modifier
+---------------------------
+SourceLocation [start=line 237 column 17, end=line 237 column 58] [Javascript]
+// this fait référence à l'objet personne
+---------------------------
+SourceLocation [start=line 246 column 20, end=line 246 column 45] [Javascript]
+// on initialise la liste
+---------------------------
+SourceLocation [start=line 248 column 3, end=line 248 column 31] [Javascript]
+// on parcourt les arguments
+---------------------------
+SourceLocation [start=line 256 column 31, end=line 256 column 84] [Javascript]
+// Un code qu'on ne souhaite pas diffuser ni modifier
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 292 column 2] [Javascript]
+function resolveAfter2Seconds() {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}\\n\\nasync function asyncCall() {\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}\\n\\nasyncCall();\\n\\nfunction resolveAfter2Seconds() {\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}\\n\\nfunction resolveAfter1Second() {\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}\\n\\nasync function sequentialStart() {\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}\\n\\nasync function concurrentStart() {\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}\\n\\nfunction concurrentPromise() {\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}\\n\\nasync function parallel() {\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}\\n\\nsequentialStart() // after 2 seconds, logs "slow", then after 1 more second, "fast"\\n\\n// wait above to finish\\nsetTimeout(concurrentStart, 4000) // after 2 seconds, logs "slow" and then "fast"\\n\\n// wait again\\nsetTimeout(concurrentPromise, 7000) // same as concurrentStart\\n\\n// wait again\\nsetTimeout(parallel, 10000) // truly parallel: after 1 second, logs "fast", then after 1 more second, "slow"\\n\\nfunction getProcessedData(url) {\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}\\n\\nasync function getProcessedData(url) {\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}\\n\\nasync function getProcessedData(url) {\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}\\n\\nvar hoisted = "foo" in this;\\nconsole.log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`);\\nif (false) {\\n function foo(){ return 1; }\\n}\\n\\nfunction calc_sales(units_a, units_b, units_c) {\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}\\n\\nfunction testBreak(x) {\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}\\n\\nfunction resolveAfter2Seconds(x) {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n};\\n\\nconst add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n};\\n\\nadd(10).then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n});\\n\\n(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n});\\n\\nlet math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n};\\nmath.factit(3) //3;2;1;\\n\\nbutton.addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})\\n\\nvar créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n};\\n\\nvar getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})();\\n\\nfunction multiplier(a, b) {\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}\\n\\nfunction multiplier(facteur, ...lesArgs) {\\n return lesArgs.map((x) => facteur * x);\\n}\\n\\nfunction Personne() {\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}\\n\\nfunction Personne() {\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}\\n\\nfunction multiplier(a, b = 1) {\\n return a * b;\\n}\\n\\nfunction monConcat(séparateur) {\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}\\n\\nvar getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})();\\n\\nvar animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n};\\n\\nfunction A(x) {\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}\\n\\nfunction ajouteCarrés(a, b) {\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}\\n\\nfunction toto(i) {\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 7 column 2] [FunctionDeclaration]
+function resolveAfter2Seconds() {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 30] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 32] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 7 column 2] [Procedure]
+{\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n });\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 6 column 5] [Return]
+return new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 6 column 5] [New]
+new Promise(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 21] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 2 column 21, end=line 6 column 5] [Signature]
+(resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 6 column 4] [ArrowFunction]
+resolve => {\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n }
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 29] [Signature]
+resolve
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 29] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 2 column 33, end=line 6 column 4] [Procedure]
+{\\n setTimeout(() => {\\n resolve('resolved');\\n }, 2000);\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 5 column 13] [FunctionCall]
+setTimeout(() => {\\n resolve('resolved');\\n }, 2000)
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 15] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 5 column 13] [Signature]
+(() => {\\n resolve('resolved');\\n }, 2000)
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 5 column 6] [ArrowFunction]
+() => {\\n resolve('resolved');\\n }
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 3 column 22, end=line 5 column 6] [Procedure]
+{\\n resolve('resolved');\\n }
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 26] [FunctionCall]
+resolve('resolved')
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 14] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 26] [Signature]
+('resolved')
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 25] [Literal]
+'resolved'
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 12] [Literal]
+2000
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 14 column 2] [FunctionDeclaration]
+async function asyncCall() {\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}
+---------------------------
+SourceLocation [start=line 9 column 16, end=line 9 column 25] [Identifier]
+asyncCall
+---------------------------
+SourceLocation [start=line 9 column 25, end=line 9 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 9 column 28, end=line 14 column 2] [Procedure]
+{\\n console.log('calling');\\n const result = await resolveAfter2Seconds();\\n console.log(result);\\n // expected output: "resolved"\\n}
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 10 column 25] [QualifiedExpression]
+console.log('calling')
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 10 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 10 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 10 column 10, end=line 10 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 10 column 11, end=line 10 column 25] [FunctionCall]
+log('calling')
+---------------------------
+SourceLocation [start=line 10 column 11, end=line 10 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 10 column 14, end=line 10 column 25] [Signature]
+('calling')
+---------------------------
+SourceLocation [start=line 10 column 15, end=line 10 column 24] [Literal]
+'calling'
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 46] [VariableDeclaration]
+const result = await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 46] [Variable]
+result = await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 15] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 11 column 16, end=line 11 column 17] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 18, end=line 11 column 46] [Await]
+await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 11 column 24, end=line 11 column 46] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 11 column 24, end=line 11 column 44] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 11 column 44, end=line 11 column 46] [Signature]
+()
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 22] [QualifiedExpression]
+console.log(result)
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 12 column 10, end=line 12 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 12 column 11, end=line 12 column 22] [FunctionCall]
+log(result)
+---------------------------
+SourceLocation [start=line 12 column 11, end=line 12 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 22] [Signature]
+(result)
+---------------------------
+SourceLocation [start=line 12 column 15, end=line 12 column 21] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 12] [FunctionCall]
+asyncCall()
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 10] [Identifier]
+asyncCall
+---------------------------
+SourceLocation [start=line 16 column 10, end=line 16 column 12] [Signature]
+()
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 26 column 2] [FunctionDeclaration]
+function resolveAfter2Seconds() {\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}
+---------------------------
+SourceLocation [start=line 18 column 10, end=line 18 column 30] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 18 column 30, end=line 18 column 32] [Signature]
+()
+---------------------------
+SourceLocation [start=line 18 column 33, end=line 26 column 2] [Procedure]
+{\\n console.log("starting slow promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })\\n}
+---------------------------
+SourceLocation [start=line 19 column 3, end=line 19 column 39] [QualifiedExpression]
+console.log("starting slow promise")
+---------------------------
+SourceLocation [start=line 19 column 3, end=line 19 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 19 column 3, end=line 19 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 19 column 10, end=line 19 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 19 column 11, end=line 19 column 39] [FunctionCall]
+log("starting slow promise")
+---------------------------
+SourceLocation [start=line 19 column 11, end=line 19 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 19 column 14, end=line 19 column 39] [Signature]
+("starting slow promise")
+---------------------------
+SourceLocation [start=line 19 column 15, end=line 19 column 38] [Literal]
+"starting slow promise"
+---------------------------
+SourceLocation [start=line 20 column 3, end=line 25 column 5] [Return]
+return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+---------------------------
+SourceLocation [start=line 20 column 10, end=line 25 column 5] [New]
+new Promise(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+---------------------------
+SourceLocation [start=line 20 column 14, end=line 20 column 21] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 20 column 21, end=line 25 column 5] [Signature]
+(resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n })
+---------------------------
+SourceLocation [start=line 20 column 22, end=line 25 column 4] [ArrowFunction]
+resolve => {\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n }
+---------------------------
+SourceLocation [start=line 20 column 22, end=line 20 column 29] [Signature]
+resolve
+---------------------------
+SourceLocation [start=line 20 column 22, end=line 20 column 29] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 20 column 33, end=line 25 column 4] [Procedure]
+{\\n setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)\\n }
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 24 column 13] [FunctionCall]
+setTimeout(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)
+---------------------------
+SourceLocation [start=line 21 column 5, end=line 21 column 15] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 21 column 15, end=line 24 column 13] [Signature]
+(function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }, 2000)
+---------------------------
+SourceLocation [start=line 21 column 16, end=line 24 column 6] [FunctionDeclaration]
+function() {\\n resolve("slow")\\n console.log("slow promise is done")\\n }
+---------------------------
+SourceLocation [start=line 21 column 24, end=line 21 column 26] [Signature]
+()
+---------------------------
+SourceLocation [start=line 21 column 27, end=line 24 column 6] [Procedure]
+{\\n resolve("slow")\\n console.log("slow promise is done")\\n }
+---------------------------
+SourceLocation [start=line 22 column 7, end=line 22 column 22] [FunctionCall]
+resolve("slow")
+---------------------------
+SourceLocation [start=line 22 column 7, end=line 22 column 14] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 22 column 14, end=line 22 column 22] [Signature]
+("slow")
+---------------------------
+SourceLocation [start=line 22 column 15, end=line 22 column 21] [Literal]
+"slow"
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 42] [QualifiedExpression]
+console.log("slow promise is done")
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 15] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 23 column 7, end=line 23 column 14] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 23 column 14, end=line 23 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 23 column 15, end=line 23 column 42] [FunctionCall]
+log("slow promise is done")
+---------------------------
+SourceLocation [start=line 23 column 15, end=line 23 column 18] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 23 column 18, end=line 23 column 42] [Signature]
+("slow promise is done")
+---------------------------
+SourceLocation [start=line 23 column 19, end=line 23 column 41] [Literal]
+"slow promise is done"
+---------------------------
+SourceLocation [start=line 24 column 8, end=line 24 column 12] [Literal]
+2000
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 36 column 2] [FunctionDeclaration]
+function resolveAfter1Second() {\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}
+---------------------------
+SourceLocation [start=line 28 column 10, end=line 28 column 29] [Identifier]
+resolveAfter1Second
+---------------------------
+SourceLocation [start=line 28 column 29, end=line 28 column 31] [Signature]
+()
+---------------------------
+SourceLocation [start=line 28 column 32, end=line 36 column 2] [Procedure]
+{\\n console.log("starting fast promise")\\n return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })\\n}
+---------------------------
+SourceLocation [start=line 29 column 3, end=line 29 column 39] [QualifiedExpression]
+console.log("starting fast promise")
+---------------------------
+SourceLocation [start=line 29 column 3, end=line 29 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 29 column 3, end=line 29 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 29 column 10, end=line 29 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 29 column 11, end=line 29 column 39] [FunctionCall]
+log("starting fast promise")
+---------------------------
+SourceLocation [start=line 29 column 11, end=line 29 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 29 column 14, end=line 29 column 39] [Signature]
+("starting fast promise")
+---------------------------
+SourceLocation [start=line 29 column 15, end=line 29 column 38] [Literal]
+"starting fast promise"
+---------------------------
+SourceLocation [start=line 30 column 3, end=line 35 column 5] [Return]
+return new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+---------------------------
+SourceLocation [start=line 30 column 10, end=line 35 column 5] [New]
+new Promise(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+---------------------------
+SourceLocation [start=line 30 column 14, end=line 30 column 21] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 30 column 21, end=line 35 column 5] [Signature]
+(resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n })
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 35 column 4] [ArrowFunction]
+resolve => {\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n }
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 30 column 29] [Signature]
+resolve
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 30 column 29] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 30 column 33, end=line 35 column 4] [Procedure]
+{\\n setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)\\n }
+---------------------------
+SourceLocation [start=line 31 column 5, end=line 34 column 13] [FunctionCall]
+setTimeout(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)
+---------------------------
+SourceLocation [start=line 31 column 5, end=line 31 column 15] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 31 column 15, end=line 34 column 13] [Signature]
+(function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }, 1000)
+---------------------------
+SourceLocation [start=line 31 column 16, end=line 34 column 6] [FunctionDeclaration]
+function() {\\n resolve("fast")\\n console.log("fast promise is done")\\n }
+---------------------------
+SourceLocation [start=line 31 column 24, end=line 31 column 26] [Signature]
+()
+---------------------------
+SourceLocation [start=line 31 column 27, end=line 34 column 6] [Procedure]
+{\\n resolve("fast")\\n console.log("fast promise is done")\\n }
+---------------------------
+SourceLocation [start=line 32 column 7, end=line 32 column 22] [FunctionCall]
+resolve("fast")
+---------------------------
+SourceLocation [start=line 32 column 7, end=line 32 column 14] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 32 column 14, end=line 32 column 22] [Signature]
+("fast")
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 21] [Literal]
+"fast"
+---------------------------
+SourceLocation [start=line 33 column 7, end=line 33 column 42] [QualifiedExpression]
+console.log("fast promise is done")
+---------------------------
+SourceLocation [start=line 33 column 7, end=line 33 column 15] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 33 column 7, end=line 33 column 14] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 33 column 14, end=line 33 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 33 column 15, end=line 33 column 42] [FunctionCall]
+log("fast promise is done")
+---------------------------
+SourceLocation [start=line 33 column 15, end=line 33 column 18] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 33 column 18, end=line 33 column 42] [Signature]
+("fast promise is done")
+---------------------------
+SourceLocation [start=line 33 column 19, end=line 33 column 41] [Literal]
+"fast promise is done"
+---------------------------
+SourceLocation [start=line 34 column 8, end=line 34 column 12] [Literal]
+1000
+---------------------------
+SourceLocation [start=line 38 column 1, end=line 47 column 2] [FunctionDeclaration]
+async function sequentialStart() {\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}
+---------------------------
+SourceLocation [start=line 38 column 16, end=line 38 column 31] [Identifier]
+sequentialStart
+---------------------------
+SourceLocation [start=line 38 column 31, end=line 38 column 33] [Signature]
+()
+---------------------------
+SourceLocation [start=line 38 column 34, end=line 47 column 2] [Procedure]
+{\\n console.log('==SEQUENTIAL START==')\\n\\n // 1. Execution gets here almost instantly\\n const slow = await resolveAfter2Seconds()\\n console.log(slow) // 2. this runs 2 seconds after 1.\\n\\n const fast = await resolveAfter1Second()\\n console.log(fast) // 3. this runs 3 seconds after 1.\\n}
+---------------------------
+SourceLocation [start=line 39 column 3, end=line 39 column 38] [QualifiedExpression]
+console.log('==SEQUENTIAL START==')
+---------------------------
+SourceLocation [start=line 39 column 3, end=line 39 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 39 column 3, end=line 39 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 39 column 10, end=line 39 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 39 column 11, end=line 39 column 38] [FunctionCall]
+log('==SEQUENTIAL START==')
+---------------------------
+SourceLocation [start=line 39 column 11, end=line 39 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 39 column 14, end=line 39 column 38] [Signature]
+('==SEQUENTIAL START==')
+---------------------------
+SourceLocation [start=line 39 column 15, end=line 39 column 37] [Literal]
+'==SEQUENTIAL START=='
+---------------------------
+SourceLocation [start=line 42 column 3, end=line 42 column 44] [VariableDeclaration]
+const slow = await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 42 column 3, end=line 42 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 42 column 9, end=line 42 column 44] [Variable]
+slow = await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 42 column 9, end=line 42 column 13] [Identifier]
+slow
+---------------------------
+SourceLocation [start=line 42 column 14, end=line 42 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 42 column 16, end=line 42 column 44] [Await]
+await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 42 column 22, end=line 42 column 44] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 42 column 22, end=line 42 column 42] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 42 column 42, end=line 42 column 44] [Signature]
+()
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 20] [QualifiedExpression]
+console.log(slow)
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 43 column 10, end=line 43 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 43 column 11, end=line 43 column 20] [FunctionCall]
+log(slow)
+---------------------------
+SourceLocation [start=line 43 column 11, end=line 43 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 43 column 14, end=line 43 column 20] [Signature]
+(slow)
+---------------------------
+SourceLocation [start=line 43 column 15, end=line 43 column 19] [Identifier]
+slow
+---------------------------
+SourceLocation [start=line 45 column 3, end=line 45 column 43] [VariableDeclaration]
+const fast = await resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 45 column 3, end=line 45 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 45 column 9, end=line 45 column 43] [Variable]
+fast = await resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 45 column 9, end=line 45 column 13] [Identifier]
+fast
+---------------------------
+SourceLocation [start=line 45 column 14, end=line 45 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 45 column 16, end=line 45 column 43] [Await]
+await resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 45 column 22, end=line 45 column 43] [FunctionCall]
+resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 45 column 22, end=line 45 column 41] [Identifier]
+resolveAfter1Second
+---------------------------
+SourceLocation [start=line 45 column 41, end=line 45 column 43] [Signature]
+()
+---------------------------
+SourceLocation [start=line 46 column 3, end=line 46 column 20] [QualifiedExpression]
+console.log(fast)
+---------------------------
+SourceLocation [start=line 46 column 3, end=line 46 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 46 column 3, end=line 46 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 46 column 10, end=line 46 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 46 column 11, end=line 46 column 20] [FunctionCall]
+log(fast)
+---------------------------
+SourceLocation [start=line 46 column 11, end=line 46 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 46 column 14, end=line 46 column 20] [Signature]
+(fast)
+---------------------------
+SourceLocation [start=line 46 column 15, end=line 46 column 19] [Identifier]
+fast
+---------------------------
+SourceLocation [start=line 49 column 1, end=line 57 column 2] [FunctionDeclaration]
+async function concurrentStart() {\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}
+---------------------------
+SourceLocation [start=line 49 column 16, end=line 49 column 31] [Identifier]
+concurrentStart
+---------------------------
+SourceLocation [start=line 49 column 31, end=line 49 column 33] [Signature]
+()
+---------------------------
+SourceLocation [start=line 49 column 34, end=line 57 column 2] [Procedure]
+{\\n console.log('==CONCURRENT START with await==');\\n const slow = resolveAfter2Seconds() // starts timer immediately\\n const fast = resolveAfter1Second() // starts timer immediately\\n\\n // 1. Execution gets here almost instantly\\n console.log(await slow) // 2. this runs 2 seconds after 1.\\n console.log(await fast) // 3. this runs 2 seconds after 1., immediately after 2., since fast is already resolved\\n}
+---------------------------
+SourceLocation [start=line 50 column 3, end=line 50 column 49] [QualifiedExpression]
+console.log('==CONCURRENT START with await==')
+---------------------------
+SourceLocation [start=line 50 column 3, end=line 50 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 50 column 3, end=line 50 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 50 column 10, end=line 50 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 50 column 11, end=line 50 column 49] [FunctionCall]
+log('==CONCURRENT START with await==')
+---------------------------
+SourceLocation [start=line 50 column 11, end=line 50 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 50 column 14, end=line 50 column 49] [Signature]
+('==CONCURRENT START with await==')
+---------------------------
+SourceLocation [start=line 50 column 15, end=line 50 column 48] [Literal]
+'==CONCURRENT START with await=='
+---------------------------
+SourceLocation [start=line 51 column 3, end=line 51 column 38] [VariableDeclaration]
+const slow = resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 51 column 3, end=line 51 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 51 column 38] [Variable]
+slow = resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 51 column 13] [Identifier]
+slow
+---------------------------
+SourceLocation [start=line 51 column 14, end=line 51 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 51 column 16, end=line 51 column 38] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 51 column 16, end=line 51 column 36] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 51 column 36, end=line 51 column 38] [Signature]
+()
+---------------------------
+SourceLocation [start=line 52 column 3, end=line 52 column 37] [VariableDeclaration]
+const fast = resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 52 column 3, end=line 52 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 52 column 9, end=line 52 column 37] [Variable]
+fast = resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 52 column 9, end=line 52 column 13] [Identifier]
+fast
+---------------------------
+SourceLocation [start=line 52 column 14, end=line 52 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 52 column 16, end=line 52 column 37] [FunctionCall]
+resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 52 column 16, end=line 52 column 35] [Identifier]
+resolveAfter1Second
+---------------------------
+SourceLocation [start=line 52 column 35, end=line 52 column 37] [Signature]
+()
+---------------------------
+SourceLocation [start=line 55 column 3, end=line 55 column 26] [QualifiedExpression]
+console.log(await slow)
+---------------------------
+SourceLocation [start=line 55 column 3, end=line 55 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 55 column 3, end=line 55 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 55 column 10, end=line 55 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 55 column 11, end=line 55 column 26] [FunctionCall]
+log(await slow)
+---------------------------
+SourceLocation [start=line 55 column 11, end=line 55 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 55 column 14, end=line 55 column 26] [Signature]
+(await slow)
+---------------------------
+SourceLocation [start=line 55 column 15, end=line 55 column 25] [Await]
+await slow
+---------------------------
+SourceLocation [start=line 55 column 21, end=line 55 column 25] [Identifier]
+slow
+---------------------------
+SourceLocation [start=line 56 column 3, end=line 56 column 26] [QualifiedExpression]
+console.log(await fast)
+---------------------------
+SourceLocation [start=line 56 column 3, end=line 56 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 56 column 3, end=line 56 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 56 column 10, end=line 56 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 56 column 11, end=line 56 column 26] [FunctionCall]
+log(await fast)
+---------------------------
+SourceLocation [start=line 56 column 11, end=line 56 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 56 column 14, end=line 56 column 26] [Signature]
+(await fast)
+---------------------------
+SourceLocation [start=line 56 column 15, end=line 56 column 25] [Await]
+await fast
+---------------------------
+SourceLocation [start=line 56 column 21, end=line 56 column 25] [Identifier]
+fast
+---------------------------
+SourceLocation [start=line 59 column 1, end=line 65 column 2] [FunctionDeclaration]
+function concurrentPromise() {\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}
+---------------------------
+SourceLocation [start=line 59 column 10, end=line 59 column 27] [Identifier]
+concurrentPromise
+---------------------------
+SourceLocation [start=line 59 column 27, end=line 59 column 29] [Signature]
+()
+---------------------------
+SourceLocation [start=line 59 column 30, end=line 65 column 2] [Procedure]
+{\\n console.log('==CONCURRENT START with Promise.all==')\\n return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })\\n}
+---------------------------
+SourceLocation [start=line 60 column 3, end=line 60 column 55] [QualifiedExpression]
+console.log('==CONCURRENT START with Promise.all==')
+---------------------------
+SourceLocation [start=line 60 column 3, end=line 60 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 60 column 3, end=line 60 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 60 column 10, end=line 60 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 60 column 11, end=line 60 column 55] [FunctionCall]
+log('==CONCURRENT START with Promise.all==')
+---------------------------
+SourceLocation [start=line 60 column 11, end=line 60 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 60 column 14, end=line 60 column 55] [Signature]
+('==CONCURRENT START with Promise.all==')
+---------------------------
+SourceLocation [start=line 60 column 15, end=line 60 column 54] [Literal]
+'==CONCURRENT START with Promise.all=='
+---------------------------
+SourceLocation [start=line 61 column 3, end=line 64 column 5] [Return]
+return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+---------------------------
+SourceLocation [start=line 61 column 10, end=line 64 column 5] [QualifiedExpression]
+Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+---------------------------
+SourceLocation [start=line 61 column 10, end=line 61 column 18] [Qualifier]
+Promise.
+---------------------------
+SourceLocation [start=line 61 column 10, end=line 61 column 17] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 61 column 17, end=line 61 column 18] [Operator]
+.
+---------------------------
+SourceLocation [start=line 61 column 18, end=line 61 column 71] [Qualifier]
+all([resolveAfter2Seconds(), resolveAfter1Second()]).
+---------------------------
+SourceLocation [start=line 61 column 18, end=line 61 column 70] [FunctionCall]
+all([resolveAfter2Seconds(), resolveAfter1Second()])
+---------------------------
+SourceLocation [start=line 61 column 18, end=line 61 column 21] [Identifier]
+all
+---------------------------
+SourceLocation [start=line 61 column 21, end=line 61 column 70] [Signature]
+([resolveAfter2Seconds(), resolveAfter1Second()])
+---------------------------
+SourceLocation [start=line 61 column 22, end=line 61 column 69] [ArrayDeclaration]
+[resolveAfter2Seconds(), resolveAfter1Second()]
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 45] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 61 column 23, end=line 61 column 43] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 61 column 43, end=line 61 column 45] [Signature]
+()
+---------------------------
+SourceLocation [start=line 61 column 47, end=line 61 column 68] [FunctionCall]
+resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 61 column 47, end=line 61 column 66] [Identifier]
+resolveAfter1Second
+---------------------------
+SourceLocation [start=line 61 column 66, end=line 61 column 68] [Signature]
+()
+---------------------------
+SourceLocation [start=line 61 column 70, end=line 61 column 71] [Operator]
+.
+---------------------------
+SourceLocation [start=line 61 column 71, end=line 64 column 5] [FunctionCall]
+then((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+---------------------------
+SourceLocation [start=line 61 column 71, end=line 61 column 75] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 61 column 75, end=line 64 column 5] [Signature]
+((messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n })
+---------------------------
+SourceLocation [start=line 61 column 76, end=line 64 column 4] [ArrowFunction]
+(messages) => {\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n }
+---------------------------
+SourceLocation [start=line 61 column 76, end=line 61 column 86] [Signature]
+(messages)
+---------------------------
+SourceLocation [start=line 61 column 77, end=line 61 column 85] [Identifier]
+messages
+---------------------------
+SourceLocation [start=line 61 column 90, end=line 64 column 4] [Procedure]
+{\\n console.log(messages[0]) // slow\\n console.log(messages[1]) // fast\\n }
+---------------------------
+SourceLocation [start=line 62 column 5, end=line 62 column 29] [QualifiedExpression]
+console.log(messages[0])
+---------------------------
+SourceLocation [start=line 62 column 5, end=line 62 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 62 column 5, end=line 62 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 62 column 12, end=line 62 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 62 column 13, end=line 62 column 29] [FunctionCall]
+log(messages[0])
+---------------------------
+SourceLocation [start=line 62 column 13, end=line 62 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 62 column 16, end=line 62 column 29] [Signature]
+(messages[0])
+---------------------------
+SourceLocation [start=line 62 column 17, end=line 62 column 28] [MapExpression]
+messages[0]
+---------------------------
+SourceLocation [start=line 62 column 17, end=line 62 column 25] [Identifier]
+messages
+---------------------------
+SourceLocation [start=line 62 column 25, end=line 62 column 28] [Bracket]
+[0]
+---------------------------
+SourceLocation [start=line 62 column 26, end=line 62 column 27] [Literal]
+0
+---------------------------
+SourceLocation [start=line 63 column 5, end=line 63 column 29] [QualifiedExpression]
+console.log(messages[1])
+---------------------------
+SourceLocation [start=line 63 column 5, end=line 63 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 63 column 5, end=line 63 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 63 column 12, end=line 63 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 63 column 13, end=line 63 column 29] [FunctionCall]
+log(messages[1])
+---------------------------
+SourceLocation [start=line 63 column 13, end=line 63 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 63 column 16, end=line 63 column 29] [Signature]
+(messages[1])
+---------------------------
+SourceLocation [start=line 63 column 17, end=line 63 column 28] [MapExpression]
+messages[1]
+---------------------------
+SourceLocation [start=line 63 column 17, end=line 63 column 25] [Identifier]
+messages
+---------------------------
+SourceLocation [start=line 63 column 25, end=line 63 column 28] [Bracket]
+[1]
+---------------------------
+SourceLocation [start=line 63 column 26, end=line 63 column 27] [Literal]
+1
+---------------------------
+SourceLocation [start=line 67 column 1, end=line 75 column 2] [FunctionDeclaration]
+async function parallel() {\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}
+---------------------------
+SourceLocation [start=line 67 column 16, end=line 67 column 24] [Identifier]
+parallel
+---------------------------
+SourceLocation [start=line 67 column 24, end=line 67 column 26] [Signature]
+()
+---------------------------
+SourceLocation [start=line 67 column 27, end=line 75 column 2] [Procedure]
+{\\n console.log('==PARALLEL with await Promise.all==')\\n\\n // Start 2 "jobs" in parallel and wait for both of them to complete\\n await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])\\n}
+---------------------------
+SourceLocation [start=line 68 column 3, end=line 68 column 53] [QualifiedExpression]
+console.log('==PARALLEL with await Promise.all==')
+---------------------------
+SourceLocation [start=line 68 column 3, end=line 68 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 68 column 3, end=line 68 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 68 column 10, end=line 68 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 68 column 11, end=line 68 column 53] [FunctionCall]
+log('==PARALLEL with await Promise.all==')
+---------------------------
+SourceLocation [start=line 68 column 11, end=line 68 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 68 column 14, end=line 68 column 53] [Signature]
+('==PARALLEL with await Promise.all==')
+---------------------------
+SourceLocation [start=line 68 column 15, end=line 68 column 52] [Literal]
+'==PARALLEL with await Promise.all=='
+---------------------------
+SourceLocation [start=line 71 column 3, end=line 74 column 5] [Await]
+await Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+---------------------------
+SourceLocation [start=line 71 column 9, end=line 74 column 5] [QualifiedExpression]
+Promise.all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+---------------------------
+SourceLocation [start=line 71 column 9, end=line 71 column 17] [Qualifier]
+Promise.
+---------------------------
+SourceLocation [start=line 71 column 9, end=line 71 column 16] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 71 column 16, end=line 71 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 71 column 17, end=line 74 column 5] [FunctionCall]
+all([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+---------------------------
+SourceLocation [start=line 71 column 17, end=line 71 column 20] [Identifier]
+all
+---------------------------
+SourceLocation [start=line 71 column 20, end=line 74 column 5] [Signature]
+([\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ])
+---------------------------
+SourceLocation [start=line 71 column 21, end=line 74 column 4] [ArrayDeclaration]
+[\\n (async()=>console.log(await resolveAfter2Seconds()))(),\\n (async()=>console.log(await resolveAfter1Second()))()\\n ]
+---------------------------
+SourceLocation [start=line 72 column 7, end=line 72 column 61] [InvokedFunction]
+(async()=>console.log(await resolveAfter2Seconds()))()
+---------------------------
+SourceLocation [start=line 72 column 7, end=line 72 column 59] [Definition]
+(async()=>console.log(await resolveAfter2Seconds()))
+---------------------------
+SourceLocation [start=line 72 column 8, end=line 72 column 58] [ArrowFunction]
+async()=>console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 72 column 13, end=line 72 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 72 column 17, end=line 72 column 58] [Procedure]
+console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 72 column 17, end=line 72 column 58] [QualifiedExpression]
+console.log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 72 column 17, end=line 72 column 25] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 72 column 17, end=line 72 column 24] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 72 column 24, end=line 72 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 72 column 25, end=line 72 column 58] [FunctionCall]
+log(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 72 column 25, end=line 72 column 28] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 72 column 28, end=line 72 column 58] [Signature]
+(await resolveAfter2Seconds())
+---------------------------
+SourceLocation [start=line 72 column 29, end=line 72 column 57] [Await]
+await resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 72 column 35, end=line 72 column 57] [FunctionCall]
+resolveAfter2Seconds()
+---------------------------
+SourceLocation [start=line 72 column 35, end=line 72 column 55] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 72 column 55, end=line 72 column 57] [Signature]
+()
+---------------------------
+SourceLocation [start=line 72 column 59, end=line 72 column 61] [Signature]
+()
+---------------------------
+SourceLocation [start=line 73 column 7, end=line 73 column 60] [InvokedFunction]
+(async()=>console.log(await resolveAfter1Second()))()
+---------------------------
+SourceLocation [start=line 73 column 7, end=line 73 column 58] [Definition]
+(async()=>console.log(await resolveAfter1Second()))
+---------------------------
+SourceLocation [start=line 73 column 8, end=line 73 column 57] [ArrowFunction]
+async()=>console.log(await resolveAfter1Second())
+---------------------------
+SourceLocation [start=line 73 column 13, end=line 73 column 15] [Signature]
+()
+---------------------------
+SourceLocation [start=line 73 column 17, end=line 73 column 57] [Procedure]
+console.log(await resolveAfter1Second())
+---------------------------
+SourceLocation [start=line 73 column 17, end=line 73 column 57] [QualifiedExpression]
+console.log(await resolveAfter1Second())
+---------------------------
+SourceLocation [start=line 73 column 17, end=line 73 column 25] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 73 column 17, end=line 73 column 24] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 73 column 24, end=line 73 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 73 column 25, end=line 73 column 57] [FunctionCall]
+log(await resolveAfter1Second())
+---------------------------
+SourceLocation [start=line 73 column 25, end=line 73 column 28] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 73 column 28, end=line 73 column 57] [Signature]
+(await resolveAfter1Second())
+---------------------------
+SourceLocation [start=line 73 column 29, end=line 73 column 56] [Await]
+await resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 73 column 35, end=line 73 column 56] [FunctionCall]
+resolveAfter1Second()
+---------------------------
+SourceLocation [start=line 73 column 35, end=line 73 column 54] [Identifier]
+resolveAfter1Second
+---------------------------
+SourceLocation [start=line 73 column 54, end=line 73 column 56] [Signature]
+()
+---------------------------
+SourceLocation [start=line 73 column 58, end=line 73 column 60] [Signature]
+()
+---------------------------
+SourceLocation [start=line 77 column 1, end=line 77 column 18] [FunctionCall]
+sequentialStart()
+---------------------------
+SourceLocation [start=line 77 column 1, end=line 77 column 16] [Identifier]
+sequentialStart
+---------------------------
+SourceLocation [start=line 77 column 16, end=line 77 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 80 column 1, end=line 80 column 34] [FunctionCall]
+setTimeout(concurrentStart, 4000)
+---------------------------
+SourceLocation [start=line 80 column 1, end=line 80 column 11] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 80 column 11, end=line 80 column 34] [Signature]
+(concurrentStart, 4000)
+---------------------------
+SourceLocation [start=line 80 column 12, end=line 80 column 27] [Identifier]
+concurrentStart
+---------------------------
+SourceLocation [start=line 80 column 29, end=line 80 column 33] [Literal]
+4000
+---------------------------
+SourceLocation [start=line 83 column 1, end=line 83 column 36] [FunctionCall]
+setTimeout(concurrentPromise, 7000)
+---------------------------
+SourceLocation [start=line 83 column 1, end=line 83 column 11] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 83 column 11, end=line 83 column 36] [Signature]
+(concurrentPromise, 7000)
+---------------------------
+SourceLocation [start=line 83 column 12, end=line 83 column 29] [Identifier]
+concurrentPromise
+---------------------------
+SourceLocation [start=line 83 column 31, end=line 83 column 35] [Literal]
+7000
+---------------------------
+SourceLocation [start=line 86 column 1, end=line 86 column 28] [FunctionCall]
+setTimeout(parallel, 10000)
+---------------------------
+SourceLocation [start=line 86 column 1, end=line 86 column 11] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 86 column 11, end=line 86 column 28] [Signature]
+(parallel, 10000)
+---------------------------
+SourceLocation [start=line 86 column 12, end=line 86 column 20] [Identifier]
+parallel
+---------------------------
+SourceLocation [start=line 86 column 22, end=line 86 column 27] [Literal]
+10000
+---------------------------
+SourceLocation [start=line 88 column 1, end=line 96 column 2] [FunctionDeclaration]
+function getProcessedData(url) {\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}
+---------------------------
+SourceLocation [start=line 88 column 10, end=line 88 column 26] [Identifier]
+getProcessedData
+---------------------------
+SourceLocation [start=line 88 column 26, end=line 88 column 31] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 88 column 27, end=line 88 column 30] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 88 column 32, end=line 96 column 2] [Procedure]
+{\\n return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })\\n}
+---------------------------
+SourceLocation [start=line 89 column 3, end=line 95 column 7] [Return]
+return downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 89 column 10, end=line 95 column 7] [QualifiedExpression]
+downloadData(url) // returns a promise\\n .catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 89 column 10, end=line 90 column 6] [Qualifier]
+downloadData(url) // returns a promise\\n .
+---------------------------
+SourceLocation [start=line 89 column 10, end=line 89 column 27] [FunctionCall]
+downloadData(url)
+---------------------------
+SourceLocation [start=line 89 column 10, end=line 89 column 22] [Identifier]
+downloadData
+---------------------------
+SourceLocation [start=line 89 column 22, end=line 89 column 27] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 89 column 23, end=line 89 column 26] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 90 column 5, end=line 90 column 6] [Operator]
+.
+---------------------------
+SourceLocation [start=line 90 column 6, end=line 93 column 6] [Qualifier]
+catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })\\n .
+---------------------------
+SourceLocation [start=line 90 column 6, end=line 92 column 7] [FunctionCall]
+catch(e => {\\n return downloadFallbackData(url) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 90 column 6, end=line 90 column 11] [Identifier]
+catch
+---------------------------
+SourceLocation [start=line 90 column 11, end=line 92 column 7] [Signature]
+(e => {\\n return downloadFallbackData(url) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 90 column 12, end=line 92 column 6] [ArrowFunction]
+e => {\\n return downloadFallbackData(url) // returns a promise\\n }
+---------------------------
+SourceLocation [start=line 90 column 12, end=line 90 column 13] [Signature]
+e
+---------------------------
+SourceLocation [start=line 90 column 12, end=line 90 column 13] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 90 column 17, end=line 92 column 6] [Procedure]
+{\\n return downloadFallbackData(url) // returns a promise\\n }
+---------------------------
+SourceLocation [start=line 91 column 7, end=line 91 column 39] [Return]
+return downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 91 column 14, end=line 91 column 39] [FunctionCall]
+downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 91 column 14, end=line 91 column 34] [Identifier]
+downloadFallbackData
+---------------------------
+SourceLocation [start=line 91 column 34, end=line 91 column 39] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 91 column 35, end=line 91 column 38] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 93 column 5, end=line 93 column 6] [Operator]
+.
+---------------------------
+SourceLocation [start=line 93 column 6, end=line 95 column 7] [FunctionCall]
+then(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 93 column 6, end=line 93 column 10] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 93 column 10, end=line 95 column 7] [Signature]
+(v => {\\n return processDataInWorker(v) // returns a promise\\n })
+---------------------------
+SourceLocation [start=line 93 column 11, end=line 95 column 6] [ArrowFunction]
+v => {\\n return processDataInWorker(v) // returns a promise\\n }
+---------------------------
+SourceLocation [start=line 93 column 11, end=line 93 column 12] [Signature]
+v
+---------------------------
+SourceLocation [start=line 93 column 11, end=line 93 column 12] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 93 column 16, end=line 95 column 6] [Procedure]
+{\\n return processDataInWorker(v) // returns a promise\\n }
+---------------------------
+SourceLocation [start=line 94 column 7, end=line 94 column 36] [Return]
+return processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 94 column 14, end=line 94 column 36] [FunctionCall]
+processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 94 column 14, end=line 94 column 33] [Identifier]
+processDataInWorker
+---------------------------
+SourceLocation [start=line 94 column 33, end=line 94 column 36] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 94 column 34, end=line 94 column 35] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 98 column 1, end=line 106 column 2] [FunctionDeclaration]
+async function getProcessedData(url) {\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}
+---------------------------
+SourceLocation [start=line 98 column 16, end=line 98 column 32] [Identifier]
+getProcessedData
+---------------------------
+SourceLocation [start=line 98 column 32, end=line 98 column 37] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 98 column 33, end=line 98 column 36] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 98 column 38, end=line 106 column 2] [Procedure]
+{\\n let v\\n try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }\\n return processDataInWorker(v)\\n}
+---------------------------
+SourceLocation [start=line 99 column 3, end=line 99 column 8] [VariableDeclaration]
+let v
+---------------------------
+SourceLocation [start=line 99 column 3, end=line 99 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 99 column 7, end=line 99 column 8] [Variable]
+v
+---------------------------
+SourceLocation [start=line 99 column 7, end=line 99 column 8] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 100 column 3, end=line 104 column 4] [Try]
+try {\\n v = await downloadData(url)\\n } catch(e) {\\n v = await downloadFallbackData(url)\\n }
+---------------------------
+SourceLocation [start=line 100 column 7, end=line 102 column 4] [Procedure]
+{\\n v = await downloadData(url)\\n }
+---------------------------
+SourceLocation [start=line 101 column 5, end=line 101 column 32] [Assignment]
+v = await downloadData(url)
+---------------------------
+SourceLocation [start=line 101 column 5, end=line 101 column 6] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 101 column 7, end=line 101 column 8] [Operator]
+=
+---------------------------
+SourceLocation [start=line 101 column 9, end=line 101 column 32] [Await]
+await downloadData(url)
+---------------------------
+SourceLocation [start=line 101 column 15, end=line 101 column 32] [FunctionCall]
+downloadData(url)
+---------------------------
+SourceLocation [start=line 101 column 15, end=line 101 column 27] [Identifier]
+downloadData
+---------------------------
+SourceLocation [start=line 101 column 27, end=line 101 column 32] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 101 column 28, end=line 101 column 31] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 102 column 5, end=line 104 column 4] [Catch]
+catch(e) {\\n v = await downloadFallbackData(url)\\n }
+---------------------------
+SourceLocation [start=line 102 column 10, end=line 102 column 13] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 102 column 11, end=line 102 column 12] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 102 column 14, end=line 104 column 4] [Procedure]
+{\\n v = await downloadFallbackData(url)\\n }
+---------------------------
+SourceLocation [start=line 103 column 5, end=line 103 column 40] [Assignment]
+v = await downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 103 column 5, end=line 103 column 6] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 103 column 7, end=line 103 column 8] [Operator]
+=
+---------------------------
+SourceLocation [start=line 103 column 9, end=line 103 column 40] [Await]
+await downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 103 column 15, end=line 103 column 40] [FunctionCall]
+downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 103 column 15, end=line 103 column 35] [Identifier]
+downloadFallbackData
+---------------------------
+SourceLocation [start=line 103 column 35, end=line 103 column 40] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 103 column 36, end=line 103 column 39] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 105 column 3, end=line 105 column 32] [Return]
+return processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 105 column 10, end=line 105 column 32] [FunctionCall]
+processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 105 column 10, end=line 105 column 29] [Identifier]
+processDataInWorker
+---------------------------
+SourceLocation [start=line 105 column 29, end=line 105 column 32] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 105 column 30, end=line 105 column 31] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 108 column 1, end=line 113 column 2] [FunctionDeclaration]
+async function getProcessedData(url) {\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}
+---------------------------
+SourceLocation [start=line 108 column 16, end=line 108 column 32] [Identifier]
+getProcessedData
+---------------------------
+SourceLocation [start=line 108 column 32, end=line 108 column 37] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 108 column 33, end=line 108 column 36] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 108 column 38, end=line 113 column 2] [Procedure]
+{\\n const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })\\n return processDataInWorker(v)\\n}
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 111 column 5] [VariableDeclaration]
+const v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 3, end=line 109 column 8] [Type]
+const
+---------------------------
+SourceLocation [start=line 109 column 9, end=line 111 column 5] [Variable]
+v = await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 9, end=line 109 column 10] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 109 column 11, end=line 109 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 109 column 13, end=line 111 column 5] [Await]
+await downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 19, end=line 111 column 5] [QualifiedExpression]
+downloadData(url).catch(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 19, end=line 109 column 37] [Qualifier]
+downloadData(url).
+---------------------------
+SourceLocation [start=line 109 column 19, end=line 109 column 36] [FunctionCall]
+downloadData(url)
+---------------------------
+SourceLocation [start=line 109 column 19, end=line 109 column 31] [Identifier]
+downloadData
+---------------------------
+SourceLocation [start=line 109 column 31, end=line 109 column 36] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 109 column 32, end=line 109 column 35] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 109 column 36, end=line 109 column 37] [Operator]
+.
+---------------------------
+SourceLocation [start=line 109 column 37, end=line 111 column 5] [FunctionCall]
+catch(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 37, end=line 109 column 42] [Identifier]
+catch
+---------------------------
+SourceLocation [start=line 109 column 42, end=line 111 column 5] [Signature]
+(e => {\\n return downloadFallbackData(url)\\n })
+---------------------------
+SourceLocation [start=line 109 column 43, end=line 111 column 4] [ArrowFunction]
+e => {\\n return downloadFallbackData(url)\\n }
+---------------------------
+SourceLocation [start=line 109 column 43, end=line 109 column 44] [Signature]
+e
+---------------------------
+SourceLocation [start=line 109 column 43, end=line 109 column 44] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 109 column 48, end=line 111 column 4] [Procedure]
+{\\n return downloadFallbackData(url)\\n }
+---------------------------
+SourceLocation [start=line 110 column 5, end=line 110 column 37] [Return]
+return downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 110 column 12, end=line 110 column 37] [FunctionCall]
+downloadFallbackData(url)
+---------------------------
+SourceLocation [start=line 110 column 12, end=line 110 column 32] [Identifier]
+downloadFallbackData
+---------------------------
+SourceLocation [start=line 110 column 32, end=line 110 column 37] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 110 column 33, end=line 110 column 36] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 112 column 3, end=line 112 column 32] [Return]
+return processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 112 column 10, end=line 112 column 32] [FunctionCall]
+processDataInWorker(v)
+---------------------------
+SourceLocation [start=line 112 column 10, end=line 112 column 29] [Identifier]
+processDataInWorker
+---------------------------
+SourceLocation [start=line 112 column 29, end=line 112 column 32] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 112 column 30, end=line 112 column 31] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 115 column 1, end=line 115 column 28] [VariableDeclaration]
+var hoisted = "foo" in this
+---------------------------
+SourceLocation [start=line 115 column 1, end=line 115 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 115 column 5, end=line 115 column 28] [Variable]
+hoisted = "foo" in this
+---------------------------
+SourceLocation [start=line 115 column 5, end=line 115 column 12] [Identifier]
+hoisted
+---------------------------
+SourceLocation [start=line 115 column 13, end=line 115 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 115 column 15, end=line 115 column 28] [Infix]
+"foo" in this
+---------------------------
+SourceLocation [start=line 115 column 15, end=line 115 column 20] [Literal]
+"foo"
+---------------------------
+SourceLocation [start=line 115 column 21, end=line 115 column 23] [Operator]
+in
+---------------------------
+SourceLocation [start=line 115 column 24, end=line 115 column 28] [This]
+this
+---------------------------
+SourceLocation [start=line 116 column 1, end=line 116 column 92] [QualifiedExpression]
+console.log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+---------------------------
+SourceLocation [start=line 116 column 1, end=line 116 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 116 column 1, end=line 116 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 116 column 8, end=line 116 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 116 column 9, end=line 116 column 92] [FunctionCall]
+log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+---------------------------
+SourceLocation [start=line 116 column 9, end=line 116 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 116 column 12, end=line 116 column 92] [Signature]
+(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`)
+---------------------------
+SourceLocation [start=line 116 column 13, end=line 116 column 91] [LiteralTemplate]
+`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`
+---------------------------
+SourceLocation [start=line 116 column 14, end=line 116 column 25] [Constant]
+'foo' name 
+---------------------------
+SourceLocation [start=line 116 column 25, end=line 116 column 53] [Variable]
+${hoisted ? "is" : "is not"}
+---------------------------
+SourceLocation [start=line 116 column 27, end=line 116 column 52] [Ternary]
+hoisted ? "is" : "is not"
+---------------------------
+SourceLocation [start=line 116 column 27, end=line 116 column 34] [Identifier]
+hoisted
+---------------------------
+SourceLocation [start=line 116 column 37, end=line 116 column 41] [Literal]
+"is"
+---------------------------
+SourceLocation [start=line 116 column 44, end=line 116 column 52] [Literal]
+"is not"
+---------------------------
+SourceLocation [start=line 116 column 53, end=line 116 column 77] [Constant]
+ hoisted. typeof foo is 
+---------------------------
+SourceLocation [start=line 116 column 77, end=line 116 column 90] [Variable]
+${typeof foo}
+---------------------------
+SourceLocation [start=line 116 column 79, end=line 116 column 89] [Prefix]
+typeof foo
+---------------------------
+SourceLocation [start=line 116 column 79, end=line 116 column 85] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 116 column 86, end=line 116 column 89] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 117 column 1, end=line 119 column 2] [If]
+if (false) {\\n function foo(){ return 1; }\\n}
+---------------------------
+SourceLocation [start=line 117 column 1, end=line 119 column 2] [IfBlock]
+if (false) {\\n function foo(){ return 1; }\\n}
+---------------------------
+SourceLocation [start=line 117 column 4, end=line 117 column 11] [Condition]
+(false)
+---------------------------
+SourceLocation [start=line 117 column 5, end=line 117 column 10] [Literal]
+false
+---------------------------
+SourceLocation [start=line 117 column 12, end=line 119 column 2] [Procedure]
+{\\n function foo(){ return 1; }\\n}
+---------------------------
+SourceLocation [start=line 118 column 3, end=line 118 column 30] [FunctionDeclaration]
+function foo(){ return 1; }
+---------------------------
+SourceLocation [start=line 118 column 12, end=line 118 column 15] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 118 column 15, end=line 118 column 17] [Signature]
+()
+---------------------------
+SourceLocation [start=line 118 column 17, end=line 118 column 30] [Procedure]
+{ return 1; }
+---------------------------
+SourceLocation [start=line 118 column 19, end=line 118 column 27] [Return]
+return 1
+---------------------------
+SourceLocation [start=line 118 column 26, end=line 118 column 27] [Literal]
+1
+---------------------------
+SourceLocation [start=line 121 column 1, end=line 123 column 2] [FunctionDeclaration]
+function calc_sales(units_a, units_b, units_c) {\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}
+---------------------------
+SourceLocation [start=line 121 column 10, end=line 121 column 20] [Identifier]
+calc_sales
+---------------------------
+SourceLocation [start=line 121 column 20, end=line 121 column 47] [Signature]
+(units_a, units_b, units_c)
+---------------------------
+SourceLocation [start=line 121 column 21, end=line 121 column 28] [Identifier]
+units_a
+---------------------------
+SourceLocation [start=line 121 column 30, end=line 121 column 37] [Identifier]
+units_b
+---------------------------
+SourceLocation [start=line 121 column 39, end=line 121 column 46] [Identifier]
+units_c
+---------------------------
+SourceLocation [start=line 121 column 48, end=line 123 column 2] [Procedure]
+{\\n return units_a * 79 + units_b * 129 + units_c * 699;\\n}
+---------------------------
+SourceLocation [start=line 122 column 4, end=line 122 column 55] [Return]
+return units_a * 79 + units_b * 129 + units_c * 699
+---------------------------
+SourceLocation [start=line 122 column 11, end=line 122 column 55] [Infix]
+units_a * 79 + units_b * 129 + units_c * 699
+---------------------------
+SourceLocation [start=line 122 column 11, end=line 122 column 39] [Infix]
+units_a * 79 + units_b * 129
+---------------------------
+SourceLocation [start=line 122 column 11, end=line 122 column 23] [Infix]
+units_a * 79
+---------------------------
+SourceLocation [start=line 122 column 11, end=line 122 column 18] [Identifier]
+units_a
+---------------------------
+SourceLocation [start=line 122 column 19, end=line 122 column 20] [Operator]
+*
+---------------------------
+SourceLocation [start=line 122 column 21, end=line 122 column 23] [Literal]
+79
+---------------------------
+SourceLocation [start=line 122 column 24, end=line 122 column 25] [Operator]
++
+---------------------------
+SourceLocation [start=line 122 column 26, end=line 122 column 39] [Infix]
+units_b * 129
+---------------------------
+SourceLocation [start=line 122 column 26, end=line 122 column 33] [Identifier]
+units_b
+---------------------------
+SourceLocation [start=line 122 column 34, end=line 122 column 35] [Operator]
+*
+---------------------------
+SourceLocation [start=line 122 column 36, end=line 122 column 39] [Literal]
+129
+---------------------------
+SourceLocation [start=line 122 column 40, end=line 122 column 41] [Operator]
++
+---------------------------
+SourceLocation [start=line 122 column 42, end=line 122 column 55] [Infix]
+units_c * 699
+---------------------------
+SourceLocation [start=line 122 column 42, end=line 122 column 49] [Identifier]
+units_c
+---------------------------
+SourceLocation [start=line 122 column 50, end=line 122 column 51] [Operator]
+*
+---------------------------
+SourceLocation [start=line 122 column 52, end=line 122 column 55] [Literal]
+699
+---------------------------
+SourceLocation [start=line 125 column 1, end=line 136 column 2] [FunctionDeclaration]
+function testBreak(x) {\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}
+---------------------------
+SourceLocation [start=line 125 column 10, end=line 125 column 19] [Identifier]
+testBreak
+---------------------------
+SourceLocation [start=line 125 column 19, end=line 125 column 22] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 125 column 20, end=line 125 column 21] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 125 column 23, end=line 136 column 2] [Procedure]
+{\\n var i = 0;\\n\\n while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }\\n\\n return i * x;\\n}
+---------------------------
+SourceLocation [start=line 126 column 3, end=line 126 column 12] [VariableDeclaration]
+var i = 0
+---------------------------
+SourceLocation [start=line 126 column 3, end=line 126 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 126 column 7, end=line 126 column 12] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 126 column 7, end=line 126 column 8] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 126 column 9, end=line 126 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 126 column 11, end=line 126 column 12] [Literal]
+0
+---------------------------
+SourceLocation [start=line 128 column 3, end=line 133 column 4] [While]
+while (i < 6) {\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }
+---------------------------
+SourceLocation [start=line 128 column 9, end=line 128 column 16] [Condition]
+(i < 6)
+---------------------------
+SourceLocation [start=line 128 column 10, end=line 128 column 15] [Infix]
+i < 6
+---------------------------
+SourceLocation [start=line 128 column 10, end=line 128 column 11] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 128 column 12, end=line 128 column 13] [Operator]
+<
+---------------------------
+SourceLocation [start=line 128 column 14, end=line 128 column 15] [Literal]
+6
+---------------------------
+SourceLocation [start=line 128 column 17, end=line 133 column 4] [Procedure]
+{\\n if (i == 3) {\\n break;\\n }\\n i += 1;\\n }
+---------------------------
+SourceLocation [start=line 129 column 5, end=line 131 column 6] [If]
+if (i == 3) {\\n break;\\n }
+---------------------------
+SourceLocation [start=line 129 column 5, end=line 131 column 6] [IfBlock]
+if (i == 3) {\\n break;\\n }
+---------------------------
+SourceLocation [start=line 129 column 8, end=line 129 column 16] [Condition]
+(i == 3)
+---------------------------
+SourceLocation [start=line 129 column 9, end=line 129 column 15] [Infix]
+i == 3
+---------------------------
+SourceLocation [start=line 129 column 9, end=line 129 column 10] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 129 column 11, end=line 129 column 13] [Operator]
+==
+---------------------------
+SourceLocation [start=line 129 column 14, end=line 129 column 15] [Literal]
+3
+---------------------------
+SourceLocation [start=line 129 column 17, end=line 131 column 6] [Procedure]
+{\\n break;\\n }
+---------------------------
+SourceLocation [start=line 130 column 7, end=line 130 column 12] [Break]
+break
+---------------------------
+SourceLocation [start=line 132 column 5, end=line 132 column 11] [Assignment]
+i += 1
+---------------------------
+SourceLocation [start=line 132 column 5, end=line 132 column 6] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 132 column 7, end=line 132 column 9] [Operator]
++=
+---------------------------
+SourceLocation [start=line 132 column 10, end=line 132 column 11] [Literal]
+1
+---------------------------
+SourceLocation [start=line 135 column 3, end=line 135 column 15] [Return]
+return i * x
+---------------------------
+SourceLocation [start=line 135 column 10, end=line 135 column 15] [Infix]
+i * x
+---------------------------
+SourceLocation [start=line 135 column 10, end=line 135 column 11] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 135 column 12, end=line 135 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 135 column 14, end=line 135 column 15] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 138 column 1, end=line 144 column 2] [FunctionDeclaration]
+function resolveAfter2Seconds(x) {\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n}
+---------------------------
+SourceLocation [start=line 138 column 10, end=line 138 column 30] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 138 column 30, end=line 138 column 33] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 138 column 31, end=line 138 column 32] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 138 column 34, end=line 144 column 2] [Procedure]
+{\\n return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n });\\n}
+---------------------------
+SourceLocation [start=line 139 column 3, end=line 143 column 5] [Return]
+return new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 139 column 10, end=line 143 column 5] [New]
+new Promise(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 139 column 14, end=line 139 column 21] [Identifier]
+Promise
+---------------------------
+SourceLocation [start=line 139 column 21, end=line 143 column 5] [Signature]
+(resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n })
+---------------------------
+SourceLocation [start=line 139 column 22, end=line 143 column 4] [ArrowFunction]
+resolve => {\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n }
+---------------------------
+SourceLocation [start=line 139 column 22, end=line 139 column 29] [Signature]
+resolve
+---------------------------
+SourceLocation [start=line 139 column 22, end=line 139 column 29] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 139 column 33, end=line 143 column 4] [Procedure]
+{\\n setTimeout(() => {\\n resolve(x);\\n }, 2000);\\n }
+---------------------------
+SourceLocation [start=line 140 column 5, end=line 142 column 13] [FunctionCall]
+setTimeout(() => {\\n resolve(x);\\n }, 2000)
+---------------------------
+SourceLocation [start=line 140 column 5, end=line 140 column 15] [Identifier]
+setTimeout
+---------------------------
+SourceLocation [start=line 140 column 15, end=line 142 column 13] [Signature]
+(() => {\\n resolve(x);\\n }, 2000)
+---------------------------
+SourceLocation [start=line 140 column 16, end=line 142 column 6] [ArrowFunction]
+() => {\\n resolve(x);\\n }
+---------------------------
+SourceLocation [start=line 140 column 16, end=line 140 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 140 column 22, end=line 142 column 6] [Procedure]
+{\\n resolve(x);\\n }
+---------------------------
+SourceLocation [start=line 141 column 7, end=line 141 column 17] [FunctionCall]
+resolve(x)
+---------------------------
+SourceLocation [start=line 141 column 7, end=line 141 column 14] [Identifier]
+resolve
+---------------------------
+SourceLocation [start=line 141 column 14, end=line 141 column 17] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 141 column 15, end=line 141 column 16] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 142 column 8, end=line 142 column 12] [Literal]
+2000
+---------------------------
+SourceLocation [start=line 146 column 1, end=line 150 column 2] [VariableDeclaration]
+const add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+---------------------------
+SourceLocation [start=line 146 column 1, end=line 146 column 6] [Type]
+const
+---------------------------
+SourceLocation [start=line 146 column 7, end=line 150 column 2] [Variable]
+add = async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+---------------------------
+SourceLocation [start=line 146 column 7, end=line 146 column 10] [Identifier]
+add
+---------------------------
+SourceLocation [start=line 146 column 11, end=line 146 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 146 column 13, end=line 150 column 2] [FunctionDeclaration]
+async function(x) { // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+---------------------------
+SourceLocation [start=line 146 column 27, end=line 146 column 30] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 146 column 28, end=line 146 column 29] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 146 column 31, end=line 150 column 2] [Procedure]
+{ // async function expression assigned to a variable\\n let a = await resolveAfter2Seconds(20);\\n let b = await resolveAfter2Seconds(30);\\n return x + a + b;\\n}
+---------------------------
+SourceLocation [start=line 147 column 3, end=line 147 column 41] [VariableDeclaration]
+let a = await resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 147 column 3, end=line 147 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 147 column 7, end=line 147 column 41] [Variable]
+a = await resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 147 column 7, end=line 147 column 8] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 147 column 9, end=line 147 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 147 column 11, end=line 147 column 41] [Await]
+await resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 147 column 17, end=line 147 column 41] [FunctionCall]
+resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 147 column 17, end=line 147 column 37] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 147 column 37, end=line 147 column 41] [Signature]
+(20)
+---------------------------
+SourceLocation [start=line 147 column 38, end=line 147 column 40] [Literal]
+20
+---------------------------
+SourceLocation [start=line 148 column 3, end=line 148 column 41] [VariableDeclaration]
+let b = await resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 148 column 3, end=line 148 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 148 column 7, end=line 148 column 41] [Variable]
+b = await resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 148 column 7, end=line 148 column 8] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 148 column 9, end=line 148 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 148 column 11, end=line 148 column 41] [Await]
+await resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 148 column 17, end=line 148 column 41] [FunctionCall]
+resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 148 column 17, end=line 148 column 37] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 148 column 37, end=line 148 column 41] [Signature]
+(30)
+---------------------------
+SourceLocation [start=line 148 column 38, end=line 148 column 40] [Literal]
+30
+---------------------------
+SourceLocation [start=line 149 column 3, end=line 149 column 19] [Return]
+return x + a + b
+---------------------------
+SourceLocation [start=line 149 column 10, end=line 149 column 19] [Infix]
+x + a + b
+---------------------------
+SourceLocation [start=line 149 column 10, end=line 149 column 15] [Infix]
+x + a
+---------------------------
+SourceLocation [start=line 149 column 10, end=line 149 column 11] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 149 column 12, end=line 149 column 13] [Operator]
++
+---------------------------
+SourceLocation [start=line 149 column 14, end=line 149 column 15] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 149 column 16, end=line 149 column 17] [Operator]
++
+---------------------------
+SourceLocation [start=line 149 column 18, end=line 149 column 19] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 152 column 1, end=line 154 column 3] [QualifiedExpression]
+add(10).then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+---------------------------
+SourceLocation [start=line 152 column 1, end=line 152 column 9] [Qualifier]
+add(10).
+---------------------------
+SourceLocation [start=line 152 column 1, end=line 152 column 8] [FunctionCall]
+add(10)
+---------------------------
+SourceLocation [start=line 152 column 1, end=line 152 column 4] [Identifier]
+add
+---------------------------
+SourceLocation [start=line 152 column 4, end=line 152 column 8] [Signature]
+(10)
+---------------------------
+SourceLocation [start=line 152 column 5, end=line 152 column 7] [Literal]
+10
+---------------------------
+SourceLocation [start=line 152 column 8, end=line 152 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 152 column 9, end=line 154 column 3] [FunctionCall]
+then(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+---------------------------
+SourceLocation [start=line 152 column 9, end=line 152 column 13] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 152 column 13, end=line 154 column 3] [Signature]
+(v => {\\n console.log(v); // prints 60 after 4 seconds.\\n})
+---------------------------
+SourceLocation [start=line 152 column 14, end=line 154 column 2] [ArrowFunction]
+v => {\\n console.log(v); // prints 60 after 4 seconds.\\n}
+---------------------------
+SourceLocation [start=line 152 column 14, end=line 152 column 15] [Signature]
+v
+---------------------------
+SourceLocation [start=line 152 column 14, end=line 152 column 15] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 152 column 19, end=line 154 column 2] [Procedure]
+{\\n console.log(v); // prints 60 after 4 seconds.\\n}
+---------------------------
+SourceLocation [start=line 153 column 3, end=line 153 column 17] [QualifiedExpression]
+console.log(v)
+---------------------------
+SourceLocation [start=line 153 column 3, end=line 153 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 153 column 3, end=line 153 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 153 column 10, end=line 153 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 153 column 11, end=line 153 column 17] [FunctionCall]
+log(v)
+---------------------------
+SourceLocation [start=line 153 column 11, end=line 153 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 153 column 14, end=line 153 column 17] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 153 column 15, end=line 153 column 16] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 156 column 1, end=line 162 column 3] [QualifiedExpression]
+(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+---------------------------
+SourceLocation [start=line 156 column 1, end=line 160 column 8] [Qualifier]
+(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10).
+---------------------------
+SourceLocation [start=line 156 column 1, end=line 160 column 7] [InvokedFunction]
+(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})(10)
+---------------------------
+SourceLocation [start=line 156 column 1, end=line 160 column 3] [Definition]
+(async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n})
+---------------------------
+SourceLocation [start=line 156 column 2, end=line 160 column 2] [FunctionDeclaration]
+async function(x) { // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n}
+---------------------------
+SourceLocation [start=line 156 column 16, end=line 156 column 19] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 156 column 17, end=line 156 column 18] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 156 column 20, end=line 160 column 2] [Procedure]
+{ // async function expression used as an IIFE\\n let p_a = resolveAfter2Seconds(20);\\n let p_b = resolveAfter2Seconds(30);\\n return x + await p_a + await p_b;\\n}
+---------------------------
+SourceLocation [start=line 157 column 3, end=line 157 column 37] [VariableDeclaration]
+let p_a = resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 157 column 3, end=line 157 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 157 column 7, end=line 157 column 37] [Variable]
+p_a = resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 157 column 7, end=line 157 column 10] [Identifier]
+p_a
+---------------------------
+SourceLocation [start=line 157 column 11, end=line 157 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 157 column 13, end=line 157 column 37] [FunctionCall]
+resolveAfter2Seconds(20)
+---------------------------
+SourceLocation [start=line 157 column 13, end=line 157 column 33] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 157 column 33, end=line 157 column 37] [Signature]
+(20)
+---------------------------
+SourceLocation [start=line 157 column 34, end=line 157 column 36] [Literal]
+20
+---------------------------
+SourceLocation [start=line 158 column 3, end=line 158 column 37] [VariableDeclaration]
+let p_b = resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 158 column 3, end=line 158 column 6] [Type]
+let
+---------------------------
+SourceLocation [start=line 158 column 7, end=line 158 column 37] [Variable]
+p_b = resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 158 column 7, end=line 158 column 10] [Identifier]
+p_b
+---------------------------
+SourceLocation [start=line 158 column 11, end=line 158 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 158 column 13, end=line 158 column 37] [FunctionCall]
+resolveAfter2Seconds(30)
+---------------------------
+SourceLocation [start=line 158 column 13, end=line 158 column 33] [Identifier]
+resolveAfter2Seconds
+---------------------------
+SourceLocation [start=line 158 column 33, end=line 158 column 37] [Signature]
+(30)
+---------------------------
+SourceLocation [start=line 158 column 34, end=line 158 column 36] [Literal]
+30
+---------------------------
+SourceLocation [start=line 159 column 3, end=line 159 column 35] [Return]
+return x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 159 column 10, end=line 159 column 35] [Infix]
+x + await p_a + await p_b
+---------------------------
+SourceLocation [start=line 159 column 10, end=line 159 column 11] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 159 column 12, end=line 159 column 13] [Operator]
++
+---------------------------
+SourceLocation [start=line 159 column 14, end=line 159 column 35] [Await]
+await p_a + await p_b
+---------------------------
+SourceLocation [start=line 159 column 20, end=line 159 column 35] [Infix]
+p_a + await p_b
+---------------------------
+SourceLocation [start=line 159 column 20, end=line 159 column 23] [Identifier]
+p_a
+---------------------------
+SourceLocation [start=line 159 column 24, end=line 159 column 25] [Operator]
++
+---------------------------
+SourceLocation [start=line 159 column 26, end=line 159 column 35] [Await]
+await p_b
+---------------------------
+SourceLocation [start=line 159 column 32, end=line 159 column 35] [Identifier]
+p_b
+---------------------------
+SourceLocation [start=line 160 column 3, end=line 160 column 7] [Signature]
+(10)
+---------------------------
+SourceLocation [start=line 160 column 4, end=line 160 column 6] [Literal]
+10
+---------------------------
+SourceLocation [start=line 160 column 7, end=line 160 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 160 column 8, end=line 162 column 3] [FunctionCall]
+then(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+---------------------------
+SourceLocation [start=line 160 column 8, end=line 160 column 12] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 160 column 12, end=line 162 column 3] [Signature]
+(v => {\\n console.log(v); // prints 60 after 2 seconds.\\n})
+---------------------------
+SourceLocation [start=line 160 column 13, end=line 162 column 2] [ArrowFunction]
+v => {\\n console.log(v); // prints 60 after 2 seconds.\\n}
+---------------------------
+SourceLocation [start=line 160 column 13, end=line 160 column 14] [Signature]
+v
+---------------------------
+SourceLocation [start=line 160 column 13, end=line 160 column 14] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 160 column 18, end=line 162 column 2] [Procedure]
+{\\n console.log(v); // prints 60 after 2 seconds.\\n}
+---------------------------
+SourceLocation [start=line 161 column 3, end=line 161 column 17] [QualifiedExpression]
+console.log(v)
+---------------------------
+SourceLocation [start=line 161 column 3, end=line 161 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 161 column 3, end=line 161 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 161 column 10, end=line 161 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 161 column 11, end=line 161 column 17] [FunctionCall]
+log(v)
+---------------------------
+SourceLocation [start=line 161 column 11, end=line 161 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 161 column 14, end=line 161 column 17] [Signature]
+(v)
+---------------------------
+SourceLocation [start=line 161 column 15, end=line 161 column 16] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 164 column 1, end=line 172 column 2] [VariableDeclaration]
+let math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+---------------------------
+SourceLocation [start=line 164 column 1, end=line 164 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 164 column 5, end=line 172 column 2] [Variable]
+math = {\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+---------------------------
+SourceLocation [start=line 164 column 5, end=line 164 column 9] [Identifier]
+math
+---------------------------
+SourceLocation [start=line 164 column 10, end=line 164 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 164 column 12, end=line 172 column 2] [ObjectDeclaration]
+{\\n 'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }\\n}
+---------------------------
+SourceLocation [start=line 165 column 3, end=line 171 column 4] [FieldDeclaration]
+'factit': function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+---------------------------
+SourceLocation [start=line 165 column 3, end=line 165 column 11] [Literal]
+'factit'
+---------------------------
+SourceLocation [start=line 165 column 13, end=line 171 column 4] [FunctionDeclaration]
+function factorial(n) {\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+---------------------------
+SourceLocation [start=line 165 column 22, end=line 165 column 31] [Identifier]
+factorial
+---------------------------
+SourceLocation [start=line 165 column 31, end=line 165 column 34] [Signature]
+(n)
+---------------------------
+SourceLocation [start=line 165 column 32, end=line 165 column 33] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 165 column 35, end=line 171 column 4] [Procedure]
+{\\n console.log(n)\\n if (n <= 1) {\\n return 1;\\n }\\n return n * factorial(n - 1);\\n }
+---------------------------
+SourceLocation [start=line 166 column 5, end=line 166 column 19] [QualifiedExpression]
+console.log(n)
+---------------------------
+SourceLocation [start=line 166 column 5, end=line 166 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 166 column 5, end=line 166 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 166 column 12, end=line 166 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 166 column 13, end=line 166 column 19] [FunctionCall]
+log(n)
+---------------------------
+SourceLocation [start=line 166 column 13, end=line 166 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 166 column 16, end=line 166 column 19] [Signature]
+(n)
+---------------------------
+SourceLocation [start=line 166 column 17, end=line 166 column 18] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 167 column 5, end=line 169 column 6] [If]
+if (n <= 1) {\\n return 1;\\n }
+---------------------------
+SourceLocation [start=line 167 column 5, end=line 169 column 6] [IfBlock]
+if (n <= 1) {\\n return 1;\\n }
+---------------------------
+SourceLocation [start=line 167 column 8, end=line 167 column 16] [Condition]
+(n <= 1)
+---------------------------
+SourceLocation [start=line 167 column 9, end=line 167 column 15] [Infix]
+n <= 1
+---------------------------
+SourceLocation [start=line 167 column 9, end=line 167 column 10] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 167 column 11, end=line 167 column 13] [Operator]
+<=
+---------------------------
+SourceLocation [start=line 167 column 14, end=line 167 column 15] [Literal]
+1
+---------------------------
+SourceLocation [start=line 167 column 17, end=line 169 column 6] [Procedure]
+{\\n return 1;\\n }
+---------------------------
+SourceLocation [start=line 168 column 7, end=line 168 column 15] [Return]
+return 1
+---------------------------
+SourceLocation [start=line 168 column 14, end=line 168 column 15] [Literal]
+1
+---------------------------
+SourceLocation [start=line 170 column 5, end=line 170 column 32] [Return]
+return n * factorial(n - 1)
+---------------------------
+SourceLocation [start=line 170 column 12, end=line 170 column 32] [Infix]
+n * factorial(n - 1)
+---------------------------
+SourceLocation [start=line 170 column 12, end=line 170 column 13] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 170 column 14, end=line 170 column 15] [Operator]
+*
+---------------------------
+SourceLocation [start=line 170 column 16, end=line 170 column 32] [FunctionCall]
+factorial(n - 1)
+---------------------------
+SourceLocation [start=line 170 column 16, end=line 170 column 25] [Identifier]
+factorial
+---------------------------
+SourceLocation [start=line 170 column 25, end=line 170 column 32] [Signature]
+(n - 1)
+---------------------------
+SourceLocation [start=line 170 column 26, end=line 170 column 31] [Infix]
+n - 1
+---------------------------
+SourceLocation [start=line 170 column 26, end=line 170 column 27] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 170 column 28, end=line 170 column 29] [Operator]
+-
+---------------------------
+SourceLocation [start=line 170 column 30, end=line 170 column 31] [Literal]
+1
+---------------------------
+SourceLocation [start=line 173 column 1, end=line 173 column 15] [QualifiedExpression]
+math.factit(3)
+---------------------------
+SourceLocation [start=line 173 column 1, end=line 173 column 6] [Qualifier]
+math.
+---------------------------
+SourceLocation [start=line 173 column 1, end=line 173 column 5] [Identifier]
+math
+---------------------------
+SourceLocation [start=line 173 column 5, end=line 173 column 6] [Operator]
+.
+---------------------------
+SourceLocation [start=line 173 column 6, end=line 173 column 15] [FunctionCall]
+factit(3)
+---------------------------
+SourceLocation [start=line 173 column 6, end=line 173 column 12] [Identifier]
+factit
+---------------------------
+SourceLocation [start=line 173 column 12, end=line 173 column 15] [Signature]
+(3)
+---------------------------
+SourceLocation [start=line 173 column 13, end=line 173 column 14] [Literal]
+3
+---------------------------
+SourceLocation [start=line 175 column 1, end=line 177 column 3] [QualifiedExpression]
+button.addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})
+---------------------------
+SourceLocation [start=line 175 column 1, end=line 175 column 8] [Qualifier]
+button.
+---------------------------
+SourceLocation [start=line 175 column 1, end=line 175 column 7] [Identifier]
+button
+---------------------------
+SourceLocation [start=line 175 column 7, end=line 175 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 175 column 8, end=line 177 column 3] [FunctionCall]
+addEventListener('click', function(event) {\\n console.log('button is clicked!')\\n})
+---------------------------
+SourceLocation [start=line 175 column 8, end=line 175 column 24] [Identifier]
+addEventListener
+---------------------------
+SourceLocation [start=line 175 column 24, end=line 177 column 3] [Signature]
+('click', function(event) {\\n console.log('button is clicked!')\\n})
+---------------------------
+SourceLocation [start=line 175 column 25, end=line 175 column 32] [Literal]
+'click'
+---------------------------
+SourceLocation [start=line 175 column 34, end=line 177 column 2] [FunctionDeclaration]
+function(event) {\\n console.log('button is clicked!')\\n}
+---------------------------
+SourceLocation [start=line 175 column 42, end=line 175 column 49] [Signature]
+(event)
+---------------------------
+SourceLocation [start=line 175 column 43, end=line 175 column 48] [Identifier]
+event
+---------------------------
+SourceLocation [start=line 175 column 50, end=line 177 column 2] [Procedure]
+{\\n console.log('button is clicked!')\\n}
+---------------------------
+SourceLocation [start=line 176 column 5, end=line 176 column 38] [QualifiedExpression]
+console.log('button is clicked!')
+---------------------------
+SourceLocation [start=line 176 column 5, end=line 176 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 176 column 5, end=line 176 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 176 column 12, end=line 176 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 176 column 13, end=line 176 column 38] [FunctionCall]
+log('button is clicked!')
+---------------------------
+SourceLocation [start=line 176 column 13, end=line 176 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 176 column 16, end=line 176 column 38] [Signature]
+('button is clicked!')
+---------------------------
+SourceLocation [start=line 176 column 17, end=line 176 column 37] [Literal]
+'button is clicked!'
+---------------------------
+SourceLocation [start=line 179 column 1, end=line 205 column 2] [VariableDeclaration]
+var créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+---------------------------
+SourceLocation [start=line 179 column 1, end=line 179 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 179 column 5, end=line 205 column 2] [Variable]
+créerAnimal = function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+---------------------------
+SourceLocation [start=line 179 column 5, end=line 179 column 16] [Identifier]
+créerAnimal
+---------------------------
+SourceLocation [start=line 179 column 17, end=line 179 column 18] [Operator]
+=
+---------------------------
+SourceLocation [start=line 179 column 19, end=line 205 column 2] [FunctionDeclaration]
+function (nom) {\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+---------------------------
+SourceLocation [start=line 179 column 28, end=line 179 column 33] [Signature]
+(nom)
+---------------------------
+SourceLocation [start=line 179 column 29, end=line 179 column 32] [Identifier]
+nom
+---------------------------
+SourceLocation [start=line 179 column 34, end=line 205 column 2] [Procedure]
+{\\n var sexe;\\n\\n return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n };\\n}
+---------------------------
+SourceLocation [start=line 180 column 3, end=line 180 column 11] [VariableDeclaration]
+var sexe
+---------------------------
+SourceLocation [start=line 180 column 3, end=line 180 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 180 column 7, end=line 180 column 11] [Variable]
+sexe
+---------------------------
+SourceLocation [start=line 180 column 7, end=line 180 column 11] [Identifier]
+sexe
+---------------------------
+SourceLocation [start=line 182 column 3, end=line 204 column 4] [Return]
+return {\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n }
+---------------------------
+SourceLocation [start=line 182 column 10, end=line 204 column 4] [ObjectDeclaration]
+{\\n setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n },\\n\\n getNom: function () {\\n return nom;\\n },\\n\\n getSexe: function () {\\n return sexe;\\n },\\n\\n setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n },\\n }
+---------------------------
+SourceLocation [start=line 183 column 5, end=line 185 column 6] [FieldDeclaration]
+setNom: function (nouveauNom) {\\n nom = nouveauNom;\\n }
+---------------------------
+SourceLocation [start=line 183 column 5, end=line 183 column 11] [Identifier]
+setNom
+---------------------------
+SourceLocation [start=line 183 column 13, end=line 185 column 6] [FunctionDeclaration]
+function (nouveauNom) {\\n nom = nouveauNom;\\n }
+---------------------------
+SourceLocation [start=line 183 column 22, end=line 183 column 34] [Signature]
+(nouveauNom)
+---------------------------
+SourceLocation [start=line 183 column 23, end=line 183 column 33] [Identifier]
+nouveauNom
+---------------------------
+SourceLocation [start=line 183 column 35, end=line 185 column 6] [Procedure]
+{\\n nom = nouveauNom;\\n }
+---------------------------
+SourceLocation [start=line 184 column 7, end=line 184 column 23] [Assignment]
+nom = nouveauNom
+---------------------------
+SourceLocation [start=line 184 column 7, end=line 184 column 10] [Identifier]
+nom
+---------------------------
+SourceLocation [start=line 184 column 11, end=line 184 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 184 column 13, end=line 184 column 23] [Identifier]
+nouveauNom
+---------------------------
+SourceLocation [start=line 187 column 5, end=line 189 column 6] [FieldDeclaration]
+getNom: function () {\\n return nom;\\n }
+---------------------------
+SourceLocation [start=line 187 column 5, end=line 187 column 11] [Identifier]
+getNom
+---------------------------
+SourceLocation [start=line 187 column 13, end=line 189 column 6] [FunctionDeclaration]
+function () {\\n return nom;\\n }
+---------------------------
+SourceLocation [start=line 187 column 22, end=line 187 column 24] [Signature]
+()
+---------------------------
+SourceLocation [start=line 187 column 25, end=line 189 column 6] [Procedure]
+{\\n return nom;\\n }
+---------------------------
+SourceLocation [start=line 188 column 7, end=line 188 column 17] [Return]
+return nom
+---------------------------
+SourceLocation [start=line 188 column 14, end=line 188 column 17] [Identifier]
+nom
+---------------------------
+SourceLocation [start=line 191 column 5, end=line 193 column 6] [FieldDeclaration]
+getSexe: function () {\\n return sexe;\\n }
+---------------------------
+SourceLocation [start=line 191 column 5, end=line 191 column 12] [Identifier]
+getSexe
+---------------------------
+SourceLocation [start=line 191 column 14, end=line 193 column 6] [FunctionDeclaration]
+function () {\\n return sexe;\\n }
+---------------------------
+SourceLocation [start=line 191 column 23, end=line 191 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 191 column 26, end=line 193 column 6] [Procedure]
+{\\n return sexe;\\n }
+---------------------------
+SourceLocation [start=line 192 column 7, end=line 192 column 18] [Return]
+return sexe
+---------------------------
+SourceLocation [start=line 192 column 14, end=line 192 column 18] [Identifier]
+sexe
+---------------------------
+SourceLocation [start=line 195 column 5, end=line 203 column 6] [FieldDeclaration]
+setSexe: function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+---------------------------
+SourceLocation [start=line 195 column 5, end=line 195 column 12] [Identifier]
+setSexe
+---------------------------
+SourceLocation [start=line 195 column 14, end=line 203 column 6] [FunctionDeclaration]
+function (nouveauSexe) {\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+---------------------------
+SourceLocation [start=line 195 column 23, end=line 195 column 36] [Signature]
+(nouveauSexe)
+---------------------------
+SourceLocation [start=line 195 column 24, end=line 195 column 35] [Identifier]
+nouveauSexe
+---------------------------
+SourceLocation [start=line 195 column 37, end=line 203 column 6] [Procedure]
+{\\n if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }\\n }
+---------------------------
+SourceLocation [start=line 196 column 7, end=line 202 column 8] [If]
+if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }
+---------------------------
+SourceLocation [start=line 196 column 7, end=line 202 column 8] [IfBlock]
+if (\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n ) {\\n sexe = nouveauSexe;\\n }
+---------------------------
+SourceLocation [start=line 196 column 10, end=line 200 column 8] [Condition]
+(\\n typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")\\n )
+---------------------------
+SourceLocation [start=line 197 column 9, end=line 199 column 50] [Infix]
+typeof nouveauSexe == "string" &&\\n (nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")
+---------------------------
+SourceLocation [start=line 197 column 9, end=line 197 column 39] [Infix]
+typeof nouveauSexe == "string"
+---------------------------
+SourceLocation [start=line 197 column 9, end=line 197 column 27] [Prefix]
+typeof nouveauSexe
+---------------------------
+SourceLocation [start=line 197 column 9, end=line 197 column 15] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 197 column 16, end=line 197 column 27] [Identifier]
+nouveauSexe
+---------------------------
+SourceLocation [start=line 197 column 28, end=line 197 column 30] [Operator]
+==
+---------------------------
+SourceLocation [start=line 197 column 31, end=line 197 column 39] [Literal]
+"string"
+---------------------------
+SourceLocation [start=line 197 column 40, end=line 197 column 42] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 198 column 9, end=line 199 column 50] [Parenthesis]
+(nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle")
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 199 column 49] [Infix]
+nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase() == "femelle"
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 199 column 36] [Infix]
+nouveauSexe.toLowerCase() == "mâle" ||\\n nouveauSexe.toLowerCase()
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 198 column 45] [Infix]
+nouveauSexe.toLowerCase() == "mâle"
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 198 column 35] [QualifiedExpression]
+nouveauSexe.toLowerCase()
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 198 column 22] [Qualifier]
+nouveauSexe.
+---------------------------
+SourceLocation [start=line 198 column 10, end=line 198 column 21] [Identifier]
+nouveauSexe
+---------------------------
+SourceLocation [start=line 198 column 21, end=line 198 column 22] [Operator]
+.
+---------------------------
+SourceLocation [start=line 198 column 22, end=line 198 column 35] [FunctionCall]
+toLowerCase()
+---------------------------
+SourceLocation [start=line 198 column 22, end=line 198 column 33] [Identifier]
+toLowerCase
+---------------------------
+SourceLocation [start=line 198 column 33, end=line 198 column 35] [Signature]
+()
+---------------------------
+SourceLocation [start=line 198 column 36, end=line 198 column 38] [Operator]
+==
+---------------------------
+SourceLocation [start=line 198 column 39, end=line 198 column 45] [Literal]
+"mâle"
+---------------------------
+SourceLocation [start=line 198 column 46, end=line 198 column 48] [Operator]
+||
+---------------------------
+SourceLocation [start=line 199 column 11, end=line 199 column 36] [QualifiedExpression]
+nouveauSexe.toLowerCase()
+---------------------------
+SourceLocation [start=line 199 column 11, end=line 199 column 23] [Qualifier]
+nouveauSexe.
+---------------------------
+SourceLocation [start=line 199 column 11, end=line 199 column 22] [Identifier]
+nouveauSexe
+---------------------------
+SourceLocation [start=line 199 column 22, end=line 199 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 199 column 23, end=line 199 column 36] [FunctionCall]
+toLowerCase()
+---------------------------
+SourceLocation [start=line 199 column 23, end=line 199 column 34] [Identifier]
+toLowerCase
+---------------------------
+SourceLocation [start=line 199 column 34, end=line 199 column 36] [Signature]
+()
+---------------------------
+SourceLocation [start=line 199 column 37, end=line 199 column 39] [Operator]
+==
+---------------------------
+SourceLocation [start=line 199 column 40, end=line 199 column 49] [Literal]
+"femelle"
+---------------------------
+SourceLocation [start=line 200 column 9, end=line 202 column 8] [Procedure]
+{\\n sexe = nouveauSexe;\\n }
+---------------------------
+SourceLocation [start=line 201 column 9, end=line 201 column 27] [Assignment]
+sexe = nouveauSexe
+---------------------------
+SourceLocation [start=line 201 column 9, end=line 201 column 13] [Identifier]
+sexe
+---------------------------
+SourceLocation [start=line 201 column 14, end=line 201 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 201 column 16, end=line 201 column 27] [Identifier]
+nouveauSexe
+---------------------------
+SourceLocation [start=line 204 column 3, end=line 204 column 3] [Empty]
+
+---------------------------
+SourceLocation [start=line 207 column 1, end=line 213 column 5] [VariableDeclaration]
+var getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 207 column 1, end=line 207 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 207 column 5, end=line 213 column 5] [Variable]
+getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 207 column 5, end=line 207 column 12] [Identifier]
+getCode
+---------------------------
+SourceLocation [start=line 207 column 13, end=line 207 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 207 column 15, end=line 213 column 5] [InvokedFunction]
+(function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 207 column 15, end=line 213 column 3] [Definition]
+(function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})
+---------------------------
+SourceLocation [start=line 207 column 16, end=line 213 column 2] [FunctionDeclaration]
+function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+---------------------------
+SourceLocation [start=line 207 column 25, end=line 207 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 207 column 28, end=line 213 column 2] [Procedure]
+{\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+---------------------------
+SourceLocation [start=line 208 column 3, end=line 208 column 29] [VariableDeclaration]
+var codeAPI = "0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 208 column 3, end=line 208 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 208 column 7, end=line 208 column 29] [Variable]
+codeAPI = "0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 208 column 7, end=line 208 column 14] [Identifier]
+codeAPI
+---------------------------
+SourceLocation [start=line 208 column 15, end=line 208 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 208 column 17, end=line 208 column 29] [Literal]
+"0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 210 column 3, end=line 212 column 4] [Return]
+return function () {\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 210 column 10, end=line 212 column 4] [FunctionDeclaration]
+function () {\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 210 column 19, end=line 210 column 21] [Signature]
+()
+---------------------------
+SourceLocation [start=line 210 column 22, end=line 212 column 4] [Procedure]
+{\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 211 column 5, end=line 211 column 19] [Return]
+return codeAPI
+---------------------------
+SourceLocation [start=line 211 column 12, end=line 211 column 19] [Identifier]
+codeAPI
+---------------------------
+SourceLocation [start=line 213 column 3, end=line 213 column 5] [Signature]
+()
+---------------------------
+SourceLocation [start=line 215 column 1, end=line 219 column 2] [FunctionDeclaration]
+function multiplier(a, b) {\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}
+---------------------------
+SourceLocation [start=line 215 column 10, end=line 215 column 20] [Identifier]
+multiplier
+---------------------------
+SourceLocation [start=line 215 column 20, end=line 215 column 26] [Signature]
+(a, b)
+---------------------------
+SourceLocation [start=line 215 column 21, end=line 215 column 22] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 215 column 24, end=line 215 column 25] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 215 column 27, end=line 219 column 2] [Procedure]
+{\\n b = typeof b !== "undefined" ? b : 1;\\n\\n return a * b;\\n}
+---------------------------
+SourceLocation [start=line 216 column 3, end=line 216 column 39] [Assignment]
+b = typeof b !== "undefined" ? b : 1
+---------------------------
+SourceLocation [start=line 216 column 3, end=line 216 column 4] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 216 column 5, end=line 216 column 6] [Operator]
+=
+---------------------------
+SourceLocation [start=line 216 column 7, end=line 216 column 39] [Prefix]
+typeof b !== "undefined" ? b : 1
+---------------------------
+SourceLocation [start=line 216 column 7, end=line 216 column 13] [Operator]
+typeof
+---------------------------
+SourceLocation [start=line 216 column 14, end=line 216 column 39] [Ternary]
+b !== "undefined" ? b : 1
+---------------------------
+SourceLocation [start=line 216 column 14, end=line 216 column 31] [Infix]
+b !== "undefined"
+---------------------------
+SourceLocation [start=line 216 column 14, end=line 216 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 216 column 16, end=line 216 column 19] [Operator]
+!==
+---------------------------
+SourceLocation [start=line 216 column 20, end=line 216 column 31] [Literal]
+"undefined"
+---------------------------
+SourceLocation [start=line 216 column 34, end=line 216 column 35] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 216 column 38, end=line 216 column 39] [Literal]
+1
+---------------------------
+SourceLocation [start=line 218 column 3, end=line 218 column 15] [Return]
+return a * b
+---------------------------
+SourceLocation [start=line 218 column 10, end=line 218 column 15] [Infix]
+a * b
+---------------------------
+SourceLocation [start=line 218 column 10, end=line 218 column 11] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 218 column 12, end=line 218 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 218 column 14, end=line 218 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 221 column 1, end=line 223 column 2] [FunctionDeclaration]
+function multiplier(facteur, ...lesArgs) {\\n return lesArgs.map((x) => facteur * x);\\n}
+---------------------------
+SourceLocation [start=line 221 column 10, end=line 221 column 20] [Identifier]
+multiplier
+---------------------------
+SourceLocation [start=line 221 column 20, end=line 221 column 41] [Signature]
+(facteur, ...lesArgs)
+---------------------------
+SourceLocation [start=line 221 column 21, end=line 221 column 28] [Identifier]
+facteur
+---------------------------
+SourceLocation [start=line 221 column 30, end=line 221 column 40] [Spread]
+...lesArgs
+---------------------------
+SourceLocation [start=line 221 column 33, end=line 221 column 40] [Identifier]
+lesArgs
+---------------------------
+SourceLocation [start=line 221 column 42, end=line 223 column 2] [Procedure]
+{\\n return lesArgs.map((x) => facteur * x);\\n}
+---------------------------
+SourceLocation [start=line 222 column 3, end=line 222 column 41] [Return]
+return lesArgs.map((x) => facteur * x)
+---------------------------
+SourceLocation [start=line 222 column 10, end=line 222 column 41] [QualifiedExpression]
+lesArgs.map((x) => facteur * x)
+---------------------------
+SourceLocation [start=line 222 column 10, end=line 222 column 18] [Qualifier]
+lesArgs.
+---------------------------
+SourceLocation [start=line 222 column 10, end=line 222 column 17] [Identifier]
+lesArgs
+---------------------------
+SourceLocation [start=line 222 column 17, end=line 222 column 18] [Operator]
+.
+---------------------------
+SourceLocation [start=line 222 column 18, end=line 222 column 41] [FunctionCall]
+map((x) => facteur * x)
+---------------------------
+SourceLocation [start=line 222 column 18, end=line 222 column 21] [Identifier]
+map
+---------------------------
+SourceLocation [start=line 222 column 21, end=line 222 column 41] [Signature]
+((x) => facteur * x)
+---------------------------
+SourceLocation [start=line 222 column 22, end=line 222 column 40] [ArrowFunction]
+(x) => facteur * x
+---------------------------
+SourceLocation [start=line 222 column 22, end=line 222 column 25] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 222 column 23, end=line 222 column 24] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 222 column 29, end=line 222 column 40] [Procedure]
+facteur * x
+---------------------------
+SourceLocation [start=line 222 column 29, end=line 222 column 40] [Infix]
+facteur * x
+---------------------------
+SourceLocation [start=line 222 column 29, end=line 222 column 36] [Identifier]
+facteur
+---------------------------
+SourceLocation [start=line 222 column 37, end=line 222 column 38] [Operator]
+*
+---------------------------
+SourceLocation [start=line 222 column 39, end=line 222 column 40] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 225 column 1, end=line 231 column 2] [FunctionDeclaration]
+function Personne() {\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}
+---------------------------
+SourceLocation [start=line 225 column 10, end=line 225 column 18] [Identifier]
+Personne
+---------------------------
+SourceLocation [start=line 225 column 18, end=line 225 column 20] [Signature]
+()
+---------------------------
+SourceLocation [start=line 225 column 21, end=line 231 column 2] [Procedure]
+{\\n this.âge = 0;\\n\\n setInterval(function grandir() {\\n this.âge++;\\n }, 1000);\\n}
+---------------------------
+SourceLocation [start=line 226 column 3, end=line 226 column 15] [Assignment]
+this.âge = 0
+---------------------------
+SourceLocation [start=line 226 column 3, end=line 226 column 11] [QualifiedExpression]
+this.âge
+---------------------------
+SourceLocation [start=line 226 column 3, end=line 226 column 8] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 226 column 3, end=line 226 column 7] [This]
+this
+---------------------------
+SourceLocation [start=line 226 column 7, end=line 226 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 226 column 8, end=line 226 column 11] [Identifier]
+âge
+---------------------------
+SourceLocation [start=line 226 column 12, end=line 226 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 226 column 14, end=line 226 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 228 column 3, end=line 230 column 11] [FunctionCall]
+setInterval(function grandir() {\\n this.âge++;\\n }, 1000)
+---------------------------
+SourceLocation [start=line 228 column 3, end=line 228 column 14] [Identifier]
+setInterval
+---------------------------
+SourceLocation [start=line 228 column 14, end=line 230 column 11] [Signature]
+(function grandir() {\\n this.âge++;\\n }, 1000)
+---------------------------
+SourceLocation [start=line 228 column 15, end=line 230 column 4] [FunctionDeclaration]
+function grandir() {\\n this.âge++;\\n }
+---------------------------
+SourceLocation [start=line 228 column 24, end=line 228 column 31] [Identifier]
+grandir
+---------------------------
+SourceLocation [start=line 228 column 31, end=line 228 column 33] [Signature]
+()
+---------------------------
+SourceLocation [start=line 228 column 34, end=line 230 column 4] [Procedure]
+{\\n this.âge++;\\n }
+---------------------------
+SourceLocation [start=line 229 column 5, end=line 229 column 15] [Increment]
+this.âge++
+---------------------------
+SourceLocation [start=line 229 column 13, end=line 229 column 15] [Operator]
+++
+---------------------------
+SourceLocation [start=line 229 column 5, end=line 229 column 13] [QualifiedExpression]
+this.âge
+---------------------------
+SourceLocation [start=line 229 column 5, end=line 229 column 10] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 229 column 5, end=line 229 column 9] [This]
+this
+---------------------------
+SourceLocation [start=line 229 column 9, end=line 229 column 10] [Operator]
+.
+---------------------------
+SourceLocation [start=line 229 column 10, end=line 229 column 13] [Identifier]
+âge
+---------------------------
+SourceLocation [start=line 230 column 6, end=line 230 column 10] [Literal]
+1000
+---------------------------
+SourceLocation [start=line 233 column 1, end=line 239 column 2] [FunctionDeclaration]
+function Personne() {\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}
+---------------------------
+SourceLocation [start=line 233 column 10, end=line 233 column 18] [Identifier]
+Personne
+---------------------------
+SourceLocation [start=line 233 column 18, end=line 233 column 20] [Signature]
+()
+---------------------------
+SourceLocation [start=line 233 column 21, end=line 239 column 2] [Procedure]
+{\\n this.âge = 0;\\n\\n setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000);\\n}
+---------------------------
+SourceLocation [start=line 234 column 3, end=line 234 column 15] [Assignment]
+this.âge = 0
+---------------------------
+SourceLocation [start=line 234 column 3, end=line 234 column 11] [QualifiedExpression]
+this.âge
+---------------------------
+SourceLocation [start=line 234 column 3, end=line 234 column 8] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 234 column 3, end=line 234 column 7] [This]
+this
+---------------------------
+SourceLocation [start=line 234 column 7, end=line 234 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 234 column 8, end=line 234 column 11] [Identifier]
+âge
+---------------------------
+SourceLocation [start=line 234 column 12, end=line 234 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 234 column 14, end=line 234 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 236 column 3, end=line 238 column 11] [FunctionCall]
+setInterval(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000)
+---------------------------
+SourceLocation [start=line 236 column 3, end=line 236 column 14] [Identifier]
+setInterval
+---------------------------
+SourceLocation [start=line 236 column 14, end=line 238 column 11] [Signature]
+(() => {\\n this.âge++; // this fait référence à l'objet personne\\n }, 1000)
+---------------------------
+SourceLocation [start=line 236 column 15, end=line 238 column 4] [ArrowFunction]
+() => {\\n this.âge++; // this fait référence à l'objet personne\\n }
+---------------------------
+SourceLocation [start=line 236 column 15, end=line 236 column 17] [Signature]
+()
+---------------------------
+SourceLocation [start=line 236 column 21, end=line 238 column 4] [Procedure]
+{\\n this.âge++; // this fait référence à l'objet personne\\n }
+---------------------------
+SourceLocation [start=line 237 column 5, end=line 237 column 15] [Increment]
+this.âge++
+---------------------------
+SourceLocation [start=line 237 column 13, end=line 237 column 15] [Operator]
+++
+---------------------------
+SourceLocation [start=line 237 column 5, end=line 237 column 13] [QualifiedExpression]
+this.âge
+---------------------------
+SourceLocation [start=line 237 column 5, end=line 237 column 10] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 237 column 5, end=line 237 column 9] [This]
+this
+---------------------------
+SourceLocation [start=line 237 column 9, end=line 237 column 10] [Operator]
+.
+---------------------------
+SourceLocation [start=line 237 column 10, end=line 237 column 13] [Identifier]
+âge
+---------------------------
+SourceLocation [start=line 238 column 6, end=line 238 column 10] [Literal]
+1000
+---------------------------
+SourceLocation [start=line 241 column 1, end=line 243 column 2] [FunctionDeclaration]
+function multiplier(a, b = 1) {\\n return a * b;\\n}
+---------------------------
+SourceLocation [start=line 241 column 10, end=line 241 column 20] [Identifier]
+multiplier
+---------------------------
+SourceLocation [start=line 241 column 20, end=line 241 column 30] [Signature]
+(a, b = 1)
+---------------------------
+SourceLocation [start=line 241 column 21, end=line 241 column 22] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 241 column 24, end=line 241 column 29] [ParameterWithValue]
+b = 1
+---------------------------
+SourceLocation [start=line 241 column 24, end=line 241 column 25] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 241 column 28, end=line 241 column 29] [Literal]
+1
+---------------------------
+SourceLocation [start=line 241 column 31, end=line 243 column 2] [Procedure]
+{\\n return a * b;\\n}
+---------------------------
+SourceLocation [start=line 242 column 3, end=line 242 column 15] [Return]
+return a * b
+---------------------------
+SourceLocation [start=line 242 column 10, end=line 242 column 15] [Infix]
+a * b
+---------------------------
+SourceLocation [start=line 242 column 10, end=line 242 column 11] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 242 column 12, end=line 242 column 13] [Operator]
+*
+---------------------------
+SourceLocation [start=line 242 column 14, end=line 242 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 245 column 1, end=line 253 column 2] [FunctionDeclaration]
+function monConcat(séparateur) {\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}
+---------------------------
+SourceLocation [start=line 245 column 10, end=line 245 column 19] [Identifier]
+monConcat
+---------------------------
+SourceLocation [start=line 245 column 19, end=line 245 column 31] [Signature]
+(séparateur)
+---------------------------
+SourceLocation [start=line 245 column 20, end=line 245 column 30] [Identifier]
+séparateur
+---------------------------
+SourceLocation [start=line 245 column 32, end=line 253 column 2] [Procedure]
+{\\n var result = ""; // on initialise la liste\\n var i;\\n // on parcourt les arguments\\n for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }\\n return result;\\n}
+---------------------------
+SourceLocation [start=line 246 column 3, end=line 246 column 18] [VariableDeclaration]
+var result = ""
+---------------------------
+SourceLocation [start=line 246 column 3, end=line 246 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 246 column 7, end=line 246 column 18] [Variable]
+result = ""
+---------------------------
+SourceLocation [start=line 246 column 7, end=line 246 column 13] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 246 column 14, end=line 246 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 246 column 16, end=line 246 column 18] [Literal]
+""
+---------------------------
+SourceLocation [start=line 247 column 3, end=line 247 column 8] [VariableDeclaration]
+var i
+---------------------------
+SourceLocation [start=line 247 column 3, end=line 247 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 247 column 7, end=line 247 column 8] [Variable]
+i
+---------------------------
+SourceLocation [start=line 247 column 7, end=line 247 column 8] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 249 column 3, end=line 251 column 4] [For]
+for (i = 1; i < arguments.length; i++) {\\n result += arguments[i] + séparateur;\\n }
+---------------------------
+SourceLocation [start=line 249 column 8, end=line 249 column 40] [Iteration]
+i = 1; i < arguments.length; i++
+---------------------------
+SourceLocation [start=line 249 column 8, end=line 249 column 13] [Assignment]
+i = 1
+---------------------------
+SourceLocation [start=line 249 column 8, end=line 249 column 9] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 249 column 10, end=line 249 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 249 column 12, end=line 249 column 13] [Literal]
+1
+---------------------------
+SourceLocation [start=line 249 column 15, end=line 249 column 35] [Infix]
+i < arguments.length
+---------------------------
+SourceLocation [start=line 249 column 15, end=line 249 column 16] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 249 column 17, end=line 249 column 18] [Operator]
+<
+---------------------------
+SourceLocation [start=line 249 column 19, end=line 249 column 35] [QualifiedExpression]
+arguments.length
+---------------------------
+SourceLocation [start=line 249 column 19, end=line 249 column 29] [Qualifier]
+arguments.
+---------------------------
+SourceLocation [start=line 249 column 19, end=line 249 column 28] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 249 column 28, end=line 249 column 29] [Operator]
+.
+---------------------------
+SourceLocation [start=line 249 column 29, end=line 249 column 35] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 249 column 37, end=line 249 column 40] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 249 column 38, end=line 249 column 40] [Operator]
+++
+---------------------------
+SourceLocation [start=line 249 column 37, end=line 249 column 38] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 249 column 42, end=line 251 column 4] [Procedure]
+{\\n result += arguments[i] + séparateur;\\n }
+---------------------------
+SourceLocation [start=line 250 column 5, end=line 250 column 40] [Assignment]
+result += arguments[i] + séparateur
+---------------------------
+SourceLocation [start=line 250 column 5, end=line 250 column 11] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 250 column 12, end=line 250 column 14] [Operator]
++=
+---------------------------
+SourceLocation [start=line 250 column 15, end=line 250 column 40] [Infix]
+arguments[i] + séparateur
+---------------------------
+SourceLocation [start=line 250 column 15, end=line 250 column 27] [MapExpression]
+arguments[i]
+---------------------------
+SourceLocation [start=line 250 column 15, end=line 250 column 24] [Identifier]
+arguments
+---------------------------
+SourceLocation [start=line 250 column 24, end=line 250 column 27] [Bracket]
+[i]
+---------------------------
+SourceLocation [start=line 250 column 25, end=line 250 column 26] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 250 column 28, end=line 250 column 29] [Operator]
++
+---------------------------
+SourceLocation [start=line 250 column 30, end=line 250 column 40] [Identifier]
+séparateur
+---------------------------
+SourceLocation [start=line 252 column 3, end=line 252 column 16] [Return]
+return result
+---------------------------
+SourceLocation [start=line 252 column 10, end=line 252 column 16] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 255 column 1, end=line 261 column 5] [VariableDeclaration]
+var getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 255 column 1, end=line 255 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 255 column 5, end=line 261 column 5] [Variable]
+getCode = (function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 255 column 5, end=line 255 column 12] [Identifier]
+getCode
+---------------------------
+SourceLocation [start=line 255 column 13, end=line 255 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 255 column 15, end=line 261 column 5] [InvokedFunction]
+(function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})()
+---------------------------
+SourceLocation [start=line 255 column 15, end=line 261 column 3] [Definition]
+(function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n})
+---------------------------
+SourceLocation [start=line 255 column 16, end=line 261 column 2] [FunctionDeclaration]
+function () {\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+---------------------------
+SourceLocation [start=line 255 column 25, end=line 255 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 255 column 28, end=line 261 column 2] [Procedure]
+{\\n var codeAPI = "0]Eal(eh&2"; // Un code qu'on ne souhaite pas diffuser ni modifier\\n\\n return function () {\\n return codeAPI;\\n };\\n}
+---------------------------
+SourceLocation [start=line 256 column 3, end=line 256 column 29] [VariableDeclaration]
+var codeAPI = "0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 256 column 3, end=line 256 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 256 column 7, end=line 256 column 29] [Variable]
+codeAPI = "0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 256 column 7, end=line 256 column 14] [Identifier]
+codeAPI
+---------------------------
+SourceLocation [start=line 256 column 15, end=line 256 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 256 column 17, end=line 256 column 29] [Literal]
+"0]Eal(eh&2"
+---------------------------
+SourceLocation [start=line 258 column 3, end=line 260 column 4] [Return]
+return function () {\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 258 column 10, end=line 260 column 4] [FunctionDeclaration]
+function () {\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 258 column 19, end=line 258 column 21] [Signature]
+()
+---------------------------
+SourceLocation [start=line 258 column 22, end=line 260 column 4] [Procedure]
+{\\n return codeAPI;\\n }
+---------------------------
+SourceLocation [start=line 259 column 5, end=line 259 column 19] [Return]
+return codeAPI
+---------------------------
+SourceLocation [start=line 259 column 12, end=line 259 column 19] [Identifier]
+codeAPI
+---------------------------
+SourceLocation [start=line 261 column 3, end=line 261 column 5] [Signature]
+()
+---------------------------
+SourceLocation [start=line 263 column 1, end=line 268 column 2] [VariableDeclaration]
+var animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+---------------------------
+SourceLocation [start=line 263 column 1, end=line 263 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 263 column 5, end=line 268 column 2] [Variable]
+animal = function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+---------------------------
+SourceLocation [start=line 263 column 5, end=line 263 column 11] [Identifier]
+animal
+---------------------------
+SourceLocation [start=line 263 column 12, end=line 263 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 263 column 14, end=line 268 column 2] [FunctionDeclaration]
+function (nom) {\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+---------------------------
+SourceLocation [start=line 263 column 23, end=line 263 column 28] [Signature]
+(nom)
+---------------------------
+SourceLocation [start=line 263 column 24, end=line 263 column 27] [Identifier]
+nom
+---------------------------
+SourceLocation [start=line 263 column 29, end=line 268 column 2] [Procedure]
+{\\n var getNom = function () {\\n return nom; \\n };\\n return getNom; \\n}
+---------------------------
+SourceLocation [start=line 264 column 3, end=line 266 column 4] [VariableDeclaration]
+var getNom = function () {\\n return nom; \\n }
+---------------------------
+SourceLocation [start=line 264 column 3, end=line 264 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 264 column 7, end=line 266 column 4] [Variable]
+getNom = function () {\\n return nom; \\n }
+---------------------------
+SourceLocation [start=line 264 column 7, end=line 264 column 13] [Identifier]
+getNom
+---------------------------
+SourceLocation [start=line 264 column 14, end=line 264 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 264 column 16, end=line 266 column 4] [FunctionDeclaration]
+function () {\\n return nom; \\n }
+---------------------------
+SourceLocation [start=line 264 column 25, end=line 264 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 264 column 28, end=line 266 column 4] [Procedure]
+{\\n return nom; \\n }
+---------------------------
+SourceLocation [start=line 265 column 5, end=line 265 column 15] [Return]
+return nom
+---------------------------
+SourceLocation [start=line 265 column 12, end=line 265 column 15] [Identifier]
+nom
+---------------------------
+SourceLocation [start=line 267 column 3, end=line 267 column 16] [Return]
+return getNom
+---------------------------
+SourceLocation [start=line 267 column 10, end=line 267 column 16] [Identifier]
+getNom
+---------------------------
+SourceLocation [start=line 270 column 1, end=line 278 column 2] [FunctionDeclaration]
+function A(x) {\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}
+---------------------------
+SourceLocation [start=line 270 column 10, end=line 270 column 11] [Identifier]
+A
+---------------------------
+SourceLocation [start=line 270 column 11, end=line 270 column 14] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 270 column 12, end=line 270 column 13] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 270 column 15, end=line 278 column 2] [Procedure]
+{\\n function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }\\n B(2);\\n}
+---------------------------
+SourceLocation [start=line 271 column 3, end=line 276 column 4] [FunctionDeclaration]
+function B(y) {\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }
+---------------------------
+SourceLocation [start=line 271 column 12, end=line 271 column 13] [Identifier]
+B
+---------------------------
+SourceLocation [start=line 271 column 13, end=line 271 column 16] [Signature]
+(y)
+---------------------------
+SourceLocation [start=line 271 column 14, end=line 271 column 15] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 271 column 17, end=line 276 column 4] [Procedure]
+{\\n function C(z) {\\n console.log(x + y + z);\\n }\\n C(3);\\n }
+---------------------------
+SourceLocation [start=line 272 column 5, end=line 274 column 6] [FunctionDeclaration]
+function C(z) {\\n console.log(x + y + z);\\n }
+---------------------------
+SourceLocation [start=line 272 column 14, end=line 272 column 15] [Identifier]
+C
+---------------------------
+SourceLocation [start=line 272 column 15, end=line 272 column 18] [Signature]
+(z)
+---------------------------
+SourceLocation [start=line 272 column 16, end=line 272 column 17] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 272 column 19, end=line 274 column 6] [Procedure]
+{\\n console.log(x + y + z);\\n }
+---------------------------
+SourceLocation [start=line 273 column 7, end=line 273 column 29] [QualifiedExpression]
+console.log(x + y + z)
+---------------------------
+SourceLocation [start=line 273 column 7, end=line 273 column 15] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 273 column 7, end=line 273 column 14] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 273 column 14, end=line 273 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 273 column 15, end=line 273 column 29] [FunctionCall]
+log(x + y + z)
+---------------------------
+SourceLocation [start=line 273 column 15, end=line 273 column 18] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 273 column 18, end=line 273 column 29] [Signature]
+(x + y + z)
+---------------------------
+SourceLocation [start=line 273 column 19, end=line 273 column 28] [Infix]
+x + y + z
+---------------------------
+SourceLocation [start=line 273 column 19, end=line 273 column 24] [Infix]
+x + y
+---------------------------
+SourceLocation [start=line 273 column 19, end=line 273 column 20] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 273 column 21, end=line 273 column 22] [Operator]
++
+---------------------------
+SourceLocation [start=line 273 column 23, end=line 273 column 24] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 273 column 25, end=line 273 column 26] [Operator]
++
+---------------------------
+SourceLocation [start=line 273 column 27, end=line 273 column 28] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 275 column 5, end=line 275 column 9] [FunctionCall]
+C(3)
+---------------------------
+SourceLocation [start=line 275 column 5, end=line 275 column 6] [Identifier]
+C
+---------------------------
+SourceLocation [start=line 275 column 6, end=line 275 column 9] [Signature]
+(3)
+---------------------------
+SourceLocation [start=line 275 column 7, end=line 275 column 8] [Literal]
+3
+---------------------------
+SourceLocation [start=line 277 column 3, end=line 277 column 7] [FunctionCall]
+B(2)
+---------------------------
+SourceLocation [start=line 277 column 3, end=line 277 column 4] [Identifier]
+B
+---------------------------
+SourceLocation [start=line 277 column 4, end=line 277 column 7] [Signature]
+(2)
+---------------------------
+SourceLocation [start=line 277 column 5, end=line 277 column 6] [Literal]
+2
+---------------------------
+SourceLocation [start=line 280 column 1, end=line 285 column 2] [FunctionDeclaration]
+function ajouteCarrés(a, b) {\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}
+---------------------------
+SourceLocation [start=line 280 column 10, end=line 280 column 22] [Identifier]
+ajouteCarrés
+---------------------------
+SourceLocation [start=line 280 column 22, end=line 280 column 28] [Signature]
+(a, b)
+---------------------------
+SourceLocation [start=line 280 column 23, end=line 280 column 24] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 280 column 26, end=line 280 column 27] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 280 column 29, end=line 285 column 2] [Procedure]
+{\\n function carré(x) {\\n return x * x;\\n }\\n return carré(a) + carré(b);\\n}
+---------------------------
+SourceLocation [start=line 281 column 3, end=line 283 column 4] [FunctionDeclaration]
+function carré(x) {\\n return x * x;\\n }
+---------------------------
+SourceLocation [start=line 281 column 12, end=line 281 column 17] [Identifier]
+carré
+---------------------------
+SourceLocation [start=line 281 column 17, end=line 281 column 20] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 281 column 18, end=line 281 column 19] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 281 column 21, end=line 283 column 4] [Procedure]
+{\\n return x * x;\\n }
+---------------------------
+SourceLocation [start=line 282 column 5, end=line 282 column 17] [Return]
+return x * x
+---------------------------
+SourceLocation [start=line 282 column 12, end=line 282 column 17] [Infix]
+x * x
+---------------------------
+SourceLocation [start=line 282 column 12, end=line 282 column 13] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 282 column 14, end=line 282 column 15] [Operator]
+*
+---------------------------
+SourceLocation [start=line 282 column 16, end=line 282 column 17] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 284 column 3, end=line 284 column 29] [Return]
+return carré(a) + carré(b)
+---------------------------
+SourceLocation [start=line 284 column 10, end=line 284 column 29] [Infix]
+carré(a) + carré(b)
+---------------------------
+SourceLocation [start=line 284 column 10, end=line 284 column 18] [FunctionCall]
+carré(a)
+---------------------------
+SourceLocation [start=line 284 column 10, end=line 284 column 15] [Identifier]
+carré
+---------------------------
+SourceLocation [start=line 284 column 15, end=line 284 column 18] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 284 column 16, end=line 284 column 17] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 284 column 19, end=line 284 column 20] [Operator]
++
+---------------------------
+SourceLocation [start=line 284 column 21, end=line 284 column 29] [FunctionCall]
+carré(b)
+---------------------------
+SourceLocation [start=line 284 column 21, end=line 284 column 26] [Identifier]
+carré
+---------------------------
+SourceLocation [start=line 284 column 26, end=line 284 column 29] [Signature]
+(b)
+---------------------------
+SourceLocation [start=line 284 column 27, end=line 284 column 28] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 287 column 1, end=line 292 column 2] [FunctionDeclaration]
+function toto(i) {\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+---------------------------
+SourceLocation [start=line 287 column 10, end=line 287 column 14] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 287 column 14, end=line 287 column 17] [Signature]
+(i)
+---------------------------
+SourceLocation [start=line 287 column 15, end=line 287 column 16] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 287 column 18, end=line 292 column 2] [Procedure]
+{\\n if (i < 0) return;\\n console.log("début : " + i);\\n toto(i - 1);\\n console.log("fin : " + i);\\n}
+---------------------------
+SourceLocation [start=line 288 column 3, end=line 288 column 21] [If]
+if (i < 0) return;
+---------------------------
+SourceLocation [start=line 288 column 3, end=line 288 column 21] [IfBlock]
+if (i < 0) return;
+---------------------------
+SourceLocation [start=line 288 column 6, end=line 288 column 13] [Condition]
+(i < 0)
+---------------------------
+SourceLocation [start=line 288 column 7, end=line 288 column 12] [Infix]
+i < 0
+---------------------------
+SourceLocation [start=line 288 column 7, end=line 288 column 8] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 288 column 9, end=line 288 column 10] [Operator]
+<
+---------------------------
+SourceLocation [start=line 288 column 11, end=line 288 column 12] [Literal]
+0
+---------------------------
+SourceLocation [start=line 288 column 14, end=line 288 column 21] [Procedure]
+return;
+---------------------------
+SourceLocation [start=line 288 column 14, end=line 288 column 20] [Return]
+return
+---------------------------
+SourceLocation [start=line 289 column 3, end=line 289 column 30] [QualifiedExpression]
+console.log("début : " + i)
+---------------------------
+SourceLocation [start=line 289 column 3, end=line 289 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 289 column 3, end=line 289 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 289 column 10, end=line 289 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 289 column 11, end=line 289 column 30] [FunctionCall]
+log("début : " + i)
+---------------------------
+SourceLocation [start=line 289 column 11, end=line 289 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 289 column 14, end=line 289 column 30] [Signature]
+("début : " + i)
+---------------------------
+SourceLocation [start=line 289 column 15, end=line 289 column 29] [Infix]
+"début : " + i
+---------------------------
+SourceLocation [start=line 289 column 15, end=line 289 column 25] [Literal]
+"début : "
+---------------------------
+SourceLocation [start=line 289 column 26, end=line 289 column 27] [Operator]
++
+---------------------------
+SourceLocation [start=line 289 column 28, end=line 289 column 29] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 290 column 3, end=line 290 column 14] [FunctionCall]
+toto(i - 1)
+---------------------------
+SourceLocation [start=line 290 column 3, end=line 290 column 7] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 290 column 7, end=line 290 column 14] [Signature]
+(i - 1)
+---------------------------
+SourceLocation [start=line 290 column 8, end=line 290 column 13] [Infix]
+i - 1
+---------------------------
+SourceLocation [start=line 290 column 8, end=line 290 column 9] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 290 column 10, end=line 290 column 11] [Operator]
+-
+---------------------------
+SourceLocation [start=line 290 column 12, end=line 290 column 13] [Literal]
+1
+---------------------------
+SourceLocation [start=line 291 column 3, end=line 291 column 28] [QualifiedExpression]
+console.log("fin : " + i)
+---------------------------
+SourceLocation [start=line 291 column 3, end=line 291 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 291 column 3, end=line 291 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 291 column 10, end=line 291 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 291 column 11, end=line 291 column 28] [FunctionCall]
+log("fin : " + i)
+---------------------------
+SourceLocation [start=line 291 column 11, end=line 291 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 291 column 14, end=line 291 column 28] [Signature]
+("fin : " + i)
+---------------------------
+SourceLocation [start=line 291 column 15, end=line 291 column 27] [Infix]
+"fin : " + i
+---------------------------
+SourceLocation [start=line 291 column 15, end=line 291 column 23] [Literal]
+"fin : "
+---------------------------
+SourceLocation [start=line 291 column 24, end=line 291 column 25] [Operator]
++
+---------------------------
+SourceLocation [start=line 291 column 26, end=line 291 column 27] [Identifier]
+i
+---------------------------

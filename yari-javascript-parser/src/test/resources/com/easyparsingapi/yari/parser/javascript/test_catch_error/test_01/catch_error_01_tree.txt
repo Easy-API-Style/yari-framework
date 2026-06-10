@@ -1,0 +1,20 @@
+[0, Javascript] function toto(v_1, v_2) { var { x_1 = v_1 + v_2; return x_1; }
+ [1, JavascriptError] function
+ [1, FunctionCall] toto(v_1, v_2)
+  [2, Identifier] toto
+  [2, Signature] (v_1, v_2)
+   [3, Identifier] v_1
+   [3, Identifier] v_2
+ [1, JavascriptError] {
+ [1, VariableDeclaration] var { x_1 = v_1 + v_2; return x_1; }
+  [2, Type] var
+  [2, Variable] { x_1 = v_1 + v_2; return x_1; }
+   [3, DestructuringObject] { x_1 = v_1 + v_2; return x_1; }
+    [4, Field] x_1 = v_1 + v_2
+     [5, Identifier] x_1
+     [5, Infix] = v_1 + v_2
+      [6, Identifier] v_1
+      [6, Operator] +
+      [6, Identifier] v_2
+    [4, JavascriptError] ; return x_1;
+    [4, Empty] 

@@ -1,0 +1,16 @@
+[0, Javascript] /.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+ [1, Ternary] /.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+  [2, QualifiedExpression] /.*pcmag\.com$/.test(location.hostname)
+   [3, Qualifier] /.*pcmag\.com$/.
+    [4, Literal] /.*pcmag\.com$/
+    [4, Operator] .
+   [3, FunctionCall] test(location.hostname)
+    [4, Identifier] test
+    [4, Signature] (location.hostname)
+     [5, QualifiedExpression] location.hostname
+      [6, Qualifier] location.
+       [7, Identifier] location
+       [7, Operator] .
+      [6, Identifier] hostname
+  [2, Literal] "//geo.pcmag.com/loc/country.php"
+  [2, Literal] "//geo.ziffdavis.com/loc/country.php"

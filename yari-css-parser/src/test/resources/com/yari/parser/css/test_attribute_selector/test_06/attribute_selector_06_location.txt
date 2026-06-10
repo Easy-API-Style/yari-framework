@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 3, end=line 3 column 4] [Css]
+a[href^="insensitive" i] {\\n color: cyan;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 3 column 4] [RuleSet]
+a[href^="insensitive" i] {\\n color: cyan;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 27] [CombinatorSelector]
+a[href^="insensitive" i]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [ElementSelector]
+a
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 4] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 27] [AttributeSelector]
+[href^="insensitive" i]
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 26] [Expression]
+href^="insensitive" i
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Operator]
+^=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 24] [Literal]
+"insensitive"
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 3 column 4] [Block]
+{\\n color: cyan;\\n }
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 17] [Property]
+color: cyan
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 11] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 17] [Identifier]
+cyan
+---------------------------

@@ -1,0 +1,21 @@
+[0, Javascript] let {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata;
+ [1, VariableDeclaration] let {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+  [2, Type] let
+  [2, Variable] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+   [3, DestructuringObject] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n}
+    [4, Field] title: englishTitle
+     [5, Identifier] title
+     [5, Identifier] : englishTitle
+    [4, Field] translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+     [5, Identifier] translations
+     [5, DestructuringArray] : [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+      [6, Value] {\\n title: localeTitle, // rename\\n }
+       [7, DestructuringObject] {\\n title: localeTitle, // rename\\n }
+        [8, Field] title: localeTitle
+         [9, Identifier] title
+         [9, Identifier] : localeTitle
+        [8, Empty] 
+      [6, Empty] 
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] metadata

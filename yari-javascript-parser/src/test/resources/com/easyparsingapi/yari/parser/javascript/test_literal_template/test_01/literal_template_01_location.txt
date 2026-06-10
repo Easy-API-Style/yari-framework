@@ -1,0 +1,60 @@
+SourceLocation [start=line 1 column 1, end=line 3 column 3] [Javascript]
+`header ${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}`
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 3 column 3] [LiteralTemplate]
+`header ${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}`
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 9] [Constant]
+header 
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 3 column 2] [Variable]
+${\\n isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 79] [Ternary]
+isLargeScreen() ? "" : `icon-${item.isCollapsed ? "expander" : "collapser"}`
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 18] [FunctionCall]
+isLargeScreen()
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 16] [Identifier]
+isLargeScreen
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 2 column 21, end=line 2 column 23] [Literal]
+""
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 79] [LiteralTemplate]
+`icon-${item.isCollapsed ? "expander" : "collapser"}`
+---------------------------
+SourceLocation [start=line 2 column 27, end=line 2 column 32] [Constant]
+icon-
+---------------------------
+SourceLocation [start=line 2 column 32, end=line 2 column 78] [Variable]
+${item.isCollapsed ? "expander" : "collapser"}
+---------------------------
+SourceLocation [start=line 2 column 34, end=line 2 column 77] [Ternary]
+item.isCollapsed ? "expander" : "collapser"
+---------------------------
+SourceLocation [start=line 2 column 34, end=line 2 column 50] [QualifiedExpression]
+item.isCollapsed
+---------------------------
+SourceLocation [start=line 2 column 34, end=line 2 column 39] [Qualifier]
+item.
+---------------------------
+SourceLocation [start=line 2 column 34, end=line 2 column 38] [Identifier]
+item
+---------------------------
+SourceLocation [start=line 2 column 38, end=line 2 column 39] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 39, end=line 2 column 50] [Identifier]
+isCollapsed
+---------------------------
+SourceLocation [start=line 2 column 53, end=line 2 column 63] [Literal]
+"expander"
+---------------------------
+SourceLocation [start=line 2 column 66, end=line 2 column 77] [Literal]
+"collapser"
+---------------------------

@@ -1,0 +1,1631 @@
+[0, Css] .button {\\n align-items:center;\\n background-color:initial;\\n border:1px solid #0000;\\n border-radius:.25rem;\\n color:var(--color-text-primary);\\n column-gap:.3125em;\\n cursor:pointer;\\n display:inline-flex;\\n font-family:var(--font-family-text);\\n font-size:.875em;\\n font-weight:450;\\n justify-content:center;\\n line-height:var(--font-line-ui);\\n margin:0;\\n padding:.5em;\\n -webkit-text-decoration:none;\\n text-decoration:none;\\n vertical-align:middle\\n}\\n.button[data-variant=primary] {\\n --csstools-light-dark-toggle-33eaa513-0:var(--csstools-color-scheme--light) var(--color-black);\\n color:var(--csstools-light-dark-toggle-33eaa513-0,var(--color-white));\\n --csstools-light-dark-toggle-33eaa513-1:var(--csstools-color-scheme--light) var(--color-white);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-1,var(--color-black))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary] {\\n background-color:light-dark(var(--color-black),var(--color-white));\\n color:light-dark(var(--color-white),var(--color-black))\\n }\\n}\\n.button[data-variant=primary]:hover {\\n --csstools-light-dark-toggle-33eaa513-2:var(--csstools-color-scheme--light) var(--color-gray-80);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary]:hover {\\n background-color:light-dark(var(--color-gray-20),var(--color-gray-80))\\n }\\n}\\n.button[data-variant=primary][data-action=positive] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-3:var(--csstools-color-scheme--light) var(--color-green-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=positive] {\\n background-color:light-dark(var(--color-green-50),var(--color-green-20))\\n }\\n}\\n.button[data-variant=primary][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-4:var(--csstools-color-scheme--light) var(--color-green-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-20),var(--color-green-50))\\n }\\n}\\n.button[data-variant=primary][data-action=negative] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-5:var(--csstools-color-scheme--light) var(--color-red-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=negative] {\\n background-color:light-dark(var(--color-red-50),var(--color-red-20))\\n }\\n}\\n.button[data-variant=primary][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-6:var(--csstools-color-scheme--light) var(--color-red-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-20),var(--color-red-50))\\n }\\n}\\n.button[data-variant=secondary] {\\n border-color:currentcolor\\n}\\n.button[data-variant=secondary]:hover {\\n --csstools-light-dark-toggle-33eaa513-7:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}\\n.button[data-variant=secondary][data-action=positive] {\\n --csstools-light-dark-toggle-33eaa513-8:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}\\n.button[data-variant=secondary][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-9:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}\\n.button[data-variant=secondary][data-action=negative] {\\n --csstools-light-dark-toggle-33eaa513-10:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}\\n.button[data-variant=secondary][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-11:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}\\n.button[data-variant=plain]:hover {\\n --csstools-light-dark-toggle-33eaa513-12:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=plain]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}\\n.button[data-variant=plain][data-action=positive] {\\n --csstools-light-dark-toggle-33eaa513-13:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}\\n.button[data-variant=plain][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-14:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}\\n.button[data-variant=plain][data-action=negative] {\\n --csstools-light-dark-toggle-33eaa513-15:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}\\n.button[data-variant=plain][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-16:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}\\n.button[disabled] {\\n --csstools-light-dark-toggle-33eaa513-17:var(--csstools-color-scheme--light) var(--color-gray-60)!important;\\n color:var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))!important;\\n cursor:default;\\n --csstools-light-dark-toggle-33eaa513-18:var(--csstools-color-scheme--light) var(--color-gray-20)!important;\\n background-color:var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))!important;\\n border-color:#0000\\n}\\n@supports (color:light-dark(red,red)) {\\n .button[disabled] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important;\\n color:light-dark(var(--color-gray-40),var(--color-gray-60))!important\\n }\\n}\\n.button .icon {\\n display:flex\\n}\\n.button svg {\\n height:1.25em;\\n width:1.25em\\n}\\n.button .label {\\n padding-block:.125em;\\n padding-inline:.0625em\\n}\\n:host {\\n display:inline-flex;\\n vertical-align:middle\\n}\\n.button {\\n box-sizing:border-box;\\n height:100%;\\n width:100%\\n}
+ [1, RuleSet] .button {\\n align-items:center;\\n background-color:initial;\\n border:1px solid #0000;\\n border-radius:.25rem;\\n color:var(--color-text-primary);\\n column-gap:.3125em;\\n cursor:pointer;\\n display:inline-flex;\\n font-family:var(--font-family-text);\\n font-size:.875em;\\n font-weight:450;\\n justify-content:center;\\n line-height:var(--font-line-ui);\\n margin:0;\\n padding:.5em;\\n -webkit-text-decoration:none;\\n text-decoration:none;\\n vertical-align:middle\\n}
+  [2, ClassSelector] .button
+   [3, Identifier] button
+  [2, Block] {\\n align-items:center;\\n background-color:initial;\\n border:1px solid #0000;\\n border-radius:.25rem;\\n color:var(--color-text-primary);\\n column-gap:.3125em;\\n cursor:pointer;\\n display:inline-flex;\\n font-family:var(--font-family-text);\\n font-size:.875em;\\n font-weight:450;\\n justify-content:center;\\n line-height:var(--font-line-ui);\\n margin:0;\\n padding:.5em;\\n -webkit-text-decoration:none;\\n text-decoration:none;\\n vertical-align:middle\\n}
+   [3, Property] align-items:center
+    [4, Identifier] align-items
+    [4, Identifier] center
+   [3, Property] background-color:initial
+    [4, Identifier] background-color
+    [4, Identifier] initial
+   [3, Property] border:1px solid #0000
+    [4, Identifier] border
+    [4, ListValue] 1px solid #0000
+     [5, Identifier] 1px
+     [5, Identifier] solid
+     [5, Literal] #0000
+   [3, Property] border-radius:.25rem
+    [4, Identifier] border-radius
+    [4, Identifier] .25rem
+   [3, Property] color:var(--color-text-primary)
+    [4, Identifier] color
+    [4, Function] var(--color-text-primary)
+     [5, Identifier] var
+     [5, Signature] (--color-text-primary)
+      [6, Identifier] --color-text-primary
+   [3, Property] column-gap:.3125em
+    [4, Identifier] column-gap
+    [4, Identifier] .3125em
+   [3, Property] cursor:pointer
+    [4, Identifier] cursor
+    [4, Identifier] pointer
+   [3, Property] display:inline-flex
+    [4, Identifier] display
+    [4, Identifier] inline-flex
+   [3, Property] font-family:var(--font-family-text)
+    [4, Identifier] font-family
+    [4, Function] var(--font-family-text)
+     [5, Identifier] var
+     [5, Signature] (--font-family-text)
+      [6, Identifier] --font-family-text
+   [3, Property] font-size:.875em
+    [4, Identifier] font-size
+    [4, Identifier] .875em
+   [3, Property] font-weight:450
+    [4, Identifier] font-weight
+    [4, Identifier] 450
+   [3, Property] justify-content:center
+    [4, Identifier] justify-content
+    [4, Identifier] center
+   [3, Property] line-height:var(--font-line-ui)
+    [4, Identifier] line-height
+    [4, Function] var(--font-line-ui)
+     [5, Identifier] var
+     [5, Signature] (--font-line-ui)
+      [6, Identifier] --font-line-ui
+   [3, Property] margin:0
+    [4, Identifier] margin
+    [4, Identifier] 0
+   [3, Property] padding:.5em
+    [4, Identifier] padding
+    [4, Identifier] .5em
+   [3, Property] -webkit-text-decoration:none
+    [4, Identifier] -webkit-text-decoration
+    [4, Identifier] none
+   [3, Property] text-decoration:none
+    [4, Identifier] text-decoration
+    [4, Identifier] none
+   [3, Property] vertical-align:middle
+    [4, Identifier] vertical-align
+    [4, Identifier] middle
+ [1, RuleSet] .button[data-variant=primary] {\\n --csstools-light-dark-toggle-33eaa513-0:var(--csstools-color-scheme--light) var(--color-black);\\n color:var(--csstools-light-dark-toggle-33eaa513-0,var(--color-white));\\n --csstools-light-dark-toggle-33eaa513-1:var(--csstools-color-scheme--light) var(--color-white);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-1,var(--color-black))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary]
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, Operator] 
+   [3, AttributeSelector] [data-variant=primary]
+    [4, Expression] data-variant=primary
+     [5, Identifier] data-variant
+     [5, Operator] =
+     [5, Identifier] primary
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-0:var(--csstools-color-scheme--light) var(--color-black);\\n color:var(--csstools-light-dark-toggle-33eaa513-0,var(--color-white));\\n --csstools-light-dark-toggle-33eaa513-1:var(--csstools-color-scheme--light) var(--color-white);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-1,var(--color-black))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-0:var(--csstools-color-scheme--light) var(--color-black)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-0
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-black)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-black)
+      [6, Identifier] var
+      [6, Signature] (--color-black)
+       [7, Identifier] --color-black
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-0,var(--color-white))
+    [4, Identifier] color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-0,var(--color-white))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-0,var(--color-white))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-0
+      [6, Function] var(--color-white)
+       [7, Identifier] var
+       [7, Signature] (--color-white)
+        [8, Identifier] --color-white
+   [3, Property] --csstools-light-dark-toggle-33eaa513-1:var(--csstools-color-scheme--light) var(--color-white)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-1
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-white)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-white)
+      [6, Identifier] var
+      [6, Signature] (--color-white)
+       [7, Identifier] --color-white
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-1,var(--color-black))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-1,var(--color-black))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-1,var(--color-black))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-1
+      [6, Function] var(--color-black)
+       [7, Identifier] var
+       [7, Signature] (--color-black)
+        [8, Identifier] --color-black
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary] {\\n background-color:light-dark(var(--color-black),var(--color-white));\\n color:light-dark(var(--color-white),var(--color-black))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary] {\\n background-color:light-dark(var(--color-black),var(--color-white));\\n color:light-dark(var(--color-white),var(--color-black))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary] {\\n background-color:light-dark(var(--color-black),var(--color-white));\\n color:light-dark(var(--color-white),var(--color-black))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=primary]
+      [6, Expression] data-variant=primary
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] primary
+    [4, Block] {\\n background-color:light-dark(var(--color-black),var(--color-white));\\n color:light-dark(var(--color-white),var(--color-black))\\n }
+     [5, Property] background-color:light-dark(var(--color-black),var(--color-white))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-black),var(--color-white))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-black),var(--color-white))
+        [8, Function] var(--color-black)
+         [9, Identifier] var
+         [9, Signature] (--color-black)
+          [10, Identifier] --color-black
+        [8, Function] var(--color-white)
+         [9, Identifier] var
+         [9, Signature] (--color-white)
+          [10, Identifier] --color-white
+     [5, Property] color:light-dark(var(--color-white),var(--color-black))
+      [6, Identifier] color
+      [6, Function] light-dark(var(--color-white),var(--color-black))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-white),var(--color-black))
+        [8, Function] var(--color-white)
+         [9, Identifier] var
+         [9, Signature] (--color-white)
+          [10, Identifier] --color-white
+        [8, Function] var(--color-black)
+         [9, Identifier] var
+         [9, Signature] (--color-black)
+          [10, Identifier] --color-black
+ [1, RuleSet] .button[data-variant=primary]:hover {\\n --csstools-light-dark-toggle-33eaa513-2:var(--csstools-color-scheme--light) var(--color-gray-80);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary]:hover
+   [3, CombinatorSelector] .button[data-variant=primary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=primary]
+     [5, Expression] data-variant=primary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] primary
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-2:var(--csstools-color-scheme--light) var(--color-gray-80);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-2:var(--csstools-color-scheme--light) var(--color-gray-80)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-2
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-gray-80)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-gray-80)
+      [6, Identifier] var
+      [6, Signature] (--color-gray-80)
+       [7, Identifier] --color-gray-80
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-2,var(--color-gray-20))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-2
+      [6, Function] var(--color-gray-20)
+       [7, Identifier] var
+       [7, Signature] (--color-gray-20)
+        [8, Identifier] --color-gray-20
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary]:hover {\\n background-color:light-dark(var(--color-gray-20),var(--color-gray-80))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary]:hover {\\n background-color:light-dark(var(--color-gray-20),var(--color-gray-80))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary]:hover {\\n background-color:light-dark(var(--color-gray-20),var(--color-gray-80))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary]:hover
+     [5, CombinatorSelector] .button[data-variant=primary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=primary]
+       [7, Expression] data-variant=primary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] primary
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-gray-20),var(--color-gray-80))\\n }
+     [5, Property] background-color:light-dark(var(--color-gray-20),var(--color-gray-80))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-gray-20),var(--color-gray-80))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-gray-20),var(--color-gray-80))
+        [8, Function] var(--color-gray-20)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-20)
+          [10, Identifier] --color-gray-20
+        [8, Function] var(--color-gray-80)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-80)
+          [10, Identifier] --color-gray-80
+ [1, RuleSet] .button[data-variant=primary][data-action=positive] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-3:var(--csstools-color-scheme--light) var(--color-green-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary][data-action=positive]
+   [3, CombinatorSelector] .button[data-variant=primary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=primary]
+     [5, Expression] data-variant=primary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] primary
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=positive]
+    [4, Expression] data-action=positive
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] positive
+  [2, Block] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-3:var(--csstools-color-scheme--light) var(--color-green-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))\\n}
+   [3, Property] color:var(--color-white)
+    [4, Identifier] color
+    [4, Function] var(--color-white)
+     [5, Identifier] var
+     [5, Signature] (--color-white)
+      [6, Identifier] --color-white
+   [3, Property] --csstools-light-dark-toggle-33eaa513-3:var(--csstools-color-scheme--light) var(--color-green-20)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-3
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-20)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-20)
+      [6, Identifier] var
+      [6, Signature] (--color-green-20)
+       [7, Identifier] --color-green-20
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-3,var(--color-green-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-3
+      [6, Function] var(--color-green-50)
+       [7, Identifier] var
+       [7, Signature] (--color-green-50)
+        [8, Identifier] --color-green-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=positive] {\\n background-color:light-dark(var(--color-green-50),var(--color-green-20))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary][data-action=positive] {\\n background-color:light-dark(var(--color-green-50),var(--color-green-20))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary][data-action=positive] {\\n background-color:light-dark(var(--color-green-50),var(--color-green-20))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary][data-action=positive]
+     [5, CombinatorSelector] .button[data-variant=primary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=primary]
+       [7, Expression] data-variant=primary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] primary
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=positive]
+      [6, Expression] data-action=positive
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] positive
+    [4, Block] {\\n background-color:light-dark(var(--color-green-50),var(--color-green-20))\\n }
+     [5, Property] background-color:light-dark(var(--color-green-50),var(--color-green-20))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-green-50),var(--color-green-20))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-50),var(--color-green-20))
+        [8, Function] var(--color-green-50)
+         [9, Identifier] var
+         [9, Signature] (--color-green-50)
+          [10, Identifier] --color-green-50
+        [8, Function] var(--color-green-20)
+         [9, Identifier] var
+         [9, Signature] (--color-green-20)
+          [10, Identifier] --color-green-20
+ [1, RuleSet] .button[data-variant=primary][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-4:var(--csstools-color-scheme--light) var(--color-green-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary][data-action=positive]:hover
+   [3, CombinatorSelector] .button[data-variant=primary][data-action=positive]
+    [4, CombinatorSelector] .button[data-variant=primary]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=primary]
+      [6, Expression] data-variant=primary
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] primary
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=positive]
+     [5, Expression] data-action=positive
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] positive
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-4:var(--csstools-color-scheme--light) var(--color-green-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-4:var(--csstools-color-scheme--light) var(--color-green-50)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-4
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-50)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-50)
+      [6, Identifier] var
+      [6, Signature] (--color-green-50)
+       [7, Identifier] --color-green-50
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-4,var(--color-green-20))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-4
+      [6, Function] var(--color-green-20)
+       [7, Identifier] var
+       [7, Signature] (--color-green-20)
+        [8, Identifier] --color-green-20
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-20),var(--color-green-50))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-20),var(--color-green-50))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-20),var(--color-green-50))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary][data-action=positive]:hover
+     [5, CombinatorSelector] .button[data-variant=primary][data-action=positive]
+      [6, CombinatorSelector] .button[data-variant=primary]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=primary]
+        [8, Expression] data-variant=primary
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] primary
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=positive]
+       [7, Expression] data-action=positive
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] positive
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-green-20),var(--color-green-50))\\n }
+     [5, Property] background-color:light-dark(var(--color-green-20),var(--color-green-50))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-green-20),var(--color-green-50))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-20),var(--color-green-50))
+        [8, Function] var(--color-green-20)
+         [9, Identifier] var
+         [9, Signature] (--color-green-20)
+          [10, Identifier] --color-green-20
+        [8, Function] var(--color-green-50)
+         [9, Identifier] var
+         [9, Signature] (--color-green-50)
+          [10, Identifier] --color-green-50
+ [1, RuleSet] .button[data-variant=primary][data-action=negative] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-5:var(--csstools-color-scheme--light) var(--color-red-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary][data-action=negative]
+   [3, CombinatorSelector] .button[data-variant=primary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=primary]
+     [5, Expression] data-variant=primary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] primary
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=negative]
+    [4, Expression] data-action=negative
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] negative
+  [2, Block] {\\n color:var(--color-white);\\n --csstools-light-dark-toggle-33eaa513-5:var(--csstools-color-scheme--light) var(--color-red-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))\\n}
+   [3, Property] color:var(--color-white)
+    [4, Identifier] color
+    [4, Function] var(--color-white)
+     [5, Identifier] var
+     [5, Signature] (--color-white)
+      [6, Identifier] --color-white
+   [3, Property] --csstools-light-dark-toggle-33eaa513-5:var(--csstools-color-scheme--light) var(--color-red-20)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-5
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-20)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-20)
+      [6, Identifier] var
+      [6, Signature] (--color-red-20)
+       [7, Identifier] --color-red-20
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-5,var(--color-red-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-5
+      [6, Function] var(--color-red-50)
+       [7, Identifier] var
+       [7, Signature] (--color-red-50)
+        [8, Identifier] --color-red-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=negative] {\\n background-color:light-dark(var(--color-red-50),var(--color-red-20))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary][data-action=negative] {\\n background-color:light-dark(var(--color-red-50),var(--color-red-20))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary][data-action=negative] {\\n background-color:light-dark(var(--color-red-50),var(--color-red-20))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary][data-action=negative]
+     [5, CombinatorSelector] .button[data-variant=primary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=primary]
+       [7, Expression] data-variant=primary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] primary
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=negative]
+      [6, Expression] data-action=negative
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] negative
+    [4, Block] {\\n background-color:light-dark(var(--color-red-50),var(--color-red-20))\\n }
+     [5, Property] background-color:light-dark(var(--color-red-50),var(--color-red-20))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-red-50),var(--color-red-20))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-50),var(--color-red-20))
+        [8, Function] var(--color-red-50)
+         [9, Identifier] var
+         [9, Signature] (--color-red-50)
+          [10, Identifier] --color-red-50
+        [8, Function] var(--color-red-20)
+         [9, Identifier] var
+         [9, Signature] (--color-red-20)
+          [10, Identifier] --color-red-20
+ [1, RuleSet] .button[data-variant=primary][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-6:var(--csstools-color-scheme--light) var(--color-red-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))\\n}
+  [2, CombinatorSelector] .button[data-variant=primary][data-action=negative]:hover
+   [3, CombinatorSelector] .button[data-variant=primary][data-action=negative]
+    [4, CombinatorSelector] .button[data-variant=primary]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=primary]
+      [6, Expression] data-variant=primary
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] primary
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=negative]
+     [5, Expression] data-action=negative
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] negative
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-6:var(--csstools-color-scheme--light) var(--color-red-50);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-6:var(--csstools-color-scheme--light) var(--color-red-50)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-6
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-50)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-50)
+      [6, Identifier] var
+      [6, Signature] (--color-red-50)
+       [7, Identifier] --color-red-50
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-6,var(--color-red-20))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-6
+      [6, Function] var(--color-red-20)
+       [7, Identifier] var
+       [7, Signature] (--color-red-20)
+        [8, Identifier] --color-red-20
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=primary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-20),var(--color-red-50))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=primary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-20),var(--color-red-50))\\n }\\n}
+   [3, RuleSet] .button[data-variant=primary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-20),var(--color-red-50))\\n }
+    [4, CombinatorSelector] .button[data-variant=primary][data-action=negative]:hover
+     [5, CombinatorSelector] .button[data-variant=primary][data-action=negative]
+      [6, CombinatorSelector] .button[data-variant=primary]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=primary]
+        [8, Expression] data-variant=primary
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] primary
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=negative]
+       [7, Expression] data-action=negative
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] negative
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-red-20),var(--color-red-50))\\n }
+     [5, Property] background-color:light-dark(var(--color-red-20),var(--color-red-50))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-red-20),var(--color-red-50))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-20),var(--color-red-50))
+        [8, Function] var(--color-red-20)
+         [9, Identifier] var
+         [9, Signature] (--color-red-20)
+          [10, Identifier] --color-red-20
+        [8, Function] var(--color-red-50)
+         [9, Identifier] var
+         [9, Signature] (--color-red-50)
+          [10, Identifier] --color-red-50
+ [1, RuleSet] .button[data-variant=secondary] {\\n border-color:currentcolor\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary]
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, Operator] 
+   [3, AttributeSelector] [data-variant=secondary]
+    [4, Expression] data-variant=secondary
+     [5, Identifier] data-variant
+     [5, Operator] =
+     [5, Identifier] secondary
+  [2, Block] {\\n border-color:currentcolor\\n}
+   [3, Property] border-color:currentcolor
+    [4, Identifier] border-color
+    [4, Identifier] currentcolor
+ [1, RuleSet] .button[data-variant=secondary]:hover {\\n --csstools-light-dark-toggle-33eaa513-7:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary]:hover
+   [3, CombinatorSelector] .button[data-variant=secondary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=secondary]
+     [5, Expression] data-variant=secondary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] secondary
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-7:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-7:var(--csstools-color-scheme--light) var(--color-gray-20)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-7
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-gray-20)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-gray-20)
+      [6, Identifier] var
+      [6, Signature] (--color-gray-20)
+       [7, Identifier] --color-gray-20
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-7,var(--color-gray-80))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-7
+      [6, Function] var(--color-gray-80)
+       [7, Identifier] var
+       [7, Signature] (--color-gray-80)
+        [8, Identifier] --color-gray-80
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=secondary]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}
+   [3, RuleSet] .button[data-variant=secondary]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }
+    [4, CombinatorSelector] .button[data-variant=secondary]:hover
+     [5, CombinatorSelector] .button[data-variant=secondary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=secondary]
+       [7, Expression] data-variant=secondary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] secondary
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }
+     [5, Property] background-color:light-dark(var(--color-gray-80),var(--color-gray-20))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-gray-80),var(--color-gray-20))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-gray-80),var(--color-gray-20))
+        [8, Function] var(--color-gray-80)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-80)
+          [10, Identifier] --color-gray-80
+        [8, Function] var(--color-gray-20)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-20)
+          [10, Identifier] --color-gray-20
+ [1, RuleSet] .button[data-variant=secondary][data-action=positive] {\\n --csstools-light-dark-toggle-33eaa513-8:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary][data-action=positive]
+   [3, CombinatorSelector] .button[data-variant=secondary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=secondary]
+     [5, Expression] data-variant=secondary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] secondary
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=positive]
+    [4, Expression] data-action=positive
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] positive
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-8:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-8:var(--csstools-color-scheme--light) var(--color-green-80)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-8
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-80)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-80)
+      [6, Identifier] var
+      [6, Signature] (--color-green-80)
+       [7, Identifier] --color-green-80
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))
+    [4, Identifier] color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-8,var(--color-green-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-8
+      [6, Function] var(--color-green-50)
+       [7, Identifier] var
+       [7, Signature] (--color-green-50)
+        [8, Identifier] --color-green-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=secondary][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}
+   [3, RuleSet] .button[data-variant=secondary][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }
+    [4, CombinatorSelector] .button[data-variant=secondary][data-action=positive]
+     [5, CombinatorSelector] .button[data-variant=secondary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=secondary]
+       [7, Expression] data-variant=secondary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] secondary
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=positive]
+      [6, Expression] data-action=positive
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] positive
+    [4, Block] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }
+     [5, Property] color:light-dark(var(--color-green-50),var(--color-green-80))
+      [6, Identifier] color
+      [6, Function] light-dark(var(--color-green-50),var(--color-green-80))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-50),var(--color-green-80))
+        [8, Function] var(--color-green-50)
+         [9, Identifier] var
+         [9, Signature] (--color-green-50)
+          [10, Identifier] --color-green-50
+        [8, Function] var(--color-green-80)
+         [9, Identifier] var
+         [9, Signature] (--color-green-80)
+          [10, Identifier] --color-green-80
+ [1, RuleSet] .button[data-variant=secondary][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-9:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary][data-action=positive]:hover
+   [3, CombinatorSelector] .button[data-variant=secondary][data-action=positive]
+    [4, CombinatorSelector] .button[data-variant=secondary]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=secondary]
+      [6, Expression] data-variant=secondary
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] secondary
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=positive]
+     [5, Expression] data-action=positive
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] positive
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-9:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-9:var(--csstools-color-scheme--light) var(--color-green-10)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-9
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-10)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-10)
+      [6, Identifier] var
+      [6, Signature] (--color-green-10)
+       [7, Identifier] --color-green-10
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-9,var(--color-green-90))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-9
+      [6, Function] var(--color-green-90)
+       [7, Identifier] var
+       [7, Signature] (--color-green-90)
+        [8, Identifier] --color-green-90
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=secondary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}
+   [3, RuleSet] .button[data-variant=secondary][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }
+    [4, CombinatorSelector] .button[data-variant=secondary][data-action=positive]:hover
+     [5, CombinatorSelector] .button[data-variant=secondary][data-action=positive]
+      [6, CombinatorSelector] .button[data-variant=secondary]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=secondary]
+        [8, Expression] data-variant=secondary
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] secondary
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=positive]
+       [7, Expression] data-action=positive
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] positive
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }
+     [5, Property] background-color:light-dark(var(--color-green-90),var(--color-green-10))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-green-90),var(--color-green-10))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-90),var(--color-green-10))
+        [8, Function] var(--color-green-90)
+         [9, Identifier] var
+         [9, Signature] (--color-green-90)
+          [10, Identifier] --color-green-90
+        [8, Function] var(--color-green-10)
+         [9, Identifier] var
+         [9, Signature] (--color-green-10)
+          [10, Identifier] --color-green-10
+ [1, RuleSet] .button[data-variant=secondary][data-action=negative] {\\n --csstools-light-dark-toggle-33eaa513-10:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary][data-action=negative]
+   [3, CombinatorSelector] .button[data-variant=secondary]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=secondary]
+     [5, Expression] data-variant=secondary
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] secondary
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=negative]
+    [4, Expression] data-action=negative
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] negative
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-10:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-10:var(--csstools-color-scheme--light) var(--color-red-80)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-10
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-80)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-80)
+      [6, Identifier] var
+      [6, Signature] (--color-red-80)
+       [7, Identifier] --color-red-80
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))
+    [4, Identifier] color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-10,var(--color-red-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-10
+      [6, Function] var(--color-red-50)
+       [7, Identifier] var
+       [7, Signature] (--color-red-50)
+        [8, Identifier] --color-red-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=secondary][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}
+   [3, RuleSet] .button[data-variant=secondary][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }
+    [4, CombinatorSelector] .button[data-variant=secondary][data-action=negative]
+     [5, CombinatorSelector] .button[data-variant=secondary]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=secondary]
+       [7, Expression] data-variant=secondary
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] secondary
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=negative]
+      [6, Expression] data-action=negative
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] negative
+    [4, Block] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }
+     [5, Property] color:light-dark(var(--color-red-50),var(--color-red-80))
+      [6, Identifier] color
+      [6, Function] light-dark(var(--color-red-50),var(--color-red-80))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-50),var(--color-red-80))
+        [8, Function] var(--color-red-50)
+         [9, Identifier] var
+         [9, Signature] (--color-red-50)
+          [10, Identifier] --color-red-50
+        [8, Function] var(--color-red-80)
+         [9, Identifier] var
+         [9, Signature] (--color-red-80)
+          [10, Identifier] --color-red-80
+ [1, RuleSet] .button[data-variant=secondary][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-11:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))\\n}
+  [2, CombinatorSelector] .button[data-variant=secondary][data-action=negative]:hover
+   [3, CombinatorSelector] .button[data-variant=secondary][data-action=negative]
+    [4, CombinatorSelector] .button[data-variant=secondary]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=secondary]
+      [6, Expression] data-variant=secondary
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] secondary
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=negative]
+     [5, Expression] data-action=negative
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] negative
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-11:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-11:var(--csstools-color-scheme--light) var(--color-red-10)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-11
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-10)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-10)
+      [6, Identifier] var
+      [6, Signature] (--color-red-10)
+       [7, Identifier] --color-red-10
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-11,var(--color-red-90))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-11
+      [6, Function] var(--color-red-90)
+       [7, Identifier] var
+       [7, Signature] (--color-red-90)
+        [8, Identifier] --color-red-90
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=secondary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=secondary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}
+   [3, RuleSet] .button[data-variant=secondary][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }
+    [4, CombinatorSelector] .button[data-variant=secondary][data-action=negative]:hover
+     [5, CombinatorSelector] .button[data-variant=secondary][data-action=negative]
+      [6, CombinatorSelector] .button[data-variant=secondary]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=secondary]
+        [8, Expression] data-variant=secondary
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] secondary
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=negative]
+       [7, Expression] data-action=negative
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] negative
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }
+     [5, Property] background-color:light-dark(var(--color-red-90),var(--color-red-10))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-red-90),var(--color-red-10))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-90),var(--color-red-10))
+        [8, Function] var(--color-red-90)
+         [9, Identifier] var
+         [9, Signature] (--color-red-90)
+          [10, Identifier] --color-red-90
+        [8, Function] var(--color-red-10)
+         [9, Identifier] var
+         [9, Signature] (--color-red-10)
+          [10, Identifier] --color-red-10
+ [1, RuleSet] .button[data-variant=plain]:hover {\\n --csstools-light-dark-toggle-33eaa513-12:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))\\n}
+  [2, CombinatorSelector] .button[data-variant=plain]:hover
+   [3, CombinatorSelector] .button[data-variant=plain]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=plain]
+     [5, Expression] data-variant=plain
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] plain
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-12:var(--csstools-color-scheme--light) var(--color-gray-20);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-12:var(--csstools-color-scheme--light) var(--color-gray-20)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-12
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-gray-20)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-gray-20)
+      [6, Identifier] var
+      [6, Signature] (--color-gray-20)
+       [7, Identifier] --color-gray-20
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-12,var(--color-gray-80))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-12
+      [6, Function] var(--color-gray-80)
+       [7, Identifier] var
+       [7, Signature] (--color-gray-80)
+        [8, Identifier] --color-gray-80
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=plain]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=plain]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }\\n}
+   [3, RuleSet] .button[data-variant=plain]:hover {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }
+    [4, CombinatorSelector] .button[data-variant=plain]:hover
+     [5, CombinatorSelector] .button[data-variant=plain]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=plain]
+       [7, Expression] data-variant=plain
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] plain
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))\\n }
+     [5, Property] background-color:light-dark(var(--color-gray-80),var(--color-gray-20))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-gray-80),var(--color-gray-20))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-gray-80),var(--color-gray-20))
+        [8, Function] var(--color-gray-80)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-80)
+          [10, Identifier] --color-gray-80
+        [8, Function] var(--color-gray-20)
+         [9, Identifier] var
+         [9, Signature] (--color-gray-20)
+          [10, Identifier] --color-gray-20
+ [1, RuleSet] .button[data-variant=plain][data-action=positive] {\\n --csstools-light-dark-toggle-33eaa513-13:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=plain][data-action=positive]
+   [3, CombinatorSelector] .button[data-variant=plain]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=plain]
+     [5, Expression] data-variant=plain
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] plain
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=positive]
+    [4, Expression] data-action=positive
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] positive
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-13:var(--csstools-color-scheme--light) var(--color-green-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-13:var(--csstools-color-scheme--light) var(--color-green-80)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-13
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-80)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-80)
+      [6, Identifier] var
+      [6, Signature] (--color-green-80)
+       [7, Identifier] --color-green-80
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))
+    [4, Identifier] color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-13,var(--color-green-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-13
+      [6, Function] var(--color-green-50)
+       [7, Identifier] var
+       [7, Signature] (--color-green-50)
+        [8, Identifier] --color-green-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=plain][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }\\n}
+   [3, RuleSet] .button[data-variant=plain][data-action=positive] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }
+    [4, CombinatorSelector] .button[data-variant=plain][data-action=positive]
+     [5, CombinatorSelector] .button[data-variant=plain]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=plain]
+       [7, Expression] data-variant=plain
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] plain
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=positive]
+      [6, Expression] data-action=positive
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] positive
+    [4, Block] {\\n color:light-dark(var(--color-green-50),var(--color-green-80))\\n }
+     [5, Property] color:light-dark(var(--color-green-50),var(--color-green-80))
+      [6, Identifier] color
+      [6, Function] light-dark(var(--color-green-50),var(--color-green-80))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-50),var(--color-green-80))
+        [8, Function] var(--color-green-50)
+         [9, Identifier] var
+         [9, Signature] (--color-green-50)
+          [10, Identifier] --color-green-50
+        [8, Function] var(--color-green-80)
+         [9, Identifier] var
+         [9, Signature] (--color-green-80)
+          [10, Identifier] --color-green-80
+ [1, RuleSet] .button[data-variant=plain][data-action=positive]:hover {\\n --csstools-light-dark-toggle-33eaa513-14:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))\\n}
+  [2, CombinatorSelector] .button[data-variant=plain][data-action=positive]:hover
+   [3, CombinatorSelector] .button[data-variant=plain][data-action=positive]
+    [4, CombinatorSelector] .button[data-variant=plain]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=plain]
+      [6, Expression] data-variant=plain
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] plain
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=positive]
+     [5, Expression] data-action=positive
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] positive
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-14:var(--csstools-color-scheme--light) var(--color-green-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-14:var(--csstools-color-scheme--light) var(--color-green-10)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-14
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-green-10)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-green-10)
+      [6, Identifier] var
+      [6, Signature] (--color-green-10)
+       [7, Identifier] --color-green-10
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-14,var(--color-green-90))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-14
+      [6, Function] var(--color-green-90)
+       [7, Identifier] var
+       [7, Signature] (--color-green-90)
+        [8, Identifier] --color-green-90
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=plain][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }\\n}
+   [3, RuleSet] .button[data-variant=plain][data-action=positive]:hover {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }
+    [4, CombinatorSelector] .button[data-variant=plain][data-action=positive]:hover
+     [5, CombinatorSelector] .button[data-variant=plain][data-action=positive]
+      [6, CombinatorSelector] .button[data-variant=plain]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=plain]
+        [8, Expression] data-variant=plain
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] plain
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=positive]
+       [7, Expression] data-action=positive
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] positive
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-green-90),var(--color-green-10))\\n }
+     [5, Property] background-color:light-dark(var(--color-green-90),var(--color-green-10))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-green-90),var(--color-green-10))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-green-90),var(--color-green-10))
+        [8, Function] var(--color-green-90)
+         [9, Identifier] var
+         [9, Signature] (--color-green-90)
+          [10, Identifier] --color-green-90
+        [8, Function] var(--color-green-10)
+         [9, Identifier] var
+         [9, Signature] (--color-green-10)
+          [10, Identifier] --color-green-10
+ [1, RuleSet] .button[data-variant=plain][data-action=negative] {\\n --csstools-light-dark-toggle-33eaa513-15:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))\\n}
+  [2, CombinatorSelector] .button[data-variant=plain][data-action=negative]
+   [3, CombinatorSelector] .button[data-variant=plain]
+    [4, ClassSelector] .button
+     [5, Identifier] button
+    [4, Operator] 
+    [4, AttributeSelector] [data-variant=plain]
+     [5, Expression] data-variant=plain
+      [6, Identifier] data-variant
+      [6, Operator] =
+      [6, Identifier] plain
+   [3, Operator] 
+   [3, AttributeSelector] [data-action=negative]
+    [4, Expression] data-action=negative
+     [5, Identifier] data-action
+     [5, Operator] =
+     [5, Identifier] negative
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-15:var(--csstools-color-scheme--light) var(--color-red-80);\\n color:var(--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-15:var(--csstools-color-scheme--light) var(--color-red-80)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-15
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-80)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-80)
+      [6, Identifier] var
+      [6, Signature] (--color-red-80)
+       [7, Identifier] --color-red-80
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))
+    [4, Identifier] color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-15,var(--color-red-50))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-15
+      [6, Function] var(--color-red-50)
+       [7, Identifier] var
+       [7, Signature] (--color-red-50)
+        [8, Identifier] --color-red-50
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=plain][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }\\n}
+   [3, RuleSet] .button[data-variant=plain][data-action=negative] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }
+    [4, CombinatorSelector] .button[data-variant=plain][data-action=negative]
+     [5, CombinatorSelector] .button[data-variant=plain]
+      [6, ClassSelector] .button
+       [7, Identifier] button
+      [6, Operator] 
+      [6, AttributeSelector] [data-variant=plain]
+       [7, Expression] data-variant=plain
+        [8, Identifier] data-variant
+        [8, Operator] =
+        [8, Identifier] plain
+     [5, Operator] 
+     [5, AttributeSelector] [data-action=negative]
+      [6, Expression] data-action=negative
+       [7, Identifier] data-action
+       [7, Operator] =
+       [7, Identifier] negative
+    [4, Block] {\\n color:light-dark(var(--color-red-50),var(--color-red-80))\\n }
+     [5, Property] color:light-dark(var(--color-red-50),var(--color-red-80))
+      [6, Identifier] color
+      [6, Function] light-dark(var(--color-red-50),var(--color-red-80))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-50),var(--color-red-80))
+        [8, Function] var(--color-red-50)
+         [9, Identifier] var
+         [9, Signature] (--color-red-50)
+          [10, Identifier] --color-red-50
+        [8, Function] var(--color-red-80)
+         [9, Identifier] var
+         [9, Signature] (--color-red-80)
+          [10, Identifier] --color-red-80
+ [1, RuleSet] .button[data-variant=plain][data-action=negative]:hover {\\n --csstools-light-dark-toggle-33eaa513-16:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))\\n}
+  [2, CombinatorSelector] .button[data-variant=plain][data-action=negative]:hover
+   [3, CombinatorSelector] .button[data-variant=plain][data-action=negative]
+    [4, CombinatorSelector] .button[data-variant=plain]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [data-variant=plain]
+      [6, Expression] data-variant=plain
+       [7, Identifier] data-variant
+       [7, Operator] =
+       [7, Identifier] plain
+    [4, Operator] 
+    [4, AttributeSelector] [data-action=negative]
+     [5, Expression] data-action=negative
+      [6, Identifier] data-action
+      [6, Operator] =
+      [6, Identifier] negative
+   [3, Operator] 
+   [3, PseudoClassSelector] :hover
+    [4, Identifier] hover
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-16:var(--csstools-color-scheme--light) var(--color-red-10);\\n background-color:var(--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-16:var(--csstools-color-scheme--light) var(--color-red-10)
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-16
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-red-10)
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-red-10)
+      [6, Identifier] var
+      [6, Signature] (--color-red-10)
+       [7, Identifier] --color-red-10
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))
+    [4, Identifier] background-color
+    [4, Function] var(--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))
+     [5, Identifier] var
+     [5, Signature] (--csstools-light-dark-toggle-33eaa513-16,var(--color-red-90))
+      [6, Identifier] --csstools-light-dark-toggle-33eaa513-16
+      [6, Function] var(--color-red-90)
+       [7, Identifier] var
+       [7, Signature] (--color-red-90)
+        [8, Identifier] --color-red-90
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[data-variant=plain][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[data-variant=plain][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }\\n}
+   [3, RuleSet] .button[data-variant=plain][data-action=negative]:hover {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }
+    [4, CombinatorSelector] .button[data-variant=plain][data-action=negative]:hover
+     [5, CombinatorSelector] .button[data-variant=plain][data-action=negative]
+      [6, CombinatorSelector] .button[data-variant=plain]
+       [7, ClassSelector] .button
+        [8, Identifier] button
+       [7, Operator] 
+       [7, AttributeSelector] [data-variant=plain]
+        [8, Expression] data-variant=plain
+         [9, Identifier] data-variant
+         [9, Operator] =
+         [9, Identifier] plain
+      [6, Operator] 
+      [6, AttributeSelector] [data-action=negative]
+       [7, Expression] data-action=negative
+        [8, Identifier] data-action
+        [8, Operator] =
+        [8, Identifier] negative
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n background-color:light-dark(var(--color-red-90),var(--color-red-10))\\n }
+     [5, Property] background-color:light-dark(var(--color-red-90),var(--color-red-10))
+      [6, Identifier] background-color
+      [6, Function] light-dark(var(--color-red-90),var(--color-red-10))
+       [7, Identifier] light-dark
+       [7, Signature] (var(--color-red-90),var(--color-red-10))
+        [8, Function] var(--color-red-90)
+         [9, Identifier] var
+         [9, Signature] (--color-red-90)
+          [10, Identifier] --color-red-90
+        [8, Function] var(--color-red-10)
+         [9, Identifier] var
+         [9, Signature] (--color-red-10)
+          [10, Identifier] --color-red-10
+ [1, RuleSet] .button[disabled] {\\n --csstools-light-dark-toggle-33eaa513-17:var(--csstools-color-scheme--light) var(--color-gray-60)!important;\\n color:var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))!important;\\n cursor:default;\\n --csstools-light-dark-toggle-33eaa513-18:var(--csstools-color-scheme--light) var(--color-gray-20)!important;\\n background-color:var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))!important;\\n border-color:#0000\\n}
+  [2, CombinatorSelector] .button[disabled]
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, Operator] 
+   [3, AttributeSelector] [disabled]
+    [4, Expression] disabled
+     [5, Identifier] disabled
+  [2, Block] {\\n --csstools-light-dark-toggle-33eaa513-17:var(--csstools-color-scheme--light) var(--color-gray-60)!important;\\n color:var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))!important;\\n cursor:default;\\n --csstools-light-dark-toggle-33eaa513-18:var(--csstools-color-scheme--light) var(--color-gray-20)!important;\\n background-color:var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))!important;\\n border-color:#0000\\n}
+   [3, Property] --csstools-light-dark-toggle-33eaa513-17:var(--csstools-color-scheme--light) var(--color-gray-60)!important
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-17
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-gray-60)!important
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-gray-60)
+      [6, Identifier] var
+      [6, Signature] (--color-gray-60)
+       [7, Identifier] --color-gray-60
+     [5, Important] !important
+   [3, Property] color:var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))!important
+    [4, Identifier] color
+    [4, ListValue] var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))!important
+     [5, Function] var(--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))
+      [6, Identifier] var
+      [6, Signature] (--csstools-light-dark-toggle-33eaa513-17,var(--color-gray-40))
+       [7, Identifier] --csstools-light-dark-toggle-33eaa513-17
+       [7, Function] var(--color-gray-40)
+        [8, Identifier] var
+        [8, Signature] (--color-gray-40)
+         [9, Identifier] --color-gray-40
+     [5, Important] !important
+   [3, Property] cursor:default
+    [4, Identifier] cursor
+    [4, Identifier] default
+   [3, Property] --csstools-light-dark-toggle-33eaa513-18:var(--csstools-color-scheme--light) var(--color-gray-20)!important
+    [4, Identifier] --csstools-light-dark-toggle-33eaa513-18
+    [4, ListValue] var(--csstools-color-scheme--light) var(--color-gray-20)!important
+     [5, Function] var(--csstools-color-scheme--light)
+      [6, Identifier] var
+      [6, Signature] (--csstools-color-scheme--light)
+       [7, Identifier] --csstools-color-scheme--light
+     [5, Function] var(--color-gray-20)
+      [6, Identifier] var
+      [6, Signature] (--color-gray-20)
+       [7, Identifier] --color-gray-20
+     [5, Important] !important
+   [3, Property] background-color:var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))!important
+    [4, Identifier] background-color
+    [4, ListValue] var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))!important
+     [5, Function] var(--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))
+      [6, Identifier] var
+      [6, Signature] (--csstools-light-dark-toggle-33eaa513-18,var(--color-gray-80))
+       [7, Identifier] --csstools-light-dark-toggle-33eaa513-18
+       [7, Function] var(--color-gray-80)
+        [8, Identifier] var
+        [8, Signature] (--color-gray-80)
+         [9, Identifier] --color-gray-80
+     [5, Important] !important
+   [3, Property] border-color:#0000
+    [4, Identifier] border-color
+    [4, Literal] #0000
+ [1, AtRule] @supports (color:light-dark(red,red)) {\\n .button[disabled] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important;\\n color:light-dark(var(--color-gray-40),var(--color-gray-60))!important\\n }\\n}
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Parenthesis] (color:light-dark(red,red))
+   [3, Property] color:light-dark(red,red)
+    [4, Identifier] color
+    [4, Function] light-dark(red,red)
+     [5, Identifier] light-dark
+     [5, Signature] (red,red)
+      [6, Identifier] red
+      [6, Identifier] red
+  [2, Block] {\\n .button[disabled] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important;\\n color:light-dark(var(--color-gray-40),var(--color-gray-60))!important\\n }\\n}
+   [3, RuleSet] .button[disabled] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important;\\n color:light-dark(var(--color-gray-40),var(--color-gray-60))!important\\n }
+    [4, CombinatorSelector] .button[disabled]
+     [5, ClassSelector] .button
+      [6, Identifier] button
+     [5, Operator] 
+     [5, AttributeSelector] [disabled]
+      [6, Expression] disabled
+       [7, Identifier] disabled
+    [4, Block] {\\n background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important;\\n color:light-dark(var(--color-gray-40),var(--color-gray-60))!important\\n }
+     [5, Property] background-color:light-dark(var(--color-gray-80),var(--color-gray-20))!important
+      [6, Identifier] background-color
+      [6, ListValue] light-dark(var(--color-gray-80),var(--color-gray-20))!important
+       [7, Function] light-dark(var(--color-gray-80),var(--color-gray-20))
+        [8, Identifier] light-dark
+        [8, Signature] (var(--color-gray-80),var(--color-gray-20))
+         [9, Function] var(--color-gray-80)
+          [10, Identifier] var
+          [10, Signature] (--color-gray-80)
+           [11, Identifier] --color-gray-80
+         [9, Function] var(--color-gray-20)
+          [10, Identifier] var
+          [10, Signature] (--color-gray-20)
+           [11, Identifier] --color-gray-20
+       [7, Important] !important
+     [5, Property] color:light-dark(var(--color-gray-40),var(--color-gray-60))!important
+      [6, Identifier] color
+      [6, ListValue] light-dark(var(--color-gray-40),var(--color-gray-60))!important
+       [7, Function] light-dark(var(--color-gray-40),var(--color-gray-60))
+        [8, Identifier] light-dark
+        [8, Signature] (var(--color-gray-40),var(--color-gray-60))
+         [9, Function] var(--color-gray-40)
+          [10, Identifier] var
+          [10, Signature] (--color-gray-40)
+           [11, Identifier] --color-gray-40
+         [9, Function] var(--color-gray-60)
+          [10, Identifier] var
+          [10, Signature] (--color-gray-60)
+           [11, Identifier] --color-gray-60
+       [7, Important] !important
+ [1, RuleSet] .button .icon {\\n display:flex\\n}
+  [2, QualifiedSelector] .button .icon
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, ClassSelector] .icon
+    [4, Identifier] icon
+  [2, Block] {\\n display:flex\\n}
+   [3, Property] display:flex
+    [4, Identifier] display
+    [4, Identifier] flex
+ [1, RuleSet] .button svg {\\n height:1.25em;\\n width:1.25em\\n}
+  [2, QualifiedSelector] .button svg
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, ElementSelector] svg
+  [2, Block] {\\n height:1.25em;\\n width:1.25em\\n}
+   [3, Property] height:1.25em
+    [4, Identifier] height
+    [4, Identifier] 1.25em
+   [3, Property] width:1.25em
+    [4, Identifier] width
+    [4, Identifier] 1.25em
+ [1, RuleSet] .button .label {\\n padding-block:.125em;\\n padding-inline:.0625em\\n}
+  [2, QualifiedSelector] .button .label
+   [3, ClassSelector] .button
+    [4, Identifier] button
+   [3, ClassSelector] .label
+    [4, Identifier] label
+  [2, Block] {\\n padding-block:.125em;\\n padding-inline:.0625em\\n}
+   [3, Property] padding-block:.125em
+    [4, Identifier] padding-block
+    [4, Identifier] .125em
+   [3, Property] padding-inline:.0625em
+    [4, Identifier] padding-inline
+    [4, Identifier] .0625em
+ [1, RuleSet] :host {\\n display:inline-flex;\\n vertical-align:middle\\n}
+  [2, PseudoClassSelector] :host
+   [3, Identifier] host
+  [2, Block] {\\n display:inline-flex;\\n vertical-align:middle\\n}
+   [3, Property] display:inline-flex
+    [4, Identifier] display
+    [4, Identifier] inline-flex
+   [3, Property] vertical-align:middle
+    [4, Identifier] vertical-align
+    [4, Identifier] middle
+ [1, RuleSet] .button {\\n box-sizing:border-box;\\n height:100%;\\n width:100%\\n}
+  [2, ClassSelector] .button
+   [3, Identifier] button
+  [2, Block] {\\n box-sizing:border-box;\\n height:100%;\\n width:100%\\n}
+   [3, Property] box-sizing:border-box
+    [4, Identifier] box-sizing
+    [4, Identifier] border-box
+   [3, Property] height:100%
+    [4, Identifier] height
+    [4, Identifier] 100%
+   [3, Property] width:100%
+    [4, Identifier] width
+    [4, Identifier] 100%

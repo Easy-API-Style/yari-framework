@@ -1,0 +1,11 @@
+[0, Css] a[title + 3] {\\n color: purple;\\n }
+ [1, RuleSet] a[title + 3] {\\n color: purple;\\n }
+  [2, CombinatorSelector] a[title + 3]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [title + 3]
+    [4, CssError] title + 3
+  [2, Block] {\\n color: purple;\\n }
+   [3, Property] color: purple
+    [4, Identifier] color
+    [4, Identifier] purple

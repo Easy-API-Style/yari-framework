@@ -1,0 +1,27 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 60] [JavascriptNodeUnit]
+/^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.test(email)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 60] [QualifiedExpression]
+/^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.test(email)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [Qualifier]
+/^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 48] [Literal]
+/^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 49] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 60] [FunctionCall]
+test(email)
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 53] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 60] [Signature]
+(email)
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 59] [Identifier]
+email
+---------------------------

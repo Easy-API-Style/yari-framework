@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 55] [Javascript]
+function myFunc() { var x = 0; return (x += 1, x); }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 55] [FunctionDeclaration]
+function myFunc() { var x = 0; return (x += 1, x); }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 16] [Identifier]
+myFunc
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 55] [Procedure]
+{ var x = 0; return (x += 1, x); }
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 31] [VariableDeclaration]
+var x = 0
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 25] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 31] [Variable]
+x = 0
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 27] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 31] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 52] [Return]
+return (x += 1, x)
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 52] [Sequence]
+(x += 1, x)
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 48] [Assignment]
+x += 1
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 43] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 46] [Operator]
++=
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 48] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 51] [Identifier]
+x
+---------------------------

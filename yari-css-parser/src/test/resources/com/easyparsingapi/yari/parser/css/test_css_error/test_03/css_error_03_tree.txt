@@ -1,0 +1,63 @@
+[0, Css] table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;\\n\\n table.browserref tr.fixzebra {\\n background-color: #E7E9EB;\\n }\\n\\n table.browserref th {\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+ [1, CssError] table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;
+ [1, RuleSet] table.browserref tr.fixzebra {\\n background-color: #E7E9EB;\\n }
+  [2, CombinatorSelector] table.browserref tr.fixzebra
+   [3, CombinatorSelector] table.browserref tr
+    [4, ElementSelector] table
+    [4, Operator] 
+    [4, QualifiedSelector] .browserref tr
+     [5, ClassSelector] .browserref
+      [6, Identifier] browserref
+     [5, ElementSelector] tr
+   [3, Operator] 
+   [3, ClassSelector] .fixzebra
+    [4, Identifier] fixzebra
+  [2, Block] {\\n background-color: #E7E9EB;\\n }
+   [3, Property] background-color: #E7E9EB
+    [4, Identifier] background-color
+    [4, Literal] #E7E9EB
+ [1, RuleSet] table.browserref th {\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+  [2, CombinatorSelector] table.browserref th
+   [3, ElementSelector] table
+   [3, Operator] 
+   [3, QualifiedSelector] .browserref th
+    [4, ClassSelector] .browserref
+     [5, Identifier] browserref
+    [4, ElementSelector] th
+  [2, Block] {\\n height: 44px;\\n background-repeat: no-repeat;\\n background-position: center center;\\n border: 1px solid #d4d4d4;\\n background-color: #ffffff;\\n font-weight: normal;\\n color: #555555;\\n padding: 11px 5px 11px 5px;\\n vertical-align: middle;\\n }
+   [3, Property] height: 44px
+    [4, Identifier] height
+    [4, Identifier] 44px
+   [3, Property] background-repeat: no-repeat
+    [4, Identifier] background-repeat
+    [4, Identifier] no-repeat
+   [3, Property] background-position: center center
+    [4, Identifier] background-position
+    [4, ListValue] center center
+     [5, Identifier] center
+     [5, Identifier] center
+   [3, Property] border: 1px solid #d4d4d4
+    [4, Identifier] border
+    [4, ListValue] 1px solid #d4d4d4
+     [5, Identifier] 1px
+     [5, Identifier] solid
+     [5, Literal] #d4d4d4
+   [3, Property] background-color: #ffffff
+    [4, Identifier] background-color
+    [4, Literal] #ffffff
+   [3, Property] font-weight: normal
+    [4, Identifier] font-weight
+    [4, Identifier] normal
+   [3, Property] color: #555555
+    [4, Identifier] color
+    [4, Literal] #555555
+   [3, Property] padding: 11px 5px 11px 5px
+    [4, Identifier] padding
+    [4, ListValue] 11px 5px 11px 5px
+     [5, Identifier] 11px
+     [5, Identifier] 5px
+     [5, Identifier] 11px
+     [5, Identifier] 5px
+   [3, Property] vertical-align: middle
+    [4, Identifier] vertical-align
+    [4, Identifier] middle

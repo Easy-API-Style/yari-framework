@@ -1,0 +1,230 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.xml.ast.Xml",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Prolog",
+    "value" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 1,
+        "column" : 42
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Prolog",
+    "value" : "<?xml-stylesheet href=\"tei2html.xsl\" type=\"text/xsl\"?>",
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 58
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Prolog",
+    "value" : "<?xml-model\n       href=\"tei.rng\"\n       type=\"application/xml\"\n       schematypens=\"http://relaxng.org/ns/structure/1.0\"?\n   >\n   <?erreur?>",
+    "sourceLocation" : {
+      "start" : {
+        "line" : 3,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 8,
+        "column" : 14
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.xml.ast.Tag",
+    "head" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagHead",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "TEI",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 9,
+              "column" : 5
+            },
+            "end" : {
+              "line" : 9,
+              "column" : 8
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 9,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 9,
+            "column" : 8
+          }
+        },
+        "value" : "TEI"
+      },
+      "attributes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Name",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+            "value" : "xmlns",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 9,
+                "column" : 9
+              },
+              "end" : {
+                "line" : 9,
+                "column" : 14
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 9,
+              "column" : 9
+            },
+            "end" : {
+              "line" : 9,
+              "column" : 14
+            }
+          },
+          "value" : "xmlns"
+        },
+        "value" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagAttribute$Value",
+          "value" : "http://www.tei-c.org/ns/1.0",
+          "type" : "doubleQuote",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 9,
+              "column" : 15
+            },
+            "end" : {
+              "line" : 9,
+              "column" : 44
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 9,
+            "column" : 9
+          },
+          "end" : {
+            "line" : 9,
+            "column" : 44
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 9,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 9,
+          "column" : 45
+        }
+      }
+    },
+    "body" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagBody",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.XmlComment",
+        "comment" : "<!-- … -->",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 10,
+            "column" : 8
+          },
+          "end" : {
+            "line" : 10,
+            "column" : 18
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 10,
+          "column" : 8
+        },
+        "end" : {
+          "line" : 10,
+          "column" : 18
+        }
+      }
+    },
+    "foot" : {
+      "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagFoot",
+      "name" : {
+        "@class" : "com.easyparsingapi.yari.parser.xml.ast.TagName",
+        "name" : {
+          "@class" : "com.easyparsingapi.yari.parser.xml.ast.Markup$Name",
+          "value" : "TEI",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 11,
+              "column" : 6
+            },
+            "end" : {
+              "line" : 11,
+              "column" : 9
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 11,
+            "column" : 6
+          },
+          "end" : {
+            "line" : 11,
+            "column" : 9
+          }
+        },
+        "value" : "TEI"
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 11,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 11,
+          "column" : 10
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 9,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 11,
+        "column" : 10
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 4
+    },
+    "end" : {
+      "line" : 11,
+      "column" : 10
+    }
+  }
+}

@@ -1,0 +1,33 @@
+[0, Css] @font-feature-values Font One {\\n @styleset {\\n nice-style: 12;\\n }\\n }\\n\\n /* At-rule for "nice-style" in Font Two */\\n @font-feature-values Font Two {\\n @styleset {\\n nice-style: 4;\\n }\\n }
+ [1, AtRule] @font-feature-values Font One {\\n @styleset {\\n nice-style: 12;\\n }\\n }
+  [2, AtRuleName] @font-feature-values
+   [3, Identifier] font-feature-values
+  [2, Infix] Font One
+   [3, Identifier] Font
+   [3, Operator] 
+   [3, Identifier] One
+  [2, Block] {\\n @styleset {\\n nice-style: 12;\\n }\\n }
+   [3, AtRule] @styleset {\\n nice-style: 12;\\n }
+    [4, AtRuleName] @styleset
+     [5, Identifier] styleset
+    [4, ListParameter] {
+    [4, Block] {\\n nice-style: 12;\\n }
+     [5, Property] nice-style: 12
+      [6, Identifier] nice-style
+      [6, Identifier] 12
+ [1, AtRule] @font-feature-values Font Two {\\n @styleset {\\n nice-style: 4;\\n }\\n }
+  [2, AtRuleName] @font-feature-values
+   [3, Identifier] font-feature-values
+  [2, Infix] Font Two
+   [3, Identifier] Font
+   [3, Operator] 
+   [3, Identifier] Two
+  [2, Block] {\\n @styleset {\\n nice-style: 4;\\n }\\n }
+   [3, AtRule] @styleset {\\n nice-style: 4;\\n }
+    [4, AtRuleName] @styleset
+     [5, Identifier] styleset
+    [4, ListParameter] {
+    [4, Block] {\\n nice-style: 4;\\n }
+     [5, Property] nice-style: 4
+      [6, Identifier] nice-style
+      [6, Identifier] 4

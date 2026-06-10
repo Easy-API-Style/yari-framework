@@ -1,0 +1,484 @@
+[0, Javascript] function multiply(a, b) {\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // NaN !\\n\\nfunction multiply(a, b) {\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // 5\\n\\nfunction multiply(a, b = 1) {\\n return a * b\\n}\\nmultiply(5, 2) // 10\\nmultiply(5) // 5\\nmultiply(5, undefined) // 5\\n\\nfunction test(num = 1) {\\n console.log(typeof num)\\n}\\ntest() // 'number' (num is set to 1)\\ntest(undefined) // 'number' (num is set to 1 too)\\n\\n// test with other falsy values:\\ntest('') // 'string' (num is set to '')\\ntest(null) // 'object' (num is set to null)\\n\\nfunction append(value, array = []) {\\n array.push(value)\\n return array\\n}\\nappend(1) // [1]\\nappend(2) // [2], not [1, 2]\\n\\nfunction callSomething(thing = something()) {\\n return thing\\n}\\nlet numberOfTimesCalled = 0\\nfunction something() {\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}\\ncallSomething() // 1\\ncallSomething() // 2\\n\\n\\nfunction greet(name, greeting, message = greeting + ' ' + name) {\\n return [name, greeting, message]\\n}\\ngreet('David', 'Hi') // ["David", "Hi", "Hi David"]\\ngreet('David', 'Hi', 'Happy Birthday!') // ["David", "Hi", "Happy Birthday!"]\\n\\nfunction go() {\\n return ':P'\\n}\\nfunction withDefaults(a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value) {\\n return [a, b, c, d, e, f, g]\\n}\\nfunction withoutDefaults(a, b, c, d, e, f, g) {\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}\\nwithDefaults.call({value: '=^_^='});\\nwithoutDefaults.call({value: '=^_^='});\\n\\nfunction f(x = 1, y) {\\n return [x, y]\\n}\\nf() // [1, undefined]\\nf(2) // [2, undefined]\\n\\nfunction preFilledArray([x = 1, y = 2] = []) {\\n return x + y;\\n}\\npreFilledArray(); // 3\\npreFilledArray([]); // 3\\npreFilledArray([2]); // 4\\npreFilledArray([2, 3]); // 5\\n\\n// Works the same for objects:\\nfunction preFilledObject({z = 3} = {}) {\\n return z;\\n}\\npreFilledObject(); // 3\\npreFilledObject({}); // 3\\npreFilledObject({ z: 2 }); // 2\\n\\nfunction config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}\\nconfig({ duration: 125 }); // { duration: 125, speed: 25 }\\nconfig({}); // { duration: 100, speed: 25 }\\n\\nmap(cube, [0, 1, 2, 5, 10]);\\n\\nrésultat = externe()(20);
+ [1, FunctionDeclaration] function multiply(a, b) {\\n return a * b\\n}
+  [2, Identifier] multiply
+  [2, Signature] (a, b)
+   [3, Identifier] a
+   [3, Identifier] b
+  [2, Procedure] {\\n return a * b\\n}
+   [3, Return] return a * b
+    [4, Infix] a * b
+     [5, Identifier] a
+     [5, Operator] *
+     [5, Identifier] b
+ [1, FunctionCall] multiply(5, 2)
+  [2, Identifier] multiply
+  [2, Signature] (5, 2)
+   [3, Literal] 5
+   [3, Literal] 2
+ [1, FunctionCall] multiply(5)
+  [2, Identifier] multiply
+  [2, Signature] (5)
+   [3, Literal] 5
+ [1, FunctionDeclaration] function multiply(a, b) {\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}
+  [2, Identifier] multiply
+  [2, Signature] (a, b)
+   [3, Identifier] a
+   [3, Identifier] b
+  [2, Procedure] {\\n b = (typeof b !== 'undefined') ? b : 1\\n return a * b\\n}
+   [3, Assignment] b = (typeof b !== 'undefined') ? b : 1
+    [4, Identifier] b
+    [4, Operator] =
+    [4, Ternary] (typeof b !== 'undefined') ? b : 1
+     [5, Parenthesis] (typeof b !== 'undefined')
+      [6, Infix] typeof b !== 'undefined'
+       [7, Prefix] typeof b
+        [8, Operator] typeof
+        [8, Identifier] b
+       [7, Operator] !==
+       [7, Literal] 'undefined'
+     [5, Identifier] b
+     [5, Literal] 1
+   [3, Return] return a * b
+    [4, Infix] a * b
+     [5, Identifier] a
+     [5, Operator] *
+     [5, Identifier] b
+ [1, FunctionCall] multiply(5, 2)
+  [2, Identifier] multiply
+  [2, Signature] (5, 2)
+   [3, Literal] 5
+   [3, Literal] 2
+ [1, FunctionCall] multiply(5)
+  [2, Identifier] multiply
+  [2, Signature] (5)
+   [3, Literal] 5
+ [1, FunctionDeclaration] function multiply(a, b = 1) {\\n return a * b\\n}
+  [2, Identifier] multiply
+  [2, Signature] (a, b = 1)
+   [3, Identifier] a
+   [3, ParameterWithValue] b = 1
+    [4, Identifier] b
+    [4, Literal] 1
+  [2, Procedure] {\\n return a * b\\n}
+   [3, Return] return a * b
+    [4, Infix] a * b
+     [5, Identifier] a
+     [5, Operator] *
+     [5, Identifier] b
+ [1, FunctionCall] multiply(5, 2)
+  [2, Identifier] multiply
+  [2, Signature] (5, 2)
+   [3, Literal] 5
+   [3, Literal] 2
+ [1, FunctionCall] multiply(5)
+  [2, Identifier] multiply
+  [2, Signature] (5)
+   [3, Literal] 5
+ [1, FunctionCall] multiply(5, undefined)
+  [2, Identifier] multiply
+  [2, Signature] (5, undefined)
+   [3, Literal] 5
+   [3, Undefined] undefined
+ [1, FunctionDeclaration] function test(num = 1) {\\n console.log(typeof num)\\n}
+  [2, Identifier] test
+  [2, Signature] (num = 1)
+   [3, ParameterWithValue] num = 1
+    [4, Identifier] num
+    [4, Literal] 1
+  [2, Procedure] {\\n console.log(typeof num)\\n}
+   [3, QualifiedExpression] console.log(typeof num)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(typeof num)
+     [5, Identifier] log
+     [5, Signature] (typeof num)
+      [6, Prefix] typeof num
+       [7, Operator] typeof
+       [7, Identifier] num
+ [1, FunctionCall] test()
+  [2, Identifier] test
+  [2, Signature] ()
+ [1, FunctionCall] test(undefined)
+  [2, Identifier] test
+  [2, Signature] (undefined)
+   [3, Undefined] undefined
+ [1, FunctionCall] test('')
+  [2, Identifier] test
+  [2, Signature] ('')
+   [3, Literal] ''
+ [1, FunctionCall] test(null)
+  [2, Identifier] test
+  [2, Signature] (null)
+   [3, Null] null
+ [1, FunctionDeclaration] function append(value, array = []) {\\n array.push(value)\\n return array\\n}
+  [2, Identifier] append
+  [2, Signature] (value, array = [])
+   [3, Identifier] value
+   [3, ParameterWithValue] array = []
+    [4, Identifier] array
+    [4, ArrayDeclaration] []
+  [2, Procedure] {\\n array.push(value)\\n return array\\n}
+   [3, QualifiedExpression] array.push(value)
+    [4, Qualifier] array.
+     [5, Identifier] array
+     [5, Operator] .
+    [4, FunctionCall] push(value)
+     [5, Identifier] push
+     [5, Signature] (value)
+      [6, Identifier] value
+   [3, Return] return array
+    [4, Identifier] array
+ [1, FunctionCall] append(1)
+  [2, Identifier] append
+  [2, Signature] (1)
+   [3, Literal] 1
+ [1, FunctionCall] append(2)
+  [2, Identifier] append
+  [2, Signature] (2)
+   [3, Literal] 2
+ [1, FunctionDeclaration] function callSomething(thing = something()) {\\n return thing\\n}
+  [2, Identifier] callSomething
+  [2, Signature] (thing = something())
+   [3, ParameterWithValue] thing = something()
+    [4, Identifier] thing
+    [4, FunctionCall] something()
+     [5, Identifier] something
+     [5, Signature] ()
+  [2, Procedure] {\\n return thing\\n}
+   [3, Return] return thing
+    [4, Identifier] thing
+ [1, VariableDeclaration] let numberOfTimesCalled = 0
+  [2, Type] let
+  [2, Variable] numberOfTimesCalled = 0
+   [3, Identifier] numberOfTimesCalled
+   [3, Operator] =
+   [3, Literal] 0
+ [1, FunctionDeclaration] function something() {\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}
+  [2, Identifier] something
+  [2, Signature] ()
+  [2, Procedure] {\\n numberOfTimesCalled += 1\\n return numberOfTimesCalled\\n}
+   [3, Assignment] numberOfTimesCalled += 1
+    [4, Identifier] numberOfTimesCalled
+    [4, Operator] +=
+    [4, Literal] 1
+   [3, Return] return numberOfTimesCalled
+    [4, Identifier] numberOfTimesCalled
+ [1, FunctionCall] callSomething()
+  [2, Identifier] callSomething
+  [2, Signature] ()
+ [1, FunctionCall] callSomething()
+  [2, Identifier] callSomething
+  [2, Signature] ()
+ [1, FunctionDeclaration] function greet(name, greeting, message = greeting + ' ' + name) {\\n return [name, greeting, message]\\n}
+  [2, Identifier] greet
+  [2, Signature] (name, greeting, message = greeting + ' ' + name)
+   [3, Identifier] name
+   [3, Identifier] greeting
+   [3, ParameterWithValue] message = greeting + ' ' + name
+    [4, Identifier] message
+    [4, Infix] greeting + ' ' + name
+     [5, Infix] greeting + ' '
+      [6, Identifier] greeting
+      [6, Operator] +
+      [6, Literal] ' '
+     [5, Operator] +
+     [5, Identifier] name
+  [2, Procedure] {\\n return [name, greeting, message]\\n}
+   [3, Return] return [name, greeting, message]
+    [4, ArrayDeclaration] [name, greeting, message]
+     [5, Identifier] name
+     [5, Identifier] greeting
+     [5, Identifier] message
+ [1, FunctionCall] greet('David', 'Hi')
+  [2, Identifier] greet
+  [2, Signature] ('David', 'Hi')
+   [3, Literal] 'David'
+   [3, Literal] 'Hi'
+ [1, FunctionCall] greet('David', 'Hi', 'Happy Birthday!')
+  [2, Identifier] greet
+  [2, Signature] ('David', 'Hi', 'Happy Birthday!')
+   [3, Literal] 'David'
+   [3, Literal] 'Hi'
+   [3, Literal] 'Happy Birthday!'
+ [1, FunctionDeclaration] function go() {\\n return ':P'\\n}
+  [2, Identifier] go
+  [2, Signature] ()
+  [2, Procedure] {\\n return ':P'\\n}
+   [3, Return] return ':P'
+    [4, Literal] ':P'
+ [1, FunctionDeclaration] function withDefaults(a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value) {\\n return [a, b, c, d, e, f, g]\\n}
+  [2, Identifier] withDefaults
+  [2, Signature] (a, b = 5, c = b, d = go(), e = this,\\n f = arguments, g = this.value)
+   [3, Identifier] a
+   [3, ParameterWithValue] b = 5
+    [4, Identifier] b
+    [4, Literal] 5
+   [3, ParameterWithValue] c = b
+    [4, Identifier] c
+    [4, Identifier] b
+   [3, ParameterWithValue] d = go()
+    [4, Identifier] d
+    [4, FunctionCall] go()
+     [5, Identifier] go
+     [5, Signature] ()
+   [3, ParameterWithValue] e = this
+    [4, Identifier] e
+    [4, This] this
+   [3, ParameterWithValue] f = arguments
+    [4, Identifier] f
+    [4, Identifier] arguments
+   [3, ParameterWithValue] g = this.value
+    [4, Identifier] g
+    [4, QualifiedExpression] this.value
+     [5, Qualifier] this.
+      [6, This] this
+      [6, Operator] .
+     [5, Identifier] value
+  [2, Procedure] {\\n return [a, b, c, d, e, f, g]\\n}
+   [3, Return] return [a, b, c, d, e, f, g]
+    [4, ArrayDeclaration] [a, b, c, d, e, f, g]
+     [5, Identifier] a
+     [5, Identifier] b
+     [5, Identifier] c
+     [5, Identifier] d
+     [5, Identifier] e
+     [5, Identifier] f
+     [5, Identifier] g
+ [1, FunctionDeclaration] function withoutDefaults(a, b, c, d, e, f, g) {\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}
+  [2, Identifier] withoutDefaults
+  [2, Signature] (a, b, c, d, e, f, g)
+   [3, Identifier] a
+   [3, Identifier] b
+   [3, Identifier] c
+   [3, Identifier] d
+   [3, Identifier] e
+   [3, Identifier] f
+   [3, Identifier] g
+  [2, Procedure] {\\n switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }\\n return [a, b, c, d, e, f, g];\\n}
+   [3, Switch] switch (arguments.length) {\\n case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:\\n }
+    [4, SwitchExpression] (arguments.length)
+     [5, QualifiedExpression] arguments.length
+      [6, Qualifier] arguments.
+       [7, Identifier] arguments
+       [7, Operator] .
+      [6, Identifier] length
+    [4, SwitchProcedure] case 0:\\n \\n case 1:\\n b = 5;\\n case 2:\\n c = b;\\n case 3:\\n d = go();\\n case 4:\\n e = this;\\n case 5:\\n f = arguments;\\n case 6:\\n g = this.value;\\n default:
+     [5, SwitchCase] case 0:
+      [6, Literal] 0
+      [6, CaseProcedure] case
+     [5, SwitchCase] case 1:\\n b = 5;
+      [6, Literal] 1
+      [6, CaseProcedure] b = 5;
+       [7, Assignment] b = 5
+        [8, Identifier] b
+        [8, Operator] =
+        [8, Literal] 5
+     [5, SwitchCase] case 2:\\n c = b;
+      [6, Literal] 2
+      [6, CaseProcedure] c = b;
+       [7, Assignment] c = b
+        [8, Identifier] c
+        [8, Operator] =
+        [8, Identifier] b
+     [5, SwitchCase] case 3:\\n d = go();
+      [6, Literal] 3
+      [6, CaseProcedure] d = go();
+       [7, Assignment] d = go()
+        [8, Identifier] d
+        [8, Operator] =
+        [8, FunctionCall] go()
+         [9, Identifier] go
+         [9, Signature] ()
+     [5, SwitchCase] case 4:\\n e = this;
+      [6, Literal] 4
+      [6, CaseProcedure] e = this;
+       [7, Assignment] e = this
+        [8, Identifier] e
+        [8, Operator] =
+        [8, This] this
+     [5, SwitchCase] case 5:\\n f = arguments;
+      [6, Literal] 5
+      [6, CaseProcedure] f = arguments;
+       [7, Assignment] f = arguments
+        [8, Identifier] f
+        [8, Operator] =
+        [8, Identifier] arguments
+     [5, SwitchCase] case 6:\\n g = this.value;
+      [6, Literal] 6
+      [6, CaseProcedure] g = this.value;
+       [7, Assignment] g = this.value
+        [8, Identifier] g
+        [8, Operator] =
+        [8, QualifiedExpression] this.value
+         [9, Qualifier] this.
+          [10, This] this
+          [10, Operator] .
+         [9, Identifier] value
+     [5, DefaultCase] default:
+      [6, CaseProcedure] }
+   [3, Return] return [a, b, c, d, e, f, g]
+    [4, ArrayDeclaration] [a, b, c, d, e, f, g]
+     [5, Identifier] a
+     [5, Identifier] b
+     [5, Identifier] c
+     [5, Identifier] d
+     [5, Identifier] e
+     [5, Identifier] f
+     [5, Identifier] g
+ [1, QualifiedExpression] withDefaults.call({value: '=^_^='})
+  [2, Qualifier] withDefaults.
+   [3, Identifier] withDefaults
+   [3, Operator] .
+  [2, FunctionCall] call({value: '=^_^='})
+   [3, Identifier] call
+   [3, Signature] ({value: '=^_^='})
+    [4, ObjectDeclaration] {value: '=^_^='}
+     [5, FieldDeclaration] value: '=^_^='
+      [6, Identifier] value
+      [6, Literal] '=^_^='
+ [1, QualifiedExpression] withoutDefaults.call({value: '=^_^='})
+  [2, Qualifier] withoutDefaults.
+   [3, Identifier] withoutDefaults
+   [3, Operator] .
+  [2, FunctionCall] call({value: '=^_^='})
+   [3, Identifier] call
+   [3, Signature] ({value: '=^_^='})
+    [4, ObjectDeclaration] {value: '=^_^='}
+     [5, FieldDeclaration] value: '=^_^='
+      [6, Identifier] value
+      [6, Literal] '=^_^='
+ [1, FunctionDeclaration] function f(x = 1, y) {\\n return [x, y]\\n}
+  [2, Identifier] f
+  [2, Signature] (x = 1, y)
+   [3, ParameterWithValue] x = 1
+    [4, Identifier] x
+    [4, Literal] 1
+   [3, Identifier] y
+  [2, Procedure] {\\n return [x, y]\\n}
+   [3, Return] return [x, y]
+    [4, ArrayDeclaration] [x, y]
+     [5, Identifier] x
+     [5, Identifier] y
+ [1, FunctionCall] f()
+  [2, Identifier] f
+  [2, Signature] ()
+ [1, FunctionCall] f(2)
+  [2, Identifier] f
+  [2, Signature] (2)
+   [3, Literal] 2
+ [1, FunctionDeclaration] function preFilledArray([x = 1, y = 2] = []) {\\n return x + y;\\n}
+  [2, Identifier] preFilledArray
+  [2, Signature] ([x = 1, y = 2] = [])
+   [3, ParameterWithValue] [x = 1, y = 2] = []
+    [4, DestructuringArray] [x = 1, y = 2]
+     [5, Value] x = 1
+      [6, Identifier] x
+      [6, Literal] = 1
+     [5, Value] y = 2
+      [6, Identifier] y
+      [6, Literal] = 2
+    [4, ArrayDeclaration] []
+  [2, Procedure] {\\n return x + y;\\n}
+   [3, Return] return x + y
+    [4, Infix] x + y
+     [5, Identifier] x
+     [5, Operator] +
+     [5, Identifier] y
+ [1, FunctionCall] preFilledArray()
+  [2, Identifier] preFilledArray
+  [2, Signature] ()
+ [1, FunctionCall] preFilledArray([])
+  [2, Identifier] preFilledArray
+  [2, Signature] ([])
+   [3, ArrayDeclaration] []
+ [1, FunctionCall] preFilledArray([2])
+  [2, Identifier] preFilledArray
+  [2, Signature] ([2])
+   [3, ArrayDeclaration] [2]
+    [4, Literal] 2
+ [1, FunctionCall] preFilledArray([2, 3])
+  [2, Identifier] preFilledArray
+  [2, Signature] ([2, 3])
+   [3, ArrayDeclaration] [2, 3]
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, FunctionDeclaration] function preFilledObject({z = 3} = {}) {\\n return z;\\n}
+  [2, Identifier] preFilledObject
+  [2, Signature] ({z = 3} = {})
+   [3, ParameterWithValue] {z = 3} = {}
+    [4, DestructuringObject] {z = 3}
+     [5, Field] z = 3
+      [6, Identifier] z
+      [6, Literal] = 3
+    [4, ObjectDeclaration] {}
+  [2, Procedure] {\\n return z;\\n}
+   [3, Return] return z
+    [4, Identifier] z
+ [1, FunctionCall] preFilledObject()
+  [2, Identifier] preFilledObject
+  [2, Signature] ()
+ [1, FunctionCall] preFilledObject({})
+  [2, Identifier] preFilledObject
+  [2, Signature] ({})
+   [3, ObjectDeclaration] {}
+ [1, FunctionCall] preFilledObject({ z: 2 })
+  [2, Identifier] preFilledObject
+  [2, Signature] ({ z: 2 })
+   [3, ObjectDeclaration] { z: 2 }
+    [4, FieldDeclaration] z: 2
+     [5, Identifier] z
+     [5, Literal] 2
+ [1, FunctionDeclaration] function config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+  [2, Identifier] config
+  [2, Signature] (options)
+   [3, Identifier] options
+  [2, Procedure] {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+   [3, Assignment] options.duration ??= 100
+    [4, QualifiedExpression] options.duration
+     [5, Qualifier] options.
+      [6, Identifier] options
+      [6, Operator] .
+     [5, Identifier] duration
+    [4, Operator] ??=
+    [4, Literal] 100
+   [3, Assignment] options.speed ??= 25
+    [4, QualifiedExpression] options.speed
+     [5, Qualifier] options.
+      [6, Identifier] options
+      [6, Operator] .
+     [5, Identifier] speed
+    [4, Operator] ??=
+    [4, Literal] 25
+   [3, Return] return options
+    [4, Identifier] options
+ [1, FunctionCall] config({ duration: 125 })
+  [2, Identifier] config
+  [2, Signature] ({ duration: 125 })
+   [3, ObjectDeclaration] { duration: 125 }
+    [4, FieldDeclaration] duration: 125
+     [5, Identifier] duration
+     [5, Literal] 125
+ [1, FunctionCall] config({})
+  [2, Identifier] config
+  [2, Signature] ({})
+   [3, ObjectDeclaration] {}
+ [1, FunctionCall] map(cube, [0, 1, 2, 5, 10])
+  [2, Identifier] map
+  [2, Signature] (cube, [0, 1, 2, 5, 10])
+   [3, Identifier] cube
+   [3, ArrayDeclaration] [0, 1, 2, 5, 10]
+    [4, Literal] 0
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 5
+    [4, Literal] 10
+ [1, Assignment] résultat = externe()(20)
+  [2, Identifier] résultat
+  [2, Operator] =
+  [2, FunctionCall] externe()(20)
+   [3, FunctionCall] externe()
+    [4, Identifier] externe
+    [4, Signature] ()
+   [3, Signature] (20)
+    [4, Literal] 20

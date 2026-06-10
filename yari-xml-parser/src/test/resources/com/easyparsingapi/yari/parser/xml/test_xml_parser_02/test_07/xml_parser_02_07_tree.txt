@@ -1,0 +1,21 @@
+[0, Xml] <test att_1="11" att_2 att_3='33'>\\n blabla\\n </test>
+ [1, Tag] <test att_1="11" att_2 att_3='33'>\\n blabla\\n </test>
+  [2, TagHead] <test att_1="11" att_2 att_3='33'>
+   [3, TagName] test
+    [4, Name] test
+   [3, TagAttribute] att_1="11"
+    [4, Name] att_1
+     [5, Name] att_1
+    [4, Value] "11"
+   [3, TagAttribute] att_2
+    [4, Name] att_2
+     [5, Name] att_2
+   [3, TagAttribute] att_3='33'
+    [4, Name] att_3
+     [5, Name] att_3
+    [4, Value] '33'
+  [2, TagBody] blabla
+   [3, Text] blabla
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

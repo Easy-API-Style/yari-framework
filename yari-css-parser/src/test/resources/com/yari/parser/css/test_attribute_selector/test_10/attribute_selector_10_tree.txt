@@ -1,0 +1,16 @@
+[0, Css] div:not([lang]) {\\n font-style: italic;\\n }
+ [1, RuleSet] div:not([lang]) {\\n font-style: italic;\\n }
+  [2, CombinatorSelector] div:not([lang])
+   [3, ElementSelector] div
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :not([lang])
+    [4, PseudoClassSelector] :not
+     [5, Identifier] not
+    [4, Signature] ([lang])
+     [5, AttributeSelector] [lang]
+      [6, Expression] lang
+       [7, Identifier] lang
+  [2, Block] {\\n font-style: italic;\\n }
+   [3, Property] font-style: italic
+    [4, Identifier] font-style
+    [4, Identifier] italic

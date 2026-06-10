@@ -1,0 +1,13 @@
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'yari-framework'
+
+include 'yari-core'
+include 'yari-parsec'
+include 'yari-xml-parser'
+include 'yari-html-parser'
+include 'yari-css-parser'
+include 'yari-javascript-parser'
+

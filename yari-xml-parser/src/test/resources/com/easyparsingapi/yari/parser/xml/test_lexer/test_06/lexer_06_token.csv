@@ -1,0 +1,71 @@
+0;15;DOCTYPE;<!doctype html>
+15;1;RETURN_CARRIAGE;\\n
+16;5;BEGIN_TAG;<html
+21;1;END_TAG;>
+22;1;RETURN_CARRIAGE;\\n
+23;5;BEGIN_TAG;<head
+28;1;END_TAG;>
+29;1;RETURN_CARRIAGE;\\n
+30;14;COMMENT;<!--coment -->
+44;1;RETURN_CARRIAGE;\\n
+45;6;BEGIN_TAG;<title
+51;1;END_TAG;>
+52;21;TEXT;onclick event example
+73;8;CLOSED_TAG;</title>
+81;1;RETURN_CARRIAGE;\\n
+82;7;BEGIN_TAG;<script
+90;4;ATTRIBUE_NAME;type
+94;1;EQUAL;=
+95;17;ATTRIBUE_VALUE;"text/javascript"
+112;1;END_TAG;>
+113;1;RETURN_CARRIAGE;\\n
+114;204;TEXT;function initElement()\\n{\\n var p = document.getElementById("foo");\\n // NOTE: showAlert(); ou showAlert(param); not work here.\\n p.onclick = showAlert;\\n};\\n\\nfunction showAlert()\\n{\\n alert("event click");\\n}
+318;1;RETURN_CARRIAGE;\\n
+319;9;CLOSED_TAG;</script>
+328;1;RETURN_CARRIAGE;\\n
+329;6;BEGIN_TAG;<style
+336;4;ATTRIBUE_NAME;type
+340;1;EQUAL;=
+341;10;ATTRIBUE_VALUE;"text/css"
+351;1;END_TAG;>
+352;1;RETURN_CARRIAGE;\\n
+353;32;TEXT;#foo {\\nborder: solid blue 2px;\\n}
+385;1;RETURN_CARRIAGE;\\n
+386;8;CLOSED_TAG;</style>
+394;1;RETURN_CARRIAGE;\\n
+395;7;CLOSED_TAG;</head>
+402;1;RETURN_CARRIAGE;\\n
+403;5;BEGIN_TAG;<body
+409;6;ATTRIBUE_NAME;onload
+415;1;EQUAL;=
+416;16;ATTRIBUE_VALUE;"initElement();"
+432;1;END_TAG;>
+433;1;RETURN_CARRIAGE;\\n
+434;5;BEGIN_TAG;<span
+440;2;ATTRIBUE_NAME;id
+442;1;EQUAL;=
+443;5;ATTRIBUE_VALUE;"foo"
+449;5;ATTRIBUE_NAME;style
+454;1;EQUAL;=
+455;41;ATTRIBUE_VALUE;"color: rgb(255, 0, 0);text-align:center"
+496;1;END_TAG;>
+497;10;TEXT;Span click
+507;7;CLOSED_TAG;</span>
+514;1;RETURN_CARRIAGE;\\n
+515;2;BEGIN_TAG;<p
+517;1;END_TAG;>
+518;12;TEXT;Click on it.
+530;4;CLOSED_TAG;</p>
+534;1;RETURN_CARRIAGE;\\n
+535;3;BEGIN_TAG;<br
+538;2;CLOSED_END_TAG;/>
+540;1;RETURN_CARRIAGE;\\n
+541;4;BEGIN_TAG;<div
+545;1;END_TAG;>
+546;1;RETURN_CARRIAGE;\\n
+547;6;CLOSED_TAG;</div>
+553;1;RETURN_CARRIAGE;\\n
+554;7;CLOSED_TAG;</body>
+561;1;RETURN_CARRIAGE;\\n
+562;7;CLOSED_TAG;</html>
+569;1;RETURN_CARRIAGE;\\n

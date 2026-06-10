@@ -1,0 +1,60 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 63] [Javascript]
+function toto(v_1, v_2) { var { x_1 = v_1 + v_2; return x_1; }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 9] [JavascriptError]
+function
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 24] [FunctionCall]
+toto(v_1, v_2)
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 14] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 24] [Signature]
+(v_1, v_2)
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 18] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 23] [Identifier]
+v_2
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [JavascriptError]
+{
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 63] [VariableDeclaration]
+var { x_1 = v_1 + v_2; return x_1; }
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 63] [Variable]
+{ x_1 = v_1 + v_2; return x_1; }
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 63] [DestructuringObject]
+{ x_1 = v_1 + v_2; return x_1; }
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 48] [Field]
+x_1 = v_1 + v_2
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 36] [Identifier]
+x_1
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 48] [Infix]
+= v_1 + v_2
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 42] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 44] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 48] [Identifier]
+v_2
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 61] [JavascriptError]
+; return x_1;
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 62] [Empty]
+
+---------------------------

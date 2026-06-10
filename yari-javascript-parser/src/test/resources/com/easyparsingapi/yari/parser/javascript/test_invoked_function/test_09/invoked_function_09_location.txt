@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 54] [Javascript]
+(function (p_1, p_2) { console.log('ok') }(v_1, v_2))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 54] [InvokedFunction]
+(function (p_1, p_2) { console.log('ok') }(v_1, v_2))
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 43] [Definition]
+function (p_1, p_2) { console.log('ok') }
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 43] [FunctionDeclaration]
+function (p_1, p_2) { console.log('ok') }
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 21] [Signature]
+(p_1, p_2)
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Identifier]
+p_1
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 20] [Identifier]
+p_2
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 43] [Procedure]
+{ console.log('ok') }
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 41] [QualifiedExpression]
+console.log('ok')
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 32] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 31] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 41] [FunctionCall]
+log('ok')
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 35] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 41] [Signature]
+('ok')
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 40] [Literal]
+'ok'
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 53] [Signature]
+(v_1, v_2)
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 47] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 52] [Identifier]
+v_2
+---------------------------

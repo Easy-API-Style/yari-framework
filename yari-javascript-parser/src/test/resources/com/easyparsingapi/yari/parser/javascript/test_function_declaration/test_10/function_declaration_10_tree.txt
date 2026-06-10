@@ -1,0 +1,18 @@
+[0, Javascript] function myFunc() { var x = 0; return (x += 1, x); }
+ [1, FunctionDeclaration] function myFunc() { var x = 0; return (x += 1, x); }
+  [2, Identifier] myFunc
+  [2, Signature] ()
+  [2, Procedure] { var x = 0; return (x += 1, x); }
+   [3, VariableDeclaration] var x = 0
+    [4, Type] var
+    [4, Variable] x = 0
+     [5, Identifier] x
+     [5, Operator] =
+     [5, Literal] 0
+   [3, Return] return (x += 1, x)
+    [4, Sequence] (x += 1, x)
+     [5, Assignment] x += 1
+      [6, Identifier] x
+      [6, Operator] +=
+      [6, Literal] 1
+     [5, Identifier] x

@@ -1,0 +1,19 @@
+[0, Javascript] class ClassWithInstanceField { baseInstanceField = 'base field'; anotherBaseInstanceField = this.baseInstanceField; baseInstanceMethod() { return 'base method output' }}
+ [1, ClassDeclaration] class ClassWithInstanceField { baseInstanceField = 'base field'; anotherBaseInstanceField = this.baseInstanceField; baseInstanceMethod() { return 'base method output' }}
+  [2, Identifier] ClassWithInstanceField
+  [2, ClassFieldDeclaration] baseInstanceField = 'base field'
+   [3, Identifier] baseInstanceField
+   [3, Literal] = 'base field'
+  [2, ClassFieldDeclaration] anotherBaseInstanceField = this.baseInstanceField
+   [3, Identifier] anotherBaseInstanceField
+   [3, QualifiedExpression] = this.baseInstanceField
+    [4, Qualifier] this.
+     [5, This] this
+     [5, Operator] .
+    [4, Identifier] baseInstanceField
+  [2, ClassMethodDeclaration] baseInstanceMethod() { return 'base method output' }
+   [3, Identifier] baseInstanceMethod
+   [3, Signature] ()
+   [3, Procedure] { return 'base method output' }
+    [4, Return] return 'base method output'
+     [5, Literal] 'base method output'

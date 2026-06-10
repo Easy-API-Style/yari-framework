@@ -1,0 +1,12 @@
+[0, Css] .parent-rule {\\n /* parent rule properties */\\n &:hover {\\n /* child rule properties */\\n }\\n }
+ [1, RuleSet] .parent-rule {\\n /* parent rule properties */\\n &:hover {\\n /* child rule properties */\\n }\\n }
+  [2, ClassSelector] .parent-rule
+   [3, Identifier] parent-rule
+  [2, Block] {\\n /* parent rule properties */\\n &:hover {\\n /* child rule properties */\\n }\\n }
+   [3, RuleSet] &:hover {\\n /* child rule properties */\\n }
+    [4, CombinatorSelector] &:hover
+     [5, Nesting] &
+     [5, Operator] 
+     [5, PseudoClassSelector] :hover
+      [6, Identifier] hover
+    [4, Block] {\\n /* child rule properties */\\n }

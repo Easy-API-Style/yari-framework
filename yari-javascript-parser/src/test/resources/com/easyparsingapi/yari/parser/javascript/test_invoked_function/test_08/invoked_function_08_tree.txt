@@ -1,0 +1,15 @@
+[0, Javascript] (i = q && q).toto()
+ [1, QualifiedExpression] (i = q && q).toto()
+  [2, Qualifier] (i = q && q).
+   [3, Sequence] i = q && q
+    [4, Assignment] i = q && q
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Infix] q && q
+      [6, Identifier] q
+      [6, Operator] &&
+      [6, Identifier] q
+   [3, Operator] .
+  [2, FunctionCall] toto()
+   [3, Identifier] toto
+   [3, Signature] ()

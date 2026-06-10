@@ -1,0 +1,84 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 34] [JavascriptNodeUnit]
+tutu(n, k, a.b.c).toto[nn.ll][rr]
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 34] [QualifiedExpression]
+tutu(n, k, a.b.c).toto[nn.ll][rr]
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [Qualifier]
+tutu(n, k, a.b.c).
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 18] [FunctionCall]
+tutu(n, k, a.b.c)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [Identifier]
+tutu
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 18] [Signature]
+(n, k, a.b.c)
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Identifier]
+k
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 17] [QualifiedExpression]
+a.b.c
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 14] [Qualifier]
+a.
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 16] [Qualifier]
+b.
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 34] [MapExpression]
+toto[nn.ll][rr]
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 30] [MapExpression]
+toto[nn.ll]
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 23] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 30] [Bracket]
+[nn.ll]
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 29] [QualifiedExpression]
+nn.ll
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 27] [Qualifier]
+nn.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 26] [Identifier]
+nn
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 29] [Identifier]
+ll
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 34] [Bracket]
+[rr]
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 33] [Identifier]
+rr
+---------------------------

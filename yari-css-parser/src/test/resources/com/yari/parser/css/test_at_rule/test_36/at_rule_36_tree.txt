@@ -1,0 +1,41 @@
+[0, Css] @namespace svg url("http://www.w3.org/2000/svg");\\n a {\\n color: orangered;\\n text-decoration: underline dashed;\\n font-weight: bold;\\n }\\n svg|a {\\n fill: blueviolet;\\n text-decoration: underline solid;\\n text-transform: uppercase;\\n }
+ [1, AtRule] @namespace svg url("http://www.w3.org/2000/svg")
+  [2, AtRuleName] @namespace
+   [3, Identifier] namespace
+  [2, Infix] svg url("http://www.w3.org/2000/svg")
+   [3, Identifier] svg
+   [3, Operator] 
+   [3, Function] url("http://www.w3.org/2000/svg")
+    [4, Identifier] url
+    [4, Signature] ("http://www.w3.org/2000/svg")
+     [5, Literal] "http://www.w3.org/2000/svg"
+ [1, RuleSet] a {\\n color: orangered;\\n text-decoration: underline dashed;\\n font-weight: bold;\\n }
+  [2, ElementSelector] a
+  [2, Block] {\\n color: orangered;\\n text-decoration: underline dashed;\\n font-weight: bold;\\n }
+   [3, Property] color: orangered
+    [4, Identifier] color
+    [4, Identifier] orangered
+   [3, Property] text-decoration: underline dashed
+    [4, Identifier] text-decoration
+    [4, ListValue] underline dashed
+     [5, Identifier] underline
+     [5, Identifier] dashed
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold
+ [1, RuleSet] svg|a {\\n fill: blueviolet;\\n text-decoration: underline solid;\\n text-transform: uppercase;\\n }
+  [2, NamespaceSelector] svg|a
+   [3, Identifier] svg
+   [3, ElementSelector] a
+  [2, Block] {\\n fill: blueviolet;\\n text-decoration: underline solid;\\n text-transform: uppercase;\\n }
+   [3, Property] fill: blueviolet
+    [4, Identifier] fill
+    [4, Identifier] blueviolet
+   [3, Property] text-decoration: underline solid
+    [4, Identifier] text-decoration
+    [4, ListValue] underline solid
+     [5, Identifier] underline
+     [5, Identifier] solid
+   [3, Property] text-transform: uppercase
+    [4, Identifier] text-transform
+    [4, Identifier] uppercase

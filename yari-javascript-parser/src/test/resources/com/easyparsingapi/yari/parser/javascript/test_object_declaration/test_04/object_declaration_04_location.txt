@@ -1,0 +1,78 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 62] [JavascriptNodeUnit]
+{ 'toto': 67, bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3} }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 62] [ObjectDeclaration]
+{ 'toto': 67, bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3} }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 13] [FieldDeclaration]
+'toto': 67
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 9] [Literal]
+'toto'
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 13] [Literal]
+67
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 60] [FieldDeclaration]
+bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3}
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 19] [Identifier]
+bibi
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 60] [ObjectDeclaration]
+{lili:tutu.tyty.jiji[gogo],fifi:-2.3}
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 49] [FieldDeclaration]
+lili:tutu.tyty.jiji[gogo]
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 28] [Identifier]
+lili
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 49] [QualifiedExpression]
+tutu.tyty.jiji[gogo]
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 34] [Qualifier]
+tutu.
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 33] [Identifier]
+tutu
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 34] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 39] [Qualifier]
+tyty.
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 38] [Identifier]
+tyty
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 39] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 49] [MapExpression]
+jiji[gogo]
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 43] [Identifier]
+jiji
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 49] [Bracket]
+[gogo]
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 48] [Identifier]
+gogo
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 59] [FieldDeclaration]
+fifi:-2.3
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 54] [Identifier]
+fifi
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 59] [Prefix]
+-2.3
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 56] [Operator]
+-
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 59] [Literal]
+2.3
+---------------------------

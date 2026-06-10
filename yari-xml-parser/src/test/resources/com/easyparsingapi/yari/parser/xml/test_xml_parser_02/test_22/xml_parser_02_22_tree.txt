@@ -1,0 +1,20 @@
+[0, Xml] <pc:test>\\n <title oo:att_1="11">\\n blabla\\n </pc:test>
+ [1, Tag] <pc:test>\\n <title oo:att_1="11">\\n blabla\\n </pc:test>
+  [2, TagHead] <pc:test>
+   [3, TagName] pc:test
+    [4, Namespace] pc
+    [4, Name] test
+  [2, TagBody] <title oo:att_1="11">\\n blabla
+   [3, TagEmpty] <title oo:att_1="11">
+    [4, TagName] title
+     [5, Name] title
+    [4, TagAttribute] oo:att_1="11"
+     [5, Name] oo:att_1
+      [6, Namespace] oo
+      [6, Name] att_1
+     [5, Value] "11"
+   [3, Text] blabla
+  [2, TagFoot] </pc:test>
+   [3, TagName] pc:test
+    [4, Namespace] pc
+    [4, Name] test

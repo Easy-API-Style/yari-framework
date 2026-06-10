@@ -1,0 +1,12 @@
+[0, Javascript] look[(value + 30) * 6.6]
+ [1, MapExpression] look[(value + 30) * 6.6]
+  [2, Identifier] look
+  [2, Bracket] [(value + 30) * 6.6]
+   [3, Infix] (value + 30) * 6.6
+    [4, Parenthesis] (value + 30)
+     [5, Infix] value + 30
+      [6, Identifier] value
+      [6, Operator] +
+      [6, Literal] 30
+    [4, Operator] *
+    [4, Literal] 6.6

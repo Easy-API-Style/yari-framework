@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [Javascript]
+({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40})
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 49] [Parenthesis]
+({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40})
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 48] [Assignment]
+{a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 17] [DestructuringObject]
+{a, b, ...rest}
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Field]
+a
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Field]
+b
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 16] [Spread]
+...rest
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 16] [Identifier]
+rest
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 48] [ObjectDeclaration]
+{a: 10, b: 20, c: 30, d: 40}
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 26] [FieldDeclaration]
+a: 10
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 26] [Literal]
+10
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [FieldDeclaration]
+b: 20
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 33] [Literal]
+20
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 40] [FieldDeclaration]
+c: 30
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 36] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 40] [Literal]
+30
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 47] [FieldDeclaration]
+d: 40
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 43] [Identifier]
+d
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 47] [Literal]
+40
+---------------------------

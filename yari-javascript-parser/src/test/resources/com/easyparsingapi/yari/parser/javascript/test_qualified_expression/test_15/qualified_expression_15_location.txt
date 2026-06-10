@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 31] [JavascriptNodeUnit]
+someInterface.customMethod?.()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 31] [QualifiedExpression]
+someInterface.customMethod?.()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 15] [Qualifier]
+someInterface.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 14] [Identifier]
+someInterface
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 29] [Qualifier]
+customMethod?.
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 27] [Identifier]
+customMethod
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 29] [Operator]
+?.
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 31] [FunctionCall]
+()
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 29] [Empty]
+
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 31] [Signature]
+()
+---------------------------

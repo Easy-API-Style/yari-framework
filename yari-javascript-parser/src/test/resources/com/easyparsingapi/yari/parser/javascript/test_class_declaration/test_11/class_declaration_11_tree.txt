@@ -1,0 +1,10 @@
+[0, Javascript] class ClassWithComputedFieldName { [`${PREFIX}Field`] = 'prefixed field'}
+ [1, ClassDeclaration] class ClassWithComputedFieldName { [`${PREFIX}Field`] = 'prefixed field'}
+  [2, Identifier] ClassWithComputedFieldName
+  [2, ClassFieldDeclaration] [`${PREFIX}Field`] = 'prefixed field'
+   [3, ComputedValue] [`${PREFIX}Field`]
+    [4, LiteralTemplate] `${PREFIX}Field`
+     [5, Variable] ${PREFIX}
+      [6, Identifier] PREFIX
+     [5, Constant] Field
+   [3, Literal] = 'prefixed field'

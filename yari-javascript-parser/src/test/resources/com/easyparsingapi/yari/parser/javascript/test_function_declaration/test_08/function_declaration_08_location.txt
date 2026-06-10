@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 59] [Javascript]
+function func(a, b, c = 9) { console.log(a + " " + b); }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 59] [FunctionDeclaration]
+function func(a, b, c = 9) { console.log(a + " " + b); }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 14] [Identifier]
+func
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 27] [Signature]
+(a, b, c = 9)
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 26] [ParameterWithValue]
+c = 9
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Literal]
+9
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 59] [Procedure]
+{ console.log(a + " " + b); }
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 56] [QualifiedExpression]
+console.log(a + " " + b)
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 40] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 39] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 40] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 56] [FunctionCall]
+log(a + " " + b)
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 43] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 56] [Signature]
+(a + " " + b)
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 55] [Infix]
+a + " " + b
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 51] [Infix]
+a + " "
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 45] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 47] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 51] [Literal]
+" "
+---------------------------
+SourceLocation [start=line 1 column 52, end=line 1 column 53] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 55] [Identifier]
+b
+---------------------------

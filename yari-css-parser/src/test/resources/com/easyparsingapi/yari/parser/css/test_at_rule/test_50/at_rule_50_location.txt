@@ -1,0 +1,123 @@
+SourceLocation [start=line 1 column 3, end=line 6 column 4] [Css]
+@function --color-choice(--color1 type(red | green), --color2 blue) {\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 6 column 4] [AtRule]
+@function --color-choice(--color1 type(red | green), --color2 blue) {\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 12] [AtRuleName]
+@function
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 12] [Identifier]
+function
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 70] [Function]
+--color-choice(--color1 type(red | green), --color2 blue)
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 27] [Identifier]
+--color-choice
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 70] [Signature]
+(--color1 type(red | green), --color2 blue)
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 54] [ListValue]
+--color1 type(red | green)
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 36] [Identifier]
+--color1
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 54] [Function]
+type(red | green)
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 41] [Identifier]
+type
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 54] [Signature]
+(red | green)
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 53] [Infix]
+red | green
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 45] [Identifier]
+red
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 47] [Operator]
+|
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 53] [Identifier]
+green
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 69] [ListValue]
+--color2 blue
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 64] [Identifier]
+--color2
+---------------------------
+SourceLocation [start=line 1 column 65, end=line 1 column 69] [Identifier]
+blue
+---------------------------
+SourceLocation [start=line 1 column 71, end=line 6 column 4] [Block]
+{\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 26] [Property]
+result: var(--color1)
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 11] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 26] [Function]
+var(--color1)
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 16] [Identifier]
+var
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 26] [Signature]
+(--color1)
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 2 column 25] [Identifier]
+--color1
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 5 column 6] [AtRule]
+@media (width < 700px) {\\n result: var(--color2);\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 11] [AtRuleName]
+@media
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 11] [Identifier]
+media
+---------------------------
+SourceLocation [start=line 3 column 12, end=line 3 column 27] [Parenthesis]
+(width < 700px)
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 26] [Infix]
+width < 700px
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 18] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 3 column 19, end=line 3 column 20] [Operator]
+<
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 26] [Identifier]
+700px
+---------------------------
+SourceLocation [start=line 3 column 28, end=line 5 column 6] [Block]
+{\\n result: var(--color2);\\n }
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 28] [Property]
+result: var(--color2)
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 13] [Identifier]
+result
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 28] [Function]
+var(--color2)
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 18] [Identifier]
+var
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 28] [Signature]
+(--color2)
+---------------------------
+SourceLocation [start=line 4 column 19, end=line 4 column 27] [Identifier]
+--color2
+---------------------------

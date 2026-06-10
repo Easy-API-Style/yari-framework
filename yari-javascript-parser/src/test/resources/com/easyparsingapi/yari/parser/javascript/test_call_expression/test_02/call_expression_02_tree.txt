@@ -1,0 +1,16 @@
+[0, Javascript] look(20*30)()[10][value]
+ [1, MapExpression] look(20*30)()[10][value]
+  [2, MapExpression] look(20*30)()[10]
+   [3, FunctionCall] look(20*30)()
+    [4, FunctionCall] look(20*30)
+     [5, Identifier] look
+     [5, Signature] (20*30)
+      [6, Infix] 20*30
+       [7, Literal] 20
+       [7, Operator] *
+       [7, Literal] 30
+    [4, Signature] ()
+   [3, Bracket] [10]
+    [4, Literal] 10
+  [2, Bracket] [value]
+   [3, Identifier] value

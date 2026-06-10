@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-css-parser — Yari Framework</title>
+  <meta name="description" content="Fault-tolerant CSS parser for Java. Parses complete stylesheets, at-rules, complex selectors, property value expressions, and more. Never throws on malformed input.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html" class="is-active">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#cssparser">CssParser</a></li>
+      <li><a href="#cssconfig">CssConfig</a></li>
+      <li><a href="#css">Css (AST)</a></li>
+      <li><a href="#rulesets">Rule Sets &amp; At-Rules</a></li>
+      <li><a href="#selectors">Selectors</a></li>
+      <li><a href="#values">Values &amp; expressions</a></li>
+      <li><a href="#recovery">Error recovery</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">›</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">›</span>
+        <span>yari-css-parser</span>
+      </nav>
+
+      <h1>yari-css-parser</h1>
+      <p class="lead">Fault-tolerant CSS parser producing a typed, fully-located AST. Parses complete stylesheets, at-rules (<code>@media</code>, <code>@keyframes</code>, <code>@import</code>…), rule sets, complex selectors (pseudo-classes, pseudo-elements, combinators, attribute selectors, nth-patterns), and property value expressions. Never throws on malformed input.</p>
+
+      <!-- Installation -->
+      <h2 id="install">Installation</h2>
+      <p>Add the dependency to your build file. Replace <code>VERSION</code> with the desired release.</p>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-css-parser:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-css-parser<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+
+      <!-- CssParser -->
+      <h2 id="cssparser">CssParser — Entry Points</h2>
+      <p>All methods are static. <code>CssParser</code> is not instantiable.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>CssParser</strong> <span>com.easyparsingapi.yari.parser.css.parser</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>parseUnit(String)</td>
+                <td>→ AstResult&lt;Css&gt;</td>
+                <td>Parse a complete stylesheet; returns the AST plus the full token list</td>
+              </tr>
+              <tr>
+                <td>parseUnit(List&lt;Token&gt;)</td>
+                <td>→ AstResult&lt;Css&gt;</td>
+                <td>Parse a pre-tokenised stylesheet</td>
+              </tr>
+              <tr>
+                <td>parseProperties(String)</td>
+                <td>→ AstResult&lt;Css&gt;</td>
+                <td>Parse a bare declaration list (no selector), e.g. an inline <code>style</code> value</td>
+              </tr>
+              <tr>
+                <td>parseProperties(List&lt;Token&gt;)</td>
+                <td>→ AstResult&lt;Css&gt;</td>
+                <td>Parse a pre-tokenised declaration list</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CssConfig -->
+      <h2 id="cssconfig">CssConfig — Parser Configuration</h2>
+      <p>Holds the lexer/parser configuration and implements <code>ApiParser.Config</code>. The <code>CssParser</code> entry points create it automatically, so you do not normally construct or pass one yourself.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>CssConfig</strong> <span>com.easyparsingapi.yari.parser.css.parser</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>new CssConfig()</td>
+                <td></td>
+                <td>Default configuration (used internally by <code>CssParser</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Css root node -->
+      <h2 id="css">Css — Root AST Node</h2>
+      <p>Root of a parsed CSS document. Implements <code>AstUnit</code>.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Css</strong> <span>com.easyparsingapi.yari.parser.css.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>getNodes()</td>
+                <td>→ List&lt;CssNode&gt;</td>
+                <td>Top-level nodes (rule sets, at-rules, comments…)</td>
+              </tr>
+              <tr>
+                <td>astComments()</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>All comments in the parsed document</td>
+              </tr>
+              <tr>
+                <td>astCommentsOf(AstNode, Position…)</td>
+                <td>→ List&lt;AstComment&gt;</td>
+                <td>Comments associated with a given node at the specified position</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Rule Sets & At-Rules -->
+      <h2 id="rulesets">Rule Sets &amp; At-Rules</h2>
+      <p>Top-level nodes produced by the parser. Each node implements <code>CssNode</code> and carries an exact <code>SourceLocation</code>.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Rule set and at-rule nodes</strong> <span>com.easyparsingapi.yari.parser.css.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>RuleSet</td>
+                <td></td>
+                <td>A selector + declaration block. <code>getSelector() → CssSelector</code>, <code>getBlock() → Block</code></td>
+              </tr>
+              <tr>
+                <td>Block</td>
+                <td></td>
+                <td>An ordered list of property declarations. <code>getNodes() → List&lt;CssNode&gt;</code></td>
+              </tr>
+              <tr>
+                <td>Property</td>
+                <td></td>
+                <td>A CSS property declaration. <code>getName() → Identifier</code>, <code>getValue() → CssNode</code></td>
+              </tr>
+              <tr>
+                <td>AtRule</td>
+                <td></td>
+                <td>A CSS at-rule. <code>getName() → AtRuleName</code>, <code>getSignature() → CssNode</code>, <code>hasSignature() → boolean</code></td>
+              </tr>
+              <tr>
+                <td>AtRuleName</td>
+                <td></td>
+                <td>The name after <code>@</code>. <code>getName() → Identifier</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Selectors -->
+      <h2 id="selectors">Selectors</h2>
+      <p>All selector nodes implement <code>CssSelector</code>. Complex selectors are composed from simpler ones by the parser.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Selector nodes</strong> <span>com.easyparsingapi.yari.parser.css.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>ListSelector</td>
+                <td></td>
+                <td>Comma-separated selector list</td>
+              </tr>
+              <tr>
+                <td>QualifiedSelector</td>
+                <td></td>
+                <td>Compound selector (e.g. <code>div.btn:hover</code>)</td>
+              </tr>
+              <tr>
+                <td>CombinatorSelector</td>
+                <td></td>
+                <td>Two selectors joined by a combinator (descendant, child <code>&gt;</code>, adjacent <code>+</code>, sibling <code>~</code>). <code>getType() → CombinatorSelector.Type</code></td>
+              </tr>
+              <tr>
+                <td>ElementSelector</td>
+                <td></td>
+                <td>Type selector (e.g. <code>div</code>). <code>getName() → String</code></td>
+              </tr>
+              <tr>
+                <td>ClassSelector</td>
+                <td></td>
+                <td>Class selector (<code>.btn</code>). <code>getClassName() → Identifier</code></td>
+              </tr>
+              <tr>
+                <td>IdSelector</td>
+                <td></td>
+                <td>ID selector (<code>#header</code>). <code>getId() → Identifier</code></td>
+              </tr>
+              <tr>
+                <td>AttributeSelector</td>
+                <td></td>
+                <td>Attribute selector (<code>[href^='https']</code>)</td>
+              </tr>
+              <tr>
+                <td>PseudoClassSelector</td>
+                <td></td>
+                <td>Pseudo-class (<code>:hover</code>). <code>getName() → Identifier</code></td>
+              </tr>
+              <tr>
+                <td>PseudoElementSelector</td>
+                <td></td>
+                <td>Pseudo-element (<code>::before</code>). <code>getName() → Identifier</code></td>
+              </tr>
+              <tr>
+                <td>PseudoFunctionSelector</td>
+                <td></td>
+                <td>Functional pseudo (<code>:nth-child(2n+1)</code>). <code>getSignature() → Signature</code></td>
+              </tr>
+              <tr>
+                <td>PrefixSelector</td>
+                <td></td>
+                <td>Vendor-prefix selector</td>
+              </tr>
+              <tr>
+                <td>NamespaceSelector</td>
+                <td></td>
+                <td>Namespace selector (<code>ns|element</code>)</td>
+              </tr>
+              <tr>
+                <td>Universal</td>
+                <td></td>
+                <td>Universal selector <code>*</code></td>
+              </tr>
+              <tr>
+                <td>Nesting</td>
+                <td></td>
+                <td>CSS nesting selector <code>&amp;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Values & Expressions -->
+      <h2 id="values">Values &amp; Expressions</h2>
+      <p>Value nodes represent the right-hand side of CSS property declarations and the arguments of at-rule signatures and functions.</p>
+      <div class="api-class">
+        <div class="api-class__header"><strong>Value and expression nodes</strong> <span>com.easyparsingapi.yari.parser.css.ast</span></div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <tbody>
+              <tr>
+                <td>Identifier</td>
+                <td></td>
+                <td>A CSS identifier. <code>getValue() → String</code></td>
+              </tr>
+              <tr>
+                <td>Literal</td>
+                <td></td>
+                <td>A CSS literal value (number, string, color…). <code>getValue() → String</code>, <code>getType() → Literal.Type</code></td>
+              </tr>
+              <tr>
+                <td>Function</td>
+                <td></td>
+                <td>A CSS function call (<code>rgb()</code>, <code>calc()</code>…). <code>getName() → Identifier</code>, <code>getSignature() → Signature</code></td>
+              </tr>
+              <tr>
+                <td>Infix</td>
+                <td></td>
+                <td>An infix expression. <code>getLeftOperand() → CssNode</code>, <code>getOperator() → Operator</code>, <code>getRightOperand() → CssNode</code></td>
+              </tr>
+              <tr>
+                <td>Prefix</td>
+                <td></td>
+                <td>A prefix expression</td>
+              </tr>
+              <tr>
+                <td>ListValue</td>
+                <td></td>
+                <td>A space- or comma-separated value list. <code>getSeparator() → Separator</code></td>
+              </tr>
+              <tr>
+                <td>ListParameter</td>
+                <td></td>
+                <td>A comma-separated parameter list in a function call</td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td></td>
+                <td>A media-query range expression (<code>width &gt;= 600px</code>)</td>
+              </tr>
+              <tr>
+                <td>NthPattern</td>
+                <td></td>
+                <td>An nth-* pattern (<code>2n+1</code>)</td>
+              </tr>
+              <tr>
+                <td>Parenthesis</td>
+                <td></td>
+                <td>A parenthesised expression</td>
+              </tr>
+              <tr>
+                <td>Important</td>
+                <td></td>
+                <td>The <code>!important</code> flag</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Error Recovery -->
+      <h2 id="recovery">Error Recovery</h2>
+      <p>
+        The parser emits a <code>CssError</code> node and resumes parsing whenever it encounters
+        unrecognisable input. The rest of the stylesheet is still parsed to completion, so you always
+        get the maximum number of recognisable nodes from a broken or partially-malformed source.
+      </p>
+<pre><code>Css css = CssParser.parseUnit(<span class="s">"""
+    .btn { color: red; }
+    @media (width >= 600px) {
+        .btn { font-size: 1rem; }
+    }
+    """</span>).unit();
+
+css.astStream()
+   .filter(n -> n <span class="k">instanceof</span> CssError)
+   .forEach(n -> System.out.println(<span class="s">"error: "</span> + n.getSourceLocation()));</code></pre>
+
+      <div class="note">
+        <p>For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and Javadoc under <code>yari-css-parser/src/main/java/</code>.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[0, Css] :is(span, div) {\\n border: red 2px solid;\\n }
+ [1, RuleSet] :is(span, div) {\\n border: red 2px solid;\\n }
+  [2, PseudoFunctionSelector] :is(span, div)
+   [3, PseudoClassSelector] :is
+    [4, Identifier] is
+   [3, Signature] (span, div)
+    [4, ListSelector] span, div
+     [5, ElementSelector] span
+     [5, ElementSelector] div
+  [2, Block] {\\n border: red 2px solid;\\n }
+   [3, Property] border: red 2px solid
+    [4, Identifier] border
+    [4, ListValue] red 2px solid
+     [5, Identifier] red
+     [5, Identifier] 2px
+     [5, Identifier] solid

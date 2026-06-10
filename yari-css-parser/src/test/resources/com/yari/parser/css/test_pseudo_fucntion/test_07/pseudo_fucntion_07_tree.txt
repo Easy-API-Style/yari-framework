@@ -1,0 +1,52 @@
+[0, Css] p:not(.irrelevant) {\\n font-weight: bold;\\n }\\n\\n p > strong,\\n p > b.important {\\n color: crimson;\\n }\\n\\n p > :not(strong, b.important) {\\n color: darkmagenta;\\n }
+ [1, RuleSet] p:not(.irrelevant) {\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] p:not(.irrelevant)
+   [3, ElementSelector] p
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :not(.irrelevant)
+    [4, PseudoClassSelector] :not
+     [5, Identifier] not
+    [4, Signature] (.irrelevant)
+     [5, ClassSelector] .irrelevant
+      [6, Identifier] irrelevant
+  [2, Block] {\\n font-weight: bold;\\n }
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold
+ [1, RuleSet] p > strong,\\n p > b.important {\\n color: crimson;\\n }
+  [2, ListSelector] p > strong,\\n p > b.important
+   [3, CombinatorSelector] p > strong
+    [4, ElementSelector] p
+    [4, Operator] >
+    [4, ElementSelector] strong
+   [3, CombinatorSelector] p > b.important
+    [4, CombinatorSelector] p > b
+     [5, ElementSelector] p
+     [5, Operator] >
+     [5, ElementSelector] b
+    [4, Operator] 
+    [4, ClassSelector] .important
+     [5, Identifier] important
+  [2, Block] {\\n color: crimson;\\n }
+   [3, Property] color: crimson
+    [4, Identifier] color
+    [4, Identifier] crimson
+ [1, RuleSet] p > :not(strong, b.important) {\\n color: darkmagenta;\\n }
+  [2, CombinatorSelector] p > :not(strong, b.important)
+   [3, ElementSelector] p
+   [3, Operator] >
+   [3, PseudoFunctionSelector] :not(strong, b.important)
+    [4, PseudoClassSelector] :not
+     [5, Identifier] not
+    [4, Signature] (strong, b.important)
+     [5, ListSelector] strong, b.important
+      [6, ElementSelector] strong
+      [6, CombinatorSelector] b.important
+       [7, ElementSelector] b
+       [7, Operator] 
+       [7, ClassSelector] .important
+        [8, Identifier] important
+  [2, Block] {\\n color: darkmagenta;\\n }
+   [3, Property] color: darkmagenta
+    [4, Identifier] color
+    [4, Identifier] darkmagenta

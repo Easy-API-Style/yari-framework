@@ -1,0 +1,327 @@
+SourceLocation [start=line 1 column 26, end=line 1 column 41] [Javascript]
+// constructeur
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 68] [Javascript]
+// notation littérale dans un constructeur
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 22 column 45] [Javascript]
+new RegExp("ab+c", "i"); // constructeur\\nnew RegExp(/ab+c/, "i"); // notation littérale dans un constructeur\\n\\nvar re = /\w+/;\\nvar re = new RegExp("\\w+");\\n\\nlet re = /(\w+)\s(\w+)/; \\n\\nlet lignes = texte.split(/\r\n|\r|\n/);\\n\\ns.match(/voici.*ligne/);\\ns.match(/voici[^]*ligne/);\\n\\nlet regex = /toto/y;\\n\\nlet regex = /toto/yug;\\n\\nre = /\d/y;\\n\\nlet regex = /[\u0400-\u04FF]+/g;\\n\\nconsole.log(/[^.]+/.exec(url)[0].substr(7));
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [New]
+new RegExp("ab+c", "i")
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 11] [Identifier]
+RegExp
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 24] [Signature]
+("ab+c", "i")
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 18] [Literal]
+"ab+c"
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 23] [Literal]
+"i"
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 24] [New]
+new RegExp(/ab+c/, "i")
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 11] [Identifier]
+RegExp
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 24] [Signature]
+(/ab+c/, "i")
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 18] [Literal]
+/ab+c/
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 23] [Literal]
+"i"
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 15] [VariableDeclaration]
+var re = /\w+/
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 15] [Variable]
+re = /\w+/
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 7] [Identifier]
+re
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 15] [Literal]
+/\w+/
+---------------------------
+SourceLocation [start=line 5 column 1, end=line 5 column 28] [VariableDeclaration]
+var re = new RegExp("\\w+")
+---------------------------
+SourceLocation [start=line 5 column 1, end=line 5 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 28] [Variable]
+re = new RegExp("\\w+")
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 7] [Identifier]
+re
+---------------------------
+SourceLocation [start=line 5 column 8, end=line 5 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 28] [New]
+new RegExp("\\w+")
+---------------------------
+SourceLocation [start=line 5 column 14, end=line 5 column 20] [Identifier]
+RegExp
+---------------------------
+SourceLocation [start=line 5 column 20, end=line 5 column 28] [Signature]
+("\\w+")
+---------------------------
+SourceLocation [start=line 5 column 21, end=line 5 column 27] [Literal]
+"\\w+"
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 7 column 24] [VariableDeclaration]
+let re = /(\w+)\s(\w+)/
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 7 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 24] [Variable]
+re = /(\w+)\s(\w+)/
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 7] [Identifier]
+re
+---------------------------
+SourceLocation [start=line 7 column 8, end=line 7 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 7 column 10, end=line 7 column 24] [Literal]
+/(\w+)\s(\w+)/
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 39] [VariableDeclaration]
+let lignes = texte.split(/\r\n|\r|\n/)
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 39] [Variable]
+lignes = texte.split(/\r\n|\r|\n/)
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 11] [Identifier]
+lignes
+---------------------------
+SourceLocation [start=line 9 column 12, end=line 9 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 9 column 14, end=line 9 column 39] [QualifiedExpression]
+texte.split(/\r\n|\r|\n/)
+---------------------------
+SourceLocation [start=line 9 column 14, end=line 9 column 20] [Qualifier]
+texte.
+---------------------------
+SourceLocation [start=line 9 column 14, end=line 9 column 19] [Identifier]
+texte
+---------------------------
+SourceLocation [start=line 9 column 19, end=line 9 column 20] [Operator]
+.
+---------------------------
+SourceLocation [start=line 9 column 20, end=line 9 column 39] [FunctionCall]
+split(/\r\n|\r|\n/)
+---------------------------
+SourceLocation [start=line 9 column 20, end=line 9 column 25] [Identifier]
+split
+---------------------------
+SourceLocation [start=line 9 column 25, end=line 9 column 39] [Signature]
+(/\r\n|\r|\n/)
+---------------------------
+SourceLocation [start=line 9 column 26, end=line 9 column 38] [Literal]
+/\r\n|\r|\n/
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 24] [QualifiedExpression]
+s.match(/voici.*ligne/)
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 3] [Qualifier]
+s.
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 2] [Identifier]
+s
+---------------------------
+SourceLocation [start=line 11 column 2, end=line 11 column 3] [Operator]
+.
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 24] [FunctionCall]
+match(/voici.*ligne/)
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 8] [Identifier]
+match
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 24] [Signature]
+(/voici.*ligne/)
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 23] [Literal]
+/voici.*ligne/
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 26] [QualifiedExpression]
+s.match(/voici[^]*ligne/)
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 3] [Qualifier]
+s.
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 2] [Identifier]
+s
+---------------------------
+SourceLocation [start=line 12 column 2, end=line 12 column 3] [Operator]
+.
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 26] [FunctionCall]
+match(/voici[^]*ligne/)
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 8] [Identifier]
+match
+---------------------------
+SourceLocation [start=line 12 column 8, end=line 12 column 26] [Signature]
+(/voici[^]*ligne/)
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 25] [Literal]
+/voici[^]*ligne/
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 20] [VariableDeclaration]
+let regex = /toto/y
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 14 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 14 column 20] [Variable]
+regex = /toto/y
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 14 column 10] [Identifier]
+regex
+---------------------------
+SourceLocation [start=line 14 column 11, end=line 14 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 13, end=line 14 column 20] [Literal]
+/toto/y
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 22] [VariableDeclaration]
+let regex = /toto/yug
+---------------------------
+SourceLocation [start=line 16 column 1, end=line 16 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 16 column 5, end=line 16 column 22] [Variable]
+regex = /toto/yug
+---------------------------
+SourceLocation [start=line 16 column 5, end=line 16 column 10] [Identifier]
+regex
+---------------------------
+SourceLocation [start=line 16 column 11, end=line 16 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 16 column 13, end=line 16 column 22] [Literal]
+/toto/yug
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 11] [Assignment]
+re = /\d/y
+---------------------------
+SourceLocation [start=line 18 column 1, end=line 18 column 3] [Identifier]
+re
+---------------------------
+SourceLocation [start=line 18 column 4, end=line 18 column 5] [Operator]
+=
+---------------------------
+SourceLocation [start=line 18 column 6, end=line 18 column 11] [Literal]
+/\d/y
+---------------------------
+SourceLocation [start=line 20 column 1, end=line 20 column 32] [VariableDeclaration]
+let regex = /[\u0400-\u04FF]+/g
+---------------------------
+SourceLocation [start=line 20 column 1, end=line 20 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 20 column 5, end=line 20 column 32] [Variable]
+regex = /[\u0400-\u04FF]+/g
+---------------------------
+SourceLocation [start=line 20 column 5, end=line 20 column 10] [Identifier]
+regex
+---------------------------
+SourceLocation [start=line 20 column 11, end=line 20 column 12] [Operator]
+=
+---------------------------
+SourceLocation [start=line 20 column 13, end=line 20 column 32] [Literal]
+/[\u0400-\u04FF]+/g
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 22 column 44] [QualifiedExpression]
+console.log(/[^.]+/.exec(url)[0].substr(7))
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 22 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 22 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 22 column 8, end=line 22 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 22 column 9, end=line 22 column 44] [FunctionCall]
+log(/[^.]+/.exec(url)[0].substr(7))
+---------------------------
+SourceLocation [start=line 22 column 9, end=line 22 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 22 column 12, end=line 22 column 44] [Signature]
+(/[^.]+/.exec(url)[0].substr(7))
+---------------------------
+SourceLocation [start=line 22 column 13, end=line 22 column 43] [QualifiedExpression]
+/[^.]+/.exec(url)[0].substr(7)
+---------------------------
+SourceLocation [start=line 22 column 13, end=line 22 column 21] [Qualifier]
+/[^.]+/.
+---------------------------
+SourceLocation [start=line 22 column 13, end=line 22 column 20] [Literal]
+/[^.]+/
+---------------------------
+SourceLocation [start=line 22 column 20, end=line 22 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 34] [Qualifier]
+exec(url)[0].
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 33] [MapExpression]
+exec(url)[0]
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 30] [FunctionCall]
+exec(url)
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 25] [Identifier]
+exec
+---------------------------
+SourceLocation [start=line 22 column 25, end=line 22 column 30] [Signature]
+(url)
+---------------------------
+SourceLocation [start=line 22 column 26, end=line 22 column 29] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 22 column 30, end=line 22 column 33] [Bracket]
+[0]
+---------------------------
+SourceLocation [start=line 22 column 31, end=line 22 column 32] [Literal]
+0
+---------------------------
+SourceLocation [start=line 22 column 33, end=line 22 column 34] [Operator]
+.
+---------------------------
+SourceLocation [start=line 22 column 34, end=line 22 column 43] [FunctionCall]
+substr(7)
+---------------------------
+SourceLocation [start=line 22 column 34, end=line 22 column 40] [Identifier]
+substr
+---------------------------
+SourceLocation [start=line 22 column 40, end=line 22 column 43] [Signature]
+(7)
+---------------------------
+SourceLocation [start=line 22 column 41, end=line 22 column 42] [Literal]
+7
+---------------------------

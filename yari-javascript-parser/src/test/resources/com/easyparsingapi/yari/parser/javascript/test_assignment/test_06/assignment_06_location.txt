@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 22] [Javascript]
+v >>>= bibi.popo.fafa
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 22] [Assignment]
+v >>>= bibi.popo.fafa
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+v
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 7] [Operator]
+>>>=
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 22] [QualifiedExpression]
+bibi.popo.fafa
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 13] [Qualifier]
+bibi.
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [Identifier]
+bibi
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 18] [Qualifier]
+popo.
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 17] [Identifier]
+popo
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 22] [Identifier]
+fafa
+---------------------------

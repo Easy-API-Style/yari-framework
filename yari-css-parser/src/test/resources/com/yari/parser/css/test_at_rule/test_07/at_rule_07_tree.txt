@@ -1,0 +1,24 @@
+[0, Css] @container (width > 400px) and style(--responsive: true) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+ [1, AtRule] @container (width > 400px) and style(--responsive: true) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] (width > 400px) and style(--responsive: true)
+   [3, Parenthesis] (width > 400px)
+    [4, Infix] width > 400px
+     [5, Identifier] width
+     [5, Operator] >
+     [5, Identifier] 400px
+   [3, Operator] and
+   [3, Function] style(--responsive: true)
+    [4, Identifier] style
+    [4, Signature] (--responsive: true)
+     [5, Property] --responsive: true
+      [6, Identifier] --responsive
+      [6, Identifier] true
+  [2, Block] {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+   [3, RuleSet] h2 {\\n font-size: 1.5em;\\n }
+    [4, ElementSelector] h2
+    [4, Block] {\\n font-size: 1.5em;\\n }
+     [5, Property] font-size: 1.5em
+      [6, Identifier] font-size
+      [6, Identifier] 1.5em

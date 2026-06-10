@@ -1,0 +1,48 @@
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [Css]
+.foo p ~ .foo span {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 3 column 5] [RuleSet]
+.foo p ~ .foo span {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 22] [CombinatorSelector]
+.foo p ~ .foo span
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 10] [QualifiedSelector]
+.foo p
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 8] [ClassSelector]
+.foo
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Operator]
+~
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 22] [QualifiedSelector]
+.foo span
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 17] [ClassSelector]
+.foo
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 17] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 22] [ElementSelector]
+span
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 3 column 5] [Block]
+{\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 20] [Property]
+color: green
+---------------------------
+SourceLocation [start=line 2 column 8, end=line 2 column 13] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 20] [Identifier]
+green
+---------------------------

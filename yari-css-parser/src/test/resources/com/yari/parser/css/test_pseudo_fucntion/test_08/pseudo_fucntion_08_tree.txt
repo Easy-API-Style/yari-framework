@@ -1,0 +1,71 @@
+[0, Css] p:nth-child(n) {\\n font-weight: bold;\\n }\\n li:nth-child(-n + 3) {\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }\\n li:nth-child(even) {\\n background-color: lightyellow;\\n }\\n li:nth-child(even of .noted) {\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+ [1, RuleSet] p:nth-child(n) {\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] p:nth-child(n)
+   [3, ElementSelector] p
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-child(n)
+    [4, PseudoClassSelector] :nth-child
+     [5, Identifier] nth-child
+    [4, Signature] (n)
+     [5, NthPattern] n
+      [6, Identifier] n
+  [2, Block] {\\n font-weight: bold;\\n }
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold
+ [1, RuleSet] li:nth-child(-n + 3) {\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }
+  [2, CombinatorSelector] li:nth-child(-n + 3)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-child(-n + 3)
+    [4, PseudoClassSelector] :nth-child
+     [5, Identifier] nth-child
+    [4, Signature] (-n + 3)
+     [5, NthPattern] -n + 3
+      [6, Infix] -n + 3
+       [7, Identifier] -n
+       [7, Operator] +
+       [7, Literal] 3
+  [2, Block] {\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }
+   [3, Property] border: 2px solid orange
+    [4, Identifier] border
+    [4, ListValue] 2px solid orange
+     [5, Identifier] 2px
+     [5, Identifier] solid
+     [5, Identifier] orange
+   [3, Property] margin-bottom: 1px
+    [4, Identifier] margin-bottom
+    [4, Identifier] 1px
+ [1, RuleSet] li:nth-child(even) {\\n background-color: lightyellow;\\n }
+  [2, CombinatorSelector] li:nth-child(even)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-child(even)
+    [4, PseudoClassSelector] :nth-child
+     [5, Identifier] nth-child
+    [4, Signature] (even)
+     [5, NthPattern] even
+      [6, Identifier] even
+  [2, Block] {\\n background-color: lightyellow;\\n }
+   [3, Property] background-color: lightyellow
+    [4, Identifier] background-color
+    [4, Identifier] lightyellow
+ [1, RuleSet] li:nth-child(even of .noted) {\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+  [2, CombinatorSelector] li:nth-child(even of .noted)
+   [3, ElementSelector] li
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-child(even of .noted)
+    [4, PseudoClassSelector] :nth-child
+     [5, Identifier] nth-child
+    [4, Signature] (even of .noted)
+     [5, NthPattern] even of .noted
+      [6, Identifier] even
+      [6, ClassSelector] of .noted
+       [7, Identifier] noted
+  [2, Block] {\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+   [3, Property] background-color: tomato
+    [4, Identifier] background-color
+    [4, Identifier] tomato
+   [3, Property] border-bottom-color: seagreen
+    [4, Identifier] border-bottom-color
+    [4, Identifier] seagreen

@@ -1,0 +1,18 @@
+[0, Javascript] "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {}
+ [1, Ternary] "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {}
+  [2, Infix] "undefined"!=typeof self
+   [3, Literal] "undefined"
+   [3, Operator] !=
+   [3, Prefix] typeof self
+    [4, Operator] typeof
+    [4, Identifier] self
+  [2, Identifier] self
+  [2, Ternary] "undefined"!=typeof window ? window: {}
+   [3, Infix] "undefined"!=typeof window
+    [4, Literal] "undefined"
+    [4, Operator] !=
+    [4, Prefix] typeof window
+     [5, Operator] typeof
+     [5, Identifier] window
+   [3, Identifier] window
+   [3, ObjectDeclaration] {}

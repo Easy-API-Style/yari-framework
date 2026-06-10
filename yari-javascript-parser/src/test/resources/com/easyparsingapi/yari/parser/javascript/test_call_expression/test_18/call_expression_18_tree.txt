@@ -1,0 +1,16 @@
+[0, Javascript] console.log.bind(1, 2)`Hello`
+ [1, QualifiedExpression] console.log.bind(1, 2)`Hello`
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, Qualifier] log.
+   [3, Identifier] log
+   [3, Operator] .
+  [2, TagFunctionCall] bind(1, 2)`Hello`
+   [3, FunctionCall] bind(1, 2)
+    [4, Identifier] bind
+    [4, Signature] (1, 2)
+     [5, Literal] 1
+     [5, Literal] 2
+   [3, LiteralTemplate] `Hello`
+    [4, Constant] Hello

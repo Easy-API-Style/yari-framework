@@ -1,0 +1,32 @@
+[0, Javascript] class FilledRectangle extends Rectangle { constructor(height, width, color) { super(height, width); this.name = 'Filled rectangle'; this.color = color; } }
+ [1, ClassDeclaration] class FilledRectangle extends Rectangle { constructor(height, width, color) { super(height, width); this.name = 'Filled rectangle'; this.color = color; } }
+  [2, Identifier] FilledRectangle
+  [2, Identifier] extends Rectangle
+  [2, ClassMethodDeclaration] constructor(height, width, color) { super(height, width); this.name = 'Filled rectangle'; this.color = color; }
+   [3, Identifier] constructor
+   [3, Signature] (height, width, color)
+    [4, Identifier] height
+    [4, Identifier] width
+    [4, Identifier] color
+   [3, Procedure] { super(height, width); this.name = 'Filled rectangle'; this.color = color; }
+    [4, FunctionCall] super(height, width)
+     [5, Identifier] super
+     [5, Signature] (height, width)
+      [6, Identifier] height
+      [6, Identifier] width
+    [4, Assignment] this.name = 'Filled rectangle'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'Filled rectangle'
+    [4, Assignment] this.color = color
+     [5, QualifiedExpression] this.color
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] color
+     [5, Operator] =
+     [5, Identifier] color

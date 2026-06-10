@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yari-core — Yari Framework</title>
+  <meta name="description" content="yari-core: common interfaces and abstractions shared by every Yari parser module. Defines the AST contract, source-location system, comment model, and base utilities.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html" class="is-active">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>On this page</h4>
+    <ul class="sidebar__on-this-page">
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#astnode">AstNode</a></li>
+      <li><a href="#astunit">AstUnit</a></li>
+      <li><a href="#asttoken">AstToken</a></li>
+      <li><a href="#astresult">AstResult</a></li>
+      <li><a href="#sourceloc">SourceLocation</a></li>
+      <li><a href="#astcomment">AstComment</a></li>
+      <li><a href="#util">Utilities</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="index.html">Modules</a>
+        <span class="crumb__sep">/</span>
+        <span>yari-core</span>
+      </nav>
+
+      <h1>yari-core</h1>
+      <p class="lead">Common interfaces and abstractions shared by every Yari parser module. Defines the AST contract, the source-location system, the comment model, JSON serialization support, and base utilities. Depends on yari-parsec.</p>
+
+      <!-- ── Installation ── -->
+      <h2 id="install">Installation</h2>
+      <pre><code><span class="c">// Gradle (Groovy DSL)</span>
+implementation <span class="s">'com.easyparsingapi:yari-core:VERSION'</span>
+
+<span class="c">// Maven</span>
+<span class="k">&lt;dependency&gt;</span>
+    <span class="k">&lt;groupId&gt;</span>com.easyparsingapi<span class="k">&lt;/groupId&gt;</span>
+    <span class="k">&lt;artifactId&gt;</span>yari-core<span class="k">&lt;/artifactId&gt;</span>
+    <span class="k">&lt;version&gt;</span>VERSION<span class="k">&lt;/version&gt;</span>
+<span class="k">&lt;/dependency&gt;</span></code></pre>
+      <p>yari-core is pulled transitively by every parser module.</p>
+
+      <!-- ── AstNode ── -->
+      <h2 id="astnode">AstNode — The AST Contract</h2>
+      <p>The base interface implemented by every AST node in every parser module.</p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>interface</span>
+          <strong>AstNode</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Tree navigation</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>astChildren()</td>
+                  <td>List&lt;AstNode&gt;</td>
+                  <td>Direct children of this node</td>
+                </tr>
+                <tr>
+                  <td>astParent()</td>
+                  <td>AstNode</td>
+                  <td>Parent node, or null for the root</td>
+                </tr>
+                <tr>
+                  <td>astStream()</td>
+                  <td>Stream&lt;AstNode&gt;</td>
+                  <td>Pre-order stream over the entire subtree</td>
+                </tr>
+                <tr>
+                  <td>walkChildren(Consumer&lt;Handler&gt;)</td>
+                  <td></td>
+                  <td>Walk direct children with a typed Handler</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Equality</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>equalsNode(AstNode)</td>
+                  <td>boolean</td>
+                  <td>Structural equality ignoring source location</td>
+                </tr>
+                <tr>
+                  <td>equals(Object)</td>
+                  <td>boolean</td>
+                  <td>Full equality including source location</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Source location</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>getSourceLocation()</td>
+                  <td>SourceLocation</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>setSourceLocation(SourceLocation)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">Utilities</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>static childrenAttributes(Object…)</td>
+                  <td>List&lt;AstNode&gt;</td>
+                  <td>Flatten varargs (single nodes and lists) into a child list</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── AstUnit ── -->
+      <h2 id="astunit">AstUnit — Root with Comments</h2>
+      <p>Extends <code>AstNode</code>. Implemented by the root node of each compilation unit (Javascript, Css, Xml, Html…).</p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>interface</span>
+          <strong>AstUnit</strong>
+          <span>extends AstNode</span>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>astComments()</td>
+                  <td>List&lt;AstComment&gt;</td>
+                  <td>All comments in this source unit</td>
+                </tr>
+                <tr>
+                  <td>astCommentsOf(AstNode, Position…)</td>
+                  <td>List&lt;AstComment&gt;</td>
+                  <td>Comments at the given positions relative to the given node</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-class__group-label">enum Position</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>before</td>
+                  <td></td>
+                  <td>Relative position of a comment to a node</td>
+                </tr>
+                <tr>
+                  <td>after</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>inside</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── AstToken ── -->
+      <h2 id="asttoken">AstToken — Typed Token</h2>
+      <p>Represents a lexer token in a form suitable for inclusion in the AST.</p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>interface</span>
+          <strong>AstToken</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>text()</td>
+                  <td>String</td>
+                  <td>Raw text of this token</td>
+                </tr>
+                <tr>
+                  <td>tag()</td>
+                  <td>String</td>
+                  <td>Lexer tag name (e.g. KEYWORD, WORD)</td>
+                </tr>
+                <tr>
+                  <td>sourceLocation()</td>
+                  <td>SourceLocation</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── AstResult ── -->
+      <h2 id="astresult">AstResult&lt;N&gt; — Parse Result</h2>
+      <p>Pairs the root AST node with the full token list produced during parsing.</p>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>class</span>
+          <strong>AstResult&lt;N extends AstNode&gt;</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>getNode()</td>
+                  <td>N</td>
+                  <td>The root AST node</td>
+                </tr>
+                <tr>
+                  <td>getTokens()</td>
+                  <td>List&lt;Token&gt;</td>
+                  <td>The full ordered token list from the lexer</td>
+                </tr>
+                <tr>
+                  <td>getAstTokens()</td>
+                  <td>List&lt;AstToken&gt;</td>
+                  <td>The token list as AstToken instances</td>
+                </tr>
+                <tr>
+                  <td>substring(SourceLocation)</td>
+                  <td>String</td>
+                  <td>Extract the source substring for a given location</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── SourceLocation ── -->
+      <h2 id="sourceloc">Source Locations</h2>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>record</span>
+          <strong>SourceLocation</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>start()</td>
+                  <td>Position</td>
+                  <td>Inclusive start</td>
+                </tr>
+                <tr>
+                  <td>end()</td>
+                  <td>Position</td>
+                  <td>Exclusive end</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>record</span>
+          <strong>Position</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>line()</td>
+                  <td>int</td>
+                  <td>1-based line number</td>
+                </tr>
+                <tr>
+                  <td>column()</td>
+                  <td>int</td>
+                  <td>1-based column number</td>
+                </tr>
+                <tr>
+                  <td>offset()</td>
+                  <td>int</td>
+                  <td>0-based character offset in the source</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── AstComment ── -->
+      <h2 id="astcomment">AstComment — Comment Model</h2>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>interface</span>
+          <strong>AstComment</strong>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>text()</td>
+                  <td>String</td>
+                  <td>Raw comment text including delimiters</td>
+                </tr>
+                <tr>
+                  <td>getSourceLocation()</td>
+                  <td>SourceLocation</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Utilities ── -->
+      <h2 id="util">Utilities</h2>
+
+      <div class="api-class">
+        <div class="api-class__header">
+          <span>class</span>
+          <strong>CollectionUtil</strong>
+          <span>(static helpers)</span>
+        </div>
+
+        <div class="api-class__group">
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <tbody>
+                <tr>
+                  <td>nullToEmpty(List)</td>
+                  <td>List</td>
+                  <td>Returns an empty list if the argument is null</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <p>For the full code-level reference, see the README on <a href="https://github.com/Easy-API-Style/yari-framework" target="_blank" rel="noopener">GitHub</a> and the Javadoc-annotated source under <code>yari-core/src/main/java/</code>.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

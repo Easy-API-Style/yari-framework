@@ -1,0 +1,37 @@
+[0, Xml] <!DOCTYPE html>\\n<html>\\n <head>\\n <title>HTML Entities</title>\\n </head>\\n <body> >\\n &lt;div id = &quot;character&quot;&gt;\\n </body>\\n</html>
+ [1, DocType] <!DOCTYPE html>
+ [1, Tag] <html>\\n <head>\\n <title>HTML Entities</title>\\n </head>\\n <body> >\\n &lt;div id = &quot;character&quot;&gt;\\n </body>\\n</html>
+  [2, TagHead] <html>
+   [3, TagName] html
+    [4, Name] html
+  [2, TagBody] <head>\\n <title>HTML Entities</title>\\n </head>\\n <body> >\\n &lt;div id = &quot;character&quot;&gt;\\n </body>
+   [3, Tag] <head>\\n <title>HTML Entities</title>\\n </head>
+    [4, TagHead] <head>
+     [5, TagName] head
+      [6, Name] head
+    [4, TagBody] <title>HTML Entities</title>
+     [5, Tag] <title>HTML Entities</title>
+      [6, TagHead] <title>
+       [7, TagName] title
+        [8, Name] title
+      [6, TagBody] HTML Entities
+       [7, Text] HTML Entities
+      [6, TagFoot] </title>
+       [7, TagName] title
+        [8, Name] title
+    [4, TagFoot] </head>
+     [5, TagName] head
+      [6, Name] head
+   [3, Tag] <body> >\\n &lt;div id = &quot;character&quot;&gt;\\n </body>
+    [4, TagHead] <body>
+     [5, TagName] body
+      [6, Name] body
+    [4, TagBody] >\\n &lt;div id = &quot;character&quot;&gt;
+     [5, TokenError] >
+     [5, Text] &lt;div id = &quot;character&quot;&gt;
+    [4, TagFoot] </body>
+     [5, TagName] body
+      [6, Name] body
+  [2, TagFoot] </html>
+   [3, TagName] html
+    [4, Name] html

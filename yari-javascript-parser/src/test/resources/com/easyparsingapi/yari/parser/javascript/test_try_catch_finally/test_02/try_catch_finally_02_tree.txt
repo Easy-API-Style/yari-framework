@@ -1,0 +1,49 @@
+[0, Javascript] try { fct_1();} catch (e if e instanceof TypeError) { fct_2(); } catch (e if e instanceof RangeError) { fct_3(); } catch (e if e instanceof EvalError) { fct_4(); } catch (e) { fct_5();}
+ [1, Try] try { fct_1();} catch (e if e instanceof TypeError) { fct_2(); } catch (e if e instanceof RangeError) { fct_3(); } catch (e if e instanceof EvalError) { fct_4(); } catch (e) { fct_5();}
+  [2, Procedure] { fct_1();}
+   [3, FunctionCall] fct_1()
+    [4, Identifier] fct_1
+    [4, Signature] ()
+  [2, Catch] catch (e if e instanceof TypeError) { fct_2(); }
+   [3, Signature] (e if e instanceof TypeError)
+    [4, CatchInstance] e if e instanceof TypeError
+     [5, Identifier] e
+     [5, Infix] if e instanceof TypeError
+      [6, Identifier] e
+      [6, Operator] instanceof
+      [6, Identifier] TypeError
+   [3, Procedure] { fct_2(); }
+    [4, FunctionCall] fct_2()
+     [5, Identifier] fct_2
+     [5, Signature] ()
+  [2, Catch] catch (e if e instanceof RangeError) { fct_3(); }
+   [3, Signature] (e if e instanceof RangeError)
+    [4, CatchInstance] e if e instanceof RangeError
+     [5, Identifier] e
+     [5, Infix] if e instanceof RangeError
+      [6, Identifier] e
+      [6, Operator] instanceof
+      [6, Identifier] RangeError
+   [3, Procedure] { fct_3(); }
+    [4, FunctionCall] fct_3()
+     [5, Identifier] fct_3
+     [5, Signature] ()
+  [2, Catch] catch (e if e instanceof EvalError) { fct_4(); }
+   [3, Signature] (e if e instanceof EvalError)
+    [4, CatchInstance] e if e instanceof EvalError
+     [5, Identifier] e
+     [5, Infix] if e instanceof EvalError
+      [6, Identifier] e
+      [6, Operator] instanceof
+      [6, Identifier] EvalError
+   [3, Procedure] { fct_4(); }
+    [4, FunctionCall] fct_4()
+     [5, Identifier] fct_4
+     [5, Signature] ()
+  [2, Catch] catch (e) { fct_5();}
+   [3, Signature] (e)
+    [4, Identifier] e
+   [3, Procedure] { fct_5();}
+    [4, FunctionCall] fct_5()
+     [5, Identifier] fct_5
+     [5, Signature] ()

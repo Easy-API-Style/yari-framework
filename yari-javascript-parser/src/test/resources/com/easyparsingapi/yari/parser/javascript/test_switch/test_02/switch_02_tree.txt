@@ -1,0 +1,41 @@
+[0, Javascript] switch(typeof a){case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)}
+ [1, Switch] switch(typeof a){case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)}
+  [2, SwitchExpression] (typeof a)
+   [3, Prefix] typeof a
+    [4, Operator] typeof
+    [4, Identifier] a
+  [2, SwitchProcedure] case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+   [3, SwitchCase] case "string":kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+    [4, Literal] "string"
+    [4, CaseProcedure] kc(a);var b=hc(Number(a));if(ec(b))a=String(b)
+     [5, FunctionCall] kc(a)
+      [6, Identifier] kc
+      [6, Signature] (a)
+       [7, Identifier] a
+     [5, VariableDeclaration] var b=hc(Number(a))
+      [6, Type] var
+      [6, Variable] b=hc(Number(a))
+       [7, Identifier] b
+       [7, Operator] =
+       [7, FunctionCall] hc(Number(a))
+        [8, Identifier] hc
+        [8, Signature] (Number(a))
+         [9, FunctionCall] Number(a)
+          [10, Identifier] Number
+          [10, Signature] (a)
+           [11, Identifier] a
+     [5, If] if(ec(b))a=String(b)
+      [6, IfBlock] if(ec(b))a=String(b)
+       [7, Condition] (ec(b))
+        [8, FunctionCall] ec(b)
+         [9, Identifier] ec
+         [9, Signature] (b)
+          [10, Identifier] b
+       [7, Procedure] a=String(b)
+        [8, Assignment] a=String(b)
+         [9, Identifier] a
+         [9, Operator] =
+         [9, FunctionCall] String(b)
+          [10, Identifier] String
+          [10, Signature] (b)
+           [11, Identifier] b

@@ -1,0 +1,138 @@
+SourceLocation [start=line 1 column 4, end=line 4 column 5] [Css]
+li:has(+ li:last-of-type ~ div::has .test > .tag.go.over) {\\n color: red;\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 4 column 5] [RuleSet]
+li:has(+ li:last-of-type ~ div::has .test > .tag.go.over) {\\n color: red;\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 62] [CombinatorSelector]
+li:has(+ li:last-of-type ~ div::has .test > .tag.go.over)
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 6] [ElementSelector]
+li
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 6] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 62] [PseudoFunctionSelector]
+:has(+ li:last-of-type ~ div::has .test > .tag.go.over)
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 10] [PseudoClassSelector]
+:has
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 10] [Identifier]
+has
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 62] [Signature]
+(+ li:last-of-type ~ div::has .test > .tag.go.over)
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 61] [CombinatorSelector]
++ li:last-of-type ~ div::has .test > .tag.go.over
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 56] [CombinatorSelector]
++ li:last-of-type ~ div::has .test > .tag.go
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 53] [CombinatorSelector]
++ li:last-of-type ~ div::has .test > .tag
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 46] [CombinatorSelector]
++ li:last-of-type ~ div::has .test
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 39] [CombinatorSelector]
++ li:last-of-type ~ div::has
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 34] [CombinatorSelector]
++ li:last-of-type ~ div
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 28] [CombinatorSelector]
++ li:last-of-type
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 15] [PrefixSelector]
++ li
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 15] [ElementSelector]
+li
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 15] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 28] [PseudoClassSelector]
+:last-of-type
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 28] [Identifier]
+last-of-type
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 30] [Operator]
+~
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 34] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 34] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 39] [PseudoElementSelector]
+::has
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 39] [Identifier]
+has
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 39] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 46] [ClassSelector]
+.test
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 46] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 48] [Operator]
+>
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 53] [ClassSelector]
+.tag
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 53] [Identifier]
+tag
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 53] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 56] [ClassSelector]
+.go
+---------------------------
+SourceLocation [start=line 1 column 54, end=line 1 column 56] [Identifier]
+go
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 56] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 61] [ClassSelector]
+.over
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 61] [Identifier]
+over
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 4 column 5] [Block]
+{\\n color: red;\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 16] [Property]
+color: red
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 11] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 16] [Identifier]
+red
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 23] [Property]
+font-weight: bold
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 17] [Identifier]
+font-weight
+---------------------------
+SourceLocation [start=line 3 column 19, end=line 3 column 23] [Identifier]
+bold
+---------------------------

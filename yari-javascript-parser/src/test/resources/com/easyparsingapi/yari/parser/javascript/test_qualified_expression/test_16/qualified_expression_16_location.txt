@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 23] [JavascriptNodeUnit]
+myMap.get("bar")?.name
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 23] [QualifiedExpression]
+myMap.get("bar")?.name
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 7] [Qualifier]
+myMap.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Identifier]
+myMap
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 19] [Qualifier]
+get("bar")?.
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 17] [FunctionCall]
+get("bar")
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 10] [Identifier]
+get
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 17] [Signature]
+("bar")
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 16] [Literal]
+"bar"
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 19] [Operator]
+?.
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 23] [Identifier]
+name
+---------------------------

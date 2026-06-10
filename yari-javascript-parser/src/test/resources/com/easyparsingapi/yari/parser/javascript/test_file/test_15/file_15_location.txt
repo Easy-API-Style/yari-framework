@@ -1,0 +1,873 @@
+SourceLocation [start=line 2 column 24, end=line 2 column 49] [Javascript]
+// generates an exception
+---------------------------
+SourceLocation [start=line 4 column 19, end=line 4 column 60] [Javascript]
+// pass exception object to error handler
+---------------------------
+SourceLocation [start=line 8 column 16, end=line 8 column 54] [Javascript]
+// may throw three types of exceptions
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 49] [Javascript]
+// statements to handle TypeError exceptions
+---------------------------
+SourceLocation [start=line 13 column 5, end=line 13 column 50] [Javascript]
+// statements to handle RangeError exceptions
+---------------------------
+SourceLocation [start=line 15 column 5, end=line 15 column 49] [Javascript]
+// statements to handle EvalError exceptions
+---------------------------
+SourceLocation [start=line 17 column 5, end=line 17 column 55] [Javascript]
+// statements to handle any unspecified exceptions
+---------------------------
+SourceLocation [start=line 18 column 21, end=line 18 column 62] [Javascript]
+// pass exception object to error handler
+---------------------------
+SourceLocation [start=line 26 column 5, end=line 26 column 60] [Javascript]
+// statements to handle this very common expected error
+---------------------------
+SourceLocation [start=line 28 column 15, end=line 28 column 46] [Javascript]
+// re-throw the error unchanged
+---------------------------
+SourceLocation [start=line 43 column 3, end=line 43 column 23] [Javascript]
+// tie up a resource
+---------------------------
+SourceLocation [start=line 46 column 18, end=line 46 column 46] [Javascript]
+// always close the resource
+---------------------------
+SourceLocation [start=line 60 column 1, end=line 60 column 11] [Javascript]
+// Output:
+---------------------------
+SourceLocation [start=line 61 column 1, end=line 61 column 18] [Javascript]
+// "inner" "oops"
+---------------------------
+SourceLocation [start=line 62 column 1, end=line 62 column 13] [Javascript]
+// "finally"
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 91 column 6] [Javascript]
+try {\\n throw 'myException'; // generates an exception\\n} catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}\\n\\ntry {\\n myroutine(); // may throw three types of exceptions\\n} catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}\\n\\ntry {\\n myRoutine();\\n} catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}\\n\\nfunction isValidJSON(text) {\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}\\n\\nopenMyFile();\\ntry {\\n // tie up a resource\\n writeMyFile(theData);\\n} finally {\\n closeMyFile(); // always close the resource\\n}\\n\\ntry {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}\\n// Output:\\n// "inner" "oops"\\n// "finally"\\n\\ntry {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}\\n\\n(function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})();
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 5 column 2] [Try]
+try {\\n throw 'myException'; // generates an exception\\n} catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 3 column 2] [Procedure]
+{\\n throw 'myException'; // generates an exception\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 22] [Throw]
+throw 'myException'
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 22] [Literal]
+'myException'
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 5 column 2] [Catch]
+catch (e) {\\n logMyErrors(e); // pass exception object to error handler\\n}
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 12] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 3 column 10, end=line 3 column 11] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 5 column 2] [Procedure]
+{\\n logMyErrors(e); // pass exception object to error handler\\n}
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 17] [FunctionCall]
+logMyErrors(e)
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 14] [Identifier]
+logMyErrors
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 17] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 16] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 20 column 2] [Try]
+try {\\n myroutine(); // may throw three types of exceptions\\n} catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 9 column 2] [Procedure]
+{\\n myroutine(); // may throw three types of exceptions\\n}
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 14] [FunctionCall]
+myroutine()
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 12] [Identifier]
+myroutine
+---------------------------
+SourceLocation [start=line 8 column 12, end=line 8 column 14] [Signature]
+()
+---------------------------
+SourceLocation [start=line 9 column 3, end=line 20 column 2] [Catch]
+catch (e) {\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 12] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 9 column 10, end=line 9 column 11] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 9 column 13, end=line 20 column 2] [Procedure]
+{\\n if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }\\n}
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 19 column 4] [If]
+if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n } else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n } else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n } else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 12 column 4] [IfBlock]
+if (e instanceof TypeError) {\\n // statements to handle TypeError exceptions\\n }
+---------------------------
+SourceLocation [start=line 10 column 6, end=line 10 column 30] [Condition]
+(e instanceof TypeError)
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 29] [Infix]
+e instanceof TypeError
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 8] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 19] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 10 column 20, end=line 10 column 29] [Identifier]
+TypeError
+---------------------------
+SourceLocation [start=line 10 column 31, end=line 12 column 4] [Procedure]
+{\\n // statements to handle TypeError exceptions\\n }
+---------------------------
+SourceLocation [start=line 12 column 5, end=line 14 column 4] [ElseIfBlock]
+else if (e instanceof RangeError) {\\n // statements to handle RangeError exceptions\\n }
+---------------------------
+SourceLocation [start=line 12 column 13, end=line 12 column 38] [Condition]
+(e instanceof RangeError)
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 37] [Infix]
+e instanceof RangeError
+---------------------------
+SourceLocation [start=line 12 column 14, end=line 12 column 15] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 12 column 16, end=line 12 column 26] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 12 column 27, end=line 12 column 37] [Identifier]
+RangeError
+---------------------------
+SourceLocation [start=line 12 column 39, end=line 14 column 4] [Procedure]
+{\\n // statements to handle RangeError exceptions\\n }
+---------------------------
+SourceLocation [start=line 14 column 5, end=line 16 column 4] [ElseIfBlock]
+else if (e instanceof EvalError) {\\n // statements to handle EvalError exceptions\\n }
+---------------------------
+SourceLocation [start=line 14 column 13, end=line 14 column 37] [Condition]
+(e instanceof EvalError)
+---------------------------
+SourceLocation [start=line 14 column 14, end=line 14 column 36] [Infix]
+e instanceof EvalError
+---------------------------
+SourceLocation [start=line 14 column 14, end=line 14 column 15] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 14 column 16, end=line 14 column 26] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 14 column 27, end=line 14 column 36] [Identifier]
+EvalError
+---------------------------
+SourceLocation [start=line 14 column 38, end=line 16 column 4] [Procedure]
+{\\n // statements to handle EvalError exceptions\\n }
+---------------------------
+SourceLocation [start=line 16 column 5, end=line 19 column 4] [ElseBlock]
+else {\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+---------------------------
+SourceLocation [start=line 16 column 10, end=line 19 column 4] [Procedure]
+{\\n // statements to handle any unspecified exceptions\\n logMyErrors(e); // pass exception object to error handler\\n }
+---------------------------
+SourceLocation [start=line 18 column 5, end=line 18 column 19] [FunctionCall]
+logMyErrors(e)
+---------------------------
+SourceLocation [start=line 18 column 5, end=line 18 column 16] [Identifier]
+logMyErrors
+---------------------------
+SourceLocation [start=line 18 column 16, end=line 18 column 19] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 18 column 17, end=line 18 column 18] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 22 column 1, end=line 30 column 2] [Try]
+try {\\n myRoutine();\\n} catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+---------------------------
+SourceLocation [start=line 22 column 5, end=line 24 column 2] [Procedure]
+{\\n myRoutine();\\n}
+---------------------------
+SourceLocation [start=line 23 column 3, end=line 23 column 14] [FunctionCall]
+myRoutine()
+---------------------------
+SourceLocation [start=line 23 column 3, end=line 23 column 12] [Identifier]
+myRoutine
+---------------------------
+SourceLocation [start=line 23 column 12, end=line 23 column 14] [Signature]
+()
+---------------------------
+SourceLocation [start=line 24 column 3, end=line 30 column 2] [Catch]
+catch (e) {\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+---------------------------
+SourceLocation [start=line 24 column 9, end=line 24 column 12] [Signature]
+(e)
+---------------------------
+SourceLocation [start=line 24 column 10, end=line 24 column 11] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 24 column 13, end=line 30 column 2] [Procedure]
+{\\n if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }\\n}
+---------------------------
+SourceLocation [start=line 25 column 3, end=line 29 column 4] [If]
+if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n } else {\\n throw e; // re-throw the error unchanged\\n }
+---------------------------
+SourceLocation [start=line 25 column 3, end=line 27 column 4] [IfBlock]
+if (e instanceof RangeError) {\\n // statements to handle this very common expected error\\n }
+---------------------------
+SourceLocation [start=line 25 column 6, end=line 25 column 31] [Condition]
+(e instanceof RangeError)
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 30] [Infix]
+e instanceof RangeError
+---------------------------
+SourceLocation [start=line 25 column 7, end=line 25 column 8] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 25 column 9, end=line 25 column 19] [Operator]
+instanceof
+---------------------------
+SourceLocation [start=line 25 column 20, end=line 25 column 30] [Identifier]
+RangeError
+---------------------------
+SourceLocation [start=line 25 column 32, end=line 27 column 4] [Procedure]
+{\\n // statements to handle this very common expected error\\n }
+---------------------------
+SourceLocation [start=line 27 column 5, end=line 29 column 4] [ElseBlock]
+else {\\n throw e; // re-throw the error unchanged\\n }
+---------------------------
+SourceLocation [start=line 27 column 10, end=line 29 column 4] [Procedure]
+{\\n throw e; // re-throw the error unchanged\\n }
+---------------------------
+SourceLocation [start=line 28 column 5, end=line 28 column 12] [Throw]
+throw e
+---------------------------
+SourceLocation [start=line 28 column 11, end=line 28 column 12] [Identifier]
+e
+---------------------------
+SourceLocation [start=line 32 column 1, end=line 39 column 2] [FunctionDeclaration]
+function isValidJSON(text) {\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}
+---------------------------
+SourceLocation [start=line 32 column 10, end=line 32 column 21] [Identifier]
+isValidJSON
+---------------------------
+SourceLocation [start=line 32 column 21, end=line 32 column 27] [Signature]
+(text)
+---------------------------
+SourceLocation [start=line 32 column 22, end=line 32 column 26] [Identifier]
+text
+---------------------------
+SourceLocation [start=line 32 column 28, end=line 39 column 2] [Procedure]
+{\\n try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }\\n}
+---------------------------
+SourceLocation [start=line 33 column 3, end=line 38 column 4] [Try]
+try {\\n JSON.parse(text);\\n return true;\\n } catch {\\n return false;\\n }
+---------------------------
+SourceLocation [start=line 33 column 7, end=line 36 column 4] [Procedure]
+{\\n JSON.parse(text);\\n return true;\\n }
+---------------------------
+SourceLocation [start=line 34 column 5, end=line 34 column 21] [QualifiedExpression]
+JSON.parse(text)
+---------------------------
+SourceLocation [start=line 34 column 5, end=line 34 column 10] [Qualifier]
+JSON.
+---------------------------
+SourceLocation [start=line 34 column 5, end=line 34 column 9] [Identifier]
+JSON
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 10] [Operator]
+.
+---------------------------
+SourceLocation [start=line 34 column 10, end=line 34 column 21] [FunctionCall]
+parse(text)
+---------------------------
+SourceLocation [start=line 34 column 10, end=line 34 column 15] [Identifier]
+parse
+---------------------------
+SourceLocation [start=line 34 column 15, end=line 34 column 21] [Signature]
+(text)
+---------------------------
+SourceLocation [start=line 34 column 16, end=line 34 column 20] [Identifier]
+text
+---------------------------
+SourceLocation [start=line 35 column 5, end=line 35 column 16] [Return]
+return true
+---------------------------
+SourceLocation [start=line 35 column 12, end=line 35 column 16] [Literal]
+true
+---------------------------
+SourceLocation [start=line 36 column 5, end=line 38 column 4] [Catch]
+catch {\\n return false;\\n }
+---------------------------
+SourceLocation [start=line 36 column 11, end=line 38 column 4] [Procedure]
+{\\n return false;\\n }
+---------------------------
+SourceLocation [start=line 37 column 5, end=line 37 column 17] [Return]
+return false
+---------------------------
+SourceLocation [start=line 37 column 12, end=line 37 column 17] [Literal]
+false
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 13] [FunctionCall]
+openMyFile()
+---------------------------
+SourceLocation [start=line 41 column 1, end=line 41 column 11] [Identifier]
+openMyFile
+---------------------------
+SourceLocation [start=line 41 column 11, end=line 41 column 13] [Signature]
+()
+---------------------------
+SourceLocation [start=line 42 column 1, end=line 47 column 2] [Try]
+try {\\n // tie up a resource\\n writeMyFile(theData);\\n} finally {\\n closeMyFile(); // always close the resource\\n}
+---------------------------
+SourceLocation [start=line 42 column 5, end=line 45 column 2] [Procedure]
+{\\n // tie up a resource\\n writeMyFile(theData);\\n}
+---------------------------
+SourceLocation [start=line 44 column 3, end=line 44 column 23] [FunctionCall]
+writeMyFile(theData)
+---------------------------
+SourceLocation [start=line 44 column 3, end=line 44 column 14] [Identifier]
+writeMyFile
+---------------------------
+SourceLocation [start=line 44 column 14, end=line 44 column 23] [Signature]
+(theData)
+---------------------------
+SourceLocation [start=line 44 column 15, end=line 44 column 22] [Identifier]
+theData
+---------------------------
+SourceLocation [start=line 45 column 3, end=line 47 column 2] [Finally]
+finally {\\n closeMyFile(); // always close the resource\\n}
+---------------------------
+SourceLocation [start=line 45 column 11, end=line 47 column 2] [Procedure]
+{\\n closeMyFile(); // always close the resource\\n}
+---------------------------
+SourceLocation [start=line 46 column 3, end=line 46 column 16] [FunctionCall]
+closeMyFile()
+---------------------------
+SourceLocation [start=line 46 column 3, end=line 46 column 14] [Identifier]
+closeMyFile
+---------------------------
+SourceLocation [start=line 46 column 14, end=line 46 column 16] [Signature]
+()
+---------------------------
+SourceLocation [start=line 49 column 1, end=line 59 column 2] [Try]
+try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 49 column 5, end=line 57 column 2] [Procedure]
+{\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }\\n}
+---------------------------
+SourceLocation [start=line 50 column 3, end=line 56 column 4] [Try]
+try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n } finally {\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 50 column 7, end=line 52 column 4] [Procedure]
+{\\n throw new Error('oops');\\n }
+---------------------------
+SourceLocation [start=line 51 column 5, end=line 51 column 28] [Throw]
+throw new Error('oops')
+---------------------------
+SourceLocation [start=line 51 column 11, end=line 51 column 28] [New]
+new Error('oops')
+---------------------------
+SourceLocation [start=line 51 column 15, end=line 51 column 20] [Identifier]
+Error
+---------------------------
+SourceLocation [start=line 51 column 20, end=line 51 column 28] [Signature]
+('oops')
+---------------------------
+SourceLocation [start=line 51 column 21, end=line 51 column 27] [Literal]
+'oops'
+---------------------------
+SourceLocation [start=line 52 column 5, end=line 54 column 4] [Catch]
+catch (ex) {\\n console.error('inner', ex.message);\\n }
+---------------------------
+SourceLocation [start=line 52 column 11, end=line 52 column 15] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 52 column 12, end=line 52 column 14] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 52 column 16, end=line 54 column 4] [Procedure]
+{\\n console.error('inner', ex.message);\\n }
+---------------------------
+SourceLocation [start=line 53 column 5, end=line 53 column 39] [QualifiedExpression]
+console.error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 53 column 5, end=line 53 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 53 column 5, end=line 53 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 53 column 12, end=line 53 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 53 column 13, end=line 53 column 39] [FunctionCall]
+error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 53 column 13, end=line 53 column 18] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 53 column 18, end=line 53 column 39] [Signature]
+('inner', ex.message)
+---------------------------
+SourceLocation [start=line 53 column 19, end=line 53 column 26] [Literal]
+'inner'
+---------------------------
+SourceLocation [start=line 53 column 28, end=line 53 column 38] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 53 column 28, end=line 53 column 31] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 53 column 28, end=line 53 column 30] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 53 column 30, end=line 53 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 53 column 31, end=line 53 column 38] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 54 column 5, end=line 56 column 4] [Finally]
+finally {\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 54 column 13, end=line 56 column 4] [Procedure]
+{\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 55 column 5, end=line 55 column 27] [QualifiedExpression]
+console.log('finally')
+---------------------------
+SourceLocation [start=line 55 column 5, end=line 55 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 55 column 5, end=line 55 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 55 column 12, end=line 55 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 55 column 13, end=line 55 column 27] [FunctionCall]
+log('finally')
+---------------------------
+SourceLocation [start=line 55 column 13, end=line 55 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 55 column 16, end=line 55 column 27] [Signature]
+('finally')
+---------------------------
+SourceLocation [start=line 55 column 17, end=line 55 column 26] [Literal]
+'finally'
+---------------------------
+SourceLocation [start=line 57 column 3, end=line 59 column 2] [Catch]
+catch (ex) {\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 57 column 9, end=line 57 column 13] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 57 column 10, end=line 57 column 12] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 57 column 14, end=line 59 column 2] [Procedure]
+{\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 58 column 3, end=line 58 column 37] [QualifiedExpression]
+console.error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 58 column 3, end=line 58 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 58 column 3, end=line 58 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 58 column 10, end=line 58 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 58 column 11, end=line 58 column 37] [FunctionCall]
+error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 58 column 11, end=line 58 column 16] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 58 column 16, end=line 58 column 37] [Signature]
+('outer', ex.message)
+---------------------------
+SourceLocation [start=line 58 column 17, end=line 58 column 24] [Literal]
+'outer'
+---------------------------
+SourceLocation [start=line 58 column 26, end=line 58 column 36] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 58 column 26, end=line 58 column 29] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 58 column 26, end=line 58 column 28] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 58 column 28, end=line 58 column 29] [Operator]
+.
+---------------------------
+SourceLocation [start=line 58 column 29, end=line 58 column 36] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 75 column 2] [Try]
+try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n} catch (ex) {\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 64 column 5, end=line 73 column 2] [Procedure]
+{\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }\\n}
+---------------------------
+SourceLocation [start=line 65 column 3, end=line 72 column 4] [Try]
+try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 65 column 7, end=line 67 column 4] [Procedure]
+{\\n throw new Error('oops');\\n }
+---------------------------
+SourceLocation [start=line 66 column 5, end=line 66 column 28] [Throw]
+throw new Error('oops')
+---------------------------
+SourceLocation [start=line 66 column 11, end=line 66 column 28] [New]
+new Error('oops')
+---------------------------
+SourceLocation [start=line 66 column 15, end=line 66 column 20] [Identifier]
+Error
+---------------------------
+SourceLocation [start=line 66 column 20, end=line 66 column 28] [Signature]
+('oops')
+---------------------------
+SourceLocation [start=line 66 column 21, end=line 66 column 27] [Literal]
+'oops'
+---------------------------
+SourceLocation [start=line 67 column 5, end=line 70 column 4] [Catch]
+catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+---------------------------
+SourceLocation [start=line 67 column 11, end=line 67 column 15] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 67 column 12, end=line 67 column 14] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 67 column 16, end=line 70 column 4] [Procedure]
+{\\n console.error('inner', ex.message);\\n throw ex;\\n }
+---------------------------
+SourceLocation [start=line 68 column 5, end=line 68 column 39] [QualifiedExpression]
+console.error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 68 column 5, end=line 68 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 68 column 5, end=line 68 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 68 column 12, end=line 68 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 68 column 13, end=line 68 column 39] [FunctionCall]
+error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 68 column 13, end=line 68 column 18] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 68 column 18, end=line 68 column 39] [Signature]
+('inner', ex.message)
+---------------------------
+SourceLocation [start=line 68 column 19, end=line 68 column 26] [Literal]
+'inner'
+---------------------------
+SourceLocation [start=line 68 column 28, end=line 68 column 38] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 68 column 28, end=line 68 column 31] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 68 column 28, end=line 68 column 30] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 68 column 30, end=line 68 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 68 column 31, end=line 68 column 38] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 69 column 5, end=line 69 column 13] [Throw]
+throw ex
+---------------------------
+SourceLocation [start=line 69 column 11, end=line 69 column 13] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 70 column 5, end=line 72 column 4] [Finally]
+finally {\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 70 column 13, end=line 72 column 4] [Procedure]
+{\\n console.log('finally');\\n }
+---------------------------
+SourceLocation [start=line 71 column 5, end=line 71 column 27] [QualifiedExpression]
+console.log('finally')
+---------------------------
+SourceLocation [start=line 71 column 5, end=line 71 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 71 column 5, end=line 71 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 71 column 12, end=line 71 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 71 column 13, end=line 71 column 27] [FunctionCall]
+log('finally')
+---------------------------
+SourceLocation [start=line 71 column 13, end=line 71 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 71 column 16, end=line 71 column 27] [Signature]
+('finally')
+---------------------------
+SourceLocation [start=line 71 column 17, end=line 71 column 26] [Literal]
+'finally'
+---------------------------
+SourceLocation [start=line 73 column 3, end=line 75 column 2] [Catch]
+catch (ex) {\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 73 column 9, end=line 73 column 13] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 73 column 10, end=line 73 column 12] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 73 column 14, end=line 75 column 2] [Procedure]
+{\\n console.error('outer', ex.message);\\n}
+---------------------------
+SourceLocation [start=line 74 column 3, end=line 74 column 37] [QualifiedExpression]
+console.error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 74 column 3, end=line 74 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 74 column 3, end=line 74 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 74 column 10, end=line 74 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 74 column 11, end=line 74 column 37] [FunctionCall]
+error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 74 column 11, end=line 74 column 16] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 74 column 16, end=line 74 column 37] [Signature]
+('outer', ex.message)
+---------------------------
+SourceLocation [start=line 74 column 17, end=line 74 column 24] [Literal]
+'outer'
+---------------------------
+SourceLocation [start=line 74 column 26, end=line 74 column 36] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 74 column 26, end=line 74 column 29] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 74 column 26, end=line 74 column 28] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 74 column 28, end=line 74 column 29] [Operator]
+.
+---------------------------
+SourceLocation [start=line 74 column 29, end=line 74 column 36] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 77 column 1, end=line 91 column 5] [InvokedFunction]
+(function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})()
+---------------------------
+SourceLocation [start=line 77 column 1, end=line 91 column 3] [Definition]
+(function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n})
+---------------------------
+SourceLocation [start=line 77 column 2, end=line 91 column 2] [FunctionDeclaration]
+function() {\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n}
+---------------------------
+SourceLocation [start=line 77 column 10, end=line 77 column 12] [Signature]
+()
+---------------------------
+SourceLocation [start=line 77 column 13, end=line 91 column 2] [Procedure]
+{\\n try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }\\n}
+---------------------------
+SourceLocation [start=line 78 column 3, end=line 90 column 4] [Try]
+try {\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n } catch (ex) {\\n console.error('outer', ex.message);\\n }
+---------------------------
+SourceLocation [start=line 78 column 7, end=line 88 column 4] [Procedure]
+{\\n try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }\\n }
+---------------------------
+SourceLocation [start=line 79 column 5, end=line 87 column 6] [Try]
+try {\\n throw new Error('oops');\\n } catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n } finally {\\n console.log('finally');\\n return;\\n }
+---------------------------
+SourceLocation [start=line 79 column 9, end=line 81 column 6] [Procedure]
+{\\n throw new Error('oops');\\n }
+---------------------------
+SourceLocation [start=line 80 column 7, end=line 80 column 30] [Throw]
+throw new Error('oops')
+---------------------------
+SourceLocation [start=line 80 column 13, end=line 80 column 30] [New]
+new Error('oops')
+---------------------------
+SourceLocation [start=line 80 column 17, end=line 80 column 22] [Identifier]
+Error
+---------------------------
+SourceLocation [start=line 80 column 22, end=line 80 column 30] [Signature]
+('oops')
+---------------------------
+SourceLocation [start=line 80 column 23, end=line 80 column 29] [Literal]
+'oops'
+---------------------------
+SourceLocation [start=line 81 column 7, end=line 84 column 6] [Catch]
+catch (ex) {\\n console.error('inner', ex.message);\\n throw ex;\\n }
+---------------------------
+SourceLocation [start=line 81 column 13, end=line 81 column 17] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 81 column 14, end=line 81 column 16] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 81 column 18, end=line 84 column 6] [Procedure]
+{\\n console.error('inner', ex.message);\\n throw ex;\\n }
+---------------------------
+SourceLocation [start=line 82 column 7, end=line 82 column 41] [QualifiedExpression]
+console.error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 82 column 7, end=line 82 column 15] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 82 column 7, end=line 82 column 14] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 82 column 14, end=line 82 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 82 column 15, end=line 82 column 41] [FunctionCall]
+error('inner', ex.message)
+---------------------------
+SourceLocation [start=line 82 column 15, end=line 82 column 20] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 82 column 20, end=line 82 column 41] [Signature]
+('inner', ex.message)
+---------------------------
+SourceLocation [start=line 82 column 21, end=line 82 column 28] [Literal]
+'inner'
+---------------------------
+SourceLocation [start=line 82 column 30, end=line 82 column 40] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 82 column 30, end=line 82 column 33] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 82 column 30, end=line 82 column 32] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 82 column 32, end=line 82 column 33] [Operator]
+.
+---------------------------
+SourceLocation [start=line 82 column 33, end=line 82 column 40] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 83 column 7, end=line 83 column 15] [Throw]
+throw ex
+---------------------------
+SourceLocation [start=line 83 column 13, end=line 83 column 15] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 84 column 7, end=line 87 column 6] [Finally]
+finally {\\n console.log('finally');\\n return;\\n }
+---------------------------
+SourceLocation [start=line 84 column 15, end=line 87 column 6] [Procedure]
+{\\n console.log('finally');\\n return;\\n }
+---------------------------
+SourceLocation [start=line 85 column 7, end=line 85 column 29] [QualifiedExpression]
+console.log('finally')
+---------------------------
+SourceLocation [start=line 85 column 7, end=line 85 column 15] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 85 column 7, end=line 85 column 14] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 85 column 14, end=line 85 column 15] [Operator]
+.
+---------------------------
+SourceLocation [start=line 85 column 15, end=line 85 column 29] [FunctionCall]
+log('finally')
+---------------------------
+SourceLocation [start=line 85 column 15, end=line 85 column 18] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 85 column 18, end=line 85 column 29] [Signature]
+('finally')
+---------------------------
+SourceLocation [start=line 85 column 19, end=line 85 column 28] [Literal]
+'finally'
+---------------------------
+SourceLocation [start=line 86 column 7, end=line 86 column 13] [Return]
+return
+---------------------------
+SourceLocation [start=line 88 column 5, end=line 90 column 4] [Catch]
+catch (ex) {\\n console.error('outer', ex.message);\\n }
+---------------------------
+SourceLocation [start=line 88 column 11, end=line 88 column 15] [Signature]
+(ex)
+---------------------------
+SourceLocation [start=line 88 column 12, end=line 88 column 14] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 88 column 16, end=line 90 column 4] [Procedure]
+{\\n console.error('outer', ex.message);\\n }
+---------------------------
+SourceLocation [start=line 89 column 5, end=line 89 column 39] [QualifiedExpression]
+console.error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 89 column 5, end=line 89 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 89 column 5, end=line 89 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 89 column 12, end=line 89 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 89 column 13, end=line 89 column 39] [FunctionCall]
+error('outer', ex.message)
+---------------------------
+SourceLocation [start=line 89 column 13, end=line 89 column 18] [Identifier]
+error
+---------------------------
+SourceLocation [start=line 89 column 18, end=line 89 column 39] [Signature]
+('outer', ex.message)
+---------------------------
+SourceLocation [start=line 89 column 19, end=line 89 column 26] [Literal]
+'outer'
+---------------------------
+SourceLocation [start=line 89 column 28, end=line 89 column 38] [QualifiedExpression]
+ex.message
+---------------------------
+SourceLocation [start=line 89 column 28, end=line 89 column 31] [Qualifier]
+ex.
+---------------------------
+SourceLocation [start=line 89 column 28, end=line 89 column 30] [Identifier]
+ex
+---------------------------
+SourceLocation [start=line 89 column 30, end=line 89 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 89 column 31, end=line 89 column 38] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 91 column 3, end=line 91 column 5] [Signature]
+()
+---------------------------

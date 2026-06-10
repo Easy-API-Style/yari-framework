@@ -1,0 +1,67 @@
+[0, Javascript] if(this.Ph.Qv()instanceof \\n Array){const h=this.Ph.Qv();h.length>0&&h[0]instanceof Uint8Array&&(this.Ja=!0,a=h)}
+ [1, If] if(this.Ph.Qv()instanceof \\n Array){const h=this.Ph.Qv();h.length>0&&h[0]instanceof Uint8Array&&(this.Ja=!0,a=h)}
+  [2, IfBlock] if(this.Ph.Qv()instanceof \\n Array){const h=this.Ph.Qv();h.length>0&&h[0]instanceof Uint8Array&&(this.Ja=!0,a=h)}
+   [3, Condition] (this.Ph.Qv()instanceof \\n Array)
+    [4, Infix] this.Ph.Qv()instanceof \\n Array
+     [5, QualifiedExpression] this.Ph.Qv()
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Qualifier] Ph.
+       [7, Identifier] Ph
+       [7, Operator] .
+      [6, FunctionCall] Qv()
+       [7, Identifier] Qv
+       [7, Signature] ()
+     [5, Operator] instanceof
+     [5, Identifier] Array
+   [3, Procedure] {const h=this.Ph.Qv();h.length>0&&h[0]instanceof Uint8Array&&(this.Ja=!0,a=h)}
+    [4, VariableDeclaration] const h=this.Ph.Qv()
+     [5, Type] const
+     [5, Variable] h=this.Ph.Qv()
+      [6, Identifier] h
+      [6, Operator] =
+      [6, QualifiedExpression] this.Ph.Qv()
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Qualifier] Ph.
+        [8, Identifier] Ph
+        [8, Operator] .
+       [7, FunctionCall] Qv()
+        [8, Identifier] Qv
+        [8, Signature] ()
+    [4, Infix] h.length>0&&h[0]instanceof Uint8Array&&(this.Ja=!0,a=h)
+     [5, Infix] h.length>0&&h[0]instanceof Uint8Array
+      [6, Infix] h.length>0
+       [7, QualifiedExpression] h.length
+        [8, Qualifier] h.
+         [9, Identifier] h
+         [9, Operator] .
+        [8, Identifier] length
+       [7, Operator] >
+       [7, Literal] 0
+      [6, Operator] &&
+      [6, Infix] h[0]instanceof Uint8Array
+       [7, MapExpression] h[0]
+        [8, Identifier] h
+        [8, Bracket] [0]
+         [9, Literal] 0
+       [7, Operator] instanceof
+       [7, Identifier] Uint8Array
+     [5, Operator] &&
+     [5, Sequence] (this.Ja=!0,a=h)
+      [6, Assignment] this.Ja=!0
+       [7, QualifiedExpression] this.Ja
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] Ja
+       [7, Operator] =
+       [7, Prefix] !0
+        [8, Operator] !
+        [8, Literal] 0
+      [6, Assignment] a=h
+       [7, Identifier] a
+       [7, Operator] =
+       [7, Identifier] h

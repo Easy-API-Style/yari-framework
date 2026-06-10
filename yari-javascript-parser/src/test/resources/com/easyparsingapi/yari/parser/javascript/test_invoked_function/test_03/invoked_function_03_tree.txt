@@ -1,0 +1,55 @@
+[0, Javascript] (async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).then(v => { console.log(v);})
+ [1, QualifiedExpression] (async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).then(v => { console.log(v);})
+  [2, Qualifier] (async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10).
+   [3, InvokedFunction] (async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})(10)
+    [4, Definition] (async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;})
+     [5, FunctionDeclaration] async function(x) { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;}
+      [6, Signature] (x)
+       [7, Identifier] x
+      [6, Procedure] { let p_a = resolveAfter2Seconds(20); let p_b = resolveAfter2Seconds(30); return x + await p_a + await p_b;}
+       [7, VariableDeclaration] let p_a = resolveAfter2Seconds(20)
+        [8, Type] let
+        [8, Variable] p_a = resolveAfter2Seconds(20)
+         [9, Identifier] p_a
+         [9, Operator] =
+         [9, FunctionCall] resolveAfter2Seconds(20)
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] (20)
+           [11, Literal] 20
+       [7, VariableDeclaration] let p_b = resolveAfter2Seconds(30)
+        [8, Type] let
+        [8, Variable] p_b = resolveAfter2Seconds(30)
+         [9, Identifier] p_b
+         [9, Operator] =
+         [9, FunctionCall] resolveAfter2Seconds(30)
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] (30)
+           [11, Literal] 30
+       [7, Return] return x + await p_a + await p_b
+        [8, Infix] x + await p_a + await p_b
+         [9, Identifier] x
+         [9, Operator] +
+         [9, Await] await p_a + await p_b
+          [10, Infix] p_a + await p_b
+           [11, Identifier] p_a
+           [11, Operator] +
+           [11, Await] await p_b
+            [12, Identifier] p_b
+    [4, Signature] (10)
+     [5, Literal] 10
+   [3, Operator] .
+  [2, FunctionCall] then(v => { console.log(v);})
+   [3, Identifier] then
+   [3, Signature] (v => { console.log(v);})
+    [4, ArrowFunction] v => { console.log(v);}
+     [5, Signature] v
+      [6, Identifier] v
+     [5, Procedure] { console.log(v);}
+      [6, QualifiedExpression] console.log(v)
+       [7, Qualifier] console.
+        [8, Identifier] console
+        [8, Operator] .
+       [7, FunctionCall] log(v)
+        [8, Identifier] log
+        [8, Signature] (v)
+         [9, Identifier] v

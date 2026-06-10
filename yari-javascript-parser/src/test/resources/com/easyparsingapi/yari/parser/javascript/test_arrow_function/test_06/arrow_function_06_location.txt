@@ -1,0 +1,42 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Javascript]
+let bob = a => b + 100;
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [VariableDeclaration]
+let bob = a => b + 100;
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 24] [Variable]
+bob = a => b + 100;
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+bob
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 24] [ArrowFunction]
+a => b + 100;
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Signature]
+a
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 24] [Procedure]
+b + 100;
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 23] [Infix]
+b + 100
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 19] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 23] [Literal]
+100
+---------------------------

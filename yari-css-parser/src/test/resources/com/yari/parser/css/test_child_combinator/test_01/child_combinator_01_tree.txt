@@ -1,0 +1,14 @@
+[0, Css] ul.my-things > li {\\n margin: 2em;\\n }
+ [1, RuleSet] ul.my-things > li {\\n margin: 2em;\\n }
+  [2, CombinatorSelector] ul.my-things > li
+   [3, CombinatorSelector] ul.my-things
+    [4, ElementSelector] ul
+    [4, Operator] 
+    [4, ClassSelector] .my-things
+     [5, Identifier] my-things
+   [3, Operator] >
+   [3, ElementSelector] li
+  [2, Block] {\\n margin: 2em;\\n }
+   [3, Property] margin: 2em
+    [4, Identifier] margin
+    [4, Identifier] 2em

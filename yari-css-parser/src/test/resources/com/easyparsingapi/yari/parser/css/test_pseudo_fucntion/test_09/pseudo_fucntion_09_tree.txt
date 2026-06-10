@@ -1,0 +1,63 @@
+[0, Css] .premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n) {\\n background-color: tomato;\\n }
+ [1, RuleSet] .premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n) {\\n background-color: tomato;\\n }
+  [2, ListSelector] .premier span:nth-child(1),\\n .deuxieme span:nth-child(-n+3),\\n .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n)
+   [3, CombinatorSelector] .premier span:nth-child(1)
+    [4, QualifiedSelector] .premier span
+     [5, ClassSelector] .premier
+      [6, Identifier] premier
+     [5, ElementSelector] span
+    [4, Operator] 
+    [4, PseudoFunctionSelector] :nth-child(1)
+     [5, PseudoClassSelector] :nth-child
+      [6, Identifier] nth-child
+     [5, Signature] (1)
+      [6, NthPattern] 1
+       [7, Literal] 1
+   [3, CombinatorSelector] .deuxieme span:nth-child(-n+3)
+    [4, QualifiedSelector] .deuxieme span
+     [5, ClassSelector] .deuxieme
+      [6, Identifier] deuxieme
+     [5, ElementSelector] span
+    [4, Operator] 
+    [4, PseudoFunctionSelector] :nth-child(-n+3)
+     [5, PseudoClassSelector] :nth-child
+      [6, Identifier] nth-child
+     [5, Signature] (-n+3)
+      [6, NthPattern] -n+3
+       [7, Infix] -n+3
+        [8, Identifier] -n
+        [8, Operator] +
+        [8, Literal] 3
+   [3, CombinatorSelector] .troisieme span:nth-of-type(2n+1)\\n .quatrieme span:nth-of-type(4n)
+    [4, CombinatorSelector] .troisieme span:nth-of-type(2n+1)\\n .quatrieme span
+     [5, CombinatorSelector] .troisieme span:nth-of-type(2n+1)
+      [6, QualifiedSelector] .troisieme span
+       [7, ClassSelector] .troisieme
+        [8, Identifier] troisieme
+       [7, ElementSelector] span
+      [6, Operator] 
+      [6, PseudoFunctionSelector] :nth-of-type(2n+1)
+       [7, PseudoClassSelector] :nth-of-type
+        [8, Identifier] nth-of-type
+       [7, Signature] (2n+1)
+        [8, NthPattern] 2n+1
+         [9, Infix] 2n+1
+          [10, Literal] 2n
+          [10, Operator] +
+          [10, Literal] 1
+     [5, Operator] 
+     [5, QualifiedSelector] .quatrieme span
+      [6, ClassSelector] .quatrieme
+       [7, Identifier] quatrieme
+      [6, ElementSelector] span
+    [4, Operator] 
+    [4, PseudoFunctionSelector] :nth-of-type(4n)
+     [5, PseudoClassSelector] :nth-of-type
+      [6, Identifier] nth-of-type
+     [5, Signature] (4n)
+      [6, NthPattern] 4n
+       [7, Literal] 4n
+  [2, Block] {\\n background-color: tomato;\\n }
+   [3, Property] background-color: tomato
+    [4, Identifier] background-color
+    [4, Identifier] tomato

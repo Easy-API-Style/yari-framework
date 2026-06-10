@@ -1,0 +1,600 @@
+SourceLocation [start=line 2 column 9, end=line 2 column 33] [Css]
+/* Utilisation simple */
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 37] [Css]
+/* Propriétés utilisables */
+---------------------------
+SourceLocation [start=line 18 column 9, end=line 18 column 49] [Css]
+/* Propriétés avec valeurs de recours */
+---------------------------
+SourceLocation [start=line 21 column 9, end=line 21 column 47] [Css]
+/* Propriétés raccourcies associées */
+---------------------------
+SourceLocation [start=line 25 column 9, end=line 25 column 61] [Css]
+/* Utilisation comme paramètre d'une fonction CSS */
+---------------------------
+SourceLocation [start=line 29 column 9, end=line 29 column 49] [Css]
+/* Utilisation avec plusieurs valeurs */
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 32 column 34] [Css]
+/* Règles @ / at-rules */
+---------------------------
+SourceLocation [start=line 33 column 56, end=line 33 column 74] [Css]
+/* expérimental */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 36 column 6] [Css]
+div {\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 36 column 6] [RuleSet]
+div {\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 36 column 6] [Block]
+{\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 60] [Property]
+content: url(https://example.com/images/monImg.jpg)
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 3 column 18, end=line 3 column 60] [Function]
+url(https://example.com/images/monImg.jpg)
+---------------------------
+SourceLocation [start=line 3 column 18, end=line 3 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 60] [Signature]
+(https://example.com/images/monImg.jpg)
+---------------------------
+SourceLocation [start=line 3 column 22, end=line 3 column 59] [Identifier]
+https://example.com/images/monImg.jpg
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 52] [Property]
+content: url(data:image/png;base64,iRxVB0…)
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 52] [Function]
+url(data:image/png;base64,iRxVB0…)
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 52] [Signature]
+(data:image/png;base64,iRxVB0…)
+---------------------------
+SourceLocation [start=line 4 column 22, end=line 4 column 51] [Identifier]
+data:image/png;base64,iRxVB0…
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 36] [Property]
+content: url(maPolice.woff)
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 5 column 18, end=line 5 column 36] [Function]
+url(maPolice.woff)
+---------------------------
+SourceLocation [start=line 5 column 18, end=line 5 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 5 column 21, end=line 5 column 36] [Signature]
+(maPolice.woff)
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 35] [Identifier]
+maPolice.woff
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 37] [Property]
+content: url(#IDdeCheminSVG)
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 6 column 18, end=line 6 column 37] [Function]
+url(#IDdeCheminSVG)
+---------------------------
+SourceLocation [start=line 6 column 18, end=line 6 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 6 column 21, end=line 6 column 37] [Signature]
+(#IDdeCheminSVG)
+---------------------------
+SourceLocation [start=line 6 column 22, end=line 6 column 36] [Identifier]
+#IDdeCheminSVG
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 42] [Property]
+background-image: url("star.gif")
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 25] [Identifier]
+background-image
+---------------------------
+SourceLocation [start=line 9 column 27, end=line 9 column 42] [Function]
+url("star.gif")
+---------------------------
+SourceLocation [start=line 9 column 27, end=line 9 column 30] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 9 column 30, end=line 9 column 42] [Signature]
+("star.gif")
+---------------------------
+SourceLocation [start=line 9 column 31, end=line 9 column 41] [Literal]
+"star.gif"
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 54] [Property]
+list-style-image: url('../images/bullet.jpg')
+---------------------------
+SourceLocation [start=line 10 column 9, end=line 10 column 25] [Identifier]
+list-style-image
+---------------------------
+SourceLocation [start=line 10 column 27, end=line 10 column 54] [Function]
+url('../images/bullet.jpg')
+---------------------------
+SourceLocation [start=line 10 column 27, end=line 10 column 30] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 10 column 30, end=line 10 column 54] [Signature]
+('../images/bullet.jpg')
+---------------------------
+SourceLocation [start=line 10 column 31, end=line 10 column 53] [Literal]
+'../images/bullet.jpg'
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 36] [Property]
+content: url("pdficon.jpg")
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 11 column 18, end=line 11 column 36] [Function]
+url("pdficon.jpg")
+---------------------------
+SourceLocation [start=line 11 column 18, end=line 11 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 36] [Signature]
+("pdficon.jpg")
+---------------------------
+SourceLocation [start=line 11 column 22, end=line 11 column 35] [Literal]
+"pdficon.jpg"
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 36] [Property]
+cursor: url(moncurseur.cur)
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 15] [Identifier]
+cursor
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 36] [Function]
+url(moncurseur.cur)
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 20] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 12 column 20, end=line 12 column 36] [Signature]
+(moncurseur.cur)
+---------------------------
+SourceLocation [start=line 12 column 21, end=line 12 column 35] [Identifier]
+moncurseur.cur
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 54] [Property]
+border-image-source: url(/media/diamonds.png)
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 28] [Identifier]
+border-image-source
+---------------------------
+SourceLocation [start=line 13 column 30, end=line 13 column 54] [Function]
+url(/media/diamonds.png)
+---------------------------
+SourceLocation [start=line 13 column 30, end=line 13 column 33] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 54] [Signature]
+(/media/diamonds.png)
+---------------------------
+SourceLocation [start=line 13 column 34, end=line 13 column 53] [Identifier]
+/media/diamonds.png
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 37] [Property]
+src: url('superpolice.woff')
+---------------------------
+SourceLocation [start=line 14 column 9, end=line 14 column 12] [Identifier]
+src
+---------------------------
+SourceLocation [start=line 14 column 14, end=line 14 column 37] [Function]
+url('superpolice.woff')
+---------------------------
+SourceLocation [start=line 14 column 14, end=line 14 column 17] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 14 column 17, end=line 14 column 37] [Signature]
+('superpolice.woff')
+---------------------------
+SourceLocation [start=line 14 column 18, end=line 14 column 36] [Literal]
+'superpolice.woff'
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 32] [Property]
+offset-path: url(#path)
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 20] [Identifier]
+offset-path
+---------------------------
+SourceLocation [start=line 15 column 22, end=line 15 column 32] [Function]
+url(#path)
+---------------------------
+SourceLocation [start=line 15 column 22, end=line 15 column 25] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 15 column 25, end=line 15 column 32] [Signature]
+(#path)
+---------------------------
+SourceLocation [start=line 15 column 26, end=line 15 column 31] [Identifier]
+#path
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 47] [Property]
+mask-image: url("masques.svg#masque1")
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 19] [Identifier]
+mask-image
+---------------------------
+SourceLocation [start=line 16 column 21, end=line 16 column 47] [Function]
+url("masques.svg#masque1")
+---------------------------
+SourceLocation [start=line 16 column 21, end=line 16 column 24] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 16 column 24, end=line 16 column 47] [Signature]
+("masques.svg#masque1")
+---------------------------
+SourceLocation [start=line 16 column 25, end=line 16 column 46] [Literal]
+"masques.svg#masque1"
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 42] [Property]
+cursor: url(pointer.cur), pointer
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 15] [Identifier]
+cursor
+---------------------------
+SourceLocation [start=line 19 column 17, end=line 19 column 42] [ListValue]
+url(pointer.cur), pointer
+---------------------------
+SourceLocation [start=line 19 column 17, end=line 19 column 33] [Function]
+url(pointer.cur)
+---------------------------
+SourceLocation [start=line 19 column 17, end=line 19 column 20] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 19 column 20, end=line 19 column 33] [Signature]
+(pointer.cur)
+---------------------------
+SourceLocation [start=line 19 column 21, end=line 19 column 32] [Identifier]
+pointer.cur
+---------------------------
+SourceLocation [start=line 19 column 35, end=line 19 column 42] [Identifier]
+pointer
+---------------------------
+SourceLocation [start=line 22 column 9, end=line 22 column 63] [Property]
+background: url('star.gif') bottom right repeat-x blue
+---------------------------
+SourceLocation [start=line 22 column 9, end=line 22 column 19] [Identifier]
+background
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 63] [ListValue]
+url('star.gif') bottom right repeat-x blue
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 36] [Function]
+url('star.gif')
+---------------------------
+SourceLocation [start=line 22 column 21, end=line 22 column 24] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 22 column 24, end=line 22 column 36] [Signature]
+('star.gif')
+---------------------------
+SourceLocation [start=line 22 column 25, end=line 22 column 35] [Literal]
+'star.gif'
+---------------------------
+SourceLocation [start=line 22 column 37, end=line 22 column 43] [Identifier]
+bottom
+---------------------------
+SourceLocation [start=line 22 column 44, end=line 22 column 49] [Identifier]
+right
+---------------------------
+SourceLocation [start=line 22 column 50, end=line 22 column 58] [Identifier]
+repeat-x
+---------------------------
+SourceLocation [start=line 22 column 59, end=line 22 column 63] [Identifier]
+blue
+---------------------------
+SourceLocation [start=line 23 column 9, end=line 23 column 77] [Property]
+border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space
+---------------------------
+SourceLocation [start=line 23 column 9, end=line 23 column 21] [Identifier]
+border-image
+---------------------------
+SourceLocation [start=line 23 column 23, end=line 23 column 77] [ListValue]
+url("/media/diamonds.png") 30 fill / 30px / 30px space
+---------------------------
+SourceLocation [start=line 23 column 23, end=line 23 column 49] [Function]
+url("/media/diamonds.png")
+---------------------------
+SourceLocation [start=line 23 column 23, end=line 23 column 26] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 23 column 26, end=line 23 column 49] [Signature]
+("/media/diamonds.png")
+---------------------------
+SourceLocation [start=line 23 column 27, end=line 23 column 48] [Literal]
+"/media/diamonds.png"
+---------------------------
+SourceLocation [start=line 23 column 50, end=line 23 column 52] [Identifier]
+30
+---------------------------
+SourceLocation [start=line 23 column 53, end=line 23 column 71] [Infix]
+fill / 30px / 30px
+---------------------------
+SourceLocation [start=line 23 column 53, end=line 23 column 64] [Infix]
+fill / 30px
+---------------------------
+SourceLocation [start=line 23 column 53, end=line 23 column 57] [Identifier]
+fill
+---------------------------
+SourceLocation [start=line 23 column 58, end=line 23 column 59] [Operator]
+/
+---------------------------
+SourceLocation [start=line 23 column 60, end=line 23 column 64] [Identifier]
+30px
+---------------------------
+SourceLocation [start=line 23 column 65, end=line 23 column 66] [Operator]
+/
+---------------------------
+SourceLocation [start=line 23 column 67, end=line 23 column 71] [Identifier]
+30px
+---------------------------
+SourceLocation [start=line 23 column 72, end=line 23 column 77] [Identifier]
+space
+---------------------------
+SourceLocation [start=line 26 column 9, end=line 26 column 74] [Property]
+background-image: cross-fade(20% url(first.png), url(second.png))
+---------------------------
+SourceLocation [start=line 26 column 9, end=line 26 column 25] [Identifier]
+background-image
+---------------------------
+SourceLocation [start=line 26 column 27, end=line 26 column 74] [Function]
+cross-fade(20% url(first.png), url(second.png))
+---------------------------
+SourceLocation [start=line 26 column 27, end=line 26 column 37] [Identifier]
+cross-fade
+---------------------------
+SourceLocation [start=line 26 column 37, end=line 26 column 74] [Signature]
+(20% url(first.png), url(second.png))
+---------------------------
+SourceLocation [start=line 26 column 38, end=line 26 column 56] [ListValue]
+20% url(first.png)
+---------------------------
+SourceLocation [start=line 26 column 38, end=line 26 column 41] [Identifier]
+20%
+---------------------------
+SourceLocation [start=line 26 column 42, end=line 26 column 56] [Function]
+url(first.png)
+---------------------------
+SourceLocation [start=line 26 column 42, end=line 26 column 45] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 26 column 45, end=line 26 column 56] [Signature]
+(first.png)
+---------------------------
+SourceLocation [start=line 26 column 46, end=line 26 column 55] [Identifier]
+first.png
+---------------------------
+SourceLocation [start=line 26 column 58, end=line 26 column 73] [Function]
+url(second.png)
+---------------------------
+SourceLocation [start=line 26 column 58, end=line 26 column 61] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 26 column 61, end=line 26 column 73] [Signature]
+(second.png)
+---------------------------
+SourceLocation [start=line 26 column 62, end=line 26 column 72] [Identifier]
+second.png
+---------------------------
+SourceLocation [start=line 27 column 9, end=line 27 column 100] [Property]
+mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+---------------------------
+SourceLocation [start=line 27 column 9, end=line 27 column 19] [Identifier]
+mask-image
+---------------------------
+SourceLocation [start=line 27 column 21, end=line 27 column 100] [Function]
+image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+---------------------------
+SourceLocation [start=line 27 column 21, end=line 27 column 26] [Identifier]
+image
+---------------------------
+SourceLocation [start=line 27 column 26, end=line 27 column 100] [Signature]
+(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+---------------------------
+SourceLocation [start=line 27 column 27, end=line 27 column 40] [Function]
+url(mask.png)
+---------------------------
+SourceLocation [start=line 27 column 27, end=line 27 column 30] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 27 column 30, end=line 27 column 40] [Signature]
+(mask.png)
+---------------------------
+SourceLocation [start=line 27 column 31, end=line 27 column 39] [Identifier]
+mask.png
+---------------------------
+SourceLocation [start=line 27 column 42, end=line 27 column 49] [Identifier]
+skyblue
+---------------------------
+SourceLocation [start=line 27 column 51, end=line 27 column 99] [Function]
+linear-gradient(rgba(0, 0, 0, 1.0), transparent)
+---------------------------
+SourceLocation [start=line 27 column 51, end=line 27 column 66] [Identifier]
+linear-gradient
+---------------------------
+SourceLocation [start=line 27 column 66, end=line 27 column 99] [Signature]
+(rgba(0, 0, 0, 1.0), transparent)
+---------------------------
+SourceLocation [start=line 27 column 67, end=line 27 column 85] [Function]
+rgba(0, 0, 0, 1.0)
+---------------------------
+SourceLocation [start=line 27 column 67, end=line 27 column 71] [Identifier]
+rgba
+---------------------------
+SourceLocation [start=line 27 column 71, end=line 27 column 85] [Signature]
+(0, 0, 0, 1.0)
+---------------------------
+SourceLocation [start=line 27 column 72, end=line 27 column 73] [Identifier]
+0
+---------------------------
+SourceLocation [start=line 27 column 75, end=line 27 column 76] [Identifier]
+0
+---------------------------
+SourceLocation [start=line 27 column 78, end=line 27 column 79] [Identifier]
+0
+---------------------------
+SourceLocation [start=line 27 column 81, end=line 27 column 84] [Identifier]
+1.0
+---------------------------
+SourceLocation [start=line 27 column 87, end=line 27 column 98] [Identifier]
+transparent
+---------------------------
+SourceLocation [start=line 30 column 9, end=line 30 column 87] [Property]
+content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 9, end=line 30 column 16] [Identifier]
+content
+---------------------------
+SourceLocation [start=line 30 column 18, end=line 30 column 87] [ListValue]
+url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 18, end=line 30 column 31] [Function]
+url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 18, end=line 30 column 21] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 30 column 21, end=line 30 column 31] [Signature]
+(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 30 column 30] [Identifier]
+star.svg
+---------------------------
+SourceLocation [start=line 30 column 32, end=line 30 column 45] [Function]
+url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 32, end=line 30 column 35] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 30 column 35, end=line 30 column 45] [Signature]
+(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 36, end=line 30 column 44] [Identifier]
+star.svg
+---------------------------
+SourceLocation [start=line 30 column 46, end=line 30 column 59] [Function]
+url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 46, end=line 30 column 49] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 30 column 49, end=line 30 column 59] [Signature]
+(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 50, end=line 30 column 58] [Identifier]
+star.svg
+---------------------------
+SourceLocation [start=line 30 column 60, end=line 30 column 73] [Function]
+url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 60, end=line 30 column 63] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 30 column 63, end=line 30 column 73] [Signature]
+(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 64, end=line 30 column 72] [Identifier]
+star.svg
+---------------------------
+SourceLocation [start=line 30 column 74, end=line 30 column 87] [Function]
+url(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 74, end=line 30 column 77] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 30 column 77, end=line 30 column 87] [Signature]
+(star.svg)
+---------------------------
+SourceLocation [start=line 30 column 78, end=line 30 column 86] [Identifier]
+star.svg
+---------------------------
+SourceLocation [start=line 33 column 9, end=line 33 column 55] [AtRule]
+@document url("https://www.example.com/") { }
+---------------------------
+SourceLocation [start=line 33 column 9, end=line 33 column 18] [AtRuleName]
+@document
+---------------------------
+SourceLocation [start=line 33 column 10, end=line 33 column 18] [Identifier]
+document
+---------------------------
+SourceLocation [start=line 33 column 19, end=line 33 column 50] [Function]
+url("https://www.example.com/")
+---------------------------
+SourceLocation [start=line 33 column 19, end=line 33 column 22] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 33 column 22, end=line 33 column 50] [Signature]
+("https://www.example.com/")
+---------------------------
+SourceLocation [start=line 33 column 23, end=line 33 column 49] [Literal]
+"https://www.example.com/"
+---------------------------
+SourceLocation [start=line 33 column 51, end=line 33 column 55] [Block]
+{ }
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 57] [AtRule]
+@import url("https://www.example.com/style.css")
+---------------------------
+SourceLocation [start=line 34 column 9, end=line 34 column 16] [AtRuleName]
+@import
+---------------------------
+SourceLocation [start=line 34 column 10, end=line 34 column 16] [Identifier]
+import
+---------------------------
+SourceLocation [start=line 34 column 17, end=line 34 column 57] [Function]
+url("https://www.example.com/style.css")
+---------------------------
+SourceLocation [start=line 34 column 17, end=line 34 column 20] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 34 column 20, end=line 34 column 57] [Signature]
+("https://www.example.com/style.css")
+---------------------------
+SourceLocation [start=line 34 column 21, end=line 34 column 56] [Literal]
+"https://www.example.com/style.css"
+---------------------------
+SourceLocation [start=line 35 column 9, end=line 35 column 53] [AtRule]
+@namespace url(http://www.w3.org/1999/xhtml)
+---------------------------
+SourceLocation [start=line 35 column 9, end=line 35 column 19] [AtRuleName]
+@namespace
+---------------------------
+SourceLocation [start=line 35 column 10, end=line 35 column 19] [Identifier]
+namespace
+---------------------------
+SourceLocation [start=line 35 column 20, end=line 35 column 53] [Function]
+url(http://www.w3.org/1999/xhtml)
+---------------------------
+SourceLocation [start=line 35 column 20, end=line 35 column 23] [Identifier]
+url
+---------------------------
+SourceLocation [start=line 35 column 23, end=line 35 column 53] [Signature]
+(http://www.w3.org/1999/xhtml)
+---------------------------
+SourceLocation [start=line 35 column 24, end=line 35 column 52] [Identifier]
+http://www.w3.org/1999/xhtml
+---------------------------

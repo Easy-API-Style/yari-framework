@@ -1,0 +1,15 @@
+[0, Css] a[href^="insensitive" i] {\\n color: cyan;\\n }
+ [1, RuleSet] a[href^="insensitive" i] {\\n color: cyan;\\n }
+  [2, CombinatorSelector] a[href^="insensitive" i]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [href^="insensitive" i]
+    [4, Expression] href^="insensitive" i
+     [5, Identifier] href
+     [5, Operator] ^=
+     [5, Literal] "insensitive"
+     [5, Identifier] i
+  [2, Block] {\\n color: cyan;\\n }
+   [3, Property] color: cyan
+    [4, Identifier] color
+    [4, Identifier] cyan

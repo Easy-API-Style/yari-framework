@@ -1,0 +1,63 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 101] [Javascript]
+function greet(name, greeting, message = greeting + ' ' + name) { return [name, greeting, message]}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 101] [FunctionDeclaration]
+function greet(name, greeting, message = greeting + ' ' + name) { return [name, greeting, message]}
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 15] [Identifier]
+greet
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 64] [Signature]
+(name, greeting, message = greeting + ' ' + name)
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 20] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 30] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 63] [ParameterWithValue]
+message = greeting + ' ' + name
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 39] [Identifier]
+message
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 63] [Infix]
+greeting + ' ' + name
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 56] [Infix]
+greeting + ' '
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 50] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 52] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 56] [Literal]
+' '
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 58] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 63] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 1 column 65, end=line 1 column 101] [Procedure]
+{ return [name, greeting, message]}
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 100] [Return]
+return [name, greeting, message]
+---------------------------
+SourceLocation [start=line 1 column 75, end=line 1 column 100] [ArrayDeclaration]
+[name, greeting, message]
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 80] [Identifier]
+name
+---------------------------
+SourceLocation [start=line 1 column 82, end=line 1 column 90] [Identifier]
+greeting
+---------------------------
+SourceLocation [start=line 1 column 92, end=line 1 column 99] [Identifier]
+message
+---------------------------

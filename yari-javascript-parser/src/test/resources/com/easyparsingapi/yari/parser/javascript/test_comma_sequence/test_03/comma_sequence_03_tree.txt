@@ -1,0 +1,12 @@
+[0, Javascript] const a = (1, b = 2)
+ [1, VariableDeclaration] const a = (1, b = 2)
+  [2, Type] const
+  [2, Variable] a = (1, b = 2)
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Sequence] (1, b = 2)
+    [4, Literal] 1
+    [4, Assignment] b = 2
+     [5, Identifier] b
+     [5, Operator] =
+     [5, Literal] 2

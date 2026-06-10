@@ -1,0 +1,90 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 80] [Javascript]
+if (p_1 && p_2) { var v_1 = 44;}else if (p_1 && p_2 || p_3) ;else v_3 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 80] [If]
+if (p_1 && p_2) { var v_1 = 44;}else if (p_1 && p_2 || p_3) ;else v_3 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [IfBlock]
+if (p_1 && p_2) { var v_1 = 44;}
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 16] [Condition]
+(p_1 && p_2)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [Infix]
+p_1 && p_2
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+p_1
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Identifier]
+p_2
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 33] [Procedure]
+{ var v_1 = 44;}
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 31] [VariableDeclaration]
+var v_1 = 44
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 22] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 31] [Variable]
+v_1 = 44
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 31] [Literal]
+44
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 62] [ElseIfBlock]
+else if (p_1 && p_2 || p_3) ;
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 60] [Condition]
+(p_1 && p_2 || p_3)
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 59] [Infix]
+p_1 && p_2 || p_3
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 52] [Infix]
+p_1 && p_2
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 45] [Identifier]
+p_1
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 48] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 49, end=line 1 column 52] [Identifier]
+p_2
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 55] [Operator]
+||
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 59] [Identifier]
+p_3
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 80] [ElseBlock]
+else v_3 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 80] [Procedure]
+v_3 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 80] [Assignment]
+v_3 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 71] [Identifier]
+v_3
+---------------------------
+SourceLocation [start=line 1 column 72, end=line 1 column 73] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 74, end=line 1 column 80] [Literal]
+'yiyi'
+---------------------------

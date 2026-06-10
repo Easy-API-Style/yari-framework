@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick start — Yari Framework</title>
+  <meta name="description" content="Quick start for the Yari Framework: parse a full HTML page with its embedded JavaScript and CSS, walk the unified AST, read exact source locations, and recover from malformed input.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="index.html">Home</a>
+    <a href="quick-start.html" class="is-active">Quick start</a>
+    <a href="modules/index.html">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" style="border-bottom: none; padding-bottom: 1rem;">
+  <h1>Quick start</h1>
+</header>
+
+<section class="section" id="quickstart" style="margin-top: 1rem;">
+  <p class="section__lead" style="text-align: justify; max-width: none;">
+    Every parser exposes the same shape: call <code>parseUnit(…)</code> and get back an
+    <code>AstResult&lt;T&gt;</code>. It bundles the root AST node — <code>unit()</code> — with the
+    full token stream and source-navigation helpers: <code>getTokens()</code>,
+    <code>getTokensOf(node)</code>, <code>substring(sourceLocation)</code>, <code>getSource()</code>,
+    and offset↔position conversions via <code>getPosition(offset)</code> / <code>getIndex(position)</code>.
+    Here is one complete example per parser.
+  </p>
+  <p class="section__lead" style="max-width: none; margin-top: -.5rem;">
+    <a href="https://github.com/Easy-API-Style/yari-blueprint-parser" target="_blank" rel="noopener">Source code on GitHub →</a>
+  </p>
+
+  <div class="hello-file" style="margin-bottom: 1.5rem;">
+    <span class="code-label">yari-xml-parser — parse XML</span>
+<pre><code><span class="k">String</span> source = <span class="s">"""
+    &lt;catalog&gt;
+        &lt;book id="1"&gt;Le Petit Prince&lt;/book&gt;
+        &lt;book id="2"&gt;1984&lt;/book&gt;
+    &lt;/catalog&gt;
+    """</span>;
+
+Xml xml = XmlParser.parseUnit(source, XmlConfig.builder().build()).unit();
+
+<span class="c">// Print the name of every tag</span>
+xml.astStream()
+   .filter(n -> n <span class="k">instanceof</span> Tag)
+   .map(n -> (Tag) n)
+   .forEach(tag -> System.out.println(tag.getHead().getName()));</code></pre>
+  </div>
+
+  <div class="hello-file" style="margin-bottom: 1.5rem;">
+    <span class="code-label">yari-css-parser — parse CSS</span>
+<pre><code><span class="k">String</span> source = <span class="s">"""
+    .btn { color: red; font-weight: bold; }
+    .btn:hover { background: #fee2e2; }
+    """</span>;
+
+Css css = CssParser.parseUnit(source).unit();
+
+<span class="c">// Print the selector of every rule set</span>
+css.astStream()
+   .filter(n -> n <span class="k">instanceof</span> RuleSet)
+   .map(n -> (RuleSet) n)
+   .forEach(rule -> System.out.println(rule.getSelector()));</code></pre>
+  </div>
+
+  <div class="hello-file" style="margin-bottom: 1.5rem;">
+    <span class="code-label">yari-javascript-parser — parse JavaScript</span>
+<pre><code><span class="k">String</span> source = <span class="s">"""
+    function greet(name) {
+        return "Hello " + name;
+    }
+    """</span>;
+
+Javascript js = JavascriptParser.parseUnit(source).unit();
+
+<span class="c">// Print the name of every top-level function</span>
+js.astStream()
+  .filter(n -> n <span class="k">instanceof</span> FunctionDeclaration)
+  .map(n -> (FunctionDeclaration) n)
+  .forEach(fn -> System.out.println(fn.getName()));</code></pre>
+  </div>
+
+  <div class="hello-file">
+    <span class="code-label">yari-html-parser — parse HTML with embedded JS &amp; CSS</span>
+<pre><code><span class="k">String</span> source = <span class="s">"""
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;style&gt;.btn { color: red; }&lt;/style&gt;
+        &lt;script&gt;const x = 42;&lt;/script&gt;
+        &lt;button class="btn"&gt;Go&lt;/button&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+    """</span>;
+
+Html html = HtmlParser.parseUnit(source, HtmlConfig.defaulConfig()).unit();
+
+<span class="c">// Walk the unified tree — HTML, CSS and JS in one pass</span>
+html.walkChildren(handler -> {
+    <span class="k">switch</span> (handler.node()) {
+        <span class="k">case</span> ScriptTag script ->
+            System.out.println(<span class="s">"JS statements: "</span>
+                + script.getBody().getNodes().size());
+        <span class="k">case</span> StyleTag style ->
+            System.out.println(<span class="s">"CSS rules: "</span>
+                + style.getBody().getNodes().size());
+        <span class="k">default</span> -> {}
+    }
+});</code></pre>
+  </div>
+
+  <p class="section__lead" style="margin: 2.5rem auto 1.25rem; text-align: justify; max-width: none;">
+    Need to parse another language? <code>yari-parsec</code> is the parser-combinator engine
+    the whole framework is built on — use it to write your own parser for any language or DSL.
+    The example below is taken from the <code>yari-blueprint-parsec</code> starter project, which
+    parses a tiny C-like language. It highlights the two key tools: <code>OperatorTable</code>,
+    which builds expressions with operator precedence, and error recovery, which turns broken
+    input into <code>ErrorNode</code>s inside the tree instead of throwing an exception.
+  </p>
+  <p class="section__lead" style="max-width: none; margin-top: -.75rem;">
+    <a href="https://github.com/Easy-API-Style/yari-blueprint-parsec" target="_blank" rel="noopener">Source code on GitHub →</a>
+  </p>
+
+  <div class="hello-file">
+    <span class="code-label">yari-parsec — a mini-language (OperatorTable + error recovery)</span>
+<pre><code><span class="c">// Tokenizer: operators, keywords, identifiers and integer literals</span>
+<span class="k">Terminals</span> terminals = Terminals.operators(<span class="s">"="</span>, <span class="s">"{"</span>, <span class="s">"}"</span>, <span class="s">"("</span>, <span class="s">")"</span>, <span class="s">";"</span>, <span class="s">","</span>, <span class="s">"-"</span>, <span class="s">"+"</span>, <span class="s">"*"</span>, <span class="s">"/"</span>)
+                               .words(Scanners.IDENTIFIER)
+                               .keywords(<span class="s">"function"</span>, <span class="s">"String"</span>, <span class="s">"Integer"</span>)
+                               .build();
+<span class="k">Parser</span>&lt;Void&gt; delimiter = Parsers.or(Scanners.lineComment(<span class="s">"//"</span>), Scanners.WHITESPACES).skipMany();
+<span class="k">Parser</span>&lt;?&gt;    tokenizer = Parsers.or(Scanners.INTEGER.map(Tokens::integerLiteral), terminals.tokenizer());
+
+<span class="k">Parser</span>&lt;IntegerNode&gt;    integer    = Terminals.IntegerLiteral.PARSER.map(Integer::parseInt).map(IntegerNode::new);
+<span class="k">Parser</span>&lt;IdentifierNode&gt; identifier = Terminals.identifier().map(IdentifierNode::new);
+
+<span class="c">// ── Expressions: precedence via OperatorTable, recursion via Parser.Reference ──</span>
+Parser.Reference&lt;Node&gt; reference = Parser.newReference();
+<span class="k">Parser</span>&lt;Node&gt; operand = Parsers.or(integer, identifier,
+        reference.lazy().between(terminals.token(<span class="s">"("</span>), terminals.token(<span class="s">")"</span>)));
+
+<span class="k">Parser</span>&lt;Node&gt; operation = <span class="k">new</span> OperatorTable&lt;Node&gt;()
+    .prefix(terminals.token(<span class="s">"-"</span>).map(Token::toString).map(OperatorNode::new)
+            .map(op -> MapOperator.map(op, x -> <span class="k">new</span> PrefixNode(op, x))), 30)
+    .infixl(Parsers.or(terminals.token(<span class="s">"*"</span>), terminals.token(<span class="s">"/"</span>)).map(Token::toString).map(OperatorNode::new)
+            .map(op -> MapInfix.map(op, (l, r) -> <span class="k">new</span> InfixNode(l, op, r))), 20)
+    .infixl(Parsers.or(terminals.token(<span class="s">"+"</span>), terminals.token(<span class="s">"-"</span>)).map(Token::toString).map(OperatorNode::new)
+            .map(op -> MapInfix.map(op, (l, r) -> <span class="k">new</span> InfixNode(l, op, r))), 10)
+    .buildMap(operand);
+reference.set(operation);
+
+<span class="c">// A declaration:  type identifier '=' operation   (e.g.  Integer x = a + 2 * b)</span>
+<span class="k">Parser</span>&lt;DeclarationNode&gt; declaration = Parsers.sequence(
+        Parsers.or(terminals.token(<span class="s">"String"</span>), terminals.token(<span class="s">"Integer"</span>)).map(Object::toString).map(IdentifierNode::new),
+        identifier,
+        terminals.token(<span class="s">"="</span>).next(operation),
+        DeclarationNode::new);
+
+<span class="c">// ── Error recovery: a broken declaration in a { } body becomes an ErrorNode ──</span>
+<span class="c">// manyBetween repeats `declaration` inside { }, resyncing on ';' instead of throwing.</span>
+<span class="k">Parser</span>&lt;Node&gt; body = declaration.followedBy(terminals.token(<span class="s">";"</span>).optional()).&lt;Node&gt;cast()
+    .manyBetween((detail, location, tokens) -> <span class="k">new</span> ErrorNode(detail.getFailureMessage(), tokens, location),
+                 terminals.token(<span class="s">";"</span>),    <span class="c">// retry from the next ';'</span>
+                 Parsers.never(),         <span class="c">// never force-stop</span>
+                 Parsers.never(),         <span class="c">// never hard-fail</span>
+                 terminals.token(<span class="s">"{"</span>),    <span class="c">// opening boundary</span>
+                 terminals.token(<span class="s">"}"</span>))    <span class="c">// closing boundary</span>
+    .map(BlockNode::new);
+
+<span class="c">// `function` and `unitParser` wire these together — see yari-blueprint-parsec for the full grammar.</span>
+<span class="c">// The parse always returns a walkable AST — mistakes are ErrorNodes, never exceptions.</span>
+List&lt;Node&gt; program = ApiParser.parse(unitParser, tokenizer, delimiter, source);
+program.forEach(node -> node.astStream().forEach(System.out::println));</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a> ·
+    <a href="https://easyparsingapi.com">easyparsingapi.com</a>
+  </p>
+</footer>
+
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[0, Css] .parent-rule {\\n /* parent rule properties */\\n .child-rule {\\n /* child rule properties */\\n }\\n }
+ [1, RuleSet] .parent-rule {\\n /* parent rule properties */\\n .child-rule {\\n /* child rule properties */\\n }\\n }
+  [2, ClassSelector] .parent-rule
+   [3, Identifier] parent-rule
+  [2, Block] {\\n /* parent rule properties */\\n .child-rule {\\n /* child rule properties */\\n }\\n }
+   [3, RuleSet] .child-rule {\\n /* child rule properties */\\n }
+    [4, ClassSelector] .child-rule
+     [5, Identifier] child-rule
+    [4, Block] {\\n /* child rule properties */\\n }

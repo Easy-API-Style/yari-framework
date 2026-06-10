@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [JavascriptNodeUnit]
+(function(x) { })(10).toto().titi
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [QualifiedExpression]
+(function(x) { })(10).toto().titi
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Qualifier]
+(function(x) { })(10).
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 23] [InvokedFunction]
+(function(x) { })(10)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [Definition]
+(function(x) { })
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 18] [FunctionDeclaration]
+function(x) { }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 13] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 18] [Procedure]
+{ }
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 23] [Signature]
+(10)
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 22] [Literal]
+10
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 31] [Qualifier]
+toto().
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 30] [FunctionCall]
+toto()
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 28] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 30] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 35] [Identifier]
+titi
+---------------------------

@@ -1,0 +1,20 @@
+[0, Javascript] stack =`${stackFunction} ${stackURL}${stackLine}${stackCol}`.trim();
+ [1, Assignment] stack =`${stackFunction} ${stackURL}${stackLine}${stackCol}`.trim()
+  [2, Identifier] stack
+  [2, Operator] =
+  [2, QualifiedExpression] `${stackFunction} ${stackURL}${stackLine}${stackCol}`.trim()
+   [3, Qualifier] `${stackFunction} ${stackURL}${stackLine}${stackCol}`.
+    [4, LiteralTemplate] `${stackFunction} ${stackURL}${stackLine}${stackCol}`
+     [5, Variable] ${stackFunction}
+      [6, Identifier] stackFunction
+     [5, Constant]  
+     [5, Variable] ${stackURL}
+      [6, Identifier] stackURL
+     [5, Variable] ${stackLine}
+      [6, Identifier] stackLine
+     [5, Variable] ${stackCol}
+      [6, Identifier] stackCol
+    [4, Operator] .
+   [3, FunctionCall] trim()
+    [4, Identifier] trim
+    [4, Signature] ()

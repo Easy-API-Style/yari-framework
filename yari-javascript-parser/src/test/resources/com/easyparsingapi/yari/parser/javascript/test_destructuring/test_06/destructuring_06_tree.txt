@@ -1,0 +1,11 @@
+[0, Javascript] const [firstElement, secondElement] = list;
+ [1, VariableDeclaration] const [firstElement, secondElement] = list
+  [2, Type] const
+  [2, Variable] [firstElement, secondElement] = list
+   [3, DestructuringArray] [firstElement, secondElement]
+    [4, Value] firstElement
+     [5, Identifier] firstElement
+    [4, Value] secondElement
+     [5, Identifier] secondElement
+   [3, Operator] =
+   [3, Identifier] list

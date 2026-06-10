@@ -1,0 +1,10 @@
+[0, Javascript] import defaultExport, { export1, export2 as alias2 } from "module-name"
+ [1, Import] import defaultExport, { export1, export2 as alias2 } from "module-name"
+  [2, Literal] "module-name"
+  [2, Identifier] defaultExport
+  [2, ImportBlock] { export1, export2 as alias2 }
+   [3, ImportReference] export1
+    [4, Identifier] export1
+   [3, ImportReference] export2 as alias2
+    [4, Identifier] export2
+    [4, Identifier] as alias2

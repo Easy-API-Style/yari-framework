@@ -1,0 +1,32 @@
+[0, Html] <test>\\n <script>\\n function fct() {\\n return 'hello'\\n }\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+ [1, Tag] <test>\\n <script>\\n function fct() {\\n return 'hello'\\n }\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <script>\\n function fct() {\\n return 'hello'\\n }\\n </script>\\n <div>\\n aaaa\\n </div>
+   [3, ScriptTag] <script>\\n function fct() {\\n return 'hello'\\n }\\n </script>
+    [4, TagHead] <script>
+     [5, TagName] script
+      [6, Name] script
+    [4, Script] function fct() {\\n return 'hello'\\n }
+     [5, FunctionDeclaration] function fct() {\\n return 'hello'\\n }
+      [6, Identifier] fct
+      [6, Signature] ()
+      [6, Procedure] {\\n return 'hello'\\n }
+       [7, Return] return 'hello'
+        [8, Literal] 'hello'
+    [4, TagFoot] </script>
+     [5, TagName] script
+      [6, Name] script
+   [3, Tag] <div>\\n aaaa\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] aaaa
+     [5, Text] aaaa
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

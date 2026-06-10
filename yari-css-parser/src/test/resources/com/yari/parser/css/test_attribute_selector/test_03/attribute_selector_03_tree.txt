@@ -1,0 +1,14 @@
+[0, Css] a[href|="example"] {\\n font-size: 2em;\\n }
+ [1, RuleSet] a[href|="example"] {\\n font-size: 2em;\\n }
+  [2, CombinatorSelector] a[href|="example"]
+   [3, ElementSelector] a
+   [3, Operator] 
+   [3, AttributeSelector] [href|="example"]
+    [4, Expression] href|="example"
+     [5, Identifier] href
+     [5, Operator] |=
+     [5, Literal] "example"
+  [2, Block] {\\n font-size: 2em;\\n }
+   [3, Property] font-size: 2em
+    [4, Identifier] font-size
+    [4, Identifier] 2em

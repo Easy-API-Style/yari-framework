@@ -1,0 +1,198 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 180] [Javascript]
+loop1: for (i = 0; i < 3; i++) { loop2: for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 180] [Label]
+loop1: for (i = 0; i < 3; i++) { loop2: for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 6] [Identifier]
+loop1
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 180] [For]
+for (i = 0; i < 3; i++) { loop2: for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }}
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 30] [Iteration]
+i = 0; i < 3; i++
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 18] [Assignment]
+i = 0
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 25] [Infix]
+i < 3
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 21] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Operator]
+<
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Literal]
+3
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 30] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 30] [Operator]
+++
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 180] [Procedure]
+{ loop2: for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }}
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 179] [Label]
+loop2: for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 41] [Identifier]
+loop2
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 179] [For]
+for (j = 0; j < 3; j++) { if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 68] [Iteration]
+j = 0; j < 3; j++
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 56] [Assignment]
+j = 0
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 52] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 54] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 56] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 63] [Infix]
+j < 3
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 59] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 61] [Operator]
+<
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 63] [Literal]
+3
+---------------------------
+SourceLocation [start=line 1 column 65, end=line 1 column 68] [Increment]
+j++
+---------------------------
+SourceLocation [start=line 1 column 66, end=line 1 column 68] [Operator]
+++
+---------------------------
+SourceLocation [start=line 1 column 65, end=line 1 column 66] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 1 column 70, end=line 1 column 179] [Procedure]
+{ if (i === 1 && j === 1) { break loop1; } console.log('i = ' + i + ', j = ' + j); }
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 130] [If]
+if (i === 1 && j === 1) { break loop1; }
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 130] [IfBlock]
+if (i === 1 && j === 1) { break loop1; }
+---------------------------
+SourceLocation [start=line 1 column 80, end=line 1 column 100] [Condition]
+(i === 1 && j === 1)
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 99] [Infix]
+i === 1 && j === 1
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 93] [Infix]
+i === 1 && j
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 88] [Infix]
+i === 1
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 82] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 83, end=line 1 column 86] [Operator]
+===
+---------------------------
+SourceLocation [start=line 1 column 87, end=line 1 column 88] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 89, end=line 1 column 91] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 92, end=line 1 column 93] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 1 column 94, end=line 1 column 97] [Operator]
+===
+---------------------------
+SourceLocation [start=line 1 column 98, end=line 1 column 99] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 101, end=line 1 column 130] [Procedure]
+{ break loop1; }
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 122] [Break]
+break loop1
+---------------------------
+SourceLocation [start=line 1 column 117, end=line 1 column 122] [Identifier]
+loop1
+---------------------------
+SourceLocation [start=line 1 column 136, end=line 1 column 174] [QualifiedExpression]
+console.log('i = ' + i + ', j = ' + j)
+---------------------------
+SourceLocation [start=line 1 column 136, end=line 1 column 144] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 136, end=line 1 column 143] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 143, end=line 1 column 144] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 144, end=line 1 column 174] [FunctionCall]
+log('i = ' + i + ', j = ' + j)
+---------------------------
+SourceLocation [start=line 1 column 144, end=line 1 column 147] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 147, end=line 1 column 174] [Signature]
+('i = ' + i + ', j = ' + j)
+---------------------------
+SourceLocation [start=line 1 column 148, end=line 1 column 173] [Infix]
+'i = ' + i + ', j = ' + j
+---------------------------
+SourceLocation [start=line 1 column 148, end=line 1 column 169] [Infix]
+'i = ' + i + ', j = '
+---------------------------
+SourceLocation [start=line 1 column 148, end=line 1 column 158] [Infix]
+'i = ' + i
+---------------------------
+SourceLocation [start=line 1 column 148, end=line 1 column 154] [Literal]
+'i = '
+---------------------------
+SourceLocation [start=line 1 column 155, end=line 1 column 156] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 157, end=line 1 column 158] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 159, end=line 1 column 160] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 161, end=line 1 column 169] [Literal]
+', j = '
+---------------------------
+SourceLocation [start=line 1 column 170, end=line 1 column 171] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 172, end=line 1 column 173] [Identifier]
+j
+---------------------------

@@ -1,0 +1,57 @@
+[0, Css] div {\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+ [1, RuleSet] div {\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+  [2, ElementSelector] div
+  [2, Block] {\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+   [3, Property] transform: calc(100% - 80px)
+    [4, Identifier] transform
+    [4, Function] calc(100% - 80px)
+     [5, Identifier] calc
+     [5, Signature] (100% - 80px)
+      [6, Infix] 100% - 80px
+       [7, Identifier] 100%
+       [7, Operator] -
+       [7, Identifier] 80px
+   [3, Property] transform: calc(100px * sin(pi / 2))
+    [4, Identifier] transform
+    [4, Function] calc(100px * sin(pi / 2))
+     [5, Identifier] calc
+     [5, Signature] (100px * sin(pi / 2))
+      [6, Infix] 100px * sin(pi / 2)
+       [7, Identifier] 100px
+       [7, Operator] *
+       [7, Function] sin(pi / 2)
+        [8, Identifier] sin
+        [8, Signature] (pi / 2)
+         [9, Infix] pi / 2
+          [10, Identifier] pi
+          [10, Operator] /
+          [10, Identifier] 2
+   [3, Property] transform: calc(var(--hue) + 180)
+    [4, Identifier] transform
+    [4, Function] calc(var(--hue) + 180)
+     [5, Identifier] calc
+     [5, Signature] (var(--hue) + 180)
+      [6, Infix] var(--hue) + 180
+       [7, Function] var(--hue)
+        [8, Identifier] var
+        [8, Signature] (--hue)
+         [9, Identifier] --hue
+       [7, Operator] +
+       [7, Identifier] 180
+   [3, Property] transform: lch(from aquamarine l c calc(h + 180))
+    [4, Identifier] transform
+    [4, Function] lch(from aquamarine l c calc(h + 180))
+     [5, Identifier] lch
+     [5, Signature] (from aquamarine l c calc(h + 180))
+      [6, ListValue] from aquamarine l c calc(h + 180)
+       [7, Identifier] from
+       [7, Identifier] aquamarine
+       [7, Identifier] l
+       [7, Identifier] c
+       [7, Function] calc(h + 180)
+        [8, Identifier] calc
+        [8, Signature] (h + 180)
+         [9, Infix] h + 180
+          [10, Identifier] h
+          [10, Operator] +
+          [10, Identifier] 180

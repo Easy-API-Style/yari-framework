@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [Javascript]
+function sanitize(x) {\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [FunctionDeclaration]
+function sanitize(x) {\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 18] [Identifier]
+sanitize
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 21] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 6 column 2] [Procedure]
+{\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 4 column 4] [If]
+if (isNaN(x)) {\\n return NaN;\\n }
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 4 column 4] [IfBlock]
+if (isNaN(x)) {\\n return NaN;\\n }
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 16] [Condition]
+(isNaN(x))
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 15] [FunctionCall]
+isNaN(x)
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Identifier]
+isNaN
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 15] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 14] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 2 column 17, end=line 4 column 4] [Procedure]
+{\\n return NaN;\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 15] [Return]
+return NaN
+---------------------------
+SourceLocation [start=line 3 column 12, end=line 3 column 15] [NaN]
+NaN
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 11] [Return]
+return x
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 11] [Identifier]
+x
+---------------------------

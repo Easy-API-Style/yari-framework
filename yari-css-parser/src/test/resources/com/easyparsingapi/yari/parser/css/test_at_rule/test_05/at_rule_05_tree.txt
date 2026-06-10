@@ -1,0 +1,18 @@
+[0, Css] @container scroll-state(scrollable: top) {\\n .back-to-top-link {\\n visibility: visible;\\n }\\n }
+ [1, AtRule] @container scroll-state(scrollable: top) {\\n .back-to-top-link {\\n visibility: visible;\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Function] scroll-state(scrollable: top)
+   [3, Identifier] scroll-state
+   [3, Signature] (scrollable: top)
+    [4, Property] scrollable: top
+     [5, Identifier] scrollable
+     [5, Identifier] top
+  [2, Block] {\\n .back-to-top-link {\\n visibility: visible;\\n }\\n }
+   [3, RuleSet] .back-to-top-link {\\n visibility: visible;\\n }
+    [4, ClassSelector] .back-to-top-link
+     [5, Identifier] back-to-top-link
+    [4, Block] {\\n visibility: visible;\\n }
+     [5, Property] visibility: visible
+      [6, Identifier] visibility
+      [6, Identifier] visible

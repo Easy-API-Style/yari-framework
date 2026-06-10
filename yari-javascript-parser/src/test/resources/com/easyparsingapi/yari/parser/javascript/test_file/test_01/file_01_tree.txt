@@ -1,0 +1,1697 @@
+[0, Javascript] console.log(2 + 2);\\n\\nconsole.log(2 + true);\\n\\nconsole.log('hello ' + 'everyone');\\n\\nconsole.log(2001 + ': A Space Odyssey');\\n\\n1 + 2; // 3\\n\\ntrue + 1; // 2\\n\\nfalse + false; // 0\\n\\n'foo' + 'bar'; // "foobar"\\n\\n5 + 'foo'; // "5foo"\\n\\n'foo' + false; // "foofalse"\\n\\nfoo = 'foo'\\nbar = 5\\nbaz = true\\n\\nbar += 2; // 7\\n\\nbaz += 1; // 2\\n\\nbaz += false; // 1\\n\\nbar += 'foo'; // "5foo"\\n\\nfoo += false; // "foofalse"\\n\\nfoo += 'bar'; // "foobar"\\n\\nx = 5\\n\\nx = y; // x is 10\\nx = y = z; // x, y and z are all 25\\n\\n5 & 2; \\na &= 2;\\n~0; // -1\\n~-1; // 0\\n~1; // -2\\n14 | 9;\\na |= 2; // 7\\n14 ^ 9;\\n\\nlet a = 5; // 00000000000000000000000000000101\\na ^= 3; // 00000000000000000000000000000011\\nconsole.log(a); // 00000000000000000000000000000110\\n// 6\\nlet b = 5; // 00000000000000000000000000000101\\nb ^= 0; // 00000000000000000000000000000000\\nconsole.log(b); // 00000000000000000000000000000101\\n// 5\\n\\ntypeof Foo; // returns "function"\\ntypeof class {}; // returns "function"\\nFoo instanceof Object; // true\\nFoo instanceof Function; // true\\n\\nlet x = 3;\\nconst y = x--;\\n\\nconsole.log(`x:${x}, y:${y}`);\\n\\nlet a = 3;\\nconst b = --a;\\n\\nconsole.log(`a:${a}, b:${b}`);\\n\\nconst Employee = {\\n firstname: 'John',\\n lastname: 'Doe'\\n};\\n\\nconsole.log(Employee.firstname);\\ndelete Employee.firstname;\\nconsole.log(Employee.firstname);\\n\\nvar Employee = {\\n age: 28,\\n name: 'abc',\\n designation: 'developer'\\n}\\nconsole.log(delete Employee.name); // returns true\\nconsole.log(delete Employee.age); // returns true\\nconsole.log(delete Employee.salary); // returns true\\n\\nvar Employee = {};\\nObject.defineProperty(Employee, 'name', {configurable: false});\\nconsole.log(delete Employee.name); // returns false\\n\\nv = 2.0 / 0; // Infinity\\nv = 2.0 / 0.0; // Infinity, because 0.0 === 0\\nv = 2.0 / -0.0; // -Infinity\\n\\nbar /= 2 // 2.5\\nbar /= 2; // 1.25\\nbar /= 0; // Infinity\\nbar /= 'foo'; // NaN\\n"1" == 1; // true\\n1 == "1"; // true\\n0 == false; // true\\n0 == null; // false\\n0 == undefined; // false\\n0 == !!null; // true, look at Logical NOT operator\\n0 == !!undefined; // true, look at Logical NOT operator\\nnull == undefined; // true\\nconst number1 = new Number(3);\\nconst number2 = new Number(3);\\nnumber1 == 3; // true\\nnumber1 == number2; // false\\n\\nconst object1 = {"key": "value"};\\nconst object2 = {"key": "value"};\\nobject1 == object2; // false\\nobject2 == object2; // true\\n\\nconst string1 = "hello";\\nconst string2 = String("hello");\\nconst string3 = new String("hello");\\nconst string4 = new String("hello");\\nconsole.log(string1 == string2); // true\\nconsole.log(string1 == string3); // true\\nconsole.log(string2 == string3); // true\\nconsole.log(string3 == string4); // false\\nconsole.log(string4 == string4); // true\\n\\nconst d = new Date('December 17, 1995 03:24:00');\\nconst s = d.toString(); // for example: "Sun Dec 17 1995 03:24:00 GMT-0800 (Pacific Standard Time)"\\nconsole.log(d == s); //true\\n\\n2 ** 3; // 8\\n3 ** 2; // 9\\n3 ** 2.5; // 15.588457268119896\\n10 ** -1; // 0.1\\nNaN ** 2; // NaN\\n(-2) ** 2; // 4\\n2 ** 3 ** 2; // 512\\n2 ** (3 ** 2); // 512\\n(2 ** 3) ** 2; // 64\\n-(2 ** 2); // -4\\n\\nbar **= 2 // 25\\nbar **= 'foo' // NaN\\n\\nconsole.log("5" > 3); // true\\nconsole.log("3" > 3); // false\\nconsole.log("3" > 5); // false\\nconsole.log("hello" > 5); // false\\nconsole.log(5 > "hello"); // false\\nconsole.log("5" > 3n); // true\\nconsole.log("3" > 5n); // false\\nconsole.log(true > false); // true\\nconsole.log(false > true); // false\\nconsole.log(true > 0); // true\\nconsole.log(true > 1); // false\\nconsole.log(null > 0); // false\\nconsole.log(1 > null); // true\\nconsole.log(undefined > 3); // false\\nconsole.log(3 > undefined); // false\\nconsole.log(3 > NaN); // false\\nconsole.log(NaN > 3); // false\\n\\nconsole.log("5" >= 3); // true\\nconsole.log("3" >= 3); // true\\nconsole.log("3" >= 5); // false\\nconsole.log("hello" >= 5); // false\\nconsole.log(5 >= "hello"); // false\\n\\nvar a = 1;\\nvar b = 2;\\nvar c = 3;\\na + b * c; // 7\\na + (b * c); // 7\\n(a + b) * c; // 9\\na * c + b * c // 9;\\na() * (b() + c());\\n\\n// Arrays\\nlet trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']\\n0 in trees; // returns true\\n3 in trees; // returns true\\n6 in trees; // returns false\\n'bay' in trees; // returns false (you must specify the index number, not the value at that index)\\n'length' in trees; // returns true (length is an Array property)\\nSymbol.iterator in trees; // returns true (arrays are iterable, works only in ES2015+)\\n// Predefined objects\\n'PI' in Math; // returns true\\n// Custom objects\\nlet mycar = {make: 'Honda', model: 'Accord', year: 1998};\\n'make' in mycar; // returns true\\n'model' in mycar; // returns true\\n\\n"1" != 1; // false\\n1 != "1"; // false\\n0 != false; // false\\n0 != null; // true\\n0 != undefined; // true\\n0 != !!null; // false, look at Logical NOT operator\\n0 != !!undefined; // false, look at Logical NOT operator\\nnull != undefined; // false\\nconst number1 = new Number(3);\\nconst number2 = new Number(3);\\nnumber1 != 3; // false\\nnumber1 != number2; // true\\n\\nfunction Shape() {\\n}\\nfunction Rectangle() {\\n Shape.call(this); // call super constructor.\\n}\\nRectangle.prototype = Object.create(Shape.prototype);\\nRectangle.prototype.constructor = Rectangle;\\nlet rect = new Rectangle();\\nrect instanceof Object; // true\\nrect instanceof Shape; // true\\nrect instanceof Rectangle; // true\\nrect instanceof String; // false\\nlet literalObject = {};\\nlet nullObject = Object.create(null);\\nnullObject.name = "My object";\\nliteralObject instanceof Object; // true, every object literal has Object.prototype as prototype\\n({}) instanceof Object; // true, same case as above\\nnullObject instanceof Object; // false, prototype is end of prototype chain (null)\\n\\n9 << 3; // 72\\na <<= 2; // 20\\n\\nconsole.log("5" < 3); // false\\nconsole.log("3" < 3); // false\\nconsole.log("3" < 5); // true\\nconsole.log("hello" < 5); // false\\nconsole.log(5 < "hello"); // false\\nconsole.log("5" < 3n); // false\\nconsole.log("3" < 5n); // true\\n\\na1 = true && true; // t && t returns true\\na2 = true && false; // t && f returns false\\na3 = false && true; // f && t returns false\\na4 = false && (3 == 4); // f && f returns false\\na5 = 'Cat' && 'Dog'; // t && t returns "Dog"\\na6 = false && 'Cat'; // f && t returns false\\na7 = 'Cat' && false; // t && f returns false\\na8 = '' && false; // f && f returns ""\\na9 = false && ''; // f && f returns false\\n\\nlet x = 0;\\nlet y = 1;\\nx &&= 0; // 0\\nx &&= 1; // 0\\ny &&= 1; // 1\\ny &&= 0; // 0\\n\\nfunction config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}\\nconfig({ duration: 125 }); // { duration: 125, speed: 25 }\\nconfig({}); // { duration: 100, speed: 25 }\\n\\nconst nullValue = null;\\nconst emptyText = ""; // falsy\\nconst someNumber = 42;\\nconst valA = nullValue ?? "default for A";\\nconst valB = emptyText ?? "default for B";\\nconst valC = someNumber ?? 0;\\nconsole.log(valA); // "default for A"\\nconsole.log(valB); // "" (as the empty string is not null or undefined)\\nconsole.log(valC); // 42\\n\\n 13 % 5; // 3\\n 1 % -2; // 1\\n 1 % 2; // 1\\n 2 % 3; // 2\\n5.5 % 2; // 1.5\\nx %= y; // x = x % y\\n\\n 9 >> 2; // 2\\n-9 >> 2; // -3\\n\\nlet a = 5; // (00000000000000000000000000000101)\\na >>= 2; // 1 (00000000000000000000000000000001)\\nb >>= 2; // -2 (-00000000000000000000000000000010)\\n\\n 9 >>> 2; // 2\\n-9 >>> 2; // 1073741821\\n\\nconsole.log("hello" !== "hello"); // false\\nconsole.log("hello" !== "hola"); // true\\nconsole.log(3 !== 3); // false\\nconsole.log(3 !== 4); // true\\nconsole.log(true !== true); // false\\nconsole.log(true !== false); // true\\nconsole.log(null !== null); // false\\n\\nlet a = 5; // (00000000000000000000000000000101)\\na >>>= 2; // 1 (00000000000000000000000000000001)\\nlet b = -5; // (-00000000000000000000000000000101)\\nb >>>= 2;
+ [1, QualifiedExpression] console.log(2 + 2)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(2 + 2)
+   [3, Identifier] log
+   [3, Signature] (2 + 2)
+    [4, Infix] 2 + 2
+     [5, Literal] 2
+     [5, Operator] +
+     [5, Literal] 2
+ [1, QualifiedExpression] console.log(2 + true)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(2 + true)
+   [3, Identifier] log
+   [3, Signature] (2 + true)
+    [4, Infix] 2 + true
+     [5, Literal] 2
+     [5, Operator] +
+     [5, Literal] true
+ [1, QualifiedExpression] console.log('hello ' + 'everyone')
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log('hello ' + 'everyone')
+   [3, Identifier] log
+   [3, Signature] ('hello ' + 'everyone')
+    [4, Infix] 'hello ' + 'everyone'
+     [5, Literal] 'hello '
+     [5, Operator] +
+     [5, Literal] 'everyone'
+ [1, QualifiedExpression] console.log(2001 + ': A Space Odyssey')
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(2001 + ': A Space Odyssey')
+   [3, Identifier] log
+   [3, Signature] (2001 + ': A Space Odyssey')
+    [4, Infix] 2001 + ': A Space Odyssey'
+     [5, Literal] 2001
+     [5, Operator] +
+     [5, Literal] ': A Space Odyssey'
+ [1, Infix] 1 + 2
+  [2, Literal] 1
+  [2, Operator] +
+  [2, Literal] 2
+ [1, Infix] true + 1
+  [2, Literal] true
+  [2, Operator] +
+  [2, Literal] 1
+ [1, Infix] false + false
+  [2, Literal] false
+  [2, Operator] +
+  [2, Literal] false
+ [1, Infix] 'foo' + 'bar'
+  [2, Literal] 'foo'
+  [2, Operator] +
+  [2, Literal] 'bar'
+ [1, Infix] 5 + 'foo'
+  [2, Literal] 5
+  [2, Operator] +
+  [2, Literal] 'foo'
+ [1, Infix] 'foo' + false
+  [2, Literal] 'foo'
+  [2, Operator] +
+  [2, Literal] false
+ [1, Assignment] foo = 'foo'
+  [2, Identifier] foo
+  [2, Operator] =
+  [2, Literal] 'foo'
+ [1, Assignment] bar = 5
+  [2, Identifier] bar
+  [2, Operator] =
+  [2, Literal] 5
+ [1, Assignment] baz = true
+  [2, Identifier] baz
+  [2, Operator] =
+  [2, Literal] true
+ [1, Assignment] bar += 2
+  [2, Identifier] bar
+  [2, Operator] +=
+  [2, Literal] 2
+ [1, Assignment] baz += 1
+  [2, Identifier] baz
+  [2, Operator] +=
+  [2, Literal] 1
+ [1, Assignment] baz += false
+  [2, Identifier] baz
+  [2, Operator] +=
+  [2, Literal] false
+ [1, Assignment] bar += 'foo'
+  [2, Identifier] bar
+  [2, Operator] +=
+  [2, Literal] 'foo'
+ [1, Assignment] foo += false
+  [2, Identifier] foo
+  [2, Operator] +=
+  [2, Literal] false
+ [1, Assignment] foo += 'bar'
+  [2, Identifier] foo
+  [2, Operator] +=
+  [2, Literal] 'bar'
+ [1, Assignment] x = 5
+  [2, Identifier] x
+  [2, Operator] =
+  [2, Literal] 5
+ [1, Assignment] x = y
+  [2, Identifier] x
+  [2, Operator] =
+  [2, Identifier] y
+ [1, Assignment] x = y = z
+  [2, Identifier] x
+  [2, Operator] =
+  [2, Chaining] y = z
+   [3, Identifier] y
+   [3, Identifier] z
+ [1, Infix] 5 & 2
+  [2, Literal] 5
+  [2, Operator] &
+  [2, Literal] 2
+ [1, Assignment] a &= 2
+  [2, Identifier] a
+  [2, Operator] &=
+  [2, Literal] 2
+ [1, Prefix] ~0
+  [2, Operator] ~
+  [2, Literal] 0
+ [1, Prefix] ~-1
+  [2, Operator] ~
+  [2, Prefix] -1
+   [3, Operator] -
+   [3, Literal] 1
+ [1, Prefix] ~1
+  [2, Operator] ~
+  [2, Literal] 1
+ [1, Infix] 14 | 9
+  [2, Literal] 14
+  [2, Operator] |
+  [2, Literal] 9
+ [1, Assignment] a |= 2
+  [2, Identifier] a
+  [2, Operator] |=
+  [2, Literal] 2
+ [1, Infix] 14 ^ 9
+  [2, Literal] 14
+  [2, Operator] ^
+  [2, Literal] 9
+ [1, VariableDeclaration] let a = 5
+  [2, Type] let
+  [2, Variable] a = 5
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 5
+ [1, Assignment] a ^= 3
+  [2, Identifier] a
+  [2, Operator] ^=
+  [2, Literal] 3
+ [1, QualifiedExpression] console.log(a)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a)
+   [3, Identifier] log
+   [3, Signature] (a)
+    [4, Identifier] a
+ [1, VariableDeclaration] let b = 5
+  [2, Type] let
+  [2, Variable] b = 5
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Literal] 5
+ [1, Assignment] b ^= 0
+  [2, Identifier] b
+  [2, Operator] ^=
+  [2, Literal] 0
+ [1, QualifiedExpression] console.log(b)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(b)
+   [3, Identifier] log
+   [3, Signature] (b)
+    [4, Identifier] b
+ [1, Prefix] typeof Foo
+  [2, Operator] typeof
+  [2, Identifier] Foo
+ [1, Prefix] typeof class {}
+  [2, Operator] typeof
+  [2, ClassDeclaration] class {}
+ [1, Infix] Foo instanceof Object
+  [2, Identifier] Foo
+  [2, Operator] instanceof
+  [2, Identifier] Object
+ [1, Infix] Foo instanceof Function
+  [2, Identifier] Foo
+  [2, Operator] instanceof
+  [2, Identifier] Function
+ [1, VariableDeclaration] let x = 3
+  [2, Type] let
+  [2, Variable] x = 3
+   [3, Identifier] x
+   [3, Operator] =
+   [3, Literal] 3
+ [1, VariableDeclaration] const y = x--
+  [2, Type] const
+  [2, Variable] y = x--
+   [3, Identifier] y
+   [3, Operator] =
+   [3, Decrement] x--
+    [4, Operator] --
+    [4, Identifier] x
+ [1, QualifiedExpression] console.log(`x:${x}, y:${y}`)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(`x:${x}, y:${y}`)
+   [3, Identifier] log
+   [3, Signature] (`x:${x}, y:${y}`)
+    [4, LiteralTemplate] `x:${x}, y:${y}`
+     [5, Constant] x:
+     [5, Variable] ${x}
+      [6, Identifier] x
+     [5, Constant] , y:
+     [5, Variable] ${y}
+      [6, Identifier] y
+ [1, VariableDeclaration] let a = 3
+  [2, Type] let
+  [2, Variable] a = 3
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 3
+ [1, VariableDeclaration] const b = --a
+  [2, Type] const
+  [2, Variable] b = --a
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Decrement] --a
+    [4, Operator] --
+    [4, Identifier] a
+ [1, QualifiedExpression] console.log(`a:${a}, b:${b}`)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(`a:${a}, b:${b}`)
+   [3, Identifier] log
+   [3, Signature] (`a:${a}, b:${b}`)
+    [4, LiteralTemplate] `a:${a}, b:${b}`
+     [5, Constant] a:
+     [5, Variable] ${a}
+      [6, Identifier] a
+     [5, Constant] , b:
+     [5, Variable] ${b}
+      [6, Identifier] b
+ [1, VariableDeclaration] const Employee = {\\n firstname: 'John',\\n lastname: 'Doe'\\n}
+  [2, Type] const
+  [2, Variable] Employee = {\\n firstname: 'John',\\n lastname: 'Doe'\\n}
+   [3, Identifier] Employee
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n firstname: 'John',\\n lastname: 'Doe'\\n}
+    [4, FieldDeclaration] firstname: 'John'
+     [5, Identifier] firstname
+     [5, Literal] 'John'
+    [4, FieldDeclaration] lastname: 'Doe'
+     [5, Identifier] lastname
+     [5, Literal] 'Doe'
+ [1, QualifiedExpression] console.log(Employee.firstname)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(Employee.firstname)
+   [3, Identifier] log
+   [3, Signature] (Employee.firstname)
+    [4, QualifiedExpression] Employee.firstname
+     [5, Qualifier] Employee.
+      [6, Identifier] Employee
+      [6, Operator] .
+     [5, Identifier] firstname
+ [1, Delete] delete Employee.firstname
+  [2, QualifiedExpression] Employee.firstname
+   [3, Qualifier] Employee.
+    [4, Identifier] Employee
+    [4, Operator] .
+   [3, Identifier] firstname
+ [1, QualifiedExpression] console.log(Employee.firstname)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(Employee.firstname)
+   [3, Identifier] log
+   [3, Signature] (Employee.firstname)
+    [4, QualifiedExpression] Employee.firstname
+     [5, Qualifier] Employee.
+      [6, Identifier] Employee
+      [6, Operator] .
+     [5, Identifier] firstname
+ [1, VariableDeclaration] var Employee = {\\n age: 28,\\n name: 'abc',\\n designation: 'developer'\\n}
+  [2, Type] var
+  [2, Variable] Employee = {\\n age: 28,\\n name: 'abc',\\n designation: 'developer'\\n}
+   [3, Identifier] Employee
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n age: 28,\\n name: 'abc',\\n designation: 'developer'\\n}
+    [4, FieldDeclaration] age: 28
+     [5, Identifier] age
+     [5, Literal] 28
+    [4, FieldDeclaration] name: 'abc'
+     [5, Identifier] name
+     [5, Literal] 'abc'
+    [4, FieldDeclaration] designation: 'developer'
+     [5, Identifier] designation
+     [5, Literal] 'developer'
+ [1, QualifiedExpression] console.log(delete Employee.name)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(delete Employee.name)
+   [3, Identifier] log
+   [3, Signature] (delete Employee.name)
+    [4, Delete] delete Employee.name
+     [5, QualifiedExpression] Employee.name
+      [6, Qualifier] Employee.
+       [7, Identifier] Employee
+       [7, Operator] .
+      [6, Identifier] name
+ [1, QualifiedExpression] console.log(delete Employee.age)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(delete Employee.age)
+   [3, Identifier] log
+   [3, Signature] (delete Employee.age)
+    [4, Delete] delete Employee.age
+     [5, QualifiedExpression] Employee.age
+      [6, Qualifier] Employee.
+       [7, Identifier] Employee
+       [7, Operator] .
+      [6, Identifier] age
+ [1, QualifiedExpression] console.log(delete Employee.salary)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(delete Employee.salary)
+   [3, Identifier] log
+   [3, Signature] (delete Employee.salary)
+    [4, Delete] delete Employee.salary
+     [5, QualifiedExpression] Employee.salary
+      [6, Qualifier] Employee.
+       [7, Identifier] Employee
+       [7, Operator] .
+      [6, Identifier] salary
+ [1, VariableDeclaration] var Employee = {}
+  [2, Type] var
+  [2, Variable] Employee = {}
+   [3, Identifier] Employee
+   [3, Operator] =
+   [3, ObjectDeclaration] {}
+ [1, QualifiedExpression] Object.defineProperty(Employee, 'name', {configurable: false})
+  [2, Qualifier] Object.
+   [3, Identifier] Object
+   [3, Operator] .
+  [2, FunctionCall] defineProperty(Employee, 'name', {configurable: false})
+   [3, Identifier] defineProperty
+   [3, Signature] (Employee, 'name', {configurable: false})
+    [4, Identifier] Employee
+    [4, Literal] 'name'
+    [4, ObjectDeclaration] {configurable: false}
+     [5, FieldDeclaration] configurable: false
+      [6, Identifier] configurable
+      [6, Literal] false
+ [1, QualifiedExpression] console.log(delete Employee.name)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(delete Employee.name)
+   [3, Identifier] log
+   [3, Signature] (delete Employee.name)
+    [4, Delete] delete Employee.name
+     [5, QualifiedExpression] Employee.name
+      [6, Qualifier] Employee.
+       [7, Identifier] Employee
+       [7, Operator] .
+      [6, Identifier] name
+ [1, Assignment] v = 2.0 / 0
+  [2, Identifier] v
+  [2, Operator] =
+  [2, Infix] 2.0 / 0
+   [3, Literal] 2.0
+   [3, Operator] /
+   [3, Literal] 0
+ [1, Assignment] v = 2.0 / 0.0
+  [2, Identifier] v
+  [2, Operator] =
+  [2, Infix] 2.0 / 0.0
+   [3, Literal] 2.0
+   [3, Operator] /
+   [3, Literal] 0.0
+ [1, Assignment] v = 2.0 / -0.0
+  [2, Identifier] v
+  [2, Operator] =
+  [2, Infix] 2.0 / -0.0
+   [3, Literal] 2.0
+   [3, Operator] /
+   [3, Prefix] -0.0
+    [4, Operator] -
+    [4, Literal] 0.0
+ [1, Assignment] bar /= 2
+  [2, Identifier] bar
+  [2, Operator] /=
+  [2, Literal] 2
+ [1, Assignment] bar /= 2
+  [2, Identifier] bar
+  [2, Operator] /=
+  [2, Literal] 2
+ [1, Assignment] bar /= 0
+  [2, Identifier] bar
+  [2, Operator] /=
+  [2, Literal] 0
+ [1, Assignment] bar /= 'foo'
+  [2, Identifier] bar
+  [2, Operator] /=
+  [2, Literal] 'foo'
+ [1, Infix] "1" == 1
+  [2, Literal] "1"
+  [2, Operator] ==
+  [2, Literal] 1
+ [1, Infix] 1 == "1"
+  [2, Literal] 1
+  [2, Operator] ==
+  [2, Literal] "1"
+ [1, Infix] 0 == false
+  [2, Literal] 0
+  [2, Operator] ==
+  [2, Literal] false
+ [1, Infix] 0 == null
+  [2, Literal] 0
+  [2, Operator] ==
+  [2, Null] null
+ [1, Infix] 0 == undefined
+  [2, Literal] 0
+  [2, Operator] ==
+  [2, Undefined] undefined
+ [1, Infix] 0 == !!null
+  [2, Literal] 0
+  [2, Operator] ==
+  [2, Prefix] !!null
+   [3, Operator] !
+   [3, Prefix] !null
+    [4, Operator] !
+    [4, Null] null
+ [1, Infix] 0 == !!undefined
+  [2, Literal] 0
+  [2, Operator] ==
+  [2, Prefix] !!undefined
+   [3, Operator] !
+   [3, Prefix] !undefined
+    [4, Operator] !
+    [4, Undefined] undefined
+ [1, Infix] null == undefined
+  [2, Null] null
+  [2, Operator] ==
+  [2, Undefined] undefined
+ [1, VariableDeclaration] const number1 = new Number(3)
+  [2, Type] const
+  [2, Variable] number1 = new Number(3)
+   [3, Identifier] number1
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, VariableDeclaration] const number2 = new Number(3)
+  [2, Type] const
+  [2, Variable] number2 = new Number(3)
+   [3, Identifier] number2
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, Infix] number1 == 3
+  [2, Identifier] number1
+  [2, Operator] ==
+  [2, Literal] 3
+ [1, Infix] number1 == number2
+  [2, Identifier] number1
+  [2, Operator] ==
+  [2, Identifier] number2
+ [1, VariableDeclaration] const object1 = {"key": "value"}
+  [2, Type] const
+  [2, Variable] object1 = {"key": "value"}
+   [3, Identifier] object1
+   [3, Operator] =
+   [3, ObjectDeclaration] {"key": "value"}
+    [4, FieldDeclaration] "key": "value"
+     [5, Literal] "key"
+     [5, Literal] "value"
+ [1, VariableDeclaration] const object2 = {"key": "value"}
+  [2, Type] const
+  [2, Variable] object2 = {"key": "value"}
+   [3, Identifier] object2
+   [3, Operator] =
+   [3, ObjectDeclaration] {"key": "value"}
+    [4, FieldDeclaration] "key": "value"
+     [5, Literal] "key"
+     [5, Literal] "value"
+ [1, Infix] object1 == object2
+  [2, Identifier] object1
+  [2, Operator] ==
+  [2, Identifier] object2
+ [1, Infix] object2 == object2
+  [2, Identifier] object2
+  [2, Operator] ==
+  [2, Identifier] object2
+ [1, VariableDeclaration] const string1 = "hello"
+  [2, Type] const
+  [2, Variable] string1 = "hello"
+   [3, Identifier] string1
+   [3, Operator] =
+   [3, Literal] "hello"
+ [1, VariableDeclaration] const string2 = String("hello")
+  [2, Type] const
+  [2, Variable] string2 = String("hello")
+   [3, Identifier] string2
+   [3, Operator] =
+   [3, FunctionCall] String("hello")
+    [4, Identifier] String
+    [4, Signature] ("hello")
+     [5, Literal] "hello"
+ [1, VariableDeclaration] const string3 = new String("hello")
+  [2, Type] const
+  [2, Variable] string3 = new String("hello")
+   [3, Identifier] string3
+   [3, Operator] =
+   [3, New] new String("hello")
+    [4, Identifier] String
+    [4, Signature] ("hello")
+     [5, Literal] "hello"
+ [1, VariableDeclaration] const string4 = new String("hello")
+  [2, Type] const
+  [2, Variable] string4 = new String("hello")
+   [3, Identifier] string4
+   [3, Operator] =
+   [3, New] new String("hello")
+    [4, Identifier] String
+    [4, Signature] ("hello")
+     [5, Literal] "hello"
+ [1, QualifiedExpression] console.log(string1 == string2)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(string1 == string2)
+   [3, Identifier] log
+   [3, Signature] (string1 == string2)
+    [4, Infix] string1 == string2
+     [5, Identifier] string1
+     [5, Operator] ==
+     [5, Identifier] string2
+ [1, QualifiedExpression] console.log(string1 == string3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(string1 == string3)
+   [3, Identifier] log
+   [3, Signature] (string1 == string3)
+    [4, Infix] string1 == string3
+     [5, Identifier] string1
+     [5, Operator] ==
+     [5, Identifier] string3
+ [1, QualifiedExpression] console.log(string2 == string3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(string2 == string3)
+   [3, Identifier] log
+   [3, Signature] (string2 == string3)
+    [4, Infix] string2 == string3
+     [5, Identifier] string2
+     [5, Operator] ==
+     [5, Identifier] string3
+ [1, QualifiedExpression] console.log(string3 == string4)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(string3 == string4)
+   [3, Identifier] log
+   [3, Signature] (string3 == string4)
+    [4, Infix] string3 == string4
+     [5, Identifier] string3
+     [5, Operator] ==
+     [5, Identifier] string4
+ [1, QualifiedExpression] console.log(string4 == string4)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(string4 == string4)
+   [3, Identifier] log
+   [3, Signature] (string4 == string4)
+    [4, Infix] string4 == string4
+     [5, Identifier] string4
+     [5, Operator] ==
+     [5, Identifier] string4
+ [1, VariableDeclaration] const d = new Date('December 17, 1995 03:24:00')
+  [2, Type] const
+  [2, Variable] d = new Date('December 17, 1995 03:24:00')
+   [3, Identifier] d
+   [3, Operator] =
+   [3, New] new Date('December 17, 1995 03:24:00')
+    [4, Identifier] Date
+    [4, Signature] ('December 17, 1995 03:24:00')
+     [5, Literal] 'December 17, 1995 03:24:00'
+ [1, VariableDeclaration] const s = d.toString()
+  [2, Type] const
+  [2, Variable] s = d.toString()
+   [3, Identifier] s
+   [3, Operator] =
+   [3, QualifiedExpression] d.toString()
+    [4, Qualifier] d.
+     [5, Identifier] d
+     [5, Operator] .
+    [4, FunctionCall] toString()
+     [5, Identifier] toString
+     [5, Signature] ()
+ [1, QualifiedExpression] console.log(d == s)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(d == s)
+   [3, Identifier] log
+   [3, Signature] (d == s)
+    [4, Infix] d == s
+     [5, Identifier] d
+     [5, Operator] ==
+     [5, Identifier] s
+ [1, Infix] 2 ** 3
+  [2, Literal] 2
+  [2, Operator] **
+  [2, Literal] 3
+ [1, Infix] 3 ** 2
+  [2, Literal] 3
+  [2, Operator] **
+  [2, Literal] 2
+ [1, Infix] 3 ** 2.5
+  [2, Literal] 3
+  [2, Operator] **
+  [2, Literal] 2.5
+ [1, Infix] 10 ** -1
+  [2, Literal] 10
+  [2, Operator] **
+  [2, Prefix] -1
+   [3, Operator] -
+   [3, Literal] 1
+ [1, Infix] NaN ** 2
+  [2, NaN] NaN
+  [2, Operator] **
+  [2, Literal] 2
+ [1, Infix] (-2) ** 2
+  [2, Parenthesis] (-2)
+   [3, Prefix] -2
+    [4, Operator] -
+    [4, Literal] 2
+  [2, Operator] **
+  [2, Literal] 2
+ [1, Infix] 2 ** 3 ** 2
+  [2, Infix] 2 ** 3
+   [3, Literal] 2
+   [3, Operator] **
+   [3, Literal] 3
+  [2, Operator] **
+  [2, Literal] 2
+ [1, Infix] 2 ** (3 ** 2)
+  [2, Literal] 2
+  [2, Operator] **
+  [2, Parenthesis] (3 ** 2)
+   [3, Infix] 3 ** 2
+    [4, Literal] 3
+    [4, Operator] **
+    [4, Literal] 2
+ [1, Infix] (2 ** 3) ** 2
+  [2, Parenthesis] (2 ** 3)
+   [3, Infix] 2 ** 3
+    [4, Literal] 2
+    [4, Operator] **
+    [4, Literal] 3
+  [2, Operator] **
+  [2, Literal] 2
+ [1, Prefix] -(2 ** 2)
+  [2, Operator] -
+  [2, Parenthesis] (2 ** 2)
+   [3, Infix] 2 ** 2
+    [4, Literal] 2
+    [4, Operator] **
+    [4, Literal] 2
+ [1, Assignment] bar **= 2
+  [2, Identifier] bar
+  [2, Operator] **=
+  [2, Literal] 2
+ [1, Assignment] bar **= 'foo'
+  [2, Identifier] bar
+  [2, Operator] **=
+  [2, Literal] 'foo'
+ [1, QualifiedExpression] console.log("5" > 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("5" > 3)
+   [3, Identifier] log
+   [3, Signature] ("5" > 3)
+    [4, Infix] "5" > 3
+     [5, Literal] "5"
+     [5, Operator] >
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" > 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" > 3)
+   [3, Identifier] log
+   [3, Signature] ("3" > 3)
+    [4, Infix] "3" > 3
+     [5, Literal] "3"
+     [5, Operator] >
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" > 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" > 5)
+   [3, Identifier] log
+   [3, Signature] ("3" > 5)
+    [4, Infix] "3" > 5
+     [5, Literal] "3"
+     [5, Operator] >
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log("hello" > 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("hello" > 5)
+   [3, Identifier] log
+   [3, Signature] ("hello" > 5)
+    [4, Infix] "hello" > 5
+     [5, Literal] "hello"
+     [5, Operator] >
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log(5 > "hello")
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(5 > "hello")
+   [3, Identifier] log
+   [3, Signature] (5 > "hello")
+    [4, Infix] 5 > "hello"
+     [5, Literal] 5
+     [5, Operator] >
+     [5, Literal] "hello"
+ [1, QualifiedExpression] console.log("5" > 3n)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("5" > 3n)
+   [3, Identifier] log
+   [3, Signature] ("5" > 3n)
+    [4, Infix] "5" > 3n
+     [5, Literal] "5"
+     [5, Operator] >
+     [5, BigDecimal] 3n
+      [6, Literal] 3
+ [1, QualifiedExpression] console.log("3" > 5n)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" > 5n)
+   [3, Identifier] log
+   [3, Signature] ("3" > 5n)
+    [4, Infix] "3" > 5n
+     [5, Literal] "3"
+     [5, Operator] >
+     [5, BigDecimal] 5n
+      [6, Literal] 5
+ [1, QualifiedExpression] console.log(true > false)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(true > false)
+   [3, Identifier] log
+   [3, Signature] (true > false)
+    [4, Infix] true > false
+     [5, Literal] true
+     [5, Operator] >
+     [5, Literal] false
+ [1, QualifiedExpression] console.log(false > true)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(false > true)
+   [3, Identifier] log
+   [3, Signature] (false > true)
+    [4, Infix] false > true
+     [5, Literal] false
+     [5, Operator] >
+     [5, Literal] true
+ [1, QualifiedExpression] console.log(true > 0)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(true > 0)
+   [3, Identifier] log
+   [3, Signature] (true > 0)
+    [4, Infix] true > 0
+     [5, Literal] true
+     [5, Operator] >
+     [5, Literal] 0
+ [1, QualifiedExpression] console.log(true > 1)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(true > 1)
+   [3, Identifier] log
+   [3, Signature] (true > 1)
+    [4, Infix] true > 1
+     [5, Literal] true
+     [5, Operator] >
+     [5, Literal] 1
+ [1, QualifiedExpression] console.log(null > 0)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(null > 0)
+   [3, Identifier] log
+   [3, Signature] (null > 0)
+    [4, Infix] null > 0
+     [5, Null] null
+     [5, Operator] >
+     [5, Literal] 0
+ [1, QualifiedExpression] console.log(1 > null)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(1 > null)
+   [3, Identifier] log
+   [3, Signature] (1 > null)
+    [4, Infix] 1 > null
+     [5, Literal] 1
+     [5, Operator] >
+     [5, Null] null
+ [1, QualifiedExpression] console.log(undefined > 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(undefined > 3)
+   [3, Identifier] log
+   [3, Signature] (undefined > 3)
+    [4, Infix] undefined > 3
+     [5, Undefined] undefined
+     [5, Operator] >
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log(3 > undefined)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(3 > undefined)
+   [3, Identifier] log
+   [3, Signature] (3 > undefined)
+    [4, Infix] 3 > undefined
+     [5, Literal] 3
+     [5, Operator] >
+     [5, Undefined] undefined
+ [1, QualifiedExpression] console.log(3 > NaN)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(3 > NaN)
+   [3, Identifier] log
+   [3, Signature] (3 > NaN)
+    [4, Infix] 3 > NaN
+     [5, Literal] 3
+     [5, Operator] >
+     [5, NaN] NaN
+ [1, QualifiedExpression] console.log(NaN > 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(NaN > 3)
+   [3, Identifier] log
+   [3, Signature] (NaN > 3)
+    [4, Infix] NaN > 3
+     [5, NaN] NaN
+     [5, Operator] >
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("5" >= 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("5" >= 3)
+   [3, Identifier] log
+   [3, Signature] ("5" >= 3)
+    [4, Infix] "5" >= 3
+     [5, Literal] "5"
+     [5, Operator] >=
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" >= 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" >= 3)
+   [3, Identifier] log
+   [3, Signature] ("3" >= 3)
+    [4, Infix] "3" >= 3
+     [5, Literal] "3"
+     [5, Operator] >=
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" >= 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" >= 5)
+   [3, Identifier] log
+   [3, Signature] ("3" >= 5)
+    [4, Infix] "3" >= 5
+     [5, Literal] "3"
+     [5, Operator] >=
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log("hello" >= 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("hello" >= 5)
+   [3, Identifier] log
+   [3, Signature] ("hello" >= 5)
+    [4, Infix] "hello" >= 5
+     [5, Literal] "hello"
+     [5, Operator] >=
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log(5 >= "hello")
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(5 >= "hello")
+   [3, Identifier] log
+   [3, Signature] (5 >= "hello")
+    [4, Infix] 5 >= "hello"
+     [5, Literal] 5
+     [5, Operator] >=
+     [5, Literal] "hello"
+ [1, VariableDeclaration] var a = 1
+  [2, Type] var
+  [2, Variable] a = 1
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 1
+ [1, VariableDeclaration] var b = 2
+  [2, Type] var
+  [2, Variable] b = 2
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Literal] 2
+ [1, VariableDeclaration] var c = 3
+  [2, Type] var
+  [2, Variable] c = 3
+   [3, Identifier] c
+   [3, Operator] =
+   [3, Literal] 3
+ [1, Infix] a + b * c
+  [2, Identifier] a
+  [2, Operator] +
+  [2, Infix] b * c
+   [3, Identifier] b
+   [3, Operator] *
+   [3, Identifier] c
+ [1, Infix] a + (b * c)
+  [2, Identifier] a
+  [2, Operator] +
+  [2, Parenthesis] (b * c)
+   [3, Infix] b * c
+    [4, Identifier] b
+    [4, Operator] *
+    [4, Identifier] c
+ [1, Infix] (a + b) * c
+  [2, Parenthesis] (a + b)
+   [3, Infix] a + b
+    [4, Identifier] a
+    [4, Operator] +
+    [4, Identifier] b
+  [2, Operator] *
+  [2, Identifier] c
+ [1, Infix] a * c + b * c
+  [2, Infix] a * c
+   [3, Identifier] a
+   [3, Operator] *
+   [3, Identifier] c
+  [2, Operator] +
+  [2, Infix] b * c
+   [3, Identifier] b
+   [3, Operator] *
+   [3, Identifier] c
+ [1, Infix] a() * (b() + c())
+  [2, FunctionCall] a()
+   [3, Identifier] a
+   [3, Signature] ()
+  [2, Operator] *
+  [2, Parenthesis] (b() + c())
+   [3, Infix] b() + c()
+    [4, FunctionCall] b()
+     [5, Identifier] b
+     [5, Signature] ()
+    [4, Operator] +
+    [4, FunctionCall] c()
+     [5, Identifier] c
+     [5, Signature] ()
+ [1, VariableDeclaration] let trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+  [2, Type] let
+  [2, Variable] trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+   [3, Identifier] trees
+   [3, Operator] =
+   [3, ArrayDeclaration] ['redwood', 'bay', 'cedar', 'oak', 'maple']
+    [4, Literal] 'redwood'
+    [4, Literal] 'bay'
+    [4, Literal] 'cedar'
+    [4, Literal] 'oak'
+    [4, Literal] 'maple'
+ [1, Infix] 0 in trees
+  [2, Literal] 0
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 3 in trees
+  [2, Literal] 3
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 6 in trees
+  [2, Literal] 6
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'bay' in trees
+  [2, Literal] 'bay'
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'length' in trees
+  [2, Literal] 'length'
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] Symbol.iterator in trees
+  [2, QualifiedExpression] Symbol.iterator
+   [3, Qualifier] Symbol.
+    [4, Identifier] Symbol
+    [4, Operator] .
+   [3, Identifier] iterator
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'PI' in Math
+  [2, Literal] 'PI'
+  [2, Operator] in
+  [2, Identifier] Math
+ [1, VariableDeclaration] let mycar = {make: 'Honda', model: 'Accord', year: 1998}
+  [2, Type] let
+  [2, Variable] mycar = {make: 'Honda', model: 'Accord', year: 1998}
+   [3, Identifier] mycar
+   [3, Operator] =
+   [3, ObjectDeclaration] {make: 'Honda', model: 'Accord', year: 1998}
+    [4, FieldDeclaration] make: 'Honda'
+     [5, Identifier] make
+     [5, Literal] 'Honda'
+    [4, FieldDeclaration] model: 'Accord'
+     [5, Identifier] model
+     [5, Literal] 'Accord'
+    [4, FieldDeclaration] year: 1998
+     [5, Identifier] year
+     [5, Literal] 1998
+ [1, Infix] 'make' in mycar
+  [2, Literal] 'make'
+  [2, Operator] in
+  [2, Identifier] mycar
+ [1, Infix] 'model' in mycar
+  [2, Literal] 'model'
+  [2, Operator] in
+  [2, Identifier] mycar
+ [1, Infix] "1" != 1
+  [2, Literal] "1"
+  [2, Operator] !=
+  [2, Literal] 1
+ [1, Infix] 1 != "1"
+  [2, Literal] 1
+  [2, Operator] !=
+  [2, Literal] "1"
+ [1, Infix] 0 != false
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Literal] false
+ [1, Infix] 0 != null
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Null] null
+ [1, Infix] 0 != undefined
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Undefined] undefined
+ [1, Infix] 0 != !!null
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Prefix] !!null
+   [3, Operator] !
+   [3, Prefix] !null
+    [4, Operator] !
+    [4, Null] null
+ [1, Infix] 0 != !!undefined
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Prefix] !!undefined
+   [3, Operator] !
+   [3, Prefix] !undefined
+    [4, Operator] !
+    [4, Undefined] undefined
+ [1, Infix] null != undefined
+  [2, Null] null
+  [2, Operator] !=
+  [2, Undefined] undefined
+ [1, VariableDeclaration] const number1 = new Number(3)
+  [2, Type] const
+  [2, Variable] number1 = new Number(3)
+   [3, Identifier] number1
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, VariableDeclaration] const number2 = new Number(3)
+  [2, Type] const
+  [2, Variable] number2 = new Number(3)
+   [3, Identifier] number2
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, Infix] number1 != 3
+  [2, Identifier] number1
+  [2, Operator] !=
+  [2, Literal] 3
+ [1, Infix] number1 != number2
+  [2, Identifier] number1
+  [2, Operator] !=
+  [2, Identifier] number2
+ [1, FunctionDeclaration] function Shape() {\\n}
+  [2, Identifier] Shape
+  [2, Signature] ()
+  [2, Procedure] {\\n}
+ [1, FunctionDeclaration] function Rectangle() {\\n Shape.call(this); // call super constructor.\\n}
+  [2, Identifier] Rectangle
+  [2, Signature] ()
+  [2, Procedure] {\\n Shape.call(this); // call super constructor.\\n}
+   [3, QualifiedExpression] Shape.call(this)
+    [4, Qualifier] Shape.
+     [5, Identifier] Shape
+     [5, Operator] .
+    [4, FunctionCall] call(this)
+     [5, Identifier] call
+     [5, Signature] (this)
+      [6, This] this
+ [1, Assignment] Rectangle.prototype = Object.create(Shape.prototype)
+  [2, QualifiedExpression] Rectangle.prototype
+   [3, Qualifier] Rectangle.
+    [4, Identifier] Rectangle
+    [4, Operator] .
+   [3, Identifier] prototype
+  [2, Operator] =
+  [2, QualifiedExpression] Object.create(Shape.prototype)
+   [3, Qualifier] Object.
+    [4, Identifier] Object
+    [4, Operator] .
+   [3, FunctionCall] create(Shape.prototype)
+    [4, Identifier] create
+    [4, Signature] (Shape.prototype)
+     [5, QualifiedExpression] Shape.prototype
+      [6, Qualifier] Shape.
+       [7, Identifier] Shape
+       [7, Operator] .
+      [6, Identifier] prototype
+ [1, Assignment] Rectangle.prototype.constructor = Rectangle
+  [2, QualifiedExpression] Rectangle.prototype.constructor
+   [3, Qualifier] Rectangle.
+    [4, Identifier] Rectangle
+    [4, Operator] .
+   [3, Qualifier] prototype.
+    [4, Identifier] prototype
+    [4, Operator] .
+   [3, Identifier] constructor
+  [2, Operator] =
+  [2, Identifier] Rectangle
+ [1, VariableDeclaration] let rect = new Rectangle()
+  [2, Type] let
+  [2, Variable] rect = new Rectangle()
+   [3, Identifier] rect
+   [3, Operator] =
+   [3, New] new Rectangle()
+    [4, Identifier] Rectangle
+    [4, Signature] ()
+ [1, Infix] rect instanceof Object
+  [2, Identifier] rect
+  [2, Operator] instanceof
+  [2, Identifier] Object
+ [1, Infix] rect instanceof Shape
+  [2, Identifier] rect
+  [2, Operator] instanceof
+  [2, Identifier] Shape
+ [1, Infix] rect instanceof Rectangle
+  [2, Identifier] rect
+  [2, Operator] instanceof
+  [2, Identifier] Rectangle
+ [1, Infix] rect instanceof String
+  [2, Identifier] rect
+  [2, Operator] instanceof
+  [2, Identifier] String
+ [1, VariableDeclaration] let literalObject = {}
+  [2, Type] let
+  [2, Variable] literalObject = {}
+   [3, Identifier] literalObject
+   [3, Operator] =
+   [3, ObjectDeclaration] {}
+ [1, VariableDeclaration] let nullObject = Object.create(null)
+  [2, Type] let
+  [2, Variable] nullObject = Object.create(null)
+   [3, Identifier] nullObject
+   [3, Operator] =
+   [3, QualifiedExpression] Object.create(null)
+    [4, Qualifier] Object.
+     [5, Identifier] Object
+     [5, Operator] .
+    [4, FunctionCall] create(null)
+     [5, Identifier] create
+     [5, Signature] (null)
+      [6, Null] null
+ [1, Assignment] nullObject.name = "My object"
+  [2, QualifiedExpression] nullObject.name
+   [3, Qualifier] nullObject.
+    [4, Identifier] nullObject
+    [4, Operator] .
+   [3, Identifier] name
+  [2, Operator] =
+  [2, Literal] "My object"
+ [1, Infix] literalObject instanceof Object
+  [2, Identifier] literalObject
+  [2, Operator] instanceof
+  [2, Identifier] Object
+ [1, Infix] ({}) instanceof Object
+  [2, Parenthesis] ({})
+   [3, ObjectDeclaration] {}
+  [2, Operator] instanceof
+  [2, Identifier] Object
+ [1, Infix] nullObject instanceof Object
+  [2, Identifier] nullObject
+  [2, Operator] instanceof
+  [2, Identifier] Object
+ [1, Infix] 9 << 3
+  [2, Literal] 9
+  [2, Operator] <<
+  [2, Literal] 3
+ [1, Assignment] a <<= 2
+  [2, Identifier] a
+  [2, Operator] <<=
+  [2, Literal] 2
+ [1, QualifiedExpression] console.log("5" < 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("5" < 3)
+   [3, Identifier] log
+   [3, Signature] ("5" < 3)
+    [4, Infix] "5" < 3
+     [5, Literal] "5"
+     [5, Operator] <
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" < 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" < 3)
+   [3, Identifier] log
+   [3, Signature] ("3" < 3)
+    [4, Infix] "3" < 3
+     [5, Literal] "3"
+     [5, Operator] <
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log("3" < 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" < 5)
+   [3, Identifier] log
+   [3, Signature] ("3" < 5)
+    [4, Infix] "3" < 5
+     [5, Literal] "3"
+     [5, Operator] <
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log("hello" < 5)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("hello" < 5)
+   [3, Identifier] log
+   [3, Signature] ("hello" < 5)
+    [4, Infix] "hello" < 5
+     [5, Literal] "hello"
+     [5, Operator] <
+     [5, Literal] 5
+ [1, QualifiedExpression] console.log(5 < "hello")
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(5 < "hello")
+   [3, Identifier] log
+   [3, Signature] (5 < "hello")
+    [4, Infix] 5 < "hello"
+     [5, Literal] 5
+     [5, Operator] <
+     [5, Literal] "hello"
+ [1, QualifiedExpression] console.log("5" < 3n)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("5" < 3n)
+   [3, Identifier] log
+   [3, Signature] ("5" < 3n)
+    [4, Infix] "5" < 3n
+     [5, Literal] "5"
+     [5, Operator] <
+     [5, BigDecimal] 3n
+      [6, Literal] 3
+ [1, QualifiedExpression] console.log("3" < 5n)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("3" < 5n)
+   [3, Identifier] log
+   [3, Signature] ("3" < 5n)
+    [4, Infix] "3" < 5n
+     [5, Literal] "3"
+     [5, Operator] <
+     [5, BigDecimal] 5n
+      [6, Literal] 5
+ [1, Assignment] a1 = true && true
+  [2, Identifier] a1
+  [2, Operator] =
+  [2, Infix] true && true
+   [3, Literal] true
+   [3, Operator] &&
+   [3, Literal] true
+ [1, Assignment] a2 = true && false
+  [2, Identifier] a2
+  [2, Operator] =
+  [2, Infix] true && false
+   [3, Literal] true
+   [3, Operator] &&
+   [3, Literal] false
+ [1, Assignment] a3 = false && true
+  [2, Identifier] a3
+  [2, Operator] =
+  [2, Infix] false && true
+   [3, Literal] false
+   [3, Operator] &&
+   [3, Literal] true
+ [1, Assignment] a4 = false && (3 == 4)
+  [2, Identifier] a4
+  [2, Operator] =
+  [2, Infix] false && (3 == 4)
+   [3, Literal] false
+   [3, Operator] &&
+   [3, Parenthesis] (3 == 4)
+    [4, Infix] 3 == 4
+     [5, Literal] 3
+     [5, Operator] ==
+     [5, Literal] 4
+ [1, Assignment] a5 = 'Cat' && 'Dog'
+  [2, Identifier] a5
+  [2, Operator] =
+  [2, Infix] 'Cat' && 'Dog'
+   [3, Literal] 'Cat'
+   [3, Operator] &&
+   [3, Literal] 'Dog'
+ [1, Assignment] a6 = false && 'Cat'
+  [2, Identifier] a6
+  [2, Operator] =
+  [2, Infix] false && 'Cat'
+   [3, Literal] false
+   [3, Operator] &&
+   [3, Literal] 'Cat'
+ [1, Assignment] a7 = 'Cat' && false
+  [2, Identifier] a7
+  [2, Operator] =
+  [2, Infix] 'Cat' && false
+   [3, Literal] 'Cat'
+   [3, Operator] &&
+   [3, Literal] false
+ [1, Assignment] a8 = '' && false
+  [2, Identifier] a8
+  [2, Operator] =
+  [2, Infix] '' && false
+   [3, Literal] ''
+   [3, Operator] &&
+   [3, Literal] false
+ [1, Assignment] a9 = false && ''
+  [2, Identifier] a9
+  [2, Operator] =
+  [2, Infix] false && ''
+   [3, Literal] false
+   [3, Operator] &&
+   [3, Literal] ''
+ [1, VariableDeclaration] let x = 0
+  [2, Type] let
+  [2, Variable] x = 0
+   [3, Identifier] x
+   [3, Operator] =
+   [3, Literal] 0
+ [1, VariableDeclaration] let y = 1
+  [2, Type] let
+  [2, Variable] y = 1
+   [3, Identifier] y
+   [3, Operator] =
+   [3, Literal] 1
+ [1, Assignment] x &&= 0
+  [2, Identifier] x
+  [2, Operator] &&=
+  [2, Literal] 0
+ [1, Assignment] x &&= 1
+  [2, Identifier] x
+  [2, Operator] &&=
+  [2, Literal] 1
+ [1, Assignment] y &&= 1
+  [2, Identifier] y
+  [2, Operator] &&=
+  [2, Literal] 1
+ [1, Assignment] y &&= 0
+  [2, Identifier] y
+  [2, Operator] &&=
+  [2, Literal] 0
+ [1, FunctionDeclaration] function config(options) {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+  [2, Identifier] config
+  [2, Signature] (options)
+   [3, Identifier] options
+  [2, Procedure] {\\n options.duration ??= 100;\\n options.speed ??= 25;\\n return options;\\n}
+   [3, Assignment] options.duration ??= 100
+    [4, QualifiedExpression] options.duration
+     [5, Qualifier] options.
+      [6, Identifier] options
+      [6, Operator] .
+     [5, Identifier] duration
+    [4, Operator] ??=
+    [4, Literal] 100
+   [3, Assignment] options.speed ??= 25
+    [4, QualifiedExpression] options.speed
+     [5, Qualifier] options.
+      [6, Identifier] options
+      [6, Operator] .
+     [5, Identifier] speed
+    [4, Operator] ??=
+    [4, Literal] 25
+   [3, Return] return options
+    [4, Identifier] options
+ [1, FunctionCall] config({ duration: 125 })
+  [2, Identifier] config
+  [2, Signature] ({ duration: 125 })
+   [3, ObjectDeclaration] { duration: 125 }
+    [4, FieldDeclaration] duration: 125
+     [5, Identifier] duration
+     [5, Literal] 125
+ [1, FunctionCall] config({})
+  [2, Identifier] config
+  [2, Signature] ({})
+   [3, ObjectDeclaration] {}
+ [1, VariableDeclaration] const nullValue = null
+  [2, Type] const
+  [2, Variable] nullValue = null
+   [3, Identifier] nullValue
+   [3, Operator] =
+   [3, Null] null
+ [1, VariableDeclaration] const emptyText = ""
+  [2, Type] const
+  [2, Variable] emptyText = ""
+   [3, Identifier] emptyText
+   [3, Operator] =
+   [3, Literal] ""
+ [1, VariableDeclaration] const someNumber = 42
+  [2, Type] const
+  [2, Variable] someNumber = 42
+   [3, Identifier] someNumber
+   [3, Operator] =
+   [3, Literal] 42
+ [1, VariableDeclaration] const valA = nullValue ?? "default for A"
+  [2, Type] const
+  [2, Variable] valA = nullValue ?? "default for A"
+   [3, Identifier] valA
+   [3, Operator] =
+   [3, Infix] nullValue ?? "default for A"
+    [4, Identifier] nullValue
+    [4, Operator] ??
+    [4, Literal] "default for A"
+ [1, VariableDeclaration] const valB = emptyText ?? "default for B"
+  [2, Type] const
+  [2, Variable] valB = emptyText ?? "default for B"
+   [3, Identifier] valB
+   [3, Operator] =
+   [3, Infix] emptyText ?? "default for B"
+    [4, Identifier] emptyText
+    [4, Operator] ??
+    [4, Literal] "default for B"
+ [1, VariableDeclaration] const valC = someNumber ?? 0
+  [2, Type] const
+  [2, Variable] valC = someNumber ?? 0
+   [3, Identifier] valC
+   [3, Operator] =
+   [3, Infix] someNumber ?? 0
+    [4, Identifier] someNumber
+    [4, Operator] ??
+    [4, Literal] 0
+ [1, QualifiedExpression] console.log(valA)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(valA)
+   [3, Identifier] log
+   [3, Signature] (valA)
+    [4, Identifier] valA
+ [1, QualifiedExpression] console.log(valB)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(valB)
+   [3, Identifier] log
+   [3, Signature] (valB)
+    [4, Identifier] valB
+ [1, QualifiedExpression] console.log(valC)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(valC)
+   [3, Identifier] log
+   [3, Signature] (valC)
+    [4, Identifier] valC
+ [1, Infix] 13 % 5
+  [2, Literal] 13
+  [2, Operator] %
+  [2, Literal] 5
+ [1, Infix] 1 % -2
+  [2, Literal] 1
+  [2, Operator] %
+  [2, Prefix] -2
+   [3, Operator] -
+   [3, Literal] 2
+ [1, Infix] 1 % 2
+  [2, Literal] 1
+  [2, Operator] %
+  [2, Literal] 2
+ [1, Infix] 2 % 3
+  [2, Literal] 2
+  [2, Operator] %
+  [2, Literal] 3
+ [1, Infix] 5.5 % 2
+  [2, Literal] 5.5
+  [2, Operator] %
+  [2, Literal] 2
+ [1, Assignment] x %= y
+  [2, Identifier] x
+  [2, Operator] %=
+  [2, Identifier] y
+ [1, Infix] 9 >> 2
+  [2, Literal] 9
+  [2, Operator] >>
+  [2, Literal] 2
+ [1, Infix] -9 >> 2
+  [2, Prefix] -9
+   [3, Operator] -
+   [3, Literal] 9
+  [2, Operator] >>
+  [2, Literal] 2
+ [1, VariableDeclaration] let a = 5
+  [2, Type] let
+  [2, Variable] a = 5
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 5
+ [1, Assignment] a >>= 2
+  [2, Identifier] a
+  [2, Operator] >>=
+  [2, Literal] 2
+ [1, Assignment] b >>= 2
+  [2, Identifier] b
+  [2, Operator] >>=
+  [2, Literal] 2
+ [1, Infix] 9 >>> 2
+  [2, Literal] 9
+  [2, Operator] >>>
+  [2, Literal] 2
+ [1, Infix] -9 >>> 2
+  [2, Prefix] -9
+   [3, Operator] -
+   [3, Literal] 9
+  [2, Operator] >>>
+  [2, Literal] 2
+ [1, QualifiedExpression] console.log("hello" !== "hello")
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("hello" !== "hello")
+   [3, Identifier] log
+   [3, Signature] ("hello" !== "hello")
+    [4, Infix] "hello" !== "hello"
+     [5, Literal] "hello"
+     [5, Operator] !==
+     [5, Literal] "hello"
+ [1, QualifiedExpression] console.log("hello" !== "hola")
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log("hello" !== "hola")
+   [3, Identifier] log
+   [3, Signature] ("hello" !== "hola")
+    [4, Infix] "hello" !== "hola"
+     [5, Literal] "hello"
+     [5, Operator] !==
+     [5, Literal] "hola"
+ [1, QualifiedExpression] console.log(3 !== 3)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(3 !== 3)
+   [3, Identifier] log
+   [3, Signature] (3 !== 3)
+    [4, Infix] 3 !== 3
+     [5, Literal] 3
+     [5, Operator] !==
+     [5, Literal] 3
+ [1, QualifiedExpression] console.log(3 !== 4)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(3 !== 4)
+   [3, Identifier] log
+   [3, Signature] (3 !== 4)
+    [4, Infix] 3 !== 4
+     [5, Literal] 3
+     [5, Operator] !==
+     [5, Literal] 4
+ [1, QualifiedExpression] console.log(true !== true)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(true !== true)
+   [3, Identifier] log
+   [3, Signature] (true !== true)
+    [4, Infix] true !== true
+     [5, Literal] true
+     [5, Operator] !==
+     [5, Literal] true
+ [1, QualifiedExpression] console.log(true !== false)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(true !== false)
+   [3, Identifier] log
+   [3, Signature] (true !== false)
+    [4, Infix] true !== false
+     [5, Literal] true
+     [5, Operator] !==
+     [5, Literal] false
+ [1, QualifiedExpression] console.log(null !== null)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(null !== null)
+   [3, Identifier] log
+   [3, Signature] (null !== null)
+    [4, Infix] null !== null
+     [5, Null] null
+     [5, Operator] !==
+     [5, Null] null
+ [1, VariableDeclaration] let a = 5
+  [2, Type] let
+  [2, Variable] a = 5
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 5
+ [1, Assignment] a >>>= 2
+  [2, Identifier] a
+  [2, Operator] >>>=
+  [2, Literal] 2
+ [1, VariableDeclaration] let b = -5
+  [2, Type] let
+  [2, Variable] b = -5
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Prefix] -5
+    [4, Operator] -
+    [4, Literal] 5
+ [1, Assignment] b >>>= 2
+  [2, Identifier] b
+  [2, Operator] >>>=
+  [2, Literal] 2

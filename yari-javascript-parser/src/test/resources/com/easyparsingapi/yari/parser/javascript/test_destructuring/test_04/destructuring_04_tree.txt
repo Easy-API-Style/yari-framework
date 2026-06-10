@@ -1,0 +1,24 @@
+[0, Javascript] ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40})
+ [1, Parenthesis] ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40})
+  [2, Assignment] {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+   [3, DestructuringObject] {a, b, ...rest}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 10, b: 20, c: 30, d: 40}
+    [4, FieldDeclaration] a: 10
+     [5, Identifier] a
+     [5, Literal] 10
+    [4, FieldDeclaration] b: 20
+     [5, Identifier] b
+     [5, Literal] 20
+    [4, FieldDeclaration] c: 30
+     [5, Identifier] c
+     [5, Literal] 30
+    [4, FieldDeclaration] d: 40
+     [5, Identifier] d
+     [5, Literal] 40

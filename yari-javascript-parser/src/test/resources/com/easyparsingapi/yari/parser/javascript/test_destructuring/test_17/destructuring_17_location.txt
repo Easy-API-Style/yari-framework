@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Javascript]
+[a, ...b, ] = [1, 2, 3]
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 24] [Assignment]
+[a, ...b, ] = [1, 2, 3]
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 12] [DestructuringArray]
+[a, ...b, ]
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Value]
+a
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Spread]
+...b
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 11] [Empty]
+
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 24] [ArrayDeclaration]
+[1, 2, 3]
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Literal]
+1
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Literal]
+2
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 23] [Literal]
+3
+---------------------------

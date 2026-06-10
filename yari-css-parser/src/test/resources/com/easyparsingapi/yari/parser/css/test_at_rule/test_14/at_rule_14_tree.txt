@@ -1,0 +1,22 @@
+[0, Css] @container summary (width > 400px) {\\n @container (width > 800px) {\\n /* <stylesheet> */\\n }\\n }
+ [1, AtRule] @container summary (width > 400px) {\\n @container (width > 800px) {\\n /* <stylesheet> */\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] summary (width > 400px)
+   [3, Identifier] summary
+   [3, Operator] 
+   [3, Parenthesis] (width > 400px)
+    [4, Infix] width > 400px
+     [5, Identifier] width
+     [5, Operator] >
+     [5, Identifier] 400px
+  [2, Block] {\\n @container (width > 800px) {\\n /* <stylesheet> */\\n }\\n }
+   [3, AtRule] @container (width > 800px) {\\n /* <stylesheet> */\\n }
+    [4, AtRuleName] @container
+     [5, Identifier] container
+    [4, Parenthesis] (width > 800px)
+     [5, Infix] width > 800px
+      [6, Identifier] width
+      [6, Operator] >
+      [6, Identifier] 800px
+    [4, Block] {\\n /* <stylesheet> */\\n }

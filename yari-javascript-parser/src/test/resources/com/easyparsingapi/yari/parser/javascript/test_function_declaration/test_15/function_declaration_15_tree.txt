@@ -1,0 +1,18 @@
+[0, Javascript] function sanitize(x) {\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+ [1, FunctionDeclaration] function sanitize(x) {\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+  [2, Identifier] sanitize
+  [2, Signature] (x)
+   [3, Identifier] x
+  [2, Procedure] {\\n if (isNaN(x)) {\\n return NaN;\\n }\\n return x;\\n}
+   [3, If] if (isNaN(x)) {\\n return NaN;\\n }
+    [4, IfBlock] if (isNaN(x)) {\\n return NaN;\\n }
+     [5, Condition] (isNaN(x))
+      [6, FunctionCall] isNaN(x)
+       [7, Identifier] isNaN
+       [7, Signature] (x)
+        [8, Identifier] x
+     [5, Procedure] {\\n return NaN;\\n }
+      [6, Return] return NaN
+       [7, NaN] NaN
+   [3, Return] return x
+    [4, Identifier] x

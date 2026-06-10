@@ -1,0 +1,63 @@
+SourceLocation [start=line 1 column 3, end=line 4 column 4] [Css]
+a[href^="https://"][href$=".org"]\\n {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 4 column 4] [RuleSet]
+a[href^="https://"][href$=".org"]\\n {\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 36] [CombinatorSelector]
+a[href^="https://"][href$=".org"]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 22] [CombinatorSelector]
+a[href^="https://"]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [ElementSelector]
+a
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 4] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 22] [AttributeSelector]
+[href^="https://"]
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 21] [Expression]
+href^="https://"
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 9] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Operator]
+^=
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 21] [Literal]
+"https://"
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 22] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 36] [AttributeSelector]
+[href$=".org"]
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 35] [Expression]
+href$=".org"
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 27] [Identifier]
+href
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 29] [Operator]
+$=
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 35] [Literal]
+".org"
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 4 column 4] [Block]
+{\\n color: green;\\n }
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 18] [Property]
+color: green
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 11] [Identifier]
+color
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 18] [Identifier]
+green
+---------------------------

@@ -1,0 +1,36 @@
+[0, Css] span:nth-last-of-type(2) {\\n background-color: lime;\\n }\\n p.fancy:nth-of-type(2n + 1) {\\n text-decoration: underline;\\n }
+ [1, RuleSet] span:nth-last-of-type(2) {\\n background-color: lime;\\n }
+  [2, CombinatorSelector] span:nth-last-of-type(2)
+   [3, ElementSelector] span
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-last-of-type(2)
+    [4, PseudoClassSelector] :nth-last-of-type
+     [5, Identifier] nth-last-of-type
+    [4, Signature] (2)
+     [5, NthPattern] 2
+      [6, Literal] 2
+  [2, Block] {\\n background-color: lime;\\n }
+   [3, Property] background-color: lime
+    [4, Identifier] background-color
+    [4, Identifier] lime
+ [1, RuleSet] p.fancy:nth-of-type(2n + 1) {\\n text-decoration: underline;\\n }
+  [2, CombinatorSelector] p.fancy:nth-of-type(2n + 1)
+   [3, CombinatorSelector] p.fancy
+    [4, ElementSelector] p
+    [4, Operator] 
+    [4, ClassSelector] .fancy
+     [5, Identifier] fancy
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-of-type(2n + 1)
+    [4, PseudoClassSelector] :nth-of-type
+     [5, Identifier] nth-of-type
+    [4, Signature] (2n + 1)
+     [5, NthPattern] 2n + 1
+      [6, Infix] 2n + 1
+       [7, Literal] 2n
+       [7, Operator] +
+       [7, Literal] 1
+  [2, Block] {\\n text-decoration: underline;\\n }
+   [3, Property] text-decoration: underline
+    [4, Identifier] text-decoration
+    [4, Identifier] underline

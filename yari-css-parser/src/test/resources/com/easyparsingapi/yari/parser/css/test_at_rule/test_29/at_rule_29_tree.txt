@@ -1,0 +1,24 @@
+[0, Css] @keyframes slide-in {\\n from {\\n transform: translateX(0%);\\n }\\n\\n to {\\n transform: translateX(100%);\\n }\\n }
+ [1, AtRule] @keyframes slide-in {\\n from {\\n transform: translateX(0%);\\n }\\n\\n to {\\n transform: translateX(100%);\\n }\\n }
+  [2, AtRuleName] @keyframes
+   [3, Identifier] keyframes
+  [2, Identifier] slide-in
+  [2, Block] {\\n from {\\n transform: translateX(0%);\\n }\\n\\n to {\\n transform: translateX(100%);\\n }\\n }
+   [3, RuleSet] from {\\n transform: translateX(0%);\\n }
+    [4, ElementSelector] from
+    [4, Block] {\\n transform: translateX(0%);\\n }
+     [5, Property] transform: translateX(0%)
+      [6, Identifier] transform
+      [6, Function] translateX(0%)
+       [7, Identifier] translateX
+       [7, Signature] (0%)
+        [8, Identifier] 0%
+   [3, RuleSet] to {\\n transform: translateX(100%);\\n }
+    [4, ElementSelector] to
+    [4, Block] {\\n transform: translateX(100%);\\n }
+     [5, Property] transform: translateX(100%)
+      [6, Identifier] transform
+      [6, Function] translateX(100%)
+       [7, Identifier] translateX
+       [7, Signature] (100%)
+        [8, Identifier] 100%

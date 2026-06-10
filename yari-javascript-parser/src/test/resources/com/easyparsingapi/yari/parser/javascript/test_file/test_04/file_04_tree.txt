@@ -1,0 +1,408 @@
+[0, Javascript] var age = 26;\\nvar beverage = (age >= 21) ? "Beer" : "Juice";\\n\\nlet greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}\\n\\nconsole.log(greeting({ name: `Alice` })); // "Howdy, Alice"\\nconsole.log(greeting(null)); // "Howdy, stranger"\\n\\nlet trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']\\n0 in trees // returns true\\n3 in trees // returns true\\n6 in trees // returns false\\n'bay' in trees // returns false (you must specify the index number, not the value at that index)\\n'length' in trees // returns true (length is an Array property)\\nSymbol.iterator in trees // returns true (arrays are iterable, works only in ES2015+)\\n'PI' in Math // returns true\\nlet mycar = { make: 'Honda', model: 'Accord', year: 1998 }\\n'make' in mycar // returns true\\n'model' in mycar // returns true\\n'toString' in {} // returns true\\n\\n"1" != 1; // false\\n1 != "1"; // false\\n0 != false; // false\\n0 != null; // true\\n0 != undefined; // true\\n0 != !!null; // false, look at Logical NOT operator\\n0 != !!undefined; // false, look at Logical NOT operator\\nnull != undefined; // false\\n\\nconst number1 = new Number(3);\\nconst number2 = new Number(3);\\nnumber1 != 3; // false\\nnumber1 != number2; // true\\n\\n"Le prix est : " + (estMembre ? "15 €" : "30 €");\\n\\nvar elvisLives = Math.PI > 4 ? "Yep" : "Nope";\\n\\nvar premierControle = false,\\n secondControle = false,\\n acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé";\\n\\nvar stop = false,\\n age = 16;\\n\\nage > 18 ? location.assign("continue.html") : (stop = true);\\n\\nvar stop = false,\\n age = 23;\\n\\nage > 18\\n ? (console.log("OK, accès autorisé."), location.assign("continue.html"))\\n : ((stop = true), console.log("Accès refusé !"));\\n\\nvar url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html"); // la valeur à affecter si âge <= 18\\n\\n\\nvar func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}\\n\\nvar func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+ [1, VariableDeclaration] var age = 26
+  [2, Type] var
+  [2, Variable] age = 26
+   [3, Identifier] age
+   [3, Operator] =
+   [3, Literal] 26
+ [1, VariableDeclaration] var beverage = (age >= 21) ? "Beer" : "Juice"
+  [2, Type] var
+  [2, Variable] beverage = (age >= 21) ? "Beer" : "Juice"
+   [3, Identifier] beverage
+   [3, Operator] =
+   [3, Ternary] (age >= 21) ? "Beer" : "Juice"
+    [4, Parenthesis] (age >= 21)
+     [5, Infix] age >= 21
+      [6, Identifier] age
+      [6, Operator] >=
+      [6, Literal] 21
+    [4, Literal] "Beer"
+    [4, Literal] "Juice"
+ [1, VariableDeclaration] let greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+  [2, Type] let
+  [2, Variable] greeting = person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+   [3, Identifier] greeting
+   [3, Operator] =
+   [3, ArrowFunction] person => {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+    [4, Signature] person
+     [5, Identifier] person
+    [4, Procedure] {\\n let name = person ? person.name : `stranger`\\n return `Howdy, ${name}`\\n}
+     [5, VariableDeclaration] let name = person ? person.name : `stranger`
+      [6, Type] let
+      [6, Variable] name = person ? person.name : `stranger`
+       [7, Identifier] name
+       [7, Operator] =
+       [7, Ternary] person ? person.name : `stranger`
+        [8, Identifier] person
+        [8, QualifiedExpression] person.name
+         [9, Qualifier] person.
+          [10, Identifier] person
+          [10, Operator] .
+         [9, Identifier] name
+        [8, LiteralTemplate] `stranger`
+         [9, Constant] stranger
+     [5, Return] return `Howdy, ${name}`
+      [6, LiteralTemplate] `Howdy, ${name}`
+       [7, Constant] Howdy, 
+       [7, Variable] ${name}
+        [8, Identifier] name
+ [1, QualifiedExpression] console.log(greeting({ name: `Alice` }))
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(greeting({ name: `Alice` }))
+   [3, Identifier] log
+   [3, Signature] (greeting({ name: `Alice` }))
+    [4, FunctionCall] greeting({ name: `Alice` })
+     [5, Identifier] greeting
+     [5, Signature] ({ name: `Alice` })
+      [6, ObjectDeclaration] { name: `Alice` }
+       [7, FieldDeclaration] name: `Alice`
+        [8, Identifier] name
+        [8, LiteralTemplate] `Alice`
+         [9, Constant] Alice
+ [1, QualifiedExpression] console.log(greeting(null))
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(greeting(null))
+   [3, Identifier] log
+   [3, Signature] (greeting(null))
+    [4, FunctionCall] greeting(null)
+     [5, Identifier] greeting
+     [5, Signature] (null)
+      [6, Null] null
+ [1, VariableDeclaration] let trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+  [2, Type] let
+  [2, Variable] trees = ['redwood', 'bay', 'cedar', 'oak', 'maple']
+   [3, Identifier] trees
+   [3, Operator] =
+   [3, ArrayDeclaration] ['redwood', 'bay', 'cedar', 'oak', 'maple']
+    [4, Literal] 'redwood'
+    [4, Literal] 'bay'
+    [4, Literal] 'cedar'
+    [4, Literal] 'oak'
+    [4, Literal] 'maple'
+ [1, Infix] 0 in trees
+  [2, Literal] 0
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 3 in trees
+  [2, Literal] 3
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 6 in trees
+  [2, Literal] 6
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'bay' in trees
+  [2, Literal] 'bay'
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'length' in trees
+  [2, Literal] 'length'
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] Symbol.iterator in trees
+  [2, QualifiedExpression] Symbol.iterator
+   [3, Qualifier] Symbol.
+    [4, Identifier] Symbol
+    [4, Operator] .
+   [3, Identifier] iterator
+  [2, Operator] in
+  [2, Identifier] trees
+ [1, Infix] 'PI' in Math
+  [2, Literal] 'PI'
+  [2, Operator] in
+  [2, Identifier] Math
+ [1, VariableDeclaration] let mycar = { make: 'Honda', model: 'Accord', year: 1998 }
+  [2, Type] let
+  [2, Variable] mycar = { make: 'Honda', model: 'Accord', year: 1998 }
+   [3, Identifier] mycar
+   [3, Operator] =
+   [3, ObjectDeclaration] { make: 'Honda', model: 'Accord', year: 1998 }
+    [4, FieldDeclaration] make: 'Honda'
+     [5, Identifier] make
+     [5, Literal] 'Honda'
+    [4, FieldDeclaration] model: 'Accord'
+     [5, Identifier] model
+     [5, Literal] 'Accord'
+    [4, FieldDeclaration] year: 1998
+     [5, Identifier] year
+     [5, Literal] 1998
+ [1, Infix] 'make' in mycar
+  [2, Literal] 'make'
+  [2, Operator] in
+  [2, Identifier] mycar
+ [1, Infix] 'model' in mycar
+  [2, Literal] 'model'
+  [2, Operator] in
+  [2, Identifier] mycar
+ [1, Infix] 'toString' in {}
+  [2, Literal] 'toString'
+  [2, Operator] in
+  [2, ObjectDeclaration] {}
+ [1, Infix] "1" != 1
+  [2, Literal] "1"
+  [2, Operator] !=
+  [2, Literal] 1
+ [1, Infix] 1 != "1"
+  [2, Literal] 1
+  [2, Operator] !=
+  [2, Literal] "1"
+ [1, Infix] 0 != false
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Literal] false
+ [1, Infix] 0 != null
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Null] null
+ [1, Infix] 0 != undefined
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Undefined] undefined
+ [1, Infix] 0 != !!null
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Prefix] !!null
+   [3, Operator] !
+   [3, Prefix] !null
+    [4, Operator] !
+    [4, Null] null
+ [1, Infix] 0 != !!undefined
+  [2, Literal] 0
+  [2, Operator] !=
+  [2, Prefix] !!undefined
+   [3, Operator] !
+   [3, Prefix] !undefined
+    [4, Operator] !
+    [4, Undefined] undefined
+ [1, Infix] null != undefined
+  [2, Null] null
+  [2, Operator] !=
+  [2, Undefined] undefined
+ [1, VariableDeclaration] const number1 = new Number(3)
+  [2, Type] const
+  [2, Variable] number1 = new Number(3)
+   [3, Identifier] number1
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, VariableDeclaration] const number2 = new Number(3)
+  [2, Type] const
+  [2, Variable] number2 = new Number(3)
+   [3, Identifier] number2
+   [3, Operator] =
+   [3, New] new Number(3)
+    [4, Identifier] Number
+    [4, Signature] (3)
+     [5, Literal] 3
+ [1, Infix] number1 != 3
+  [2, Identifier] number1
+  [2, Operator] !=
+  [2, Literal] 3
+ [1, Infix] number1 != number2
+  [2, Identifier] number1
+  [2, Operator] !=
+  [2, Identifier] number2
+ [1, Infix] "Le prix est : " + (estMembre ? "15 €" : "30 €")
+  [2, Literal] "Le prix est : "
+  [2, Operator] +
+  [2, Parenthesis] (estMembre ? "15 €" : "30 €")
+   [3, Ternary] estMembre ? "15 €" : "30 €"
+    [4, Identifier] estMembre
+    [4, Literal] "15 €"
+    [4, Literal] "30 €"
+ [1, VariableDeclaration] var elvisLives = Math.PI > 4 ? "Yep" : "Nope"
+  [2, Type] var
+  [2, Variable] elvisLives = Math.PI > 4 ? "Yep" : "Nope"
+   [3, Identifier] elvisLives
+   [3, Operator] =
+   [3, Ternary] Math.PI > 4 ? "Yep" : "Nope"
+    [4, Infix] Math.PI > 4
+     [5, QualifiedExpression] Math.PI
+      [6, Qualifier] Math.
+       [7, Identifier] Math
+       [7, Operator] .
+      [6, Identifier] PI
+     [5, Operator] >
+     [5, Literal] 4
+    [4, Literal] "Yep"
+    [4, Literal] "Nope"
+ [1, VariableDeclaration] var premierControle = false,\\n secondControle = false,\\n acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+  [2, Type] var
+  [2, Variable] premierControle = false
+   [3, Identifier] premierControle
+   [3, Operator] =
+   [3, Literal] false
+  [2, Variable] secondControle = false
+   [3, Identifier] secondControle
+   [3, Operator] =
+   [3, Literal] false
+  [2, Variable] acces = premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+   [3, Identifier] acces
+   [3, Operator] =
+   [3, Ternary] premierControle\\n ? "Accès refusé"\\n : secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+    [4, Identifier] premierControle
+    [4, Literal] "Accès refusé"
+    [4, Ternary] secondControle\\n ? "Accès refusé"\\n : "Accès autorisé"
+     [5, Identifier] secondControle
+     [5, Literal] "Accès refusé"
+     [5, Literal] "Accès autorisé"
+ [1, VariableDeclaration] var stop = false,\\n age = 16
+  [2, Type] var
+  [2, Variable] stop = false
+   [3, Identifier] stop
+   [3, Operator] =
+   [3, Literal] false
+  [2, Variable] age = 16
+   [3, Identifier] age
+   [3, Operator] =
+   [3, Literal] 16
+ [1, Ternary] age > 18 ? location.assign("continue.html") : (stop = true)
+  [2, Infix] age > 18
+   [3, Identifier] age
+   [3, Operator] >
+   [3, Literal] 18
+  [2, QualifiedExpression] location.assign("continue.html")
+   [3, Qualifier] location.
+    [4, Identifier] location
+    [4, Operator] .
+   [3, FunctionCall] assign("continue.html")
+    [4, Identifier] assign
+    [4, Signature] ("continue.html")
+     [5, Literal] "continue.html"
+  [2, Sequence] (stop = true)
+   [3, Assignment] stop = true
+    [4, Identifier] stop
+    [4, Operator] =
+    [4, Literal] true
+ [1, VariableDeclaration] var stop = false,\\n age = 23
+  [2, Type] var
+  [2, Variable] stop = false
+   [3, Identifier] stop
+   [3, Operator] =
+   [3, Literal] false
+  [2, Variable] age = 23
+   [3, Identifier] age
+   [3, Operator] =
+   [3, Literal] 23
+ [1, Ternary] age > 18\\n ? (console.log("OK, accès autorisé."), location.assign("continue.html"))\\n : ((stop = true), console.log("Accès refusé !"))
+  [2, Infix] age > 18
+   [3, Identifier] age
+   [3, Operator] >
+   [3, Literal] 18
+  [2, Sequence] (console.log("OK, accès autorisé."), location.assign("continue.html"))
+   [3, QualifiedExpression] console.log("OK, accès autorisé.")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("OK, accès autorisé.")
+     [5, Identifier] log
+     [5, Signature] ("OK, accès autorisé.")
+      [6, Literal] "OK, accès autorisé."
+   [3, QualifiedExpression] location.assign("continue.html")
+    [4, Qualifier] location.
+     [5, Identifier] location
+     [5, Operator] .
+    [4, FunctionCall] assign("continue.html")
+     [5, Identifier] assign
+     [5, Signature] ("continue.html")
+      [6, Literal] "continue.html"
+  [2, Sequence] ((stop = true), console.log("Accès refusé !"))
+   [3, Sequence] (stop = true)
+    [4, Assignment] stop = true
+     [5, Identifier] stop
+     [5, Operator] =
+     [5, Literal] true
+   [3, QualifiedExpression] console.log("Accès refusé !")
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log("Accès refusé !")
+     [5, Identifier] log
+     [5, Signature] ("Accès refusé !")
+      [6, Literal] "Accès refusé !"
+ [1, VariableDeclaration] var url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+  [2, Type] var
+  [2, Variable] url =\\n age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+   [3, Identifier] url
+   [3, Operator] =
+   [3, Ternary] age > 18\\n ? (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html") // la valeur à affecter si âge > 18\\n : (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+    [4, Infix] age > 18
+     [5, Identifier] age
+     [5, Operator] >
+     [5, Literal] 18
+    [4, Sequence] (console.log("Accès autorisé."),\\n // console.log renvoie "undefined", mais cela importe peu car\\n // ce n'est pas le dernier élément de l'expression\\n "continue.html")
+     [5, QualifiedExpression] console.log("Accès autorisé.")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("Accès autorisé.")
+       [7, Identifier] log
+       [7, Signature] ("Accès autorisé.")
+        [8, Literal] "Accès autorisé."
+     [5, Literal] "continue.html"
+    [4, Sequence] (console.log("Accès refusé !"),\\n // etc.\\n "stop.html")
+     [5, QualifiedExpression] console.log("Accès refusé !")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("Accès refusé !")
+       [7, Identifier] log
+       [7, Signature] ("Accès refusé !")
+        [8, Literal] "Accès refusé !"
+     [5, Literal] "stop.html"
+ [1, VariableDeclaration] var func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+  [2, Type] var
+  [2, Variable] func1 = function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+   [3, Identifier] func1
+   [3, Operator] =
+   [3, FunctionDeclaration] function() {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }\\n}
+     [5, If] if (condition1) { return valeur1 }\\n else if (condition2) { return valeur2 }\\n else if (condition3) { return valeur3 }\\n else { return value4 }
+      [6, IfBlock] if (condition1) { return valeur1 }
+       [7, Condition] (condition1)
+        [8, Identifier] condition1
+       [7, Procedure] { return valeur1 }
+        [8, Return] return valeur1
+         [9, Identifier] valeur1
+      [6, ElseIfBlock] else if (condition2) { return valeur2 }
+       [7, Condition] (condition2)
+        [8, Identifier] condition2
+       [7, Procedure] { return valeur2 }
+        [8, Return] return valeur2
+         [9, Identifier] valeur2
+      [6, ElseIfBlock] else if (condition3) { return valeur3 }
+       [7, Condition] (condition3)
+        [8, Identifier] condition3
+       [7, Procedure] { return valeur3 }
+        [8, Return] return valeur3
+         [9, Identifier] valeur3
+      [6, ElseBlock] else { return value4 }
+       [7, Procedure] { return value4 }
+        [8, Return] return value4
+         [9, Identifier] value4
+ [1, VariableDeclaration] var func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+  [2, Type] var
+  [2, Variable] func2 = function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+   [3, Identifier] func2
+   [3, Operator] =
+   [3, FunctionDeclaration] function() {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+    [4, Signature] ()
+    [4, Procedure] {\\n return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4\\n}
+     [5, Return] return condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+      [6, Ternary] condition1 ? valeur1\\n : condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+       [7, Identifier] condition1
+       [7, Identifier] valeur1
+       [7, Ternary] condition2 ? valeur2\\n : condition3 ? valeur3\\n : valeur4
+        [8, Identifier] condition2
+        [8, Identifier] valeur2
+        [8, Ternary] condition3 ? valeur3\\n : valeur4
+         [9, Identifier] condition3
+         [9, Identifier] valeur3
+         [9, Identifier] valeur4

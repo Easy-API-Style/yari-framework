@@ -1,0 +1,19 @@
+[0, JavascriptNodeUnit] { baz: 'bar', set [expr](v) { this.baz = v; }}
+ [1, ObjectDeclaration] { baz: 'bar', set [expr](v) { this.baz = v; }}
+  [2, FieldDeclaration] baz: 'bar'
+   [3, Identifier] baz
+   [3, Literal] 'bar'
+  [2, Setter] set [expr](v) { this.baz = v; }
+   [3, ComputedValue] [expr]
+    [4, Identifier] expr
+   [3, Signature] (v)
+    [4, Identifier] v
+   [3, Procedure] { this.baz = v; }
+    [4, Assignment] this.baz = v
+     [5, QualifiedExpression] this.baz
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] baz
+     [5, Operator] =
+     [5, Identifier] v

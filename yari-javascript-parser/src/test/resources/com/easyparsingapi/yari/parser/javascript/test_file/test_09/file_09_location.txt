@@ -1,0 +1,1095 @@
+SourceLocation [start=line 4 column 28, end=line 4 column 77] [Javascript]
+// breaks out of both inner_block and outer_block
+---------------------------
+SourceLocation [start=line 5 column 29, end=line 5 column 39] [Javascript]
+// skipped
+---------------------------
+SourceLocation [start=line 7 column 23, end=line 7 column 33] [Javascript]
+// skipped
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 64 column 20] [Javascript]
+outer_block: {\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}\\n\\nlet allPass = true;\\nlet i, j;\\n\\ntop:\\nfor (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}\\n\\nfoo: {\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}\\nconsole.log('swap');\\n\\nboucle1: for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}\\n\\ntop: for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}\\n\\ntop: for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }\\n\\ntoto: {\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}\\n\\nL: function F() {}\\n\\nL: function* F() {}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 8 column 2] [Label]
+outer_block: {\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 12] [Identifier]
+outer_block
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 8 column 2] [BlockProcedure]
+{\\n inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }\\n console.log('2'); // skipped\\n}
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 6 column 6] [Label]
+inner_block: {\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 16] [Identifier]
+inner_block
+---------------------------
+SourceLocation [start=line 2 column 18, end=line 6 column 6] [BlockProcedure]
+{\\n console.log('1');\\n break outer_block; // breaks out of both inner_block and outer_block\\n console.log(':-('); // skipped\\n }
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 25] [QualifiedExpression]
+console.log('1')
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 17] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 16] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 25] [FunctionCall]
+log('1')
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 3 column 20] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 25] [Signature]
+('1')
+---------------------------
+SourceLocation [start=line 3 column 21, end=line 3 column 24] [Literal]
+'1'
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 26] [Break]
+break outer_block
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 26] [Identifier]
+outer_block
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 27] [QualifiedExpression]
+console.log(':-(')
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 17] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 16] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 5 column 16, end=line 5 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 27] [FunctionCall]
+log(':-(')
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 20] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 5 column 20, end=line 5 column 27] [Signature]
+(':-(')
+---------------------------
+SourceLocation [start=line 5 column 21, end=line 5 column 26] [Literal]
+':-('
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 21] [QualifiedExpression]
+console.log('2')
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 7 column 5, end=line 7 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 7 column 12, end=line 7 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 21] [FunctionCall]
+log('2')
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 7 column 16, end=line 7 column 21] [Signature]
+('2')
+---------------------------
+SourceLocation [start=line 7 column 17, end=line 7 column 20] [Literal]
+'2'
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 19] [VariableDeclaration]
+let allPass = true
+---------------------------
+SourceLocation [start=line 10 column 1, end=line 10 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 10 column 5, end=line 10 column 19] [Variable]
+allPass = true
+---------------------------
+SourceLocation [start=line 10 column 5, end=line 10 column 12] [Identifier]
+allPass
+---------------------------
+SourceLocation [start=line 10 column 13, end=line 10 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 10 column 15, end=line 10 column 19] [Literal]
+true
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 9] [VariableDeclaration]
+let i, j
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 4] [Type]
+let
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 6] [Variable]
+i
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 6] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 9] [Variable]
+j
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 9] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 21 column 2] [Label]
+top:\\nfor (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 13 column 1, end=line 13 column 4] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 21 column 2] [For]
+for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 34] [Iteration]
+i = 0; i < items.length; i++
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 11] [Assignment]
+i = 0
+---------------------------
+SourceLocation [start=line 14 column 6, end=line 14 column 7] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 14 column 8, end=line 14 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 14 column 10, end=line 14 column 11] [Literal]
+0
+---------------------------
+SourceLocation [start=line 14 column 13, end=line 14 column 29] [Infix]
+i < items.length
+---------------------------
+SourceLocation [start=line 14 column 13, end=line 14 column 14] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 14 column 15, end=line 14 column 16] [Operator]
+<
+---------------------------
+SourceLocation [start=line 14 column 17, end=line 14 column 29] [QualifiedExpression]
+items.length
+---------------------------
+SourceLocation [start=line 14 column 17, end=line 14 column 23] [Qualifier]
+items.
+---------------------------
+SourceLocation [start=line 14 column 17, end=line 14 column 22] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 14 column 22, end=line 14 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 14 column 23, end=line 14 column 29] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 14 column 31, end=line 14 column 34] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 14 column 32, end=line 14 column 34] [Operator]
+++
+---------------------------
+SourceLocation [start=line 14 column 31, end=line 14 column 32] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 14 column 36, end=line 21 column 2] [Procedure]
+{\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 15 column 5, end=line 20 column 6] [For]
+for (j = 0; j < tests.length; j++) {\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 38] [Iteration]
+j = 0; j < tests.length; j++
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 15] [Assignment]
+j = 0
+---------------------------
+SourceLocation [start=line 15 column 10, end=line 15 column 11] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 15 column 12, end=line 15 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 15 column 14, end=line 15 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 15 column 17, end=line 15 column 33] [Infix]
+j < tests.length
+---------------------------
+SourceLocation [start=line 15 column 17, end=line 15 column 18] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 15 column 19, end=line 15 column 20] [Operator]
+<
+---------------------------
+SourceLocation [start=line 15 column 21, end=line 15 column 33] [QualifiedExpression]
+tests.length
+---------------------------
+SourceLocation [start=line 15 column 21, end=line 15 column 27] [Qualifier]
+tests.
+---------------------------
+SourceLocation [start=line 15 column 21, end=line 15 column 26] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 15 column 26, end=line 15 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 15 column 27, end=line 15 column 33] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 15 column 35, end=line 15 column 38] [Increment]
+j++
+---------------------------
+SourceLocation [start=line 15 column 36, end=line 15 column 38] [Operator]
+++
+---------------------------
+SourceLocation [start=line 15 column 35, end=line 15 column 36] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 15 column 40, end=line 20 column 6] [Procedure]
+{\\n if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }\\n }
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 19 column 10] [If]
+if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 19 column 10] [IfBlock]
+if (!tests[j].pass(items[i])) {\\n allPass = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 16 column 12, end=line 16 column 38] [Condition]
+(!tests[j].pass(items[i]))
+---------------------------
+SourceLocation [start=line 16 column 13, end=line 16 column 37] [Prefix]
+!tests[j].pass(items[i])
+---------------------------
+SourceLocation [start=line 16 column 13, end=line 16 column 14] [Operator]
+!
+---------------------------
+SourceLocation [start=line 16 column 14, end=line 16 column 37] [QualifiedExpression]
+tests[j].pass(items[i])
+---------------------------
+SourceLocation [start=line 16 column 14, end=line 16 column 23] [Qualifier]
+tests[j].
+---------------------------
+SourceLocation [start=line 16 column 14, end=line 16 column 22] [MapExpression]
+tests[j]
+---------------------------
+SourceLocation [start=line 16 column 14, end=line 16 column 19] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 16 column 19, end=line 16 column 22] [Bracket]
+[j]
+---------------------------
+SourceLocation [start=line 16 column 20, end=line 16 column 21] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 16 column 22, end=line 16 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 16 column 23, end=line 16 column 37] [FunctionCall]
+pass(items[i])
+---------------------------
+SourceLocation [start=line 16 column 23, end=line 16 column 27] [Identifier]
+pass
+---------------------------
+SourceLocation [start=line 16 column 27, end=line 16 column 37] [Signature]
+(items[i])
+---------------------------
+SourceLocation [start=line 16 column 28, end=line 16 column 36] [MapExpression]
+items[i]
+---------------------------
+SourceLocation [start=line 16 column 28, end=line 16 column 33] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 16 column 33, end=line 16 column 36] [Bracket]
+[i]
+---------------------------
+SourceLocation [start=line 16 column 34, end=line 16 column 35] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 16 column 39, end=line 19 column 10] [Procedure]
+{\\n allPass = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 28] [Assignment]
+allPass = false
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 20] [Identifier]
+allPass
+---------------------------
+SourceLocation [start=line 17 column 21, end=line 17 column 22] [Operator]
+=
+---------------------------
+SourceLocation [start=line 17 column 23, end=line 17 column 28] [Literal]
+false
+---------------------------
+SourceLocation [start=line 18 column 13, end=line 18 column 22] [Break]
+break top
+---------------------------
+SourceLocation [start=line 18 column 19, end=line 18 column 22] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 23 column 1, end=line 27 column 2] [Label]
+foo: {\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}
+---------------------------
+SourceLocation [start=line 23 column 1, end=line 23 column 4] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 23 column 6, end=line 27 column 2] [BlockProcedure]
+{\\n console.log('face');\\n break foo;\\n console.log('this will not be executed');\\n}
+---------------------------
+SourceLocation [start=line 24 column 5, end=line 24 column 24] [QualifiedExpression]
+console.log('face')
+---------------------------
+SourceLocation [start=line 24 column 5, end=line 24 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 24 column 5, end=line 24 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 24 column 12, end=line 24 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 24 column 13, end=line 24 column 24] [FunctionCall]
+log('face')
+---------------------------
+SourceLocation [start=line 24 column 13, end=line 24 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 24 column 16, end=line 24 column 24] [Signature]
+('face')
+---------------------------
+SourceLocation [start=line 24 column 17, end=line 24 column 23] [Literal]
+'face'
+---------------------------
+SourceLocation [start=line 25 column 5, end=line 25 column 14] [Break]
+break foo
+---------------------------
+SourceLocation [start=line 25 column 11, end=line 25 column 14] [Identifier]
+foo
+---------------------------
+SourceLocation [start=line 26 column 5, end=line 26 column 45] [QualifiedExpression]
+console.log('this will not be executed')
+---------------------------
+SourceLocation [start=line 26 column 5, end=line 26 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 26 column 5, end=line 26 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 26 column 12, end=line 26 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 26 column 13, end=line 26 column 45] [FunctionCall]
+log('this will not be executed')
+---------------------------
+SourceLocation [start=line 26 column 13, end=line 26 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 26 column 16, end=line 26 column 45] [Signature]
+('this will not be executed')
+---------------------------
+SourceLocation [start=line 26 column 17, end=line 26 column 44] [Literal]
+'this will not be executed'
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 20] [QualifiedExpression]
+console.log('swap')
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 28 column 1, end=line 28 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 28 column 8, end=line 28 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 28 column 9, end=line 28 column 20] [FunctionCall]
+log('swap')
+---------------------------
+SourceLocation [start=line 28 column 9, end=line 28 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 28 column 12, end=line 28 column 20] [Signature]
+('swap')
+---------------------------
+SourceLocation [start=line 28 column 13, end=line 28 column 19] [Literal]
+'swap'
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 38 column 2] [Label]
+boucle1: for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 30 column 1, end=line 30 column 8] [Identifier]
+boucle1
+---------------------------
+SourceLocation [start=line 30 column 10, end=line 38 column 2] [For]
+for (i = 0; i < 3; i++) {\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 30 column 15, end=line 30 column 32] [Iteration]
+i = 0; i < 3; i++
+---------------------------
+SourceLocation [start=line 30 column 15, end=line 30 column 20] [Assignment]
+i = 0
+---------------------------
+SourceLocation [start=line 30 column 15, end=line 30 column 16] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 30 column 17, end=line 30 column 18] [Operator]
+=
+---------------------------
+SourceLocation [start=line 30 column 19, end=line 30 column 20] [Literal]
+0
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 30 column 27] [Infix]
+i < 3
+---------------------------
+SourceLocation [start=line 30 column 22, end=line 30 column 23] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 30 column 24, end=line 30 column 25] [Operator]
+<
+---------------------------
+SourceLocation [start=line 30 column 26, end=line 30 column 27] [Literal]
+3
+---------------------------
+SourceLocation [start=line 30 column 29, end=line 30 column 32] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 30 column 30, end=line 30 column 32] [Operator]
+++
+---------------------------
+SourceLocation [start=line 30 column 29, end=line 30 column 30] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 30 column 34, end=line 38 column 2] [Procedure]
+{\\n boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }\\n}
+---------------------------
+SourceLocation [start=line 31 column 5, end=line 37 column 6] [Label]
+boucle2: for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+---------------------------
+SourceLocation [start=line 31 column 5, end=line 31 column 12] [Identifier]
+boucle2
+---------------------------
+SourceLocation [start=line 31 column 14, end=line 37 column 6] [For]
+for (j = 0; j < 3; j++) {\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+---------------------------
+SourceLocation [start=line 31 column 19, end=line 31 column 36] [Iteration]
+j = 0; j < 3; j++
+---------------------------
+SourceLocation [start=line 31 column 19, end=line 31 column 24] [Assignment]
+j = 0
+---------------------------
+SourceLocation [start=line 31 column 19, end=line 31 column 20] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 31 column 21, end=line 31 column 22] [Operator]
+=
+---------------------------
+SourceLocation [start=line 31 column 23, end=line 31 column 24] [Literal]
+0
+---------------------------
+SourceLocation [start=line 31 column 26, end=line 31 column 31] [Infix]
+j < 3
+---------------------------
+SourceLocation [start=line 31 column 26, end=line 31 column 27] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 31 column 28, end=line 31 column 29] [Operator]
+<
+---------------------------
+SourceLocation [start=line 31 column 30, end=line 31 column 31] [Literal]
+3
+---------------------------
+SourceLocation [start=line 31 column 33, end=line 31 column 36] [Increment]
+j++
+---------------------------
+SourceLocation [start=line 31 column 34, end=line 31 column 36] [Operator]
+++
+---------------------------
+SourceLocation [start=line 31 column 33, end=line 31 column 34] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 31 column 38, end=line 37 column 6] [Procedure]
+{\\n if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }\\n }
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 36 column 10] [If]
+if (i === 1 && j === 1) {\\n continue boucle1;\\n } else {\\n console.log("i = " + i + ", j = " + j);\\n }
+---------------------------
+SourceLocation [start=line 32 column 9, end=line 34 column 10] [IfBlock]
+if (i === 1 && j === 1) {\\n continue boucle1;\\n }
+---------------------------
+SourceLocation [start=line 32 column 12, end=line 32 column 32] [Condition]
+(i === 1 && j === 1)
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 31] [Infix]
+i === 1 && j === 1
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 25] [Infix]
+i === 1 && j
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 20] [Infix]
+i === 1
+---------------------------
+SourceLocation [start=line 32 column 13, end=line 32 column 14] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 32 column 15, end=line 32 column 18] [Operator]
+===
+---------------------------
+SourceLocation [start=line 32 column 19, end=line 32 column 20] [Literal]
+1
+---------------------------
+SourceLocation [start=line 32 column 21, end=line 32 column 23] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 32 column 24, end=line 32 column 25] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 32 column 26, end=line 32 column 29] [Operator]
+===
+---------------------------
+SourceLocation [start=line 32 column 30, end=line 32 column 31] [Literal]
+1
+---------------------------
+SourceLocation [start=line 32 column 33, end=line 34 column 10] [Procedure]
+{\\n continue boucle1;\\n }
+---------------------------
+SourceLocation [start=line 33 column 13, end=line 33 column 29] [Continue]
+continue boucle1
+---------------------------
+SourceLocation [start=line 33 column 22, end=line 33 column 29] [Identifier]
+boucle1
+---------------------------
+SourceLocation [start=line 34 column 11, end=line 36 column 10] [ElseBlock]
+else {\\n console.log("i = " + i + ", j = " + j);\\n }
+---------------------------
+SourceLocation [start=line 34 column 16, end=line 36 column 10] [Procedure]
+{\\n console.log("i = " + i + ", j = " + j);\\n }
+---------------------------
+SourceLocation [start=line 35 column 13, end=line 35 column 51] [QualifiedExpression]
+console.log("i = " + i + ", j = " + j)
+---------------------------
+SourceLocation [start=line 35 column 13, end=line 35 column 21] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 35 column 13, end=line 35 column 20] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 35 column 20, end=line 35 column 21] [Operator]
+.
+---------------------------
+SourceLocation [start=line 35 column 21, end=line 35 column 51] [FunctionCall]
+log("i = " + i + ", j = " + j)
+---------------------------
+SourceLocation [start=line 35 column 21, end=line 35 column 24] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 35 column 24, end=line 35 column 51] [Signature]
+("i = " + i + ", j = " + j)
+---------------------------
+SourceLocation [start=line 35 column 25, end=line 35 column 50] [Infix]
+"i = " + i + ", j = " + j
+---------------------------
+SourceLocation [start=line 35 column 25, end=line 35 column 46] [Infix]
+"i = " + i + ", j = "
+---------------------------
+SourceLocation [start=line 35 column 25, end=line 35 column 35] [Infix]
+"i = " + i
+---------------------------
+SourceLocation [start=line 35 column 25, end=line 35 column 31] [Literal]
+"i = "
+---------------------------
+SourceLocation [start=line 35 column 32, end=line 35 column 33] [Operator]
++
+---------------------------
+SourceLocation [start=line 35 column 34, end=line 35 column 35] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 35 column 36, end=line 35 column 37] [Operator]
++
+---------------------------
+SourceLocation [start=line 35 column 38, end=line 35 column 46] [Literal]
+", j = "
+---------------------------
+SourceLocation [start=line 35 column 47, end=line 35 column 48] [Operator]
++
+---------------------------
+SourceLocation [start=line 35 column 49, end=line 35 column 50] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 40 column 1, end=line 47 column 2] [Label]
+top: for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+---------------------------
+SourceLocation [start=line 40 column 1, end=line 40 column 4] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 40 column 6, end=line 47 column 2] [For]
+for (i = 0; i < items.length; i++) {\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+---------------------------
+SourceLocation [start=line 40 column 11, end=line 40 column 39] [Iteration]
+i = 0; i < items.length; i++
+---------------------------
+SourceLocation [start=line 40 column 11, end=line 40 column 16] [Assignment]
+i = 0
+---------------------------
+SourceLocation [start=line 40 column 11, end=line 40 column 12] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 40 column 13, end=line 40 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 40 column 15, end=line 40 column 16] [Literal]
+0
+---------------------------
+SourceLocation [start=line 40 column 18, end=line 40 column 34] [Infix]
+i < items.length
+---------------------------
+SourceLocation [start=line 40 column 18, end=line 40 column 19] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 40 column 20, end=line 40 column 21] [Operator]
+<
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 40 column 34] [QualifiedExpression]
+items.length
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 40 column 28] [Qualifier]
+items.
+---------------------------
+SourceLocation [start=line 40 column 22, end=line 40 column 27] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 40 column 27, end=line 40 column 28] [Operator]
+.
+---------------------------
+SourceLocation [start=line 40 column 28, end=line 40 column 34] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 40 column 36, end=line 40 column 39] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 40 column 37, end=line 40 column 39] [Operator]
+++
+---------------------------
+SourceLocation [start=line 40 column 36, end=line 40 column 37] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 40 column 41, end=line 47 column 2] [Procedure]
+{\\n for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }\\n nbItemsReussis++;\\n}
+---------------------------
+SourceLocation [start=line 41 column 5, end=line 45 column 6] [For]
+for (j = 0; j < tests.length; j++) {\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }
+---------------------------
+SourceLocation [start=line 41 column 10, end=line 41 column 38] [Iteration]
+j = 0; j < tests.length; j++
+---------------------------
+SourceLocation [start=line 41 column 10, end=line 41 column 15] [Assignment]
+j = 0
+---------------------------
+SourceLocation [start=line 41 column 10, end=line 41 column 11] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 41 column 12, end=line 41 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 41 column 14, end=line 41 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 41 column 17, end=line 41 column 33] [Infix]
+j < tests.length
+---------------------------
+SourceLocation [start=line 41 column 17, end=line 41 column 18] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 41 column 19, end=line 41 column 20] [Operator]
+<
+---------------------------
+SourceLocation [start=line 41 column 21, end=line 41 column 33] [QualifiedExpression]
+tests.length
+---------------------------
+SourceLocation [start=line 41 column 21, end=line 41 column 27] [Qualifier]
+tests.
+---------------------------
+SourceLocation [start=line 41 column 21, end=line 41 column 26] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 41 column 26, end=line 41 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 41 column 27, end=line 41 column 33] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 41 column 35, end=line 41 column 38] [Increment]
+j++
+---------------------------
+SourceLocation [start=line 41 column 36, end=line 41 column 38] [Operator]
+++
+---------------------------
+SourceLocation [start=line 41 column 35, end=line 41 column 36] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 41 column 40, end=line 45 column 6] [Procedure]
+{\\n if (!tests[j].reussi(items[i])) {\\n continue top;\\n }\\n }
+---------------------------
+SourceLocation [start=line 42 column 9, end=line 44 column 10] [If]
+if (!tests[j].reussi(items[i])) {\\n continue top;\\n }
+---------------------------
+SourceLocation [start=line 42 column 9, end=line 44 column 10] [IfBlock]
+if (!tests[j].reussi(items[i])) {\\n continue top;\\n }
+---------------------------
+SourceLocation [start=line 42 column 12, end=line 42 column 40] [Condition]
+(!tests[j].reussi(items[i]))
+---------------------------
+SourceLocation [start=line 42 column 13, end=line 42 column 39] [Prefix]
+!tests[j].reussi(items[i])
+---------------------------
+SourceLocation [start=line 42 column 13, end=line 42 column 14] [Operator]
+!
+---------------------------
+SourceLocation [start=line 42 column 14, end=line 42 column 39] [QualifiedExpression]
+tests[j].reussi(items[i])
+---------------------------
+SourceLocation [start=line 42 column 14, end=line 42 column 23] [Qualifier]
+tests[j].
+---------------------------
+SourceLocation [start=line 42 column 14, end=line 42 column 22] [MapExpression]
+tests[j]
+---------------------------
+SourceLocation [start=line 42 column 14, end=line 42 column 19] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 42 column 19, end=line 42 column 22] [Bracket]
+[j]
+---------------------------
+SourceLocation [start=line 42 column 20, end=line 42 column 21] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 42 column 22, end=line 42 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 42 column 23, end=line 42 column 39] [FunctionCall]
+reussi(items[i])
+---------------------------
+SourceLocation [start=line 42 column 23, end=line 42 column 29] [Identifier]
+reussi
+---------------------------
+SourceLocation [start=line 42 column 29, end=line 42 column 39] [Signature]
+(items[i])
+---------------------------
+SourceLocation [start=line 42 column 30, end=line 42 column 38] [MapExpression]
+items[i]
+---------------------------
+SourceLocation [start=line 42 column 30, end=line 42 column 35] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 42 column 35, end=line 42 column 38] [Bracket]
+[i]
+---------------------------
+SourceLocation [start=line 42 column 36, end=line 42 column 37] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 42 column 41, end=line 44 column 10] [Procedure]
+{\\n continue top;\\n }
+---------------------------
+SourceLocation [start=line 43 column 13, end=line 43 column 25] [Continue]
+continue top
+---------------------------
+SourceLocation [start=line 43 column 22, end=line 43 column 25] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 46 column 5, end=line 46 column 21] [Increment]
+nbItemsReussis++
+---------------------------
+SourceLocation [start=line 46 column 19, end=line 46 column 21] [Operator]
+++
+---------------------------
+SourceLocation [start=line 46 column 5, end=line 46 column 19] [Identifier]
+nbItemsReussis
+---------------------------
+SourceLocation [start=line 49 column 1, end=line 54 column 10] [Label]
+top: for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 49 column 1, end=line 49 column 4] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 49 column 6, end=line 54 column 10] [For]
+for (i = 0; items.length; i++)\\n for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 49 column 11, end=line 49 column 35] [Iteration]
+i = 0; items.length; i++
+---------------------------
+SourceLocation [start=line 49 column 11, end=line 49 column 16] [Assignment]
+i = 0
+---------------------------
+SourceLocation [start=line 49 column 11, end=line 49 column 12] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 49 column 13, end=line 49 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 49 column 15, end=line 49 column 16] [Literal]
+0
+---------------------------
+SourceLocation [start=line 49 column 18, end=line 49 column 30] [QualifiedExpression]
+items.length
+---------------------------
+SourceLocation [start=line 49 column 18, end=line 49 column 24] [Qualifier]
+items.
+---------------------------
+SourceLocation [start=line 49 column 18, end=line 49 column 23] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 49 column 23, end=line 49 column 24] [Operator]
+.
+---------------------------
+SourceLocation [start=line 49 column 24, end=line 49 column 30] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 49 column 32, end=line 49 column 35] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 49 column 33, end=line 49 column 35] [Operator]
+++
+---------------------------
+SourceLocation [start=line 49 column 32, end=line 49 column 33] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 50 column 5, end=line 54 column 10] [Procedure]
+for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 50 column 5, end=line 54 column 10] [For]
+for (j = 0; j < tests.length; i++)\\n if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 50 column 10, end=line 50 column 38] [Iteration]
+j = 0; j < tests.length; i++
+---------------------------
+SourceLocation [start=line 50 column 10, end=line 50 column 15] [Assignment]
+j = 0
+---------------------------
+SourceLocation [start=line 50 column 10, end=line 50 column 11] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 50 column 12, end=line 50 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 50 column 14, end=line 50 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 50 column 17, end=line 50 column 33] [Infix]
+j < tests.length
+---------------------------
+SourceLocation [start=line 50 column 17, end=line 50 column 18] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 50 column 19, end=line 50 column 20] [Operator]
+<
+---------------------------
+SourceLocation [start=line 50 column 21, end=line 50 column 33] [QualifiedExpression]
+tests.length
+---------------------------
+SourceLocation [start=line 50 column 21, end=line 50 column 27] [Qualifier]
+tests.
+---------------------------
+SourceLocation [start=line 50 column 21, end=line 50 column 26] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 50 column 26, end=line 50 column 27] [Operator]
+.
+---------------------------
+SourceLocation [start=line 50 column 27, end=line 50 column 33] [Identifier]
+length
+---------------------------
+SourceLocation [start=line 50 column 35, end=line 50 column 38] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 50 column 36, end=line 50 column 38] [Operator]
+++
+---------------------------
+SourceLocation [start=line 50 column 35, end=line 50 column 36] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 54 column 10] [Procedure]
+if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 54 column 10] [If]
+if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 51 column 9, end=line 54 column 10] [IfBlock]
+if (!tests[j].reusi(items[i])) {\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 51 column 12, end=line 51 column 39] [Condition]
+(!tests[j].reusi(items[i]))
+---------------------------
+SourceLocation [start=line 51 column 13, end=line 51 column 38] [Prefix]
+!tests[j].reusi(items[i])
+---------------------------
+SourceLocation [start=line 51 column 13, end=line 51 column 14] [Operator]
+!
+---------------------------
+SourceLocation [start=line 51 column 14, end=line 51 column 38] [QualifiedExpression]
+tests[j].reusi(items[i])
+---------------------------
+SourceLocation [start=line 51 column 14, end=line 51 column 23] [Qualifier]
+tests[j].
+---------------------------
+SourceLocation [start=line 51 column 14, end=line 51 column 22] [MapExpression]
+tests[j]
+---------------------------
+SourceLocation [start=line 51 column 14, end=line 51 column 19] [Identifier]
+tests
+---------------------------
+SourceLocation [start=line 51 column 19, end=line 51 column 22] [Bracket]
+[j]
+---------------------------
+SourceLocation [start=line 51 column 20, end=line 51 column 21] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 51 column 22, end=line 51 column 23] [Operator]
+.
+---------------------------
+SourceLocation [start=line 51 column 23, end=line 51 column 38] [FunctionCall]
+reusi(items[i])
+---------------------------
+SourceLocation [start=line 51 column 23, end=line 51 column 28] [Identifier]
+reusi
+---------------------------
+SourceLocation [start=line 51 column 28, end=line 51 column 38] [Signature]
+(items[i])
+---------------------------
+SourceLocation [start=line 51 column 29, end=line 51 column 37] [MapExpression]
+items[i]
+---------------------------
+SourceLocation [start=line 51 column 29, end=line 51 column 34] [Identifier]
+items
+---------------------------
+SourceLocation [start=line 51 column 34, end=line 51 column 37] [Bracket]
+[i]
+---------------------------
+SourceLocation [start=line 51 column 35, end=line 51 column 36] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 51 column 40, end=line 54 column 10] [Procedure]
+{\\n toutReussi = false;\\n break top;\\n }
+---------------------------
+SourceLocation [start=line 52 column 13, end=line 52 column 31] [Assignment]
+toutReussi = false
+---------------------------
+SourceLocation [start=line 52 column 13, end=line 52 column 23] [Identifier]
+toutReussi
+---------------------------
+SourceLocation [start=line 52 column 24, end=line 52 column 25] [Operator]
+=
+---------------------------
+SourceLocation [start=line 52 column 26, end=line 52 column 31] [Literal]
+false
+---------------------------
+SourceLocation [start=line 53 column 13, end=line 53 column 22] [Break]
+break top
+---------------------------
+SourceLocation [start=line 53 column 19, end=line 53 column 22] [Identifier]
+top
+---------------------------
+SourceLocation [start=line 56 column 1, end=line 60 column 2] [Label]
+toto: {\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}
+---------------------------
+SourceLocation [start=line 56 column 1, end=line 56 column 5] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 56 column 7, end=line 60 column 2] [BlockProcedure]
+{\\n console.log("face");\\n break toto;\\n console.log("this will not be executed");\\n}
+---------------------------
+SourceLocation [start=line 57 column 5, end=line 57 column 24] [QualifiedExpression]
+console.log("face")
+---------------------------
+SourceLocation [start=line 57 column 5, end=line 57 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 57 column 5, end=line 57 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 57 column 12, end=line 57 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 57 column 13, end=line 57 column 24] [FunctionCall]
+log("face")
+---------------------------
+SourceLocation [start=line 57 column 13, end=line 57 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 57 column 16, end=line 57 column 24] [Signature]
+("face")
+---------------------------
+SourceLocation [start=line 57 column 17, end=line 57 column 23] [Literal]
+"face"
+---------------------------
+SourceLocation [start=line 58 column 5, end=line 58 column 15] [Break]
+break toto
+---------------------------
+SourceLocation [start=line 58 column 11, end=line 58 column 15] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 59 column 5, end=line 59 column 45] [QualifiedExpression]
+console.log("this will not be executed")
+---------------------------
+SourceLocation [start=line 59 column 5, end=line 59 column 13] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 59 column 5, end=line 59 column 12] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 59 column 12, end=line 59 column 13] [Operator]
+.
+---------------------------
+SourceLocation [start=line 59 column 13, end=line 59 column 45] [FunctionCall]
+log("this will not be executed")
+---------------------------
+SourceLocation [start=line 59 column 13, end=line 59 column 16] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 59 column 16, end=line 59 column 45] [Signature]
+("this will not be executed")
+---------------------------
+SourceLocation [start=line 59 column 17, end=line 59 column 44] [Literal]
+"this will not be executed"
+---------------------------
+SourceLocation [start=line 62 column 1, end=line 62 column 19] [Label]
+L: function F() {}
+---------------------------
+SourceLocation [start=line 62 column 1, end=line 62 column 2] [Identifier]
+L
+---------------------------
+SourceLocation [start=line 62 column 4, end=line 62 column 19] [FunctionDeclaration]
+function F() {}
+---------------------------
+SourceLocation [start=line 62 column 13, end=line 62 column 14] [Identifier]
+F
+---------------------------
+SourceLocation [start=line 62 column 14, end=line 62 column 16] [Signature]
+()
+---------------------------
+SourceLocation [start=line 62 column 17, end=line 62 column 19] [Procedure]
+{}
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 64 column 20] [Label]
+L: function* F() {}
+---------------------------
+SourceLocation [start=line 64 column 1, end=line 64 column 2] [Identifier]
+L
+---------------------------
+SourceLocation [start=line 64 column 4, end=line 64 column 20] [FunctionDeclaration]
+function* F() {}
+---------------------------
+SourceLocation [start=line 64 column 14, end=line 64 column 15] [Identifier]
+F
+---------------------------
+SourceLocation [start=line 64 column 15, end=line 64 column 17] [Signature]
+()
+---------------------------
+SourceLocation [start=line 64 column 18, end=line 64 column 20] [Procedure]
+{}
+---------------------------

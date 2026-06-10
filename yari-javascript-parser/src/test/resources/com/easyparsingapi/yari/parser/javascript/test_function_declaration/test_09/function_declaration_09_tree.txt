@@ -1,0 +1,21 @@
+[0, Javascript] function greet(name, greeting, message = greeting + ' ' + name) { return [name, greeting, message]}
+ [1, FunctionDeclaration] function greet(name, greeting, message = greeting + ' ' + name) { return [name, greeting, message]}
+  [2, Identifier] greet
+  [2, Signature] (name, greeting, message = greeting + ' ' + name)
+   [3, Identifier] name
+   [3, Identifier] greeting
+   [3, ParameterWithValue] message = greeting + ' ' + name
+    [4, Identifier] message
+    [4, Infix] greeting + ' ' + name
+     [5, Infix] greeting + ' '
+      [6, Identifier] greeting
+      [6, Operator] +
+      [6, Literal] ' '
+     [5, Operator] +
+     [5, Identifier] name
+  [2, Procedure] { return [name, greeting, message]}
+   [3, Return] return [name, greeting, message]
+    [4, ArrayDeclaration] [name, greeting, message]
+     [5, Identifier] name
+     [5, Identifier] greeting
+     [5, Identifier] message

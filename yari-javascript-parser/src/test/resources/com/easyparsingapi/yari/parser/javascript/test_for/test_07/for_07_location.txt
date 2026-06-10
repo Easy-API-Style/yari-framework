@@ -1,0 +1,51 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 50] [Javascript]
+for ( let b = 4; ; current = n) { yield current;}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 50] [For]
+for ( let b = 4; ; current = n) { yield current;}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 31] [Iteration]
+let b = 4; ; current = n
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 16] [VariableDeclaration]
+let b = 4
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 10] [Type]
+let
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 16] [Variable]
+b = 4
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 12] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Literal]
+4
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 18] [Empty]
+
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 31] [Assignment]
+current = n
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 27] [Identifier]
+current
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 31] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 50] [Procedure]
+{ yield current;}
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 48] [Yield]
+yield current
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 48] [Identifier]
+current
+---------------------------

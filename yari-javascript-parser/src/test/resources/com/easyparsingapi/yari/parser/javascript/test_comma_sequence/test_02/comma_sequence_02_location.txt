@@ -1,0 +1,39 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [Javascript]
+x = (y = 5, z = 6)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [Assignment]
+x = (y = 5, z = 6)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 19] [Sequence]
+(y = 5, z = 6)
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 11] [Assignment]
+y = 5
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 18] [Assignment]
+z = 6
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Literal]
+6
+---------------------------

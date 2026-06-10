@@ -1,0 +1,18 @@
+SourceLocation [start=line 1 column 1, end=line 2 column 15] [Javascript]
+return;\\ntrue || false;
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 7] [Return]
+return
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 14] [Infix]
+true || false
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 2 column 5] [Literal]
+true
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 8] [Operator]
+||
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 2 column 14] [Literal]
+false
+---------------------------

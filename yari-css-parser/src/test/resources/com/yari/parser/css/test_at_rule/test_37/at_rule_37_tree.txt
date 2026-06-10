@@ -1,0 +1,63 @@
+[0, Css] @page {\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }\\n\\n /* Targets all even-numbered pages */\\n @page :left {\\n margin-top: 4in;\\n }\\n\\n /* Targets all odd-numbered pages */\\n @page :right {\\n size: 11in;\\n margin-top: 4in;\\n }\\n\\n /* Targets all selectors with `page: wide;` set */\\n @page wide {\\n size: a4 landscape;\\n }\\n\\n @page {\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+ [1, AtRule] @page {\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }
+  [2, AtRuleName] @page
+   [3, Identifier] page
+  [2, ListParameter] {
+  [2, Block] {\\n size: 8.5in 9in;\\n margin-top: 4in;\\n }
+   [3, Property] size: 8.5in 9in
+    [4, Identifier] size
+    [4, ListValue] 8.5in 9in
+     [5, Identifier] 8.5in
+     [5, Identifier] 9in
+   [3, Property] margin-top: 4in
+    [4, Identifier] margin-top
+    [4, Identifier] 4in
+ [1, AtRule] @page :left {\\n margin-top: 4in;\\n }
+  [2, AtRuleName] @page
+   [3, Identifier] page
+  [2, PseudoClassSelector] :left
+   [3, Identifier] left
+  [2, Block] {\\n margin-top: 4in;\\n }
+   [3, Property] margin-top: 4in
+    [4, Identifier] margin-top
+    [4, Identifier] 4in
+ [1, AtRule] @page :right {\\n size: 11in;\\n margin-top: 4in;\\n }
+  [2, AtRuleName] @page
+   [3, Identifier] page
+  [2, PseudoClassSelector] :right
+   [3, Identifier] right
+  [2, Block] {\\n size: 11in;\\n margin-top: 4in;\\n }
+   [3, Property] size: 11in
+    [4, Identifier] size
+    [4, Identifier] 11in
+   [3, Property] margin-top: 4in
+    [4, Identifier] margin-top
+    [4, Identifier] 4in
+ [1, AtRule] @page wide {\\n size: a4 landscape;\\n }
+  [2, AtRuleName] @page
+   [3, Identifier] page
+  [2, Identifier] wide
+  [2, Block] {\\n size: a4 landscape;\\n }
+   [3, Property] size: a4 landscape
+    [4, Identifier] size
+    [4, ListValue] a4 landscape
+     [5, Identifier] a4
+     [5, Identifier] landscape
+ [1, AtRule] @page {\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+  [2, AtRuleName] @page
+   [3, Identifier] page
+  [2, ListParameter] {
+  [2, Block] {\\n /* margin box at top right showing page number */\\n @top-right {\\n content: "Page " counter(pageNumber);\\n }\\n }
+   [3, AtRule] @top-right {\\n content: "Page " counter(pageNumber);\\n }
+    [4, AtRuleName] @top-right
+     [5, Identifier] top-right
+    [4, ListParameter] {
+    [4, Block] {\\n content: "Page " counter(pageNumber);\\n }
+     [5, Property] content: "Page " counter(pageNumber)
+      [6, Identifier] content
+      [6, ListValue] "Page " counter(pageNumber)
+       [7, Literal] "Page "
+       [7, Function] counter(pageNumber)
+        [8, Identifier] counter
+        [8, Signature] (pageNumber)
+         [9, Identifier] pageNumber

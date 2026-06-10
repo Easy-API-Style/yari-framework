@@ -1,0 +1,174 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.css.ast.Css",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.RuleSet",
+    "selector" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.ClassSelector",
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+        "value" : "parent-rule",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 16
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 4
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 16
+        }
+      },
+      "className" : {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+        "value" : "parent-rule",
+        "sourceLocation" : {
+          "start" : {
+            "line" : 1,
+            "column" : 5
+          },
+          "end" : {
+            "line" : 1,
+            "column" : 16
+          }
+        }
+      }
+    },
+    "block" : {
+      "@class" : "com.easyparsingapi.yari.parser.css.ast.Block",
+      "nodes" : [ {
+        "@class" : "com.easyparsingapi.yari.parser.css.ast.RuleSet",
+        "selector" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.ClassSelector",
+          "value" : {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "child-rule",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 3,
+                "column" : 8
+              },
+              "end" : {
+                "line" : 3,
+                "column" : 18
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 3,
+              "column" : 7
+            },
+            "end" : {
+              "line" : 3,
+              "column" : 18
+            }
+          },
+          "className" : {
+            "@class" : "com.easyparsingapi.yari.parser.css.ast.Identifier",
+            "value" : "child-rule",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 3,
+                "column" : 8
+              },
+              "end" : {
+                "line" : 3,
+                "column" : 18
+              }
+            }
+          }
+        },
+        "block" : {
+          "@class" : "com.easyparsingapi.yari.parser.css.ast.Block",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 3,
+              "column" : 19
+            },
+            "end" : {
+              "line" : 5,
+              "column" : 8
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 3,
+            "column" : 7
+          },
+          "end" : {
+            "line" : 5,
+            "column" : 8
+          }
+        }
+      } ],
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 17
+        },
+        "end" : {
+          "line" : 6,
+          "column" : 5
+        }
+      }
+    },
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 4
+      },
+      "end" : {
+        "line" : 6,
+        "column" : 5
+      }
+    }
+  } ],
+  "comments" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.CssComment",
+    "comment" : "/* parent rule properties */",
+    "sourceLocation" : {
+      "start" : {
+        "line" : 2,
+        "column" : 7
+      },
+      "end" : {
+        "line" : 2,
+        "column" : 35
+      }
+    }
+  }, {
+    "@class" : "com.easyparsingapi.yari.parser.css.ast.CssComment",
+    "comment" : "/* child rule properties */",
+    "sourceLocation" : {
+      "start" : {
+        "line" : 4,
+        "column" : 9
+      },
+      "end" : {
+        "line" : 4,
+        "column" : 36
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 4
+    },
+    "end" : {
+      "line" : 6,
+      "column" : 5
+    }
+  }
+}

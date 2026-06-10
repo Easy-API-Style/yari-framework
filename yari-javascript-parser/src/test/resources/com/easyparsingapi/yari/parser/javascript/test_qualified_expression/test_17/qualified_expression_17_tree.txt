@@ -1,0 +1,12 @@
+[0, JavascriptNodeUnit] obj?.['prop' + 'Name']
+ [1, QualifiedExpression] obj?.['prop' + 'Name']
+  [2, Qualifier] obj?.
+   [3, Identifier] obj
+   [3, Operator] ?.
+  [2, MapExpression] ['prop' + 'Name']
+   [3, Empty] 
+   [3, Bracket] ['prop' + 'Name']
+    [4, Infix] 'prop' + 'Name'
+     [5, Literal] 'prop'
+     [5, Operator] +
+     [5, Literal] 'Name'

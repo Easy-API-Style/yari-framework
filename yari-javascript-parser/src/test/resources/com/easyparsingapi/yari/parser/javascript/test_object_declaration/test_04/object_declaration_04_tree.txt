@@ -1,0 +1,26 @@
+[0, JavascriptNodeUnit] { 'toto': 67, bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3} }
+ [1, ObjectDeclaration] { 'toto': 67, bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3} }
+  [2, FieldDeclaration] 'toto': 67
+   [3, Literal] 'toto'
+   [3, Literal] 67
+  [2, FieldDeclaration] bibi : {lili:tutu.tyty.jiji[gogo],fifi:-2.3}
+   [3, Identifier] bibi
+   [3, ObjectDeclaration] {lili:tutu.tyty.jiji[gogo],fifi:-2.3}
+    [4, FieldDeclaration] lili:tutu.tyty.jiji[gogo]
+     [5, Identifier] lili
+     [5, QualifiedExpression] tutu.tyty.jiji[gogo]
+      [6, Qualifier] tutu.
+       [7, Identifier] tutu
+       [7, Operator] .
+      [6, Qualifier] tyty.
+       [7, Identifier] tyty
+       [7, Operator] .
+      [6, MapExpression] jiji[gogo]
+       [7, Identifier] jiji
+       [7, Bracket] [gogo]
+        [8, Identifier] gogo
+    [4, FieldDeclaration] fifi:-2.3
+     [5, Identifier] fifi
+     [5, Prefix] -2.3
+      [6, Operator] -
+      [6, Literal] 2.3

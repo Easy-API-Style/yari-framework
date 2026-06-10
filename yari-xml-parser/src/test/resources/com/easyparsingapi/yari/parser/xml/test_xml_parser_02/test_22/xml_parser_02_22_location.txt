@@ -1,0 +1,60 @@
+SourceLocation [start=line 1 column 4, end=line 4 column 14] [Xml]
+<pc:test>\\n <title oo:att_1="11">\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 4 column 14] [Tag]
+<pc:test>\\n <title oo:att_1="11">\\n blabla\\n </pc:test>
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 13] [TagHead]
+<pc:test>
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 12] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 7] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 12] [Name]
+test
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 3 column 12] [TagBody]
+<title oo:att_1="11">\\n blabla
+---------------------------
+SourceLocation [start=line 2 column 6, end=line 2 column 27] [TagEmpty]
+<title oo:att_1="11">
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [TagName]
+title
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Name]
+title
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 26] [TagAttribute]
+oo:att_1="11"
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 21] [Name]
+oo:att_1
+---------------------------
+SourceLocation [start=line 2 column 13, end=line 2 column 15] [Namespace]
+oo
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 2 column 21] [Name]
+att_1
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 26] [Value]
+"11"
+---------------------------
+SourceLocation [start=line 3 column 6, end=line 3 column 12] [Text]
+blabla
+---------------------------
+SourceLocation [start=line 4 column 4, end=line 4 column 14] [TagFoot]
+</pc:test>
+---------------------------
+SourceLocation [start=line 4 column 6, end=line 4 column 13] [TagName]
+pc:test
+---------------------------
+SourceLocation [start=line 4 column 6, end=line 4 column 8] [Namespace]
+pc
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 13] [Name]
+test
+---------------------------

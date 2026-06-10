@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 55] [Javascript]
+import('/modules/mon-module.js').then((module) => { })
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 55] [QualifiedExpression]
+import('/modules/mon-module.js').then((module) => { })
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 34] [Qualifier]
+import('/modules/mon-module.js').
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [FunctionCall]
+import('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 7] [Identifier]
+import
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 33] [Signature]
+('/modules/mon-module.js')
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 32] [Literal]
+'/modules/mon-module.js'
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 34] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 55] [FunctionCall]
+then((module) => { })
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 38] [Identifier]
+then
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 55] [Signature]
+((module) => { })
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 54] [ArrowFunction]
+(module) => { }
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 47] [Signature]
+(module)
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 46] [Identifier]
+module
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 54] [Procedure]
+{ }
+---------------------------

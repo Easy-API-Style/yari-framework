@@ -1,0 +1,120 @@
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [Javascript]
+function* logGenerator() {\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [FunctionDeclaration]
+function* logGenerator() {\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 23] [Identifier]
+logGenerator
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 6 column 2] [Procedure]
+{\\n console.log(0);\\n console.log(1, yield);\\n console.log(2, yield);\\n console.log(3, yield);\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 17] [QualifiedExpression]
+console.log(0)
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 17] [FunctionCall]
+log(0)
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 17] [Signature]
+(0)
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 16] [Literal]
+0
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 24] [QualifiedExpression]
+console.log(1, yield)
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 3 column 10, end=line 3 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 24] [FunctionCall]
+log(1, yield)
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 24] [Signature]
+(1, yield)
+---------------------------
+SourceLocation [start=line 3 column 15, end=line 3 column 16] [Literal]
+1
+---------------------------
+SourceLocation [start=line 3 column 18, end=line 3 column 23] [Yield]
+yield
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 24] [QualifiedExpression]
+console.log(2, yield)
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 24] [FunctionCall]
+log(2, yield)
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 24] [Signature]
+(2, yield)
+---------------------------
+SourceLocation [start=line 4 column 15, end=line 4 column 16] [Literal]
+2
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 23] [Yield]
+yield
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 24] [QualifiedExpression]
+console.log(3, yield)
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 5 column 3, end=line 5 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 5 column 10, end=line 5 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 5 column 11, end=line 5 column 24] [FunctionCall]
+log(3, yield)
+---------------------------
+SourceLocation [start=line 5 column 11, end=line 5 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 5 column 14, end=line 5 column 24] [Signature]
+(3, yield)
+---------------------------
+SourceLocation [start=line 5 column 15, end=line 5 column 16] [Literal]
+3
+---------------------------
+SourceLocation [start=line 5 column 18, end=line 5 column 23] [Yield]
+yield
+---------------------------

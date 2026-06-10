@@ -1,0 +1,18 @@
+[0, JavascriptNodeUnit] { 'toto': 67, bibi : tutu.tyty.jiji[gogo] }
+ [1, ObjectDeclaration] { 'toto': 67, bibi : tutu.tyty.jiji[gogo] }
+  [2, FieldDeclaration] 'toto': 67
+   [3, Literal] 'toto'
+   [3, Literal] 67
+  [2, FieldDeclaration] bibi : tutu.tyty.jiji[gogo]
+   [3, Identifier] bibi
+   [3, QualifiedExpression] tutu.tyty.jiji[gogo]
+    [4, Qualifier] tutu.
+     [5, Identifier] tutu
+     [5, Operator] .
+    [4, Qualifier] tyty.
+     [5, Identifier] tyty
+     [5, Operator] .
+    [4, MapExpression] jiji[gogo]
+     [5, Identifier] jiji
+     [5, Bracket] [gogo]
+      [6, Identifier] gogo

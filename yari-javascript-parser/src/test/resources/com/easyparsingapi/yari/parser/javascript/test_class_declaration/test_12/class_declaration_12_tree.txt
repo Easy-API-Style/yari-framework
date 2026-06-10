@@ -1,0 +1,19 @@
+[0, Javascript] class ClassWithStaticField {\\n static baseStaticField = 'base static field'\\n static anotherBaseStaticField = this.baseStaticField\\n\\n static baseStaticMethod() { return 'base static method output' }\\n}
+ [1, ClassDeclaration] class ClassWithStaticField {\\n static baseStaticField = 'base static field'\\n static anotherBaseStaticField = this.baseStaticField\\n\\n static baseStaticMethod() { return 'base static method output' }\\n}
+  [2, Identifier] ClassWithStaticField
+  [2, ClassFieldDeclaration] static baseStaticField = 'base static field'
+   [3, Identifier] baseStaticField
+   [3, Literal] = 'base static field'
+  [2, ClassFieldDeclaration] static anotherBaseStaticField = this.baseStaticField
+   [3, Identifier] anotherBaseStaticField
+   [3, QualifiedExpression] = this.baseStaticField
+    [4, Qualifier] this.
+     [5, This] this
+     [5, Operator] .
+    [4, Identifier] baseStaticField
+  [2, ClassMethodDeclaration] static baseStaticMethod() { return 'base static method output' }
+   [3, Identifier] baseStaticMethod
+   [3, Signature] ()
+   [3, Procedure] { return 'base static method output' }
+    [4, Return] return 'base static method output'
+     [5, Literal] 'base static method output'

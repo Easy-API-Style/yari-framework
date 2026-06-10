@@ -1,0 +1,69 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [Javascript]
+if (p_1 && p_2) { var v_1 = 44;}else { var v_2 = 'bibi'}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [If]
+if (p_1 && p_2) { var v_1 = 44;}else { var v_2 = 'bibi'}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 33] [IfBlock]
+if (p_1 && p_2) { var v_1 = 44;}
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 16] [Condition]
+(p_1 && p_2)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 15] [Infix]
+p_1 && p_2
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+p_1
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 11] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [Identifier]
+p_2
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 33] [Procedure]
+{ var v_1 = 44;}
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 31] [VariableDeclaration]
+var v_1 = 44
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 22] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 31] [Variable]
+v_1 = 44
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 31] [Literal]
+44
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 57] [ElseBlock]
+else { var v_2 = 'bibi'}
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 57] [Procedure]
+{ var v_2 = 'bibi'}
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 56] [VariableDeclaration]
+var v_2 = 'bibi'
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 43] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 56] [Variable]
+v_2 = 'bibi'
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 47] [Identifier]
+v_2
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 49] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 56] [Literal]
+'bibi'
+---------------------------

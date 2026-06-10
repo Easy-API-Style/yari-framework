@@ -1,0 +1,11 @@
+[0, JavascriptNodeUnit] condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4
+ [1, Ternary] condition1 ? value1 : condition2 ? value2 : condition3 ? value3 : value4
+  [2, Identifier] condition1
+  [2, Identifier] value1
+  [2, Ternary] condition2 ? value2 : condition3 ? value3 : value4
+   [3, Identifier] condition2
+   [3, Identifier] value2
+   [3, Ternary] condition3 ? value3 : value4
+    [4, Identifier] condition3
+    [4, Identifier] value3
+    [4, Identifier] value4

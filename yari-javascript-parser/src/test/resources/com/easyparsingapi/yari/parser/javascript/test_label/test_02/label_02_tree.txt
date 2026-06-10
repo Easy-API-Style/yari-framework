@@ -1,0 +1,33 @@
+[0, Javascript] outer_block: { inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+ [1, Label] outer_block: { inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+  [2, Identifier] outer_block
+  [2, BlockProcedure] { inner_block: { console.log('1'); break outer_block; console.log(':-('); } console.log('2');}
+   [3, Label] inner_block: { console.log('1'); break outer_block; console.log(':-('); }
+    [4, Identifier] inner_block
+    [4, BlockProcedure] { console.log('1'); break outer_block; console.log(':-('); }
+     [5, QualifiedExpression] console.log('1')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('1')
+       [7, Identifier] log
+       [7, Signature] ('1')
+        [8, Literal] '1'
+     [5, Break] break outer_block
+      [6, Identifier] outer_block
+     [5, QualifiedExpression] console.log(':-(')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log(':-(')
+       [7, Identifier] log
+       [7, Signature] (':-(')
+        [8, Literal] ':-('
+   [3, QualifiedExpression] console.log('2')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('2')
+     [5, Identifier] log
+     [5, Signature] ('2')
+      [6, Literal] '2'

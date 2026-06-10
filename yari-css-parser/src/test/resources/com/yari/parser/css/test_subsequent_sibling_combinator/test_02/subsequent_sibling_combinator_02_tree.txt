@@ -1,0 +1,16 @@
+[0, Css] .foo p ~ .foo span {\\n color: green;\\n }
+ [1, RuleSet] .foo p ~ .foo span {\\n color: green;\\n }
+  [2, CombinatorSelector] .foo p ~ .foo span
+   [3, QualifiedSelector] .foo p
+    [4, ClassSelector] .foo
+     [5, Identifier] foo
+    [4, ElementSelector] p
+   [3, Operator] ~
+   [3, QualifiedSelector] .foo span
+    [4, ClassSelector] .foo
+     [5, Identifier] foo
+    [4, ElementSelector] span
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green

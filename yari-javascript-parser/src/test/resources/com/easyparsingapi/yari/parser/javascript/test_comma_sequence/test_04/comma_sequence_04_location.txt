@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [Javascript]
+a = b = 3, c = 4
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [Sequence]
+a = b = 3, c = 4
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 10] [Assignment]
+a = b = 3
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 10] [Chaining]
+b = 3
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Literal]
+3
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 17] [Assignment]
+c = 4
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Literal]
+4
+---------------------------

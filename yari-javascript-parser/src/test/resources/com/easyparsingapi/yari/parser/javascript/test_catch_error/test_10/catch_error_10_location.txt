@@ -1,0 +1,33 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [Javascript]
+toto(rr, jj+, 4+5)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 19] [FunctionCall]
+toto(rr, jj+, 4+5)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 19] [Signature]
+(rr, jj+, 4+5)
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 8] [Identifier]
+rr
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 12] [Identifier]
+jj
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 14] [JavascriptError]
++,
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 18] [Infix]
+4+5
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Literal]
+4
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Literal]
+5
+---------------------------

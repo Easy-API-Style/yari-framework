@@ -1,0 +1,50 @@
+[0, Javascript] var compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })();
+ [1, VariableDeclaration] var compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+  [2, Type] var
+  [2, Variable] compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+   [3, Identifier] compteur
+   [3, Operator] =
+   [3, InvokedFunction] (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+    [4, Definition] (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })
+     [5, FunctionDeclaration] function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; }
+      [6, Signature] ()
+      [6, Procedure] { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; }
+       [7, VariableDeclaration] var i = 0
+        [8, Type] var
+        [8, Variable] i = 0
+         [9, Identifier] i
+         [9, Operator] =
+         [9, Literal] 0
+       [7, Return] return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }
+        [8, ObjectDeclaration] { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }
+         [9, FieldDeclaration] obtenir: function () { alert(i); }
+          [10, Identifier] obtenir
+          [10, FunctionDeclaration] function () { alert(i); }
+           [11, Signature] ()
+           [11, Procedure] { alert(i); }
+            [12, FunctionCall] alert(i)
+             [13, Identifier] alert
+             [13, Signature] (i)
+              [14, Identifier] i
+         [9, FieldDeclaration] mettre: function (valeur) { i = valeur; }
+          [10, Identifier] mettre
+          [10, FunctionDeclaration] function (valeur) { i = valeur; }
+           [11, Signature] (valeur)
+            [12, Identifier] valeur
+           [11, Procedure] { i = valeur; }
+            [12, Assignment] i = valeur
+             [13, Identifier] i
+             [13, Operator] =
+             [13, Identifier] valeur
+         [9, FieldDeclaration] incrementer: function () { alert(++i); }
+          [10, Identifier] incrementer
+          [10, FunctionDeclaration] function () { alert(++i); }
+           [11, Signature] ()
+           [11, Procedure] { alert(++i); }
+            [12, FunctionCall] alert(++i)
+             [13, Identifier] alert
+             [13, Signature] (++i)
+              [14, Increment] ++i
+               [15, Operator] ++
+               [15, Identifier] i
+    [4, Signature] ()

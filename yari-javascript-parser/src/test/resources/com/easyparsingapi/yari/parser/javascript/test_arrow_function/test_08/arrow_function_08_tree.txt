@@ -1,0 +1,15 @@
+[0, Javascript] (a, b, ...r) => a + b + 100
+ [1, ArrowFunction] (a, b, ...r) => a + b + 100
+  [2, Signature] (a, b, ...r)
+   [3, Identifier] a
+   [3, Identifier] b
+   [3, Spread] ...r
+    [4, Identifier] r
+  [2, Procedure] a + b + 100
+   [3, Infix] a + b + 100
+    [4, Infix] a + b
+     [5, Identifier] a
+     [5, Operator] +
+     [5, Identifier] b
+    [4, Operator] +
+    [4, Literal] 100

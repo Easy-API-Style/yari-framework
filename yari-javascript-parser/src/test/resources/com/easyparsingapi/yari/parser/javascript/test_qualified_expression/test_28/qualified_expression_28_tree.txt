@@ -1,0 +1,9 @@
+[0, JavascriptNodeUnit] /^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.test(email)
+ [1, QualifiedExpression] /^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.test(email)
+  [2, Qualifier] /^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.
+   [3, Literal] /^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/
+   [3, Operator] .
+  [2, FunctionCall] test(email)
+   [3, Identifier] test
+   [3, Signature] (email)
+    [4, Identifier] email

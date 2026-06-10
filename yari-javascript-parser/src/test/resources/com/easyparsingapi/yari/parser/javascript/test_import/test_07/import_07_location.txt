@@ -1,0 +1,30 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 72] [Javascript]
+import defaultExport, { export1, export2 as alias2 } from "module-name"
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 72] [Import]
+import defaultExport, { export1, export2 as alias2 } from "module-name"
+---------------------------
+SourceLocation [start=line 1 column 59, end=line 1 column 72] [Literal]
+"module-name"
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 21] [Identifier]
+defaultExport
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 53] [ImportBlock]
+{ export1, export2 as alias2 }
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 32] [ImportReference]
+export1
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 32] [Identifier]
+export1
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 51] [ImportReference]
+export2 as alias2
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 41] [Identifier]
+export2
+---------------------------
+SourceLocation [start=line 1 column 42, end=line 1 column 51] [Identifier]
+as alias2
+---------------------------

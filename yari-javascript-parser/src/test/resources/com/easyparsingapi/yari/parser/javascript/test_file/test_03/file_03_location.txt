@@ -1,0 +1,393 @@
+SourceLocation [start=line 6 column 19, end=line 6 column 42] [Javascript]
+// Returns 4 in console
+---------------------------
+SourceLocation [start=line 7 column 17, end=line 7 column 33] [Javascript]
+// 3 (left-most)
+---------------------------
+SourceLocation [start=line 11 column 21, end=line 11 column 44] [Javascript]
+// Returns 6 in console
+---------------------------
+SourceLocation [start=line 12 column 17, end=line 12 column 34] [Javascript]
+// 6 (right-most)
+---------------------------
+SourceLocation [start=line 17 column 23, end=line 17 column 49] [Javascript]
+// the same as return ++x;
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 18 column 2] [Javascript]
+for (var i = 0, j = 9; i <= 9; i++, j--)\\n console.log('a[' + i + '][' + j + '] = ' + a[i][j]);\\n\\nvar a, b, c;\\n\\na = b = 3, c = 4; // Returns 4 in console\\nconsole.log(a); // 3 (left-most)\\n\\nvar x, y, z;\\n\\nx = (y = 5, z = 6); // Returns 6 in console\\nconsole.log(x); // 6 (right-most)\\n\\nfunction myFunc() {\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 2 column 55] [For]
+for (var i = 0, j = 9; i <= 9; i++, j--)\\n console.log('a[' + i + '][' + j + '] = ' + a[i][j]);
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 40] [Iteration]
+var i = 0, j = 9; i <= 9; i++, j--
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 22] [VariableDeclaration]
+var i = 0, j = 9
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 9] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 15] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 15] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 22] [Variable]
+j = 9
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 1 column 19, end=line 1 column 20] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 22] [Literal]
+9
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 30] [Infix]
+i <= 9
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 28] [Operator]
+<=
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 30] [Literal]
+9
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 40] [Sequence]
+i++, j--
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 35] [Increment]
+i++
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 35] [Operator]
+++
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 33] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 40] [Decrement]
+j--
+---------------------------
+SourceLocation [start=line 1 column 38, end=line 1 column 40] [Operator]
+--
+---------------------------
+SourceLocation [start=line 1 column 37, end=line 1 column 38] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 55] [Procedure]
+console.log('a[' + i + '][' + j + '] = ' + a[i][j]);
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 54] [QualifiedExpression]
+console.log('a[' + i + '][' + j + '] = ' + a[i][j])
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 11] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 10] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 2 column 10, end=line 2 column 11] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 54] [FunctionCall]
+log('a[' + i + '][' + j + '] = ' + a[i][j])
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 14] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 54] [Signature]
+('a[' + i + '][' + j + '] = ' + a[i][j])
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 53] [Infix]
+'a[' + i + '][' + j + '] = ' + a[i][j]
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 43] [Infix]
+'a[' + i + '][' + j + '] = '
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 34] [Infix]
+'a[' + i + '][' + j
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 30] [Infix]
+'a[' + i + ']['
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 23] [Infix]
+'a[' + i
+---------------------------
+SourceLocation [start=line 2 column 15, end=line 2 column 19] [Literal]
+'a['
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 21] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 22, end=line 2 column 23] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 2 column 25] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 30] [Literal]
+']['
+---------------------------
+SourceLocation [start=line 2 column 31, end=line 2 column 32] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 33, end=line 2 column 34] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 2 column 35, end=line 2 column 36] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 37, end=line 2 column 43] [Literal]
+'] = '
+---------------------------
+SourceLocation [start=line 2 column 44, end=line 2 column 45] [Operator]
++
+---------------------------
+SourceLocation [start=line 2 column 46, end=line 2 column 53] [MapExpression]
+a[i][j]
+---------------------------
+SourceLocation [start=line 2 column 46, end=line 2 column 50] [MapExpression]
+a[i]
+---------------------------
+SourceLocation [start=line 2 column 46, end=line 2 column 47] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 2 column 47, end=line 2 column 50] [Bracket]
+[i]
+---------------------------
+SourceLocation [start=line 2 column 48, end=line 2 column 49] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 2 column 50, end=line 2 column 53] [Bracket]
+[j]
+---------------------------
+SourceLocation [start=line 2 column 51, end=line 2 column 52] [Identifier]
+j
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 12] [VariableDeclaration]
+var a, b, c
+---------------------------
+SourceLocation [start=line 4 column 1, end=line 4 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 6] [Variable]
+a
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 6] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 9] [Variable]
+b
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 9] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 12] [Variable]
+c
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 12] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 6 column 17] [Sequence]
+a = b = 3, c = 4
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 6 column 10] [Assignment]
+a = b = 3
+---------------------------
+SourceLocation [start=line 6 column 1, end=line 6 column 2] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 6 column 3, end=line 6 column 4] [Operator]
+=
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 10] [Chaining]
+b = 3
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 6] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 10] [Literal]
+3
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 17] [Assignment]
+c = 4
+---------------------------
+SourceLocation [start=line 6 column 12, end=line 6 column 13] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 6 column 14, end=line 6 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 6 column 16, end=line 6 column 17] [Literal]
+4
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 7 column 15] [QualifiedExpression]
+console.log(a)
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 7 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 7 column 1, end=line 7 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 7 column 8, end=line 7 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 15] [FunctionCall]
+log(a)
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 7 column 12, end=line 7 column 15] [Signature]
+(a)
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 14] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 12] [VariableDeclaration]
+var x, y, z
+---------------------------
+SourceLocation [start=line 9 column 1, end=line 9 column 4] [Type]
+var
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 6] [Variable]
+x
+---------------------------
+SourceLocation [start=line 9 column 5, end=line 9 column 6] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 9 column 8, end=line 9 column 9] [Variable]
+y
+---------------------------
+SourceLocation [start=line 9 column 8, end=line 9 column 9] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 9 column 11, end=line 9 column 12] [Variable]
+z
+---------------------------
+SourceLocation [start=line 9 column 11, end=line 9 column 12] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 19] [Assignment]
+x = (y = 5, z = 6)
+---------------------------
+SourceLocation [start=line 11 column 1, end=line 11 column 2] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 4] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 19] [Sequence]
+(y = 5, z = 6)
+---------------------------
+SourceLocation [start=line 11 column 6, end=line 11 column 11] [Assignment]
+y = 5
+---------------------------
+SourceLocation [start=line 11 column 6, end=line 11 column 7] [Identifier]
+y
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 9] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 10, end=line 11 column 11] [Literal]
+5
+---------------------------
+SourceLocation [start=line 11 column 13, end=line 11 column 18] [Assignment]
+z = 6
+---------------------------
+SourceLocation [start=line 11 column 13, end=line 11 column 14] [Identifier]
+z
+---------------------------
+SourceLocation [start=line 11 column 15, end=line 11 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 11 column 17, end=line 11 column 18] [Literal]
+6
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 15] [QualifiedExpression]
+console.log(x)
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 9] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 12 column 1, end=line 12 column 8] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 12 column 8, end=line 12 column 9] [Operator]
+.
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 15] [FunctionCall]
+log(x)
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 12] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 12 column 12, end=line 12 column 15] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 12 column 13, end=line 12 column 14] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 14 column 1, end=line 18 column 2] [FunctionDeclaration]
+function myFunc() {\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+---------------------------
+SourceLocation [start=line 14 column 10, end=line 14 column 16] [Identifier]
+myFunc
+---------------------------
+SourceLocation [start=line 14 column 16, end=line 14 column 18] [Signature]
+()
+---------------------------
+SourceLocation [start=line 14 column 19, end=line 18 column 2] [Procedure]
+{\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 12] [VariableDeclaration]
+var x = 0
+---------------------------
+SourceLocation [start=line 15 column 3, end=line 15 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 12] [Variable]
+x = 0
+---------------------------
+SourceLocation [start=line 15 column 7, end=line 15 column 8] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 10] [Operator]
+=
+---------------------------
+SourceLocation [start=line 15 column 11, end=line 15 column 12] [Literal]
+0
+---------------------------
+SourceLocation [start=line 17 column 3, end=line 17 column 21] [Return]
+return (x += 1, x)
+---------------------------
+SourceLocation [start=line 17 column 10, end=line 17 column 21] [Sequence]
+(x += 1, x)
+---------------------------
+SourceLocation [start=line 17 column 11, end=line 17 column 17] [Assignment]
+x += 1
+---------------------------
+SourceLocation [start=line 17 column 11, end=line 17 column 12] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 17 column 13, end=line 17 column 15] [Operator]
++=
+---------------------------
+SourceLocation [start=line 17 column 16, end=line 17 column 17] [Literal]
+1
+---------------------------
+SourceLocation [start=line 17 column 19, end=line 17 column 20] [Identifier]
+x
+---------------------------

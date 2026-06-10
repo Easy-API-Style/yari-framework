@@ -1,0 +1,8 @@
+[0, JavascriptNodeUnit] { get [expr]() { return 'bar'; }}
+ [1, ObjectDeclaration] { get [expr]() { return 'bar'; }}
+  [2, Getter] get [expr]() { return 'bar'; }
+   [3, ComputedValue] [expr]
+    [4, Identifier] expr
+   [3, Procedure] { return 'bar'; }
+    [4, Return] return 'bar'
+     [5, Literal] 'bar'

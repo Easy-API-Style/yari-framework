@@ -1,0 +1,98 @@
+[0, Css] div {\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+ [1, RuleSet] div {\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+  [2, ElementSelector] div
+  [2, Block] {\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+   [3, Property] width: anchor-size(width)
+    [4, Identifier] width
+    [4, Function] anchor-size(width)
+     [5, Identifier] anchor-size
+     [5, Signature] (width)
+      [6, Identifier] width
+   [3, Property] block-size: anchor-size(block)
+    [4, Identifier] block-size
+    [4, Function] anchor-size(block)
+     [5, Identifier] anchor-size
+     [5, Signature] (block)
+      [6, Identifier] block
+   [3, Property] height: calc(anchor-size(self-inline) + 2em)
+    [4, Identifier] height
+    [4, Function] calc(anchor-size(self-inline) + 2em)
+     [5, Identifier] calc
+     [5, Signature] (anchor-size(self-inline) + 2em)
+      [6, Infix] anchor-size(self-inline) + 2em
+       [7, Function] anchor-size(self-inline)
+        [8, Identifier] anchor-size
+        [8, Signature] (self-inline)
+         [9, Identifier] self-inline
+       [7, Operator] +
+       [7, Identifier] 2em
+   [3, Property] width: anchor-size(--my-anchor width)
+    [4, Identifier] width
+    [4, Function] anchor-size(--my-anchor width)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor width)
+      [6, ListValue] --my-anchor width
+       [7, Identifier] --my-anchor
+       [7, Identifier] width
+   [3, Property] block-size: anchor-size(--my-anchor block)
+    [4, Identifier] block-size
+    [4, Function] anchor-size(--my-anchor block)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor block)
+      [6, ListValue] --my-anchor block
+       [7, Identifier] --my-anchor
+       [7, Identifier] block
+   [3, Property] width: anchor-size(--my-anchor width, 50%)
+    [4, Identifier] width
+    [4, Function] anchor-size(--my-anchor width, 50%)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor width, 50%)
+      [6, ListValue] --my-anchor width
+       [7, Identifier] --my-anchor
+       [7, Identifier] width
+      [6, Identifier] 50%
+   [3, Property] block-size: anchor-size(--my-anchor block, 200px)
+    [4, Identifier] block-size
+    [4, Function] anchor-size(--my-anchor block, 200px)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor block, 200px)
+      [6, ListValue] --my-anchor block
+       [7, Identifier] --my-anchor
+       [7, Identifier] block
+      [6, Identifier] 200px
+   [3, Property] left: anchor-size(width)
+    [4, Identifier] left
+    [4, Function] anchor-size(width)
+     [5, Identifier] anchor-size
+     [5, Signature] (width)
+      [6, Identifier] width
+   [3, Property] inset-inline-end: anchor-size(--my-anchor height, 100px)
+    [4, Identifier] inset-inline-end
+    [4, Function] anchor-size(--my-anchor height, 100px)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor height, 100px)
+      [6, ListValue] --my-anchor height
+       [7, Identifier] --my-anchor
+       [7, Identifier] height
+      [6, Identifier] 100px
+   [3, Property] margin-left: calc(anchor-size(width) / 4)
+    [4, Identifier] margin-left
+    [4, Function] calc(anchor-size(width) / 4)
+     [5, Identifier] calc
+     [5, Signature] (anchor-size(width) / 4)
+      [6, Infix] anchor-size(width) / 4
+       [7, Function] anchor-size(width)
+        [8, Identifier] anchor-size
+        [8, Signature] (width)
+         [9, Identifier] width
+       [7, Operator] /
+       [7, Identifier] 4
+   [3, Property] margin-block-start: anchor-size(--my-anchor self-block, 20px)
+    [4, Identifier] margin-block-start
+    [4, Function] anchor-size(--my-anchor self-block, 20px)
+     [5, Identifier] anchor-size
+     [5, Signature] (--my-anchor self-block, 20px)
+      [6, ListValue] --my-anchor self-block
+       [7, Identifier] --my-anchor
+       [7, Identifier] self-block
+      [6, Identifier] 20px

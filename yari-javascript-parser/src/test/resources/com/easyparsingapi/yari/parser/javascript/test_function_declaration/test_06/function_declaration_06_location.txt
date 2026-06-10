@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 76] [Javascript]
+function* creerID() { var index = 0; while (true) { yield index++; } }
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 76] [FunctionDeclaration]
+function* creerID() { var index = 0; while (true) { yield index++; } }
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 18] [Identifier]
+creerID
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 20] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 76] [Procedure]
+{ var index = 0; while (true) { yield index++; } }
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 37] [VariableDeclaration]
+var index = 0
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 27] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 37] [Variable]
+index = 0
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 33] [Identifier]
+index
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 35] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 37] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 74] [While]
+while (true) { yield index++; }
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 52] [Condition]
+(true)
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 51] [Literal]
+true
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 74] [Procedure]
+{ yield index++; }
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 70] [Yield]
+yield index++
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 70] [Increment]
+index++
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 70] [Operator]
+++
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 68] [Identifier]
+index
+---------------------------

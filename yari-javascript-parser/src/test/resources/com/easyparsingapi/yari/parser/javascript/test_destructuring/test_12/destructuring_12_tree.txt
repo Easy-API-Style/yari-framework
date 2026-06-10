@@ -1,0 +1,14 @@
+[0, Javascript] let {[key]: foo} = {z: 'bar'}
+ [1, VariableDeclaration] let {[key]: foo} = {z: 'bar'}
+  [2, Type] let
+  [2, Variable] {[key]: foo} = {z: 'bar'}
+   [3, DestructuringObject] {[key]: foo}
+    [4, Field] [key]: foo
+     [5, ComputedValue] [key]
+      [6, Identifier] key
+     [5, Identifier] : foo
+   [3, Operator] =
+   [3, ObjectDeclaration] {z: 'bar'}
+    [4, FieldDeclaration] z: 'bar'
+     [5, Identifier] z
+     [5, Literal] 'bar'

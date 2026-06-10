@@ -1,0 +1,146 @@
+[0, Xml] <?xml version="1.0" encoding="UTF-8"?>\\n<?xml-stylesheet href="transformation.xsl" type="text/xsl"?>\\n<?mode ecran?>\\n<?instruction pour le traitement?>\\n<!-- Commentaire -->\\n<ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>\\n <élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>\\n</ex:collection>
+ [1, Prolog] <?xml version="1.0" encoding="UTF-8"?>
+ [1, Prolog] <?xml-stylesheet href="transformation.xsl" type="text/xsl"?>
+ [1, Prolog] <?mode ecran?>
+ [1, Prolog] <?instruction pour le traitement?>
+ [1, XmlComment] <!-- Commentaire -->
+ [1, Tag] <ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>\\n <élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>\\n</ex:collection>
+  [2, TagHead] <ex:collection\\n xml:lang="fr"\\n xmlns:dc="http://purl.org/dc/elements/1.1/"\\n xmlns="http://www.w3.org/1999/xhtml"\\n xmlns:ex="http://exemple.org"\\n>
+   [3, TagName] ex:collection
+    [4, Namespace] ex
+    [4, Name] collection
+   [3, TagAttribute] xml:lang="fr"
+    [4, Name] xml:lang
+     [5, Namespace] xml
+     [5, Name] lang
+    [4, Value] "fr"
+   [3, TagAttribute] xmlns:dc="http://purl.org/dc/elements/1.1/"
+    [4, Name] xmlns:dc
+     [5, Namespace] xmlns
+     [5, Name] dc
+    [4, Value] "http://purl.org/dc/elements/1.1/"
+   [3, TagAttribute] xmlns="http://www.w3.org/1999/xhtml"
+    [4, Name] xmlns
+     [5, Name] xmlns
+    [4, Value] "http://www.w3.org/1999/xhtml"
+   [3, TagAttribute] xmlns:ex="http://exemple.org"
+    [4, Name] xmlns:ex
+     [5, Namespace] xmlns
+     [5, Name] ex
+    [4, Value] "http://exemple.org"
+  [2, TagBody] <élément>Texte</élément>\\n <dc:title>Astérix le Gaulois</dc:title>\\n <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>
+   [3, Tag] <élément>Texte</élément>
+    [4, TagHead] <élément>
+     [5, TagName] élément
+      [6, Name] élément
+    [4, TagBody] Texte
+     [5, Text] Texte
+    [4, TagFoot] </élément>
+     [5, TagName] élément
+      [6, Name] élément
+   [3, Tag] <dc:title>Astérix le Gaulois</dc:title>
+    [4, TagHead] <dc:title>
+     [5, TagName] dc:title
+      [6, Namespace] dc
+      [6, Name] title
+    [4, TagBody] Astérix le Gaulois
+     [5, Text] Astérix le Gaulois
+    [4, TagFoot] </dc:title>
+     [5, TagName] dc:title
+      [6, Namespace] dc
+      [6, Name] title
+   [3, Tag] <ex:livre attribut="valeur" type="BD">\\n <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>\\n </ex:livre>
+    [4, TagHead] <ex:livre attribut="valeur" type="BD">
+     [5, TagName] ex:livre
+      [6, Namespace] ex
+      [6, Name] livre
+     [5, TagAttribute] attribut="valeur"
+      [6, Name] attribut
+       [7, Name] attribut
+      [6, Value] "valeur"
+     [5, TagAttribute] type="BD"
+      [6, Name] type
+       [7, Name] type
+      [6, Value] "BD"
+    [4, TagBody] <dc:title>Astérix chez les Belges</dc:title>\\n <!-- élément répété -->\\n <dc:creator>René Goscinny</dc:creator>\\n <dc:creator>Albert Uderzo</dc:creator>\\n <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>
+     [5, Tag] <dc:title>Astérix chez les Belges</dc:title>
+      [6, TagHead] <dc:title>
+       [7, TagName] dc:title
+        [8, Namespace] dc
+        [8, Name] title
+      [6, TagBody] Astérix chez les Belges
+       [7, Text] Astérix chez les Belges
+      [6, TagFoot] </dc:title>
+       [7, TagName] dc:title
+        [8, Namespace] dc
+        [8, Name] title
+     [5, XmlComment] <!-- élément répété -->
+     [5, Tag] <dc:creator>René Goscinny</dc:creator>
+      [6, TagHead] <dc:creator>
+       [7, TagName] dc:creator
+        [8, Namespace] dc
+        [8, Name] creator
+      [6, TagBody] René Goscinny
+       [7, Text] René Goscinny
+      [6, TagFoot] </dc:creator>
+       [7, TagName] dc:creator
+        [8, Namespace] dc
+        [8, Name] creator
+     [5, Tag] <dc:creator>Albert Uderzo</dc:creator>
+      [6, TagHead] <dc:creator>
+       [7, TagName] dc:creator
+        [8, Namespace] dc
+        [8, Name] creator
+      [6, TagBody] Albert Uderzo
+       [7, Text] Albert Uderzo
+      [6, TagFoot] </dc:creator>
+       [7, TagName] dc:creator
+        [8, Namespace] dc
+        [8, Name] creator
+     [5, Tag] <dc:description>\\n <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.\\n </dc:description>
+      [6, TagHead] <dc:description>
+       [7, TagName] dc:description
+        [8, Namespace] dc
+        [8, Name] description
+      [6, TagBody] <b>Astérix chez les Belges</b> est un album de\\n<a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a> de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.\\n<br /><!-- élément vide -->\\n Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.
+       [7, Tag] <b>Astérix chez les Belges</b>
+        [8, TagHead] <b>
+         [9, TagName] b
+          [10, Name] b
+        [8, TagBody] Astérix chez les Belges
+         [9, Text] Astérix chez les Belges
+        [8, TagFoot] </b>
+         [9, TagName] b
+          [10, Name] b
+       [7, Text] est un album de
+       [7, Tag] <a href="http://fr.wikipedia.org/wiki/Bande_dessinée">bande dessinée</a>
+        [8, TagHead] <a href="http://fr.wikipedia.org/wiki/Bande_dessinée">
+         [9, TagName] a
+          [10, Name] a
+         [9, TagAttribute] href="http://fr.wikipedia.org/wiki/Bande_dessinée"
+          [10, Name] href
+           [11, Name] href
+          [10, Value] "http://fr.wikipedia.org/wiki/Bande_dessinée"
+        [8, TagBody] bande dessinée
+         [9, Text] bande dessinée
+        [8, TagFoot] </a>
+         [9, TagName] a
+          [10, Name] a
+       [7, Text] de la\\nsérie Astérix le Gaulois créée par René Goscinny et Albert Uderzo.
+       [7, TagEmpty] <br />
+        [8, TagName] br
+         [9, Name] br
+       [7, XmlComment] <!-- élément vide -->
+       [7, Text] Cet album publié en 1979 est le dernier de la série écrite par René\\nGoscinny.
+      [6, TagFoot] </dc:description>
+       [7, TagName] dc:description
+        [8, Namespace] dc
+        [8, Name] description
+    [4, TagFoot] </ex:livre>
+     [5, TagName] ex:livre
+      [6, Namespace] ex
+      [6, Name] livre
+  [2, TagFoot] </ex:collection>
+   [3, TagName] ex:collection
+    [4, Namespace] ex
+    [4, Name] collection

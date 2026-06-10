@@ -1,0 +1,34 @@
+[0, Css] ul::scroll-button(*):disabled {\\n opacity: 0.2;\\n cursor: unset;\\n }\\n ul::scroll-button(left) {\\n content: "◄";\\n }
+ [1, RuleSet] ul::scroll-button(*):disabled {\\n opacity: 0.2;\\n cursor: unset;\\n }
+  [2, CombinatorSelector] ul::scroll-button(*):disabled
+   [3, CombinatorSelector] ul::scroll-button(*)
+    [4, ElementSelector] ul
+    [4, Operator] 
+    [4, PseudoFunctionSelector] ::scroll-button(*)
+     [5, PseudoElementSelector] ::scroll-button
+      [6, Identifier] scroll-button
+     [5, Signature] (*)
+      [6, Universal] *
+   [3, Operator] 
+   [3, PseudoClassSelector] :disabled
+    [4, Identifier] disabled
+  [2, Block] {\\n opacity: 0.2;\\n cursor: unset;\\n }
+   [3, Property] opacity: 0.2
+    [4, Identifier] opacity
+    [4, Identifier] 0.2
+   [3, Property] cursor: unset
+    [4, Identifier] cursor
+    [4, Identifier] unset
+ [1, RuleSet] ul::scroll-button(left) {\\n content: "◄";\\n }
+  [2, CombinatorSelector] ul::scroll-button(left)
+   [3, ElementSelector] ul
+   [3, Operator] 
+   [3, PseudoFunctionSelector] ::scroll-button(left)
+    [4, PseudoElementSelector] ::scroll-button
+     [5, Identifier] scroll-button
+    [4, Signature] (left)
+     [5, ElementSelector] left
+  [2, Block] {\\n content: "◄";\\n }
+   [3, Property] content: "◄"
+    [4, Identifier] content
+    [4, Literal] "◄"

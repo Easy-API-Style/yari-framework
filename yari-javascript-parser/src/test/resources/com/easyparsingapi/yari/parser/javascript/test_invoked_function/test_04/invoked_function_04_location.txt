@@ -1,0 +1,72 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [Javascript]
+(() => { for await (const num of asyncIterable) { console.log(num); }})()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 79] [InvokedFunction]
+(() => { for await (const num of asyncIterable) { console.log(num); }})()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 77] [Definition]
+(() => { for await (const num of asyncIterable) { console.log(num); }})
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 76] [ArrowFunction]
+() => { for await (const num of asyncIterable) { console.log(num); }}
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 4] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 76] [Procedure]
+{ for await (const num of asyncIterable) { console.log(num); }}
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 75] [For]
+for await (const num of asyncIterable) { console.log(num); }
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 48] [ListIteration]
+const num of asyncIterable
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 31] [VariableDeclaration]
+const num
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 27] [Type]
+const
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 31] [Variable]
+num
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 31] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 34] [Operator]
+of
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 48] [Identifier]
+asyncIterable
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 75] [Procedure]
+{ console.log(num); }
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 71] [QualifiedExpression]
+console.log(num)
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 63] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 62] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 63] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 71] [FunctionCall]
+log(num)
+---------------------------
+SourceLocation [start=line 1 column 63, end=line 1 column 66] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 66, end=line 1 column 71] [Signature]
+(num)
+---------------------------
+SourceLocation [start=line 1 column 67, end=line 1 column 70] [Identifier]
+num
+---------------------------
+SourceLocation [start=line 1 column 77, end=line 1 column 79] [Signature]
+()
+---------------------------

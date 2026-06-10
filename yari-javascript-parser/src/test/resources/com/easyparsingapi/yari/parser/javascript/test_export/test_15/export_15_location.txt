@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 76] [Javascript]
+export { import1 as name1, import2 as name2, default, nameN } from './test'
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 76] [Export]
+export { import1 as name1, import2 as name2, default, nameN } from './test'
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 76] [From]
+{ import1 as name1, import2 as name2, default, nameN } from './test'
+---------------------------
+SourceLocation [start=line 1 column 68, end=line 1 column 76] [Literal]
+'./test'
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 62] [ExportBlock]
+{ import1 as name1, import2 as name2, default, nameN }
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 26] [ExportReference]
+import1 as name1
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 17] [Identifier]
+import1
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 26] [Identifier]
+as name1
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 44] [ExportReference]
+import2 as name2
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 35] [Identifier]
+import2
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 44] [Identifier]
+as name2
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 53] [ExportReference]
+default
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 53] [Identifier]
+default
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 60] [ExportReference]
+nameN
+---------------------------
+SourceLocation [start=line 1 column 55, end=line 1 column 60] [Identifier]
+nameN
+---------------------------

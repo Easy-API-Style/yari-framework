@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modules — Yari Framework</title>
+  <meta name="description" content="Yari ships as a set of independent modules under com.easyparsingapi. Browse the full module list with installation, quick-start, and API reference.">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('yari-theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="top-nav__brand" href="../index.html">
+    <span class="brand-yari">Yari</span>
+  </a>
+  <div class="top-nav__links">
+    <a href="../index.html">Home</a>
+    <a href="../quick-start.html">Quick start</a>
+    <a href="index.html" class="is-active">Modules</a>
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+    <button class="theme-toggle-button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h4>Modules</h4>
+    <ul>
+      <li><a href="index.html" class="is-active">Overview</a></li>
+      <li><a href="parsec.html">yari-parsec</a></li>
+      <li><a href="core.html">yari-core</a></li>
+      <li><a href="xml-parser.html">yari-xml-parser</a></li>
+      <li><a href="css-parser.html">yari-css-parser</a></li>
+      <li><a href="javascript-parser.html">yari-javascript-parser</a></li>
+      <li><a href="html-parser.html">yari-html-parser</a></li>
+    </ul>
+    <h4>Documentation</h4>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../quick-start.html">Quick start</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <span>Modules</span>
+      </nav>
+
+      <h1>Modules</h1>
+      <p class="lead">Yari ships as a set of independent Gradle modules under <code>com.easyparsingapi</code>. Every module is documented on its own page, with installation, quick-start, and the full public API.</p>
+
+      <h2>Foundation</h2>
+      <div class="mod-grid">
+        <a class="card card--link" href="parsec.html">
+          <span class="card__tag">yari-parsec</span>
+          <h3>yari-parsec</h3>
+          <p>Parser-combinator engine. Compose typed <code>Parser&lt;T&gt;</code> values to scan characters, tokenize, build expressions with precedence/associativity, track source locations, and recover from errors. The foundation of every parser module.</p>
+        </a>
+        <a class="card card--link" href="core.html">
+          <span class="card__tag">yari-core</span>
+          <h3>yari-core</h3>
+          <p>Common interfaces and abstractions shared by every module: the AST contract (<code>AstNode</code>, <code>AstUnit</code>, <code>AstToken</code>), the source-location system, comment model, and base utilities. Depends on yari-parsec.</p>
+        </a>
+      </div>
+
+      <h2>Parsers</h2>
+      <div class="mod-grid mod-grid--2">
+        <a class="card card--link" href="xml-parser.html">
+          <span class="card__tag">yari-xml-parser</span>
+          <h3>yari-xml-parser</h3>
+          <p>Fault-tolerant XML parser. Supports simple and complex tags, self-closing tags, comments, CDATA, DOCTYPE, prolog, and namespaces. Depends on yari-core.</p>
+        </a>
+        <a class="card card--link" href="css-parser.html">
+          <span class="card__tag">yari-css-parser</span>
+          <h3>yari-css-parser</h3>
+          <p>Fault-tolerant CSS parser. Supports complete stylesheets, at-rules, complex selectors (pseudo-classes, pseudo-elements, combinators, nth-patterns…) and property values. Depends on yari-core.</p>
+        </a>
+        <a class="card card--link" href="javascript-parser.html">
+          <span class="card__tag">yari-javascript-parser</span>
+          <h3>yari-javascript-parser</h3>
+          <p>Fault-tolerant JavaScript parser. Supports functions, classes, ES6 modules (import/export), async/await, destructuring, template literals, generators, and more. Depends on yari-core.</p>
+        </a>
+        <a class="card card--link" href="html-parser.html">
+          <span class="card__tag">yari-html-parser</span>
+          <h3>yari-html-parser</h3>
+          <p>HTML parser that extends the XML parser and additionally processes embedded JavaScript and CSS. Produces a unified AST where each sub-language is parsed into its own tree. Depends on yari-xml-parser, yari-css-parser, yari-javascript-parser.</p>
+        </a>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    Yari Framework · Apache License 2.0 ·
+    <a href="https://github.com/Easy-API-Style/yari-framework">GitHub</a>
+  </p>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

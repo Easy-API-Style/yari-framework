@@ -1,0 +1,35 @@
+[0, Css] @container (min-width: 400px) {\\n /* … */\\n }\\n @container (orientation: landscape) and (width > 400px) {\\n /* … */\\n }\\n @container (15em <= block-size <= 30em) {\\n /* … */\\n }
+ [1, AtRule] @container (min-width: 400px) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Parenthesis] (min-width: 400px)
+   [3, Property] min-width: 400px
+    [4, Identifier] min-width
+    [4, Identifier] 400px
+  [2, Block] {\\n /* … */\\n }
+ [1, AtRule] @container (orientation: landscape) and (width > 400px) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Infix] (orientation: landscape) and (width > 400px)
+   [3, Parenthesis] (orientation: landscape)
+    [4, Property] orientation: landscape
+     [5, Identifier] orientation
+     [5, Identifier] landscape
+   [3, Operator] and
+   [3, Parenthesis] (width > 400px)
+    [4, Infix] width > 400px
+     [5, Identifier] width
+     [5, Operator] >
+     [5, Identifier] 400px
+  [2, Block] {\\n /* … */\\n }
+ [1, AtRule] @container (15em <= block-size <= 30em) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Parenthesis] (15em <= block-size <= 30em)
+   [3, Range] 15em <= block-size <= 30em
+    [4, Identifier] 15em
+    [4, Operator] <=
+    [4, Identifier] block-size
+    [4, Operator] <=
+    [4, Identifier] 30em
+  [2, Block] {\\n /* … */\\n }

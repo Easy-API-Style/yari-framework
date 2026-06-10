@@ -1,0 +1,57 @@
+SourceLocation [start=line 1 column 17, end=line 1 column 27] [Javascript]
+/* toto */
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [Javascript]
+if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [If]
+if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 57] [IfBlock]
+if (p_1 > p_2) {/* toto */ { var v_1; v_1 = 'yiyi'; }}
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 15] [Condition]
+(p_1 > p_2)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 14] [Infix]
+p_1 > p_2
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [Identifier]
+p_1
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Operator]
+>
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 14] [Identifier]
+p_2
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 57] [Procedure]
+{/* toto */ { var v_1; v_1 = 'yiyi'; }}
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 56] [BlockProcedure]
+{ var v_1; v_1 = 'yiyi'; }
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 38] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 34] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 38] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 38] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 53] [Assignment]
+v_1 = 'yiyi'
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 44] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 46] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 53] [Literal]
+'yiyi'
+---------------------------

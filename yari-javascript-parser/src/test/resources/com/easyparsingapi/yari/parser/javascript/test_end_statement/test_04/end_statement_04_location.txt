@@ -1,0 +1,45 @@
+SourceLocation [start=line 2 column 15, end=line 2 column 22] [Javascript]
+// code
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 3 column 6] [Javascript]
+maVariable1 = maVariable2 + maVariable3;\\n(function () {// code\\n })()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 40] [Assignment]
+maVariable1 = maVariable2 + maVariable3
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 12] [Identifier]
+maVariable1
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 14] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 40] [Infix]
+maVariable2 + maVariable3
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 26] [Identifier]
+maVariable2
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 28] [Operator]
++
+---------------------------
+SourceLocation [start=line 1 column 29, end=line 1 column 40] [Identifier]
+maVariable3
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 3 column 6] [InvokedFunction]
+(function () {// code\\n })()
+---------------------------
+SourceLocation [start=line 2 column 1, end=line 3 column 4] [Definition]
+(function () {// code\\n })
+---------------------------
+SourceLocation [start=line 2 column 2, end=line 3 column 3] [FunctionDeclaration]
+function () {// code\\n }
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 13] [Signature]
+()
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 3 column 3] [Procedure]
+{// code\\n }
+---------------------------
+SourceLocation [start=line 3 column 4, end=line 3 column 6] [Signature]
+()
+---------------------------

@@ -1,0 +1,35 @@
+[0, Html] <test>\\n <script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+ [1, Tag] <test>\\n <script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <script att='yo'>\\n < bbbb\\n > tttt\\n </script>\\n <div>\\n aaaa\\n </div>
+   [3, ScriptTag] <script att='yo'>\\n < bbbb\\n > tttt\\n </script>
+    [4, TagHead] <script att='yo'>
+     [5, TagName] script
+      [6, Name] script
+     [5, TagAttribute] att='yo'
+      [6, Name] att
+       [7, Name] att
+      [6, Value] 'yo'
+    [4, Script] < bbbb\\n > tttt
+     [5, JavascriptError] <
+     [5, Infix] bbbb\\n > tttt
+      [6, Identifier] bbbb
+      [6, Operator] >
+      [6, Identifier] tttt
+    [4, TagFoot] </script>
+     [5, TagName] script
+      [6, Name] script
+   [3, Tag] <div>\\n aaaa\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] aaaa
+     [5, Text] aaaa
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

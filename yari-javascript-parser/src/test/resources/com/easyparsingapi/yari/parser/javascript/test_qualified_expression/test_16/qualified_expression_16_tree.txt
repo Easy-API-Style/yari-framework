@@ -1,0 +1,12 @@
+[0, JavascriptNodeUnit] myMap.get("bar")?.name
+ [1, QualifiedExpression] myMap.get("bar")?.name
+  [2, Qualifier] myMap.
+   [3, Identifier] myMap
+   [3, Operator] .
+  [2, Qualifier] get("bar")?.
+   [3, FunctionCall] get("bar")
+    [4, Identifier] get
+    [4, Signature] ("bar")
+     [5, Literal] "bar"
+   [3, Operator] ?.
+  [2, Identifier] name

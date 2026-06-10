@@ -1,0 +1,20 @@
+[0, Javascript] for await (const num of generatorWithRejectedPromises()) { console.log(num);}
+ [1, For] for await (const num of generatorWithRejectedPromises()) { console.log(num);}
+  [2, ListIteration] const num of generatorWithRejectedPromises()
+   [3, VariableDeclaration] const num
+    [4, Type] const
+    [4, Variable] num
+     [5, Identifier] num
+   [3, Operator] of
+   [3, FunctionCall] generatorWithRejectedPromises()
+    [4, Identifier] generatorWithRejectedPromises
+    [4, Signature] ()
+  [2, Procedure] { console.log(num);}
+   [3, QualifiedExpression] console.log(num)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(num)
+     [5, Identifier] log
+     [5, Signature] (num)
+      [6, Identifier] num

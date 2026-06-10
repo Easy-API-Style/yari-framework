@@ -1,0 +1,18 @@
+[0, Javascript] window.XMLHttpRequest && (e=new XMLHttpRequest,"withCredentials"in e)
+ [1, Infix] window.XMLHttpRequest && (e=new XMLHttpRequest,"withCredentials"in e)
+  [2, QualifiedExpression] window.XMLHttpRequest
+   [3, Qualifier] window.
+    [4, Identifier] window
+    [4, Operator] .
+   [3, Identifier] XMLHttpRequest
+  [2, Operator] &&
+  [2, Sequence] (e=new XMLHttpRequest,"withCredentials"in e)
+   [3, Assignment] e=new XMLHttpRequest
+    [4, Identifier] e
+    [4, Operator] =
+    [4, New] new XMLHttpRequest
+     [5, Identifier] XMLHttpRequest
+   [3, Infix] "withCredentials"in e
+    [4, Literal] "withCredentials"
+    [4, Operator] in
+    [4, Identifier] e

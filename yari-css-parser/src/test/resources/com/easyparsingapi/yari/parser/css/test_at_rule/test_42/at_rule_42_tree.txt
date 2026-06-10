@@ -1,0 +1,20 @@
+[0, Css] @scope (.article-body) to (.feature :scope figure) {\\n /* … */\\n }
+ [1, AtRule] @scope (.article-body) to (.feature :scope figure) {\\n /* … */\\n }
+  [2, AtRuleName] @scope
+   [3, Identifier] scope
+  [2, Infix] (.article-body) to (.feature :scope figure)
+   [3, Infix] (.article-body) to
+    [4, Parenthesis] (.article-body)
+     [5, ClassSelector] .article-body
+      [6, Identifier] article-body
+    [4, Operator] 
+    [4, Identifier] to
+   [3, Operator] 
+   [3, Parenthesis] (.feature :scope figure)
+    [4, QualifiedSelector] .feature :scope figure
+     [5, ClassSelector] .feature
+      [6, Identifier] feature
+     [5, PseudoClassSelector] :scope
+      [6, Identifier] scope
+     [5, ElementSelector] figure
+  [2, Block] {\\n /* … */\\n }

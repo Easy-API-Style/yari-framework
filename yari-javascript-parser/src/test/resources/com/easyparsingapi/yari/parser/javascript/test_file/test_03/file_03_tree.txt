@@ -1,0 +1,126 @@
+[0, Javascript] for (var i = 0, j = 9; i <= 9; i++, j--)\\n console.log('a[' + i + '][' + j + '] = ' + a[i][j]);\\n\\nvar a, b, c;\\n\\na = b = 3, c = 4; // Returns 4 in console\\nconsole.log(a); // 3 (left-most)\\n\\nvar x, y, z;\\n\\nx = (y = 5, z = 6); // Returns 6 in console\\nconsole.log(x); // 6 (right-most)\\n\\nfunction myFunc() {\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+ [1, For] for (var i = 0, j = 9; i <= 9; i++, j--)\\n console.log('a[' + i + '][' + j + '] = ' + a[i][j]);
+  [2, Iteration] var i = 0, j = 9; i <= 9; i++, j--
+   [3, VariableDeclaration] var i = 0, j = 9
+    [4, Type] var
+    [4, Variable] i = 0
+     [5, Identifier] i
+     [5, Operator] =
+     [5, Literal] 0
+    [4, Variable] j = 9
+     [5, Identifier] j
+     [5, Operator] =
+     [5, Literal] 9
+   [3, Infix] i <= 9
+    [4, Identifier] i
+    [4, Operator] <=
+    [4, Literal] 9
+   [3, Sequence] i++, j--
+    [4, Increment] i++
+     [5, Operator] ++
+     [5, Identifier] i
+    [4, Decrement] j--
+     [5, Operator] --
+     [5, Identifier] j
+  [2, Procedure] console.log('a[' + i + '][' + j + '] = ' + a[i][j]);
+   [3, QualifiedExpression] console.log('a[' + i + '][' + j + '] = ' + a[i][j])
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('a[' + i + '][' + j + '] = ' + a[i][j])
+     [5, Identifier] log
+     [5, Signature] ('a[' + i + '][' + j + '] = ' + a[i][j])
+      [6, Infix] 'a[' + i + '][' + j + '] = ' + a[i][j]
+       [7, Infix] 'a[' + i + '][' + j + '] = '
+        [8, Infix] 'a[' + i + '][' + j
+         [9, Infix] 'a[' + i + ']['
+          [10, Infix] 'a[' + i
+           [11, Literal] 'a['
+           [11, Operator] +
+           [11, Identifier] i
+          [10, Operator] +
+          [10, Literal] ']['
+         [9, Operator] +
+         [9, Identifier] j
+        [8, Operator] +
+        [8, Literal] '] = '
+       [7, Operator] +
+       [7, MapExpression] a[i][j]
+        [8, MapExpression] a[i]
+         [9, Identifier] a
+         [9, Bracket] [i]
+          [10, Identifier] i
+        [8, Bracket] [j]
+         [9, Identifier] j
+ [1, VariableDeclaration] var a, b, c
+  [2, Type] var
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+  [2, Variable] c
+   [3, Identifier] c
+ [1, Sequence] a = b = 3, c = 4
+  [2, Assignment] a = b = 3
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Chaining] b = 3
+    [4, Identifier] b
+    [4, Literal] 3
+  [2, Assignment] c = 4
+   [3, Identifier] c
+   [3, Operator] =
+   [3, Literal] 4
+ [1, QualifiedExpression] console.log(a)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a)
+   [3, Identifier] log
+   [3, Signature] (a)
+    [4, Identifier] a
+ [1, VariableDeclaration] var x, y, z
+  [2, Type] var
+  [2, Variable] x
+   [3, Identifier] x
+  [2, Variable] y
+   [3, Identifier] y
+  [2, Variable] z
+   [3, Identifier] z
+ [1, Assignment] x = (y = 5, z = 6)
+  [2, Identifier] x
+  [2, Operator] =
+  [2, Sequence] (y = 5, z = 6)
+   [3, Assignment] y = 5
+    [4, Identifier] y
+    [4, Operator] =
+    [4, Literal] 5
+   [3, Assignment] z = 6
+    [4, Identifier] z
+    [4, Operator] =
+    [4, Literal] 6
+ [1, QualifiedExpression] console.log(x)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(x)
+   [3, Identifier] log
+   [3, Signature] (x)
+    [4, Identifier] x
+ [1, FunctionDeclaration] function myFunc() {\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+  [2, Identifier] myFunc
+  [2, Signature] ()
+  [2, Procedure] {\\n var x = 0;\\n\\n return (x += 1, x); // the same as return ++x;\\n}
+   [3, VariableDeclaration] var x = 0
+    [4, Type] var
+    [4, Variable] x = 0
+     [5, Identifier] x
+     [5, Operator] =
+     [5, Literal] 0
+   [3, Return] return (x += 1, x)
+    [4, Sequence] (x += 1, x)
+     [5, Assignment] x += 1
+      [6, Identifier] x
+      [6, Operator] +=
+      [6, Literal] 1
+     [5, Identifier] x

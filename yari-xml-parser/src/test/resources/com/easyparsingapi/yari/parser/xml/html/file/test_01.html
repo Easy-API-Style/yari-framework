@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<!--coment -->
+<title>onclick event example</title>
+<script type="text/javascript">
+// function
+function initElement()
+{
+  var p = document.getElementById("foo");
+  // NOTE: showAlert(); ou showAlert(param); not work here.
+  p.onclick = showAlert;
+};
+
+function showAlert()
+{
+  alert("event click");
+}
+</script>
+<style type="text/css">
+#foo {
+border: solid blue 2px;
+}
+</style>
+</head>
+<body onload="initElement();">
+<span id="foo">Span click</span>
+<p>Click on it.</p>
+<br/>
+<div>
+</div>
+</body>
+</html>

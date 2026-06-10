@@ -1,0 +1,268 @@
+[0, Javascript] const isObject = (obj) => !!obj && typeof obj === "object";\\n\\n// Or this:\\nconst isObject = (obj) => Boolean(obj) && typeof obj === "object";\\n\\n// Or this:\\nconst isObject = (obj) => obj !== null && typeof obj === "object";\\n\\n// Instead of this:\\n// This may return falsy values that are not equal to false\\nconst isObject = (obj) => obj && typeof obj === "object";\\n\\nconst good = Boolean(expression);\\nconst good2 = !!expression;\\n\\nif (new Boolean(true)) {\\n console.log("This log is printed.");\\n}\\n\\nif (new Boolean(false)) {\\n console.log("This log is ALSO printed.");\\n}\\n\\nconst myFalse = new Boolean(false); // myFalse is a Boolean object (not the primitive value false)\\nconst g = Boolean(myFalse); // g is true\\nconst myString = new String("Hello"); // myString is a String object\\nconst s = Boolean(myString); // s is true\\n\\nconst bNoParam = Boolean();\\nconst bZero = Boolean(0);\\nconst bNull = Boolean(null);\\nconst bEmptyString = Boolean("");\\nconst bfalse = Boolean(false);\\n\\nconst btrue = Boolean(true);\\nconst btrueString = Boolean("true");\\nconst bfalseString = Boolean("false");\\nconst bSuLin = Boolean("Su Lin");\\nconst bArrayProto = Boolean([]);\\nconst bObjProto = Boolean({});
+ [1, VariableDeclaration] const isObject = (obj) => !!obj && typeof obj === "object";
+  [2, Type] const
+  [2, Variable] isObject = (obj) => !!obj && typeof obj === "object";
+   [3, Identifier] isObject
+   [3, Operator] =
+   [3, ArrowFunction] (obj) => !!obj && typeof obj === "object";
+    [4, Signature] (obj)
+     [5, Identifier] obj
+    [4, Procedure] !!obj && typeof obj === "object";
+     [5, Infix] !!obj && typeof obj === "object"
+      [6, Infix] !!obj && typeof obj
+       [7, Prefix] !!obj
+        [8, Operator] !
+        [8, Prefix] !obj
+         [9, Operator] !
+         [9, Identifier] obj
+       [7, Operator] &&
+       [7, Prefix] typeof obj
+        [8, Operator] typeof
+        [8, Identifier] obj
+      [6, Operator] ===
+      [6, Literal] "object"
+ [1, VariableDeclaration] const isObject = (obj) => Boolean(obj) && typeof obj === "object";
+  [2, Type] const
+  [2, Variable] isObject = (obj) => Boolean(obj) && typeof obj === "object";
+   [3, Identifier] isObject
+   [3, Operator] =
+   [3, ArrowFunction] (obj) => Boolean(obj) && typeof obj === "object";
+    [4, Signature] (obj)
+     [5, Identifier] obj
+    [4, Procedure] Boolean(obj) && typeof obj === "object";
+     [5, Infix] Boolean(obj) && typeof obj === "object"
+      [6, Infix] Boolean(obj) && typeof obj
+       [7, FunctionCall] Boolean(obj)
+        [8, Identifier] Boolean
+        [8, Signature] (obj)
+         [9, Identifier] obj
+       [7, Operator] &&
+       [7, Prefix] typeof obj
+        [8, Operator] typeof
+        [8, Identifier] obj
+      [6, Operator] ===
+      [6, Literal] "object"
+ [1, VariableDeclaration] const isObject = (obj) => obj !== null && typeof obj === "object";
+  [2, Type] const
+  [2, Variable] isObject = (obj) => obj !== null && typeof obj === "object";
+   [3, Identifier] isObject
+   [3, Operator] =
+   [3, ArrowFunction] (obj) => obj !== null && typeof obj === "object";
+    [4, Signature] (obj)
+     [5, Identifier] obj
+    [4, Procedure] obj !== null && typeof obj === "object";
+     [5, Infix] obj !== null && typeof obj === "object"
+      [6, Infix] obj !== null && typeof obj
+       [7, Infix] obj !== null
+        [8, Identifier] obj
+        [8, Operator] !==
+        [8, Null] null
+       [7, Operator] &&
+       [7, Prefix] typeof obj
+        [8, Operator] typeof
+        [8, Identifier] obj
+      [6, Operator] ===
+      [6, Literal] "object"
+ [1, VariableDeclaration] const isObject = (obj) => obj && typeof obj === "object";
+  [2, Type] const
+  [2, Variable] isObject = (obj) => obj && typeof obj === "object";
+   [3, Identifier] isObject
+   [3, Operator] =
+   [3, ArrowFunction] (obj) => obj && typeof obj === "object";
+    [4, Signature] (obj)
+     [5, Identifier] obj
+    [4, Procedure] obj && typeof obj === "object";
+     [5, Infix] obj && typeof obj === "object"
+      [6, Infix] obj && typeof obj
+       [7, Identifier] obj
+       [7, Operator] &&
+       [7, Prefix] typeof obj
+        [8, Operator] typeof
+        [8, Identifier] obj
+      [6, Operator] ===
+      [6, Literal] "object"
+ [1, VariableDeclaration] const good = Boolean(expression)
+  [2, Type] const
+  [2, Variable] good = Boolean(expression)
+   [3, Identifier] good
+   [3, Operator] =
+   [3, FunctionCall] Boolean(expression)
+    [4, Identifier] Boolean
+    [4, Signature] (expression)
+     [5, Identifier] expression
+ [1, VariableDeclaration] const good2 = !!expression
+  [2, Type] const
+  [2, Variable] good2 = !!expression
+   [3, Identifier] good2
+   [3, Operator] =
+   [3, Prefix] !!expression
+    [4, Operator] !
+    [4, Prefix] !expression
+     [5, Operator] !
+     [5, Identifier] expression
+ [1, If] if (new Boolean(true)) {\\n console.log("This log is printed.");\\n}
+  [2, IfBlock] if (new Boolean(true)) {\\n console.log("This log is printed.");\\n}
+   [3, Condition] (new Boolean(true))
+    [4, New] new Boolean(true)
+     [5, Identifier] Boolean
+     [5, Signature] (true)
+      [6, Literal] true
+   [3, Procedure] {\\n console.log("This log is printed.");\\n}
+    [4, QualifiedExpression] console.log("This log is printed.")
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log("This log is printed.")
+      [6, Identifier] log
+      [6, Signature] ("This log is printed.")
+       [7, Literal] "This log is printed."
+ [1, If] if (new Boolean(false)) {\\n console.log("This log is ALSO printed.");\\n}
+  [2, IfBlock] if (new Boolean(false)) {\\n console.log("This log is ALSO printed.");\\n}
+   [3, Condition] (new Boolean(false))
+    [4, New] new Boolean(false)
+     [5, Identifier] Boolean
+     [5, Signature] (false)
+      [6, Literal] false
+   [3, Procedure] {\\n console.log("This log is ALSO printed.");\\n}
+    [4, QualifiedExpression] console.log("This log is ALSO printed.")
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log("This log is ALSO printed.")
+      [6, Identifier] log
+      [6, Signature] ("This log is ALSO printed.")
+       [7, Literal] "This log is ALSO printed."
+ [1, VariableDeclaration] const myFalse = new Boolean(false)
+  [2, Type] const
+  [2, Variable] myFalse = new Boolean(false)
+   [3, Identifier] myFalse
+   [3, Operator] =
+   [3, New] new Boolean(false)
+    [4, Identifier] Boolean
+    [4, Signature] (false)
+     [5, Literal] false
+ [1, VariableDeclaration] const g = Boolean(myFalse)
+  [2, Type] const
+  [2, Variable] g = Boolean(myFalse)
+   [3, Identifier] g
+   [3, Operator] =
+   [3, FunctionCall] Boolean(myFalse)
+    [4, Identifier] Boolean
+    [4, Signature] (myFalse)
+     [5, Identifier] myFalse
+ [1, VariableDeclaration] const myString = new String("Hello")
+  [2, Type] const
+  [2, Variable] myString = new String("Hello")
+   [3, Identifier] myString
+   [3, Operator] =
+   [3, New] new String("Hello")
+    [4, Identifier] String
+    [4, Signature] ("Hello")
+     [5, Literal] "Hello"
+ [1, VariableDeclaration] const s = Boolean(myString)
+  [2, Type] const
+  [2, Variable] s = Boolean(myString)
+   [3, Identifier] s
+   [3, Operator] =
+   [3, FunctionCall] Boolean(myString)
+    [4, Identifier] Boolean
+    [4, Signature] (myString)
+     [5, Identifier] myString
+ [1, VariableDeclaration] const bNoParam = Boolean()
+  [2, Type] const
+  [2, Variable] bNoParam = Boolean()
+   [3, Identifier] bNoParam
+   [3, Operator] =
+   [3, FunctionCall] Boolean()
+    [4, Identifier] Boolean
+    [4, Signature] ()
+ [1, VariableDeclaration] const bZero = Boolean(0)
+  [2, Type] const
+  [2, Variable] bZero = Boolean(0)
+   [3, Identifier] bZero
+   [3, Operator] =
+   [3, FunctionCall] Boolean(0)
+    [4, Identifier] Boolean
+    [4, Signature] (0)
+     [5, Literal] 0
+ [1, VariableDeclaration] const bNull = Boolean(null)
+  [2, Type] const
+  [2, Variable] bNull = Boolean(null)
+   [3, Identifier] bNull
+   [3, Operator] =
+   [3, FunctionCall] Boolean(null)
+    [4, Identifier] Boolean
+    [4, Signature] (null)
+     [5, Null] null
+ [1, VariableDeclaration] const bEmptyString = Boolean("")
+  [2, Type] const
+  [2, Variable] bEmptyString = Boolean("")
+   [3, Identifier] bEmptyString
+   [3, Operator] =
+   [3, FunctionCall] Boolean("")
+    [4, Identifier] Boolean
+    [4, Signature] ("")
+     [5, Literal] ""
+ [1, VariableDeclaration] const bfalse = Boolean(false)
+  [2, Type] const
+  [2, Variable] bfalse = Boolean(false)
+   [3, Identifier] bfalse
+   [3, Operator] =
+   [3, FunctionCall] Boolean(false)
+    [4, Identifier] Boolean
+    [4, Signature] (false)
+     [5, Literal] false
+ [1, VariableDeclaration] const btrue = Boolean(true)
+  [2, Type] const
+  [2, Variable] btrue = Boolean(true)
+   [3, Identifier] btrue
+   [3, Operator] =
+   [3, FunctionCall] Boolean(true)
+    [4, Identifier] Boolean
+    [4, Signature] (true)
+     [5, Literal] true
+ [1, VariableDeclaration] const btrueString = Boolean("true")
+  [2, Type] const
+  [2, Variable] btrueString = Boolean("true")
+   [3, Identifier] btrueString
+   [3, Operator] =
+   [3, FunctionCall] Boolean("true")
+    [4, Identifier] Boolean
+    [4, Signature] ("true")
+     [5, Literal] "true"
+ [1, VariableDeclaration] const bfalseString = Boolean("false")
+  [2, Type] const
+  [2, Variable] bfalseString = Boolean("false")
+   [3, Identifier] bfalseString
+   [3, Operator] =
+   [3, FunctionCall] Boolean("false")
+    [4, Identifier] Boolean
+    [4, Signature] ("false")
+     [5, Literal] "false"
+ [1, VariableDeclaration] const bSuLin = Boolean("Su Lin")
+  [2, Type] const
+  [2, Variable] bSuLin = Boolean("Su Lin")
+   [3, Identifier] bSuLin
+   [3, Operator] =
+   [3, FunctionCall] Boolean("Su Lin")
+    [4, Identifier] Boolean
+    [4, Signature] ("Su Lin")
+     [5, Literal] "Su Lin"
+ [1, VariableDeclaration] const bArrayProto = Boolean([])
+  [2, Type] const
+  [2, Variable] bArrayProto = Boolean([])
+   [3, Identifier] bArrayProto
+   [3, Operator] =
+   [3, FunctionCall] Boolean([])
+    [4, Identifier] Boolean
+    [4, Signature] ([])
+     [5, ArrayDeclaration] []
+ [1, VariableDeclaration] const bObjProto = Boolean({})
+  [2, Type] const
+  [2, Variable] bObjProto = Boolean({})
+   [3, Identifier] bObjProto
+   [3, Operator] =
+   [3, FunctionCall] Boolean({})
+    [4, Identifier] Boolean
+    [4, Signature] ({})
+     [5, ObjectDeclaration] {}

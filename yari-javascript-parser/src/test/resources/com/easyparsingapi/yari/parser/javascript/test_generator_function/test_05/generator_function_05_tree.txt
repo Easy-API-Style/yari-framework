@@ -1,0 +1,21 @@
+[0, Javascript] const SomeObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n};
+ [1, VariableDeclaration] const SomeObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+  [2, Type] const
+  [2, Variable] SomeObj = {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+   [3, Identifier] SomeObj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n },\\n}
+    [4, MethodDeclaration] *[Symbol.iterator]() {\\n yield "a";\\n yield "b";\\n }
+     [5, ComputedValue] [Symbol.iterator]
+      [6, QualifiedExpression] Symbol.iterator
+       [7, Qualifier] Symbol.
+        [8, Identifier] Symbol
+        [8, Operator] .
+       [7, Identifier] iterator
+     [5, Signature] ()
+     [5, Procedure] {\\n yield "a";\\n yield "b";\\n }
+      [6, Yield] yield "a"
+       [7, Literal] "a"
+      [6, Yield] yield "b"
+       [7, Literal] "b"
+    [4, Empty] 

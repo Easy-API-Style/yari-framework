@@ -1,0 +1,90 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 59] [JavascriptNodeUnit]
+C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 59] [Infix]
+C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 14] [Infix]
+C>=4294967296
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 2] [Identifier]
+C
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 4] [Operator]
+>=
+---------------------------
+SourceLocation [start=line 1 column 4, end=line 1 column 14] [Literal]
+4294967296
+---------------------------
+SourceLocation [start=line 1 column 14, end=line 1 column 16] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 59] [Sequence]
+(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 44] [Assignment]
+D+=Math.trunc(C/4294967296)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+D
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 1 column 20] [Operator]
++=
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 44] [QualifiedExpression]
+Math.trunc(C/4294967296)
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 25] [Qualifier]
+Math.
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 24] [Identifier]
+Math
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 44] [FunctionCall]
+trunc(C/4294967296)
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 30] [Identifier]
+trunc
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 44] [Signature]
+(C/4294967296)
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 43] [Infix]
+C/4294967296
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Identifier]
+C
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 33] [Operator]
+/
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 43] [Literal]
+4294967296
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 51] [Assignment]
+D>>>=0
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 46] [Identifier]
+D
+---------------------------
+SourceLocation [start=line 1 column 46, end=line 1 column 50] [Operator]
+>>>=
+---------------------------
+SourceLocation [start=line 1 column 50, end=line 1 column 51] [Literal]
+0
+---------------------------
+SourceLocation [start=line 1 column 52, end=line 1 column 58] [Assignment]
+C>>>=0
+---------------------------
+SourceLocation [start=line 1 column 52, end=line 1 column 53] [Identifier]
+C
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 57] [Operator]
+>>>=
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 58] [Literal]
+0
+---------------------------

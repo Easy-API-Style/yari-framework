@@ -1,0 +1,11 @@
+[0, Javascript] myTag`That ${person} is a ${age}.`
+ [1, TagFunctionCall] myTag`That ${person} is a ${age}.`
+  [2, Identifier] myTag
+  [2, LiteralTemplate] `That ${person} is a ${age}.`
+   [3, Constant] That 
+   [3, Variable] ${person}
+    [4, Identifier] person
+   [3, Constant]  is a 
+   [3, Variable] ${age}
+    [4, Identifier] age
+   [3, Constant] .

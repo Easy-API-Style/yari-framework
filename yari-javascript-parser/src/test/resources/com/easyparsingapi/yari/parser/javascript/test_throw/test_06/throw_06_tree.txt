@@ -1,0 +1,19 @@
+[0, Javascript] throw a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+ [1, Throw] throw a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+  [2, Sequence] a=new U("AUTH_INVALID",{dbName:a}),Bg(a),a
+   [3, Assignment] a=new U("AUTH_INVALID",{dbName:a})
+    [4, Identifier] a
+    [4, Operator] =
+    [4, New] new U("AUTH_INVALID",{dbName:a})
+     [5, Identifier] U
+     [5, Signature] ("AUTH_INVALID",{dbName:a})
+      [6, Literal] "AUTH_INVALID"
+      [6, ObjectDeclaration] {dbName:a}
+       [7, FieldDeclaration] dbName:a
+        [8, Identifier] dbName
+        [8, Identifier] a
+   [3, FunctionCall] Bg(a)
+    [4, Identifier] Bg
+    [4, Signature] (a)
+     [5, Identifier] a
+   [3, Identifier] a

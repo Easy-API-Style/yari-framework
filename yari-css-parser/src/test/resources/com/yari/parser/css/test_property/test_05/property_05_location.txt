@@ -1,0 +1,90 @@
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [Css]
+div {\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 5 column 6] [RuleSet]
+div {\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 5 column 6] [Block]
+{\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 20] [Property]
+--deg: -45deg
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 12] [Identifier]
+--deg
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 20] [Identifier]
+-45deg
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 68] [Property]
+background-image: linear-gradient(abs(var(--deg)), blue, red)
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 23] [Identifier]
+background-image
+---------------------------
+SourceLocation [start=line 3 column 25, end=line 3 column 68] [Function]
+linear-gradient(abs(var(--deg)), blue, red)
+---------------------------
+SourceLocation [start=line 3 column 25, end=line 3 column 40] [Identifier]
+linear-gradient
+---------------------------
+SourceLocation [start=line 3 column 40, end=line 3 column 68] [Signature]
+(abs(var(--deg)), blue, red)
+---------------------------
+SourceLocation [start=line 3 column 41, end=line 3 column 56] [Function]
+abs(var(--deg))
+---------------------------
+SourceLocation [start=line 3 column 41, end=line 3 column 44] [Identifier]
+abs
+---------------------------
+SourceLocation [start=line 3 column 44, end=line 3 column 56] [Signature]
+(var(--deg))
+---------------------------
+SourceLocation [start=line 3 column 45, end=line 3 column 55] [Function]
+var(--deg)
+---------------------------
+SourceLocation [start=line 3 column 45, end=line 3 column 48] [Identifier]
+var
+---------------------------
+SourceLocation [start=line 3 column 48, end=line 3 column 55] [Signature]
+(--deg)
+---------------------------
+SourceLocation [start=line 3 column 49, end=line 3 column 54] [Identifier]
+--deg
+---------------------------
+SourceLocation [start=line 3 column 58, end=line 3 column 62] [Identifier]
+blue
+---------------------------
+SourceLocation [start=line 3 column 64, end=line 3 column 67] [Identifier]
+red
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 30] [Property]
+width: abs(20% - 100px)
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 12] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 30] [Function]
+abs(20% - 100px)
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 4 column 17] [Identifier]
+abs
+---------------------------
+SourceLocation [start=line 4 column 17, end=line 4 column 30] [Signature]
+(20% - 100px)
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 29] [Infix]
+20% - 100px
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 21] [Identifier]
+20%
+---------------------------
+SourceLocation [start=line 4 column 22, end=line 4 column 23] [Operator]
+-
+---------------------------
+SourceLocation [start=line 4 column 24, end=line 4 column 29] [Identifier]
+100px
+---------------------------

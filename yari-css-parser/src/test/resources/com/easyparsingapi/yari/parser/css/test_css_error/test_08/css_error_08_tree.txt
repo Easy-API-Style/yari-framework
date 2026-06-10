@@ -1,0 +1,19 @@
+[0, Css] .sb86 {\\n background: vv(;\\n font-weight: 800;\\n }\\n .sb87 {\\n font-weight: 800;\\n }
+ [1, RuleSet] .sb86 {\\n background: vv(;\\n font-weight: 800;\\n }
+  [2, ClassSelector] .sb86
+   [3, Identifier] sb86
+  [2, Block] {\\n background: vv(;\\n font-weight: 800;\\n }
+   [3, Property] background: vv
+    [4, Identifier] background
+    [4, Identifier] vv
+   [3, CssError] (;
+   [3, Property] font-weight: 800
+    [4, Identifier] font-weight
+    [4, Identifier] 800
+ [1, RuleSet] .sb87 {\\n font-weight: 800;\\n }
+  [2, ClassSelector] .sb87
+   [3, Identifier] sb87
+  [2, Block] {\\n font-weight: 800;\\n }
+   [3, Property] font-weight: 800
+    [4, Identifier] font-weight
+    [4, Identifier] 800

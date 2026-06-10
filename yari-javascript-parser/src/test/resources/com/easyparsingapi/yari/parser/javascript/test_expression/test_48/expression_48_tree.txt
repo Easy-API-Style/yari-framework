@@ -1,0 +1,17 @@
+[0, JavascriptNodeUnit] typeof Symbol==="function"&&typeof Symbol()==="symbol"
+ [1, Infix] typeof Symbol==="function"&&typeof Symbol()==="symbol"
+  [2, Infix] typeof Symbol==="function"&&typeof Symbol()
+   [3, Infix] typeof Symbol==="function"
+    [4, Prefix] typeof Symbol
+     [5, Operator] typeof
+     [5, Identifier] Symbol
+    [4, Operator] ===
+    [4, Literal] "function"
+   [3, Operator] &&
+   [3, Prefix] typeof Symbol()
+    [4, Operator] typeof
+    [4, FunctionCall] Symbol()
+     [5, Identifier] Symbol
+     [5, Signature] ()
+  [2, Operator] ===
+  [2, Literal] "symbol"

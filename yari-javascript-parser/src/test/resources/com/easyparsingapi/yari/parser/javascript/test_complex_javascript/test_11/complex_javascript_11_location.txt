@@ -1,0 +1,48 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 112] [Javascript]
+/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 112] [Ternary]
+/.*pcmag\.com$/.test(location.hostname)?"//geo.pcmag.com/loc/country.php":"//geo.ziffdavis.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 40] [QualifiedExpression]
+/.*pcmag\.com$/.test(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 17] [Qualifier]
+/.*pcmag\.com$/.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 16] [Literal]
+/.*pcmag\.com$/
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 17] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 40] [FunctionCall]
+test(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 21] [Identifier]
+test
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 1 column 40] [Signature]
+(location.hostname)
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 39] [QualifiedExpression]
+location.hostname
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 31] [Qualifier]
+location.
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 30] [Identifier]
+location
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 31] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 39] [Identifier]
+hostname
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 74] [Literal]
+"//geo.pcmag.com/loc/country.php"
+---------------------------
+SourceLocation [start=line 1 column 75, end=line 1 column 112] [Literal]
+"//geo.ziffdavis.com/loc/country.php"
+---------------------------

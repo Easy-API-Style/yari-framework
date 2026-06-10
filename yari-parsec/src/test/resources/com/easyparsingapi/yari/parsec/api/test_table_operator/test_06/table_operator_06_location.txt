@@ -1,0 +1,66 @@
+Infix [left=Identifier [value=a, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 2]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 3]], right=Infix [left=Infix [left=Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 9]], right=Parenthesis [operand=Infix [left=Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]], operator=Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]], right=Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 9, end=line 1 column 18]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 18]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 19]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 19, end=line 1 column 20]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 20]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 20]]
+a+(b*s)*(e/(f+s))*s
+---------------------------
+Identifier [value=a, sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 2]]
+a
+---------------------------
+Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 3]]
++
+---------------------------
+Infix [left=Infix [left=Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 9]], right=Parenthesis [operand=Infix [left=Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]], operator=Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]], right=Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 9, end=line 1 column 18]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 18]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 19]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 19, end=line 1 column 20]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 20]]
+(b*s)*(e/(f+s))*s
+---------------------------
+Infix [left=Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 9]], right=Parenthesis [operand=Infix [left=Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]], operator=Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]], right=Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 9, end=line 1 column 18]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 18]]
+(b*s)*(e/(f+s))
+---------------------------
+Parenthesis [operand=Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 3, end=line 1 column 8]]
+(b*s)
+---------------------------
+Infix [left=Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]], operator=Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]], sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 7]]
+b*s
+---------------------------
+Identifier [value=b, sourceLocation=SourceLocation [start=line 1 column 4, end=line 1 column 5]]
+b
+---------------------------
+Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 6]]
+*
+---------------------------
+Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 6, end=line 1 column 7]]
+s
+---------------------------
+Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 9]]
+*
+---------------------------
+Parenthesis [operand=Infix [left=Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]], operator=Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]], right=Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 9, end=line 1 column 18]]
+(e/(f+s))
+---------------------------
+Infix [left=Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]], operator=Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]], right=Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]], sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 17]]
+e/(f+s)
+---------------------------
+Identifier [value=e, sourceLocation=SourceLocation [start=line 1 column 10, end=line 1 column 11]]
+e
+---------------------------
+Identifier [value=/, sourceLocation=SourceLocation [start=line 1 column 11, end=line 1 column 12]]
+/
+---------------------------
+Parenthesis [operand=Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]]
+(f+s)
+---------------------------
+Infix [left=Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]], operator=Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]], right=Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]], sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 16]]
+f+s
+---------------------------
+Identifier [value=f, sourceLocation=SourceLocation [start=line 1 column 13, end=line 1 column 14]]
+f
+---------------------------
+Identifier [value=+, sourceLocation=SourceLocation [start=line 1 column 14, end=line 1 column 15]]
++
+---------------------------
+Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 16]]
+s
+---------------------------
+Identifier [value=*, sourceLocation=SourceLocation [start=line 1 column 18, end=line 1 column 19]]
+*
+---------------------------
+Identifier [value=s, sourceLocation=SourceLocation [start=line 1 column 19, end=line 1 column 20]]
+s
+---------------------------

@@ -1,0 +1,37 @@
+[0, Xml] <test>\\n <script>\\n function hello() {\\n return 'hello'\\n }\\n <div>ahh</div>\\n\\n function hi() {\\n return 'hi'\\n }\\n\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+ [1, Tag] <test>\\n <script>\\n function hello() {\\n return 'hello'\\n }\\n <div>ahh</div>\\n\\n function hi() {\\n return 'hi'\\n }\\n\\n </script>\\n <div>\\n aaaa\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <script>\\n function hello() {\\n return 'hello'\\n }\\n <div>ahh</div>\\n\\n function hi() {\\n return 'hi'\\n }\\n\\n </script>\\n <div>\\n aaaa\\n </div>
+   [3, Tag] <script>\\n function hello() {\\n return 'hello'\\n }\\n <div>ahh</div>\\n\\n function hi() {\\n return 'hi'\\n }\\n\\n </script>
+    [4, TagHead] <script>
+     [5, TagName] script
+      [6, Name] script
+    [4, TagBody] function hello() {\\n return 'hello'\\n }\\n <div>ahh</div>\\n\\n function hi() {\\n return 'hi'\\n }
+     [5, Text] function hello() {\\n return 'hello'\\n }
+     [5, Tag] <div>ahh</div>
+      [6, TagHead] <div>
+       [7, TagName] div
+        [8, Name] div
+      [6, TagBody] ahh
+       [7, Text] ahh
+      [6, TagFoot] </div>
+       [7, TagName] div
+        [8, Name] div
+     [5, Text] function hi() {\\n return 'hi'\\n }
+    [4, TagFoot] </script>
+     [5, TagName] script
+      [6, Name] script
+   [3, Tag] <div>\\n aaaa\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] aaaa
+     [5, Text] aaaa
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

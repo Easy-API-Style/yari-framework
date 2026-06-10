@@ -1,0 +1,10 @@
+[0, Css] div > span {\\n background-color: yellow;\\n }
+ [1, RuleSet] div > span {\\n background-color: yellow;\\n }
+  [2, CombinatorSelector] div > span
+   [3, ElementSelector] div
+   [3, Operator] >
+   [3, ElementSelector] span
+  [2, Block] {\\n background-color: yellow;\\n }
+   [3, Property] background-color: yellow
+    [4, Identifier] background-color
+    [4, Identifier] yellow

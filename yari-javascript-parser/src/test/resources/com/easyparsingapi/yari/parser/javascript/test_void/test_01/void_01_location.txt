@@ -1,0 +1,162 @@
+SourceLocation [start=line 1 column 1, end=line 12 column 6] [Javascript]
+void (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})();
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 12 column 5] [Prefix]
+void (function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [Operator]
+void
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 12 column 5] [InvokedFunction]
+(function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})()
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 12 column 3] [Definition]
+(function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n})
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 12 column 2] [FunctionDeclaration]
+function iife() {\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n}
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 20] [Identifier]
+iife
+---------------------------
+SourceLocation [start=line 1 column 20, end=line 1 column 22] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 12 column 2] [Procedure]
+{\\n var toto = function () {};\\n var machin = function () {};\\n var truc = function () {\\n toto();\\n machin();\\n };\\n var bidule = function () {};\\n\\n truc();\\n bidule();\\n}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 28] [VariableDeclaration]
+var toto = function () {}
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 2 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 28] [Variable]
+toto = function () {}
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 11] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 2 column 14, end=line 2 column 28] [FunctionDeclaration]
+function () {}
+---------------------------
+SourceLocation [start=line 2 column 23, end=line 2 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 2 column 26, end=line 2 column 28] [Procedure]
+{}
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 30] [VariableDeclaration]
+var machin = function () {}
+---------------------------
+SourceLocation [start=line 3 column 3, end=line 3 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 30] [Variable]
+machin = function () {}
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 3 column 13] [Identifier]
+machin
+---------------------------
+SourceLocation [start=line 3 column 14, end=line 3 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 30] [FunctionDeclaration]
+function () {}
+---------------------------
+SourceLocation [start=line 3 column 25, end=line 3 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 3 column 28, end=line 3 column 30] [Procedure]
+{}
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 7 column 4] [VariableDeclaration]
+var truc = function () {\\n toto();\\n machin();\\n }
+---------------------------
+SourceLocation [start=line 4 column 3, end=line 4 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 7 column 4] [Variable]
+truc = function () {\\n toto();\\n machin();\\n }
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 11] [Identifier]
+truc
+---------------------------
+SourceLocation [start=line 4 column 12, end=line 4 column 13] [Operator]
+=
+---------------------------
+SourceLocation [start=line 4 column 14, end=line 7 column 4] [FunctionDeclaration]
+function () {\\n toto();\\n machin();\\n }
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 25] [Signature]
+()
+---------------------------
+SourceLocation [start=line 4 column 26, end=line 7 column 4] [Procedure]
+{\\n toto();\\n machin();\\n }
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 11] [FunctionCall]
+toto()
+---------------------------
+SourceLocation [start=line 5 column 5, end=line 5 column 9] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 11] [Signature]
+()
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 13] [FunctionCall]
+machin()
+---------------------------
+SourceLocation [start=line 6 column 5, end=line 6 column 11] [Identifier]
+machin
+---------------------------
+SourceLocation [start=line 6 column 11, end=line 6 column 13] [Signature]
+()
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 30] [VariableDeclaration]
+var bidule = function () {}
+---------------------------
+SourceLocation [start=line 8 column 3, end=line 8 column 6] [Type]
+var
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 30] [Variable]
+bidule = function () {}
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 13] [Identifier]
+bidule
+---------------------------
+SourceLocation [start=line 8 column 14, end=line 8 column 15] [Operator]
+=
+---------------------------
+SourceLocation [start=line 8 column 16, end=line 8 column 30] [FunctionDeclaration]
+function () {}
+---------------------------
+SourceLocation [start=line 8 column 25, end=line 8 column 27] [Signature]
+()
+---------------------------
+SourceLocation [start=line 8 column 28, end=line 8 column 30] [Procedure]
+{}
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 10 column 9] [FunctionCall]
+truc()
+---------------------------
+SourceLocation [start=line 10 column 3, end=line 10 column 7] [Identifier]
+truc
+---------------------------
+SourceLocation [start=line 10 column 7, end=line 10 column 9] [Signature]
+()
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 11] [FunctionCall]
+bidule()
+---------------------------
+SourceLocation [start=line 11 column 3, end=line 11 column 9] [Identifier]
+bidule
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 11] [Signature]
+()
+---------------------------
+SourceLocation [start=line 12 column 3, end=line 12 column 5] [Signature]
+()
+---------------------------

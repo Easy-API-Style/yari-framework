@@ -1,0 +1,18 @@
+[0, Javascript] do {\\n var v_1\\n if (toto) {\\n break\\n }\\n }\\n while (bibi !== 'roro')
+ [1, DoWhile] do {\\n var v_1\\n if (toto) {\\n break\\n }\\n }\\n while (bibi !== 'roro')
+  [2, Procedure] {\\n var v_1\\n if (toto) {\\n break\\n }\\n }
+   [3, VariableDeclaration] var v_1
+    [4, Type] var
+    [4, Variable] v_1
+     [5, Identifier] v_1
+   [3, If] if (toto) {\\n break\\n }
+    [4, IfBlock] if (toto) {\\n break\\n }
+     [5, Condition] (toto)
+      [6, Identifier] toto
+     [5, Procedure] {\\n break\\n }
+      [6, Break] break
+  [2, Condition] (bibi !== 'roro')
+   [3, Infix] bibi !== 'roro'
+    [4, Identifier] bibi
+    [4, Operator] !==
+    [4, Literal] 'roro'

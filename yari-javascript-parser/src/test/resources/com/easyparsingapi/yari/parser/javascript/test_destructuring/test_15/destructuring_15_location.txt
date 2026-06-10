@@ -1,0 +1,36 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 15] [Javascript]
+[a, , b] = f()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 15] [Assignment]
+[a, , b] = f()
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 9] [DestructuringArray]
+[a, , b]
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Value]
+a
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 3] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 5] [Empty]
+
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Value]
+b
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 11] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 15] [FunctionCall]
+f()
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Identifier]
+f
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 15] [Signature]
+()
+---------------------------

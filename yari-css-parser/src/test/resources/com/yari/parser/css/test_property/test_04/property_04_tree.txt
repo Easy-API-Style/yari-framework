@@ -1,0 +1,124 @@
+[0, Css] .item {\\n color: rgb(34 12 64 / 60%);\\n /* Valeurs absolues */\\n color: rgb(255 255 255);\\n color: rgb(255 255 255 / 50%);\\n\\n /* Valeurs relatives */\\n color: rgb(from green r g b / 0.5);\\n color: rgb(from #123456 calc(r + 40) calc(g + 40) b);\\n color: rgb(from hwb(120deg 10% 20%) r g calc(b + 200));\\n\\n /* Alias 'rgba()' hérité */\\n color: rgba(0 255 255);\\n\\n /* Format hérité */\\n color: rgb(0, 255, 255);\\n color: rgb(0, 255, 255, 50%);\\n }
+ [1, RuleSet] .item {\\n color: rgb(34 12 64 / 60%);\\n /* Valeurs absolues */\\n color: rgb(255 255 255);\\n color: rgb(255 255 255 / 50%);\\n\\n /* Valeurs relatives */\\n color: rgb(from green r g b / 0.5);\\n color: rgb(from #123456 calc(r + 40) calc(g + 40) b);\\n color: rgb(from hwb(120deg 10% 20%) r g calc(b + 200));\\n\\n /* Alias 'rgba()' hérité */\\n color: rgba(0 255 255);\\n\\n /* Format hérité */\\n color: rgb(0, 255, 255);\\n color: rgb(0, 255, 255, 50%);\\n }
+  [2, ClassSelector] .item
+   [3, Identifier] item
+  [2, Block] {\\n color: rgb(34 12 64 / 60%);\\n /* Valeurs absolues */\\n color: rgb(255 255 255);\\n color: rgb(255 255 255 / 50%);\\n\\n /* Valeurs relatives */\\n color: rgb(from green r g b / 0.5);\\n color: rgb(from #123456 calc(r + 40) calc(g + 40) b);\\n color: rgb(from hwb(120deg 10% 20%) r g calc(b + 200));\\n\\n /* Alias 'rgba()' hérité */\\n color: rgba(0 255 255);\\n\\n /* Format hérité */\\n color: rgb(0, 255, 255);\\n color: rgb(0, 255, 255, 50%);\\n }
+   [3, Property] color: rgb(34 12 64 / 60%)
+    [4, Identifier] color
+    [4, Function] rgb(34 12 64 / 60%)
+     [5, Identifier] rgb
+     [5, Signature] (34 12 64 / 60%)
+      [6, Infix] 34 12 64 / 60%
+       [7, ListValue] 34 12 64
+        [8, Identifier] 34
+        [8, Identifier] 12
+        [8, Identifier] 64
+       [7, Operator] /
+       [7, Identifier] 60%
+   [3, Property] color: rgb(255 255 255)
+    [4, Identifier] color
+    [4, Function] rgb(255 255 255)
+     [5, Identifier] rgb
+     [5, Signature] (255 255 255)
+      [6, ListValue] 255 255 255
+       [7, Identifier] 255
+       [7, Identifier] 255
+       [7, Identifier] 255
+   [3, Property] color: rgb(255 255 255 / 50%)
+    [4, Identifier] color
+    [4, Function] rgb(255 255 255 / 50%)
+     [5, Identifier] rgb
+     [5, Signature] (255 255 255 / 50%)
+      [6, Infix] 255 255 255 / 50%
+       [7, ListValue] 255 255 255
+        [8, Identifier] 255
+        [8, Identifier] 255
+        [8, Identifier] 255
+       [7, Operator] /
+       [7, Identifier] 50%
+   [3, Property] color: rgb(from green r g b / 0.5)
+    [4, Identifier] color
+    [4, Function] rgb(from green r g b / 0.5)
+     [5, Identifier] rgb
+     [5, Signature] (from green r g b / 0.5)
+      [6, Infix] from green r g b / 0.5
+       [7, ListValue] from green r g b
+        [8, Identifier] from
+        [8, Identifier] green
+        [8, Identifier] r
+        [8, Identifier] g
+        [8, Identifier] b
+       [7, Operator] /
+       [7, Identifier] 0.5
+   [3, Property] color: rgb(from #123456 calc(r + 40) calc(g + 40) b)
+    [4, Identifier] color
+    [4, Function] rgb(from #123456 calc(r + 40) calc(g + 40) b)
+     [5, Identifier] rgb
+     [5, Signature] (from #123456 calc(r + 40) calc(g + 40) b)
+      [6, ListValue] from #123456 calc(r + 40) calc(g + 40) b
+       [7, Identifier] from
+       [7, Literal] #123456
+       [7, Function] calc(r + 40)
+        [8, Identifier] calc
+        [8, Signature] (r + 40)
+         [9, Infix] r + 40
+          [10, Identifier] r
+          [10, Operator] +
+          [10, Identifier] 40
+       [7, Function] calc(g + 40)
+        [8, Identifier] calc
+        [8, Signature] (g + 40)
+         [9, Infix] g + 40
+          [10, Identifier] g
+          [10, Operator] +
+          [10, Identifier] 40
+       [7, Identifier] b
+   [3, Property] color: rgb(from hwb(120deg 10% 20%) r g calc(b + 200))
+    [4, Identifier] color
+    [4, Function] rgb(from hwb(120deg 10% 20%) r g calc(b + 200))
+     [5, Identifier] rgb
+     [5, Signature] (from hwb(120deg 10% 20%) r g calc(b + 200))
+      [6, ListValue] from hwb(120deg 10% 20%) r g calc(b + 200)
+       [7, Identifier] from
+       [7, Function] hwb(120deg 10% 20%)
+        [8, Identifier] hwb
+        [8, Signature] (120deg 10% 20%)
+         [9, ListValue] 120deg 10% 20%
+          [10, Identifier] 120deg
+          [10, Identifier] 10%
+          [10, Identifier] 20%
+       [7, Identifier] r
+       [7, Identifier] g
+       [7, Function] calc(b + 200)
+        [8, Identifier] calc
+        [8, Signature] (b + 200)
+         [9, Infix] b + 200
+          [10, Identifier] b
+          [10, Operator] +
+          [10, Identifier] 200
+   [3, Property] color: rgba(0 255 255)
+    [4, Identifier] color
+    [4, Function] rgba(0 255 255)
+     [5, Identifier] rgba
+     [5, Signature] (0 255 255)
+      [6, ListValue] 0 255 255
+       [7, Identifier] 0
+       [7, Identifier] 255
+       [7, Identifier] 255
+   [3, Property] color: rgb(0, 255, 255)
+    [4, Identifier] color
+    [4, Function] rgb(0, 255, 255)
+     [5, Identifier] rgb
+     [5, Signature] (0, 255, 255)
+      [6, Identifier] 0
+      [6, Identifier] 255
+      [6, Identifier] 255
+   [3, Property] color: rgb(0, 255, 255, 50%)
+    [4, Identifier] color
+    [4, Function] rgb(0, 255, 255, 50%)
+     [5, Identifier] rgb
+     [5, Signature] (0, 255, 255, 50%)
+      [6, Identifier] 0
+      [6, Identifier] 255
+      [6, Identifier] 255
+      [6, Identifier] 50%

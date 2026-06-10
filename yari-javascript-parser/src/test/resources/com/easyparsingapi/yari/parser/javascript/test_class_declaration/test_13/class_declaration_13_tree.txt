@@ -1,0 +1,18 @@
+[0, Javascript] class ValidationError extends Error {\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }\\n}
+ [1, ClassDeclaration] class ValidationError extends Error {\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }\\n}
+  [2, Identifier] ValidationError
+  [2, Identifier] extends Error
+  [2, ClassMethodDeclaration] printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }
+   [3, Identifier] printCustomerMessage
+   [3, Signature] ()
+   [3, Procedure] {\\n return `Validation failed :-( (details: ${this.message})`;\\n }
+    [4, Return] return `Validation failed :-( (details: ${this.message})`
+     [5, LiteralTemplate] `Validation failed :-( (details: ${this.message})`
+      [6, Constant] Validation failed :-( (details: 
+      [6, Variable] ${this.message}
+       [7, QualifiedExpression] this.message
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] message
+      [6, Constant] )

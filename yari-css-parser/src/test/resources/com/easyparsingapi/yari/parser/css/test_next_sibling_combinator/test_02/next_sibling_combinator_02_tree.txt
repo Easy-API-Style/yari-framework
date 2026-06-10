@@ -1,0 +1,17 @@
+[0, Css] li:first-of-type + li {\\n color: red;\\n font-weight: bold;\\n }
+ [1, RuleSet] li:first-of-type + li {\\n color: red;\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] li:first-of-type + li
+   [3, CombinatorSelector] li:first-of-type
+    [4, ElementSelector] li
+    [4, Operator] 
+    [4, PseudoClassSelector] :first-of-type
+     [5, Identifier] first-of-type
+   [3, Operator] +
+   [3, ElementSelector] li
+  [2, Block] {\\n color: red;\\n font-weight: bold;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold

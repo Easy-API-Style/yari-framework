@@ -1,0 +1,183 @@
+SourceLocation [start=line 2 column 9, end=line 2 column 31] [Css]
+/* calc(expression) */
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 45] [Css]
+/* Expression with a CSS function */
+---------------------------
+SourceLocation [start=line 6 column 9, end=line 6 column 47] [Css]
+/* Expression containing a variable */
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 64] [Css]
+/* Expression with color channels in relative colors */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 10 column 6] [Css]
+div {\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 10 column 6] [RuleSet]
+div {\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 10 column 6] [Block]
+{\\n /* calc(expression) */\\n transform: calc(100% - 80px);\\n /* Expression with a CSS function */\\n transform: calc(100px * sin(pi / 2));\\n /* Expression containing a variable */\\n transform: calc(var(--hue) + 180);\\n /* Expression with color channels in relative colors */\\n transform: lch(from aquamarine l c calc(h + 180));\\n }
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 37] [Property]
+transform: calc(100% - 80px)
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 18] [Identifier]
+transform
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 37] [Function]
+calc(100% - 80px)
+---------------------------
+SourceLocation [start=line 3 column 20, end=line 3 column 24] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 3 column 24, end=line 3 column 37] [Signature]
+(100% - 80px)
+---------------------------
+SourceLocation [start=line 3 column 25, end=line 3 column 36] [Infix]
+100% - 80px
+---------------------------
+SourceLocation [start=line 3 column 25, end=line 3 column 29] [Identifier]
+100%
+---------------------------
+SourceLocation [start=line 3 column 30, end=line 3 column 31] [Operator]
+-
+---------------------------
+SourceLocation [start=line 3 column 32, end=line 3 column 36] [Identifier]
+80px
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 45] [Property]
+transform: calc(100px * sin(pi / 2))
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 18] [Identifier]
+transform
+---------------------------
+SourceLocation [start=line 5 column 20, end=line 5 column 45] [Function]
+calc(100px * sin(pi / 2))
+---------------------------
+SourceLocation [start=line 5 column 20, end=line 5 column 24] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 5 column 24, end=line 5 column 45] [Signature]
+(100px * sin(pi / 2))
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 44] [Infix]
+100px * sin(pi / 2)
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 30] [Identifier]
+100px
+---------------------------
+SourceLocation [start=line 5 column 31, end=line 5 column 32] [Operator]
+*
+---------------------------
+SourceLocation [start=line 5 column 33, end=line 5 column 44] [Function]
+sin(pi / 2)
+---------------------------
+SourceLocation [start=line 5 column 33, end=line 5 column 36] [Identifier]
+sin
+---------------------------
+SourceLocation [start=line 5 column 36, end=line 5 column 44] [Signature]
+(pi / 2)
+---------------------------
+SourceLocation [start=line 5 column 37, end=line 5 column 43] [Infix]
+pi / 2
+---------------------------
+SourceLocation [start=line 5 column 37, end=line 5 column 39] [Identifier]
+pi
+---------------------------
+SourceLocation [start=line 5 column 40, end=line 5 column 41] [Operator]
+/
+---------------------------
+SourceLocation [start=line 5 column 42, end=line 5 column 43] [Identifier]
+2
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 42] [Property]
+transform: calc(var(--hue) + 180)
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 18] [Identifier]
+transform
+---------------------------
+SourceLocation [start=line 7 column 20, end=line 7 column 42] [Function]
+calc(var(--hue) + 180)
+---------------------------
+SourceLocation [start=line 7 column 20, end=line 7 column 24] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 7 column 24, end=line 7 column 42] [Signature]
+(var(--hue) + 180)
+---------------------------
+SourceLocation [start=line 7 column 25, end=line 7 column 41] [Infix]
+var(--hue) + 180
+---------------------------
+SourceLocation [start=line 7 column 25, end=line 7 column 35] [Function]
+var(--hue)
+---------------------------
+SourceLocation [start=line 7 column 25, end=line 7 column 28] [Identifier]
+var
+---------------------------
+SourceLocation [start=line 7 column 28, end=line 7 column 35] [Signature]
+(--hue)
+---------------------------
+SourceLocation [start=line 7 column 29, end=line 7 column 34] [Identifier]
+--hue
+---------------------------
+SourceLocation [start=line 7 column 36, end=line 7 column 37] [Operator]
++
+---------------------------
+SourceLocation [start=line 7 column 38, end=line 7 column 41] [Identifier]
+180
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 58] [Property]
+transform: lch(from aquamarine l c calc(h + 180))
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 18] [Identifier]
+transform
+---------------------------
+SourceLocation [start=line 9 column 20, end=line 9 column 58] [Function]
+lch(from aquamarine l c calc(h + 180))
+---------------------------
+SourceLocation [start=line 9 column 20, end=line 9 column 23] [Identifier]
+lch
+---------------------------
+SourceLocation [start=line 9 column 23, end=line 9 column 58] [Signature]
+(from aquamarine l c calc(h + 180))
+---------------------------
+SourceLocation [start=line 9 column 24, end=line 9 column 57] [ListValue]
+from aquamarine l c calc(h + 180)
+---------------------------
+SourceLocation [start=line 9 column 24, end=line 9 column 28] [Identifier]
+from
+---------------------------
+SourceLocation [start=line 9 column 29, end=line 9 column 39] [Identifier]
+aquamarine
+---------------------------
+SourceLocation [start=line 9 column 40, end=line 9 column 41] [Identifier]
+l
+---------------------------
+SourceLocation [start=line 9 column 42, end=line 9 column 43] [Identifier]
+c
+---------------------------
+SourceLocation [start=line 9 column 44, end=line 9 column 57] [Function]
+calc(h + 180)
+---------------------------
+SourceLocation [start=line 9 column 44, end=line 9 column 48] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 9 column 48, end=line 9 column 57] [Signature]
+(h + 180)
+---------------------------
+SourceLocation [start=line 9 column 49, end=line 9 column 56] [Infix]
+h + 180
+---------------------------
+SourceLocation [start=line 9 column 49, end=line 9 column 50] [Identifier]
+h
+---------------------------
+SourceLocation [start=line 9 column 51, end=line 9 column 52] [Operator]
++
+---------------------------
+SourceLocation [start=line 9 column 53, end=line 9 column 56] [Identifier]
+180
+---------------------------

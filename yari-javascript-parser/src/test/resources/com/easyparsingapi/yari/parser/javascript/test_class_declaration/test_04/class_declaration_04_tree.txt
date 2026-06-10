@@ -1,0 +1,18 @@
+[0, Javascript] class A { static field = 'Inner y'; static { var y = this.field; }}
+ [1, ClassDeclaration] class A { static field = 'Inner y'; static { var y = this.field; }}
+  [2, Identifier] A
+  [2, ClassFieldDeclaration] static field = 'Inner y'
+   [3, Identifier] field
+   [3, Literal] = 'Inner y'
+  [2, StaticProcedure] static { var y = this.field; }
+   [3, Procedure] { var y = this.field; }
+    [4, VariableDeclaration] var y = this.field
+     [5, Type] var
+     [5, Variable] y = this.field
+      [6, Identifier] y
+      [6, Operator] =
+      [6, QualifiedExpression] this.field
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] field

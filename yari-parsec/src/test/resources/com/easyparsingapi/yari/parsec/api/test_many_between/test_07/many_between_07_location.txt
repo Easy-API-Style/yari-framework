@@ -1,0 +1,21 @@
+Block [elements=[Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 4]], Error [message=null, tokens=[11], sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 7]], Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 10]], Block [elements=[Identifier [value=11, sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 14]], Identifier [value=22, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 17]]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]]], sourceLocation=SourceLocation [start=line 1 column 1, end=line 1 column 17]]
+(aa 11 cc) 11 22
+---------------------------
+Identifier [value=aa, sourceLocation=SourceLocation [start=line 1 column 2, end=line 1 column 4]]
+aa
+---------------------------
+Error [message=null, tokens=[11], sourceLocation=SourceLocation [start=line 1 column 5, end=line 1 column 7]]
+11
+---------------------------
+Identifier [value=cc, sourceLocation=SourceLocation [start=line 1 column 8, end=line 1 column 10]]
+cc
+---------------------------
+Block [elements=[Identifier [value=11, sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 14]], Identifier [value=22, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 17]]], sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 17]]
+11 22
+---------------------------
+Identifier [value=11, sourceLocation=SourceLocation [start=line 1 column 12, end=line 1 column 14]]
+11
+---------------------------
+Identifier [value=22, sourceLocation=SourceLocation [start=line 1 column 15, end=line 1 column 17]]
+22
+---------------------------

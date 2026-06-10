@@ -1,0 +1,10 @@
+[0, Css] img + p {\\n font-weight: bold;\\n }
+ [1, RuleSet] img + p {\\n font-weight: bold;\\n }
+  [2, CombinatorSelector] img + p
+   [3, ElementSelector] img
+   [3, Operator] +
+   [3, ElementSelector] p
+  [2, Block] {\\n font-weight: bold;\\n }
+   [3, Property] font-weight: bold
+    [4, Identifier] font-weight
+    [4, Identifier] bold

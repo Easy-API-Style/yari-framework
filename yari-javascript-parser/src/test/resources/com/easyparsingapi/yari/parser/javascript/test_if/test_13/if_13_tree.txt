@@ -1,0 +1,19 @@
+[0, Javascript] if (a > 0) \\n result = "positive";\\nelse \\n result = "NOT positive";
+ [1, If] if (a > 0) \\n result = "positive";\\nelse \\n result = "NOT positive";
+  [2, IfBlock] if (a > 0) \\n result = "positive";
+   [3, Condition] (a > 0)
+    [4, Infix] a > 0
+     [5, Identifier] a
+     [5, Operator] >
+     [5, Literal] 0
+   [3, Procedure] result = "positive";
+    [4, Assignment] result = "positive"
+     [5, Identifier] result
+     [5, Operator] =
+     [5, Literal] "positive"
+  [2, ElseBlock] else \\n result = "NOT positive";
+   [3, Procedure] result = "NOT positive";
+    [4, Assignment] result = "NOT positive"
+     [5, Identifier] result
+     [5, Operator] =
+     [5, Literal] "NOT positive"

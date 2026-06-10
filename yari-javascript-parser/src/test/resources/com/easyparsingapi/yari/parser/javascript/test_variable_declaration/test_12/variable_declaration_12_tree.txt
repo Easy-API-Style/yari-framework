@@ -1,0 +1,49 @@
+[0, Javascript] var mustCancel = function mustCancel(value) {\\n if (canceled) {\\n return canceled;\\n }\\n canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null;\\n return canceled;\\n };
+ [1, VariableDeclaration] var mustCancel = function mustCancel(value) {\\n if (canceled) {\\n return canceled;\\n }\\n canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null;\\n return canceled;\\n }
+  [2, Type] var
+  [2, Variable] mustCancel = function mustCancel(value) {\\n if (canceled) {\\n return canceled;\\n }\\n canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null;\\n return canceled;\\n }
+   [3, Identifier] mustCancel
+   [3, Operator] =
+   [3, FunctionDeclaration] function mustCancel(value) {\\n if (canceled) {\\n return canceled;\\n }\\n canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null;\\n return canceled;\\n }
+    [4, Identifier] mustCancel
+    [4, Signature] (value)
+     [5, Identifier] value
+    [4, Procedure] {\\n if (canceled) {\\n return canceled;\\n }\\n canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null;\\n return canceled;\\n }
+     [5, If] if (canceled) {\\n return canceled;\\n }
+      [6, IfBlock] if (canceled) {\\n return canceled;\\n }
+       [7, Condition] (canceled)
+        [8, Identifier] canceled
+       [7, Procedure] {\\n return canceled;\\n }
+        [8, Return] return canceled
+         [9, Identifier] canceled
+     [5, Assignment] canceled =\\n value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null
+      [6, Identifier] canceled
+      [6, Operator] =
+      [6, Infix] value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value !== null
+       [7, Infix] value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue &&\\n value
+        [8, Infix] value !== undefined &&\\n constantValue !== undefined &&\\n typeof value !== typeof constantValue
+         [9, Infix] value !== undefined &&\\n constantValue !== undefined &&\\n typeof value
+          [10, Infix] value !== undefined &&\\n constantValue !== undefined
+           [11, Infix] value !== undefined &&\\n constantValue
+            [12, Infix] value !== undefined
+             [13, Identifier] value
+             [13, Operator] !==
+             [13, Undefined] undefined
+            [12, Operator] &&
+            [12, Identifier] constantValue
+           [11, Operator] !==
+           [11, Undefined] undefined
+          [10, Operator] &&
+          [10, Prefix] typeof value
+           [11, Operator] typeof
+           [11, Identifier] value
+         [9, Operator] !==
+         [9, Prefix] typeof constantValue
+          [10, Operator] typeof
+          [10, Identifier] constantValue
+        [8, Operator] &&
+        [8, Identifier] value
+       [7, Operator] !==
+       [7, Null] null
+     [5, Return] return canceled
+      [6, Identifier] canceled

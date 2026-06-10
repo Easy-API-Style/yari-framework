@@ -1,0 +1,32 @@
+[0, Xml] <test>\\n <title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>\\n </test>
+ [1, Tag] <test>\\n <title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <title att_1="11" att_2 att_3='33'/>\\n <div>\\n aaaaa\\n </div>
+   [3, TagEmpty] <title att_1="11" att_2 att_3='33'/>
+    [4, TagName] title
+     [5, Name] title
+    [4, TagAttribute] att_1="11"
+     [5, Name] att_1
+      [6, Name] att_1
+     [5, Value] "11"
+    [4, TagAttribute] att_2
+     [5, Name] att_2
+      [6, Name] att_2
+    [4, TagAttribute] att_3='33'
+     [5, Name] att_3
+      [6, Name] att_3
+     [5, Value] '33'
+   [3, Tag] <div>\\n aaaaa\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] aaaaa
+     [5, Text] aaaaa
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

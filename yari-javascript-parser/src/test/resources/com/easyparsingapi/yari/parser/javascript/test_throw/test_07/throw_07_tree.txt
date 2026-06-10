@@ -1,0 +1,16 @@
+[0, Javascript] throw Error("Ae`"+_.Ae(a))
+ [1, Throw] throw Error("Ae`"+_.Ae(a))
+  [2, FunctionCall] Error("Ae`"+_.Ae(a))
+   [3, Identifier] Error
+   [3, Signature] ("Ae`"+_.Ae(a))
+    [4, Infix] "Ae`"+_.Ae(a)
+     [5, Literal] "Ae`"
+     [5, Operator] +
+     [5, QualifiedExpression] _.Ae(a)
+      [6, Qualifier] _.
+       [7, Identifier] _
+       [7, Operator] .
+      [6, FunctionCall] Ae(a)
+       [7, Identifier] Ae
+       [7, Signature] (a)
+        [8, Identifier] a

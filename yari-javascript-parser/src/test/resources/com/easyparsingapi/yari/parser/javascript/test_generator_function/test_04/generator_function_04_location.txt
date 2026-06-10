@@ -1,0 +1,48 @@
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [Javascript]
+class Foo {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 6 column 2] [ClassDeclaration]
+class Foo {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 10] [Identifier]
+Foo
+---------------------------
+SourceLocation [start=line 2 column 3, end=line 5 column 4] [ClassMethodDeclaration]
+*[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }
+---------------------------
+SourceLocation [start=line 2 column 4, end=line 2 column 21] [ComputedValue]
+[Symbol.iterator]
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 20] [QualifiedExpression]
+Symbol.iterator
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 12] [Qualifier]
+Symbol.
+---------------------------
+SourceLocation [start=line 2 column 5, end=line 2 column 11] [Identifier]
+Symbol
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 12] [Operator]
+.
+---------------------------
+SourceLocation [start=line 2 column 12, end=line 2 column 20] [Identifier]
+iterator
+---------------------------
+SourceLocation [start=line 2 column 21, end=line 2 column 23] [Signature]
+()
+---------------------------
+SourceLocation [start=line 2 column 24, end=line 5 column 4] [Procedure]
+{\\n yield 1;\\n yield 2;\\n }
+---------------------------
+SourceLocation [start=line 3 column 5, end=line 3 column 12] [Yield]
+yield 1
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 12] [Literal]
+1
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 12] [Yield]
+yield 2
+---------------------------
+SourceLocation [start=line 4 column 11, end=line 4 column 12] [Literal]
+2
+---------------------------

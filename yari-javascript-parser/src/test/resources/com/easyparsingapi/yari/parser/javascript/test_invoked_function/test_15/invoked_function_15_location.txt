@@ -1,0 +1,156 @@
+SourceLocation [start=line 1 column 50, end=line 1 column 69] [Javascript]
+// propriété privée
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 41] [Javascript]
+// méthodes publiques
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 3 column 251] [Javascript]
+var compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })();
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 3 column 250] [VariableDeclaration]
+var compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 5] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 3 column 250] [Variable]
+compteur = (function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 14] [Identifier]
+compteur
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 3 column 250] [InvokedFunction]
+(function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })()
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 3 column 248] [Definition]
+(function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; })
+---------------------------
+SourceLocation [start=line 1 column 18, end=line 3 column 247] [FunctionDeclaration]
+function () { var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; }
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 29] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 3 column 247] [Procedure]
+{ var i = 0; // propriété privée\\n return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }; }
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 48] [VariableDeclaration]
+var i = 0
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 42] [Type]
+var
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 48] [Variable]
+i = 0
+---------------------------
+SourceLocation [start=line 1 column 43, end=line 1 column 44] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 45, end=line 1 column 46] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 48] [Literal]
+0
+---------------------------
+SourceLocation [start=line 2 column 9, end=line 3 column 241] [Return]
+return { // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }
+---------------------------
+SourceLocation [start=line 2 column 16, end=line 3 column 241] [ObjectDeclaration]
+{ // méthodes publiques\\n obtenir: function () { alert(i); }, mettre: function (valeur) { i = valeur; }, incrementer: function () { alert(++i); } }
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 73] [FieldDeclaration]
+obtenir: function () { alert(i); }
+---------------------------
+SourceLocation [start=line 3 column 13, end=line 3 column 20] [Identifier]
+obtenir
+---------------------------
+SourceLocation [start=line 3 column 22, end=line 3 column 73] [FunctionDeclaration]
+function () { alert(i); }
+---------------------------
+SourceLocation [start=line 3 column 31, end=line 3 column 33] [Signature]
+()
+---------------------------
+SourceLocation [start=line 3 column 34, end=line 3 column 73] [Procedure]
+{ alert(i); }
+---------------------------
+SourceLocation [start=line 3 column 51, end=line 3 column 59] [FunctionCall]
+alert(i)
+---------------------------
+SourceLocation [start=line 3 column 51, end=line 3 column 56] [Identifier]
+alert
+---------------------------
+SourceLocation [start=line 3 column 56, end=line 3 column 59] [Signature]
+(i)
+---------------------------
+SourceLocation [start=line 3 column 57, end=line 3 column 58] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 3 column 86, end=line 3 column 153] [FieldDeclaration]
+mettre: function (valeur) { i = valeur; }
+---------------------------
+SourceLocation [start=line 3 column 86, end=line 3 column 92] [Identifier]
+mettre
+---------------------------
+SourceLocation [start=line 3 column 94, end=line 3 column 153] [FunctionDeclaration]
+function (valeur) { i = valeur; }
+---------------------------
+SourceLocation [start=line 3 column 103, end=line 3 column 111] [Signature]
+(valeur)
+---------------------------
+SourceLocation [start=line 3 column 104, end=line 3 column 110] [Identifier]
+valeur
+---------------------------
+SourceLocation [start=line 3 column 112, end=line 3 column 153] [Procedure]
+{ i = valeur; }
+---------------------------
+SourceLocation [start=line 3 column 129, end=line 3 column 139] [Assignment]
+i = valeur
+---------------------------
+SourceLocation [start=line 3 column 129, end=line 3 column 130] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 3 column 131, end=line 3 column 132] [Operator]
+=
+---------------------------
+SourceLocation [start=line 3 column 133, end=line 3 column 139] [Identifier]
+valeur
+---------------------------
+SourceLocation [start=line 3 column 166, end=line 3 column 232] [FieldDeclaration]
+incrementer: function () { alert(++i); }
+---------------------------
+SourceLocation [start=line 3 column 166, end=line 3 column 177] [Identifier]
+incrementer
+---------------------------
+SourceLocation [start=line 3 column 179, end=line 3 column 232] [FunctionDeclaration]
+function () { alert(++i); }
+---------------------------
+SourceLocation [start=line 3 column 188, end=line 3 column 190] [Signature]
+()
+---------------------------
+SourceLocation [start=line 3 column 191, end=line 3 column 232] [Procedure]
+{ alert(++i); }
+---------------------------
+SourceLocation [start=line 3 column 208, end=line 3 column 218] [FunctionCall]
+alert(++i)
+---------------------------
+SourceLocation [start=line 3 column 208, end=line 3 column 213] [Identifier]
+alert
+---------------------------
+SourceLocation [start=line 3 column 213, end=line 3 column 218] [Signature]
+(++i)
+---------------------------
+SourceLocation [start=line 3 column 214, end=line 3 column 217] [Increment]
+++i
+---------------------------
+SourceLocation [start=line 3 column 214, end=line 3 column 216] [Operator]
+++
+---------------------------
+SourceLocation [start=line 3 column 216, end=line 3 column 217] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 3 column 248, end=line 3 column 250] [Signature]
+()
+---------------------------

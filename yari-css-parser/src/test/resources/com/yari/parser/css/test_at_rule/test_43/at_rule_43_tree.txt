@@ -1,0 +1,30 @@
+[0, Css] @scope (.article-hero, .article-body) to (figure) {\\n img {\\n border: 5px solid black;\\n background-color: goldenrod;\\n }\\n }
+ [1, AtRule] @scope (.article-hero, .article-body) to (figure) {\\n img {\\n border: 5px solid black;\\n background-color: goldenrod;\\n }\\n }
+  [2, AtRuleName] @scope
+   [3, Identifier] scope
+  [2, Infix] (.article-hero, .article-body) to (figure)
+   [3, Infix] (.article-hero, .article-body) to
+    [4, Parenthesis] (.article-hero, .article-body)
+     [5, ListSelector] .article-hero, .article-body
+      [6, ClassSelector] .article-hero
+       [7, Identifier] article-hero
+      [6, ClassSelector] .article-body
+       [7, Identifier] article-body
+    [4, Operator] 
+    [4, Identifier] to
+   [3, Operator] 
+   [3, Parenthesis] (figure)
+    [4, ElementSelector] figure
+  [2, Block] {\\n img {\\n border: 5px solid black;\\n background-color: goldenrod;\\n }\\n }
+   [3, RuleSet] img {\\n border: 5px solid black;\\n background-color: goldenrod;\\n }
+    [4, ElementSelector] img
+    [4, Block] {\\n border: 5px solid black;\\n background-color: goldenrod;\\n }
+     [5, Property] border: 5px solid black
+      [6, Identifier] border
+      [6, ListValue] 5px solid black
+       [7, Identifier] 5px
+       [7, Identifier] solid
+       [7, Identifier] black
+     [5, Property] background-color: goldenrod
+      [6, Identifier] background-color
+      [6, Identifier] goldenrod

@@ -1,0 +1,15 @@
+[0, Javascript] String.raw`Salut\n${2 + 3}!`
+ [1, QualifiedExpression] String.raw`Salut\n${2 + 3}!`
+  [2, Qualifier] String.
+   [3, Identifier] String
+   [3, Operator] .
+  [2, TagFunctionCall] raw`Salut\n${2 + 3}!`
+   [3, Identifier] raw
+   [3, LiteralTemplate] `Salut\n${2 + 3}!`
+    [4, Constant] Salut\n
+    [4, Variable] ${2 + 3}
+     [5, Infix] 2 + 3
+      [6, Literal] 2
+      [6, Operator] +
+      [6, Literal] 3
+    [4, Constant] !

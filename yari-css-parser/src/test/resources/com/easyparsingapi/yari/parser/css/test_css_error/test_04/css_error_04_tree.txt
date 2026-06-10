@@ -1,0 +1,39 @@
+[0, Css] table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;\\n }\\n\\n table.browserref tr.fixzebra {\\n background-color: #E7E9EB;\\n\\n\\n @font-face {\\n font-display: auto;\\n font-family: tablet-gothic;\\n font-style: normal;\\n font-weight: 800;\\n }
+ [1, RuleSet] table.browserref tr:nth-child(odd) {\\n background-color: #ffffff;\\n }
+  [2, CombinatorSelector] table.browserref tr:nth-child(odd)
+   [3, CombinatorSelector] table.browserref tr
+    [4, ElementSelector] table
+    [4, Operator] 
+    [4, QualifiedSelector] .browserref tr
+     [5, ClassSelector] .browserref
+      [6, Identifier] browserref
+     [5, ElementSelector] tr
+   [3, Operator] 
+   [3, PseudoFunctionSelector] :nth-child(odd)
+    [4, PseudoClassSelector] :nth-child
+     [5, Identifier] nth-child
+    [4, Signature] (odd)
+     [5, NthPattern] odd
+      [6, Identifier] odd
+  [2, Block] {\\n background-color: #ffffff;\\n }
+   [3, Property] background-color: #ffffff
+    [4, Identifier] background-color
+    [4, Literal] #ffffff
+ [1, CssError] table.browserref tr.fixzebra {\\n background-color: #E7E9EB;
+ [1, AtRule] @font-face {\\n font-display: auto;\\n font-family: tablet-gothic;\\n font-style: normal;\\n font-weight: 800;\\n }
+  [2, AtRuleName] @font-face
+   [3, Identifier] font-face
+  [2, ListParameter] {
+  [2, Block] {\\n font-display: auto;\\n font-family: tablet-gothic;\\n font-style: normal;\\n font-weight: 800;\\n }
+   [3, Property] font-display: auto
+    [4, Identifier] font-display
+    [4, Identifier] auto
+   [3, Property] font-family: tablet-gothic
+    [4, Identifier] font-family
+    [4, Identifier] tablet-gothic
+   [3, Property] font-style: normal
+    [4, Identifier] font-style
+    [4, Identifier] normal
+   [3, Property] font-weight: 800
+    [4, Identifier] font-weight
+    [4, Identifier] 800

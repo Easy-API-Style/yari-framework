@@ -1,0 +1,361 @@
+/*
+ * Copyright (c) 2025 Easy API
+ * Website : https://easyparsingapi.com/
+ * GitHub  : https://github.com/Easy-API-Style/yari-framework
+ * Contact : easy.api.contact@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.easyparsingapi.yari.parser.javascript.ast;
+
+import java.util.List;
+import java.util.Objects;
+
+import com.easyparsingapi.yari.core.ast.AstNode;
+import com.easyparsingapi.yari.core.util.CollectionUtil;
+import com.easyparsingapi.yari.parsec.location.SourceLocation;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+/**
+ * AST node representing a JavaScript array destructuring expression (e.g. {@code [a, b, c] = expr}).
+ * <p>
+ * Contains the list of values (elements) extracted during destructuring.
+ * </p>
+ */
+@JsonPropertyOrder({"values", "sourceLocation"})
+public class DestructuringArray implements JavascriptNode {
+
+    private static final long serialVersionUID = 1L;
+
+    /** The values. */
+    @JsonProperty("values")
+    private final List<JavascriptNode> values;
+    /** The parent. */
+    @JsonIgnore
+    private AstNode parent;
+    /** The sourceLocation. */
+    @JsonProperty("sourceLocation")
+    private SourceLocation sourceLocation;
+
+    /**
+     * Constructs an array destructuring node with the given list of values and no source location.
+     *
+     * @param values the list of nodes representing the destructured elements
+     */
+    public DestructuringArray(final List<JavascriptNode> values) {
+        this(values, null);
+    }
+
+    /**
+     * Constructs an array destructuring node with the given list of values and source location.
+     *
+     * @param values         the list of nodes representing the destructured elements
+     * @param sourceLocation the location of the node in the source, or {@code null} if unknown
+     */
+    @JsonCreator
+    public DestructuringArray(@JsonProperty("values") final List<JavascriptNode> values,
+                              @JsonProperty("sourceLocation") final SourceLocation sourceLocation) {
+        super();
+        this.values = CollectionUtil.nullToEmpty(values);
+        this.sourceLocation = sourceLocation;
+        JavascriptUtil.setAstParent(this);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public List<AstNode> astChildren() {
+        return AstNode.childrenAttributes(values);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AstNode astParent() {
+        return parent;
+    }
+
+    /**
+     * Sets the parent node of this node in the AST.
+     *
+     * @param parent the parent node
+     */
+    protected void astParent(final AstNode parent) {
+        this.parent = parent;
+    }
+
+    /**
+     * Returns the number of elements in the destructuring.
+     *
+     * @return the number of destructured values
+     */
+    public int size() {
+        return values.size();
+    }
+
+    /**
+     * Returns the list of nodes representing the destructured elements.
+     *
+     * @return the list of destructured values
+     */
+    public List<JavascriptNode> getValues() {
+        return values;
+    }
+
+    /**
+     * Returns the destructured element at the specified index, or {@code null} if the index is out of bounds.
+     *
+     * @param index the index of the element to retrieve
+     * @return the node at the given index, or {@code null} if the index is greater than or equal to the list size
+     */
+    public JavascriptNode getValue(final int index) {
+        JavascriptNode result = null;
+        if (index < values.size()) {
+            result = values.get(index);
+        }
+        return result;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public SourceLocation getSourceLocation() {
+        return sourceLocation;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setSourceLocation(final SourceLocation sourceLocation) {
+        this.sourceLocation = sourceLocation;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public int hashCode() {
+        return Objects.hash(values, sourceLocation);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public boolean equals(final Object object) {
+        if (object instanceof AstNode node) {
+            return equalsNode(node)
+                      && Objects.equals(sourceLocation, node.getSourceLocation());
+        }
+        return false;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public boolean equalsNode(final AstNode obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final DestructuringArray other = (DestructuringArray) obj;
+        return Objects.equals(values, other.values);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString() {
+        final StringBuilder result = new StringBuilder();
+        result.append(DestructuringArray.class.getSimpleName());
+        result.append(" [values=");
+        result.append(values.size());
+        if (sourceLocation != null) {
+            result.append(", sourceLocation=");
+            result.append(sourceLocation);
+        }
+        result.append("]");
+        return result.toString();
+    }
+
+    /*
+     *
+     * CLASS
+     *
+     */
+    /**
+     * AST node representing an individual element in an array destructuring,
+     * composed of an identifier and an optional default value.
+     */
+    @JsonPropertyOrder({"id", "defaultValue", "sourceLocation"})
+    public static class Value implements JavascriptNode {
+
+        private static final long serialVersionUID = 1L;
+
+        /** The id. */
+        @JsonProperty("id")
+        private final JavascriptNode id;
+        /** The defaultValue. */
+        @JsonProperty("defaultValue")
+        private final JavascriptNode defaultValue;
+        /** The parent. */
+        @JsonIgnore
+        private AstNode parent;
+        /** The sourceLocation. */
+        @JsonProperty("sourceLocation")
+        private SourceLocation sourceLocation;
+
+        /**
+         * Constructs a destructuring element with the given identifier and default value, without a source location.
+         *
+         * @param id           the node representing the element's identifier
+         * @param defaultValue the node representing the default value, or {@code null} if there is none
+         */
+        public Value(final JavascriptNode id,
+                     final JavascriptNode defaultValue) {
+            this(id, defaultValue, null);
+        }
+
+        /**
+         * Constructs a destructuring element with the given identifier, default value, and source location.
+         *
+         * @param id             the node representing the element's identifier
+         * @param defaultValue   the node representing the default value, or {@code null} if there is none
+         * @param sourceLocation the location of the node in the source, or {@code null} if unknown
+         */
+        @JsonCreator
+        public Value(@JsonProperty("id") final JavascriptNode id,
+                     @JsonProperty("defaultValue") final JavascriptNode defaultValue,
+                     @JsonProperty("sourceLocation") final SourceLocation sourceLocation) {
+            super();
+            this.id = id;
+            this.defaultValue = defaultValue;
+            this.sourceLocation = sourceLocation;
+            JavascriptUtil.setAstParent(this);
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public List<AstNode> astChildren() {
+            return AstNode.childrenAttributes(id, defaultValue);
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public AstNode astParent() {
+            return parent;
+        }
+
+        /**
+         * Sets the parent node of this element in the AST.
+         *
+         * @param parent the parent node
+         */
+        protected void astParent(final AstNode parent) {
+            this.parent = parent;
+        }
+
+        /**
+         * Returns the node representing the identifier of this destructuring element.
+         *
+         * @return the identifier node
+         */
+        public JavascriptNode getId() {
+            return id;
+        }
+
+        /**
+         * Indicates whether this destructuring element has a default value.
+         *
+         * @return {@code true} if a default value is defined, {@code false} otherwise
+         */
+        public boolean hasDefaultValue() {
+            return defaultValue != null;
+        }
+
+        /**
+         * Returns the node representing the default value of this element, or {@code null} if there is none.
+         *
+         * @return the default value node, or {@code null}
+         */
+        public JavascriptNode getDefaultValue() {
+            return defaultValue;
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public SourceLocation getSourceLocation() {
+            return sourceLocation;
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public void setSourceLocation(final SourceLocation sourceLocation) {
+            this.sourceLocation = sourceLocation;
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public int hashCode() {
+            return Objects.hash(defaultValue, id, sourceLocation);
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public boolean equals(final Object object) {
+            if (object instanceof AstNode node) {
+                return equalsNode(node)
+                          && Objects.equals(sourceLocation, node.getSourceLocation());
+            }
+            return false;
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public boolean equalsNode(final AstNode obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Value other = (Value) obj;
+            return Objects.equals(defaultValue, other.defaultValue)
+                    && Objects.equals(id, other.id);
+        }
+
+        /** {@inheritDoc} */
+        @Override
+        public String toString() {
+            final StringBuilder result = new StringBuilder();
+            result.append(DestructuringArray.class.getSimpleName());
+            result.append(".");
+            result.append(Value.class.getSimpleName());
+            result.append(" [id=");
+            result.append(id);
+            if (hasDefaultValue()) {
+               result.append(", defaultValue=");
+               result.append(defaultValue);
+            }
+            if (sourceLocation != null) {
+                result.append(", sourceLocation=");
+                result.append(sourceLocation);
+            }
+            result.append("]");
+            return result.toString();
+        }
+
+    }
+
+}

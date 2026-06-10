@@ -1,0 +1,2730 @@
+[0, Javascript] let a, b, rest;\\n[a, b] = [10, 20];\\n\\n[a, b, ...rest] = [10, 20, 30, 40, 50];\\n\\n({ a, b } = { a: 10, b: 20 });\\n\\n({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});\\n\\nconst x = [1, 2, 3, 4, 5];\\n\\nconst x = [1, 2, 3, 4, 5];\\nconst [y, z] = x;\\n\\nconst [firstElement, secondElement] = list;\\n\\nconst foo = ['one', 'two', 'three'];\\n\\nconst [red, yellow, green] = foo;\\n\\nlet a, b;\\n\\n[a, b] = [1, 2];\\n\\nconst foo = ['one', 'two'];\\n\\nconst [red, yellow, green, blue] = foo;\\n\\nlet a, b;\\n\\n[a=5, b=7] = [1];\\n\\nlet a = 1;\\nlet b = 3;\\n\\n[a, b] = [b, a];\\n\\nconst arr = [1,2,3];\\n[arr[2], arr[1]] = [arr[1], arr[2]];\\n\\nfunction f() {\\n return [1, 2];\\n}\\n\\nlet a, b;\\n[a, b] = f();\\n\\nfunction f() {\\n return [1, 2, 3];\\n}\\n\\nconst [a, , b] = f();\\n\\nconst [c] = f();\\n\\n[,,] = f();\\n\\nconst [a, ...b] = [1, 2, 3];\\n\\nfunction parseProtocol(url) {\\n const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n\\n const [, protocol, fullhost, fullpath] = parsedURL;\\n return protocol;\\n}\\n\\nconst user = {\\n id: 42,\\n isVerified: true\\n};\\n\\nconst {id, isVerified} = user;\\n\\nconsole.log(id); // 42\\nconsole.log(isVerified); // true\\n\\nlet a, b;\\n\\n({a, b} = {a: 1, b: 2});\\n\\nconst o = {p: 42, q: true};\\nconst {p: foo, q: bar} = o;\\n\\nconst {a = 10, b = 5} = {a: 3};\\n\\nconst {a: aa = 10, b: bb = 5} = {a: 3};\\n\\nconst user = {\\n id: 42,\\n displayName: 'jdoe',\\n fullName: {\\n firstName: 'John',\\n lastName: 'Doe'\\n }\\n};\\n\\nfunction userId({id}) {\\n return id;\\n}\\n\\nfunction userDisplayName({displayName: dname}) {\\n return dname;\\n}\\n\\nfunction whois({displayName, fullName: {firstName: name}}) {\\n return `${displayName} is ${name}`;\\n}\\n\\nconsole.log(whois(user)); // "jdoe is John"\\n\\nfunction drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {\\n console.log(size, coords, radius);\\n}\\n\\ndrawChart({\\n coords: {x: 18, y: 30},\\n radius: 30\\n});\\n\\nconst metadata = {\\n title: 'Scratchpad',\\n translations: [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ],\\n url: '/en-US/docs/Tools/Scratchpad'\\n};\\n\\nlet {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata;\\n\\nconst people = [\\n {\\n name: 'Mike Smith',\\n family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n },\\n age: 35\\n },\\n {\\n name: 'Tom Jones',\\n family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n },\\n age: 25\\n }\\n];\\n\\nfor (const {name: n, family: {father: f}} of people) {\\n console.log('Name: ' + n + ', Father: ' + f);\\n}\\n\\nlet key = 'z';\\nlet {[key]: foo} = {z: 'bar'};\\n\\nlet {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}\\n\\nconst foo = { 'fizz-buzz': true };\\nconst { 'fizz-buzz': fizzBuzz } = foo;\\n\\nconst props = [\\n { id: 1, name: 'Fizz'},\\n { id: 2, name: 'Buzz'},\\n { id: 3, name: 'FizzBuzz'}\\n];\\n\\nconst [,, { name }] = props;\\n\\nlet obj = {self: '123'};\\nobj.__proto__.prot = '456';\\nconst {self, prot} = obj;\\n\\n\\nconst obj = {\\n self: "123",\\n __proto__: {\\n prot: "456",\\n },\\n};\\nconst { self, prot } = obj;\\n\\nconst props = [\\n { id: 1, name: "Fizz" },\\n { id: 2, name: "Buzz" },\\n { id: 3, name: "FizzBuzz" },\\n];\\n\\nconst [, , { name }] = props;\\n\\nconst { a, toFixed } = 1;\\n\\nconst foo = { "fizz-buzz": true };\\nconst { "fizz-buzz": fizzBuzz } = foo;\\n\\nconst key = "z";\\nconst { [key]: foo } = { z: "bar" };\\n\\nconst people = [\\n {\\n name: "Mike Smith",\\n family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n },\\n age: 35,\\n },\\n {\\n name: "Tom Jones",\\n family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n },\\n age: 25,\\n },\\n];\\n\\nfor (const {\\n name: n,\\n family: { father: f },\\n} of people) {\\n console.log(`Name: ${n}, Father: ${f}`);\\n}\\n\\n\\nconst metadata = {\\n title: "Scratchpad",\\n translations: [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ],\\n url: "/en-US/docs/Tools/Scratchpad",\\n};\\n\\nconst {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata;\\n\\n\\nfunction drawChart({\\n size = "big",\\n coords = { x: 0, y: 0 },\\n radius = 25,\\n} = {}) {\\n console.log(size, coords, radius);\\n}\\n\\ndrawChart({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n});\\n\\n\\nfunction whois({ displayName, fullName: { firstName: name } }) {\\n return `${displayName} is ${name}`;\\n}\\n\\nfunction userDisplayName({ displayName: dname }) {\\n return dname;\\n}\\n\\nfunction userId({ id }) {\\n return id;\\n}\\n\\nconst user = {\\n id: 42,\\n displayName: "jdoe",\\n fullName: {\\n firstName: "Jane",\\n lastName: "Doe",\\n },\\n};\\n\\nconst { a: aa = 10, b: bb = 5 } = { a: 3 };\\n\\nconst o = { p: 42, q: true };\\nconst { p: foo, q: bar } = o;\\n\\nconst user = {\\n id: 42,\\n isVerified: true,\\n};\\n\\nconst { id, isVerified } = user;\\n\\nconst obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n};\\nconst [a, b, ...rest] = obj; \\n\\nconst obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n};\\nconst [a, b] = obj; \\n\\nconst [a, b] = new Map([\\n [1, 2],\\n [3, 4],\\n]);\\n\\nfunction parseProtocol(url) {\\n const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n console.log(parsedURL);\\n\\n const [, protocol, fullHost, fullPath] = parsedURL;\\n return protocol;\\n}\\n\\nconst [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];\\nconsole.log(a, b, c, d, e, f);\\n\\nconst [a, b, ...[c, d]] = [1, 2, 3, 4];\\nconsole.log(a, b, c, d);\\n\\nconst [a, b, ...{ length }] = [1, 2, 3];\\nconsole.log(a, b, length);\\n\\nfunction f() {\\n return [1, 2, 3];\\n}\\n\\nconst [a, , b] = f();\\nconsole.log(a); // 1\\nconsole.log(b); // 3\\n\\nconst [c] = f();\\n\\nfunction f() {\\n return [1, 2];\\n}\\n\\nconst [a, b] = f();\\n\\nlet a = 1;\\nlet b = 3;\\n\\n[a, b] = [b, a];\\n\\nconst arr = [1, 2, 3];\\n[arr[2], arr[1]] = [arr[1], arr[2]];\\nconst foo = ["one", "two"];\\n\\nconst [red, yellow, green, blue] = foo;\\n\\nconst foo = ["one", "two", "three"];\\n\\nconst [red, yellow, green] = foo;\\n\\nconst { a, ...others } = { a: 1, b: 2, c: 3 };\\n\\nconst [first, ...others2] = [1, 2, 3];\\n\\nconst { b = console.log("hey") } = { b: 2 };\\n\\nconst [a = 1] = []; // a is 1\\nconst { b = 2 } = { b: undefined }; // b is 2\\nconst { c = 2 } = { c: null }; // c is null\\n\\nconst numbers = [];\\nconst obj = { a: 1, b: 2 };\\n({ a: numbers[0], b: numbers[1] } = obj);\\n\\nconst obj = { a: 1, b: { c: 2 } };\\nconst { a } = obj; // a is constant\\nlet {\\n b: { c: d },\\n} = obj; // d is re-assignable\\n\\nconst obj = { a: 1, b: { c: 2 } };\\nconst {\\n a,\\n b: { c: d },\\n} = obj;\\n\\nconst obj = { prop1: x, prop2: y, prop3: z };\\nconst { prop1: x, prop2: y, prop3: z } = obj;\\n\\nconst obj = { a, b, c };\\nconst { a, b, c } = obj;\\n\\nconst arr = [1, 2, 3];\\nconst [a, b, c] = arr;\\n\\nconst arr = [a, b, c];\\nconst [a, b] = array;\\nconst [a, , b] = array;\\nconst [a = aDefault, b] = array;\\nconst [a, b, ...rest] = array;\\nconst [a, , b, ...rest] = array;\\nconst [a, b, ...{ pop, push }] = array;\\nconst [a, b, ...[c, d]] = array;\\n\\nconst { a, b } = obj;\\nconst { a: a1, b: b1 } = obj;\\nconst { a: a1 = aDefault, b = bDefault } = obj;\\nconst { a, b, ...rest } = obj;\\nconst { a: a1, b: b1, ...rest } = obj;\\nconst { [key]: a } = obj;\\n\\nlet a, b, a1, b1, c, d, rest, pop, push;\\n\\n[a, b] = array;\\n[a, , b] = array;\\n[a = aDefault, b] = array;\\n[a, b, ...rest] = array;\\n[a, , b, ...rest] = array;\\n[a, b, ...{ pop, push }] = array;\\n[a, b, ...[c, d]] = array;\\n\\n({ a, b } = obj); // parentheses are required\\n({ a: a1, b: b1 } = obj);\\n({ a: a1 = aDefault, b = bDefault } = obj);\\n({ a, b, ...rest } = obj);\\n({ a: a1, b: b1, ...rest } = obj);\\n\\nlet a, b, rest;\\n[a, b] = [10, 20];\\n\\nconst [a, b] = array;\\nconst [a, , b] = array;\\nconst [a = aDefault, b] = array;\\nconst [a, b, ...rest] = array;\\nconst [a, , b, ...rest] = array;\\nconst [a, b, ...{ pop, push }] = array;\\nconst [a, b, ...[c, d]] = array;\\n\\nconst { a, b } = obj;\\nconst { a: a1, b: b1 } = obj;\\nconst { a: a1 = aDefault, b = bDefault } = obj;\\nconst { a, b, ...rest } = obj;\\nconst { a: a1, b: b1, ...rest } = obj;\\nconst { [key]: a } = obj;\\n\\nlet a, b, a1, b1, c, d, rest, pop, push;\\n[a, b] = array;\\n[a, , b] = array;\\n[a = aDefault, b] = array;\\n[a, b, ...rest] = array;\\n[a, , b, ...rest] = array;\\n[a, b, ...{ pop, push }] = array;\\n[a, b, ...[c, d]] = array;\\n\\n({ a, b } = obj); // brackets are required\\n({ a: a1, b: b1 } = obj);\\n({ a: a1 = aDefault, b = bDefault } = obj);\\n({ a, b, ...rest } = obj);\\n({ a: a1, b: b1, ...rest } = obj);\\n\\nconst obj = { a: 1, b: { c: 2 } };\\nconst { a, b: { c: d } } = obj;\\n\\nfunction userDisplayName({ displayName: dname }) {\\n return dname;\\n}\\n\\nfunction whois({ displayName, fullName: { firstName: name } }) {\\n return `${displayName} is ${name}`;\\n}\\n\\nfunction drawChart({ size = 'big', coords = { x: 0, y: 0 }, radius = 25 } = {}) {\\n console.log(size, coords, radius);\\n}\\n\\ndrawChart({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n});
+ [1, VariableDeclaration] let a, b, rest
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+  [2, Variable] rest
+   [3, Identifier] rest
+ [1, Assignment] [a, b] = [10, 20]
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, ArrayDeclaration] [10, 20]
+   [3, Literal] 10
+   [3, Literal] 20
+ [1, Assignment] [a, b, ...rest] = [10, 20, 30, 40, 50]
+  [2, DestructuringArray] [a, b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, ArrayDeclaration] [10, 20, 30, 40, 50]
+   [3, Literal] 10
+   [3, Literal] 20
+   [3, Literal] 30
+   [3, Literal] 40
+   [3, Literal] 50
+ [1, Parenthesis] ({ a, b } = { a: 10, b: 20 })
+  [2, Assignment] { a, b } = { a: 10, b: 20 }
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 10, b: 20 }
+    [4, FieldDeclaration] a: 10
+     [5, Identifier] a
+     [5, Literal] 10
+    [4, FieldDeclaration] b: 20
+     [5, Identifier] b
+     [5, Literal] 20
+ [1, Parenthesis] ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40})
+  [2, Assignment] {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+   [3, DestructuringObject] {a, b, ...rest}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 10, b: 20, c: 30, d: 40}
+    [4, FieldDeclaration] a: 10
+     [5, Identifier] a
+     [5, Literal] 10
+    [4, FieldDeclaration] b: 20
+     [5, Identifier] b
+     [5, Literal] 20
+    [4, FieldDeclaration] c: 30
+     [5, Identifier] c
+     [5, Literal] 30
+    [4, FieldDeclaration] d: 40
+     [5, Identifier] d
+     [5, Literal] 40
+ [1, VariableDeclaration] const x = [1, 2, 3, 4, 5]
+  [2, Type] const
+  [2, Variable] x = [1, 2, 3, 4, 5]
+   [3, Identifier] x
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3, 4, 5]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+    [4, Literal] 4
+    [4, Literal] 5
+ [1, VariableDeclaration] const x = [1, 2, 3, 4, 5]
+  [2, Type] const
+  [2, Variable] x = [1, 2, 3, 4, 5]
+   [3, Identifier] x
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3, 4, 5]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+    [4, Literal] 4
+    [4, Literal] 5
+ [1, VariableDeclaration] const [y, z] = x
+  [2, Type] const
+  [2, Variable] [y, z] = x
+   [3, DestructuringArray] [y, z]
+    [4, Value] y
+     [5, Identifier] y
+    [4, Value] z
+     [5, Identifier] z
+   [3, Operator] =
+   [3, Identifier] x
+ [1, VariableDeclaration] const [firstElement, secondElement] = list
+  [2, Type] const
+  [2, Variable] [firstElement, secondElement] = list
+   [3, DestructuringArray] [firstElement, secondElement]
+    [4, Value] firstElement
+     [5, Identifier] firstElement
+    [4, Value] secondElement
+     [5, Identifier] secondElement
+   [3, Operator] =
+   [3, Identifier] list
+ [1, VariableDeclaration] const foo = ['one', 'two', 'three']
+  [2, Type] const
+  [2, Variable] foo = ['one', 'two', 'three']
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ArrayDeclaration] ['one', 'two', 'three']
+    [4, Literal] 'one'
+    [4, Literal] 'two'
+    [4, Literal] 'three'
+ [1, VariableDeclaration] const [red, yellow, green] = foo
+  [2, Type] const
+  [2, Variable] [red, yellow, green] = foo
+   [3, DestructuringArray] [red, yellow, green]
+    [4, Value] red
+     [5, Identifier] red
+    [4, Value] yellow
+     [5, Identifier] yellow
+    [4, Value] green
+     [5, Identifier] green
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] let a, b
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+ [1, Assignment] [a, b] = [1, 2]
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, ArrayDeclaration] [1, 2]
+   [3, Literal] 1
+   [3, Literal] 2
+ [1, VariableDeclaration] const foo = ['one', 'two']
+  [2, Type] const
+  [2, Variable] foo = ['one', 'two']
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ArrayDeclaration] ['one', 'two']
+    [4, Literal] 'one'
+    [4, Literal] 'two'
+ [1, VariableDeclaration] const [red, yellow, green, blue] = foo
+  [2, Type] const
+  [2, Variable] [red, yellow, green, blue] = foo
+   [3, DestructuringArray] [red, yellow, green, blue]
+    [4, Value] red
+     [5, Identifier] red
+    [4, Value] yellow
+     [5, Identifier] yellow
+    [4, Value] green
+     [5, Identifier] green
+    [4, Value] blue
+     [5, Identifier] blue
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] let a, b
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+ [1, Assignment] [a=5, b=7] = [1]
+  [2, DestructuringArray] [a=5, b=7]
+   [3, Value] a=5
+    [4, Identifier] a
+    [4, Literal] =5
+   [3, Value] b=7
+    [4, Identifier] b
+    [4, Literal] =7
+  [2, Operator] =
+  [2, ArrayDeclaration] [1]
+   [3, Literal] 1
+ [1, VariableDeclaration] let a = 1
+  [2, Type] let
+  [2, Variable] a = 1
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 1
+ [1, VariableDeclaration] let b = 3
+  [2, Type] let
+  [2, Variable] b = 3
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Literal] 3
+ [1, Assignment] [a, b] = [b, a]
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, ArrayDeclaration] [b, a]
+   [3, Identifier] b
+   [3, Identifier] a
+ [1, VariableDeclaration] const arr = [1,2,3]
+  [2, Type] const
+  [2, Variable] arr = [1,2,3]
+   [3, Identifier] arr
+   [3, Operator] =
+   [3, ArrayDeclaration] [1,2,3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, Assignment] [arr[2], arr[1]] = [arr[1], arr[2]]
+  [2, DestructuringArray] [arr[2], arr[1]]
+   [3, Value] arr[2]
+    [4, MapExpression] arr[2]
+     [5, Identifier] arr
+     [5, Bracket] [2]
+      [6, Literal] 2
+   [3, Value] arr[1]
+    [4, MapExpression] arr[1]
+     [5, Identifier] arr
+     [5, Bracket] [1]
+      [6, Literal] 1
+  [2, Operator] =
+  [2, ArrayDeclaration] [arr[1], arr[2]]
+   [3, MapExpression] arr[1]
+    [4, Identifier] arr
+    [4, Bracket] [1]
+     [5, Literal] 1
+   [3, MapExpression] arr[2]
+    [4, Identifier] arr
+    [4, Bracket] [2]
+     [5, Literal] 2
+ [1, FunctionDeclaration] function f() {\\n return [1, 2];\\n}
+  [2, Identifier] f
+  [2, Signature] ()
+  [2, Procedure] {\\n return [1, 2];\\n}
+   [3, Return] return [1, 2]
+    [4, ArrayDeclaration] [1, 2]
+     [5, Literal] 1
+     [5, Literal] 2
+ [1, VariableDeclaration] let a, b
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+ [1, Assignment] [a, b] = f()
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, FunctionCall] f()
+   [3, Identifier] f
+   [3, Signature] ()
+ [1, FunctionDeclaration] function f() {\\n return [1, 2, 3];\\n}
+  [2, Identifier] f
+  [2, Signature] ()
+  [2, Procedure] {\\n return [1, 2, 3];\\n}
+   [3, Return] return [1, 2, 3]
+    [4, ArrayDeclaration] [1, 2, 3]
+     [5, Literal] 1
+     [5, Literal] 2
+     [5, Literal] 3
+ [1, VariableDeclaration] const [a, , b] = f()
+  [2, Type] const
+  [2, Variable] [a, , b] = f()
+   [3, DestructuringArray] [a, , b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, FunctionCall] f()
+    [4, Identifier] f
+    [4, Signature] ()
+ [1, VariableDeclaration] const [c] = f()
+  [2, Type] const
+  [2, Variable] [c] = f()
+   [3, DestructuringArray] [c]
+    [4, Value] c
+     [5, Identifier] c
+   [3, Operator] =
+   [3, FunctionCall] f()
+    [4, Identifier] f
+    [4, Signature] ()
+ [1, Assignment] [,,] = f()
+  [2, DestructuringArray] [,,]
+   [3, Empty] 
+   [3, Empty] 
+   [3, Empty] 
+  [2, Operator] =
+  [2, FunctionCall] f()
+   [3, Identifier] f
+   [3, Signature] ()
+ [1, VariableDeclaration] const [a, ...b] = [1, 2, 3]
+  [2, Type] const
+  [2, Variable] [a, ...b] = [1, 2, 3]
+   [3, DestructuringArray] [a, ...b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Spread] ...b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, FunctionDeclaration] function parseProtocol(url) {\\n const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n\\n const [, protocol, fullhost, fullpath] = parsedURL;\\n return protocol;\\n}
+  [2, Identifier] parseProtocol
+  [2, Signature] (url)
+   [3, Identifier] url
+  [2, Procedure] {\\n const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n\\n const [, protocol, fullhost, fullpath] = parsedURL;\\n return protocol;\\n}
+   [3, VariableDeclaration] const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url)
+    [4, Type] const
+    [4, Variable] parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url)
+     [5, Identifier] parsedURL
+     [5, Operator] =
+     [5, QualifiedExpression] /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url)
+      [6, Qualifier] /^(\w+)\:\/\/([^\/]+)\/(.*)$/.
+       [7, Literal] /^(\w+)\:\/\/([^\/]+)\/(.*)$/
+       [7, Operator] .
+      [6, FunctionCall] exec(url)
+       [7, Identifier] exec
+       [7, Signature] (url)
+        [8, Identifier] url
+   [3, If] if (!parsedURL) {\\n return false;\\n }
+    [4, IfBlock] if (!parsedURL) {\\n return false;\\n }
+     [5, Condition] (!parsedURL)
+      [6, Prefix] !parsedURL
+       [7, Operator] !
+       [7, Identifier] parsedURL
+     [5, Procedure] {\\n return false;\\n }
+      [6, Return] return false
+       [7, Literal] false
+   [3, VariableDeclaration] const [, protocol, fullhost, fullpath] = parsedURL
+    [4, Type] const
+    [4, Variable] [, protocol, fullhost, fullpath] = parsedURL
+     [5, DestructuringArray] [, protocol, fullhost, fullpath]
+      [6, Empty] 
+      [6, Value] protocol
+       [7, Identifier] protocol
+      [6, Value] fullhost
+       [7, Identifier] fullhost
+      [6, Value] fullpath
+       [7, Identifier] fullpath
+     [5, Operator] =
+     [5, Identifier] parsedURL
+   [3, Return] return protocol
+    [4, Identifier] protocol
+ [1, VariableDeclaration] const user = {\\n id: 42,\\n isVerified: true\\n}
+  [2, Type] const
+  [2, Variable] user = {\\n id: 42,\\n isVerified: true\\n}
+   [3, Identifier] user
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n id: 42,\\n isVerified: true\\n}
+    [4, FieldDeclaration] id: 42
+     [5, Identifier] id
+     [5, Literal] 42
+    [4, FieldDeclaration] isVerified: true
+     [5, Identifier] isVerified
+     [5, Literal] true
+ [1, VariableDeclaration] const {id, isVerified} = user
+  [2, Type] const
+  [2, Variable] {id, isVerified} = user
+   [3, DestructuringObject] {id, isVerified}
+    [4, Field] id
+     [5, Identifier] id
+    [4, Field] isVerified
+     [5, Identifier] isVerified
+   [3, Operator] =
+   [3, Identifier] user
+ [1, QualifiedExpression] console.log(id)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(id)
+   [3, Identifier] log
+   [3, Signature] (id)
+    [4, Identifier] id
+ [1, QualifiedExpression] console.log(isVerified)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(isVerified)
+   [3, Identifier] log
+   [3, Signature] (isVerified)
+    [4, Identifier] isVerified
+ [1, VariableDeclaration] let a, b
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+ [1, Parenthesis] ({a, b} = {a: 1, b: 2})
+  [2, Assignment] {a, b} = {a: 1, b: 2}
+   [3, DestructuringObject] {a, b}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 1, b: 2}
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: 2
+     [5, Identifier] b
+     [5, Literal] 2
+ [1, VariableDeclaration] const o = {p: 42, q: true}
+  [2, Type] const
+  [2, Variable] o = {p: 42, q: true}
+   [3, Identifier] o
+   [3, Operator] =
+   [3, ObjectDeclaration] {p: 42, q: true}
+    [4, FieldDeclaration] p: 42
+     [5, Identifier] p
+     [5, Literal] 42
+    [4, FieldDeclaration] q: true
+     [5, Identifier] q
+     [5, Literal] true
+ [1, VariableDeclaration] const {p: foo, q: bar} = o
+  [2, Type] const
+  [2, Variable] {p: foo, q: bar} = o
+   [3, DestructuringObject] {p: foo, q: bar}
+    [4, Field] p: foo
+     [5, Identifier] p
+     [5, Identifier] : foo
+    [4, Field] q: bar
+     [5, Identifier] q
+     [5, Identifier] : bar
+   [3, Operator] =
+   [3, Identifier] o
+ [1, VariableDeclaration] const {a = 10, b = 5} = {a: 3}
+  [2, Type] const
+  [2, Variable] {a = 10, b = 5} = {a: 3}
+   [3, DestructuringObject] {a = 10, b = 5}
+    [4, Field] a = 10
+     [5, Identifier] a
+     [5, Literal] = 10
+    [4, Field] b = 5
+     [5, Identifier] b
+     [5, Literal] = 5
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 3}
+    [4, FieldDeclaration] a: 3
+     [5, Identifier] a
+     [5, Literal] 3
+ [1, VariableDeclaration] const {a: aa = 10, b: bb = 5} = {a: 3}
+  [2, Type] const
+  [2, Variable] {a: aa = 10, b: bb = 5} = {a: 3}
+   [3, DestructuringObject] {a: aa = 10, b: bb = 5}
+    [4, Field] a: aa = 10
+     [5, Identifier] a
+     [5, Identifier] : aa
+     [5, Literal] = 10
+    [4, Field] b: bb = 5
+     [5, Identifier] b
+     [5, Identifier] : bb
+     [5, Literal] = 5
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 3}
+    [4, FieldDeclaration] a: 3
+     [5, Identifier] a
+     [5, Literal] 3
+ [1, VariableDeclaration] const user = {\\n id: 42,\\n displayName: 'jdoe',\\n fullName: {\\n firstName: 'John',\\n lastName: 'Doe'\\n }\\n}
+  [2, Type] const
+  [2, Variable] user = {\\n id: 42,\\n displayName: 'jdoe',\\n fullName: {\\n firstName: 'John',\\n lastName: 'Doe'\\n }\\n}
+   [3, Identifier] user
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n id: 42,\\n displayName: 'jdoe',\\n fullName: {\\n firstName: 'John',\\n lastName: 'Doe'\\n }\\n}
+    [4, FieldDeclaration] id: 42
+     [5, Identifier] id
+     [5, Literal] 42
+    [4, FieldDeclaration] displayName: 'jdoe'
+     [5, Identifier] displayName
+     [5, Literal] 'jdoe'
+    [4, FieldDeclaration] fullName: {\\n firstName: 'John',\\n lastName: 'Doe'\\n }
+     [5, Identifier] fullName
+     [5, ObjectDeclaration] {\\n firstName: 'John',\\n lastName: 'Doe'\\n }
+      [6, FieldDeclaration] firstName: 'John'
+       [7, Identifier] firstName
+       [7, Literal] 'John'
+      [6, FieldDeclaration] lastName: 'Doe'
+       [7, Identifier] lastName
+       [7, Literal] 'Doe'
+ [1, FunctionDeclaration] function userId({id}) {\\n return id;\\n}
+  [2, Identifier] userId
+  [2, Signature] ({id})
+   [3, DestructuringObject] {id}
+    [4, Field] id
+     [5, Identifier] id
+  [2, Procedure] {\\n return id;\\n}
+   [3, Return] return id
+    [4, Identifier] id
+ [1, FunctionDeclaration] function userDisplayName({displayName: dname}) {\\n return dname;\\n}
+  [2, Identifier] userDisplayName
+  [2, Signature] ({displayName: dname})
+   [3, DestructuringObject] {displayName: dname}
+    [4, Field] displayName: dname
+     [5, Identifier] displayName
+     [5, Identifier] : dname
+  [2, Procedure] {\\n return dname;\\n}
+   [3, Return] return dname
+    [4, Identifier] dname
+ [1, FunctionDeclaration] function whois({displayName, fullName: {firstName: name}}) {\\n return `${displayName} is ${name}`;\\n}
+  [2, Identifier] whois
+  [2, Signature] ({displayName, fullName: {firstName: name}})
+   [3, DestructuringObject] {displayName, fullName: {firstName: name}}
+    [4, Field] displayName
+     [5, Identifier] displayName
+    [4, Field] fullName: {firstName: name}
+     [5, Identifier] fullName
+     [5, DestructuringObject] : {firstName: name}
+      [6, Field] firstName: name
+       [7, Identifier] firstName
+       [7, Identifier] : name
+  [2, Procedure] {\\n return `${displayName} is ${name}`;\\n}
+   [3, Return] return `${displayName} is ${name}`
+    [4, LiteralTemplate] `${displayName} is ${name}`
+     [5, Variable] ${displayName}
+      [6, Identifier] displayName
+     [5, Constant]  is 
+     [5, Variable] ${name}
+      [6, Identifier] name
+ [1, QualifiedExpression] console.log(whois(user))
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(whois(user))
+   [3, Identifier] log
+   [3, Signature] (whois(user))
+    [4, FunctionCall] whois(user)
+     [5, Identifier] whois
+     [5, Signature] (user)
+      [6, Identifier] user
+ [1, FunctionDeclaration] function drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {\\n console.log(size, coords, radius);\\n}
+  [2, Identifier] drawChart
+  [2, Signature] ({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {})
+   [3, ParameterWithValue] {size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}
+    [4, DestructuringObject] {size = 'big', coords = {x: 0, y: 0}, radius = 25}
+     [5, Field] size = 'big'
+      [6, Identifier] size
+      [6, Literal] = 'big'
+     [5, Field] coords = {x: 0, y: 0}
+      [6, Identifier] coords
+      [6, ObjectDeclaration] = {x: 0, y: 0}
+       [7, FieldDeclaration] x: 0
+        [8, Identifier] x
+        [8, Literal] 0
+       [7, FieldDeclaration] y: 0
+        [8, Identifier] y
+        [8, Literal] 0
+     [5, Field] radius = 25
+      [6, Identifier] radius
+      [6, Literal] = 25
+    [4, ObjectDeclaration] {}
+  [2, Procedure] {\\n console.log(size, coords, radius);\\n}
+   [3, QualifiedExpression] console.log(size, coords, radius)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(size, coords, radius)
+     [5, Identifier] log
+     [5, Signature] (size, coords, radius)
+      [6, Identifier] size
+      [6, Identifier] coords
+      [6, Identifier] radius
+ [1, FunctionCall] drawChart({\\n coords: {x: 18, y: 30},\\n radius: 30\\n})
+  [2, Identifier] drawChart
+  [2, Signature] ({\\n coords: {x: 18, y: 30},\\n radius: 30\\n})
+   [3, ObjectDeclaration] {\\n coords: {x: 18, y: 30},\\n radius: 30\\n}
+    [4, FieldDeclaration] coords: {x: 18, y: 30}
+     [5, Identifier] coords
+     [5, ObjectDeclaration] {x: 18, y: 30}
+      [6, FieldDeclaration] x: 18
+       [7, Identifier] x
+       [7, Literal] 18
+      [6, FieldDeclaration] y: 30
+       [7, Identifier] y
+       [7, Literal] 30
+    [4, FieldDeclaration] radius: 30
+     [5, Identifier] radius
+     [5, Literal] 30
+ [1, VariableDeclaration] const metadata = {\\n title: 'Scratchpad',\\n translations: [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ],\\n url: '/en-US/docs/Tools/Scratchpad'\\n}
+  [2, Type] const
+  [2, Variable] metadata = {\\n title: 'Scratchpad',\\n translations: [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ],\\n url: '/en-US/docs/Tools/Scratchpad'\\n}
+   [3, Identifier] metadata
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n title: 'Scratchpad',\\n translations: [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ],\\n url: '/en-US/docs/Tools/Scratchpad'\\n}
+    [4, FieldDeclaration] title: 'Scratchpad'
+     [5, Identifier] title
+     [5, Literal] 'Scratchpad'
+    [4, FieldDeclaration] translations: [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ]
+     [5, Identifier] translations
+     [5, ArrayDeclaration] [\\n {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }\\n ]
+      [6, ObjectDeclaration] {\\n locale: 'de',\\n localization_tags: [],\\n last_edit: '2014-04-14T08:43:37',\\n url: '/de/docs/Tools/Scratchpad',\\n title: 'JavaScript-Umgebung'\\n }
+       [7, FieldDeclaration] locale: 'de'
+        [8, Identifier] locale
+        [8, Literal] 'de'
+       [7, FieldDeclaration] localization_tags: []
+        [8, Identifier] localization_tags
+        [8, ArrayDeclaration] []
+       [7, FieldDeclaration] last_edit: '2014-04-14T08:43:37'
+        [8, Identifier] last_edit
+        [8, Literal] '2014-04-14T08:43:37'
+       [7, FieldDeclaration] url: '/de/docs/Tools/Scratchpad'
+        [8, Identifier] url
+        [8, Literal] '/de/docs/Tools/Scratchpad'
+       [7, FieldDeclaration] title: 'JavaScript-Umgebung'
+        [8, Identifier] title
+        [8, Literal] 'JavaScript-Umgebung'
+    [4, FieldDeclaration] url: '/en-US/docs/Tools/Scratchpad'
+     [5, Identifier] url
+     [5, Literal] '/en-US/docs/Tools/Scratchpad'
+ [1, VariableDeclaration] let {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+  [2, Type] let
+  [2, Variable] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+   [3, DestructuringObject] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n}
+    [4, Field] title: englishTitle
+     [5, Identifier] title
+     [5, Identifier] : englishTitle
+    [4, Field] translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+     [5, Identifier] translations
+     [5, DestructuringArray] : [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+      [6, Value] {\\n title: localeTitle, // rename\\n }
+       [7, DestructuringObject] {\\n title: localeTitle, // rename\\n }
+        [8, Field] title: localeTitle
+         [9, Identifier] title
+         [9, Identifier] : localeTitle
+        [8, Empty] 
+      [6, Empty] 
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] metadata
+ [1, VariableDeclaration] const people = [\\n {\\n name: 'Mike Smith',\\n family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n },\\n age: 35\\n },\\n {\\n name: 'Tom Jones',\\n family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n },\\n age: 25\\n }\\n]
+  [2, Type] const
+  [2, Variable] people = [\\n {\\n name: 'Mike Smith',\\n family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n },\\n age: 35\\n },\\n {\\n name: 'Tom Jones',\\n family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n },\\n age: 25\\n }\\n]
+   [3, Identifier] people
+   [3, Operator] =
+   [3, ArrayDeclaration] [\\n {\\n name: 'Mike Smith',\\n family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n },\\n age: 35\\n },\\n {\\n name: 'Tom Jones',\\n family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n },\\n age: 25\\n }\\n]
+    [4, ObjectDeclaration] {\\n name: 'Mike Smith',\\n family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n },\\n age: 35\\n }
+     [5, FieldDeclaration] name: 'Mike Smith'
+      [6, Identifier] name
+      [6, Literal] 'Mike Smith'
+     [5, FieldDeclaration] family: {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n }
+      [6, Identifier] family
+      [6, ObjectDeclaration] {\\n mother: 'Jane Smith',\\n father: 'Harry Smith',\\n sister: 'Samantha Smith'\\n }
+       [7, FieldDeclaration] mother: 'Jane Smith'
+        [8, Identifier] mother
+        [8, Literal] 'Jane Smith'
+       [7, FieldDeclaration] father: 'Harry Smith'
+        [8, Identifier] father
+        [8, Literal] 'Harry Smith'
+       [7, FieldDeclaration] sister: 'Samantha Smith'
+        [8, Identifier] sister
+        [8, Literal] 'Samantha Smith'
+     [5, FieldDeclaration] age: 35
+      [6, Identifier] age
+      [6, Literal] 35
+    [4, ObjectDeclaration] {\\n name: 'Tom Jones',\\n family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n },\\n age: 25\\n }
+     [5, FieldDeclaration] name: 'Tom Jones'
+      [6, Identifier] name
+      [6, Literal] 'Tom Jones'
+     [5, FieldDeclaration] family: {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n }
+      [6, Identifier] family
+      [6, ObjectDeclaration] {\\n mother: 'Norah Jones',\\n father: 'Richard Jones',\\n brother: 'Howard Jones'\\n }
+       [7, FieldDeclaration] mother: 'Norah Jones'
+        [8, Identifier] mother
+        [8, Literal] 'Norah Jones'
+       [7, FieldDeclaration] father: 'Richard Jones'
+        [8, Identifier] father
+        [8, Literal] 'Richard Jones'
+       [7, FieldDeclaration] brother: 'Howard Jones'
+        [8, Identifier] brother
+        [8, Literal] 'Howard Jones'
+     [5, FieldDeclaration] age: 25
+      [6, Identifier] age
+      [6, Literal] 25
+ [1, For] for (const {name: n, family: {father: f}} of people) {\\n console.log('Name: ' + n + ', Father: ' + f);\\n}
+  [2, ListIteration] const {name: n, family: {father: f}} of people
+   [3, VariableDeclaration] const {name: n, family: {father: f}}
+    [4, Type] const
+    [4, Variable] {name: n, family: {father: f}}
+     [5, DestructuringObject] {name: n, family: {father: f}}
+      [6, Field] name: n
+       [7, Identifier] name
+       [7, Identifier] : n
+      [6, Field] family: {father: f}
+       [7, Identifier] family
+       [7, DestructuringObject] : {father: f}
+        [8, Field] father: f
+         [9, Identifier] father
+         [9, Identifier] : f
+   [3, Operator] of
+   [3, Identifier] people
+  [2, Procedure] {\\n console.log('Name: ' + n + ', Father: ' + f);\\n}
+   [3, QualifiedExpression] console.log('Name: ' + n + ', Father: ' + f)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('Name: ' + n + ', Father: ' + f)
+     [5, Identifier] log
+     [5, Signature] ('Name: ' + n + ', Father: ' + f)
+      [6, Infix] 'Name: ' + n + ', Father: ' + f
+       [7, Infix] 'Name: ' + n + ', Father: '
+        [8, Infix] 'Name: ' + n
+         [9, Literal] 'Name: '
+         [9, Operator] +
+         [9, Identifier] n
+        [8, Operator] +
+        [8, Literal] ', Father: '
+       [7, Operator] +
+       [7, Identifier] f
+ [1, VariableDeclaration] let key = 'z'
+  [2, Type] let
+  [2, Variable] key = 'z'
+   [3, Identifier] key
+   [3, Operator] =
+   [3, Literal] 'z'
+ [1, VariableDeclaration] let {[key]: foo} = {z: 'bar'}
+  [2, Type] let
+  [2, Variable] {[key]: foo} = {z: 'bar'}
+   [3, DestructuringObject] {[key]: foo}
+    [4, Field] [key]: foo
+     [5, ComputedValue] [key]
+      [6, Identifier] key
+     [5, Identifier] : foo
+   [3, Operator] =
+   [3, ObjectDeclaration] {z: 'bar'}
+    [4, FieldDeclaration] z: 'bar'
+     [5, Identifier] z
+     [5, Literal] 'bar'
+ [1, VariableDeclaration] let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+  [2, Type] let
+  [2, Variable] {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+   [3, DestructuringObject] {a, b, ...rest}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, ObjectDeclaration] {a: 10, b: 20, c: 30, d: 40}
+    [4, FieldDeclaration] a: 10
+     [5, Identifier] a
+     [5, Literal] 10
+    [4, FieldDeclaration] b: 20
+     [5, Identifier] b
+     [5, Literal] 20
+    [4, FieldDeclaration] c: 30
+     [5, Identifier] c
+     [5, Literal] 30
+    [4, FieldDeclaration] d: 40
+     [5, Identifier] d
+     [5, Literal] 40
+ [1, VariableDeclaration] const foo = { 'fizz-buzz': true }
+  [2, Type] const
+  [2, Variable] foo = { 'fizz-buzz': true }
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ObjectDeclaration] { 'fizz-buzz': true }
+    [4, FieldDeclaration] 'fizz-buzz': true
+     [5, Literal] 'fizz-buzz'
+     [5, Literal] true
+ [1, VariableDeclaration] const { 'fizz-buzz': fizzBuzz } = foo
+  [2, Type] const
+  [2, Variable] { 'fizz-buzz': fizzBuzz } = foo
+   [3, DestructuringObject] { 'fizz-buzz': fizzBuzz }
+    [4, Field] 'fizz-buzz': fizzBuzz
+     [5, Literal] 'fizz-buzz'
+     [5, Identifier] : fizzBuzz
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] const props = [\\n { id: 1, name: 'Fizz'},\\n { id: 2, name: 'Buzz'},\\n { id: 3, name: 'FizzBuzz'}\\n]
+  [2, Type] const
+  [2, Variable] props = [\\n { id: 1, name: 'Fizz'},\\n { id: 2, name: 'Buzz'},\\n { id: 3, name: 'FizzBuzz'}\\n]
+   [3, Identifier] props
+   [3, Operator] =
+   [3, ArrayDeclaration] [\\n { id: 1, name: 'Fizz'},\\n { id: 2, name: 'Buzz'},\\n { id: 3, name: 'FizzBuzz'}\\n]
+    [4, ObjectDeclaration] { id: 1, name: 'Fizz'}
+     [5, FieldDeclaration] id: 1
+      [6, Identifier] id
+      [6, Literal] 1
+     [5, FieldDeclaration] name: 'Fizz'
+      [6, Identifier] name
+      [6, Literal] 'Fizz'
+    [4, ObjectDeclaration] { id: 2, name: 'Buzz'}
+     [5, FieldDeclaration] id: 2
+      [6, Identifier] id
+      [6, Literal] 2
+     [5, FieldDeclaration] name: 'Buzz'
+      [6, Identifier] name
+      [6, Literal] 'Buzz'
+    [4, ObjectDeclaration] { id: 3, name: 'FizzBuzz'}
+     [5, FieldDeclaration] id: 3
+      [6, Identifier] id
+      [6, Literal] 3
+     [5, FieldDeclaration] name: 'FizzBuzz'
+      [6, Identifier] name
+      [6, Literal] 'FizzBuzz'
+ [1, VariableDeclaration] const [,, { name }] = props
+  [2, Type] const
+  [2, Variable] [,, { name }] = props
+   [3, DestructuringArray] [,, { name }]
+    [4, Empty] 
+    [4, Empty] 
+    [4, Value] { name }
+     [5, DestructuringObject] { name }
+      [6, Field] name
+       [7, Identifier] name
+   [3, Operator] =
+   [3, Identifier] props
+ [1, VariableDeclaration] let obj = {self: '123'}
+  [2, Type] let
+  [2, Variable] obj = {self: '123'}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {self: '123'}
+    [4, FieldDeclaration] self: '123'
+     [5, Identifier] self
+     [5, Literal] '123'
+ [1, Assignment] obj.__proto__.prot = '456'
+  [2, QualifiedExpression] obj.__proto__.prot
+   [3, Qualifier] obj.
+    [4, Identifier] obj
+    [4, Operator] .
+   [3, Qualifier] __proto__.
+    [4, Identifier] __proto__
+    [4, Operator] .
+   [3, Identifier] prot
+  [2, Operator] =
+  [2, Literal] '456'
+ [1, VariableDeclaration] const {self, prot} = obj
+  [2, Type] const
+  [2, Variable] {self, prot} = obj
+   [3, DestructuringObject] {self, prot}
+    [4, Field] self
+     [5, Identifier] self
+    [4, Field] prot
+     [5, Identifier] prot
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = {\\n self: "123",\\n __proto__: {\\n prot: "456",\\n },\\n}
+  [2, Type] const
+  [2, Variable] obj = {\\n self: "123",\\n __proto__: {\\n prot: "456",\\n },\\n}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n self: "123",\\n __proto__: {\\n prot: "456",\\n },\\n}
+    [4, FieldDeclaration] self: "123"
+     [5, Identifier] self
+     [5, Literal] "123"
+    [4, FieldDeclaration] __proto__: {\\n prot: "456",\\n }
+     [5, Identifier] __proto__
+     [5, ObjectDeclaration] {\\n prot: "456",\\n }
+      [6, FieldDeclaration] prot: "456"
+       [7, Identifier] prot
+       [7, Literal] "456"
+      [6, Empty] 
+    [4, Empty] 
+ [1, VariableDeclaration] const { self, prot } = obj
+  [2, Type] const
+  [2, Variable] { self, prot } = obj
+   [3, DestructuringObject] { self, prot }
+    [4, Field] self
+     [5, Identifier] self
+    [4, Field] prot
+     [5, Identifier] prot
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const props = [\\n { id: 1, name: "Fizz" },\\n { id: 2, name: "Buzz" },\\n { id: 3, name: "FizzBuzz" },\\n]
+  [2, Type] const
+  [2, Variable] props = [\\n { id: 1, name: "Fizz" },\\n { id: 2, name: "Buzz" },\\n { id: 3, name: "FizzBuzz" },\\n]
+   [3, Identifier] props
+   [3, Operator] =
+   [3, ArrayDeclaration] [\\n { id: 1, name: "Fizz" },\\n { id: 2, name: "Buzz" },\\n { id: 3, name: "FizzBuzz" },\\n]
+    [4, ObjectDeclaration] { id: 1, name: "Fizz" }
+     [5, FieldDeclaration] id: 1
+      [6, Identifier] id
+      [6, Literal] 1
+     [5, FieldDeclaration] name: "Fizz"
+      [6, Identifier] name
+      [6, Literal] "Fizz"
+    [4, ObjectDeclaration] { id: 2, name: "Buzz" }
+     [5, FieldDeclaration] id: 2
+      [6, Identifier] id
+      [6, Literal] 2
+     [5, FieldDeclaration] name: "Buzz"
+      [6, Identifier] name
+      [6, Literal] "Buzz"
+    [4, ObjectDeclaration] { id: 3, name: "FizzBuzz" }
+     [5, FieldDeclaration] id: 3
+      [6, Identifier] id
+      [6, Literal] 3
+     [5, FieldDeclaration] name: "FizzBuzz"
+      [6, Identifier] name
+      [6, Literal] "FizzBuzz"
+    [4, Empty] 
+ [1, VariableDeclaration] const [, , { name }] = props
+  [2, Type] const
+  [2, Variable] [, , { name }] = props
+   [3, DestructuringArray] [, , { name }]
+    [4, Empty] 
+    [4, Empty] 
+    [4, Value] { name }
+     [5, DestructuringObject] { name }
+      [6, Field] name
+       [7, Identifier] name
+   [3, Operator] =
+   [3, Identifier] props
+ [1, VariableDeclaration] const { a, toFixed } = 1
+  [2, Type] const
+  [2, Variable] { a, toFixed } = 1
+   [3, DestructuringObject] { a, toFixed }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] toFixed
+     [5, Identifier] toFixed
+   [3, Operator] =
+   [3, Literal] 1
+ [1, VariableDeclaration] const foo = { "fizz-buzz": true }
+  [2, Type] const
+  [2, Variable] foo = { "fizz-buzz": true }
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ObjectDeclaration] { "fizz-buzz": true }
+    [4, FieldDeclaration] "fizz-buzz": true
+     [5, Literal] "fizz-buzz"
+     [5, Literal] true
+ [1, VariableDeclaration] const { "fizz-buzz": fizzBuzz } = foo
+  [2, Type] const
+  [2, Variable] { "fizz-buzz": fizzBuzz } = foo
+   [3, DestructuringObject] { "fizz-buzz": fizzBuzz }
+    [4, Field] "fizz-buzz": fizzBuzz
+     [5, Literal] "fizz-buzz"
+     [5, Identifier] : fizzBuzz
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] const key = "z"
+  [2, Type] const
+  [2, Variable] key = "z"
+   [3, Identifier] key
+   [3, Operator] =
+   [3, Literal] "z"
+ [1, VariableDeclaration] const { [key]: foo } = { z: "bar" }
+  [2, Type] const
+  [2, Variable] { [key]: foo } = { z: "bar" }
+   [3, DestructuringObject] { [key]: foo }
+    [4, Field] [key]: foo
+     [5, ComputedValue] [key]
+      [6, Identifier] key
+     [5, Identifier] : foo
+   [3, Operator] =
+   [3, ObjectDeclaration] { z: "bar" }
+    [4, FieldDeclaration] z: "bar"
+     [5, Identifier] z
+     [5, Literal] "bar"
+ [1, VariableDeclaration] const people = [\\n {\\n name: "Mike Smith",\\n family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n },\\n age: 35,\\n },\\n {\\n name: "Tom Jones",\\n family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n },\\n age: 25,\\n },\\n]
+  [2, Type] const
+  [2, Variable] people = [\\n {\\n name: "Mike Smith",\\n family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n },\\n age: 35,\\n },\\n {\\n name: "Tom Jones",\\n family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n },\\n age: 25,\\n },\\n]
+   [3, Identifier] people
+   [3, Operator] =
+   [3, ArrayDeclaration] [\\n {\\n name: "Mike Smith",\\n family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n },\\n age: 35,\\n },\\n {\\n name: "Tom Jones",\\n family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n },\\n age: 25,\\n },\\n]
+    [4, ObjectDeclaration] {\\n name: "Mike Smith",\\n family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n },\\n age: 35,\\n }
+     [5, FieldDeclaration] name: "Mike Smith"
+      [6, Identifier] name
+      [6, Literal] "Mike Smith"
+     [5, FieldDeclaration] family: {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n }
+      [6, Identifier] family
+      [6, ObjectDeclaration] {\\n mother: "Jane Smith",\\n father: "Harry Smith",\\n sister: "Samantha Smith",\\n }
+       [7, FieldDeclaration] mother: "Jane Smith"
+        [8, Identifier] mother
+        [8, Literal] "Jane Smith"
+       [7, FieldDeclaration] father: "Harry Smith"
+        [8, Identifier] father
+        [8, Literal] "Harry Smith"
+       [7, FieldDeclaration] sister: "Samantha Smith"
+        [8, Identifier] sister
+        [8, Literal] "Samantha Smith"
+       [7, Empty] 
+     [5, FieldDeclaration] age: 35
+      [6, Identifier] age
+      [6, Literal] 35
+     [5, Empty] 
+    [4, ObjectDeclaration] {\\n name: "Tom Jones",\\n family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n },\\n age: 25,\\n }
+     [5, FieldDeclaration] name: "Tom Jones"
+      [6, Identifier] name
+      [6, Literal] "Tom Jones"
+     [5, FieldDeclaration] family: {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n }
+      [6, Identifier] family
+      [6, ObjectDeclaration] {\\n mother: "Norah Jones",\\n father: "Richard Jones",\\n brother: "Howard Jones",\\n }
+       [7, FieldDeclaration] mother: "Norah Jones"
+        [8, Identifier] mother
+        [8, Literal] "Norah Jones"
+       [7, FieldDeclaration] father: "Richard Jones"
+        [8, Identifier] father
+        [8, Literal] "Richard Jones"
+       [7, FieldDeclaration] brother: "Howard Jones"
+        [8, Identifier] brother
+        [8, Literal] "Howard Jones"
+       [7, Empty] 
+     [5, FieldDeclaration] age: 25
+      [6, Identifier] age
+      [6, Literal] 25
+     [5, Empty] 
+    [4, Empty] 
+ [1, For] for (const {\\n name: n,\\n family: { father: f },\\n} of people) {\\n console.log(`Name: ${n}, Father: ${f}`);\\n}
+  [2, ListIteration] const {\\n name: n,\\n family: { father: f },\\n} of people
+   [3, VariableDeclaration] const {\\n name: n,\\n family: { father: f },\\n}
+    [4, Type] const
+    [4, Variable] {\\n name: n,\\n family: { father: f },\\n}
+     [5, DestructuringObject] {\\n name: n,\\n family: { father: f },\\n}
+      [6, Field] name: n
+       [7, Identifier] name
+       [7, Identifier] : n
+      [6, Field] family: { father: f }
+       [7, Identifier] family
+       [7, DestructuringObject] : { father: f }
+        [8, Field] father: f
+         [9, Identifier] father
+         [9, Identifier] : f
+      [6, Empty] 
+   [3, Operator] of
+   [3, Identifier] people
+  [2, Procedure] {\\n console.log(`Name: ${n}, Father: ${f}`);\\n}
+   [3, QualifiedExpression] console.log(`Name: ${n}, Father: ${f}`)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(`Name: ${n}, Father: ${f}`)
+     [5, Identifier] log
+     [5, Signature] (`Name: ${n}, Father: ${f}`)
+      [6, LiteralTemplate] `Name: ${n}, Father: ${f}`
+       [7, Constant] Name: 
+       [7, Variable] ${n}
+        [8, Identifier] n
+       [7, Constant] , Father: 
+       [7, Variable] ${f}
+        [8, Identifier] f
+ [1, VariableDeclaration] const metadata = {\\n title: "Scratchpad",\\n translations: [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ],\\n url: "/en-US/docs/Tools/Scratchpad",\\n}
+  [2, Type] const
+  [2, Variable] metadata = {\\n title: "Scratchpad",\\n translations: [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ],\\n url: "/en-US/docs/Tools/Scratchpad",\\n}
+   [3, Identifier] metadata
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n title: "Scratchpad",\\n translations: [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ],\\n url: "/en-US/docs/Tools/Scratchpad",\\n}
+    [4, FieldDeclaration] title: "Scratchpad"
+     [5, Identifier] title
+     [5, Literal] "Scratchpad"
+    [4, FieldDeclaration] translations: [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ]
+     [5, Identifier] translations
+     [5, ArrayDeclaration] [\\n {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n },\\n ]
+      [6, ObjectDeclaration] {\\n locale: "de",\\n localizationTags: [],\\n lastEdit: "2014-04-14T08:43:37",\\n url: "/de/docs/Tools/Scratchpad",\\n title: "JavaScript-Umgebung",\\n }
+       [7, FieldDeclaration] locale: "de"
+        [8, Identifier] locale
+        [8, Literal] "de"
+       [7, FieldDeclaration] localizationTags: []
+        [8, Identifier] localizationTags
+        [8, ArrayDeclaration] []
+       [7, FieldDeclaration] lastEdit: "2014-04-14T08:43:37"
+        [8, Identifier] lastEdit
+        [8, Literal] "2014-04-14T08:43:37"
+       [7, FieldDeclaration] url: "/de/docs/Tools/Scratchpad"
+        [8, Identifier] url
+        [8, Literal] "/de/docs/Tools/Scratchpad"
+       [7, FieldDeclaration] title: "JavaScript-Umgebung"
+        [8, Identifier] title
+        [8, Literal] "JavaScript-Umgebung"
+       [7, Empty] 
+      [6, Empty] 
+    [4, FieldDeclaration] url: "/en-US/docs/Tools/Scratchpad"
+     [5, Identifier] url
+     [5, Literal] "/en-US/docs/Tools/Scratchpad"
+    [4, Empty] 
+ [1, VariableDeclaration] const {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+  [2, Type] const
+  [2, Variable] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n} = metadata
+   [3, DestructuringObject] {\\n title: englishTitle, // rename\\n translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ],\\n}
+    [4, Field] title: englishTitle
+     [5, Identifier] title
+     [5, Identifier] : englishTitle
+    [4, Field] translations: [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+     [5, Identifier] translations
+     [5, DestructuringArray] : [\\n {\\n title: localeTitle, // rename\\n },\\n ]
+      [6, Value] {\\n title: localeTitle, // rename\\n }
+       [7, DestructuringObject] {\\n title: localeTitle, // rename\\n }
+        [8, Field] title: localeTitle
+         [9, Identifier] title
+         [9, Identifier] : localeTitle
+        [8, Empty] 
+      [6, Empty] 
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] metadata
+ [1, FunctionDeclaration] function drawChart({\\n size = "big",\\n coords = { x: 0, y: 0 },\\n radius = 25,\\n} = {}) {\\n console.log(size, coords, radius);\\n}
+  [2, Identifier] drawChart
+  [2, Signature] ({\\n size = "big",\\n coords = { x: 0, y: 0 },\\n radius = 25,\\n} = {})
+   [3, ParameterWithValue] {\\n size = "big",\\n coords = { x: 0, y: 0 },\\n radius = 25,\\n} = {}
+    [4, DestructuringObject] {\\n size = "big",\\n coords = { x: 0, y: 0 },\\n radius = 25,\\n}
+     [5, Field] size = "big"
+      [6, Identifier] size
+      [6, Literal] = "big"
+     [5, Field] coords = { x: 0, y: 0 }
+      [6, Identifier] coords
+      [6, ObjectDeclaration] = { x: 0, y: 0 }
+       [7, FieldDeclaration] x: 0
+        [8, Identifier] x
+        [8, Literal] 0
+       [7, FieldDeclaration] y: 0
+        [8, Identifier] y
+        [8, Literal] 0
+     [5, Field] radius = 25
+      [6, Identifier] radius
+      [6, Literal] = 25
+     [5, Empty] 
+    [4, ObjectDeclaration] {}
+  [2, Procedure] {\\n console.log(size, coords, radius);\\n}
+   [3, QualifiedExpression] console.log(size, coords, radius)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(size, coords, radius)
+     [5, Identifier] log
+     [5, Signature] (size, coords, radius)
+      [6, Identifier] size
+      [6, Identifier] coords
+      [6, Identifier] radius
+ [1, FunctionCall] drawChart({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n})
+  [2, Identifier] drawChart
+  [2, Signature] ({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n})
+   [3, ObjectDeclaration] {\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n}
+    [4, FieldDeclaration] coords: { x: 18, y: 30 }
+     [5, Identifier] coords
+     [5, ObjectDeclaration] { x: 18, y: 30 }
+      [6, FieldDeclaration] x: 18
+       [7, Identifier] x
+       [7, Literal] 18
+      [6, FieldDeclaration] y: 30
+       [7, Identifier] y
+       [7, Literal] 30
+    [4, FieldDeclaration] radius: 30
+     [5, Identifier] radius
+     [5, Literal] 30
+    [4, Empty] 
+ [1, FunctionDeclaration] function whois({ displayName, fullName: { firstName: name } }) {\\n return `${displayName} is ${name}`;\\n}
+  [2, Identifier] whois
+  [2, Signature] ({ displayName, fullName: { firstName: name } })
+   [3, DestructuringObject] { displayName, fullName: { firstName: name } }
+    [4, Field] displayName
+     [5, Identifier] displayName
+    [4, Field] fullName: { firstName: name }
+     [5, Identifier] fullName
+     [5, DestructuringObject] : { firstName: name }
+      [6, Field] firstName: name
+       [7, Identifier] firstName
+       [7, Identifier] : name
+  [2, Procedure] {\\n return `${displayName} is ${name}`;\\n}
+   [3, Return] return `${displayName} is ${name}`
+    [4, LiteralTemplate] `${displayName} is ${name}`
+     [5, Variable] ${displayName}
+      [6, Identifier] displayName
+     [5, Constant]  is 
+     [5, Variable] ${name}
+      [6, Identifier] name
+ [1, FunctionDeclaration] function userDisplayName({ displayName: dname }) {\\n return dname;\\n}
+  [2, Identifier] userDisplayName
+  [2, Signature] ({ displayName: dname })
+   [3, DestructuringObject] { displayName: dname }
+    [4, Field] displayName: dname
+     [5, Identifier] displayName
+     [5, Identifier] : dname
+  [2, Procedure] {\\n return dname;\\n}
+   [3, Return] return dname
+    [4, Identifier] dname
+ [1, FunctionDeclaration] function userId({ id }) {\\n return id;\\n}
+  [2, Identifier] userId
+  [2, Signature] ({ id })
+   [3, DestructuringObject] { id }
+    [4, Field] id
+     [5, Identifier] id
+  [2, Procedure] {\\n return id;\\n}
+   [3, Return] return id
+    [4, Identifier] id
+ [1, VariableDeclaration] const user = {\\n id: 42,\\n displayName: "jdoe",\\n fullName: {\\n firstName: "Jane",\\n lastName: "Doe",\\n },\\n}
+  [2, Type] const
+  [2, Variable] user = {\\n id: 42,\\n displayName: "jdoe",\\n fullName: {\\n firstName: "Jane",\\n lastName: "Doe",\\n },\\n}
+   [3, Identifier] user
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n id: 42,\\n displayName: "jdoe",\\n fullName: {\\n firstName: "Jane",\\n lastName: "Doe",\\n },\\n}
+    [4, FieldDeclaration] id: 42
+     [5, Identifier] id
+     [5, Literal] 42
+    [4, FieldDeclaration] displayName: "jdoe"
+     [5, Identifier] displayName
+     [5, Literal] "jdoe"
+    [4, FieldDeclaration] fullName: {\\n firstName: "Jane",\\n lastName: "Doe",\\n }
+     [5, Identifier] fullName
+     [5, ObjectDeclaration] {\\n firstName: "Jane",\\n lastName: "Doe",\\n }
+      [6, FieldDeclaration] firstName: "Jane"
+       [7, Identifier] firstName
+       [7, Literal] "Jane"
+      [6, FieldDeclaration] lastName: "Doe"
+       [7, Identifier] lastName
+       [7, Literal] "Doe"
+      [6, Empty] 
+    [4, Empty] 
+ [1, VariableDeclaration] const { a: aa = 10, b: bb = 5 } = { a: 3 }
+  [2, Type] const
+  [2, Variable] { a: aa = 10, b: bb = 5 } = { a: 3 }
+   [3, DestructuringObject] { a: aa = 10, b: bb = 5 }
+    [4, Field] a: aa = 10
+     [5, Identifier] a
+     [5, Identifier] : aa
+     [5, Literal] = 10
+    [4, Field] b: bb = 5
+     [5, Identifier] b
+     [5, Identifier] : bb
+     [5, Literal] = 5
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 3 }
+    [4, FieldDeclaration] a: 3
+     [5, Identifier] a
+     [5, Literal] 3
+ [1, VariableDeclaration] const o = { p: 42, q: true }
+  [2, Type] const
+  [2, Variable] o = { p: 42, q: true }
+   [3, Identifier] o
+   [3, Operator] =
+   [3, ObjectDeclaration] { p: 42, q: true }
+    [4, FieldDeclaration] p: 42
+     [5, Identifier] p
+     [5, Literal] 42
+    [4, FieldDeclaration] q: true
+     [5, Identifier] q
+     [5, Literal] true
+ [1, VariableDeclaration] const { p: foo, q: bar } = o
+  [2, Type] const
+  [2, Variable] { p: foo, q: bar } = o
+   [3, DestructuringObject] { p: foo, q: bar }
+    [4, Field] p: foo
+     [5, Identifier] p
+     [5, Identifier] : foo
+    [4, Field] q: bar
+     [5, Identifier] q
+     [5, Identifier] : bar
+   [3, Operator] =
+   [3, Identifier] o
+ [1, VariableDeclaration] const user = {\\n id: 42,\\n isVerified: true,\\n}
+  [2, Type] const
+  [2, Variable] user = {\\n id: 42,\\n isVerified: true,\\n}
+   [3, Identifier] user
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n id: 42,\\n isVerified: true,\\n}
+    [4, FieldDeclaration] id: 42
+     [5, Identifier] id
+     [5, Literal] 42
+    [4, FieldDeclaration] isVerified: true
+     [5, Identifier] isVerified
+     [5, Literal] true
+    [4, Empty] 
+ [1, VariableDeclaration] const { id, isVerified } = user
+  [2, Type] const
+  [2, Variable] { id, isVerified } = user
+   [3, DestructuringObject] { id, isVerified }
+    [4, Field] id
+     [5, Identifier] id
+    [4, Field] isVerified
+     [5, Identifier] isVerified
+   [3, Operator] =
+   [3, Identifier] user
+ [1, VariableDeclaration] const obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+  [2, Type] const
+  [2, Variable] obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+    [4, MethodDeclaration] *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n }
+     [5, ComputedValue] [Symbol.iterator]
+      [6, QualifiedExpression] Symbol.iterator
+       [7, Qualifier] Symbol.
+        [8, Identifier] Symbol
+        [8, Operator] .
+       [7, Identifier] iterator
+     [5, Signature] ()
+     [5, Procedure] {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n }
+      [6, For] for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }
+       [7, ListIteration] const v of [0, 1, 2, 3]
+        [8, VariableDeclaration] const v
+         [9, Type] const
+         [9, Variable] v
+          [10, Identifier] v
+        [8, Operator] of
+        [8, ArrayDeclaration] [0, 1, 2, 3]
+         [9, Literal] 0
+         [9, Literal] 1
+         [9, Literal] 2
+         [9, Literal] 3
+       [7, Procedure] {\\n console.log(v);\\n yield v;\\n }
+        [8, QualifiedExpression] console.log(v)
+         [9, Qualifier] console.
+          [10, Identifier] console
+          [10, Operator] .
+         [9, FunctionCall] log(v)
+          [10, Identifier] log
+          [10, Signature] (v)
+           [11, Identifier] v
+        [8, Yield] yield v
+         [9, Identifier] v
+    [4, Empty] 
+ [1, VariableDeclaration] const [a, b, ...rest] = obj
+  [2, Type] const
+  [2, Variable] [a, b, ...rest] = obj
+   [3, DestructuringArray] [a, b, ...rest]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+  [2, Type] const
+  [2, Variable] obj = {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n },\\n}
+    [4, MethodDeclaration] *[Symbol.iterator]() {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n }
+     [5, ComputedValue] [Symbol.iterator]
+      [6, QualifiedExpression] Symbol.iterator
+       [7, Qualifier] Symbol.
+        [8, Identifier] Symbol
+        [8, Operator] .
+       [7, Identifier] iterator
+     [5, Signature] ()
+     [5, Procedure] {\\n for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }\\n }
+      [6, For] for (const v of [0, 1, 2, 3]) {\\n console.log(v);\\n yield v;\\n }
+       [7, ListIteration] const v of [0, 1, 2, 3]
+        [8, VariableDeclaration] const v
+         [9, Type] const
+         [9, Variable] v
+          [10, Identifier] v
+        [8, Operator] of
+        [8, ArrayDeclaration] [0, 1, 2, 3]
+         [9, Literal] 0
+         [9, Literal] 1
+         [9, Literal] 2
+         [9, Literal] 3
+       [7, Procedure] {\\n console.log(v);\\n yield v;\\n }
+        [8, QualifiedExpression] console.log(v)
+         [9, Qualifier] console.
+          [10, Identifier] console
+          [10, Operator] .
+         [9, FunctionCall] log(v)
+          [10, Identifier] log
+          [10, Signature] (v)
+           [11, Identifier] v
+        [8, Yield] yield v
+         [9, Identifier] v
+    [4, Empty] 
+ [1, VariableDeclaration] const [a, b] = obj
+  [2, Type] const
+  [2, Variable] [a, b] = obj
+   [3, DestructuringArray] [a, b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const [a, b] = new Map([\\n [1, 2],\\n [3, 4],\\n])
+  [2, Type] const
+  [2, Variable] [a, b] = new Map([\\n [1, 2],\\n [3, 4],\\n])
+   [3, DestructuringArray] [a, b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, New] new Map([\\n [1, 2],\\n [3, 4],\\n])
+    [4, Identifier] Map
+    [4, Signature] ([\\n [1, 2],\\n [3, 4],\\n])
+     [5, ArrayDeclaration] [\\n [1, 2],\\n [3, 4],\\n]
+      [6, ArrayDeclaration] [1, 2]
+       [7, Literal] 1
+       [7, Literal] 2
+      [6, ArrayDeclaration] [3, 4]
+       [7, Literal] 3
+       [7, Literal] 4
+      [6, Empty] 
+ [1, FunctionDeclaration] function parseProtocol(url) {\\n const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n console.log(parsedURL);\\n\\n const [, protocol, fullHost, fullPath] = parsedURL;\\n return protocol;\\n}
+  [2, Identifier] parseProtocol
+  [2, Signature] (url)
+   [3, Identifier] url
+  [2, Procedure] {\\n const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url);\\n if (!parsedURL) {\\n return false;\\n }\\n console.log(parsedURL);\\n\\n const [, protocol, fullHost, fullPath] = parsedURL;\\n return protocol;\\n}
+   [3, VariableDeclaration] const parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+    [4, Type] const
+    [4, Variable] parsedURL = /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+     [5, Identifier] parsedURL
+     [5, Operator] =
+     [5, QualifiedExpression] /^(\w+):\/\/([^\/]+)\/(.*)$/.exec(url)
+      [6, Qualifier] /^(\w+):\/\/([^\/]+)\/(.*)$/.
+       [7, Literal] /^(\w+):\/\/([^\/]+)\/(.*)$/
+       [7, Operator] .
+      [6, FunctionCall] exec(url)
+       [7, Identifier] exec
+       [7, Signature] (url)
+        [8, Identifier] url
+   [3, If] if (!parsedURL) {\\n return false;\\n }
+    [4, IfBlock] if (!parsedURL) {\\n return false;\\n }
+     [5, Condition] (!parsedURL)
+      [6, Prefix] !parsedURL
+       [7, Operator] !
+       [7, Identifier] parsedURL
+     [5, Procedure] {\\n return false;\\n }
+      [6, Return] return false
+       [7, Literal] false
+   [3, QualifiedExpression] console.log(parsedURL)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(parsedURL)
+     [5, Identifier] log
+     [5, Signature] (parsedURL)
+      [6, Identifier] parsedURL
+   [3, VariableDeclaration] const [, protocol, fullHost, fullPath] = parsedURL
+    [4, Type] const
+    [4, Variable] [, protocol, fullHost, fullPath] = parsedURL
+     [5, DestructuringArray] [, protocol, fullHost, fullPath]
+      [6, Empty] 
+      [6, Value] protocol
+       [7, Identifier] protocol
+      [6, Value] fullHost
+       [7, Identifier] fullHost
+      [6, Value] fullPath
+       [7, Identifier] fullPath
+     [5, Operator] =
+     [5, Identifier] parsedURL
+   [3, Return] return protocol
+    [4, Identifier] protocol
+ [1, VariableDeclaration] const [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6]
+  [2, Type] const
+  [2, Variable] [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6]
+   [3, DestructuringArray] [a, b, ...[c, d, ...[e, f]]]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...[c, d, ...[e, f]]
+     [5, DestructuringArray] [c, d, ...[e, f]]
+      [6, Value] c
+       [7, Identifier] c
+      [6, Value] d
+       [7, Identifier] d
+      [6, Spread] ...[e, f]
+       [7, DestructuringArray] [e, f]
+        [8, Value] e
+         [9, Identifier] e
+        [8, Value] f
+         [9, Identifier] f
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3, 4, 5, 6]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+    [4, Literal] 4
+    [4, Literal] 5
+    [4, Literal] 6
+ [1, QualifiedExpression] console.log(a, b, c, d, e, f)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a, b, c, d, e, f)
+   [3, Identifier] log
+   [3, Signature] (a, b, c, d, e, f)
+    [4, Identifier] a
+    [4, Identifier] b
+    [4, Identifier] c
+    [4, Identifier] d
+    [4, Identifier] e
+    [4, Identifier] f
+ [1, VariableDeclaration] const [a, b, ...[c, d]] = [1, 2, 3, 4]
+  [2, Type] const
+  [2, Variable] [a, b, ...[c, d]] = [1, 2, 3, 4]
+   [3, DestructuringArray] [a, b, ...[c, d]]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...[c, d]
+     [5, DestructuringArray] [c, d]
+      [6, Value] c
+       [7, Identifier] c
+      [6, Value] d
+       [7, Identifier] d
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3, 4]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+    [4, Literal] 4
+ [1, QualifiedExpression] console.log(a, b, c, d)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a, b, c, d)
+   [3, Identifier] log
+   [3, Signature] (a, b, c, d)
+    [4, Identifier] a
+    [4, Identifier] b
+    [4, Identifier] c
+    [4, Identifier] d
+ [1, VariableDeclaration] const [a, b, ...{ length }] = [1, 2, 3]
+  [2, Type] const
+  [2, Variable] [a, b, ...{ length }] = [1, 2, 3]
+   [3, DestructuringArray] [a, b, ...{ length }]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...{ length }
+     [5, DestructuringObject] { length }
+      [6, Field] length
+       [7, Identifier] length
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, QualifiedExpression] console.log(a, b, length)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a, b, length)
+   [3, Identifier] log
+   [3, Signature] (a, b, length)
+    [4, Identifier] a
+    [4, Identifier] b
+    [4, Identifier] length
+ [1, FunctionDeclaration] function f() {\\n return [1, 2, 3];\\n}
+  [2, Identifier] f
+  [2, Signature] ()
+  [2, Procedure] {\\n return [1, 2, 3];\\n}
+   [3, Return] return [1, 2, 3]
+    [4, ArrayDeclaration] [1, 2, 3]
+     [5, Literal] 1
+     [5, Literal] 2
+     [5, Literal] 3
+ [1, VariableDeclaration] const [a, , b] = f()
+  [2, Type] const
+  [2, Variable] [a, , b] = f()
+   [3, DestructuringArray] [a, , b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, FunctionCall] f()
+    [4, Identifier] f
+    [4, Signature] ()
+ [1, QualifiedExpression] console.log(a)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(a)
+   [3, Identifier] log
+   [3, Signature] (a)
+    [4, Identifier] a
+ [1, QualifiedExpression] console.log(b)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(b)
+   [3, Identifier] log
+   [3, Signature] (b)
+    [4, Identifier] b
+ [1, VariableDeclaration] const [c] = f()
+  [2, Type] const
+  [2, Variable] [c] = f()
+   [3, DestructuringArray] [c]
+    [4, Value] c
+     [5, Identifier] c
+   [3, Operator] =
+   [3, FunctionCall] f()
+    [4, Identifier] f
+    [4, Signature] ()
+ [1, FunctionDeclaration] function f() {\\n return [1, 2];\\n}
+  [2, Identifier] f
+  [2, Signature] ()
+  [2, Procedure] {\\n return [1, 2];\\n}
+   [3, Return] return [1, 2]
+    [4, ArrayDeclaration] [1, 2]
+     [5, Literal] 1
+     [5, Literal] 2
+ [1, VariableDeclaration] const [a, b] = f()
+  [2, Type] const
+  [2, Variable] [a, b] = f()
+   [3, DestructuringArray] [a, b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, FunctionCall] f()
+    [4, Identifier] f
+    [4, Signature] ()
+ [1, VariableDeclaration] let a = 1
+  [2, Type] let
+  [2, Variable] a = 1
+   [3, Identifier] a
+   [3, Operator] =
+   [3, Literal] 1
+ [1, VariableDeclaration] let b = 3
+  [2, Type] let
+  [2, Variable] b = 3
+   [3, Identifier] b
+   [3, Operator] =
+   [3, Literal] 3
+ [1, Assignment] [a, b] = [b, a]
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, ArrayDeclaration] [b, a]
+   [3, Identifier] b
+   [3, Identifier] a
+ [1, VariableDeclaration] const arr = [1, 2, 3]
+  [2, Type] const
+  [2, Variable] arr = [1, 2, 3]
+   [3, Identifier] arr
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, Assignment] [arr[2], arr[1]] = [arr[1], arr[2]]
+  [2, DestructuringArray] [arr[2], arr[1]]
+   [3, Value] arr[2]
+    [4, MapExpression] arr[2]
+     [5, Identifier] arr
+     [5, Bracket] [2]
+      [6, Literal] 2
+   [3, Value] arr[1]
+    [4, MapExpression] arr[1]
+     [5, Identifier] arr
+     [5, Bracket] [1]
+      [6, Literal] 1
+  [2, Operator] =
+  [2, ArrayDeclaration] [arr[1], arr[2]]
+   [3, MapExpression] arr[1]
+    [4, Identifier] arr
+    [4, Bracket] [1]
+     [5, Literal] 1
+   [3, MapExpression] arr[2]
+    [4, Identifier] arr
+    [4, Bracket] [2]
+     [5, Literal] 2
+ [1, VariableDeclaration] const foo = ["one", "two"]
+  [2, Type] const
+  [2, Variable] foo = ["one", "two"]
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ArrayDeclaration] ["one", "two"]
+    [4, Literal] "one"
+    [4, Literal] "two"
+ [1, VariableDeclaration] const [red, yellow, green, blue] = foo
+  [2, Type] const
+  [2, Variable] [red, yellow, green, blue] = foo
+   [3, DestructuringArray] [red, yellow, green, blue]
+    [4, Value] red
+     [5, Identifier] red
+    [4, Value] yellow
+     [5, Identifier] yellow
+    [4, Value] green
+     [5, Identifier] green
+    [4, Value] blue
+     [5, Identifier] blue
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] const foo = ["one", "two", "three"]
+  [2, Type] const
+  [2, Variable] foo = ["one", "two", "three"]
+   [3, Identifier] foo
+   [3, Operator] =
+   [3, ArrayDeclaration] ["one", "two", "three"]
+    [4, Literal] "one"
+    [4, Literal] "two"
+    [4, Literal] "three"
+ [1, VariableDeclaration] const [red, yellow, green] = foo
+  [2, Type] const
+  [2, Variable] [red, yellow, green] = foo
+   [3, DestructuringArray] [red, yellow, green]
+    [4, Value] red
+     [5, Identifier] red
+    [4, Value] yellow
+     [5, Identifier] yellow
+    [4, Value] green
+     [5, Identifier] green
+   [3, Operator] =
+   [3, Identifier] foo
+ [1, VariableDeclaration] const { a, ...others } = { a: 1, b: 2, c: 3 }
+  [2, Type] const
+  [2, Variable] { a, ...others } = { a: 1, b: 2, c: 3 }
+   [3, DestructuringObject] { a, ...others }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Spread] ...others
+     [5, Identifier] others
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 1, b: 2, c: 3 }
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: 2
+     [5, Identifier] b
+     [5, Literal] 2
+    [4, FieldDeclaration] c: 3
+     [5, Identifier] c
+     [5, Literal] 3
+ [1, VariableDeclaration] const [first, ...others2] = [1, 2, 3]
+  [2, Type] const
+  [2, Variable] [first, ...others2] = [1, 2, 3]
+   [3, DestructuringArray] [first, ...others2]
+    [4, Value] first
+     [5, Identifier] first
+    [4, Spread] ...others2
+     [5, Identifier] others2
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, VariableDeclaration] const { b = console.log("hey") } = { b: 2 }
+  [2, Type] const
+  [2, Variable] { b = console.log("hey") } = { b: 2 }
+   [3, DestructuringObject] { b = console.log("hey") }
+    [4, Field] b = console.log("hey")
+     [5, Identifier] b
+     [5, QualifiedExpression] = console.log("hey")
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log("hey")
+       [7, Identifier] log
+       [7, Signature] ("hey")
+        [8, Literal] "hey"
+   [3, Operator] =
+   [3, ObjectDeclaration] { b: 2 }
+    [4, FieldDeclaration] b: 2
+     [5, Identifier] b
+     [5, Literal] 2
+ [1, VariableDeclaration] const [a = 1] = []
+  [2, Type] const
+  [2, Variable] [a = 1] = []
+   [3, DestructuringArray] [a = 1]
+    [4, Value] a = 1
+     [5, Identifier] a
+     [5, Literal] = 1
+   [3, Operator] =
+   [3, ArrayDeclaration] []
+ [1, VariableDeclaration] const { b = 2 } = { b: undefined }
+  [2, Type] const
+  [2, Variable] { b = 2 } = { b: undefined }
+   [3, DestructuringObject] { b = 2 }
+    [4, Field] b = 2
+     [5, Identifier] b
+     [5, Literal] = 2
+   [3, Operator] =
+   [3, ObjectDeclaration] { b: undefined }
+    [4, FieldDeclaration] b: undefined
+     [5, Identifier] b
+     [5, Undefined] undefined
+ [1, VariableDeclaration] const { c = 2 } = { c: null }
+  [2, Type] const
+  [2, Variable] { c = 2 } = { c: null }
+   [3, DestructuringObject] { c = 2 }
+    [4, Field] c = 2
+     [5, Identifier] c
+     [5, Literal] = 2
+   [3, Operator] =
+   [3, ObjectDeclaration] { c: null }
+    [4, FieldDeclaration] c: null
+     [5, Identifier] c
+     [5, Null] null
+ [1, VariableDeclaration] const numbers = []
+  [2, Type] const
+  [2, Variable] numbers = []
+   [3, Identifier] numbers
+   [3, Operator] =
+   [3, ArrayDeclaration] []
+ [1, VariableDeclaration] const obj = { a: 1, b: 2 }
+  [2, Type] const
+  [2, Variable] obj = { a: 1, b: 2 }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 1, b: 2 }
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: 2
+     [5, Identifier] b
+     [5, Literal] 2
+ [1, Parenthesis] ({ a: numbers[0], b: numbers[1] } = obj)
+  [2, Assignment] { a: numbers[0], b: numbers[1] } = obj
+   [3, DestructuringObject] { a: numbers[0], b: numbers[1] }
+    [4, Field] a: numbers[0]
+     [5, Identifier] a
+     [5, MapExpression] : numbers[0]
+      [6, Identifier] numbers
+      [6, Bracket] [0]
+       [7, Literal] 0
+    [4, Field] b: numbers[1]
+     [5, Identifier] b
+     [5, MapExpression] : numbers[1]
+      [6, Identifier] numbers
+      [6, Bracket] [1]
+       [7, Literal] 1
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = { a: 1, b: { c: 2 } }
+  [2, Type] const
+  [2, Variable] obj = { a: 1, b: { c: 2 } }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 1, b: { c: 2 } }
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: { c: 2 }
+     [5, Identifier] b
+     [5, ObjectDeclaration] { c: 2 }
+      [6, FieldDeclaration] c: 2
+       [7, Identifier] c
+       [7, Literal] 2
+ [1, VariableDeclaration] const { a } = obj
+  [2, Type] const
+  [2, Variable] { a } = obj
+   [3, DestructuringObject] { a }
+    [4, Field] a
+     [5, Identifier] a
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] let {\\n b: { c: d },\\n} = obj
+  [2, Type] let
+  [2, Variable] {\\n b: { c: d },\\n} = obj
+   [3, DestructuringObject] {\\n b: { c: d },\\n}
+    [4, Field] b: { c: d }
+     [5, Identifier] b
+     [5, DestructuringObject] : { c: d }
+      [6, Field] c: d
+       [7, Identifier] c
+       [7, Identifier] : d
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = { a: 1, b: { c: 2 } }
+  [2, Type] const
+  [2, Variable] obj = { a: 1, b: { c: 2 } }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 1, b: { c: 2 } }
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: { c: 2 }
+     [5, Identifier] b
+     [5, ObjectDeclaration] { c: 2 }
+      [6, FieldDeclaration] c: 2
+       [7, Identifier] c
+       [7, Literal] 2
+ [1, VariableDeclaration] const {\\n a,\\n b: { c: d },\\n} = obj
+  [2, Type] const
+  [2, Variable] {\\n a,\\n b: { c: d },\\n} = obj
+   [3, DestructuringObject] {\\n a,\\n b: { c: d },\\n}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b: { c: d }
+     [5, Identifier] b
+     [5, DestructuringObject] : { c: d }
+      [6, Field] c: d
+       [7, Identifier] c
+       [7, Identifier] : d
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = { prop1: x, prop2: y, prop3: z }
+  [2, Type] const
+  [2, Variable] obj = { prop1: x, prop2: y, prop3: z }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { prop1: x, prop2: y, prop3: z }
+    [4, FieldDeclaration] prop1: x
+     [5, Identifier] prop1
+     [5, Identifier] x
+    [4, FieldDeclaration] prop2: y
+     [5, Identifier] prop2
+     [5, Identifier] y
+    [4, FieldDeclaration] prop3: z
+     [5, Identifier] prop3
+     [5, Identifier] z
+ [1, VariableDeclaration] const { prop1: x, prop2: y, prop3: z } = obj
+  [2, Type] const
+  [2, Variable] { prop1: x, prop2: y, prop3: z } = obj
+   [3, DestructuringObject] { prop1: x, prop2: y, prop3: z }
+    [4, Field] prop1: x
+     [5, Identifier] prop1
+     [5, Identifier] : x
+    [4, Field] prop2: y
+     [5, Identifier] prop2
+     [5, Identifier] : y
+    [4, Field] prop3: z
+     [5, Identifier] prop3
+     [5, Identifier] : z
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = { a, b, c }
+  [2, Type] const
+  [2, Variable] obj = { a, b, c }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { a, b, c }
+    [4, Identifier] a
+    [4, Identifier] b
+    [4, Identifier] c
+ [1, VariableDeclaration] const { a, b, c } = obj
+  [2, Type] const
+  [2, Variable] { a, b, c } = obj
+   [3, DestructuringObject] { a, b, c }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Field] c
+     [5, Identifier] c
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const arr = [1, 2, 3]
+  [2, Type] const
+  [2, Variable] arr = [1, 2, 3]
+   [3, Identifier] arr
+   [3, Operator] =
+   [3, ArrayDeclaration] [1, 2, 3]
+    [4, Literal] 1
+    [4, Literal] 2
+    [4, Literal] 3
+ [1, VariableDeclaration] const [a, b, c] = arr
+  [2, Type] const
+  [2, Variable] [a, b, c] = arr
+   [3, DestructuringArray] [a, b, c]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Value] c
+     [5, Identifier] c
+   [3, Operator] =
+   [3, Identifier] arr
+ [1, VariableDeclaration] const arr = [a, b, c]
+  [2, Type] const
+  [2, Variable] arr = [a, b, c]
+   [3, Identifier] arr
+   [3, Operator] =
+   [3, ArrayDeclaration] [a, b, c]
+    [4, Identifier] a
+    [4, Identifier] b
+    [4, Identifier] c
+ [1, VariableDeclaration] const [a, b] = array
+  [2, Type] const
+  [2, Variable] [a, b] = array
+   [3, DestructuringArray] [a, b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, , b] = array
+  [2, Type] const
+  [2, Variable] [a, , b] = array
+   [3, DestructuringArray] [a, , b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a = aDefault, b] = array
+  [2, Type] const
+  [2, Variable] [a = aDefault, b] = array
+   [3, DestructuringArray] [a = aDefault, b]
+    [4, Value] a = aDefault
+     [5, Identifier] a
+     [5, Identifier] = aDefault
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...rest] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...rest] = array
+   [3, DestructuringArray] [a, b, ...rest]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, , b, ...rest] = array
+  [2, Type] const
+  [2, Variable] [a, , b, ...rest] = array
+   [3, DestructuringArray] [a, , b, ...rest]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...{ pop, push }] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...{ pop, push }] = array
+   [3, DestructuringArray] [a, b, ...{ pop, push }]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...{ pop, push }
+     [5, DestructuringObject] { pop, push }
+      [6, Field] pop
+       [7, Identifier] pop
+      [6, Field] push
+       [7, Identifier] push
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...[c, d]] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...[c, d]] = array
+   [3, DestructuringArray] [a, b, ...[c, d]]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...[c, d]
+     [5, DestructuringArray] [c, d]
+      [6, Value] c
+       [7, Identifier] c
+      [6, Value] d
+       [7, Identifier] d
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const { a, b } = obj
+  [2, Type] const
+  [2, Variable] { a, b } = obj
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1, b: b1 } = obj
+  [2, Type] const
+  [2, Variable] { a: a1, b: b1 } = obj
+   [3, DestructuringObject] { a: a1, b: b1 }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1 = aDefault, b = bDefault } = obj
+  [2, Type] const
+  [2, Variable] { a: a1 = aDefault, b = bDefault } = obj
+   [3, DestructuringObject] { a: a1 = aDefault, b = bDefault }
+    [4, Field] a: a1 = aDefault
+     [5, Identifier] a
+     [5, Identifier] : a1
+     [5, Identifier] = aDefault
+    [4, Field] b = bDefault
+     [5, Identifier] b
+     [5, Identifier] = bDefault
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a, b, ...rest } = obj
+  [2, Type] const
+  [2, Variable] { a, b, ...rest } = obj
+   [3, DestructuringObject] { a, b, ...rest }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1, b: b1, ...rest } = obj
+  [2, Type] const
+  [2, Variable] { a: a1, b: b1, ...rest } = obj
+   [3, DestructuringObject] { a: a1, b: b1, ...rest }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { [key]: a } = obj
+  [2, Type] const
+  [2, Variable] { [key]: a } = obj
+   [3, DestructuringObject] { [key]: a }
+    [4, Field] [key]: a
+     [5, ComputedValue] [key]
+      [6, Identifier] key
+     [5, Identifier] : a
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] let a, b, a1, b1, c, d, rest, pop, push
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+  [2, Variable] a1
+   [3, Identifier] a1
+  [2, Variable] b1
+   [3, Identifier] b1
+  [2, Variable] c
+   [3, Identifier] c
+  [2, Variable] d
+   [3, Identifier] d
+  [2, Variable] rest
+   [3, Identifier] rest
+  [2, Variable] pop
+   [3, Identifier] pop
+  [2, Variable] push
+   [3, Identifier] push
+ [1, Assignment] [a, b] = array
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, , b] = array
+  [2, DestructuringArray] [a, , b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Empty] 
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a = aDefault, b] = array
+  [2, DestructuringArray] [a = aDefault, b]
+   [3, Value] a = aDefault
+    [4, Identifier] a
+    [4, Identifier] = aDefault
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...rest] = array
+  [2, DestructuringArray] [a, b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, , b, ...rest] = array
+  [2, DestructuringArray] [a, , b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Empty] 
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...{ pop, push }] = array
+  [2, DestructuringArray] [a, b, ...{ pop, push }]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...{ pop, push }
+    [4, DestructuringObject] { pop, push }
+     [5, Field] pop
+      [6, Identifier] pop
+     [5, Field] push
+      [6, Identifier] push
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...[c, d]] = array
+  [2, DestructuringArray] [a, b, ...[c, d]]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...[c, d]
+    [4, DestructuringArray] [c, d]
+     [5, Value] c
+      [6, Identifier] c
+     [5, Value] d
+      [6, Identifier] d
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Parenthesis] ({ a, b } = obj)
+  [2, Assignment] { a, b } = obj
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1, b: b1 } = obj)
+  [2, Assignment] { a: a1, b: b1 } = obj
+   [3, DestructuringObject] { a: a1, b: b1 }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1 = aDefault, b = bDefault } = obj)
+  [2, Assignment] { a: a1 = aDefault, b = bDefault } = obj
+   [3, DestructuringObject] { a: a1 = aDefault, b = bDefault }
+    [4, Field] a: a1 = aDefault
+     [5, Identifier] a
+     [5, Identifier] : a1
+     [5, Identifier] = aDefault
+    [4, Field] b = bDefault
+     [5, Identifier] b
+     [5, Identifier] = bDefault
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a, b, ...rest } = obj)
+  [2, Assignment] { a, b, ...rest } = obj
+   [3, DestructuringObject] { a, b, ...rest }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1, b: b1, ...rest } = obj)
+  [2, Assignment] { a: a1, b: b1, ...rest } = obj
+   [3, DestructuringObject] { a: a1, b: b1, ...rest }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] let a, b, rest
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+  [2, Variable] rest
+   [3, Identifier] rest
+ [1, Assignment] [a, b] = [10, 20]
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, ArrayDeclaration] [10, 20]
+   [3, Literal] 10
+   [3, Literal] 20
+ [1, VariableDeclaration] const [a, b] = array
+  [2, Type] const
+  [2, Variable] [a, b] = array
+   [3, DestructuringArray] [a, b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, , b] = array
+  [2, Type] const
+  [2, Variable] [a, , b] = array
+   [3, DestructuringArray] [a, , b]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a = aDefault, b] = array
+  [2, Type] const
+  [2, Variable] [a = aDefault, b] = array
+   [3, DestructuringArray] [a = aDefault, b]
+    [4, Value] a = aDefault
+     [5, Identifier] a
+     [5, Identifier] = aDefault
+    [4, Value] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...rest] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...rest] = array
+   [3, DestructuringArray] [a, b, ...rest]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, , b, ...rest] = array
+  [2, Type] const
+  [2, Variable] [a, , b, ...rest] = array
+   [3, DestructuringArray] [a, , b, ...rest]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Empty] 
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...{ pop, push }] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...{ pop, push }] = array
+   [3, DestructuringArray] [a, b, ...{ pop, push }]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...{ pop, push }
+     [5, DestructuringObject] { pop, push }
+      [6, Field] pop
+       [7, Identifier] pop
+      [6, Field] push
+       [7, Identifier] push
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const [a, b, ...[c, d]] = array
+  [2, Type] const
+  [2, Variable] [a, b, ...[c, d]] = array
+   [3, DestructuringArray] [a, b, ...[c, d]]
+    [4, Value] a
+     [5, Identifier] a
+    [4, Value] b
+     [5, Identifier] b
+    [4, Spread] ...[c, d]
+     [5, DestructuringArray] [c, d]
+      [6, Value] c
+       [7, Identifier] c
+      [6, Value] d
+       [7, Identifier] d
+   [3, Operator] =
+   [3, Identifier] array
+ [1, VariableDeclaration] const { a, b } = obj
+  [2, Type] const
+  [2, Variable] { a, b } = obj
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1, b: b1 } = obj
+  [2, Type] const
+  [2, Variable] { a: a1, b: b1 } = obj
+   [3, DestructuringObject] { a: a1, b: b1 }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1 = aDefault, b = bDefault } = obj
+  [2, Type] const
+  [2, Variable] { a: a1 = aDefault, b = bDefault } = obj
+   [3, DestructuringObject] { a: a1 = aDefault, b = bDefault }
+    [4, Field] a: a1 = aDefault
+     [5, Identifier] a
+     [5, Identifier] : a1
+     [5, Identifier] = aDefault
+    [4, Field] b = bDefault
+     [5, Identifier] b
+     [5, Identifier] = bDefault
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a, b, ...rest } = obj
+  [2, Type] const
+  [2, Variable] { a, b, ...rest } = obj
+   [3, DestructuringObject] { a, b, ...rest }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { a: a1, b: b1, ...rest } = obj
+  [2, Type] const
+  [2, Variable] { a: a1, b: b1, ...rest } = obj
+   [3, DestructuringObject] { a: a1, b: b1, ...rest }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const { [key]: a } = obj
+  [2, Type] const
+  [2, Variable] { [key]: a } = obj
+   [3, DestructuringObject] { [key]: a }
+    [4, Field] [key]: a
+     [5, ComputedValue] [key]
+      [6, Identifier] key
+     [5, Identifier] : a
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] let a, b, a1, b1, c, d, rest, pop, push
+  [2, Type] let
+  [2, Variable] a
+   [3, Identifier] a
+  [2, Variable] b
+   [3, Identifier] b
+  [2, Variable] a1
+   [3, Identifier] a1
+  [2, Variable] b1
+   [3, Identifier] b1
+  [2, Variable] c
+   [3, Identifier] c
+  [2, Variable] d
+   [3, Identifier] d
+  [2, Variable] rest
+   [3, Identifier] rest
+  [2, Variable] pop
+   [3, Identifier] pop
+  [2, Variable] push
+   [3, Identifier] push
+ [1, Assignment] [a, b] = array
+  [2, DestructuringArray] [a, b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, , b] = array
+  [2, DestructuringArray] [a, , b]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Empty] 
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a = aDefault, b] = array
+  [2, DestructuringArray] [a = aDefault, b]
+   [3, Value] a = aDefault
+    [4, Identifier] a
+    [4, Identifier] = aDefault
+   [3, Value] b
+    [4, Identifier] b
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...rest] = array
+  [2, DestructuringArray] [a, b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, , b, ...rest] = array
+  [2, DestructuringArray] [a, , b, ...rest]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Empty] 
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...rest
+    [4, Identifier] rest
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...{ pop, push }] = array
+  [2, DestructuringArray] [a, b, ...{ pop, push }]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...{ pop, push }
+    [4, DestructuringObject] { pop, push }
+     [5, Field] pop
+      [6, Identifier] pop
+     [5, Field] push
+      [6, Identifier] push
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Assignment] [a, b, ...[c, d]] = array
+  [2, DestructuringArray] [a, b, ...[c, d]]
+   [3, Value] a
+    [4, Identifier] a
+   [3, Value] b
+    [4, Identifier] b
+   [3, Spread] ...[c, d]
+    [4, DestructuringArray] [c, d]
+     [5, Value] c
+      [6, Identifier] c
+     [5, Value] d
+      [6, Identifier] d
+  [2, Operator] =
+  [2, Identifier] array
+ [1, Parenthesis] ({ a, b } = obj)
+  [2, Assignment] { a, b } = obj
+   [3, DestructuringObject] { a, b }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1, b: b1 } = obj)
+  [2, Assignment] { a: a1, b: b1 } = obj
+   [3, DestructuringObject] { a: a1, b: b1 }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1 = aDefault, b = bDefault } = obj)
+  [2, Assignment] { a: a1 = aDefault, b = bDefault } = obj
+   [3, DestructuringObject] { a: a1 = aDefault, b = bDefault }
+    [4, Field] a: a1 = aDefault
+     [5, Identifier] a
+     [5, Identifier] : a1
+     [5, Identifier] = aDefault
+    [4, Field] b = bDefault
+     [5, Identifier] b
+     [5, Identifier] = bDefault
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a, b, ...rest } = obj)
+  [2, Assignment] { a, b, ...rest } = obj
+   [3, DestructuringObject] { a, b, ...rest }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b
+     [5, Identifier] b
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, Parenthesis] ({ a: a1, b: b1, ...rest } = obj)
+  [2, Assignment] { a: a1, b: b1, ...rest } = obj
+   [3, DestructuringObject] { a: a1, b: b1, ...rest }
+    [4, Field] a: a1
+     [5, Identifier] a
+     [5, Identifier] : a1
+    [4, Field] b: b1
+     [5, Identifier] b
+     [5, Identifier] : b1
+    [4, Spread] ...rest
+     [5, Identifier] rest
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, VariableDeclaration] const obj = { a: 1, b: { c: 2 } }
+  [2, Type] const
+  [2, Variable] obj = { a: 1, b: { c: 2 } }
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] { a: 1, b: { c: 2 } }
+    [4, FieldDeclaration] a: 1
+     [5, Identifier] a
+     [5, Literal] 1
+    [4, FieldDeclaration] b: { c: 2 }
+     [5, Identifier] b
+     [5, ObjectDeclaration] { c: 2 }
+      [6, FieldDeclaration] c: 2
+       [7, Identifier] c
+       [7, Literal] 2
+ [1, VariableDeclaration] const { a, b: { c: d } } = obj
+  [2, Type] const
+  [2, Variable] { a, b: { c: d } } = obj
+   [3, DestructuringObject] { a, b: { c: d } }
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b: { c: d }
+     [5, Identifier] b
+     [5, DestructuringObject] : { c: d }
+      [6, Field] c: d
+       [7, Identifier] c
+       [7, Identifier] : d
+   [3, Operator] =
+   [3, Identifier] obj
+ [1, FunctionDeclaration] function userDisplayName({ displayName: dname }) {\\n return dname;\\n}
+  [2, Identifier] userDisplayName
+  [2, Signature] ({ displayName: dname })
+   [3, DestructuringObject] { displayName: dname }
+    [4, Field] displayName: dname
+     [5, Identifier] displayName
+     [5, Identifier] : dname
+  [2, Procedure] {\\n return dname;\\n}
+   [3, Return] return dname
+    [4, Identifier] dname
+ [1, FunctionDeclaration] function whois({ displayName, fullName: { firstName: name } }) {\\n return `${displayName} is ${name}`;\\n}
+  [2, Identifier] whois
+  [2, Signature] ({ displayName, fullName: { firstName: name } })
+   [3, DestructuringObject] { displayName, fullName: { firstName: name } }
+    [4, Field] displayName
+     [5, Identifier] displayName
+    [4, Field] fullName: { firstName: name }
+     [5, Identifier] fullName
+     [5, DestructuringObject] : { firstName: name }
+      [6, Field] firstName: name
+       [7, Identifier] firstName
+       [7, Identifier] : name
+  [2, Procedure] {\\n return `${displayName} is ${name}`;\\n}
+   [3, Return] return `${displayName} is ${name}`
+    [4, LiteralTemplate] `${displayName} is ${name}`
+     [5, Variable] ${displayName}
+      [6, Identifier] displayName
+     [5, Constant]  is 
+     [5, Variable] ${name}
+      [6, Identifier] name
+ [1, FunctionDeclaration] function drawChart({ size = 'big', coords = { x: 0, y: 0 }, radius = 25 } = {}) {\\n console.log(size, coords, radius);\\n}
+  [2, Identifier] drawChart
+  [2, Signature] ({ size = 'big', coords = { x: 0, y: 0 }, radius = 25 } = {})
+   [3, ParameterWithValue] { size = 'big', coords = { x: 0, y: 0 }, radius = 25 } = {}
+    [4, DestructuringObject] { size = 'big', coords = { x: 0, y: 0 }, radius = 25 }
+     [5, Field] size = 'big'
+      [6, Identifier] size
+      [6, Literal] = 'big'
+     [5, Field] coords = { x: 0, y: 0 }
+      [6, Identifier] coords
+      [6, ObjectDeclaration] = { x: 0, y: 0 }
+       [7, FieldDeclaration] x: 0
+        [8, Identifier] x
+        [8, Literal] 0
+       [7, FieldDeclaration] y: 0
+        [8, Identifier] y
+        [8, Literal] 0
+     [5, Field] radius = 25
+      [6, Identifier] radius
+      [6, Literal] = 25
+    [4, ObjectDeclaration] {}
+  [2, Procedure] {\\n console.log(size, coords, radius);\\n}
+   [3, QualifiedExpression] console.log(size, coords, radius)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(size, coords, radius)
+     [5, Identifier] log
+     [5, Signature] (size, coords, radius)
+      [6, Identifier] size
+      [6, Identifier] coords
+      [6, Identifier] radius
+ [1, FunctionCall] drawChart({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n})
+  [2, Identifier] drawChart
+  [2, Signature] ({\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n})
+   [3, ObjectDeclaration] {\\n coords: { x: 18, y: 30 },\\n radius: 30,\\n}
+    [4, FieldDeclaration] coords: { x: 18, y: 30 }
+     [5, Identifier] coords
+     [5, ObjectDeclaration] { x: 18, y: 30 }
+      [6, FieldDeclaration] x: 18
+       [7, Identifier] x
+       [7, Literal] 18
+      [6, FieldDeclaration] y: 30
+       [7, Identifier] y
+       [7, Literal] 30
+    [4, FieldDeclaration] radius: 30
+     [5, Identifier] radius
+     [5, Literal] 30
+    [4, Empty] 

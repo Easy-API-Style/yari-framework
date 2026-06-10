@@ -1,0 +1,16 @@
+[0, Css] #main,\\n .content,\\n article,\\n h1 + p {\\n font-size: 1.1em;\\n }
+ [1, RuleSet] #main,\\n .content,\\n article,\\n h1 + p {\\n font-size: 1.1em;\\n }
+  [2, ListSelector] #main,\\n .content,\\n article,\\n h1 + p
+   [3, IdSelector] #main
+    [4, Identifier] main
+   [3, ClassSelector] .content
+    [4, Identifier] content
+   [3, ElementSelector] article
+   [3, CombinatorSelector] h1 + p
+    [4, ElementSelector] h1
+    [4, Operator] +
+    [4, ElementSelector] p
+  [2, Block] {\\n font-size: 1.1em;\\n }
+   [3, Property] font-size: 1.1em
+    [4, Identifier] font-size
+    [4, Identifier] 1.1em

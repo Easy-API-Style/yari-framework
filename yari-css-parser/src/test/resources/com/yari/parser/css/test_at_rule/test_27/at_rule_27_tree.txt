@@ -1,0 +1,55 @@
+[0, Css] @import "grid.css" supports(display: grid) screen and (width <= 400px);\\n @import "flex.css" supports((not (display: grid)) and (display: flex)) screen\\n and (width <= 400px);
+ [1, AtRule] @import "grid.css" supports(display: grid) screen and (width <= 400px)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "grid.css" supports(display: grid) screen and (width <= 400px)
+   [3, Infix] "grid.css" supports(display: grid) screen
+    [4, Infix] "grid.css" supports(display: grid)
+     [5, Literal] "grid.css"
+     [5, Operator] 
+     [5, Function] supports(display: grid)
+      [6, Identifier] supports
+      [6, Signature] (display: grid)
+       [7, Property] display: grid
+        [8, Identifier] display
+        [8, Identifier] grid
+    [4, Operator] 
+    [4, Identifier] screen
+   [3, Operator] and
+   [3, Parenthesis] (width <= 400px)
+    [4, Infix] width <= 400px
+     [5, Identifier] width
+     [5, Operator] <=
+     [5, Identifier] 400px
+ [1, AtRule] @import "flex.css" supports((not (display: grid)) and (display: flex)) screen\\n and (width <= 400px)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] "flex.css" supports((not (display: grid)) and (display: flex)) screen\\n and (width <= 400px)
+   [3, Infix] "flex.css" supports((not (display: grid)) and (display: flex)) screen
+    [4, Infix] "flex.css" supports((not (display: grid)) and (display: flex))
+     [5, Literal] "flex.css"
+     [5, Operator] 
+     [5, Function] supports((not (display: grid)) and (display: flex))
+      [6, Identifier] supports
+      [6, Signature] ((not (display: grid)) and (display: flex))
+       [7, Infix] (not (display: grid)) and (display: flex)
+        [8, Parenthesis] (not (display: grid))
+         [9, Prefix] not (display: grid)
+          [10, Operator] not
+          [10, Parenthesis] (display: grid)
+           [11, Property] display: grid
+            [12, Identifier] display
+            [12, Identifier] grid
+        [8, Operator] and
+        [8, Parenthesis] (display: flex)
+         [9, Property] display: flex
+          [10, Identifier] display
+          [10, Identifier] flex
+    [4, Operator] 
+    [4, Identifier] screen
+   [3, Operator] and
+   [3, Parenthesis] (width <= 400px)
+    [4, Infix] width <= 400px
+     [5, Identifier] width
+     [5, Operator] <=
+     [5, Identifier] 400px

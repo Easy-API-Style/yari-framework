@@ -1,0 +1,26 @@
+[0, Css] @font-palette-values --identifier {\\n font-family: "Bixa";\\n }\\n @font-palette-values --Alternate {\\n font-family: "Bungee Spice";\\n override-colors:\\n 0 #00ffbb,\\n 1 #007744;\\n }
+ [1, AtRule] @font-palette-values --identifier {\\n font-family: "Bixa";\\n }
+  [2, AtRuleName] @font-palette-values
+   [3, Identifier] font-palette-values
+  [2, Identifier] --identifier
+  [2, Block] {\\n font-family: "Bixa";\\n }
+   [3, Property] font-family: "Bixa"
+    [4, Identifier] font-family
+    [4, Literal] "Bixa"
+ [1, AtRule] @font-palette-values --Alternate {\\n font-family: "Bungee Spice";\\n override-colors:\\n 0 #00ffbb,\\n 1 #007744;\\n }
+  [2, AtRuleName] @font-palette-values
+   [3, Identifier] font-palette-values
+  [2, Identifier] --Alternate
+  [2, Block] {\\n font-family: "Bungee Spice";\\n override-colors:\\n 0 #00ffbb,\\n 1 #007744;\\n }
+   [3, Property] font-family: "Bungee Spice"
+    [4, Identifier] font-family
+    [4, Literal] "Bungee Spice"
+   [3, Property] override-colors:\\n 0 #00ffbb,\\n 1 #007744
+    [4, Identifier] override-colors
+    [4, ListValue] 0 #00ffbb,\\n 1 #007744
+     [5, ListValue] 0 #00ffbb
+      [6, Identifier] 0
+      [6, Literal] #00ffbb
+     [5, ListValue] 1 #007744
+      [6, Identifier] 1
+      [6, Literal] #007744

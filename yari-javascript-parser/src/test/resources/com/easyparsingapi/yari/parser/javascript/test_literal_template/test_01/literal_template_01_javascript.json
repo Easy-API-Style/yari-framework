@@ -1,0 +1,297 @@
+{
+  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Javascript",
+  "nodes" : [ {
+    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate",
+    "elements" : [ {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Constant",
+      "value" : "header ",
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 2
+        },
+        "end" : {
+          "line" : 1,
+          "column" : 9
+        }
+      }
+    }, {
+      "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Variable",
+      "value" : {
+        "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Ternary",
+        "condition" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall",
+          "name" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+            "value" : "isLargeScreen",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 3
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 16
+              }
+            }
+          },
+          "signature" : {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.FunctionCall$Signature",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 16
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 18
+              }
+            }
+          },
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 3
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 18
+            }
+          }
+        },
+        "ifPart" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+          "type" : "doubleQuoteString",
+          "value" : "",
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 21
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 23
+            }
+          }
+        },
+        "elsePart" : {
+          "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate",
+          "elements" : [ {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Constant",
+            "value" : "icon-",
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 27
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 32
+              }
+            }
+          }, {
+            "@class" : "com.easyparsingapi.yari.parser.javascript.ast.LiteralTemplate$Variable",
+            "value" : {
+              "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Ternary",
+              "condition" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression",
+                "qualifiers" : [ {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.QualifiedExpression$Qualifier",
+                  "expression" : {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                    "value" : "item",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 2,
+                        "column" : 34
+                      },
+                      "end" : {
+                        "line" : 2,
+                        "column" : 38
+                      }
+                    }
+                  },
+                  "operator" : {
+                    "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Operator",
+                    "symbol" : ".",
+                    "sourceLocation" : {
+                      "start" : {
+                        "line" : 2,
+                        "column" : 38
+                      },
+                      "end" : {
+                        "line" : 2,
+                        "column" : 39
+                      }
+                    }
+                  },
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 34
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 39
+                    }
+                  }
+                } ],
+                "expression" : {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "isCollapsed",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 39
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 50
+                    }
+                  }
+                },
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 34
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 50
+                  }
+                },
+                "expressions" : [ {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "item",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 34
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 38
+                    }
+                  }
+                }, {
+                  "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Identifier",
+                  "value" : "isCollapsed",
+                  "sourceLocation" : {
+                    "start" : {
+                      "line" : 2,
+                      "column" : 39
+                    },
+                    "end" : {
+                      "line" : 2,
+                      "column" : 50
+                    }
+                  }
+                } ]
+              },
+              "ifPart" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+                "type" : "doubleQuoteString",
+                "value" : "expander",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 53
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 63
+                  }
+                }
+              },
+              "elsePart" : {
+                "@class" : "com.easyparsingapi.yari.parser.javascript.ast.Literal",
+                "type" : "doubleQuoteString",
+                "value" : "collapser",
+                "sourceLocation" : {
+                  "start" : {
+                    "line" : 2,
+                    "column" : 66
+                  },
+                  "end" : {
+                    "line" : 2,
+                    "column" : 77
+                  }
+                }
+              },
+              "sourceLocation" : {
+                "start" : {
+                  "line" : 2,
+                  "column" : 34
+                },
+                "end" : {
+                  "line" : 2,
+                  "column" : 77
+                }
+              }
+            },
+            "sourceLocation" : {
+              "start" : {
+                "line" : 2,
+                "column" : 32
+              },
+              "end" : {
+                "line" : 2,
+                "column" : 78
+              }
+            }
+          } ],
+          "sourceLocation" : {
+            "start" : {
+              "line" : 2,
+              "column" : 26
+            },
+            "end" : {
+              "line" : 2,
+              "column" : 79
+            }
+          }
+        },
+        "sourceLocation" : {
+          "start" : {
+            "line" : 2,
+            "column" : 3
+          },
+          "end" : {
+            "line" : 2,
+            "column" : 79
+          }
+        }
+      },
+      "sourceLocation" : {
+        "start" : {
+          "line" : 1,
+          "column" : 9
+        },
+        "end" : {
+          "line" : 3,
+          "column" : 2
+        }
+      }
+    } ],
+    "sourceLocation" : {
+      "start" : {
+        "line" : 1,
+        "column" : 1
+      },
+      "end" : {
+        "line" : 3,
+        "column" : 3
+      }
+    }
+  } ],
+  "sourceLocation" : {
+    "start" : {
+      "line" : 1,
+      "column" : 1
+    },
+    "end" : {
+      "line" : 3,
+      "column" : 3
+    }
+  }
+}

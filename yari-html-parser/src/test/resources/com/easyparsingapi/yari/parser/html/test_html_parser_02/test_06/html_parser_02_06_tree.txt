@@ -1,0 +1,42 @@
+[0, Html] <test>\\n <script>\\n <div>\\n aaaa\\n </div>\\n </script>\\n <script att="no"/>\\n <div>\\n bbbb\\n </div>\\n </test>
+ [1, Tag] <test>\\n <script>\\n <div>\\n aaaa\\n </div>\\n </script>\\n <script att="no"/>\\n <div>\\n bbbb\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <script>\\n <div>\\n aaaa\\n </div>\\n </script>\\n <script att="no"/>\\n <div>\\n bbbb\\n </div>
+   [3, Tag] <script>\\n <div>\\n aaaa\\n </div>\\n </script>
+    [4, TagHead] <script>
+     [5, TagName] script
+      [6, Name] script
+    [4, TagBody] <div>\\n aaaa\\n </div>
+     [5, Tag] <div>\\n aaaa\\n </div>
+      [6, TagHead] <div>
+       [7, TagName] div
+        [8, Name] div
+      [6, TagBody] aaaa
+       [7, Text] aaaa
+      [6, TagFoot] </div>
+       [7, TagName] div
+        [8, Name] div
+    [4, TagFoot] </script>
+     [5, TagName] script
+      [6, Name] script
+   [3, TagEmpty] <script att="no"/>
+    [4, TagName] script
+     [5, Name] script
+    [4, TagAttribute] att="no"
+     [5, Name] att
+      [6, Name] att
+     [5, Value] "no"
+   [3, Tag] <div>\\n bbbb\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] bbbb
+     [5, Text] bbbb
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

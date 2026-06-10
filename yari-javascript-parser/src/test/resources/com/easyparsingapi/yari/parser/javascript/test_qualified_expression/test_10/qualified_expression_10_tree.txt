@@ -1,0 +1,12 @@
+[0, JavascriptNodeUnit] import('/modules/mon-module.js').then(module)
+ [1, QualifiedExpression] import('/modules/mon-module.js').then(module)
+  [2, Qualifier] import('/modules/mon-module.js').
+   [3, FunctionCall] import('/modules/mon-module.js')
+    [4, Identifier] import
+    [4, Signature] ('/modules/mon-module.js')
+     [5, Literal] '/modules/mon-module.js'
+   [3, Operator] .
+  [2, FunctionCall] then(module)
+   [3, Identifier] then
+   [3, Signature] (module)
+    [4, Identifier] module

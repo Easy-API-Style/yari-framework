@@ -1,0 +1,24 @@
+[0, Javascript] ((a, b, c)=>console.log(await resolveAfter2Seconds()))(a, b, 20)
+ [1, InvokedFunction] ((a, b, c)=>console.log(await resolveAfter2Seconds()))(a, b, 20)
+  [2, Definition] ((a, b, c)=>console.log(await resolveAfter2Seconds()))
+   [3, ArrowFunction] (a, b, c)=>console.log(await resolveAfter2Seconds())
+    [4, Signature] (a, b, c)
+     [5, Identifier] a
+     [5, Identifier] b
+     [5, Identifier] c
+    [4, Procedure] console.log(await resolveAfter2Seconds())
+     [5, QualifiedExpression] console.log(await resolveAfter2Seconds())
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log(await resolveAfter2Seconds())
+       [7, Identifier] log
+       [7, Signature] (await resolveAfter2Seconds())
+        [8, Await] await resolveAfter2Seconds()
+         [9, FunctionCall] resolveAfter2Seconds()
+          [10, Identifier] resolveAfter2Seconds
+          [10, Signature] ()
+  [2, Signature] (a, b, 20)
+   [3, Identifier] a
+   [3, Identifier] b
+   [3, Literal] 20

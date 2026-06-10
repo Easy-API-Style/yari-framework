@@ -1,0 +1,15 @@
+[0, Javascript] export { import1 as name1, import2 as name2, default, nameN } from './test'
+ [1, Export] export { import1 as name1, import2 as name2, default, nameN } from './test'
+  [2, From] { import1 as name1, import2 as name2, default, nameN } from './test'
+   [3, Literal] './test'
+   [3, ExportBlock] { import1 as name1, import2 as name2, default, nameN }
+    [4, ExportReference] import1 as name1
+     [5, Identifier] import1
+     [5, Identifier] as name1
+    [4, ExportReference] import2 as name2
+     [5, Identifier] import2
+     [5, Identifier] as name2
+    [4, ExportReference] default
+     [5, Identifier] default
+    [4, ExportReference] nameN
+     [5, Identifier] nameN

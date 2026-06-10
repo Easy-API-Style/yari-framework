@@ -1,0 +1,55 @@
+[0, Javascript] switch (expr) { case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');}
+ [1, Switch] switch (expr) { case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');}
+  [2, SwitchExpression] (expr)
+   [3, Identifier] expr
+  [2, SwitchProcedure] case 'Oranges': console.log('Oranges are $0.59 a pound.'); break; case 'Cherries': console.log('Cherries are $3.00 a pound.'); case 'Mangoes': case 'Papayas': c + 5; break; default: console.log('Sorry, we are out of ' + expr + '.');
+   [3, SwitchCase] case 'Oranges': console.log('Oranges are $0.59 a pound.'); break;
+    [4, Literal] 'Oranges'
+    [4, CaseProcedure] console.log('Oranges are $0.59 a pound.'); break;
+     [5, QualifiedExpression] console.log('Oranges are $0.59 a pound.')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('Oranges are $0.59 a pound.')
+       [7, Identifier] log
+       [7, Signature] ('Oranges are $0.59 a pound.')
+        [8, Literal] 'Oranges are $0.59 a pound.'
+     [5, Break] break
+   [3, SwitchCase] case 'Cherries': console.log('Cherries are $3.00 a pound.');
+    [4, Literal] 'Cherries'
+    [4, CaseProcedure] console.log('Cherries are $3.00 a pound.');
+     [5, QualifiedExpression] console.log('Cherries are $3.00 a pound.')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('Cherries are $3.00 a pound.')
+       [7, Identifier] log
+       [7, Signature] ('Cherries are $3.00 a pound.')
+        [8, Literal] 'Cherries are $3.00 a pound.'
+   [3, SwitchCase] case 'Mangoes':
+    [4, Literal] 'Mangoes'
+    [4, CaseProcedure] case
+   [3, SwitchCase] case 'Papayas': c + 5; break;
+    [4, Literal] 'Papayas'
+    [4, CaseProcedure] c + 5; break;
+     [5, Infix] c + 5
+      [6, Identifier] c
+      [6, Operator] +
+      [6, Literal] 5
+     [5, Break] break
+   [3, DefaultCase] default: console.log('Sorry, we are out of ' + expr + '.');
+    [4, CaseProcedure] console.log('Sorry, we are out of ' + expr + '.');
+     [5, QualifiedExpression] console.log('Sorry, we are out of ' + expr + '.')
+      [6, Qualifier] console.
+       [7, Identifier] console
+       [7, Operator] .
+      [6, FunctionCall] log('Sorry, we are out of ' + expr + '.')
+       [7, Identifier] log
+       [7, Signature] ('Sorry, we are out of ' + expr + '.')
+        [8, Infix] 'Sorry, we are out of ' + expr + '.'
+         [9, Infix] 'Sorry, we are out of ' + expr
+          [10, Literal] 'Sorry, we are out of '
+          [10, Operator] +
+          [10, Identifier] expr
+         [9, Operator] +
+         [9, Literal] '.'

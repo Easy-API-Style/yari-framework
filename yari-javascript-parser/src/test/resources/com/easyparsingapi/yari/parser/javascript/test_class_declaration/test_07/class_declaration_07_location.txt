@@ -1,0 +1,45 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 115] [Javascript]
+class ClassWithFancyMethods { *generatorMethod() { } async asyncMethod() { } async *asyncGeneratorMethod() { }}
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 115] [ClassDeclaration]
+class ClassWithFancyMethods { *generatorMethod() { } async asyncMethod() { } async *asyncGeneratorMethod() { }}
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 28] [Identifier]
+ClassWithFancyMethods
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 54] [ClassMethodDeclaration]
+*generatorMethod() { }
+---------------------------
+SourceLocation [start=line 1 column 33, end=line 1 column 48] [Identifier]
+generatorMethod
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 50] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 54] [Procedure]
+{ }
+---------------------------
+SourceLocation [start=line 1 column 56, end=line 1 column 79] [ClassMethodDeclaration]
+async asyncMethod() { }
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 73] [Identifier]
+asyncMethod
+---------------------------
+SourceLocation [start=line 1 column 73, end=line 1 column 75] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 76, end=line 1 column 79] [Procedure]
+{ }
+---------------------------
+SourceLocation [start=line 1 column 81, end=line 1 column 114] [ClassMethodDeclaration]
+async *asyncGeneratorMethod() { }
+---------------------------
+SourceLocation [start=line 1 column 88, end=line 1 column 108] [Identifier]
+asyncGeneratorMethod
+---------------------------
+SourceLocation [start=line 1 column 108, end=line 1 column 110] [Signature]
+()
+---------------------------
+SourceLocation [start=line 1 column 111, end=line 1 column 114] [Procedure]
+{ }
+---------------------------

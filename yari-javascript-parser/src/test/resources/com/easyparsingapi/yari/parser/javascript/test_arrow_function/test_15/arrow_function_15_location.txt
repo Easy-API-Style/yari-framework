@@ -1,0 +1,78 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 50] [Javascript]
+([a, b] = [10, 20]) => console.log(this.i, this);
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 50] [ArrowFunction]
+([a, b] = [10, 20]) => console.log(this.i, this);
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 20] [Signature]
+([a, b] = [10, 20])
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 19] [ParameterWithValue]
+[a, b] = [10, 20]
+---------------------------
+SourceLocation [start=line 1 column 2, end=line 1 column 8] [DestructuringArray]
+[a, b]
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Value]
+a
+---------------------------
+SourceLocation [start=line 1 column 3, end=line 1 column 4] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Value]
+b
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 7] [Identifier]
+b
+---------------------------
+SourceLocation [start=line 1 column 11, end=line 1 column 19] [ArrayDeclaration]
+[10, 20]
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 14] [Literal]
+10
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 18] [Literal]
+20
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 50] [Procedure]
+console.log(this.i, this);
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 49] [QualifiedExpression]
+console.log(this.i, this)
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 32] [Qualifier]
+console.
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 31] [Identifier]
+console
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 32] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 49] [FunctionCall]
+log(this.i, this)
+---------------------------
+SourceLocation [start=line 1 column 32, end=line 1 column 35] [Identifier]
+log
+---------------------------
+SourceLocation [start=line 1 column 35, end=line 1 column 49] [Signature]
+(this.i, this)
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 42] [QualifiedExpression]
+this.i
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 41] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 36, end=line 1 column 40] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 40, end=line 1 column 41] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 41, end=line 1 column 42] [Identifier]
+i
+---------------------------
+SourceLocation [start=line 1 column 44, end=line 1 column 48] [This]
+this
+---------------------------

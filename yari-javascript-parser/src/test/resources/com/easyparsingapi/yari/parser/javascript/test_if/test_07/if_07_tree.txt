@@ -1,0 +1,17 @@
+[0, Javascript] if (p_1 && p_2) { var v_1 = 44;}else {}
+ [1, If] if (p_1 && p_2) { var v_1 = 44;}else {}
+  [2, IfBlock] if (p_1 && p_2) { var v_1 = 44;}
+   [3, Condition] (p_1 && p_2)
+    [4, Infix] p_1 && p_2
+     [5, Identifier] p_1
+     [5, Operator] &&
+     [5, Identifier] p_2
+   [3, Procedure] { var v_1 = 44;}
+    [4, VariableDeclaration] var v_1 = 44
+     [5, Type] var
+     [5, Variable] v_1 = 44
+      [6, Identifier] v_1
+      [6, Operator] =
+      [6, Literal] 44
+  [2, ElseBlock] else {}
+   [3, Procedure] {}

@@ -1,0 +1,100 @@
+[0, Css] :root::view-transition-group(*) {\\n position: absolute;\\n top: 0;\\n left: 0;\\n\\n animation-duration: 0.25s;\\n animation-fill-mode: both;\\n }\\n ::view-transition-image-pair(root) {\\n isolation: auto;\\n }\\n :root::view-transition-old(*),\\n :root::view-transition-new(*) {\\n position: absolute;\\n inset-block-start: 0;\\n inline-size: 100%;\\n block-size: auto;\\n\\n animation-duration: inherit;\\n animation-fill-mode: inherit;\\n animation-delay: inherit;\\n }\\n ::view-transition-new(figure-caption) {\\n height: auto;\\n right: 0;\\n left: auto;\\n transform-origin: right center;\\n }
+ [1, RuleSet] :root::view-transition-group(*) {\\n position: absolute;\\n top: 0;\\n left: 0;\\n\\n animation-duration: 0.25s;\\n animation-fill-mode: both;\\n }
+  [2, CombinatorSelector] :root::view-transition-group(*)
+   [3, PseudoClassSelector] :root
+    [4, Identifier] root
+   [3, Operator] 
+   [3, PseudoFunctionSelector] ::view-transition-group(*)
+    [4, PseudoElementSelector] ::view-transition-group
+     [5, Identifier] view-transition-group
+    [4, Signature] (*)
+     [5, Universal] *
+  [2, Block] {\\n position: absolute;\\n top: 0;\\n left: 0;\\n\\n animation-duration: 0.25s;\\n animation-fill-mode: both;\\n }
+   [3, Property] position: absolute
+    [4, Identifier] position
+    [4, Identifier] absolute
+   [3, Property] top: 0
+    [4, Identifier] top
+    [4, Identifier] 0
+   [3, Property] left: 0
+    [4, Identifier] left
+    [4, Identifier] 0
+   [3, Property] animation-duration: 0.25s
+    [4, Identifier] animation-duration
+    [4, Identifier] 0.25s
+   [3, Property] animation-fill-mode: both
+    [4, Identifier] animation-fill-mode
+    [4, Identifier] both
+ [1, RuleSet] ::view-transition-image-pair(root) {\\n isolation: auto;\\n }
+  [2, PseudoFunctionSelector] ::view-transition-image-pair(root)
+   [3, PseudoElementSelector] ::view-transition-image-pair
+    [4, Identifier] view-transition-image-pair
+   [3, Signature] (root)
+    [4, ElementSelector] root
+  [2, Block] {\\n isolation: auto;\\n }
+   [3, Property] isolation: auto
+    [4, Identifier] isolation
+    [4, Identifier] auto
+ [1, RuleSet] :root::view-transition-old(*),\\n :root::view-transition-new(*) {\\n position: absolute;\\n inset-block-start: 0;\\n inline-size: 100%;\\n block-size: auto;\\n\\n animation-duration: inherit;\\n animation-fill-mode: inherit;\\n animation-delay: inherit;\\n }
+  [2, ListSelector] :root::view-transition-old(*),\\n :root::view-transition-new(*)
+   [3, CombinatorSelector] :root::view-transition-old(*)
+    [4, PseudoClassSelector] :root
+     [5, Identifier] root
+    [4, Operator] 
+    [4, PseudoFunctionSelector] ::view-transition-old(*)
+     [5, PseudoElementSelector] ::view-transition-old
+      [6, Identifier] view-transition-old
+     [5, Signature] (*)
+      [6, Universal] *
+   [3, CombinatorSelector] :root::view-transition-new(*)
+    [4, PseudoClassSelector] :root
+     [5, Identifier] root
+    [4, Operator] 
+    [4, PseudoFunctionSelector] ::view-transition-new(*)
+     [5, PseudoElementSelector] ::view-transition-new
+      [6, Identifier] view-transition-new
+     [5, Signature] (*)
+      [6, Universal] *
+  [2, Block] {\\n position: absolute;\\n inset-block-start: 0;\\n inline-size: 100%;\\n block-size: auto;\\n\\n animation-duration: inherit;\\n animation-fill-mode: inherit;\\n animation-delay: inherit;\\n }
+   [3, Property] position: absolute
+    [4, Identifier] position
+    [4, Identifier] absolute
+   [3, Property] inset-block-start: 0
+    [4, Identifier] inset-block-start
+    [4, Identifier] 0
+   [3, Property] inline-size: 100%
+    [4, Identifier] inline-size
+    [4, Identifier] 100%
+   [3, Property] block-size: auto
+    [4, Identifier] block-size
+    [4, Identifier] auto
+   [3, Property] animation-duration: inherit
+    [4, Identifier] animation-duration
+    [4, Identifier] inherit
+   [3, Property] animation-fill-mode: inherit
+    [4, Identifier] animation-fill-mode
+    [4, Identifier] inherit
+   [3, Property] animation-delay: inherit
+    [4, Identifier] animation-delay
+    [4, Identifier] inherit
+ [1, RuleSet] ::view-transition-new(figure-caption) {\\n height: auto;\\n right: 0;\\n left: auto;\\n transform-origin: right center;\\n }
+  [2, PseudoFunctionSelector] ::view-transition-new(figure-caption)
+   [3, PseudoElementSelector] ::view-transition-new
+    [4, Identifier] view-transition-new
+   [3, Signature] (figure-caption)
+    [4, ElementSelector] figure-caption
+  [2, Block] {\\n height: auto;\\n right: 0;\\n left: auto;\\n transform-origin: right center;\\n }
+   [3, Property] height: auto
+    [4, Identifier] height
+    [4, Identifier] auto
+   [3, Property] right: 0
+    [4, Identifier] right
+    [4, Identifier] 0
+   [3, Property] left: auto
+    [4, Identifier] left
+    [4, Identifier] auto
+   [3, Property] transform-origin: right center
+    [4, Identifier] transform-origin
+    [4, ListValue] right center
+     [5, Identifier] right
+     [5, Identifier] center

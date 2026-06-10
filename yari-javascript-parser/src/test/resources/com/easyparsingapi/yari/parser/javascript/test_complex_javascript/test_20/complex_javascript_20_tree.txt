@@ -1,0 +1,56 @@
+[0, Javascript] v=[function(e,o,t){ (function(o){o.ZDXI=e("../lib/detectCountry.js")}) dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})},{"../lib/detectCountry.js":1}]
+ [1, Assignment] v=[function(e,o,t){ (function(o){o.ZDXI=e("../lib/detectCountry.js")}) dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})},{"../lib/detectCountry.js":1}]
+  [2, Identifier] v
+  [2, Operator] =
+  [2, ArrayDeclaration] [function(e,o,t){ (function(o){o.ZDXI=e("../lib/detectCountry.js")}) dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})},{"../lib/detectCountry.js":1}]
+   [3, FunctionDeclaration] function(e,o,t){ (function(o){o.ZDXI=e("../lib/detectCountry.js")}) dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})}
+    [4, Signature] (e,o,t)
+     [5, Identifier] e
+     [5, Identifier] o
+     [5, Identifier] t
+    [4, Procedure] { (function(o){o.ZDXI=e("../lib/detectCountry.js")}) dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})}
+     [5, Parenthesis] (function(o){o.ZDXI=e("../lib/detectCountry.js")})
+      [6, FunctionDeclaration] function(o){o.ZDXI=e("../lib/detectCountry.js")}
+       [7, Signature] (o)
+        [8, Identifier] o
+       [7, Procedure] {o.ZDXI=e("../lib/detectCountry.js")}
+        [8, Assignment] o.ZDXI=e("../lib/detectCountry.js")
+         [9, QualifiedExpression] o.ZDXI
+          [10, Qualifier] o.
+           [11, Identifier] o
+           [11, Operator] .
+          [10, Identifier] ZDXI
+         [9, Operator] =
+         [9, FunctionCall] e("../lib/detectCountry.js")
+          [10, Identifier] e
+          [10, Signature] ("../lib/detectCountry.js")
+           [11, Literal] "../lib/detectCountry.js"
+     [5, QualifiedExpression] dd.call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})
+      [6, Qualifier] dd.
+       [7, Identifier] dd
+       [7, Operator] .
+      [6, FunctionCall] call(this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})
+       [7, Identifier] call
+       [7, Signature] (this, "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {})
+        [8, This] this
+        [8, Ternary] "undefined"!=typeof self ? self: "undefined"!=typeof window ? window: {}
+         [9, Infix] "undefined"!=typeof self
+          [10, Literal] "undefined"
+          [10, Operator] !=
+          [10, Prefix] typeof self
+           [11, Operator] typeof
+           [11, Identifier] self
+         [9, Identifier] self
+         [9, Ternary] "undefined"!=typeof window ? window: {}
+          [10, Infix] "undefined"!=typeof window
+           [11, Literal] "undefined"
+           [11, Operator] !=
+           [11, Prefix] typeof window
+            [12, Operator] typeof
+            [12, Identifier] window
+          [10, Identifier] window
+          [10, ObjectDeclaration] {}
+   [3, ObjectDeclaration] {"../lib/detectCountry.js":1}
+    [4, FieldDeclaration] "../lib/detectCountry.js":1
+     [5, Literal] "../lib/detectCountry.js"
+     [5, Literal] 1

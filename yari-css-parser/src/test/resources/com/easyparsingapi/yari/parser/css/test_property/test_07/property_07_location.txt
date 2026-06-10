@@ -1,0 +1,309 @@
+SourceLocation [start=line 2 column 9, end=line 2 column 45] [Css]
+/* sizing relative to anchor side */
+---------------------------
+SourceLocation [start=line 7 column 9, end=line 7 column 53] [Css]
+/* sizing relative to named anchor's side */
+---------------------------
+SourceLocation [start=line 11 column 9, end=line 11 column 67] [Css]
+/* sizing relative to named anchor's side with fallback */
+---------------------------
+SourceLocation [start=line 15 column 9, end=line 15 column 50] [Css]
+/* positioning relative to anchor side */
+---------------------------
+SourceLocation [start=line 19 column 9, end=line 19 column 53] [Css]
+/* setting margin relative to anchor side */
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 22 column 6] [Css]
+div {\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 22 column 6] [RuleSet]
+div {\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 8] [ElementSelector]
+div
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 22 column 6] [Block]
+{\\n /* sizing relative to anchor side */\\n width: anchor-size(width);\\n block-size: anchor-size(block);\\n height: calc(anchor-size(self-inline) + 2em);\\n\\n /* sizing relative to named anchor's side */\\n width: anchor-size(--my-anchor width);\\n block-size: anchor-size(--my-anchor block);\\n\\n /* sizing relative to named anchor's side with fallback */\\n width: anchor-size(--my-anchor width, 50%);\\n block-size: anchor-size(--my-anchor block, 200px);\\n\\n /* positioning relative to anchor side */\\n left: anchor-size(width);\\n inset-inline-end: anchor-size(--my-anchor height, 100px);\\n\\n /* setting margin relative to anchor side */\\n margin-left: calc(anchor-size(width) / 4);\\n margin-block-start: anchor-size(--my-anchor self-block, 20px);\\n }
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 34] [Property]
+width: anchor-size(width)
+---------------------------
+SourceLocation [start=line 3 column 9, end=line 3 column 14] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 34] [Function]
+anchor-size(width)
+---------------------------
+SourceLocation [start=line 3 column 16, end=line 3 column 27] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 3 column 27, end=line 3 column 34] [Signature]
+(width)
+---------------------------
+SourceLocation [start=line 3 column 28, end=line 3 column 33] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 39] [Property]
+block-size: anchor-size(block)
+---------------------------
+SourceLocation [start=line 4 column 9, end=line 4 column 19] [Identifier]
+block-size
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 39] [Function]
+anchor-size(block)
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 32] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 4 column 32, end=line 4 column 39] [Signature]
+(block)
+---------------------------
+SourceLocation [start=line 4 column 33, end=line 4 column 38] [Identifier]
+block
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 53] [Property]
+height: calc(anchor-size(self-inline) + 2em)
+---------------------------
+SourceLocation [start=line 5 column 9, end=line 5 column 15] [Identifier]
+height
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 53] [Function]
+calc(anchor-size(self-inline) + 2em)
+---------------------------
+SourceLocation [start=line 5 column 17, end=line 5 column 21] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 5 column 21, end=line 5 column 53] [Signature]
+(anchor-size(self-inline) + 2em)
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 52] [Infix]
+anchor-size(self-inline) + 2em
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 46] [Function]
+anchor-size(self-inline)
+---------------------------
+SourceLocation [start=line 5 column 22, end=line 5 column 33] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 5 column 33, end=line 5 column 46] [Signature]
+(self-inline)
+---------------------------
+SourceLocation [start=line 5 column 34, end=line 5 column 45] [Identifier]
+self-inline
+---------------------------
+SourceLocation [start=line 5 column 47, end=line 5 column 48] [Operator]
++
+---------------------------
+SourceLocation [start=line 5 column 49, end=line 5 column 52] [Identifier]
+2em
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 46] [Property]
+width: anchor-size(--my-anchor width)
+---------------------------
+SourceLocation [start=line 8 column 9, end=line 8 column 14] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 8 column 16, end=line 8 column 46] [Function]
+anchor-size(--my-anchor width)
+---------------------------
+SourceLocation [start=line 8 column 16, end=line 8 column 27] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 8 column 27, end=line 8 column 46] [Signature]
+(--my-anchor width)
+---------------------------
+SourceLocation [start=line 8 column 28, end=line 8 column 45] [ListValue]
+--my-anchor width
+---------------------------
+SourceLocation [start=line 8 column 28, end=line 8 column 39] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 8 column 40, end=line 8 column 45] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 51] [Property]
+block-size: anchor-size(--my-anchor block)
+---------------------------
+SourceLocation [start=line 9 column 9, end=line 9 column 19] [Identifier]
+block-size
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 51] [Function]
+anchor-size(--my-anchor block)
+---------------------------
+SourceLocation [start=line 9 column 21, end=line 9 column 32] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 9 column 32, end=line 9 column 51] [Signature]
+(--my-anchor block)
+---------------------------
+SourceLocation [start=line 9 column 33, end=line 9 column 50] [ListValue]
+--my-anchor block
+---------------------------
+SourceLocation [start=line 9 column 33, end=line 9 column 44] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 9 column 45, end=line 9 column 50] [Identifier]
+block
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 51] [Property]
+width: anchor-size(--my-anchor width, 50%)
+---------------------------
+SourceLocation [start=line 12 column 9, end=line 12 column 14] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 12 column 16, end=line 12 column 51] [Function]
+anchor-size(--my-anchor width, 50%)
+---------------------------
+SourceLocation [start=line 12 column 16, end=line 12 column 27] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 12 column 27, end=line 12 column 51] [Signature]
+(--my-anchor width, 50%)
+---------------------------
+SourceLocation [start=line 12 column 28, end=line 12 column 45] [ListValue]
+--my-anchor width
+---------------------------
+SourceLocation [start=line 12 column 28, end=line 12 column 39] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 12 column 40, end=line 12 column 45] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 12 column 47, end=line 12 column 50] [Identifier]
+50%
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 58] [Property]
+block-size: anchor-size(--my-anchor block, 200px)
+---------------------------
+SourceLocation [start=line 13 column 9, end=line 13 column 19] [Identifier]
+block-size
+---------------------------
+SourceLocation [start=line 13 column 21, end=line 13 column 58] [Function]
+anchor-size(--my-anchor block, 200px)
+---------------------------
+SourceLocation [start=line 13 column 21, end=line 13 column 32] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 13 column 32, end=line 13 column 58] [Signature]
+(--my-anchor block, 200px)
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 50] [ListValue]
+--my-anchor block
+---------------------------
+SourceLocation [start=line 13 column 33, end=line 13 column 44] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 13 column 45, end=line 13 column 50] [Identifier]
+block
+---------------------------
+SourceLocation [start=line 13 column 52, end=line 13 column 57] [Identifier]
+200px
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 33] [Property]
+left: anchor-size(width)
+---------------------------
+SourceLocation [start=line 16 column 9, end=line 16 column 13] [Identifier]
+left
+---------------------------
+SourceLocation [start=line 16 column 15, end=line 16 column 33] [Function]
+anchor-size(width)
+---------------------------
+SourceLocation [start=line 16 column 15, end=line 16 column 26] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 16 column 26, end=line 16 column 33] [Signature]
+(width)
+---------------------------
+SourceLocation [start=line 16 column 27, end=line 16 column 32] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 65] [Property]
+inset-inline-end: anchor-size(--my-anchor height, 100px)
+---------------------------
+SourceLocation [start=line 17 column 9, end=line 17 column 25] [Identifier]
+inset-inline-end
+---------------------------
+SourceLocation [start=line 17 column 27, end=line 17 column 65] [Function]
+anchor-size(--my-anchor height, 100px)
+---------------------------
+SourceLocation [start=line 17 column 27, end=line 17 column 38] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 17 column 38, end=line 17 column 65] [Signature]
+(--my-anchor height, 100px)
+---------------------------
+SourceLocation [start=line 17 column 39, end=line 17 column 57] [ListValue]
+--my-anchor height
+---------------------------
+SourceLocation [start=line 17 column 39, end=line 17 column 50] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 17 column 51, end=line 17 column 57] [Identifier]
+height
+---------------------------
+SourceLocation [start=line 17 column 59, end=line 17 column 64] [Identifier]
+100px
+---------------------------
+SourceLocation [start=line 20 column 9, end=line 20 column 50] [Property]
+margin-left: calc(anchor-size(width) / 4)
+---------------------------
+SourceLocation [start=line 20 column 9, end=line 20 column 20] [Identifier]
+margin-left
+---------------------------
+SourceLocation [start=line 20 column 22, end=line 20 column 50] [Function]
+calc(anchor-size(width) / 4)
+---------------------------
+SourceLocation [start=line 20 column 22, end=line 20 column 26] [Identifier]
+calc
+---------------------------
+SourceLocation [start=line 20 column 26, end=line 20 column 50] [Signature]
+(anchor-size(width) / 4)
+---------------------------
+SourceLocation [start=line 20 column 27, end=line 20 column 49] [Infix]
+anchor-size(width) / 4
+---------------------------
+SourceLocation [start=line 20 column 27, end=line 20 column 45] [Function]
+anchor-size(width)
+---------------------------
+SourceLocation [start=line 20 column 27, end=line 20 column 38] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 20 column 38, end=line 20 column 45] [Signature]
+(width)
+---------------------------
+SourceLocation [start=line 20 column 39, end=line 20 column 44] [Identifier]
+width
+---------------------------
+SourceLocation [start=line 20 column 46, end=line 20 column 47] [Operator]
+/
+---------------------------
+SourceLocation [start=line 20 column 48, end=line 20 column 49] [Identifier]
+4
+---------------------------
+SourceLocation [start=line 21 column 9, end=line 21 column 70] [Property]
+margin-block-start: anchor-size(--my-anchor self-block, 20px)
+---------------------------
+SourceLocation [start=line 21 column 9, end=line 21 column 27] [Identifier]
+margin-block-start
+---------------------------
+SourceLocation [start=line 21 column 29, end=line 21 column 70] [Function]
+anchor-size(--my-anchor self-block, 20px)
+---------------------------
+SourceLocation [start=line 21 column 29, end=line 21 column 40] [Identifier]
+anchor-size
+---------------------------
+SourceLocation [start=line 21 column 40, end=line 21 column 70] [Signature]
+(--my-anchor self-block, 20px)
+---------------------------
+SourceLocation [start=line 21 column 41, end=line 21 column 63] [ListValue]
+--my-anchor self-block
+---------------------------
+SourceLocation [start=line 21 column 41, end=line 21 column 52] [Identifier]
+--my-anchor
+---------------------------
+SourceLocation [start=line 21 column 53, end=line 21 column 63] [Identifier]
+self-block
+---------------------------
+SourceLocation [start=line 21 column 65, end=line 21 column 69] [Identifier]
+20px
+---------------------------

@@ -1,0 +1,108 @@
+[0, Javascript] function mc(a){if(!kc(a))throw qb("int64");switch(typeof a){case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}}
+ [1, FunctionDeclaration] function mc(a){if(!kc(a))throw qb("int64");switch(typeof a){case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}}
+  [2, Identifier] mc
+  [2, Signature] (a)
+   [3, Identifier] a
+  [2, Procedure] {if(!kc(a))throw qb("int64");switch(typeof a){case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}}
+   [3, If] if(!kc(a))throw qb("int64");
+    [4, IfBlock] if(!kc(a))throw qb("int64");
+     [5, Condition] (!kc(a))
+      [6, Prefix] !kc(a)
+       [7, Operator] !
+       [7, FunctionCall] kc(a)
+        [8, Identifier] kc
+        [8, Signature] (a)
+         [9, Identifier] a
+     [5, Procedure] throw qb("int64");
+      [6, Throw] throw qb("int64")
+       [7, FunctionCall] qb("int64")
+        [8, Identifier] qb
+        [8, Signature] ("int64")
+         [9, Literal] "int64"
+   [3, Switch] switch(typeof a){case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}
+    [4, SwitchExpression] (typeof a)
+     [5, Prefix] typeof a
+      [6, Operator] typeof
+      [6, Identifier] a
+    [4, SwitchProcedure] case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+     [5, SwitchCase] case "string":kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+      [6, Literal] "string"
+      [6, CaseProcedure] kc(a);var b=hc(Number(a));C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+       [7, FunctionCall] kc(a)
+        [8, Identifier] kc
+        [8, Signature] (a)
+         [9, Identifier] a
+       [7, VariableDeclaration] var b=hc(Number(a))
+        [8, Type] var
+        [8, Variable] b=hc(Number(a))
+         [9, Identifier] b
+         [9, Operator] =
+         [9, FunctionCall] hc(Number(a))
+          [10, Identifier] hc
+          [10, Signature] (Number(a))
+           [11, FunctionCall] Number(a)
+            [12, Identifier] Number
+            [12, Signature] (a)
+             [13, Identifier] a
+       [7, Infix] C>=4294967296&&(D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+        [8, Infix] C>=4294967296
+         [9, Identifier] C
+         [9, Operator] >=
+         [9, Literal] 4294967296
+        [8, Operator] &&
+        [8, Sequence] (D+=Math.trunc(C/4294967296),D>>>=0,C>>>=0)
+         [9, Assignment] D+=Math.trunc(C/4294967296)
+          [10, Identifier] D
+          [10, Operator] +=
+          [10, QualifiedExpression] Math.trunc(C/4294967296)
+           [11, Qualifier] Math.
+            [12, Identifier] Math
+            [12, Operator] .
+           [11, FunctionCall] trunc(C/4294967296)
+            [12, Identifier] trunc
+            [12, Signature] (C/4294967296)
+             [13, Infix] C/4294967296
+              [14, Identifier] C
+              [14, Operator] /
+              [14, Literal] 4294967296
+         [9, Assignment] D>>>=0
+          [10, Identifier] D
+          [10, Operator] >>>=
+          [10, Literal] 0
+         [9, Assignment] C>>>=0
+          [10, Identifier] C
+          [10, Operator] >>>=
+          [10, Literal] 0
+     [5, SwitchCase] case "bigint":b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+      [6, Literal] "bigint"
+      [6, CaseProcedure] b=dc(64,a);if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+       [7, Assignment] b=dc(64,a)
+        [8, Identifier] b
+        [8, Operator] =
+        [8, FunctionCall] dc(64,a)
+         [9, Identifier] dc
+         [9, Signature] (64,a)
+          [10, Literal] 64
+          [10, Identifier] a
+       [7, If] if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+        [8, IfBlock] if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));
+         [9, Condition] (!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))
+          [10, Prefix] !/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b)
+           [11, Operator] !
+           [11, QualifiedExpression] /^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b)
+            [12, Qualifier] /^\s*(?:-?[1-9]\d*|0)?\s*$/.
+             [13, Literal] /^\s*(?:-?[1-9]\d*|0)?\s*$/
+             [13, Operator] .
+            [12, FunctionCall] test(b)
+             [13, Identifier] test
+             [13, Signature] (b)
+              [14, Identifier] b
+         [9, Procedure] throw Error(String(b));
+          [10, Throw] throw Error(String(b))
+           [11, FunctionCall] Error(String(b))
+            [12, Identifier] Error
+            [12, Signature] (String(b))
+             [13, FunctionCall] String(b)
+              [14, Identifier] String
+              [14, Signature] (b)
+               [15, Identifier] b

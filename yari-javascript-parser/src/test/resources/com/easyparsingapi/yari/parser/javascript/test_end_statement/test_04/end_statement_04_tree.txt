@@ -1,0 +1,14 @@
+[0, Javascript] maVariable1 = maVariable2 + maVariable3;\\n(function () {// code\\n })()
+ [1, Assignment] maVariable1 = maVariable2 + maVariable3
+  [2, Identifier] maVariable1
+  [2, Operator] =
+  [2, Infix] maVariable2 + maVariable3
+   [3, Identifier] maVariable2
+   [3, Operator] +
+   [3, Identifier] maVariable3
+ [1, InvokedFunction] (function () {// code\\n })()
+  [2, Definition] (function () {// code\\n })
+   [3, FunctionDeclaration] function () {// code\\n }
+    [4, Signature] ()
+    [4, Procedure] {// code\\n }
+  [2, Signature] ()

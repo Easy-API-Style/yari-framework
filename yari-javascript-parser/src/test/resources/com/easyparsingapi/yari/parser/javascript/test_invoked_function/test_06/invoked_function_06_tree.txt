@@ -1,0 +1,64 @@
+[0, Javascript] (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }})(window, document, 'script','https://www.google-analytics.com/analytics.js', 'ga');
+ [1, InvokedFunction] (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }})(window, document, 'script','https://www.google-analytics.com/analytics.js', 'ga')
+  [2, Definition] (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }})
+   [3, FunctionDeclaration] function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }}
+    [4, Signature] (i,s,o,g,r,a,m)
+     [5, Identifier] i
+     [5, Identifier] s
+     [5, Identifier] o
+     [5, Identifier] g
+     [5, Identifier] r
+     [5, Identifier] a
+     [5, Identifier] m
+    [4, Procedure] { i['GoogleAnalyticsObject']=r; i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }}
+     [5, Assignment] i['GoogleAnalyticsObject']=r
+      [6, MapExpression] i['GoogleAnalyticsObject']
+       [7, Identifier] i
+       [7, Bracket] ['GoogleAnalyticsObject']
+        [8, Literal] 'GoogleAnalyticsObject'
+      [6, Operator] =
+      [6, Identifier] r
+     [5, Assignment] i[r]=function(){ (i[r].q=i[r].q||[]).push(arguments) }
+      [6, MapExpression] i[r]
+       [7, Identifier] i
+       [7, Bracket] [r]
+        [8, Identifier] r
+      [6, Operator] =
+      [6, FunctionDeclaration] function(){ (i[r].q=i[r].q||[]).push(arguments) }
+       [7, Signature] ()
+       [7, Procedure] { (i[r].q=i[r].q||[]).push(arguments) }
+        [8, QualifiedExpression] (i[r].q=i[r].q||[]).push(arguments)
+         [9, Qualifier] (i[r].q=i[r].q||[]).
+          [10, Sequence] i[r].q=i[r].q||[]
+           [11, Assignment] i[r].q=i[r].q||[]
+            [12, QualifiedExpression] i[r].q
+             [13, Qualifier] i[r].
+              [14, MapExpression] i[r]
+               [15, Identifier] i
+               [15, Bracket] [r]
+                [16, Identifier] r
+              [14, Operator] .
+             [13, Identifier] q
+            [12, Operator] =
+            [12, Infix] i[r].q||[]
+             [13, QualifiedExpression] i[r].q
+              [14, Qualifier] i[r].
+               [15, MapExpression] i[r]
+                [16, Identifier] i
+                [16, Bracket] [r]
+                 [17, Identifier] r
+               [15, Operator] .
+              [14, Identifier] q
+             [13, Operator] ||
+             [13, ArrayDeclaration] []
+          [10, Operator] .
+         [9, FunctionCall] push(arguments)
+          [10, Identifier] push
+          [10, Signature] (arguments)
+           [11, Identifier] arguments
+  [2, Signature] (window, document, 'script','https://www.google-analytics.com/analytics.js', 'ga')
+   [3, Identifier] window
+   [3, Identifier] document
+   [3, Literal] 'script'
+   [3, Literal] 'https://www.google-analytics.com/analytics.js'
+   [3, Literal] 'ga'

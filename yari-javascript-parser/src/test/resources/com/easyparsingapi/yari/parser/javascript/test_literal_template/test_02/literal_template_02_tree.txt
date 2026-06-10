@@ -1,0 +1,14 @@
+[0, Javascript] function tf(a){return`/youtubei/v1/${sf(a)}`}
+ [1, FunctionDeclaration] function tf(a){return`/youtubei/v1/${sf(a)}`}
+  [2, Identifier] tf
+  [2, Signature] (a)
+   [3, Identifier] a
+  [2, Procedure] {return`/youtubei/v1/${sf(a)}`}
+   [3, Return] return`/youtubei/v1/${sf(a)}`
+    [4, LiteralTemplate] `/youtubei/v1/${sf(a)}`
+     [5, Constant] /youtubei/v1/
+     [5, Variable] ${sf(a)}
+      [6, FunctionCall] sf(a)
+       [7, Identifier] sf
+       [7, Signature] (a)
+        [8, Identifier] a

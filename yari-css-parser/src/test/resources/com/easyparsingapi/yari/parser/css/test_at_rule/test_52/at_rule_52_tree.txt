@@ -1,0 +1,24 @@
+[0, Css] @supports not selector(:focus-visible) font-format(opentype) font-tech(color-COLRv1) {\\n }
+ [1, AtRule] @supports not selector(:focus-visible) font-format(opentype) font-tech(color-COLRv1) {\\n }
+  [2, AtRuleName] @supports
+   [3, Identifier] supports
+  [2, Infix] not selector(:focus-visible) font-format(opentype) font-tech(color-COLRv1)
+   [3, Infix] not selector(:focus-visible) font-format(opentype)
+    [4, Prefix] not selector(:focus-visible)
+     [5, Operator] not
+     [5, Function] selector(:focus-visible)
+      [6, Identifier] selector
+      [6, Signature] (:focus-visible)
+       [7, PseudoClassSelector] :focus-visible
+        [8, Identifier] focus-visible
+    [4, Operator] 
+    [4, Function] font-format(opentype)
+     [5, Identifier] font-format
+     [5, Signature] (opentype)
+      [6, Identifier] opentype
+   [3, Operator] 
+   [3, Function] font-tech(color-COLRv1)
+    [4, Identifier] font-tech
+    [4, Signature] (color-COLRv1)
+     [5, Identifier] color-COLRv1
+  [2, Block] {\\n }

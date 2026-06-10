@@ -1,0 +1,203 @@
+[0, Javascript] const MY_FAV = 7;\\nMY_FAV = 20;\\nvar MY_FAV = 20;\\nlet MY_FAV = 20;\\n\\nif (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}\\nconst MY_OBJECT = {'key': 'value'};\\nMY_OBJECT = {'OTHER_KEY': 'value'};\\nMY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable\\nconst MY_ARRAY = [];\\nMY_ARRAY.push('A'); // ["A"]\\nMY_ARRAY = ['B'];\\n\\nlet i = 0\\nlet a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}\\n\\nconst items = ["A","B","C"];\\nconst obj = {\\n[items]: "Hello"\\n}\\n\\nlet param = 'size'\\nlet config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}\\n\\nconst object = {};\\nobject.$1 = 'foo';
+ [1, VariableDeclaration] const MY_FAV = 7
+  [2, Type] const
+  [2, Variable] MY_FAV = 7
+   [3, Identifier] MY_FAV
+   [3, Operator] =
+   [3, Literal] 7
+ [1, Assignment] MY_FAV = 20
+  [2, Identifier] MY_FAV
+  [2, Operator] =
+  [2, Literal] 20
+ [1, VariableDeclaration] var MY_FAV = 20
+  [2, Type] var
+  [2, Variable] MY_FAV = 20
+   [3, Identifier] MY_FAV
+   [3, Operator] =
+   [3, Literal] 20
+ [1, VariableDeclaration] let MY_FAV = 20
+  [2, Type] let
+  [2, Variable] MY_FAV = 20
+   [3, Identifier] MY_FAV
+   [3, Operator] =
+   [3, Literal] 20
+ [1, If] if (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+  [2, IfBlock] if (MY_FAV === 7) {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+   [3, Condition] (MY_FAV === 7)
+    [4, Infix] MY_FAV === 7
+     [5, Identifier] MY_FAV
+     [5, Operator] ===
+     [5, Literal] 7
+   [3, Procedure] {\\n let MY_FAV = 20;\\n var MY_FAV = 20;\\n}
+    [4, VariableDeclaration] let MY_FAV = 20
+     [5, Type] let
+     [5, Variable] MY_FAV = 20
+      [6, Identifier] MY_FAV
+      [6, Operator] =
+      [6, Literal] 20
+    [4, VariableDeclaration] var MY_FAV = 20
+     [5, Type] var
+     [5, Variable] MY_FAV = 20
+      [6, Identifier] MY_FAV
+      [6, Operator] =
+      [6, Literal] 20
+ [1, VariableDeclaration] const MY_OBJECT = {'key': 'value'}
+  [2, Type] const
+  [2, Variable] MY_OBJECT = {'key': 'value'}
+   [3, Identifier] MY_OBJECT
+   [3, Operator] =
+   [3, ObjectDeclaration] {'key': 'value'}
+    [4, FieldDeclaration] 'key': 'value'
+     [5, Literal] 'key'
+     [5, Literal] 'value'
+ [1, Assignment] MY_OBJECT = {'OTHER_KEY': 'value'}
+  [2, Identifier] MY_OBJECT
+  [2, Operator] =
+  [2, ObjectDeclaration] {'OTHER_KEY': 'value'}
+   [3, FieldDeclaration] 'OTHER_KEY': 'value'
+    [4, Literal] 'OTHER_KEY'
+    [4, Literal] 'value'
+ [1, Assignment] MY_OBJECT.key = 'otherValue'
+  [2, QualifiedExpression] MY_OBJECT.key
+   [3, Qualifier] MY_OBJECT.
+    [4, Identifier] MY_OBJECT
+    [4, Operator] .
+   [3, Identifier] key
+  [2, Operator] =
+  [2, Literal] 'otherValue'
+ [1, VariableDeclaration] const MY_ARRAY = []
+  [2, Type] const
+  [2, Variable] MY_ARRAY = []
+   [3, Identifier] MY_ARRAY
+   [3, Operator] =
+   [3, ArrayDeclaration] []
+ [1, QualifiedExpression] MY_ARRAY.push('A')
+  [2, Qualifier] MY_ARRAY.
+   [3, Identifier] MY_ARRAY
+   [3, Operator] .
+  [2, FunctionCall] push('A')
+   [3, Identifier] push
+   [3, Signature] ('A')
+    [4, Literal] 'A'
+ [1, Assignment] MY_ARRAY = ['B']
+  [2, Identifier] MY_ARRAY
+  [2, Operator] =
+  [2, ArrayDeclaration] ['B']
+   [3, Literal] 'B'
+ [1, VariableDeclaration] let i = 0
+  [2, Type] let
+  [2, Variable] i = 0
+   [3, Identifier] i
+   [3, Operator] =
+   [3, Literal] 0
+ [1, VariableDeclaration] let a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+  [2, Type] let
+  [2, Variable] a = {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+   [3, Identifier] a
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i,\\n ['foo' + ++i]: i\\n}
+    [4, FieldDeclaration] ['foo' + ++i]: i
+     [5, ComputedValue] ['foo' + ++i]
+      [6, Infix] 'foo' + ++i
+       [7, Increment] 'foo' + +
+        [8, Operator] + +
+        [8, Literal] 'foo'
+       [7, Operator] +
+       [7, Identifier] i
+     [5, Identifier] i
+    [4, FieldDeclaration] ['foo' + ++i]: i
+     [5, ComputedValue] ['foo' + ++i]
+      [6, Infix] 'foo' + ++i
+       [7, Increment] 'foo' + +
+        [8, Operator] + +
+        [8, Literal] 'foo'
+       [7, Operator] +
+       [7, Identifier] i
+     [5, Identifier] i
+    [4, FieldDeclaration] ['foo' + ++i]: i
+     [5, ComputedValue] ['foo' + ++i]
+      [6, Infix] 'foo' + ++i
+       [7, Increment] 'foo' + +
+        [8, Operator] + +
+        [8, Literal] 'foo'
+       [7, Operator] +
+       [7, Identifier] i
+     [5, Identifier] i
+ [1, VariableDeclaration] const items = ["A","B","C"]
+  [2, Type] const
+  [2, Variable] items = ["A","B","C"]
+   [3, Identifier] items
+   [3, Operator] =
+   [3, ArrayDeclaration] ["A","B","C"]
+    [4, Literal] "A"
+    [4, Literal] "B"
+    [4, Literal] "C"
+ [1, VariableDeclaration] const obj = {\\n[items]: "Hello"\\n}
+  [2, Type] const
+  [2, Variable] obj = {\\n[items]: "Hello"\\n}
+   [3, Identifier] obj
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n[items]: "Hello"\\n}
+    [4, FieldDeclaration] [items]: "Hello"
+     [5, ComputedValue] [items]
+      [6, Identifier] items
+     [5, Literal] "Hello"
+ [1, VariableDeclaration] let param = 'size'
+  [2, Type] let
+  [2, Variable] param = 'size'
+   [3, Identifier] param
+   [3, Operator] =
+   [3, Literal] 'size'
+ [1, VariableDeclaration] let config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+  [2, Type] let
+  [2, Variable] config = {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+   [3, Identifier] config
+   [3, Operator] =
+   [3, ObjectDeclaration] {\\n [param]: 12,\\n ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4\\n}
+    [4, FieldDeclaration] [param]: 12
+     [5, ComputedValue] [param]
+      [6, Identifier] param
+     [5, Literal] 12
+    [4, FieldDeclaration] ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+     [5, ComputedValue] ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]
+      [6, Infix] 'mobile' + param.charAt(0).toUpperCase() + param.slice(1)
+       [7, Infix] 'mobile' + param.charAt(0).toUpperCase()
+        [8, Literal] 'mobile'
+        [8, Operator] +
+        [8, QualifiedExpression] param.charAt(0).toUpperCase()
+         [9, Qualifier] param.
+          [10, Identifier] param
+          [10, Operator] .
+         [9, Qualifier] charAt(0).
+          [10, FunctionCall] charAt(0)
+           [11, Identifier] charAt
+           [11, Signature] (0)
+            [12, Literal] 0
+          [10, Operator] .
+         [9, FunctionCall] toUpperCase()
+          [10, Identifier] toUpperCase
+          [10, Signature] ()
+       [7, Operator] +
+       [7, QualifiedExpression] param.slice(1)
+        [8, Qualifier] param.
+         [9, Identifier] param
+         [9, Operator] .
+        [8, FunctionCall] slice(1)
+         [9, Identifier] slice
+         [9, Signature] (1)
+          [10, Literal] 1
+     [5, Literal] 4
+ [1, VariableDeclaration] const object = {}
+  [2, Type] const
+  [2, Variable] object = {}
+   [3, Identifier] object
+   [3, Operator] =
+   [3, ObjectDeclaration] {}
+ [1, Assignment] object.$1 = 'foo'
+  [2, QualifiedExpression] object.$1
+   [3, Qualifier] object.
+    [4, Identifier] object
+    [4, Operator] .
+   [3, Identifier] $1
+  [2, Operator] =
+  [2, Literal] 'foo'

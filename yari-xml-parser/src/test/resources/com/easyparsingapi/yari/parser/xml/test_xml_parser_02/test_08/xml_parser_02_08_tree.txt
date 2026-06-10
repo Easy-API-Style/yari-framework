@@ -1,0 +1,18 @@
+[0, Xml] <test>\\n <div>\\n blabla\\n </div>\\n </test>
+ [1, Tag] <test>\\n <div>\\n blabla\\n </div>\\n </test>
+  [2, TagHead] <test>
+   [3, TagName] test
+    [4, Name] test
+  [2, TagBody] <div>\\n blabla\\n </div>
+   [3, Tag] <div>\\n blabla\\n </div>
+    [4, TagHead] <div>
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] blabla
+     [5, Text] blabla
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </test>
+   [3, TagName] test
+    [4, Name] test

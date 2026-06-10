@@ -1,0 +1,192 @@
+[0, Css] div {\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+ [1, RuleSet] div {\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+  [2, ElementSelector] div
+  [2, Block] {\\n /* Utilisation simple */\\n content: url(https://example.com/images/monImg.jpg);\\n content: url(data:image/png;base64,iRxVB0…);\\n content: url(maPolice.woff);\\n content: url(#IDdeCheminSVG);\\n\\n /* Propriétés utilisables */\\n background-image: url("star.gif");\\n list-style-image: url('../images/bullet.jpg');\\n content: url("pdficon.jpg");\\n cursor: url(moncurseur.cur);\\n border-image-source: url(/media/diamonds.png);\\n src: url('superpolice.woff');\\n offset-path: url(#path);\\n mask-image: url("masques.svg#masque1");\\n\\n /* Propriétés avec valeurs de recours */\\n cursor: url(pointer.cur), pointer;\\n\\n /* Propriétés raccourcies associées */\\n background: url('star.gif') bottom right repeat-x blue;\\n border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;\\n\\n /* Utilisation comme paramètre d'une fonction CSS */\\n background-image: cross-fade(20% url(first.png), url(second.png));\\n mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));\\n\\n /* Utilisation avec plusieurs valeurs */\\n content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);\\n\\n /* Règles @ / at-rules */\\n @document url("https://www.example.com/") { } /* expérimental */\\n @import url("https://www.example.com/style.css");\\n @namespace url(http://www.w3.org/1999/xhtml);\\n }
+   [3, Property] content: url(https://example.com/images/monImg.jpg)
+    [4, Identifier] content
+    [4, Function] url(https://example.com/images/monImg.jpg)
+     [5, Identifier] url
+     [5, Signature] (https://example.com/images/monImg.jpg)
+      [6, Identifier] https://example.com/images/monImg.jpg
+   [3, Property] content: url(data:image/png;base64,iRxVB0…)
+    [4, Identifier] content
+    [4, Function] url(data:image/png;base64,iRxVB0…)
+     [5, Identifier] url
+     [5, Signature] (data:image/png;base64,iRxVB0…)
+      [6, Identifier] data:image/png;base64,iRxVB0…
+   [3, Property] content: url(maPolice.woff)
+    [4, Identifier] content
+    [4, Function] url(maPolice.woff)
+     [5, Identifier] url
+     [5, Signature] (maPolice.woff)
+      [6, Identifier] maPolice.woff
+   [3, Property] content: url(#IDdeCheminSVG)
+    [4, Identifier] content
+    [4, Function] url(#IDdeCheminSVG)
+     [5, Identifier] url
+     [5, Signature] (#IDdeCheminSVG)
+      [6, Identifier] #IDdeCheminSVG
+   [3, Property] background-image: url("star.gif")
+    [4, Identifier] background-image
+    [4, Function] url("star.gif")
+     [5, Identifier] url
+     [5, Signature] ("star.gif")
+      [6, Literal] "star.gif"
+   [3, Property] list-style-image: url('../images/bullet.jpg')
+    [4, Identifier] list-style-image
+    [4, Function] url('../images/bullet.jpg')
+     [5, Identifier] url
+     [5, Signature] ('../images/bullet.jpg')
+      [6, Literal] '../images/bullet.jpg'
+   [3, Property] content: url("pdficon.jpg")
+    [4, Identifier] content
+    [4, Function] url("pdficon.jpg")
+     [5, Identifier] url
+     [5, Signature] ("pdficon.jpg")
+      [6, Literal] "pdficon.jpg"
+   [3, Property] cursor: url(moncurseur.cur)
+    [4, Identifier] cursor
+    [4, Function] url(moncurseur.cur)
+     [5, Identifier] url
+     [5, Signature] (moncurseur.cur)
+      [6, Identifier] moncurseur.cur
+   [3, Property] border-image-source: url(/media/diamonds.png)
+    [4, Identifier] border-image-source
+    [4, Function] url(/media/diamonds.png)
+     [5, Identifier] url
+     [5, Signature] (/media/diamonds.png)
+      [6, Identifier] /media/diamonds.png
+   [3, Property] src: url('superpolice.woff')
+    [4, Identifier] src
+    [4, Function] url('superpolice.woff')
+     [5, Identifier] url
+     [5, Signature] ('superpolice.woff')
+      [6, Literal] 'superpolice.woff'
+   [3, Property] offset-path: url(#path)
+    [4, Identifier] offset-path
+    [4, Function] url(#path)
+     [5, Identifier] url
+     [5, Signature] (#path)
+      [6, Identifier] #path
+   [3, Property] mask-image: url("masques.svg#masque1")
+    [4, Identifier] mask-image
+    [4, Function] url("masques.svg#masque1")
+     [5, Identifier] url
+     [5, Signature] ("masques.svg#masque1")
+      [6, Literal] "masques.svg#masque1"
+   [3, Property] cursor: url(pointer.cur), pointer
+    [4, Identifier] cursor
+    [4, ListValue] url(pointer.cur), pointer
+     [5, Function] url(pointer.cur)
+      [6, Identifier] url
+      [6, Signature] (pointer.cur)
+       [7, Identifier] pointer.cur
+     [5, Identifier] pointer
+   [3, Property] background: url('star.gif') bottom right repeat-x blue
+    [4, Identifier] background
+    [4, ListValue] url('star.gif') bottom right repeat-x blue
+     [5, Function] url('star.gif')
+      [6, Identifier] url
+      [6, Signature] ('star.gif')
+       [7, Literal] 'star.gif'
+     [5, Identifier] bottom
+     [5, Identifier] right
+     [5, Identifier] repeat-x
+     [5, Identifier] blue
+   [3, Property] border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space
+    [4, Identifier] border-image
+    [4, ListValue] url("/media/diamonds.png") 30 fill / 30px / 30px space
+     [5, Function] url("/media/diamonds.png")
+      [6, Identifier] url
+      [6, Signature] ("/media/diamonds.png")
+       [7, Literal] "/media/diamonds.png"
+     [5, Identifier] 30
+     [5, Infix] fill / 30px / 30px
+      [6, Infix] fill / 30px
+       [7, Identifier] fill
+       [7, Operator] /
+       [7, Identifier] 30px
+      [6, Operator] /
+      [6, Identifier] 30px
+     [5, Identifier] space
+   [3, Property] background-image: cross-fade(20% url(first.png), url(second.png))
+    [4, Identifier] background-image
+    [4, Function] cross-fade(20% url(first.png), url(second.png))
+     [5, Identifier] cross-fade
+     [5, Signature] (20% url(first.png), url(second.png))
+      [6, ListValue] 20% url(first.png)
+       [7, Identifier] 20%
+       [7, Function] url(first.png)
+        [8, Identifier] url
+        [8, Signature] (first.png)
+         [9, Identifier] first.png
+      [6, Function] url(second.png)
+       [7, Identifier] url
+       [7, Signature] (second.png)
+        [8, Identifier] second.png
+   [3, Property] mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+    [4, Identifier] mask-image
+    [4, Function] image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+     [5, Identifier] image
+     [5, Signature] (url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent))
+      [6, Function] url(mask.png)
+       [7, Identifier] url
+       [7, Signature] (mask.png)
+        [8, Identifier] mask.png
+      [6, Identifier] skyblue
+      [6, Function] linear-gradient(rgba(0, 0, 0, 1.0), transparent)
+       [7, Identifier] linear-gradient
+       [7, Signature] (rgba(0, 0, 0, 1.0), transparent)
+        [8, Function] rgba(0, 0, 0, 1.0)
+         [9, Identifier] rgba
+         [9, Signature] (0, 0, 0, 1.0)
+          [10, Identifier] 0
+          [10, Identifier] 0
+          [10, Identifier] 0
+          [10, Identifier] 1.0
+        [8, Identifier] transparent
+   [3, Property] content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg)
+    [4, Identifier] content
+    [4, ListValue] url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg)
+     [5, Function] url(star.svg)
+      [6, Identifier] url
+      [6, Signature] (star.svg)
+       [7, Identifier] star.svg
+     [5, Function] url(star.svg)
+      [6, Identifier] url
+      [6, Signature] (star.svg)
+       [7, Identifier] star.svg
+     [5, Function] url(star.svg)
+      [6, Identifier] url
+      [6, Signature] (star.svg)
+       [7, Identifier] star.svg
+     [5, Function] url(star.svg)
+      [6, Identifier] url
+      [6, Signature] (star.svg)
+       [7, Identifier] star.svg
+     [5, Function] url(star.svg)
+      [6, Identifier] url
+      [6, Signature] (star.svg)
+       [7, Identifier] star.svg
+   [3, AtRule] @document url("https://www.example.com/") { }
+    [4, AtRuleName] @document
+     [5, Identifier] document
+    [4, Function] url("https://www.example.com/")
+     [5, Identifier] url
+     [5, Signature] ("https://www.example.com/")
+      [6, Literal] "https://www.example.com/"
+    [4, Block] { }
+   [3, AtRule] @import url("https://www.example.com/style.css")
+    [4, AtRuleName] @import
+     [5, Identifier] import
+    [4, Function] url("https://www.example.com/style.css")
+     [5, Identifier] url
+     [5, Signature] ("https://www.example.com/style.css")
+      [6, Literal] "https://www.example.com/style.css"
+   [3, AtRule] @namespace url(http://www.w3.org/1999/xhtml)
+    [4, AtRuleName] @namespace
+     [5, Identifier] namespace
+    [4, Function] url(http://www.w3.org/1999/xhtml)
+     [5, Identifier] url
+     [5, Signature] (http://www.w3.org/1999/xhtml)
+      [6, Identifier] http://www.w3.org/1999/xhtml

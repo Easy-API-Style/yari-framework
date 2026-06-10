@@ -1,0 +1,18 @@
+[0, Css] @container scroll-state((stuck: top) and (stuck: left)) {\\n /* … */\\n }
+ [1, AtRule] @container scroll-state((stuck: top) and (stuck: left)) {\\n /* … */\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, Function] scroll-state((stuck: top) and (stuck: left))
+   [3, Identifier] scroll-state
+   [3, Signature] ((stuck: top) and (stuck: left))
+    [4, Infix] (stuck: top) and (stuck: left)
+     [5, Parenthesis] (stuck: top)
+      [6, Property] stuck: top
+       [7, Identifier] stuck
+       [7, Identifier] top
+     [5, Operator] and
+     [5, Parenthesis] (stuck: left)
+      [6, Property] stuck: left
+       [7, Identifier] stuck
+       [7, Identifier] left
+  [2, Block] {\\n /* … */\\n }

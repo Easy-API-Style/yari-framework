@@ -1,0 +1,32 @@
+[0, Css] @container card (width > 400px), style(--responsive: true), scroll-state(stuck: top) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+ [1, AtRule] @container card (width > 400px), style(--responsive: true), scroll-state(stuck: top) {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+  [2, AtRuleName] @container
+   [3, Identifier] container
+  [2, ListParameter] card (width > 400px), style(--responsive: true), scroll-state(stuck: top)
+   [3, Infix] card (width > 400px)
+    [4, Identifier] card
+    [4, Operator] 
+    [4, Parenthesis] (width > 400px)
+     [5, Infix] width > 400px
+      [6, Identifier] width
+      [6, Operator] >
+      [6, Identifier] 400px
+   [3, Function] style(--responsive: true)
+    [4, Identifier] style
+    [4, Signature] (--responsive: true)
+     [5, Property] --responsive: true
+      [6, Identifier] --responsive
+      [6, Identifier] true
+   [3, Function] scroll-state(stuck: top)
+    [4, Identifier] scroll-state
+    [4, Signature] (stuck: top)
+     [5, Property] stuck: top
+      [6, Identifier] stuck
+      [6, Identifier] top
+  [2, Block] {\\n h2 {\\n font-size: 1.5em;\\n }\\n }
+   [3, RuleSet] h2 {\\n font-size: 1.5em;\\n }
+    [4, ElementSelector] h2
+    [4, Block] {\\n font-size: 1.5em;\\n }
+     [5, Property] font-size: 1.5em
+      [6, Identifier] font-size
+      [6, Identifier] 1.5em

@@ -1,0 +1,22 @@
+[0, Javascript] class Base {\\n static #privateStaticMethod1() { return 42; } static publicStaticMethod2() { return Base.#privateStaticMethod1(); }}
+ [1, ClassDeclaration] class Base {\\n static #privateStaticMethod1() { return 42; } static publicStaticMethod2() { return Base.#privateStaticMethod1(); }}
+  [2, Identifier] Base
+  [2, ClassMethodDeclaration] static #privateStaticMethod1() { return 42; }
+   [3, Identifier] privateStaticMethod1
+   [3, Signature] ()
+   [3, Procedure] { return 42; }
+    [4, Return] return 42
+     [5, Literal] 42
+  [2, ClassMethodDeclaration] static publicStaticMethod2() { return Base.#privateStaticMethod1(); }
+   [3, Identifier] publicStaticMethod2
+   [3, Signature] ()
+   [3, Procedure] { return Base.#privateStaticMethod1(); }
+    [4, Return] return Base.#privateStaticMethod1()
+     [5, QualifiedExpression] Base.#privateStaticMethod1()
+      [6, Qualifier] Base.
+       [7, Identifier] Base
+       [7, Operator] .
+      [6, PrivateExpression] #privateStaticMethod1()
+       [7, FunctionCall] privateStaticMethod1()
+        [8, Identifier] privateStaticMethod1
+        [8, Signature] ()

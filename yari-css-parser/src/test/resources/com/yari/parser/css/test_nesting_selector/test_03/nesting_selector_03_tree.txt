@@ -1,0 +1,11 @@
+[0, Css] .card {\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+ [1, RuleSet] .card {\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+  [2, ClassSelector] .card
+   [3, Identifier] card
+  [2, Block] {\\n /* .card styles */\\n .featured & {\\n /* .featured .card styles */\\n }\\n }
+   [3, RuleSet] .featured & {\\n /* .featured .card styles */\\n }
+    [4, QualifiedSelector] .featured &
+     [5, ClassSelector] .featured
+      [6, Identifier] featured
+     [5, Nesting] &
+    [4, Block] {\\n /* .featured .card styles */\\n }

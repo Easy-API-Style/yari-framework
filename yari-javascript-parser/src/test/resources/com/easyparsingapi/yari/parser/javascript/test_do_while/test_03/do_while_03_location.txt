@@ -1,0 +1,54 @@
+SourceLocation [start=line 1 column 5, end=line 7 column 29] [Javascript]
+do {\\n var v_1\\n if (toto) {\\n break\\n }\\n }\\n while (bibi !== 'roro')
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 7 column 29] [DoWhile]
+do {\\n var v_1\\n if (toto) {\\n break\\n }\\n }\\n while (bibi !== 'roro')
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 6 column 7] [Procedure]
+{\\n var v_1\\n if (toto) {\\n break\\n }\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 14] [VariableDeclaration]
+var v_1
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 10] [Type]
+var
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 14] [Variable]
+v_1
+---------------------------
+SourceLocation [start=line 2 column 11, end=line 2 column 14] [Identifier]
+v_1
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 5 column 9] [If]
+if (toto) {\\n break\\n }
+---------------------------
+SourceLocation [start=line 3 column 7, end=line 5 column 9] [IfBlock]
+if (toto) {\\n break\\n }
+---------------------------
+SourceLocation [start=line 3 column 10, end=line 3 column 16] [Condition]
+(toto)
+---------------------------
+SourceLocation [start=line 3 column 11, end=line 3 column 15] [Identifier]
+toto
+---------------------------
+SourceLocation [start=line 3 column 17, end=line 5 column 9] [Procedure]
+{\\n break\\n }
+---------------------------
+SourceLocation [start=line 4 column 10, end=line 4 column 15] [Break]
+break
+---------------------------
+SourceLocation [start=line 7 column 12, end=line 7 column 29] [Condition]
+(bibi !== 'roro')
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 28] [Infix]
+bibi !== 'roro'
+---------------------------
+SourceLocation [start=line 7 column 13, end=line 7 column 17] [Identifier]
+bibi
+---------------------------
+SourceLocation [start=line 7 column 18, end=line 7 column 21] [Operator]
+!==
+---------------------------
+SourceLocation [start=line 7 column 22, end=line 7 column 28] [Literal]
+'roro'
+---------------------------

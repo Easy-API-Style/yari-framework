@@ -1,0 +1,23 @@
+[0, Javascript] var maVariable = (0, function (p) { t[r] = p }(100))
+ [1, VariableDeclaration] var maVariable = (0, function (p) { t[r] = p }(100))
+  [2, Type] var
+  [2, Variable] maVariable = (0, function (p) { t[r] = p }(100))
+   [3, Identifier] maVariable
+   [3, Operator] =
+   [3, Sequence] (0, function (p) { t[r] = p }(100))
+    [4, Literal] 0
+    [4, InvokedFunction] function (p) { t[r] = p }(100)
+     [5, Definition] function (p) { t[r] = p }
+      [6, FunctionDeclaration] function (p) { t[r] = p }
+       [7, Signature] (p)
+        [8, Identifier] p
+       [7, Procedure] { t[r] = p }
+        [8, Assignment] t[r] = p
+         [9, MapExpression] t[r]
+          [10, Identifier] t
+          [10, Bracket] [r]
+           [11, Identifier] r
+         [9, Operator] =
+         [9, Identifier] p
+     [5, Signature] (100)
+      [6, Literal] 100

@@ -1,0 +1,13 @@
+[0, JavascriptNodeUnit] /.*pcmag\\.com$/.test(location.hostname)
+ [1, QualifiedExpression] /.*pcmag\\.com$/.test(location.hostname)
+  [2, Qualifier] /.*pcmag\\.com$/.
+   [3, Literal] /.*pcmag\\.com$/
+   [3, Operator] .
+  [2, FunctionCall] test(location.hostname)
+   [3, Identifier] test
+   [3, Signature] (location.hostname)
+    [4, QualifiedExpression] location.hostname
+     [5, Qualifier] location.
+      [6, Identifier] location
+      [6, Operator] .
+     [5, Identifier] hostname

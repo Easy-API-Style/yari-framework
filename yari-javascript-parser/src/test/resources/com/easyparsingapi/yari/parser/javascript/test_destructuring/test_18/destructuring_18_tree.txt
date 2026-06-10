@@ -1,0 +1,14 @@
+[0, Javascript] let { [clef]: toto } = { z: "truc" };
+ [1, VariableDeclaration] let { [clef]: toto } = { z: "truc" }
+  [2, Type] let
+  [2, Variable] { [clef]: toto } = { z: "truc" }
+   [3, DestructuringObject] { [clef]: toto }
+    [4, Field] [clef]: toto
+     [5, ComputedValue] [clef]
+      [6, Identifier] clef
+     [5, Identifier] : toto
+   [3, Operator] =
+   [3, ObjectDeclaration] { z: "truc" }
+    [4, FieldDeclaration] z: "truc"
+     [5, Identifier] z
+     [5, Literal] "truc"

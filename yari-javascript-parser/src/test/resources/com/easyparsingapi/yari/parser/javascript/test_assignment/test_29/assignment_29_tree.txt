@@ -1,0 +1,32 @@
+[0, Javascript] g=(h=(l=n[wb])!=null?l:n[wb]=new uc)[f]
+ [1, Assignment] g=(h=(l=n[wb])!=null?l:n[wb]=new uc)[f]
+  [2, Identifier] g
+  [2, Operator] =
+  [2, MapExpression] (h=(l=n[wb])!=null?l:n[wb]=new uc)[f]
+   [3, Sequence] (h=(l=n[wb])!=null?l:n[wb]=new uc)
+    [4, Assignment] h=(l=n[wb])!=null?l:n[wb]=new uc
+     [5, Identifier] h
+     [5, Operator] =
+     [5, Ternary] (l=n[wb])!=null?l:n[wb]=new uc
+      [6, Infix] (l=n[wb])!=null
+       [7, Sequence] (l=n[wb])
+        [8, Assignment] l=n[wb]
+         [9, Identifier] l
+         [9, Operator] =
+         [9, MapExpression] n[wb]
+          [10, Identifier] n
+          [10, Bracket] [wb]
+           [11, Identifier] wb
+       [7, Operator] !=
+       [7, Null] null
+      [6, Identifier] l
+      [6, Assignment] n[wb]=new uc
+       [7, MapExpression] n[wb]
+        [8, Identifier] n
+        [8, Bracket] [wb]
+         [9, Identifier] wb
+       [7, Operator] =
+       [7, New] new uc
+        [8, Identifier] uc
+   [3, Bracket] [f]
+    [4, Identifier] f

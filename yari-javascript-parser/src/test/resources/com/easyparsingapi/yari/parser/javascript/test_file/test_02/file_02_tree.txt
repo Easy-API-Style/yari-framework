@@ -1,0 +1,1230 @@
+[0, Javascript] class ClassWithStaticInitializationBlock {\\n static staticProperty1 = 'Property 1';\\n static staticProperty2;\\n static {\\n this.staticProperty2 = 'Property 2';\\n }\\n}\\n\\nclass A {\\n static field = 'Inner y';\\n static {\\n var y = this.field;\\n }\\n}\\n\\nclass MyClass {\\n static field1 = console.log('field1 called');\\n static {\\n console.log('Class static block #1 called');\\n }\\n static field2 = console.log('field2 called');\\n static {\\n console.log('Class static block #2 called');\\n }\\n}\\n\\nclass A {\\n static field = 'A static field';\\n static {\\n var y = this.field;\\n }\\n}\\n\\nclass A {\\n static fieldA = 'A.fieldA';\\n}\\nclass B extends A {\\n static {\\n let x = super.fieldA;\\n }\\n}\\n\\nclass D {\\n #privateField;\\n constructor(v) {\\n this.#privateField = v;\\n }\\n static {\\n getDPrivateField = (d) => d.#privateField;\\n }\\n}\\n\\nclass Polygon {\\n constructor() {\\n this.name = 'Polygon';\\n }\\n}\\n\\nclass Person {\\n\\n constructor(name) {\\n this.name = name;\\n }\\n\\n introduce() {\\n console.log(`Hello, my name is ${this.name}`);\\n }\\n\\n}\\n\\nconst otto = new Person('Otto');\\n\\nclass ValidationError extends Error {\\n\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }\\n\\n}\\n\\ntry {\\n throw new ValidationError("Not a valid phone number");\\n} catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}\\n\\nclass ValidationError extends Error {\\n\\n constructor(message) {\\n super(message); // call parent class constructor\\n this.name = 'ValidationError';\\n this.code = '42';\\n }\\n\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message}, code: ${this.code})`;\\n }\\n\\n}\\n\\ntry {\\n throw new ValidationError("Not a valid phone number");\\n} catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}\\n\\nclass Square extends Polygon {\\n constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }\\n\\n get area() {\\n return this.height * this.width;\\n }\\n\\n set area(value) {\\n this.height = value**0.5;\\n this.width = value**0.5;\\n }\\n}\\n\\nclass Polygon {\\n constructor() {\\n this.name = "Polygon";\\n }\\n}\\n\\nclass Square extends Polygon {\\n constructor() {\\n super();\\n }\\n}\\n\\nclass Rectangle {}\\n\\nlet newInstance = new Square();\\n\\nclass DateFormatter extends Date {\\n\\n getFormattedDate() {\\n const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`;\\n }\\n\\n}\\n\\nconsole.log(new DateFormatter('August 19, 1975 23:15:30').getFormattedDate());\\n\\nclass Square extends Polygon {\\n constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }\\n\\n get area() {\\n return this.height * this.width;\\n }\\n}\\n\\nclass myDate extends Date {\\n\\n getFormattedDate() {\\n var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear();\\n }\\n}\\n\\nclass BaseClassWithPrivateStaticField {\\n static #PRIVATE_STATIC_FIELD;\\n\\n static basePublicStaticMethod() {\\n this.#PRIVATE_STATIC_FIELD = 42;\\n return this.#PRIVATE_STATIC_FIELD;\\n }\\n}\\n\\nclass SubClass extends BaseClassWithPrivateStaticField { };\\n\\nlet error = null;\\n\\ntry {\\n SubClass.basePublicStaticMethod()\\n} catch(e) { error = e};\\n\\nclass ClassWithPrivateMethod {\\n #privateMethod() {\\n return 'hello world';\\n }\\n\\n getPrivateMessage() {\\n return this.#privateMethod();\\n }\\n}\\n\\nconst instance = new ClassWithPrivateMethod();\\n\\nclass ClassWithPrivateStaticMethod {\\n static #privateStaticMethod() {\\n return 42;\\n }\\n\\n static publicStaticMethod1() {\\n return ClassWithPrivateStaticMethod.#privateStaticMethod();\\n }\\n\\n static publicStaticMethod2() {\\n return this.#privateStaticMethod();\\n }\\n}\\n\\nconsole.log(ClassWithPrivateStaticMethod.publicStaticMethod1() === 42);\\nconsole.log(ClassWithPrivateStaticMethod.publicStaticMethod2() === 42);\\n\\nclass ClassWithStaticField {\\n static staticField = 'static field'\\n}\\n\\nclass ClassWithStaticField {\\n static staticField\\n}\\n\\nclass ClassWithStaticField {\\n static baseStaticField = 'base field'\\n}\\n\\nclass SubClassWithStaticField extends ClassWithStaticField {\\n static subStaticField = 'sub class field'\\n}\\n\\n\\nclass ClassWithStaticField {\\n static baseStaticField = 'base static field'\\n static anotherBaseStaticField = this.baseStaticField\\n\\n static baseStaticMethod() { return 'base static method output' }\\n}\\n\\nclass SubClassWithStaticField extends ClassWithStaticField {\\n static subStaticField = super.baseStaticMethod()\\n}\\n\\nclass ClassWithInstanceField {\\n instanceField = 'instance field'\\n}\\n\\n\\nclass ClassWithInstanceField {\\n instanceField\\n}\\n\\nconst instance = new ClassWithInstanceField()\\nconsole.assert(instance.hasOwnProperty('instanceField'))\\nconsole.log(instance.instanceField)\\n// expected output: "undefined"\\n\\nconst PREFIX = 'prefix'\\n\\nclass ClassWithComputedFieldName {\\n [`${PREFIX}Field`] = 'prefixed field'\\n}\\n\\nclass ClassWithInstanceField {\\n baseInstanceField = 'base field'\\n anotherBaseInstanceField = this.baseInstanceField\\n baseInstanceMethod() { return 'base method output' }\\n}\\n\\nclass SubClassWithInstanceField extends ClassWithInstanceField {\\n subInstanceField = super.baseInstanceMethod()\\n}\\n\\nconst base = new ClassWithInstanceField()\\nconst sub = new SubClassWithInstanceField()\\n\\nclass ClassWithStaticMethod {\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n}\\n\\nclass ClassWithPublicInstanceMethod {\\n publicMethod() {\\n return 'hello world'\\n }\\n}\\n\\nclass ClassWithFancyMethods {\\n *generatorMethod() { }\\n async asyncMethod() { }\\n async *asyncGeneratorMethod() { }\\n}\\n\\nclass BaseClass {\\n msg = 'hello world'\\n basePublicMethod() {\\n return this.msg\\n }\\n}\\n\\nclass SubClass extends BaseClass {\\n subPublicMethod() {\\n return super.basePublicMethod()\\n }\\n}\\n\\nclass ClassWithGetSet {\\n #msg = 'hello world'\\n get msg() {\\n return this.#msg\\n }\\n set msg(x) {\\n this.#msg = `hello ${x}`\\n }\\n}\\n\\nclass ClassWithStaticMethod {\\n static staticProperty = 'someValue';\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n static {\\n console.log('Class static initialization block called');\\n }\\n}\\n\\nclass Triple {\\n static customName = 'Tripler';\\n static description = 'I triple any number you provide';\\n static calculate(n = 1) {\\n return n * 3;\\n }\\n}\\n\\nclass SquaredTriple extends Triple {\\n static longDescription;\\n static description = 'I square the triple of any number you provide';\\n static calculate(n) {\\n return super.calculate(n) * super.calculate(n);\\n }\\n}\\n\\nclass StaticMethodCall {\\n static staticProperty = 'static property';\\n static staticMethod() {\\n return 'Static method and ' + this.staticProperty + ' has been called';\\n }\\n static anotherStaticMethod() {\\n return this.staticMethod() + ' from another static method';\\n }\\n}\\n\\nclass StaticMethodCall {\\n constructor() {\\n console.log(StaticMethodCall.staticProperty); // 'static property'\\n console.log(this.constructor.staticProperty); // 'static property'\\n console.log(StaticMethodCall.staticMethod()); // 'static method has been called.'\\n console.log(this.constructor.staticMethod()); // 'static method has been called.'\\n }\\n\\n static staticProperty = 'static property';\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n}
+ [1, ClassDeclaration] class ClassWithStaticInitializationBlock {\\n static staticProperty1 = 'Property 1';\\n static staticProperty2;\\n static {\\n this.staticProperty2 = 'Property 2';\\n }\\n}
+  [2, Identifier] ClassWithStaticInitializationBlock
+  [2, ClassFieldDeclaration] static staticProperty1 = 'Property 1'
+   [3, Identifier] staticProperty1
+   [3, Literal] = 'Property 1'
+  [2, ClassFieldDeclaration] static staticProperty2
+   [3, Identifier] staticProperty2
+  [2, StaticProcedure] static {\\n this.staticProperty2 = 'Property 2';\\n }
+   [3, Procedure] {\\n this.staticProperty2 = 'Property 2';\\n }
+    [4, Assignment] this.staticProperty2 = 'Property 2'
+     [5, QualifiedExpression] this.staticProperty2
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] staticProperty2
+     [5, Operator] =
+     [5, Literal] 'Property 2'
+ [1, ClassDeclaration] class A {\\n static field = 'Inner y';\\n static {\\n var y = this.field;\\n }\\n}
+  [2, Identifier] A
+  [2, ClassFieldDeclaration] static field = 'Inner y'
+   [3, Identifier] field
+   [3, Literal] = 'Inner y'
+  [2, StaticProcedure] static {\\n var y = this.field;\\n }
+   [3, Procedure] {\\n var y = this.field;\\n }
+    [4, VariableDeclaration] var y = this.field
+     [5, Type] var
+     [5, Variable] y = this.field
+      [6, Identifier] y
+      [6, Operator] =
+      [6, QualifiedExpression] this.field
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] field
+ [1, ClassDeclaration] class MyClass {\\n static field1 = console.log('field1 called');\\n static {\\n console.log('Class static block #1 called');\\n }\\n static field2 = console.log('field2 called');\\n static {\\n console.log('Class static block #2 called');\\n }\\n}
+  [2, Identifier] MyClass
+  [2, ClassFieldDeclaration] static field1 = console.log('field1 called')
+   [3, Identifier] field1
+   [3, QualifiedExpression] = console.log('field1 called')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('field1 called')
+     [5, Identifier] log
+     [5, Signature] ('field1 called')
+      [6, Literal] 'field1 called'
+  [2, StaticProcedure] static {\\n console.log('Class static block #1 called');\\n }
+   [3, Procedure] {\\n console.log('Class static block #1 called');\\n }
+    [4, QualifiedExpression] console.log('Class static block #1 called')
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log('Class static block #1 called')
+      [6, Identifier] log
+      [6, Signature] ('Class static block #1 called')
+       [7, Literal] 'Class static block #1 called'
+  [2, ClassFieldDeclaration] static field2 = console.log('field2 called')
+   [3, Identifier] field2
+   [3, QualifiedExpression] = console.log('field2 called')
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log('field2 called')
+     [5, Identifier] log
+     [5, Signature] ('field2 called')
+      [6, Literal] 'field2 called'
+  [2, StaticProcedure] static {\\n console.log('Class static block #2 called');\\n }
+   [3, Procedure] {\\n console.log('Class static block #2 called');\\n }
+    [4, QualifiedExpression] console.log('Class static block #2 called')
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log('Class static block #2 called')
+      [6, Identifier] log
+      [6, Signature] ('Class static block #2 called')
+       [7, Literal] 'Class static block #2 called'
+ [1, ClassDeclaration] class A {\\n static field = 'A static field';\\n static {\\n var y = this.field;\\n }\\n}
+  [2, Identifier] A
+  [2, ClassFieldDeclaration] static field = 'A static field'
+   [3, Identifier] field
+   [3, Literal] = 'A static field'
+  [2, StaticProcedure] static {\\n var y = this.field;\\n }
+   [3, Procedure] {\\n var y = this.field;\\n }
+    [4, VariableDeclaration] var y = this.field
+     [5, Type] var
+     [5, Variable] y = this.field
+      [6, Identifier] y
+      [6, Operator] =
+      [6, QualifiedExpression] this.field
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] field
+ [1, ClassDeclaration] class A {\\n static fieldA = 'A.fieldA';\\n}
+  [2, Identifier] A
+  [2, ClassFieldDeclaration] static fieldA = 'A.fieldA'
+   [3, Identifier] fieldA
+   [3, Literal] = 'A.fieldA'
+ [1, ClassDeclaration] class B extends A {\\n static {\\n let x = super.fieldA;\\n }\\n}
+  [2, Identifier] B
+  [2, Identifier] extends A
+  [2, StaticProcedure] static {\\n let x = super.fieldA;\\n }
+   [3, Procedure] {\\n let x = super.fieldA;\\n }
+    [4, VariableDeclaration] let x = super.fieldA
+     [5, Type] let
+     [5, Variable] x = super.fieldA
+      [6, Identifier] x
+      [6, Operator] =
+      [6, QualifiedExpression] super.fieldA
+       [7, Qualifier] super.
+        [8, Identifier] super
+        [8, Operator] .
+       [7, Identifier] fieldA
+ [1, ClassDeclaration] class D {\\n #privateField;\\n constructor(v) {\\n this.#privateField = v;\\n }\\n static {\\n getDPrivateField = (d) => d.#privateField;\\n }\\n}
+  [2, Identifier] D
+  [2, ClassFieldDeclaration] #privateField
+   [3, Identifier] privateField
+  [2, ClassMethodDeclaration] constructor(v) {\\n this.#privateField = v;\\n }
+   [3, Identifier] constructor
+   [3, Signature] (v)
+    [4, Identifier] v
+   [3, Procedure] {\\n this.#privateField = v;\\n }
+    [4, Assignment] this.#privateField = v
+     [5, QualifiedExpression] this.#privateField
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #privateField
+       [7, Identifier] privateField
+     [5, Operator] =
+     [5, Identifier] v
+  [2, StaticProcedure] static {\\n getDPrivateField = (d) => d.#privateField;\\n }
+   [3, Procedure] {\\n getDPrivateField = (d) => d.#privateField;\\n }
+    [4, Assignment] getDPrivateField = (d) => d.#privateField;
+     [5, Identifier] getDPrivateField
+     [5, Operator] =
+     [5, ArrowFunction] (d) => d.#privateField;
+      [6, Signature] (d)
+       [7, Identifier] d
+      [6, Procedure] d.#privateField;
+       [7, QualifiedExpression] d.#privateField
+        [8, Qualifier] d.
+         [9, Identifier] d
+         [9, Operator] .
+        [8, PrivateExpression] #privateField
+         [9, Identifier] privateField
+ [1, ClassDeclaration] class Polygon {\\n constructor() {\\n this.name = 'Polygon';\\n }\\n}
+  [2, Identifier] Polygon
+  [2, ClassMethodDeclaration] constructor() {\\n this.name = 'Polygon';\\n }
+   [3, Identifier] constructor
+   [3, Signature] ()
+   [3, Procedure] {\\n this.name = 'Polygon';\\n }
+    [4, Assignment] this.name = 'Polygon'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'Polygon'
+ [1, ClassDeclaration] class Person {\\n\\n constructor(name) {\\n this.name = name;\\n }\\n\\n introduce() {\\n console.log(`Hello, my name is ${this.name}`);\\n }\\n\\n}
+  [2, Identifier] Person
+  [2, ClassMethodDeclaration] constructor(name) {\\n this.name = name;\\n }
+   [3, Identifier] constructor
+   [3, Signature] (name)
+    [4, Identifier] name
+   [3, Procedure] {\\n this.name = name;\\n }
+    [4, Assignment] this.name = name
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Identifier] name
+  [2, ClassMethodDeclaration] introduce() {\\n console.log(`Hello, my name is ${this.name}`);\\n }
+   [3, Identifier] introduce
+   [3, Signature] ()
+   [3, Procedure] {\\n console.log(`Hello, my name is ${this.name}`);\\n }
+    [4, QualifiedExpression] console.log(`Hello, my name is ${this.name}`)
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log(`Hello, my name is ${this.name}`)
+      [6, Identifier] log
+      [6, Signature] (`Hello, my name is ${this.name}`)
+       [7, LiteralTemplate] `Hello, my name is ${this.name}`
+        [8, Constant] Hello, my name is 
+        [8, Variable] ${this.name}
+         [9, QualifiedExpression] this.name
+          [10, Qualifier] this.
+           [11, This] this
+           [11, Operator] .
+          [10, Identifier] name
+ [1, VariableDeclaration] const otto = new Person('Otto')
+  [2, Type] const
+  [2, Variable] otto = new Person('Otto')
+   [3, Identifier] otto
+   [3, Operator] =
+   [3, New] new Person('Otto')
+    [4, Identifier] Person
+    [4, Signature] ('Otto')
+     [5, Literal] 'Otto'
+ [1, ClassDeclaration] class ValidationError extends Error {\\n\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }\\n\\n}
+  [2, Identifier] ValidationError
+  [2, Identifier] extends Error
+  [2, ClassMethodDeclaration] printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message})`;\\n }
+   [3, Identifier] printCustomerMessage
+   [3, Signature] ()
+   [3, Procedure] {\\n return `Validation failed :-( (details: ${this.message})`;\\n }
+    [4, Return] return `Validation failed :-( (details: ${this.message})`
+     [5, LiteralTemplate] `Validation failed :-( (details: ${this.message})`
+      [6, Constant] Validation failed :-( (details: 
+      [6, Variable] ${this.message}
+       [7, QualifiedExpression] this.message
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] message
+      [6, Constant] )
+ [1, Try] try {\\n throw new ValidationError("Not a valid phone number");\\n} catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+  [2, Procedure] {\\n throw new ValidationError("Not a valid phone number");\\n}
+   [3, Throw] throw new ValidationError("Not a valid phone number")
+    [4, New] new ValidationError("Not a valid phone number")
+     [5, Identifier] ValidationError
+     [5, Signature] ("Not a valid phone number")
+      [6, Literal] "Not a valid phone number"
+  [2, Catch] catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+   [3, Signature] (error)
+    [4, Identifier] error
+   [3, Procedure] {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+    [4, If] if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }
+     [5, IfBlock] if (error instanceof ValidationError) {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n }
+      [6, Condition] (error instanceof ValidationError)
+       [7, Infix] error instanceof ValidationError
+        [8, Identifier] error
+        [8, Operator] instanceof
+        [8, Identifier] ValidationError
+      [6, Procedure] {\\n console.log(error.name); // This is Error instead of ValidationError!\\n console.log(error.printCustomerMessage());\\n }
+       [7, QualifiedExpression] console.log(error.name)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(error.name)
+         [9, Identifier] log
+         [9, Signature] (error.name)
+          [10, QualifiedExpression] error.name
+           [11, Qualifier] error.
+            [12, Identifier] error
+            [12, Operator] .
+           [11, Identifier] name
+       [7, QualifiedExpression] console.log(error.printCustomerMessage())
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(error.printCustomerMessage())
+         [9, Identifier] log
+         [9, Signature] (error.printCustomerMessage())
+          [10, QualifiedExpression] error.printCustomerMessage()
+           [11, Qualifier] error.
+            [12, Identifier] error
+            [12, Operator] .
+           [11, FunctionCall] printCustomerMessage()
+            [12, Identifier] printCustomerMessage
+            [12, Signature] ()
+     [5, ElseBlock] else {\\n console.log('Unknown error', error);\\n throw error;\\n }
+      [6, Procedure] {\\n console.log('Unknown error', error);\\n throw error;\\n }
+       [7, QualifiedExpression] console.log('Unknown error', error)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log('Unknown error', error)
+         [9, Identifier] log
+         [9, Signature] ('Unknown error', error)
+          [10, Literal] 'Unknown error'
+          [10, Identifier] error
+       [7, Throw] throw error
+        [8, Identifier] error
+ [1, ClassDeclaration] class ValidationError extends Error {\\n\\n constructor(message) {\\n super(message); // call parent class constructor\\n this.name = 'ValidationError';\\n this.code = '42';\\n }\\n\\n printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message}, code: ${this.code})`;\\n }\\n\\n}
+  [2, Identifier] ValidationError
+  [2, Identifier] extends Error
+  [2, ClassMethodDeclaration] constructor(message) {\\n super(message); // call parent class constructor\\n this.name = 'ValidationError';\\n this.code = '42';\\n }
+   [3, Identifier] constructor
+   [3, Signature] (message)
+    [4, Identifier] message
+   [3, Procedure] {\\n super(message); // call parent class constructor\\n this.name = 'ValidationError';\\n this.code = '42';\\n }
+    [4, FunctionCall] super(message)
+     [5, Identifier] super
+     [5, Signature] (message)
+      [6, Identifier] message
+    [4, Assignment] this.name = 'ValidationError'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'ValidationError'
+    [4, Assignment] this.code = '42'
+     [5, QualifiedExpression] this.code
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] code
+     [5, Operator] =
+     [5, Literal] '42'
+  [2, ClassMethodDeclaration] printCustomerMessage() {\\n return `Validation failed :-( (details: ${this.message}, code: ${this.code})`;\\n }
+   [3, Identifier] printCustomerMessage
+   [3, Signature] ()
+   [3, Procedure] {\\n return `Validation failed :-( (details: ${this.message}, code: ${this.code})`;\\n }
+    [4, Return] return `Validation failed :-( (details: ${this.message}, code: ${this.code})`
+     [5, LiteralTemplate] `Validation failed :-( (details: ${this.message}, code: ${this.code})`
+      [6, Constant] Validation failed :-( (details: 
+      [6, Variable] ${this.message}
+       [7, QualifiedExpression] this.message
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] message
+      [6, Constant] , code: 
+      [6, Variable] ${this.code}
+       [7, QualifiedExpression] this.code
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] code
+      [6, Constant] )
+ [1, Try] try {\\n throw new ValidationError("Not a valid phone number");\\n} catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+  [2, Procedure] {\\n throw new ValidationError("Not a valid phone number");\\n}
+   [3, Throw] throw new ValidationError("Not a valid phone number")
+    [4, New] new ValidationError("Not a valid phone number")
+     [5, Identifier] ValidationError
+     [5, Signature] ("Not a valid phone number")
+      [6, Literal] "Not a valid phone number"
+  [2, Catch] catch (error) {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+   [3, Signature] (error)
+    [4, Identifier] error
+   [3, Procedure] {\\n if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }\\n}
+    [4, If] if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n } else {\\n console.log('Unknown error', error);\\n throw error;\\n }
+     [5, IfBlock] if (error instanceof ValidationError) {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n }
+      [6, Condition] (error instanceof ValidationError)
+       [7, Infix] error instanceof ValidationError
+        [8, Identifier] error
+        [8, Operator] instanceof
+        [8, Identifier] ValidationError
+      [6, Procedure] {\\n console.log(error.name); // Now this is ValidationError!\\n console.log(error.printCustomerMessage());\\n }
+       [7, QualifiedExpression] console.log(error.name)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(error.name)
+         [9, Identifier] log
+         [9, Signature] (error.name)
+          [10, QualifiedExpression] error.name
+           [11, Qualifier] error.
+            [12, Identifier] error
+            [12, Operator] .
+           [11, Identifier] name
+       [7, QualifiedExpression] console.log(error.printCustomerMessage())
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log(error.printCustomerMessage())
+         [9, Identifier] log
+         [9, Signature] (error.printCustomerMessage())
+          [10, QualifiedExpression] error.printCustomerMessage()
+           [11, Qualifier] error.
+            [12, Identifier] error
+            [12, Operator] .
+           [11, FunctionCall] printCustomerMessage()
+            [12, Identifier] printCustomerMessage
+            [12, Signature] ()
+     [5, ElseBlock] else {\\n console.log('Unknown error', error);\\n throw error;\\n }
+      [6, Procedure] {\\n console.log('Unknown error', error);\\n throw error;\\n }
+       [7, QualifiedExpression] console.log('Unknown error', error)
+        [8, Qualifier] console.
+         [9, Identifier] console
+         [9, Operator] .
+        [8, FunctionCall] log('Unknown error', error)
+         [9, Identifier] log
+         [9, Signature] ('Unknown error', error)
+          [10, Literal] 'Unknown error'
+          [10, Identifier] error
+       [7, Throw] throw error
+        [8, Identifier] error
+ [1, ClassDeclaration] class Square extends Polygon {\\n constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }\\n\\n get area() {\\n return this.height * this.width;\\n }\\n\\n set area(value) {\\n this.height = value**0.5;\\n this.width = value**0.5;\\n }\\n}
+  [2, Identifier] Square
+  [2, Identifier] extends Polygon
+  [2, ClassMethodDeclaration] constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }
+   [3, Identifier] constructor
+   [3, Signature] (length)
+    [4, Identifier] length
+   [3, Procedure] {\\n super(length, length);\\n this.name = 'Square';\\n }
+    [4, FunctionCall] super(length, length)
+     [5, Identifier] super
+     [5, Signature] (length, length)
+      [6, Identifier] length
+      [6, Identifier] length
+    [4, Assignment] this.name = 'Square'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'Square'
+  [2, Getter] get area() {\\n return this.height * this.width;\\n }
+   [3, Identifier] area
+   [3, Procedure] {\\n return this.height * this.width;\\n }
+    [4, Return] return this.height * this.width
+     [5, Infix] this.height * this.width
+      [6, QualifiedExpression] this.height
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] height
+      [6, Operator] *
+      [6, QualifiedExpression] this.width
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] width
+  [2, Setter] set area(value) {\\n this.height = value**0.5;\\n this.width = value**0.5;\\n }
+   [3, Identifier] area
+   [3, Signature] (value)
+    [4, Identifier] value
+   [3, Procedure] {\\n this.height = value**0.5;\\n this.width = value**0.5;\\n }
+    [4, Assignment] this.height = value**0.5
+     [5, QualifiedExpression] this.height
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] height
+     [5, Operator] =
+     [5, Infix] value**0.5
+      [6, Identifier] value
+      [6, Operator] **
+      [6, Literal] 0.5
+    [4, Assignment] this.width = value**0.5
+     [5, QualifiedExpression] this.width
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] width
+     [5, Operator] =
+     [5, Infix] value**0.5
+      [6, Identifier] value
+      [6, Operator] **
+      [6, Literal] 0.5
+ [1, ClassDeclaration] class Polygon {\\n constructor() {\\n this.name = "Polygon";\\n }\\n}
+  [2, Identifier] Polygon
+  [2, ClassMethodDeclaration] constructor() {\\n this.name = "Polygon";\\n }
+   [3, Identifier] constructor
+   [3, Signature] ()
+   [3, Procedure] {\\n this.name = "Polygon";\\n }
+    [4, Assignment] this.name = "Polygon"
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] "Polygon"
+ [1, ClassDeclaration] class Square extends Polygon {\\n constructor() {\\n super();\\n }\\n}
+  [2, Identifier] Square
+  [2, Identifier] extends Polygon
+  [2, ClassMethodDeclaration] constructor() {\\n super();\\n }
+   [3, Identifier] constructor
+   [3, Signature] ()
+   [3, Procedure] {\\n super();\\n }
+    [4, FunctionCall] super()
+     [5, Identifier] super
+     [5, Signature] ()
+ [1, ClassDeclaration] class Rectangle {}
+  [2, Identifier] Rectangle
+ [1, VariableDeclaration] let newInstance = new Square()
+  [2, Type] let
+  [2, Variable] newInstance = new Square()
+   [3, Identifier] newInstance
+   [3, Operator] =
+   [3, New] new Square()
+    [4, Identifier] Square
+    [4, Signature] ()
+ [1, ClassDeclaration] class DateFormatter extends Date {\\n\\n getFormattedDate() {\\n const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`;\\n }\\n\\n}
+  [2, Identifier] DateFormatter
+  [2, Identifier] extends Date
+  [2, ClassMethodDeclaration] getFormattedDate() {\\n const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`;\\n }
+   [3, Identifier] getFormattedDate
+   [3, Signature] ()
+   [3, Procedure] {\\n const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`;\\n }
+    [4, VariableDeclaration] const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+     [5, Type] const
+     [5, Variable] months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      [6, Identifier] months
+      [6, Operator] =
+      [6, ArrayDeclaration] ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\\n 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+       [7, Literal] 'Jan'
+       [7, Literal] 'Feb'
+       [7, Literal] 'Mar'
+       [7, Literal] 'Apr'
+       [7, Literal] 'May'
+       [7, Literal] 'Jun'
+       [7, Literal] 'Jul'
+       [7, Literal] 'Aug'
+       [7, Literal] 'Sep'
+       [7, Literal] 'Oct'
+       [7, Literal] 'Nov'
+       [7, Literal] 'Dec'
+    [4, Return] return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`
+     [5, LiteralTemplate] `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`
+      [6, Variable] ${this.getDate()}
+       [7, QualifiedExpression] this.getDate()
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, FunctionCall] getDate()
+         [9, Identifier] getDate
+         [9, Signature] ()
+      [6, Constant] -
+      [6, Variable] ${months[this.getMonth()]}
+       [7, MapExpression] months[this.getMonth()]
+        [8, Identifier] months
+        [8, Bracket] [this.getMonth()]
+         [9, QualifiedExpression] this.getMonth()
+          [10, Qualifier] this.
+           [11, This] this
+           [11, Operator] .
+          [10, FunctionCall] getMonth()
+           [11, Identifier] getMonth
+           [11, Signature] ()
+      [6, Constant] -
+      [6, Variable] ${this.getFullYear()}
+       [7, QualifiedExpression] this.getFullYear()
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, FunctionCall] getFullYear()
+         [9, Identifier] getFullYear
+         [9, Signature] ()
+ [1, QualifiedExpression] console.log(new DateFormatter('August 19, 1975 23:15:30').getFormattedDate())
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(new DateFormatter('August 19, 1975 23:15:30').getFormattedDate())
+   [3, Identifier] log
+   [3, Signature] (new DateFormatter('August 19, 1975 23:15:30').getFormattedDate())
+    [4, QualifiedExpression] new DateFormatter('August 19, 1975 23:15:30').getFormattedDate()
+     [5, Qualifier] new DateFormatter('August 19, 1975 23:15:30').
+      [6, New] new DateFormatter('August 19, 1975 23:15:30')
+       [7, Identifier] DateFormatter
+       [7, Signature] ('August 19, 1975 23:15:30')
+        [8, Literal] 'August 19, 1975 23:15:30'
+      [6, Operator] .
+     [5, FunctionCall] getFormattedDate()
+      [6, Identifier] getFormattedDate
+      [6, Signature] ()
+ [1, ClassDeclaration] class Square extends Polygon {\\n constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }\\n\\n get area() {\\n return this.height * this.width;\\n }\\n}
+  [2, Identifier] Square
+  [2, Identifier] extends Polygon
+  [2, ClassMethodDeclaration] constructor(length) {\\n super(length, length);\\n this.name = 'Square';\\n }
+   [3, Identifier] constructor
+   [3, Signature] (length)
+    [4, Identifier] length
+   [3, Procedure] {\\n super(length, length);\\n this.name = 'Square';\\n }
+    [4, FunctionCall] super(length, length)
+     [5, Identifier] super
+     [5, Signature] (length, length)
+      [6, Identifier] length
+      [6, Identifier] length
+    [4, Assignment] this.name = 'Square'
+     [5, QualifiedExpression] this.name
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] name
+     [5, Operator] =
+     [5, Literal] 'Square'
+  [2, Getter] get area() {\\n return this.height * this.width;\\n }
+   [3, Identifier] area
+   [3, Procedure] {\\n return this.height * this.width;\\n }
+    [4, Return] return this.height * this.width
+     [5, Infix] this.height * this.width
+      [6, QualifiedExpression] this.height
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] height
+      [6, Operator] *
+      [6, QualifiedExpression] this.width
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] width
+ [1, ClassDeclaration] class myDate extends Date {\\n\\n getFormattedDate() {\\n var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear();\\n }\\n}
+  [2, Identifier] myDate
+  [2, Identifier] extends Date
+  [2, ClassMethodDeclaration] getFormattedDate() {\\n var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear();\\n }
+   [3, Identifier] getFormattedDate
+   [3, Signature] ()
+   [3, Procedure] {\\n var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\\n return this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear();\\n }
+    [4, VariableDeclaration] var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+     [5, Type] var
+     [5, Variable] months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      [6, Identifier] months
+      [6, Operator] =
+      [6, ArrayDeclaration] ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+       [7, Literal] 'Jan'
+       [7, Literal] 'Feb'
+       [7, Literal] 'Mar'
+       [7, Literal] 'Apr'
+       [7, Literal] 'May'
+       [7, Literal] 'Jun'
+       [7, Literal] 'Jul'
+       [7, Literal] 'Aug'
+       [7, Literal] 'Sep'
+       [7, Literal] 'Oct'
+       [7, Literal] 'Nov'
+       [7, Literal] 'Dec'
+    [4, Return] return this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear()
+     [5, Infix] this.getDate() + '-' + months[this.getMonth()] + '-' + this.getFullYear()
+      [6, Infix] this.getDate() + '-' + months[this.getMonth()] + '-'
+       [7, Infix] this.getDate() + '-' + months[this.getMonth()]
+        [8, Infix] this.getDate() + '-'
+         [9, QualifiedExpression] this.getDate()
+          [10, Qualifier] this.
+           [11, This] this
+           [11, Operator] .
+          [10, FunctionCall] getDate()
+           [11, Identifier] getDate
+           [11, Signature] ()
+         [9, Operator] +
+         [9, Literal] '-'
+        [8, Operator] +
+        [8, MapExpression] months[this.getMonth()]
+         [9, Identifier] months
+         [9, Bracket] [this.getMonth()]
+          [10, QualifiedExpression] this.getMonth()
+           [11, Qualifier] this.
+            [12, This] this
+            [12, Operator] .
+           [11, FunctionCall] getMonth()
+            [12, Identifier] getMonth
+            [12, Signature] ()
+       [7, Operator] +
+       [7, Literal] '-'
+      [6, Operator] +
+      [6, QualifiedExpression] this.getFullYear()
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, FunctionCall] getFullYear()
+        [8, Identifier] getFullYear
+        [8, Signature] ()
+ [1, ClassDeclaration] class BaseClassWithPrivateStaticField {\\n static #PRIVATE_STATIC_FIELD;\\n\\n static basePublicStaticMethod() {\\n this.#PRIVATE_STATIC_FIELD = 42;\\n return this.#PRIVATE_STATIC_FIELD;\\n }\\n}
+  [2, Identifier] BaseClassWithPrivateStaticField
+  [2, ClassFieldDeclaration] static #PRIVATE_STATIC_FIELD
+   [3, Identifier] PRIVATE_STATIC_FIELD
+  [2, ClassMethodDeclaration] static basePublicStaticMethod() {\\n this.#PRIVATE_STATIC_FIELD = 42;\\n return this.#PRIVATE_STATIC_FIELD;\\n }
+   [3, Identifier] basePublicStaticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n this.#PRIVATE_STATIC_FIELD = 42;\\n return this.#PRIVATE_STATIC_FIELD;\\n }
+    [4, Assignment] this.#PRIVATE_STATIC_FIELD = 42
+     [5, QualifiedExpression] this.#PRIVATE_STATIC_FIELD
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #PRIVATE_STATIC_FIELD
+       [7, Identifier] PRIVATE_STATIC_FIELD
+     [5, Operator] =
+     [5, Literal] 42
+    [4, Return] return this.#PRIVATE_STATIC_FIELD
+     [5, QualifiedExpression] this.#PRIVATE_STATIC_FIELD
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #PRIVATE_STATIC_FIELD
+       [7, Identifier] PRIVATE_STATIC_FIELD
+ [1, ClassDeclaration] class SubClass extends BaseClassWithPrivateStaticField { }
+  [2, Identifier] SubClass
+  [2, Identifier] extends BaseClassWithPrivateStaticField
+ [1, VariableDeclaration] let error = null
+  [2, Type] let
+  [2, Variable] error = null
+   [3, Identifier] error
+   [3, Operator] =
+   [3, Null] null
+ [1, Try] try {\\n SubClass.basePublicStaticMethod()\\n} catch(e) { error = e}
+  [2, Procedure] {\\n SubClass.basePublicStaticMethod()\\n}
+   [3, QualifiedExpression] SubClass.basePublicStaticMethod()
+    [4, Qualifier] SubClass.
+     [5, Identifier] SubClass
+     [5, Operator] .
+    [4, FunctionCall] basePublicStaticMethod()
+     [5, Identifier] basePublicStaticMethod
+     [5, Signature] ()
+  [2, Catch] catch(e) { error = e}
+   [3, Signature] (e)
+    [4, Identifier] e
+   [3, Procedure] { error = e}
+    [4, Assignment] error = e
+     [5, Identifier] error
+     [5, Operator] =
+     [5, Identifier] e
+ [1, ClassDeclaration] class ClassWithPrivateMethod {\\n #privateMethod() {\\n return 'hello world';\\n }\\n\\n getPrivateMessage() {\\n return this.#privateMethod();\\n }\\n}
+  [2, Identifier] ClassWithPrivateMethod
+  [2, ClassMethodDeclaration] #privateMethod() {\\n return 'hello world';\\n }
+   [3, Identifier] privateMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'hello world';\\n }
+    [4, Return] return 'hello world'
+     [5, Literal] 'hello world'
+  [2, ClassMethodDeclaration] getPrivateMessage() {\\n return this.#privateMethod();\\n }
+   [3, Identifier] getPrivateMessage
+   [3, Signature] ()
+   [3, Procedure] {\\n return this.#privateMethod();\\n }
+    [4, Return] return this.#privateMethod()
+     [5, QualifiedExpression] this.#privateMethod()
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #privateMethod()
+       [7, FunctionCall] privateMethod()
+        [8, Identifier] privateMethod
+        [8, Signature] ()
+ [1, VariableDeclaration] const instance = new ClassWithPrivateMethod()
+  [2, Type] const
+  [2, Variable] instance = new ClassWithPrivateMethod()
+   [3, Identifier] instance
+   [3, Operator] =
+   [3, New] new ClassWithPrivateMethod()
+    [4, Identifier] ClassWithPrivateMethod
+    [4, Signature] ()
+ [1, ClassDeclaration] class ClassWithPrivateStaticMethod {\\n static #privateStaticMethod() {\\n return 42;\\n }\\n\\n static publicStaticMethod1() {\\n return ClassWithPrivateStaticMethod.#privateStaticMethod();\\n }\\n\\n static publicStaticMethod2() {\\n return this.#privateStaticMethod();\\n }\\n}
+  [2, Identifier] ClassWithPrivateStaticMethod
+  [2, ClassMethodDeclaration] static #privateStaticMethod() {\\n return 42;\\n }
+   [3, Identifier] privateStaticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 42;\\n }
+    [4, Return] return 42
+     [5, Literal] 42
+  [2, ClassMethodDeclaration] static publicStaticMethod1() {\\n return ClassWithPrivateStaticMethod.#privateStaticMethod();\\n }
+   [3, Identifier] publicStaticMethod1
+   [3, Signature] ()
+   [3, Procedure] {\\n return ClassWithPrivateStaticMethod.#privateStaticMethod();\\n }
+    [4, Return] return ClassWithPrivateStaticMethod.#privateStaticMethod()
+     [5, QualifiedExpression] ClassWithPrivateStaticMethod.#privateStaticMethod()
+      [6, Qualifier] ClassWithPrivateStaticMethod.
+       [7, Identifier] ClassWithPrivateStaticMethod
+       [7, Operator] .
+      [6, PrivateExpression] #privateStaticMethod()
+       [7, FunctionCall] privateStaticMethod()
+        [8, Identifier] privateStaticMethod
+        [8, Signature] ()
+  [2, ClassMethodDeclaration] static publicStaticMethod2() {\\n return this.#privateStaticMethod();\\n }
+   [3, Identifier] publicStaticMethod2
+   [3, Signature] ()
+   [3, Procedure] {\\n return this.#privateStaticMethod();\\n }
+    [4, Return] return this.#privateStaticMethod()
+     [5, QualifiedExpression] this.#privateStaticMethod()
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #privateStaticMethod()
+       [7, FunctionCall] privateStaticMethod()
+        [8, Identifier] privateStaticMethod
+        [8, Signature] ()
+ [1, QualifiedExpression] console.log(ClassWithPrivateStaticMethod.publicStaticMethod1() === 42)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(ClassWithPrivateStaticMethod.publicStaticMethod1() === 42)
+   [3, Identifier] log
+   [3, Signature] (ClassWithPrivateStaticMethod.publicStaticMethod1() === 42)
+    [4, Infix] ClassWithPrivateStaticMethod.publicStaticMethod1() === 42
+     [5, QualifiedExpression] ClassWithPrivateStaticMethod.publicStaticMethod1()
+      [6, Qualifier] ClassWithPrivateStaticMethod.
+       [7, Identifier] ClassWithPrivateStaticMethod
+       [7, Operator] .
+      [6, FunctionCall] publicStaticMethod1()
+       [7, Identifier] publicStaticMethod1
+       [7, Signature] ()
+     [5, Operator] ===
+     [5, Literal] 42
+ [1, QualifiedExpression] console.log(ClassWithPrivateStaticMethod.publicStaticMethod2() === 42)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(ClassWithPrivateStaticMethod.publicStaticMethod2() === 42)
+   [3, Identifier] log
+   [3, Signature] (ClassWithPrivateStaticMethod.publicStaticMethod2() === 42)
+    [4, Infix] ClassWithPrivateStaticMethod.publicStaticMethod2() === 42
+     [5, QualifiedExpression] ClassWithPrivateStaticMethod.publicStaticMethod2()
+      [6, Qualifier] ClassWithPrivateStaticMethod.
+       [7, Identifier] ClassWithPrivateStaticMethod
+       [7, Operator] .
+      [6, FunctionCall] publicStaticMethod2()
+       [7, Identifier] publicStaticMethod2
+       [7, Signature] ()
+     [5, Operator] ===
+     [5, Literal] 42
+ [1, ClassDeclaration] class ClassWithStaticField {\\n static staticField = 'static field'\\n}
+  [2, Identifier] ClassWithStaticField
+  [2, ClassFieldDeclaration] static staticField = 'static field'
+   [3, Identifier] staticField
+   [3, Literal] = 'static field'
+ [1, ClassDeclaration] class ClassWithStaticField {\\n static staticField\\n}
+  [2, Identifier] ClassWithStaticField
+  [2, ClassFieldDeclaration] static staticField
+   [3, Identifier] staticField
+ [1, ClassDeclaration] class ClassWithStaticField {\\n static baseStaticField = 'base field'\\n}
+  [2, Identifier] ClassWithStaticField
+  [2, ClassFieldDeclaration] static baseStaticField = 'base field'
+   [3, Identifier] baseStaticField
+   [3, Literal] = 'base field'
+ [1, ClassDeclaration] class SubClassWithStaticField extends ClassWithStaticField {\\n static subStaticField = 'sub class field'\\n}
+  [2, Identifier] SubClassWithStaticField
+  [2, Identifier] extends ClassWithStaticField
+  [2, ClassFieldDeclaration] static subStaticField = 'sub class field'
+   [3, Identifier] subStaticField
+   [3, Literal] = 'sub class field'
+ [1, ClassDeclaration] class ClassWithStaticField {\\n static baseStaticField = 'base static field'\\n static anotherBaseStaticField = this.baseStaticField\\n\\n static baseStaticMethod() { return 'base static method output' }\\n}
+  [2, Identifier] ClassWithStaticField
+  [2, ClassFieldDeclaration] static baseStaticField = 'base static field'
+   [3, Identifier] baseStaticField
+   [3, Literal] = 'base static field'
+  [2, ClassFieldDeclaration] static anotherBaseStaticField = this.baseStaticField
+   [3, Identifier] anotherBaseStaticField
+   [3, QualifiedExpression] = this.baseStaticField
+    [4, Qualifier] this.
+     [5, This] this
+     [5, Operator] .
+    [4, Identifier] baseStaticField
+  [2, ClassMethodDeclaration] static baseStaticMethod() { return 'base static method output' }
+   [3, Identifier] baseStaticMethod
+   [3, Signature] ()
+   [3, Procedure] { return 'base static method output' }
+    [4, Return] return 'base static method output'
+     [5, Literal] 'base static method output'
+ [1, ClassDeclaration] class SubClassWithStaticField extends ClassWithStaticField {\\n static subStaticField = super.baseStaticMethod()\\n}
+  [2, Identifier] SubClassWithStaticField
+  [2, Identifier] extends ClassWithStaticField
+  [2, ClassFieldDeclaration] static subStaticField = super.baseStaticMethod()
+   [3, Identifier] subStaticField
+   [3, QualifiedExpression] = super.baseStaticMethod()
+    [4, Qualifier] super.
+     [5, Identifier] super
+     [5, Operator] .
+    [4, FunctionCall] baseStaticMethod()
+     [5, Identifier] baseStaticMethod
+     [5, Signature] ()
+ [1, ClassDeclaration] class ClassWithInstanceField {\\n instanceField = 'instance field'\\n}
+  [2, Identifier] ClassWithInstanceField
+  [2, ClassFieldDeclaration] instanceField = 'instance field'
+   [3, Identifier] instanceField
+   [3, Literal] = 'instance field'
+ [1, ClassDeclaration] class ClassWithInstanceField {\\n instanceField\\n}
+  [2, Identifier] ClassWithInstanceField
+  [2, ClassFieldDeclaration] instanceField
+   [3, Identifier] instanceField
+ [1, VariableDeclaration] const instance = new ClassWithInstanceField()
+  [2, Type] const
+  [2, Variable] instance = new ClassWithInstanceField()
+   [3, Identifier] instance
+   [3, Operator] =
+   [3, New] new ClassWithInstanceField()
+    [4, Identifier] ClassWithInstanceField
+    [4, Signature] ()
+ [1, QualifiedExpression] console.assert(instance.hasOwnProperty('instanceField'))
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] assert(instance.hasOwnProperty('instanceField'))
+   [3, Identifier] assert
+   [3, Signature] (instance.hasOwnProperty('instanceField'))
+    [4, QualifiedExpression] instance.hasOwnProperty('instanceField')
+     [5, Qualifier] instance.
+      [6, Identifier] instance
+      [6, Operator] .
+     [5, FunctionCall] hasOwnProperty('instanceField')
+      [6, Identifier] hasOwnProperty
+      [6, Signature] ('instanceField')
+       [7, Literal] 'instanceField'
+ [1, QualifiedExpression] console.log(instance.instanceField)
+  [2, Qualifier] console.
+   [3, Identifier] console
+   [3, Operator] .
+  [2, FunctionCall] log(instance.instanceField)
+   [3, Identifier] log
+   [3, Signature] (instance.instanceField)
+    [4, QualifiedExpression] instance.instanceField
+     [5, Qualifier] instance.
+      [6, Identifier] instance
+      [6, Operator] .
+     [5, Identifier] instanceField
+ [1, VariableDeclaration] const PREFIX = 'prefix'
+  [2, Type] const
+  [2, Variable] PREFIX = 'prefix'
+   [3, Identifier] PREFIX
+   [3, Operator] =
+   [3, Literal] 'prefix'
+ [1, ClassDeclaration] class ClassWithComputedFieldName {\\n [`${PREFIX}Field`] = 'prefixed field'\\n}
+  [2, Identifier] ClassWithComputedFieldName
+  [2, ClassFieldDeclaration] [`${PREFIX}Field`] = 'prefixed field'
+   [3, ComputedValue] [`${PREFIX}Field`]
+    [4, LiteralTemplate] `${PREFIX}Field`
+     [5, Variable] ${PREFIX}
+      [6, Identifier] PREFIX
+     [5, Constant] Field
+   [3, Literal] = 'prefixed field'
+ [1, ClassDeclaration] class ClassWithInstanceField {\\n baseInstanceField = 'base field'\\n anotherBaseInstanceField = this.baseInstanceField\\n baseInstanceMethod() { return 'base method output' }\\n}
+  [2, Identifier] ClassWithInstanceField
+  [2, ClassFieldDeclaration] baseInstanceField = 'base field'
+   [3, Identifier] baseInstanceField
+   [3, Literal] = 'base field'
+  [2, ClassFieldDeclaration] anotherBaseInstanceField = this.baseInstanceField
+   [3, Identifier] anotherBaseInstanceField
+   [3, QualifiedExpression] = this.baseInstanceField
+    [4, Qualifier] this.
+     [5, This] this
+     [5, Operator] .
+    [4, Identifier] baseInstanceField
+  [2, ClassMethodDeclaration] baseInstanceMethod() { return 'base method output' }
+   [3, Identifier] baseInstanceMethod
+   [3, Signature] ()
+   [3, Procedure] { return 'base method output' }
+    [4, Return] return 'base method output'
+     [5, Literal] 'base method output'
+ [1, ClassDeclaration] class SubClassWithInstanceField extends ClassWithInstanceField {\\n subInstanceField = super.baseInstanceMethod()\\n}
+  [2, Identifier] SubClassWithInstanceField
+  [2, Identifier] extends ClassWithInstanceField
+  [2, ClassFieldDeclaration] subInstanceField = super.baseInstanceMethod()
+   [3, Identifier] subInstanceField
+   [3, QualifiedExpression] = super.baseInstanceMethod()
+    [4, Qualifier] super.
+     [5, Identifier] super
+     [5, Operator] .
+    [4, FunctionCall] baseInstanceMethod()
+     [5, Identifier] baseInstanceMethod
+     [5, Signature] ()
+ [1, VariableDeclaration] const base = new ClassWithInstanceField()
+  [2, Type] const
+  [2, Variable] base = new ClassWithInstanceField()
+   [3, Identifier] base
+   [3, Operator] =
+   [3, New] new ClassWithInstanceField()
+    [4, Identifier] ClassWithInstanceField
+    [4, Signature] ()
+ [1, VariableDeclaration] const sub = new SubClassWithInstanceField()
+  [2, Type] const
+  [2, Variable] sub = new SubClassWithInstanceField()
+   [3, Identifier] sub
+   [3, Operator] =
+   [3, New] new SubClassWithInstanceField()
+    [4, Identifier] SubClassWithInstanceField
+    [4, Signature] ()
+ [1, ClassDeclaration] class ClassWithStaticMethod {\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n}
+  [2, Identifier] ClassWithStaticMethod
+  [2, ClassMethodDeclaration] static staticMethod() {\\n return 'static method has been called.';\\n }
+   [3, Identifier] staticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'static method has been called.';\\n }
+    [4, Return] return 'static method has been called.'
+     [5, Literal] 'static method has been called.'
+ [1, ClassDeclaration] class ClassWithPublicInstanceMethod {\\n publicMethod() {\\n return 'hello world'\\n }\\n}
+  [2, Identifier] ClassWithPublicInstanceMethod
+  [2, ClassMethodDeclaration] publicMethod() {\\n return 'hello world'\\n }
+   [3, Identifier] publicMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'hello world'\\n }
+    [4, Return] return 'hello world'
+     [5, Literal] 'hello world'
+ [1, ClassDeclaration] class ClassWithFancyMethods {\\n *generatorMethod() { }\\n async asyncMethod() { }\\n async *asyncGeneratorMethod() { }\\n}
+  [2, Identifier] ClassWithFancyMethods
+  [2, ClassMethodDeclaration] *generatorMethod() { }
+   [3, Identifier] generatorMethod
+   [3, Signature] ()
+   [3, Procedure] { }
+  [2, ClassMethodDeclaration] async asyncMethod() { }
+   [3, Identifier] asyncMethod
+   [3, Signature] ()
+   [3, Procedure] { }
+  [2, ClassMethodDeclaration] async *asyncGeneratorMethod() { }
+   [3, Identifier] asyncGeneratorMethod
+   [3, Signature] ()
+   [3, Procedure] { }
+ [1, ClassDeclaration] class BaseClass {\\n msg = 'hello world'\\n basePublicMethod() {\\n return this.msg\\n }\\n}
+  [2, Identifier] BaseClass
+  [2, ClassFieldDeclaration] msg = 'hello world'
+   [3, Identifier] msg
+   [3, Literal] = 'hello world'
+  [2, ClassMethodDeclaration] basePublicMethod() {\\n return this.msg\\n }
+   [3, Identifier] basePublicMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return this.msg\\n }
+    [4, Return] return this.msg
+     [5, QualifiedExpression] this.msg
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, Identifier] msg
+ [1, ClassDeclaration] class SubClass extends BaseClass {\\n subPublicMethod() {\\n return super.basePublicMethod()\\n }\\n}
+  [2, Identifier] SubClass
+  [2, Identifier] extends BaseClass
+  [2, ClassMethodDeclaration] subPublicMethod() {\\n return super.basePublicMethod()\\n }
+   [3, Identifier] subPublicMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return super.basePublicMethod()\\n }
+    [4, Return] return super.basePublicMethod()
+     [5, QualifiedExpression] super.basePublicMethod()
+      [6, Qualifier] super.
+       [7, Identifier] super
+       [7, Operator] .
+      [6, FunctionCall] basePublicMethod()
+       [7, Identifier] basePublicMethod
+       [7, Signature] ()
+ [1, ClassDeclaration] class ClassWithGetSet {\\n #msg = 'hello world'\\n get msg() {\\n return this.#msg\\n }\\n set msg(x) {\\n this.#msg = `hello ${x}`\\n }\\n}
+  [2, Identifier] ClassWithGetSet
+  [2, ClassFieldDeclaration] #msg = 'hello world'
+   [3, Identifier] msg
+   [3, Literal] = 'hello world'
+  [2, Getter] get msg() {\\n return this.#msg\\n }
+   [3, Identifier] msg
+   [3, Procedure] {\\n return this.#msg\\n }
+    [4, Return] return this.#msg
+     [5, QualifiedExpression] this.#msg
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #msg
+       [7, Identifier] msg
+  [2, Setter] set msg(x) {\\n this.#msg = `hello ${x}`\\n }
+   [3, Identifier] msg
+   [3, Signature] (x)
+    [4, Identifier] x
+   [3, Procedure] {\\n this.#msg = `hello ${x}`\\n }
+    [4, Assignment] this.#msg = `hello ${x}`
+     [5, QualifiedExpression] this.#msg
+      [6, Qualifier] this.
+       [7, This] this
+       [7, Operator] .
+      [6, PrivateExpression] #msg
+       [7, Identifier] msg
+     [5, Operator] =
+     [5, LiteralTemplate] `hello ${x}`
+      [6, Constant] hello 
+      [6, Variable] ${x}
+       [7, Identifier] x
+ [1, ClassDeclaration] class ClassWithStaticMethod {\\n static staticProperty = 'someValue';\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n static {\\n console.log('Class static initialization block called');\\n }\\n}
+  [2, Identifier] ClassWithStaticMethod
+  [2, ClassFieldDeclaration] static staticProperty = 'someValue'
+   [3, Identifier] staticProperty
+   [3, Literal] = 'someValue'
+  [2, ClassMethodDeclaration] static staticMethod() {\\n return 'static method has been called.';\\n }
+   [3, Identifier] staticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'static method has been called.';\\n }
+    [4, Return] return 'static method has been called.'
+     [5, Literal] 'static method has been called.'
+  [2, StaticProcedure] static {\\n console.log('Class static initialization block called');\\n }
+   [3, Procedure] {\\n console.log('Class static initialization block called');\\n }
+    [4, QualifiedExpression] console.log('Class static initialization block called')
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log('Class static initialization block called')
+      [6, Identifier] log
+      [6, Signature] ('Class static initialization block called')
+       [7, Literal] 'Class static initialization block called'
+ [1, ClassDeclaration] class Triple {\\n static customName = 'Tripler';\\n static description = 'I triple any number you provide';\\n static calculate(n = 1) {\\n return n * 3;\\n }\\n}
+  [2, Identifier] Triple
+  [2, ClassFieldDeclaration] static customName = 'Tripler'
+   [3, Identifier] customName
+   [3, Literal] = 'Tripler'
+  [2, ClassFieldDeclaration] static description = 'I triple any number you provide'
+   [3, Identifier] description
+   [3, Literal] = 'I triple any number you provide'
+  [2, ClassMethodDeclaration] static calculate(n = 1) {\\n return n * 3;\\n }
+   [3, Identifier] calculate
+   [3, Signature] (n = 1)
+    [4, ParameterWithValue] n = 1
+     [5, Identifier] n
+     [5, Literal] 1
+   [3, Procedure] {\\n return n * 3;\\n }
+    [4, Return] return n * 3
+     [5, Infix] n * 3
+      [6, Identifier] n
+      [6, Operator] *
+      [6, Literal] 3
+ [1, ClassDeclaration] class SquaredTriple extends Triple {\\n static longDescription;\\n static description = 'I square the triple of any number you provide';\\n static calculate(n) {\\n return super.calculate(n) * super.calculate(n);\\n }\\n}
+  [2, Identifier] SquaredTriple
+  [2, Identifier] extends Triple
+  [2, ClassFieldDeclaration] static longDescription
+   [3, Identifier] longDescription
+  [2, ClassFieldDeclaration] static description = 'I square the triple of any number you provide'
+   [3, Identifier] description
+   [3, Literal] = 'I square the triple of any number you provide'
+  [2, ClassMethodDeclaration] static calculate(n) {\\n return super.calculate(n) * super.calculate(n);\\n }
+   [3, Identifier] calculate
+   [3, Signature] (n)
+    [4, Identifier] n
+   [3, Procedure] {\\n return super.calculate(n) * super.calculate(n);\\n }
+    [4, Return] return super.calculate(n) * super.calculate(n)
+     [5, Infix] super.calculate(n) * super.calculate(n)
+      [6, QualifiedExpression] super.calculate(n)
+       [7, Qualifier] super.
+        [8, Identifier] super
+        [8, Operator] .
+       [7, FunctionCall] calculate(n)
+        [8, Identifier] calculate
+        [8, Signature] (n)
+         [9, Identifier] n
+      [6, Operator] *
+      [6, QualifiedExpression] super.calculate(n)
+       [7, Qualifier] super.
+        [8, Identifier] super
+        [8, Operator] .
+       [7, FunctionCall] calculate(n)
+        [8, Identifier] calculate
+        [8, Signature] (n)
+         [9, Identifier] n
+ [1, ClassDeclaration] class StaticMethodCall {\\n static staticProperty = 'static property';\\n static staticMethod() {\\n return 'Static method and ' + this.staticProperty + ' has been called';\\n }\\n static anotherStaticMethod() {\\n return this.staticMethod() + ' from another static method';\\n }\\n}
+  [2, Identifier] StaticMethodCall
+  [2, ClassFieldDeclaration] static staticProperty = 'static property'
+   [3, Identifier] staticProperty
+   [3, Literal] = 'static property'
+  [2, ClassMethodDeclaration] static staticMethod() {\\n return 'Static method and ' + this.staticProperty + ' has been called';\\n }
+   [3, Identifier] staticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'Static method and ' + this.staticProperty + ' has been called';\\n }
+    [4, Return] return 'Static method and ' + this.staticProperty + ' has been called'
+     [5, Infix] 'Static method and ' + this.staticProperty + ' has been called'
+      [6, Infix] 'Static method and ' + this.staticProperty
+       [7, Literal] 'Static method and '
+       [7, Operator] +
+       [7, QualifiedExpression] this.staticProperty
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Identifier] staticProperty
+      [6, Operator] +
+      [6, Literal] ' has been called'
+  [2, ClassMethodDeclaration] static anotherStaticMethod() {\\n return this.staticMethod() + ' from another static method';\\n }
+   [3, Identifier] anotherStaticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return this.staticMethod() + ' from another static method';\\n }
+    [4, Return] return this.staticMethod() + ' from another static method'
+     [5, Infix] this.staticMethod() + ' from another static method'
+      [6, QualifiedExpression] this.staticMethod()
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, FunctionCall] staticMethod()
+        [8, Identifier] staticMethod
+        [8, Signature] ()
+      [6, Operator] +
+      [6, Literal] ' from another static method'
+ [1, ClassDeclaration] class StaticMethodCall {\\n constructor() {\\n console.log(StaticMethodCall.staticProperty); // 'static property'\\n console.log(this.constructor.staticProperty); // 'static property'\\n console.log(StaticMethodCall.staticMethod()); // 'static method has been called.'\\n console.log(this.constructor.staticMethod()); // 'static method has been called.'\\n }\\n\\n static staticProperty = 'static property';\\n static staticMethod() {\\n return 'static method has been called.';\\n }\\n}
+  [2, Identifier] StaticMethodCall
+  [2, ClassMethodDeclaration] constructor() {\\n console.log(StaticMethodCall.staticProperty); // 'static property'\\n console.log(this.constructor.staticProperty); // 'static property'\\n console.log(StaticMethodCall.staticMethod()); // 'static method has been called.'\\n console.log(this.constructor.staticMethod()); // 'static method has been called.'\\n }
+   [3, Identifier] constructor
+   [3, Signature] ()
+   [3, Procedure] {\\n console.log(StaticMethodCall.staticProperty); // 'static property'\\n console.log(this.constructor.staticProperty); // 'static property'\\n console.log(StaticMethodCall.staticMethod()); // 'static method has been called.'\\n console.log(this.constructor.staticMethod()); // 'static method has been called.'\\n }
+    [4, QualifiedExpression] console.log(StaticMethodCall.staticProperty)
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log(StaticMethodCall.staticProperty)
+      [6, Identifier] log
+      [6, Signature] (StaticMethodCall.staticProperty)
+       [7, QualifiedExpression] StaticMethodCall.staticProperty
+        [8, Qualifier] StaticMethodCall.
+         [9, Identifier] StaticMethodCall
+         [9, Operator] .
+        [8, Identifier] staticProperty
+    [4, QualifiedExpression] console.log(this.constructor.staticProperty)
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log(this.constructor.staticProperty)
+      [6, Identifier] log
+      [6, Signature] (this.constructor.staticProperty)
+       [7, QualifiedExpression] this.constructor.staticProperty
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Qualifier] constructor.
+         [9, Identifier] constructor
+         [9, Operator] .
+        [8, Identifier] staticProperty
+    [4, QualifiedExpression] console.log(StaticMethodCall.staticMethod())
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log(StaticMethodCall.staticMethod())
+      [6, Identifier] log
+      [6, Signature] (StaticMethodCall.staticMethod())
+       [7, QualifiedExpression] StaticMethodCall.staticMethod()
+        [8, Qualifier] StaticMethodCall.
+         [9, Identifier] StaticMethodCall
+         [9, Operator] .
+        [8, FunctionCall] staticMethod()
+         [9, Identifier] staticMethod
+         [9, Signature] ()
+    [4, QualifiedExpression] console.log(this.constructor.staticMethod())
+     [5, Qualifier] console.
+      [6, Identifier] console
+      [6, Operator] .
+     [5, FunctionCall] log(this.constructor.staticMethod())
+      [6, Identifier] log
+      [6, Signature] (this.constructor.staticMethod())
+       [7, QualifiedExpression] this.constructor.staticMethod()
+        [8, Qualifier] this.
+         [9, This] this
+         [9, Operator] .
+        [8, Qualifier] constructor.
+         [9, Identifier] constructor
+         [9, Operator] .
+        [8, FunctionCall] staticMethod()
+         [9, Identifier] staticMethod
+         [9, Signature] ()
+  [2, ClassFieldDeclaration] static staticProperty = 'static property'
+   [3, Identifier] staticProperty
+   [3, Literal] = 'static property'
+  [2, ClassMethodDeclaration] static staticMethod() {\\n return 'static method has been called.';\\n }
+   [3, Identifier] staticMethod
+   [3, Signature] ()
+   [3, Procedure] {\\n return 'static method has been called.';\\n }
+    [4, Return] return 'static method has been called.'
+     [5, Literal] 'static method has been called.'

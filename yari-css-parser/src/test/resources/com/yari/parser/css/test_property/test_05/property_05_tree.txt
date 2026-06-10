@@ -1,0 +1,30 @@
+[0, Css] div {\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+ [1, RuleSet] div {\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+  [2, ElementSelector] div
+  [2, Block] {\\n --deg: -45deg;\\n background-image: linear-gradient(abs(var(--deg)), blue, red);\\n width: abs(20% - 100px)\\n }
+   [3, Property] --deg: -45deg
+    [4, Identifier] --deg
+    [4, Identifier] -45deg
+   [3, Property] background-image: linear-gradient(abs(var(--deg)), blue, red)
+    [4, Identifier] background-image
+    [4, Function] linear-gradient(abs(var(--deg)), blue, red)
+     [5, Identifier] linear-gradient
+     [5, Signature] (abs(var(--deg)), blue, red)
+      [6, Function] abs(var(--deg))
+       [7, Identifier] abs
+       [7, Signature] (var(--deg))
+        [8, Function] var(--deg)
+         [9, Identifier] var
+         [9, Signature] (--deg)
+          [10, Identifier] --deg
+      [6, Identifier] blue
+      [6, Identifier] red
+   [3, Property] width: abs(20% - 100px)
+    [4, Identifier] width
+    [4, Function] abs(20% - 100px)
+     [5, Identifier] abs
+     [5, Signature] (20% - 100px)
+      [6, Infix] 20% - 100px
+       [7, Identifier] 20%
+       [7, Operator] -
+       [7, Identifier] 100px

@@ -1,0 +1,28 @@
+[0, JavascriptNodeUnit] tutu(n, k, a.b.c).toto[nn.ll][rr]
+ [1, QualifiedExpression] tutu(n, k, a.b.c).toto[nn.ll][rr]
+  [2, Qualifier] tutu(n, k, a.b.c).
+   [3, FunctionCall] tutu(n, k, a.b.c)
+    [4, Identifier] tutu
+    [4, Signature] (n, k, a.b.c)
+     [5, Identifier] n
+     [5, Identifier] k
+     [5, QualifiedExpression] a.b.c
+      [6, Qualifier] a.
+       [7, Identifier] a
+       [7, Operator] .
+      [6, Qualifier] b.
+       [7, Identifier] b
+       [7, Operator] .
+      [6, Identifier] c
+   [3, Operator] .
+  [2, MapExpression] toto[nn.ll][rr]
+   [3, MapExpression] toto[nn.ll]
+    [4, Identifier] toto
+    [4, Bracket] [nn.ll]
+     [5, QualifiedExpression] nn.ll
+      [6, Qualifier] nn.
+       [7, Identifier] nn
+       [7, Operator] .
+      [6, Identifier] ll
+   [3, Bracket] [rr]
+    [4, Identifier] rr

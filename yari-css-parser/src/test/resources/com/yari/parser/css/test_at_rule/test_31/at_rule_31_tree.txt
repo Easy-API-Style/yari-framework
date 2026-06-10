@@ -1,0 +1,49 @@
+[0, Css] @layer module, state;\\n\\n @layer state {\\n .alert {\\n background-color: brown;\\n }\\n p {\\n border: medium solid limegreen;\\n }\\n }\\n\\n @layer module {\\n .alert {\\n border: medium solid violet;\\n background-color: yellow;\\n color: white;\\n }\\n }
+ [1, AtRule] @layer module, state
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, ListParameter] module, state
+   [3, Identifier] module
+   [3, Identifier] state
+ [1, AtRule] @layer state {\\n .alert {\\n background-color: brown;\\n }\\n p {\\n border: medium solid limegreen;\\n }\\n }
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, Identifier] state
+  [2, Block] {\\n .alert {\\n background-color: brown;\\n }\\n p {\\n border: medium solid limegreen;\\n }\\n }
+   [3, RuleSet] .alert {\\n background-color: brown;\\n }
+    [4, ClassSelector] .alert
+     [5, Identifier] alert
+    [4, Block] {\\n background-color: brown;\\n }
+     [5, Property] background-color: brown
+      [6, Identifier] background-color
+      [6, Identifier] brown
+   [3, RuleSet] p {\\n border: medium solid limegreen;\\n }
+    [4, ElementSelector] p
+    [4, Block] {\\n border: medium solid limegreen;\\n }
+     [5, Property] border: medium solid limegreen
+      [6, Identifier] border
+      [6, ListValue] medium solid limegreen
+       [7, Identifier] medium
+       [7, Identifier] solid
+       [7, Identifier] limegreen
+ [1, AtRule] @layer module {\\n .alert {\\n border: medium solid violet;\\n background-color: yellow;\\n color: white;\\n }\\n }
+  [2, AtRuleName] @layer
+   [3, Identifier] layer
+  [2, Identifier] module
+  [2, Block] {\\n .alert {\\n border: medium solid violet;\\n background-color: yellow;\\n color: white;\\n }\\n }
+   [3, RuleSet] .alert {\\n border: medium solid violet;\\n background-color: yellow;\\n color: white;\\n }
+    [4, ClassSelector] .alert
+     [5, Identifier] alert
+    [4, Block] {\\n border: medium solid violet;\\n background-color: yellow;\\n color: white;\\n }
+     [5, Property] border: medium solid violet
+      [6, Identifier] border
+      [6, ListValue] medium solid violet
+       [7, Identifier] medium
+       [7, Identifier] solid
+       [7, Identifier] violet
+     [5, Property] background-color: yellow
+      [6, Identifier] background-color
+      [6, Identifier] yellow
+     [5, Property] color: white
+      [6, Identifier] color
+      [6, Identifier] white

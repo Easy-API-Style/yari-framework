@@ -1,0 +1,21 @@
+[0, Css] ol[type="a"]:first-child {\\n list-style-type: lower-alpha;\\n background: red;\\n }
+ [1, RuleSet] ol[type="a"]:first-child {\\n list-style-type: lower-alpha;\\n background: red;\\n }
+  [2, CombinatorSelector] ol[type="a"]:first-child
+   [3, CombinatorSelector] ol[type="a"]
+    [4, ElementSelector] ol
+    [4, Operator] 
+    [4, AttributeSelector] [type="a"]
+     [5, Expression] type="a"
+      [6, Identifier] type
+      [6, Operator] =
+      [6, Literal] "a"
+   [3, Operator] 
+   [3, PseudoClassSelector] :first-child
+    [4, Identifier] first-child
+  [2, Block] {\\n list-style-type: lower-alpha;\\n background: red;\\n }
+   [3, Property] list-style-type: lower-alpha
+    [4, Identifier] list-style-type
+    [4, Identifier] lower-alpha
+   [3, Property] background: red
+    [4, Identifier] background
+    [4, Identifier] red

@@ -1,0 +1,100 @@
+[0, Css] @import url;\\n @import url layer;\\n @import url layer(layer-name);\\n @import url layer(layer-name) supports(supports-condition);\\n @import url layer(layer-name) supports(supports-condition) list-of-media-queries;\\n @import url layer(layer-name) list-of-media-queries;\\n @import url supports(supports-condition);\\n @import url supports(supports-condition) list-of-media-queries;\\n @import url list-of-media-queries;
+ [1, AtRule] @import url
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Identifier] url
+ [1, AtRule] @import url layer
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url layer
+   [3, Identifier] url
+   [3, Operator] 
+   [3, Identifier] layer
+ [1, AtRule] @import url layer(layer-name)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url layer(layer-name)
+   [3, Identifier] url
+   [3, Operator] 
+   [3, Function] layer(layer-name)
+    [4, Identifier] layer
+    [4, Signature] (layer-name)
+     [5, Identifier] layer-name
+ [1, AtRule] @import url layer(layer-name) supports(supports-condition)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url layer(layer-name) supports(supports-condition)
+   [3, Infix] url layer(layer-name)
+    [4, Identifier] url
+    [4, Operator] 
+    [4, Function] layer(layer-name)
+     [5, Identifier] layer
+     [5, Signature] (layer-name)
+      [6, Identifier] layer-name
+   [3, Operator] 
+   [3, Function] supports(supports-condition)
+    [4, Identifier] supports
+    [4, Signature] (supports-condition)
+     [5, Identifier] supports-condition
+ [1, AtRule] @import url layer(layer-name) supports(supports-condition) list-of-media-queries
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url layer(layer-name) supports(supports-condition) list-of-media-queries
+   [3, Infix] url layer(layer-name) supports(supports-condition)
+    [4, Infix] url layer(layer-name)
+     [5, Identifier] url
+     [5, Operator] 
+     [5, Function] layer(layer-name)
+      [6, Identifier] layer
+      [6, Signature] (layer-name)
+       [7, Identifier] layer-name
+    [4, Operator] 
+    [4, Function] supports(supports-condition)
+     [5, Identifier] supports
+     [5, Signature] (supports-condition)
+      [6, Identifier] supports-condition
+   [3, Operator] 
+   [3, Identifier] list-of-media-queries
+ [1, AtRule] @import url layer(layer-name) list-of-media-queries
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url layer(layer-name) list-of-media-queries
+   [3, Infix] url layer(layer-name)
+    [4, Identifier] url
+    [4, Operator] 
+    [4, Function] layer(layer-name)
+     [5, Identifier] layer
+     [5, Signature] (layer-name)
+      [6, Identifier] layer-name
+   [3, Operator] 
+   [3, Identifier] list-of-media-queries
+ [1, AtRule] @import url supports(supports-condition)
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url supports(supports-condition)
+   [3, Identifier] url
+   [3, Operator] 
+   [3, Function] supports(supports-condition)
+    [4, Identifier] supports
+    [4, Signature] (supports-condition)
+     [5, Identifier] supports-condition
+ [1, AtRule] @import url supports(supports-condition) list-of-media-queries
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url supports(supports-condition) list-of-media-queries
+   [3, Infix] url supports(supports-condition)
+    [4, Identifier] url
+    [4, Operator] 
+    [4, Function] supports(supports-condition)
+     [5, Identifier] supports
+     [5, Signature] (supports-condition)
+      [6, Identifier] supports-condition
+   [3, Operator] 
+   [3, Identifier] list-of-media-queries
+ [1, AtRule] @import url list-of-media-queries
+  [2, AtRuleName] @import
+   [3, Identifier] import
+  [2, Infix] url list-of-media-queries
+   [3, Identifier] url
+   [3, Operator] 
+   [3, Identifier] list-of-media-queries

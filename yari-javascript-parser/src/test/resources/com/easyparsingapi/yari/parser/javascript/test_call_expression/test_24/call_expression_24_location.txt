@@ -1,0 +1,75 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [Javascript]
+look(...a&&o&&!Object(s.t)(o,"a"))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 35] [FunctionCall]
+look(...a&&o&&!Object(s.t)(o,"a"))
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 5] [Identifier]
+look
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 35] [Signature]
+(...a&&o&&!Object(s.t)(o,"a"))
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 34] [Spread]
+...a&&o&&!Object(s.t)(o,"a")
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 34] [Infix]
+a&&o&&!Object(s.t)(o,"a")
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 13] [Infix]
+a&&o
+---------------------------
+SourceLocation [start=line 1 column 9, end=line 1 column 10] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 10, end=line 1 column 12] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 12, end=line 1 column 13] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 13, end=line 1 column 15] [Operator]
+&&
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 34] [Prefix]
+!Object(s.t)(o,"a")
+---------------------------
+SourceLocation [start=line 1 column 15, end=line 1 column 16] [Operator]
+!
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 34] [FunctionCall]
+Object(s.t)(o,"a")
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 27] [FunctionCall]
+Object(s.t)
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 22] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 27] [Signature]
+(s.t)
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 26] [QualifiedExpression]
+s.t
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 25] [Qualifier]
+s.
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 24] [Identifier]
+s
+---------------------------
+SourceLocation [start=line 1 column 24, end=line 1 column 25] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 25, end=line 1 column 26] [Identifier]
+t
+---------------------------
+SourceLocation [start=line 1 column 27, end=line 1 column 34] [Signature]
+(o,"a")
+---------------------------
+SourceLocation [start=line 1 column 28, end=line 1 column 29] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 30, end=line 1 column 33] [Literal]
+"a"
+---------------------------

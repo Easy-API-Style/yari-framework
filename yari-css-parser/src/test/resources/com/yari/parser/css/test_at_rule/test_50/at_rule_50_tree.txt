@@ -1,0 +1,41 @@
+[0, Css] @function --color-choice(--color1 type(red | green), --color2 blue) {\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+ [1, AtRule] @function --color-choice(--color1 type(red | green), --color2 blue) {\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+  [2, AtRuleName] @function
+   [3, Identifier] function
+  [2, Function] --color-choice(--color1 type(red | green), --color2 blue)
+   [3, Identifier] --color-choice
+   [3, Signature] (--color1 type(red | green), --color2 blue)
+    [4, ListValue] --color1 type(red | green)
+     [5, Identifier] --color1
+     [5, Function] type(red | green)
+      [6, Identifier] type
+      [6, Signature] (red | green)
+       [7, Infix] red | green
+        [8, Identifier] red
+        [8, Operator] |
+        [8, Identifier] green
+    [4, ListValue] --color2 blue
+     [5, Identifier] --color2
+     [5, Identifier] blue
+  [2, Block] {\\n result: var(--color1);\\n @media (width < 700px) {\\n result: var(--color2);\\n }\\n }
+   [3, Property] result: var(--color1)
+    [4, Identifier] result
+    [4, Function] var(--color1)
+     [5, Identifier] var
+     [5, Signature] (--color1)
+      [6, Identifier] --color1
+   [3, AtRule] @media (width < 700px) {\\n result: var(--color2);\\n }
+    [4, AtRuleName] @media
+     [5, Identifier] media
+    [4, Parenthesis] (width < 700px)
+     [5, Infix] width < 700px
+      [6, Identifier] width
+      [6, Operator] <
+      [6, Identifier] 700px
+    [4, Block] {\\n result: var(--color2);\\n }
+     [5, Property] result: var(--color2)
+      [6, Identifier] result
+      [6, Function] var(--color2)
+       [7, Identifier] var
+       [7, Signature] (--color2)
+        [8, Identifier] --color2

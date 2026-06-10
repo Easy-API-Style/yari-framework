@@ -1,0 +1,27 @@
+[0, Javascript] { var v_1 = 'null'; { var v_2; var v_3; v_2 = -1000.00 v_3 = 'roro'; }}
+ [1, BlockProcedure] { var v_1 = 'null'; { var v_2; var v_3; v_2 = -1000.00 v_3 = 'roro'; }}
+  [2, VariableDeclaration] var v_1 = 'null'
+   [3, Type] var
+   [3, Variable] v_1 = 'null'
+    [4, Identifier] v_1
+    [4, Operator] =
+    [4, Literal] 'null'
+  [2, BlockProcedure] { var v_2; var v_3; v_2 = -1000.00 v_3 = 'roro'; }
+   [3, VariableDeclaration] var v_2
+    [4, Type] var
+    [4, Variable] v_2
+     [5, Identifier] v_2
+   [3, VariableDeclaration] var v_3
+    [4, Type] var
+    [4, Variable] v_3
+     [5, Identifier] v_3
+   [3, Assignment] v_2 = -1000.00
+    [4, Identifier] v_2
+    [4, Operator] =
+    [4, Prefix] -1000.00
+     [5, Operator] -
+     [5, Literal] 1000.00
+   [3, Assignment] v_3 = 'roro'
+    [4, Identifier] v_3
+    [4, Operator] =
+    [4, Literal] 'roro'

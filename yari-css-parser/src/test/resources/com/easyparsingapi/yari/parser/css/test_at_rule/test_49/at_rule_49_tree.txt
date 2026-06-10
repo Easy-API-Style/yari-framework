@@ -1,0 +1,23 @@
+[0, Css] @media (not (width > 1000px)) and (color), print and (color) {\\n /* … */\\n }
+ [1, AtRule] @media (not (width > 1000px)) and (color), print and (color) {\\n /* … */\\n }
+  [2, AtRuleName] @media
+   [3, Identifier] media
+  [2, ListParameter] (not (width > 1000px)) and (color), print and (color)
+   [3, Infix] (not (width > 1000px)) and (color)
+    [4, Parenthesis] (not (width > 1000px))
+     [5, Prefix] not (width > 1000px)
+      [6, Operator] not
+      [6, Parenthesis] (width > 1000px)
+       [7, Infix] width > 1000px
+        [8, Identifier] width
+        [8, Operator] >
+        [8, Identifier] 1000px
+    [4, Operator] and
+    [4, Parenthesis] (color)
+     [5, Identifier] color
+   [3, Infix] print and (color)
+    [4, Identifier] print
+    [4, Operator] and
+    [4, Parenthesis] (color)
+     [5, Identifier] color
+  [2, Block] {\\n /* … */\\n }

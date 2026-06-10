@@ -1,0 +1,26 @@
+[0, Javascript] ([a, b] = [10, 20]) => console.log(this.i, this);
+ [1, ArrowFunction] ([a, b] = [10, 20]) => console.log(this.i, this);
+  [2, Signature] ([a, b] = [10, 20])
+   [3, ParameterWithValue] [a, b] = [10, 20]
+    [4, DestructuringArray] [a, b]
+     [5, Value] a
+      [6, Identifier] a
+     [5, Value] b
+      [6, Identifier] b
+    [4, ArrayDeclaration] [10, 20]
+     [5, Literal] 10
+     [5, Literal] 20
+  [2, Procedure] console.log(this.i, this);
+   [3, QualifiedExpression] console.log(this.i, this)
+    [4, Qualifier] console.
+     [5, Identifier] console
+     [5, Operator] .
+    [4, FunctionCall] log(this.i, this)
+     [5, Identifier] log
+     [5, Signature] (this.i, this)
+      [6, QualifiedExpression] this.i
+       [7, Qualifier] this.
+        [8, This] this
+        [8, Operator] .
+       [7, Identifier] i
+      [6, This] this

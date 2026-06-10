@@ -1,0 +1,12 @@
+[0, Css] span,\\n div {\\n border: red 2px solid;\\n }
+ [1, RuleSet] span,\\n div {\\n border: red 2px solid;\\n }
+  [2, ListSelector] span,\\n div
+   [3, ElementSelector] span
+   [3, ElementSelector] div
+  [2, Block] {\\n border: red 2px solid;\\n }
+   [3, Property] border: red 2px solid
+    [4, Identifier] border
+    [4, ListValue] red 2px solid
+     [5, Identifier] red
+     [5, Identifier] 2px
+     [5, Identifier] solid

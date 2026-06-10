@@ -1,0 +1,16 @@
+[0, Javascript] const { a, b: { c: d },} = obj;
+ [1, VariableDeclaration] const { a, b: { c: d },} = obj
+  [2, Type] const
+  [2, Variable] { a, b: { c: d },} = obj
+   [3, DestructuringObject] { a, b: { c: d },}
+    [4, Field] a
+     [5, Identifier] a
+    [4, Field] b: { c: d }
+     [5, Identifier] b
+     [5, DestructuringObject] : { c: d }
+      [6, Field] c: d
+       [7, Identifier] c
+       [7, Identifier] : d
+    [4, Empty] 
+   [3, Operator] =
+   [3, Identifier] obj

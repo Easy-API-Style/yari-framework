@@ -1,0 +1,13 @@
+[0, Javascript] x = (y = 5, z = 6)
+ [1, Assignment] x = (y = 5, z = 6)
+  [2, Identifier] x
+  [2, Operator] =
+  [2, Sequence] (y = 5, z = 6)
+   [3, Assignment] y = 5
+    [4, Identifier] y
+    [4, Operator] =
+    [4, Literal] 5
+   [3, Assignment] z = 6
+    [4, Identifier] z
+    [4, Operator] =
+    [4, Literal] 6

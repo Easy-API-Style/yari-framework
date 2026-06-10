@@ -1,0 +1,11 @@
+[0, Css] *.warning {\\n color: red;\\n }
+ [1, RuleSet] *.warning {\\n color: red;\\n }
+  [2, CombinatorSelector] *.warning
+   [3, Universal] *
+   [3, Operator] 
+   [3, ClassSelector] .warning
+    [4, Identifier] warning
+  [2, Block] {\\n color: red;\\n }
+   [3, Property] color: red
+    [4, Identifier] color
+    [4, Identifier] red

@@ -1,0 +1,31 @@
+[0, Css] @function --narrow-wide(--narrow, --wide) {\\n result: var(--wide);\\n @media (width < 700px) {\\n result: var(--narrow);\\n }\\n }
+ [1, AtRule] @function --narrow-wide(--narrow, --wide) {\\n result: var(--wide);\\n @media (width < 700px) {\\n result: var(--narrow);\\n }\\n }
+  [2, AtRuleName] @function
+   [3, Identifier] function
+  [2, Function] --narrow-wide(--narrow, --wide)
+   [3, Identifier] --narrow-wide
+   [3, Signature] (--narrow, --wide)
+    [4, Identifier] --narrow
+    [4, Identifier] --wide
+  [2, Block] {\\n result: var(--wide);\\n @media (width < 700px) {\\n result: var(--narrow);\\n }\\n }
+   [3, Property] result: var(--wide)
+    [4, Identifier] result
+    [4, Function] var(--wide)
+     [5, Identifier] var
+     [5, Signature] (--wide)
+      [6, Identifier] --wide
+   [3, AtRule] @media (width < 700px) {\\n result: var(--narrow);\\n }
+    [4, AtRuleName] @media
+     [5, Identifier] media
+    [4, Parenthesis] (width < 700px)
+     [5, Infix] width < 700px
+      [6, Identifier] width
+      [6, Operator] <
+      [6, Identifier] 700px
+    [4, Block] {\\n result: var(--narrow);\\n }
+     [5, Property] result: var(--narrow)
+      [6, Identifier] result
+      [6, Function] var(--narrow)
+       [7, Identifier] var
+       [7, Signature] (--narrow)
+        [8, Identifier] --narrow

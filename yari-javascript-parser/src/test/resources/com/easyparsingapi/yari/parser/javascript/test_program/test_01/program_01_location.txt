@@ -1,0 +1,84 @@
+SourceLocation [start=line 1 column 1, end=line 1 column 73] [Javascript]
+Object.defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }});
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 72] [QualifiedExpression]
+Object.defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }})
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 8] [Qualifier]
+Object.
+---------------------------
+SourceLocation [start=line 1 column 1, end=line 1 column 7] [Identifier]
+Object
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 8] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 72] [FunctionCall]
+defineProperty(o, 'b', { set: function(x) { this.a = x / 2; }})
+---------------------------
+SourceLocation [start=line 1 column 8, end=line 1 column 22] [Identifier]
+defineProperty
+---------------------------
+SourceLocation [start=line 1 column 22, end=line 1 column 72] [Signature]
+(o, 'b', { set: function(x) { this.a = x / 2; }})
+---------------------------
+SourceLocation [start=line 1 column 23, end=line 1 column 24] [Identifier]
+o
+---------------------------
+SourceLocation [start=line 1 column 26, end=line 1 column 29] [Literal]
+'b'
+---------------------------
+SourceLocation [start=line 1 column 31, end=line 1 column 71] [ObjectDeclaration]
+{ set: function(x) { this.a = x / 2; }}
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 70] [FieldDeclaration]
+set: function(x) { this.a = x / 2; }
+---------------------------
+SourceLocation [start=line 1 column 34, end=line 1 column 37] [Identifier]
+set
+---------------------------
+SourceLocation [start=line 1 column 39, end=line 1 column 70] [FunctionDeclaration]
+function(x) { this.a = x / 2; }
+---------------------------
+SourceLocation [start=line 1 column 47, end=line 1 column 50] [Signature]
+(x)
+---------------------------
+SourceLocation [start=line 1 column 48, end=line 1 column 49] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 51, end=line 1 column 70] [Procedure]
+{ this.a = x / 2; }
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 67] [Assignment]
+this.a = x / 2
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 59] [QualifiedExpression]
+this.a
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 58] [Qualifier]
+this.
+---------------------------
+SourceLocation [start=line 1 column 53, end=line 1 column 57] [This]
+this
+---------------------------
+SourceLocation [start=line 1 column 57, end=line 1 column 58] [Operator]
+.
+---------------------------
+SourceLocation [start=line 1 column 58, end=line 1 column 59] [Identifier]
+a
+---------------------------
+SourceLocation [start=line 1 column 60, end=line 1 column 61] [Operator]
+=
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 67] [Infix]
+x / 2
+---------------------------
+SourceLocation [start=line 1 column 62, end=line 1 column 63] [Identifier]
+x
+---------------------------
+SourceLocation [start=line 1 column 64, end=line 1 column 65] [Operator]
+/
+---------------------------
+SourceLocation [start=line 1 column 66, end=line 1 column 67] [Literal]
+2
+---------------------------

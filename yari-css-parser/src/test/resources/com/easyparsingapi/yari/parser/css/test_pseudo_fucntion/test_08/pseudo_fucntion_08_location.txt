@@ -1,0 +1,213 @@
+SourceLocation [start=line 1 column 5, end=line 14 column 6] [Css]
+p:nth-child(n) {\\n font-weight: bold;\\n }\\n li:nth-child(-n + 3) {\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }\\n li:nth-child(even) {\\n background-color: lightyellow;\\n }\\n li:nth-child(even of .noted) {\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 3 column 6] [RuleSet]
+p:nth-child(n) {\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 19] [CombinatorSelector]
+p:nth-child(n)
+---------------------------
+SourceLocation [start=line 1 column 5, end=line 1 column 6] [ElementSelector]
+p
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 6] [Operator]
+
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 19] [PseudoFunctionSelector]
+:nth-child(n)
+---------------------------
+SourceLocation [start=line 1 column 6, end=line 1 column 16] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 1 column 7, end=line 1 column 16] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 1 column 16, end=line 1 column 19] [Signature]
+(n)
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [NthPattern]
+n
+---------------------------
+SourceLocation [start=line 1 column 17, end=line 1 column 18] [Identifier]
+n
+---------------------------
+SourceLocation [start=line 1 column 21, end=line 3 column 6] [Block]
+{\\n font-weight: bold;\\n }
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 24] [Property]
+font-weight: bold
+---------------------------
+SourceLocation [start=line 2 column 7, end=line 2 column 18] [Identifier]
+font-weight
+---------------------------
+SourceLocation [start=line 2 column 20, end=line 2 column 24] [Identifier]
+bold
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 7 column 6] [RuleSet]
+li:nth-child(-n + 3) {\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 25] [CombinatorSelector]
+li:nth-child(-n + 3)
+---------------------------
+SourceLocation [start=line 4 column 5, end=line 4 column 7] [ElementSelector]
+li
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 7] [Operator]
+
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 25] [PseudoFunctionSelector]
+:nth-child(-n + 3)
+---------------------------
+SourceLocation [start=line 4 column 7, end=line 4 column 17] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 4 column 8, end=line 4 column 17] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 4 column 17, end=line 4 column 25] [Signature]
+(-n + 3)
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 24] [NthPattern]
+-n + 3
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 24] [Infix]
+-n + 3
+---------------------------
+SourceLocation [start=line 4 column 18, end=line 4 column 20] [Identifier]
+-n
+---------------------------
+SourceLocation [start=line 4 column 21, end=line 4 column 22] [Operator]
++
+---------------------------
+SourceLocation [start=line 4 column 23, end=line 4 column 24] [Literal]
+3
+---------------------------
+SourceLocation [start=line 4 column 26, end=line 7 column 6] [Block]
+{\\n border: 2px solid orange;\\n margin-bottom: 1px;\\n }
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 31] [Property]
+border: 2px solid orange
+---------------------------
+SourceLocation [start=line 5 column 7, end=line 5 column 13] [Identifier]
+border
+---------------------------
+SourceLocation [start=line 5 column 15, end=line 5 column 31] [ListValue]
+2px solid orange
+---------------------------
+SourceLocation [start=line 5 column 15, end=line 5 column 18] [Identifier]
+2px
+---------------------------
+SourceLocation [start=line 5 column 19, end=line 5 column 24] [Identifier]
+solid
+---------------------------
+SourceLocation [start=line 5 column 25, end=line 5 column 31] [Identifier]
+orange
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 25] [Property]
+margin-bottom: 1px
+---------------------------
+SourceLocation [start=line 6 column 7, end=line 6 column 20] [Identifier]
+margin-bottom
+---------------------------
+SourceLocation [start=line 6 column 22, end=line 6 column 25] [Identifier]
+1px
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 10 column 6] [RuleSet]
+li:nth-child(even) {\\n background-color: lightyellow;\\n }
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 23] [CombinatorSelector]
+li:nth-child(even)
+---------------------------
+SourceLocation [start=line 8 column 5, end=line 8 column 7] [ElementSelector]
+li
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 7] [Operator]
+
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 23] [PseudoFunctionSelector]
+:nth-child(even)
+---------------------------
+SourceLocation [start=line 8 column 7, end=line 8 column 17] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 8 column 8, end=line 8 column 17] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 8 column 17, end=line 8 column 23] [Signature]
+(even)
+---------------------------
+SourceLocation [start=line 8 column 18, end=line 8 column 22] [NthPattern]
+even
+---------------------------
+SourceLocation [start=line 8 column 18, end=line 8 column 22] [Identifier]
+even
+---------------------------
+SourceLocation [start=line 8 column 24, end=line 10 column 6] [Block]
+{\\n background-color: lightyellow;\\n }
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 36] [Property]
+background-color: lightyellow
+---------------------------
+SourceLocation [start=line 9 column 7, end=line 9 column 23] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 9 column 25, end=line 9 column 36] [Identifier]
+lightyellow
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 14 column 6] [RuleSet]
+li:nth-child(even of .noted) {\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 33] [CombinatorSelector]
+li:nth-child(even of .noted)
+---------------------------
+SourceLocation [start=line 11 column 5, end=line 11 column 7] [ElementSelector]
+li
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 7] [Operator]
+
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 33] [PseudoFunctionSelector]
+:nth-child(even of .noted)
+---------------------------
+SourceLocation [start=line 11 column 7, end=line 11 column 17] [PseudoClassSelector]
+:nth-child
+---------------------------
+SourceLocation [start=line 11 column 8, end=line 11 column 17] [Identifier]
+nth-child
+---------------------------
+SourceLocation [start=line 11 column 17, end=line 11 column 33] [Signature]
+(even of .noted)
+---------------------------
+SourceLocation [start=line 11 column 18, end=line 11 column 32] [NthPattern]
+even of .noted
+---------------------------
+SourceLocation [start=line 11 column 18, end=line 11 column 22] [Identifier]
+even
+---------------------------
+SourceLocation [start=line 11 column 23, end=line 11 column 32] [ClassSelector]
+of .noted
+---------------------------
+SourceLocation [start=line 11 column 27, end=line 11 column 32] [Identifier]
+noted
+---------------------------
+SourceLocation [start=line 11 column 34, end=line 14 column 6] [Block]
+{\\n background-color: tomato;\\n border-bottom-color: seagreen;\\n }
+---------------------------
+SourceLocation [start=line 12 column 7, end=line 12 column 31] [Property]
+background-color: tomato
+---------------------------
+SourceLocation [start=line 12 column 7, end=line 12 column 23] [Identifier]
+background-color
+---------------------------
+SourceLocation [start=line 12 column 25, end=line 12 column 31] [Identifier]
+tomato
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 36] [Property]
+border-bottom-color: seagreen
+---------------------------
+SourceLocation [start=line 13 column 7, end=line 13 column 26] [Identifier]
+border-bottom-color
+---------------------------
+SourceLocation [start=line 13 column 28, end=line 13 column 36] [Identifier]
+seagreen
+---------------------------

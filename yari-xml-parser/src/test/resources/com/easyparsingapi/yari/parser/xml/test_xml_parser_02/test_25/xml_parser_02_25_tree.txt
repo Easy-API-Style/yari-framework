@@ -1,0 +1,19 @@
+[0, Xml] <div>\\n <div<\\n blabla\\n </div>\\n </div>
+ [1, Tag] <div>\\n <div<\\n blabla\\n </div>\\n </div>
+  [2, TagHead] <div>
+   [3, TagName] div
+    [4, Name] div
+  [2, TagBody] <div<\\n blabla\\n </div>
+   [3, Tag] <div<\\n blabla\\n </div>
+    [4, TagHeadError] <div
+     [5, TagName] div
+      [6, Name] div
+    [4, TagBody] <\\n blabla
+     [5, TokenError] <
+     [5, Text] blabla
+    [4, TagFoot] </div>
+     [5, TagName] div
+      [6, Name] div
+  [2, TagFoot] </div>
+   [3, TagName] div
+    [4, Name] div

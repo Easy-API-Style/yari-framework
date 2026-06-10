@@ -1,0 +1,26 @@
+[0, Css] :where(ol, ul, menu:unsupported) :where(ol, ul) {\\n color: green;\\n }
+ [1, RuleSet] :where(ol, ul, menu:unsupported) :where(ol, ul) {\\n color: green;\\n }
+  [2, QualifiedSelector] :where(ol, ul, menu:unsupported) :where(ol, ul)
+   [3, PseudoFunctionSelector] :where(ol, ul, menu:unsupported)
+    [4, PseudoClassSelector] :where
+     [5, Identifier] where
+    [4, Signature] (ol, ul, menu:unsupported)
+     [5, ListSelector] ol, ul, menu:unsupported
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+      [6, CombinatorSelector] menu:unsupported
+       [7, ElementSelector] menu
+       [7, Operator] 
+       [7, PseudoClassSelector] :unsupported
+        [8, Identifier] unsupported
+   [3, PseudoFunctionSelector] :where(ol, ul)
+    [4, PseudoClassSelector] :where
+     [5, Identifier] where
+    [4, Signature] (ol, ul)
+     [5, ListSelector] ol, ul
+      [6, ElementSelector] ol
+      [6, ElementSelector] ul
+  [2, Block] {\\n color: green;\\n }
+   [3, Property] color: green
+    [4, Identifier] color
+    [4, Identifier] green

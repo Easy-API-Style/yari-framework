@@ -1,0 +1,19 @@
+[0, Javascript] function* creerID() { var index = 0; while (true) { yield index++; } }
+ [1, FunctionDeclaration] function* creerID() { var index = 0; while (true) { yield index++; } }
+  [2, Identifier] creerID
+  [2, Signature] ()
+  [2, Procedure] { var index = 0; while (true) { yield index++; } }
+   [3, VariableDeclaration] var index = 0
+    [4, Type] var
+    [4, Variable] index = 0
+     [5, Identifier] index
+     [5, Operator] =
+     [5, Literal] 0
+   [3, While] while (true) { yield index++; }
+    [4, Condition] (true)
+     [5, Literal] true
+    [4, Procedure] { yield index++; }
+     [5, Yield] yield index++
+      [6, Increment] index++
+       [7, Operator] ++
+       [7, Identifier] index

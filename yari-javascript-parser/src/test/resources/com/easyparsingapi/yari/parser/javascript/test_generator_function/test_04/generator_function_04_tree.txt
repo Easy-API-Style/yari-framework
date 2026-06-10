@@ -1,0 +1,16 @@
+[0, Javascript] class Foo {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}
+ [1, ClassDeclaration] class Foo {\\n *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }\\n}
+  [2, Identifier] Foo
+  [2, ClassMethodDeclaration] *[Symbol.iterator]() {\\n yield 1;\\n yield 2;\\n }
+   [3, ComputedValue] [Symbol.iterator]
+    [4, QualifiedExpression] Symbol.iterator
+     [5, Qualifier] Symbol.
+      [6, Identifier] Symbol
+      [6, Operator] .
+     [5, Identifier] iterator
+   [3, Signature] ()
+   [3, Procedure] {\\n yield 1;\\n yield 2;\\n }
+    [4, Yield] yield 1
+     [5, Literal] 1
+    [4, Yield] yield 2
+     [5, Literal] 2
