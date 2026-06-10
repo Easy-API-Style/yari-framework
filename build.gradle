@@ -91,6 +91,9 @@ subprojects {
     // ################## TEST ##################
     test {
         useJUnitPlatform()
+        // Give the forked test JVM enough heap: CI runners default to a smaller heap
+        // than a typical dev machine, which is why memory-heavy tests OOM only there.
+        maxHeapSize = '6g'
     }
     // ################## ECIPSE ##################
     eclipse {
