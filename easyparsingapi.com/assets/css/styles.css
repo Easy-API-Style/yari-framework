@@ -356,6 +356,64 @@ pre .a { color: #93c5fd; }
   border-color: var(--code-string);
 }
 
+/* ---------- nav email (copy) button ---------- */
+.nav-email-button {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.nav-email-button:hover,
+.nav-email-button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.nav-email-button svg { display: block; }
+
+/* themed tooltip (replaces the native, unstyleable title) */
+.nav-email-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  transform: translateY(-4px);
+  white-space: nowrap;
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .3rem .55rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s, transform .15s;
+  z-index: 60;
+}
+.nav-email-button:hover::after,
+.nav-email-button:focus-visible::after,
+.nav-email-button.is-copied::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* "copied" feedback: same themed tooltip, in the accent colour.
+   While active it overrides the hover tooltip so only this one shows. */
+.nav-email-button.is-copied::after {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ---------- callouts ---------- */
 .note, .warn, .tip {
   border-left: 3px solid;
