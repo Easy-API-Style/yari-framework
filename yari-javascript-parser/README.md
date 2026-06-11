@@ -1,11 +1,11 @@
 # yari-javascript-parser
 
-[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--javascript--parser-blue)](https://easyparsingapi.com/modules/javascript-parser.html)
+[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--javascript--parser-blue)](https://easyparsingapi.com/modules/javascript-parser.html) [![Email](https://img.shields.io/badge/email-easy.api.contact%40gmail.com-D14836)](mailto:easy.api.contact@gmail.com)
 
 [![Release](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Java](https://img.shields.io/badge/java-25-orange)](https://openjdk.org/projects/jdk/25/)
-[![Maven Central](https://img.shields.io/badge/com.easyparsingapi%3Ayari--javascript--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-javascript-parser/1.0.0)
+[![Maven Central](https://img.shields.io/badge/maven--central-com.easyparsingapi%3Ayari--javascript--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-javascript-parser/1.0.0)
 
 Fault-tolerant JavaScript parser that produces a typed AST. Supports functions, classes, ES6 modules (import/export), async/await, destructuring, template literals, generators, and more.
 

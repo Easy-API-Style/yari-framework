@@ -1,11 +1,11 @@
 # yari-html-parser
 
-[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--html--parser-blue)](https://easyparsingapi.com/modules/html-parser.html)
+[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--html--parser-blue)](https://easyparsingapi.com/modules/html-parser.html) [![Email](https://img.shields.io/badge/email-easy.api.contact%40gmail.com-D14836)](mailto:easy.api.contact@gmail.com)
 
 [![Release](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Java](https://img.shields.io/badge/java-25-orange)](https://openjdk.org/projects/jdk/25/)
-[![Maven Central](https://img.shields.io/badge/com.easyparsingapi%3Ayari--html--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-html-parser/1.0.0)
+[![Maven Central](https://img.shields.io/badge/maven--central-com.easyparsingapi%3Ayari--html--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-html-parser/1.0.0)
 
 [![yari-xml-parser](https://img.shields.io/badge/yari--xml--parser-blue?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTggMUwxIDQuNXY3TDggMTVsNy0zLjV2LTdMOCAxeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjMiLz48cGF0aCBkPSJNMSA0LjVMOCA4bDctMy41TTggOHY3IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIvPjwvc3ZnPg==)](../yari-xml-parser/README.md)
 

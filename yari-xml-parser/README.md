@@ -1,11 +1,11 @@
 # yari-xml-parser
 
-[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--xml--parser-blue)](https://easyparsingapi.com/modules/xml-parser.html)
+[![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--xml--parser-blue)](https://easyparsingapi.com/modules/xml-parser.html) [![Email](https://img.shields.io/badge/email-easy.api.contact%40gmail.com-D14836)](mailto:easy.api.contact@gmail.com)
 
 [![Release](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Java](https://img.shields.io/badge/java-25-orange)](https://openjdk.org/projects/jdk/25/)
-[![Maven Central](https://img.shields.io/badge/com.easyparsingapi%3Ayari--xml--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-xml-parser/1.0.0)
+[![Maven Central](https://img.shields.io/badge/maven--central-com.easyparsingapi%3Ayari--xml--parser%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-xml-parser/1.0.0)
 
 Fault-tolerant XML parser that produces a typed AST. Supports the full XML structure: simple and complex tags (head + body + foot), self-closing tags, comments, CDATA, DOCTYPE, prolog, and namespaces.
 
