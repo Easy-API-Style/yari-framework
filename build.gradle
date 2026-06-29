@@ -141,6 +141,81 @@ subprojects {
         }
     }
     publishToMavenLocal.finalizedBy 'createMavenCentralBundle'
+    // ############ MAVEN CENTRAL — UPLOAD ############
+    // Upload a deployment bundle intended to be published to Maven Central.
+    // Central Publisher Portal API: POST https://central.sonatype.com/api/v1/publisher/upload
+    // (multipart/form-data, field "bundle"; Bearer auth = base64("user:pass") of a user
+    // token generated at https://central.sonatype.com -> Account -> Generate User Token).
+    //
+    //   ./gradlew uploadToMavenCentral \
+    //       -PmavenCentralUsername=<tokenUser> -PmavenCentralPassword=<tokenPass> -PcentralPublishingType=<type>
+    //
+    // Credentials fall back to env CENTRAL_USERNAME / CENTRAL_PASSWORD.
+    // -PcentralPublishingType=AUTOMATIC publishes automatically once validation passes;
+    // the default USER_MANAGED leaves the deployment to be released from the portal.
+    def centralUsername = providers.gradleProperty('mavenCentralUsername')
+                                   .orElse(providers.environmentVariable('CENTRAL_USERNAME'))
+    def centralPassword = providers.gradleProperty('mavenCentralPassword')
+                                   .orElse(providers.environmentVariable('CENTRAL_PASSWORD'))
+    def centralPublishingType = providers.gradleProperty('centralPublishingType')
+                                         .orElse('USER_MANAGED')
+    def bundleFileProvider = buildDirProvider.file("${projectGav}.zip")
+    tasks.register('uploadToMavenCentral') {
+        description = 'Upload a deployment bundle intended to be published to Maven Central.'
+        group = 'publishing'
+        dependsOn 'publishToMavenLocal', 'createMavenCentralBundle'
+        doLast {
+            def user = centralUsername.getOrNull()
+            def pass = centralPassword.getOrNull()
+            if (!user || !pass) {
+                throw new GradleException(
+                    'Missing Central credentials. Provide -PcentralUsername / -PcentralPassword ' +
+                    '(or env CENTRAL_USERNAME / CENTRAL_PASSWORD), using a user token generated at ' +
+                    'https://central.sonatype.com (Account -> Generate User Token).')
+            }
+            def bundle = bundleFileProvider.get().asFile
+            if (!bundle.exists()) {
+                throw new GradleException("Deployment bundle not found: ${bundle}. Run publishToMavenLocal first.")
+            }
+
+            // multipart/form-data body with a single "bundle" file part.
+            def token = Base64.encoder.encodeToString("${user}:${pass}".getBytes('UTF-8'))
+            def boundary = "----YojaCentral${System.currentTimeMillis()}"
+            def CRLF = "\r\n"
+            def head = ("--${boundary}${CRLF}" +
+                        "Content-Disposition: form-data; name=\"bundle\"; filename=\"${bundle.name}\"${CRLF}" +
+                        "Content-Type: application/octet-stream${CRLF}${CRLF}").getBytes('UTF-8')
+            def tail = ("${CRLF}--${boundary}--${CRLF}").getBytes('UTF-8')
+            def fileBytes = java.nio.file.Files.readAllBytes(bundle.toPath())
+            def body = java.net.http.HttpRequest.BodyPublishers.ofByteArrays([head, fileBytes, tail])
+
+            def name = java.net.URLEncoder.encode(projectGav, 'UTF-8')
+            def type = java.net.URLEncoder.encode(centralPublishingType.get(), 'UTF-8')
+            def uri = java.net.URI.create(
+                "https://central.sonatype.com/api/v1/publisher/upload?name=${name}&publishingType=${type}")
+
+            def request = java.net.http.HttpRequest.newBuilder(uri)
+                                                   .header('Authorization', "Bearer ${token}")
+                                                   .header('Content-Type', "multipart/form-data; boundary=${boundary}")
+                                                   .timeout(java.time.Duration.ofMinutes(5))
+                                                   .POST(body)
+                                                   .build()
+
+            println "Uploading ${bundle.name} (${bundle.length()} bytes) to Maven Central [${centralPublishingType.get()}] ..."
+            def client = java.net.http.HttpClient.newBuilder()
+                                                 .connectTimeout(java.time.Duration.ofSeconds(30))
+                                                 .build()
+            def response = client.send(request, java.net.http.HttpResponse.BodyHandlers.ofString())
+            if (response.statusCode() == 201) {
+                println "Upload accepted. Deployment id: ${response.body()}"
+                println "Track it at https://central.sonatype.com/publishing/deployments"
+            }
+            else {
+                throw new GradleException(
+                    "Central upload failed: HTTP ${response.statusCode()} - ${response.body()}")
+            }
+        }
+    }
     // ############ PUBLISHING ############
     publishing {
         publications {
@@ -152,7 +227,7 @@ subprojects {
                 
                 pom {
                     name = project.name
-                    description = 'Yari framework: ${project.name}'
+                    description = "Yari framework: ${project.name}"
                     url = 'https://easyparsingapi.com/'
                     licenses {
                         license {
