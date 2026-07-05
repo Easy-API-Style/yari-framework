@@ -47,9 +47,10 @@ import com.easyparsingapi.yari.parser.xml.ast.Xml;
 import com.easyparsingapi.yari.parser.xml.ast.XmlNode;
 import com.easyparsingapi.yari.parser.xml.lexer.XmlLexer;
 import com.easyparsingapi.yari.parser.xml.lexer.XmlLexerConfig;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.common.base.Strings;
+
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 public class AssertUtil {
     
@@ -194,7 +195,9 @@ public class AssertUtil {
             // node
             final Path xmlFile = folderPath.resolve(target.file() + "_xml.json");
             if (Files.exists(xmlFile)) {
-                final XmlNode expectedAstNode = JSON_OBJECT_MAPPER.reader().readValue(xmlFile.toFile(), XmlNode.class);
+                final XmlNode expectedAstNode = JSON_OBJECT_MAPPER.reader()
+                                                                  .forType(XmlNode.class)
+                                                                  .readValue(xmlFile.toFile());
                 final List<AstNode> expectedNodes = expectedAstNode.astStream().toList();
                 final List<AstNode> actualNodes = actualAstNode.astStream().toList();
                 if (expectedNodes.size() == actualNodes.size()) {

@@ -47,9 +47,10 @@ import com.easyparsingapi.yari.parser.javascript.ast.Javascript;
 import com.easyparsingapi.yari.parser.javascript.ast.JavascriptError;
 import com.easyparsingapi.yari.parser.javascript.ast.JavascriptNode;
 import com.easyparsingapi.yari.parser.javascript.parser.JavascriptConfig.Node;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.common.base.Strings;
+
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 public class AssertUtil {
     
@@ -191,7 +192,9 @@ public class AssertUtil {
             // javascript
             final Path javascriptFile = folderPath.resolve(target.file() + "_javascript.json");
             if (Files.exists(javascriptFile)) {
-                final JavascriptNode expectedJavascript = JSON_OBJECT_MAPPER.reader().readValue(javascriptFile.toFile(), JavascriptNode.class);
+                final JavascriptNode expectedJavascript = JSON_OBJECT_MAPPER.reader()
+                                                                            .forType(JavascriptNode.class)
+                                                                            .readValue(javascriptFile.toFile());
                 final List<AstNode> expectedJavascriptNodes = expectedJavascript.astStream().toList();
                 final List<AstNode> actualJavascriptNodes = javascriptNode.astStream().toList();
                 if (expectedJavascriptNodes.size() == actualJavascriptNodes.size()) {

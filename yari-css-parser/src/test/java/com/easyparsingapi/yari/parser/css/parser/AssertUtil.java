@@ -45,9 +45,10 @@ import com.easyparsingapi.yari.parsec.Tokens.Fragment;
 import com.easyparsingapi.yari.parser.css.ast.Css;
 import com.easyparsingapi.yari.parser.css.ast.CssError;
 import com.easyparsingapi.yari.parser.css.ast.CssNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.common.base.Strings;
+
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 public class AssertUtil {
     
@@ -154,7 +155,9 @@ public class AssertUtil {
             // node
             final Path cssFile = folderPath.resolve(target.file() + "_css.json");
             if (Files.exists(cssFile)) {
-                final CssNode expectedCssNode = JSON_OBJECT_MAPPER.reader().readValue(cssFile.toFile(), CssNode.class);
+                final CssNode expectedCssNode = JSON_OBJECT_MAPPER.reader()
+                                                                  .forType(CssNode.class)
+                                                                  .readValue(cssFile.toFile());
                 final List<AstNode> expectedNodes = expectedCssNode.astStream().toList();
                 final List<AstNode> actualNodes = cssNode.astStream().toList();
                 if (expectedNodes.size() == actualNodes.size()) {
