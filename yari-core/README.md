@@ -2,10 +2,10 @@
 
 [![Website](https://img.shields.io/badge/website-easyparsingapi.com%2Fyari--core-blue)](https://easyparsingapi.com/modules/core.html) [![Email](https://img.shields.io/badge/email-easy.api.contact%40gmail.com-D14836)](mailto:easy.api.contact@gmail.com)
 
-[![Release](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.0)
+[![Release](https://img.shields.io/badge/release-1.0.2-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.2)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Java](https://img.shields.io/badge/java-25-orange)](https://openjdk.org/projects/jdk/25/)
-[![Maven Central](https://img.shields.io/badge/maven--central-com.easyparsingapi%3Ayari--core%3A1.0.0-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-core/1.0.0)
+[![Maven Central](https://img.shields.io/badge/maven--central-com.easyparsingapi%3Ayari--core%3A1.0.2-blue)](https://central.sonatype.com/artifact/com.easyparsingapi/yari-core/1.0.2)
 
 Common interfaces and abstractions shared by all Yari framework modules. This module defines the Abstract Syntax Tree (AST) contract, source location system, and base utilities.
 

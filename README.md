@@ -2,7 +2,7 @@
 
 <a href="https://easyparsingapi.com/index.html" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/website-easyparsingapi.com-blue" alt="Website"></a> [![Email](https://img.shields.io/badge/email-easy.api.contact%40gmail.com-D14836)](mailto:easy.api.contact@gmail.com)
 
-[![Release](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.0)
+[![Release](https://img.shields.io/badge/release-1.0.2-brightgreen)](https://github.com/Easy-API-Style/yari-framework/releases/tag/1.0.2)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Java](https://img.shields.io/badge/java-25-orange)](https://openjdk.org/projects/jdk/25/)
 
